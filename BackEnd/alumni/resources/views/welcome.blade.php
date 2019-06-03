@@ -33,7 +33,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">About</a></li>
                 <li><a href="#">Members</a></li>
-                <li><a href="/register">Membership</a></li>
+                <li><a href="/profile">Membership</a></li>
                 <li><a href="#">Events</a></li>
             </ul>
         </div>
