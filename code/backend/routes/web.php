@@ -14,20 +14,21 @@ use Spatie\Permission\Models\Permission;
 |
 */
 
-Route::get('/', function () {
-    // error_log("Index:\n");
-    // Role::create(['name' => 'writer']);
-    // $permission = Permission::create(['name'=>'edit post']);
-    $role = Role::findById(1);
-    // $permission = Permission::findById(1);
-    // $role->givePermissionTo($permission);
-    // dd(request()->ip());
-    $user = User::find(1);
-    // dd($user);
-    // auth()->user()->assignRole("writer");
+// Route::get('/', function () {
+//     // error_log("Index:\n");
+//     // Role::create(['name' => 'writer']);
+//     // $permission = Permission::create(['name'=>'edit post']);
+//     $role = Role::findById(1);
+//     // $permission = Permission::findById(1);
+//     // $role->givePermissionTo($permission);
+//     // dd(request()->ip());
+//     $user = User::find(1);
+//     // dd($user);
+//     // auth()->user()->assignRole("writer");
 
-    return view('welcome');
-});
+//     // return view('welcome');
+//     return "view('welcome')";
+// });
 
 Route::group(['middleware' => ['role:editor']], function () {
     Route::get('/edit', 'PostController@edit');
