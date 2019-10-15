@@ -23,6 +23,7 @@ class SignUpRequest extends FormRequest
      */
     public function rules()
     {
+        error_log("validation RULES");
         return [
             'name' => 'required',
             'email' => 'required|email|unique:users',
