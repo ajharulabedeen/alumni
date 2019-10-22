@@ -15,6 +15,8 @@ class ProfileAbout extends Migration
     {
         Schema::create('profile_about', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('user_id',512);
+            $table->mediumText('about_me');
             $table->timestamps();
         });
     }
