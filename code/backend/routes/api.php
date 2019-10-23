@@ -22,4 +22,5 @@ Route::group([
 
     Route::post('/create', 'PostController@create')->middleware('role:writer');
     // Route::post('/create', 'PostController@create');
+    // Route::post('/uploadfile', 'UploadFileController@update');//working test purpose.
 });
