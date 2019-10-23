@@ -11,10 +11,16 @@ class UploadFileController extends Controller
         error_log($request->hasFile('photo'));
         error_log($request->photo);
 
+        $fileName = $request->photo->getClientOriginalName();
+
         if($request->hasFile('photo')){
             error_log("FILE RECEIVED!");
         }
-        return $request->photo->store('public');
+        return $request->photo->storeAs('public', $fileName);
     }
 
-}
+    public function getFile(){
+        return response()->download(storage_path('app/public/'.'avatar.jpg'),null,[],null);
+    }
+
+}//class
