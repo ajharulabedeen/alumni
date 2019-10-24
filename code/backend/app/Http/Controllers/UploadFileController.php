@@ -6,6 +6,15 @@ use Illuminate\Http\Request;
 
 class UploadFileController extends Controller
 {
+    public function __construct()
+    {
+        error_log("Constructor : upload");
+        // $this->middleware('auth:api', ['except' => ['uploadfile']]);
+        $this->middleware('auth:api', ['except' => ['uploadfile']]);
+        error_log("Constructor after : upload");
+    }
+
+
     public function update(request $request)
     {
         error_log($request->hasFile('photo'));
