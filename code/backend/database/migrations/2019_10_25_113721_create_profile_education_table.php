@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ProfileAbout extends Migration
+class CreateProfileEducationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class ProfileAbout extends Migration
      */
     public function up()
     {
-        Schema::create('profile_about', function (Blueprint $table) {
+        Schema::create('profile_education', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('user_id',512);
-            $table->mediumText('about_me');
+            $table->string('degree_name', 512);
+            $table->string('institue_name', 512);
+            $table->string('passing_year', 512);
+            $table->string('result', 512);
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class ProfileAbout extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('profile_about');
+        Schema::dropIfExists('profile_education');
     }
 }
