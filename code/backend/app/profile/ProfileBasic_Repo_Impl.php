@@ -19,6 +19,8 @@ class ProfileBasic_Repo_Impl implements ProfileBasic_Repo_I
     public function delete($id)
     {
         error_log("Profile Basic : Delete");
+        $status = ProfileBasic::where('id', $id)->delete();
+        return $status;
     }
     public function findOne($id)
     {

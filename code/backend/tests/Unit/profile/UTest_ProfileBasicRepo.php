@@ -19,7 +19,8 @@ class UTest_ProfileBasicRepo extends TestCase
     public function testMain()
     {
         echo "\n >----------- Test Main : ---------> \n";
-        $this->save();
+        // $this->save();
+        $this->delete();
     } //main test
 
 
@@ -33,6 +34,15 @@ class UTest_ProfileBasicRepo extends TestCase
         $pBasic->last_Name = "Ajhar";
         $pBasic->dept = "CSE";
         $id = $repoProfileBasic->save($pBasic);
+        error_log("User ID after Save  : " . $id);
+    }
+
+    //passed.
+    public function delete()
+    {
+        // $repoProfileBasic = $this->getRepo();
+        $repoProfileBasic =  new ProfileBasic_Repo_Impl();
+        $id = $repoProfileBasic->delete(3);
         error_log("User ID after Save  : " . $id);
     }
 
