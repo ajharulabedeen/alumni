@@ -15,20 +15,20 @@ class CreateProfileBasicsTable extends Migration
     {
         Schema::create('profile_basics', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('user_id',512);
-            $table->string('dept', 512);
-            $table->string('batch', 512);
-            $table->string('student_id', 512);
-            $table->string('first_name', 512);
-            $table->string('last_name', 512);
-            $table->string('birth_date', 512);
-            $table->string('gender', 512);
-            $table->string('blood_group', 512);
-            $table->string('email', 512);
-            $table->string('phone', 512);
-            $table->string('research_interest', 512);
-            $table->string('skills', 512);
-            $table->string('image_address', 512);
+            $table->string('user_id',512)->nullable();
+            $table->string('dept', 512)->nullable();
+            $table->string('batch', 512)->nullable();
+            $table->string('student_id', 512)->nullable();
+            $table->string('first_name', 512)->nullable();
+            $table->string('last_name', 512)->nullable();
+            $table->string('birth_date', 512)->nullable();
+            $table->string('gender', 512)->nullable();
+            $table->string('blood_group', 512)->nullable();
+            $table->string('email', 512)->nullable();
+            $table->string('phone', 512)->nullable();
+            $table->string('research_interest', 512)->nullable();
+            $table->string('skills', 512)->nullable();
+            $table->string('image_address', 512)->nullable();
             $table->timestamps();
         });
     }
