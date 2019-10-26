@@ -14,8 +14,8 @@ use Spatie\Permission\Models\Permission;
 |
 */
 
-// Route::get('/', function () {
-    // error_log("Index:\n");
+Route::get('/', function () {
+    error_log("Index:\n");
     // Role::create(['name' => 'writer']);
     // $permission = Permission::create(['name'=>'edit post']);
     // $role = Role::findById(1);
@@ -27,8 +27,8 @@ use Spatie\Permission\Models\Permission;
     // auth()->user()->assignRole("writer");
 
     // return view('welcome');
-    // return "view('welcome')";
-// });
+    return "view('welcome')";
+});
 
 Route::group(['middleware' => ['role:editor']], function () {
     Route::get('/edit', 'PostController@edit');

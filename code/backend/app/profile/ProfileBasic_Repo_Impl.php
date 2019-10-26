@@ -8,9 +8,16 @@ class ProfileBasic_Repo_Impl implements ProfileBasic_Repo_I
 {
     public function save(ProfileBasic $profileBasic)
     {
-        error_log("Profile Basic : Save");
-        $profileBasic->save();
-        return $profileBasic->id;
+        $id = -1;
+        try {
+            $profileBasic->save();
+            $id = $profileBasic->id;
+        } catch (Exception $e) {
+            $saveStatus = false;
+            error_log("Saveing Post Failed.");
+            // error_log("Saveing Post Failed. : " . $e);
+        }
+        return $id;
     }
     public function edit(ProfileBasic $profileBasicUpdate)
     {
@@ -22,8 +29,11 @@ class ProfileBasic_Repo_Impl implements ProfileBasic_Repo_I
         $status = ProfileBasic::where('id', $id)->delete();
         return $status;
     }
+    //passed
     public function findOne($id)
     {
         error_log("Profile Basic : FindOne");
+        $data = ProfileBasic::find($id);
+        return $data;
     }
 }//class
