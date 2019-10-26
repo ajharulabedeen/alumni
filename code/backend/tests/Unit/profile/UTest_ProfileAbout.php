@@ -23,8 +23,8 @@ class UTest_ProfileBasicRepo extends TestCase
     public function testMain()
     {
         echo "\n >----------- Test Main : ---------> \n";
-        // $this->save();
-        $this->delete(2);
+        $this->save();
+        // $this->delete(2);
         // $this->findOne(2);
         // $this->getCurrentLoggedUserID();
     } //main test
@@ -40,6 +40,7 @@ class UTest_ProfileBasicRepo extends TestCase
         $proAbout->about_me = "This is test about!";
         $id = $repoProfileAbout->save($proAbout);
         error_log("User ID after Save  : " . $id);
+        $this->assertNotEmpty($id);
         $this->findOne($id);
     }
 
@@ -49,6 +50,7 @@ class UTest_ProfileBasicRepo extends TestCase
         $repoProfileAbout =  new Profile_About_Repo_Impl();
         $deleteStatus = $repoProfileAbout->delete($id);
         error_log("Status after Delete  : " . $deleteStatus);
+        $this->assertEquals( $deleteStatus, 1);
     }
 
     //passed
@@ -56,6 +58,8 @@ class UTest_ProfileBasicRepo extends TestCase
         $repoProfileAbout =  new Profile_About_Repo_Impl();
         $oneProfileAbout = $repoProfileAbout->findOne($id);
         error_log($oneProfileAbout);
+        $this->assertEquals($id, $oneProfileAbout->id);
+        $this->delete($id);
     }
 
     //passed
