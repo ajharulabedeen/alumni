@@ -1,5 +1,5 @@
 <?php
-
+namespace App\profile;
 use App\profile\ProfileAbout;
 
 interface Profile_About_Repo_I {

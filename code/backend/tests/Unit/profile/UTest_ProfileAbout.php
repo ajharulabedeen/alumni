@@ -4,10 +4,11 @@ namespace Tests\Unit\profile;
 
 use App\profile\ProfileBasic;
 use Tests\TestCase;
-use App\profile\ProfileBasic_Repo_Impl;
+use App\profile\Profile_About_Repo_Impl;
+use App\profile\ProfileAbout;
 use App\Utils\Utils;
 
-$repoProfileBasic =  new ProfileBasic_Repo_Impl();
+$repoProfileAbout =  new Profile_About_Repo_Impl();
 
 class UTest_ProfileBasicRepo extends TestCase
 {
@@ -22,9 +23,9 @@ class UTest_ProfileBasicRepo extends TestCase
     public function testMain()
     {
         echo "\n >----------- Test Main : ---------> \n";
-        $this->save();
-        // $this->delete();
-        // $this->findOne(3);
+        // $this->save();
+        $this->delete(2);
+        // $this->findOne(2);
         // $this->getCurrentLoggedUserID();
     } //main test
 
@@ -32,32 +33,29 @@ class UTest_ProfileBasicRepo extends TestCase
     //passed.
     public function save()
     {
-        // $repoProfileBasic = $this->getRepo();
-        $repoProfileBasic =  new ProfileBasic_Repo_Impl();
-        $pBasic = new ProfileBasic();
-        $pBasic->user_id = Utils::getUserId();;
-        $pBasic->first_Name = "Khan";
-        $pBasic->last_Name = "Ajhar";
-        $pBasic->dept = "CSE";
-        $id = $repoProfileBasic->save($pBasic);
+        // $repoProfileAbout = $this->getRepo();
+        $repoProfileAbout =  new Profile_About_Repo_Impl();
+        $proAbout = new ProfileAbout();
+        $proAbout->user_id = Utils::getUserId();;
+        $proAbout->about_me = "This is test about!";
+        $id = $repoProfileAbout->save($proAbout);
         error_log("User ID after Save  : " . $id);
         $this->findOne($id);
     }
 
-    //passed.
-    public function delete()
+    public function delete($id)
     {
-        // $repoProfileBasic = $this->getRepo();
-        $repoProfileBasic =  new ProfileBasic_Repo_Impl();
-        $id = $repoProfileBasic->delete(3);
-        error_log("User ID after Save  : " . $id);
+        // $repoProfileAbout = $this->getRepo();
+        $repoProfileAbout =  new Profile_About_Repo_Impl();
+        $deleteStatus = $repoProfileAbout->delete($id);
+        error_log("Status after Delete  : " . $deleteStatus);
     }
 
     //passed
     public function findOne($id){
-        $repoProfileBasic =  new ProfileBasic_Repo_Impl();
-        $oneProfileBasic = $repoProfileBasic->findOne($id);
-        error_log($oneProfileBasic);
+        $repoProfileAbout =  new Profile_About_Repo_Impl();
+        $oneProfileAbout = $repoProfileAbout->findOne($id);
+        error_log($oneProfileAbout);
     }
 
     //passed
@@ -67,6 +65,6 @@ class UTest_ProfileBasicRepo extends TestCase
     }
 
     public function getRepo(){
-        new ProfileBasic_Repo_Impl();
+        new Profile_About_Repo_Impl();
     }
 }//class
