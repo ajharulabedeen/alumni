@@ -2,13 +2,13 @@
 
 namespace Tests\Unit\profile;
 
-use App\profile\ProfileBasic;
+
 use Tests\TestCase;
 use App\profile\Profile_About_Repo_Impl;
 use App\profile\ProfileAbout;
 use App\Utils\Utils;
 
-$repoProfileAbout =  new Profile_About_Repo_Impl();
+
 
 class UTest_ProfileBasicRepo extends TestCase
 {
@@ -23,54 +23,68 @@ class UTest_ProfileBasicRepo extends TestCase
     public function testMain()
     {
         echo "\n >----------- Test Main : ---------> \n";
-        // $this->save();
-        $this->update();
+        // error_log($this->save());
+        // $this->update();
         // $this->delete(2);
         // $this->findOne(2);
         // $this->getCurrentLoggedUserID();
     } //main test
 
+
+    public function testAboutCRUD(){
+        $id = $this->save();
+        $about = $this->findOne($id);
+        $this->assertEquals($id, $about->id);
+        error_log($about);
+
+        $text = "About Me Changed! Dim Dim";
+        $updatedText = $this->update($id, $text);
+        $this->assertEquals($text, $updatedText);
+        error_log($this->findOne($id));
+
+        $status = $this->delete($id);
+        $this->assertEquals(1, $status);
+
+        error_log("\nAbout CRUD Test Done!\n");
+    }
+
+
     //passed
-    public function update(){
+    public function update($id, $text){
+        error_log("--Update Test : ");
         $repoProfileAbout =  new Profile_About_Repo_Impl();
         $proAbout = new ProfileAbout();
-        $proAbout = $this->findOne(4);
-        $proAbout->about_me = "About Me Changed! Dim Dim";
+        $proAbout = $this->findOne($id);
+        $proAbout->about_me = $text;
         $updateStatus = $repoProfileAbout->update($proAbout);
         $this->assertEquals(true, $updateStatus);
-        $proAbout = $this->findOne(4);
+        return $this->findOne($id)->about_me;
     }
 
     //passed.
     public function save()
     {
-        // $repoProfileAbout = $this->getRepo();
+        error_log("--Save Test: ");
         $repoProfileAbout =  new Profile_About_Repo_Impl();
         $proAbout = new ProfileAbout();
         $proAbout->user_id = Utils::getUserId();;
         $proAbout->about_me = "This is test about!";
         $id = $repoProfileAbout->save($proAbout);
-        error_log("User ID after Save  : " . $id);
-        $this->assertNotEmpty($id);
-        $this->findOne($id);
+        return $id;
     }
 
     public function delete($id)
     {
-        // $repoProfileAbout = $this->getRepo();
+        error_log("--Delete  Test: ");
         $repoProfileAbout =  new Profile_About_Repo_Impl();
         $deleteStatus = $repoProfileAbout->delete($id);
-        error_log("Status after Delete  : " . $deleteStatus);
-        $this->assertEquals( $deleteStatus, 1);
+        return $deleteStatus;
     }
 
     //passed
     public function findOne($id){
         $repoProfileAbout =  new Profile_About_Repo_Impl();
         $oneProfileAbout = $repoProfileAbout->findOne($id);
-        error_log($oneProfileAbout);
-        $this->assertEquals($id, $oneProfileAbout->id);
-        // $this->delete($id);
         return $oneProfileAbout;
     }
 

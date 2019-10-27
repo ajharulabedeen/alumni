@@ -9,6 +9,8 @@ use App\Utils\Utils;
 
 $repoProfileBasic =  new ProfileBasic_Repo_Impl();
 
+$id=null;
+
 class UTest_ProfileBasicRepo extends TestCase
 {
 
@@ -22,11 +24,16 @@ class UTest_ProfileBasicRepo extends TestCase
     public function testMain()
     {
         echo "\n >----------- Test Main : ---------> \n";
-        $this->save();
+        $id = $this->save();
+        $this->findOne($id);
+
         // $this->delete();
-        // $this->findOne(3);
+        $this->findOne(3);
         // $this->getCurrentLoggedUserID();
     } //main test
+
+
+
 
 
     //passed.
@@ -42,15 +49,17 @@ class UTest_ProfileBasicRepo extends TestCase
         $id = $repoProfileBasic->save($pBasic);
         error_log("User ID after Save  : " . $id);
         $this->findOne($id);
+        return $id;
     }
 
     //passed.
-    public function delete()
+    public function delete($id)
     {
         // $repoProfileBasic = $this->getRepo();
         $repoProfileBasic =  new ProfileBasic_Repo_Impl();
-        $id = $repoProfileBasic->delete(3);
-        error_log("User ID after Save  : " . $id);
+        $status = $repoProfileBasic->delete($id);
+        error_log("User ID after Save  : " . $status);
+        return $status;
     }
 
     //passed
