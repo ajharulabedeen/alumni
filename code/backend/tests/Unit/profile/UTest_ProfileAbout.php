@@ -23,12 +23,23 @@ class UTest_ProfileBasicRepo extends TestCase
     public function testMain()
     {
         echo "\n >----------- Test Main : ---------> \n";
-        $this->save();
+        // $this->save();
+        $this->update();
         // $this->delete(2);
         // $this->findOne(2);
         // $this->getCurrentLoggedUserID();
     } //main test
 
+    //passed
+    public function update(){
+        $repoProfileAbout =  new Profile_About_Repo_Impl();
+        $proAbout = new ProfileAbout();
+        $proAbout = $this->findOne(4);
+        $proAbout->about_me = "About Me Changed! Dim Dim";
+        $updateStatus = $repoProfileAbout->update($proAbout);
+        $this->assertEquals(true, $updateStatus);
+        $proAbout = $this->findOne(4);
+    }
 
     //passed.
     public function save()
@@ -59,7 +70,8 @@ class UTest_ProfileBasicRepo extends TestCase
         $oneProfileAbout = $repoProfileAbout->findOne($id);
         error_log($oneProfileAbout);
         $this->assertEquals($id, $oneProfileAbout->id);
-        $this->delete($id);
+        // $this->delete($id);
+        return $oneProfileAbout;
     }
 
     //passed
