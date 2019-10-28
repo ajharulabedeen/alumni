@@ -19,9 +19,30 @@ class ProfileBasic_Repo_Impl implements ProfileBasic_Repo_I
         }
         return $id;
     }
-    public function edit(ProfileBasic $profileBasicUpdate)
+    public function update(ProfileBasic $basicUpdate)
     {
         error_log("Profile Basic : Edit");
+        $raedOld = false;
+        $updateStatus = false;
+        try {
+            $basic_id = $basicUpdate->id;
+            error_log("---" . $basic_id);
+            $basicOrgin = ProfileBasic::find($basic_id);
+            $raedOld = true;
+        } catch (Exception $e) {
+            error_log("Profile Basic Update : failed to read existig profile.");
+            return  $updateStatus;
+        }
+        if ($raedOld) {
+            try {
+                $basicOrgin = $basicUpdate;
+                $basicOrgin->update();
+                $updateStatus = true;
+            } catch (Exception $e) {
+                error_log("Profile Basic Update : Failed to save updated Profile Update." . "\n\n" . $e);
+            }
+        }
+        return  $updateStatus;
     }
     public function delete($id)
     {
@@ -35,5 +56,11 @@ class ProfileBasic_Repo_Impl implements ProfileBasic_Repo_I
         error_log("Profile Basic : FindOne");
         $data = ProfileBasic::find($id);
         return $data;
+    }
+
+    private function setPostValues($basicOrgin, $basicUpdate){
+        if($basicUpdate->id != null){
+            // $basicOrgin-> = $basicUpdate
+        }
     }
 }//class
