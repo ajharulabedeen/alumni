@@ -29,6 +29,7 @@ class CreateProfileBasicsTable extends Migration
             $table->string('research_interest', 512)->nullable();
             $table->string('skills', 512)->nullable();
             $table->string('image_address', 512)->nullable();
+            $table->string('religion', 512)->nullable();
             $table->timestamps();
         });
     }
