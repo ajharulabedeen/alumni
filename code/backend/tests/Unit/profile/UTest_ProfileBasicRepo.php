@@ -9,7 +9,7 @@ use App\Utils\Utils;
 
 $repoProfileBasic =  new ProfileBasic_Repo_Impl();
 
-$id=null;
+$id = null;
 
 class UTest_ProfileBasicRepo extends TestCase
 {
@@ -30,13 +30,35 @@ class UTest_ProfileBasicRepo extends TestCase
         // $this->delete();
         // $this->findOne(3);
         // $this->getCurrentLoggedUserID();
-        $this->update();
+        // $this->update();
         // $this->objectConvertion();
+        $this->basicCRUD();
+
 
     } //main test
 
+
+    public function basicCRUD()
+    {
+        $id = $this->save();
+        $basic = $this->findOne($id);
+        $this->assertEquals($id, $basic->id);
+        error_log($basic);
+
+        $text = "My Skills!";
+        $updatedText = $this->update($id, $text);
+        $this->assertEquals($text, $updatedText);
+        error_log($this->findOne($id));
+
+        $status = $this->delete($id);
+        $this->assertEquals(1, $status);
+
+        error_log("\nAbout CRUD Test Done!\n");
+    }
+
     //working
-    public function objectConvertion(){
+    public function objectConvertion()
+    {
         $pBasic1 = new ProfileBasic();
         $pBasic1->user_id = Utils::getUserId();;
         $pBasic1->first_Name = "Khan";
@@ -51,18 +73,17 @@ class UTest_ProfileBasicRepo extends TestCase
 
         error_log($pBasic1);
         error_log($pBasic2);
-        if($pBasic1==$pBasic2){
+        if ($pBasic1 == $pBasic2) {
             error_log("Object Are not Same!");
         }
 
-        $pBasic1=$pBasic2;
+        $pBasic1 = $pBasic2;
         error_log("-----------------");
-        if($pBasic1==$pBasic2){
+        if ($pBasic1 == $pBasic2) {
             error_log("Same Values!");
         }
         error_log($pBasic1);
         error_log($pBasic2);
-
     }
 
 
@@ -108,33 +129,35 @@ class UTest_ProfileBasicRepo extends TestCase
     }
 
     //passed
-    public function findOne($id){
+    public function findOne($id)
+    {
         $repoProfileBasic =  new ProfileBasic_Repo_Impl();
         $oneProfileBasic = $repoProfileBasic->findOne($id);
         // error_log($oneProfileBasic);
         return $oneProfileBasic;
     }
-    public function update(){
+    public function update($id, $text)
+    {
         $repoProfileBasic =  new ProfileBasic_Repo_Impl();
         $pBasic = new ProfileBasic();
-        $pBasic = $this->findOne(5);
+        $pBasic = $this->findOne($id);
         error_log($pBasic->skills);
-        $pBasic->skills = "Angular, PHP (Laravel)!++++";
-        // $pBasic->id = 10;
+        $pBasic->skills = $text;
         $status = $repoProfileBasic->update($pBasic);
-        $this->assertEquals(true, $status);
-        error_log($this->findOne(5)->skills);
+        // $this->assertEquals(true, $status);
+        return $this->findOne($id)->skills;
     }
 
+
     //passed
-    public function getCurrentLoggedUserID(){
+    public function getCurrentLoggedUserID()
+    {
         $id = Utils::getUserId();
         error_log($id);
     }
 
-    public function getRepo(){
+    public function getRepo()
+    {
         new ProfileBasic_Repo_Impl();
     }
-
-
 }//class
