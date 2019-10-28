@@ -119,11 +119,11 @@ class UTest_ProfileBasicRepo extends TestCase
         $pBasic = new ProfileBasic();
         $pBasic = $this->findOne(5);
         error_log($pBasic->skills);
-        $pBasic->skills = "Angular, PHP (Laravel)!";
-        $pBasic->id = 10;
+        $pBasic->skills = "Angular, PHP (Laravel)!++++";
+        // $pBasic->id = 10;
         $status = $repoProfileBasic->update($pBasic);
         $this->assertEquals(true, $status);
-        error_log($this->findOne(1)->skills);
+        error_log($this->findOne(5)->skills);
     }
 
     //passed
