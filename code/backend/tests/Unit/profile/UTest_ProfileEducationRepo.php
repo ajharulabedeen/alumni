@@ -21,26 +21,28 @@ class UTest_ProfileEducationRepo extends TestCase
      * So test skip can be easily achived.
      *
      */
-    public function testMain()
+    public function Main()
     {
         echo "\n >----------- Test Main : ---------> \n";
         // error_log($this->save());
-        // $this->update();
+        // $this->update(2, "ECE");
         // $this->delete(2);
-        // $this->findOne(2);
+        // error_log($this->findOne(2));
         // $this->getCurrentLoggedUserID();
-        $this->insertingManyEducation();
+
+
+        // $this->insertingManyEducation();
     } //main test
 
 
-    public function AboutCRUD()
+    public function testEducationCRUD()
     {
         $id = $this->save();
-        $about = $this->findOne($id);
-        $this->assertEquals($id, $about->id);
-        error_log($about);
+        $education = $this->findOne($id);
+        $this->assertEquals($id, $education->id);
+        error_log($education);
 
-        $text = "About Me Changed! Dim Dim";
+        $text = "ME";
         $updatedText = $this->update($id, $text);
         $this->assertEquals($text, $updatedText);
         error_log($this->findOne($id));
@@ -48,7 +50,7 @@ class UTest_ProfileEducationRepo extends TestCase
         $status = $this->delete($id);
         $this->assertEquals(1, $status);
 
-        error_log("\nAbout CRUD Test Done!\n");
+        error_log("\nEducation CRUD Test Done!\n");
     }
 
 
@@ -56,13 +58,15 @@ class UTest_ProfileEducationRepo extends TestCase
     public function update($id, $text)
     {
         error_log("--Update Test : ");
-        $repoProfileAbout =  new Profile_About_Repo_Impl();
-        $proAbout = new ProfileAbout();
-        $proAbout = $this->findOne($id);
-        $proAbout->about_me = $text;
-        $updateStatus = $repoProfileAbout->update($proAbout);
+        $repoEducation =  new Profile_Education_Repo_Impl();
+        $education = new ProfileEducation();
+        $education = $this->findOne($id);
+        // error_log($education);
+        $education->degree_name = $text;
+        $updateStatus = $repoEducation->update($education);
         $this->assertEquals(true, $updateStatus);
-        return $this->findOne($id)->about_me;
+        // error_log($this->findOne($id));
+        return $this->findOne($id)->degree_name;
     }
 
     //passed.
@@ -87,17 +91,16 @@ class UTest_ProfileEducationRepo extends TestCase
     public function delete($id)
     {
         error_log("--Delete  Test: ");
-        $repoProfileAbout =  new Profile_About_Repo_Impl();
-        $deleteStatus = $repoProfileAbout->delete($id);
+        $educationRepo =  new Profile_Education_Repo_Impl();
+        $deleteStatus = $educationRepo->delete($id);
         return $deleteStatus;
     }
 
-    //passed
     public function findOne($id)
     {
-        $repoProfileAbout =  new Profile_About_Repo_Impl();
-        $oneProfileAbout = $repoProfileAbout->findOne($id);
-        return $oneProfileAbout;
+        $educationRepo =  new Profile_Education_Repo_Impl();
+        $oneEducation = $educationRepo->findOne($id);
+        return $oneEducation;
     }
 
     //passed
