@@ -1,7 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "code"
+			"path": "code/backend"
+		},
+		{
+			"path": "fontend"
 		}
 	],
 	"settings": {}
