@@ -21,7 +21,7 @@ class UTest_ProfileEducationRepo extends TestCase
      * So test skip can be easily achived.
      *
      */
-    public function Main()
+    public function testMain()
     {
         echo "\n >----------- Test Main : ---------> \n";
         // error_log($this->save());
@@ -29,13 +29,13 @@ class UTest_ProfileEducationRepo extends TestCase
         // $this->delete(2);
         // error_log($this->findOne(2));
         // $this->getCurrentLoggedUserID();
-
+        $this->getAllEducation(1000);
 
         // $this->insertingManyEducation();
     } //main test
 
 
-    public function testEducationCRUD()
+    public function EducationCRUD()
     {
         $id = $this->save();
         $education = $this->findOne($id);
@@ -53,6 +53,12 @@ class UTest_ProfileEducationRepo extends TestCase
         error_log("\nEducation CRUD Test Done!\n");
     }
 
+    //passed. of certain ID.
+    public function getAllEducation($userID){
+        $educationRepo =  new Profile_Education_Repo_Impl();
+        $oneEducation = $educationRepo->getAllEducation($userID);
+        error_log($oneEducation);
+    }
 
     //passed
     public function update($id, $text)

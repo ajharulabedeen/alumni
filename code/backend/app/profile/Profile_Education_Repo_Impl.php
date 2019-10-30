@@ -47,4 +47,8 @@ class Profile_Education_Repo_Impl implements Profile_Education_Repo_I
         error_log("Education :  FindOne");
         return ProfileEducation::find($id);
     }
+    public function getAllEducation( $userID){
+        return ProfileEducation::where('user_id', $userID)->get();
+    }
+
 }//class
