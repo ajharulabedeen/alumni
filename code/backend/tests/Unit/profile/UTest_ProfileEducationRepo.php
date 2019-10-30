@@ -52,8 +52,7 @@ class UTest_ProfileEducationRepo extends TestCase
 
         error_log("\nEducation CRUD Test Done!\n");
     }
-
-    //passed. of certain ID.
+    //of certain ID.
     public function getAllEducation($userID){
         $educationRepo =  new Profile_Education_Repo_Impl();
         $oneEducation = $educationRepo->getAllEducation($userID);
