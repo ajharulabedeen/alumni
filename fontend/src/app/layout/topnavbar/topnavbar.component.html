@@ -1,0 +1,108 @@
+<header class="main-header">
+
+  <!-- Logo -->
+  <a href="index2.html" class="logo">
+    <!-- mini logo for sidebar mini 50x50 pixels -->
+    <span class="logo-mini"><b>A</b>LT</span>
+    <!-- logo for regular state and mobile devices -->
+    <span class="logo-lg"><b>Alumni</b>LTE GUB</span>
+  </a>
+
+
+
+
+  <!-- Header Navbar: style can be found in header.less -->
+  <nav class="navbar navbar-static-top">
+    <!-- Sidebar toggle button-->
+    <a href="javascript:void(0)" class="sidebar-toggle" data-toggle="push-menu" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
+
+    <!-- Navbar Right Menu -->
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <!-- stat : profile bar; for this section user must to need to logged in. -->
+        <!-- <div *ngIf="login"> -->
+
+        <!-- <li *ngIf="loginTry">
+          <label for="email">Email</label>
+          <input type="text" id="email">
+          <label for="pass">Password</label>
+          <input type="password" id="pass">
+          <button class="btn btn-info" (click)="submit()">Submit</button>
+          <button class="btn btn-danger">Forgot Password</button>
+          <button class="btn btn-warning">Register</button>
+        </li> -->
+        <!-- <li *ngIf="loginButton"> 
+          <button class="btn btn-info" (click)="logginTryToggle()">
+            Loggin
+          </button>
+        </li> -->
+
+        <!-- User Account: style can be found in dropdown.less -->
+        <!-- <li *ngIf="!loginSuccess" class="dropdown user user-menu"> -->
+        <li class="dropdown user user-menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img *ngIf="!loginSuccess" src="assets/dist/img/images.png" class="user-image" alt="User Image">
+            <img *ngIf="loginSuccess" src={{imageUrl}} class="user-image" alt="User Image">
+            
+            <span *ngIf="!loginSuccess" class="hidden-xs">Loggin</span>
+            <span *ngIf="loginSuccess" class="hidden-xs">Name of The User</span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <!-- User image -->
+            <li *ngIf="!loginSuccess" class="user-header ">
+              <img src="assets/dist/img/images.png" class="img-circle" alt="User Image">
+            </li>
+            <li *ngIf="loginSuccess" class="user-header ">
+              <img src={{imageUrl}} class="user-image" alt="User Image">
+            </li>
+
+
+            <!-- start : Menu Body -->
+            <li *ngIf="!loginSuccess" class="user-body">
+              <form>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                  <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+                </div>
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                  <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+                </div>
+              </form>
+            </li>
+            <!-- ---------------- -->
+            <li *ngIf="loginSuccess" class="user-body">
+              <h4>User Data Successfully Logged In.</h4>
+            </li>
+
+
+            <!-- end : Menu Body -->
+            <!-- Menu Footer-->
+            <li *ngIf="!loginSuccess" class="user-footer">
+              <div class="col-xs-4 text-center">
+                <button class="btn btn-info" (click)="submit()">Submit</button>
+              </div>
+              <div class="col-xs-4 text-center">
+                <button class="btn btn-primary">Register</button>
+              </div>
+              <div class="col-xs-4 text-center">
+                <button class="btn btn-danger">Forgot</button>
+              </div>
+            </li>
+            <!-- log out--------------- -->
+            <li *ngIf="loginSuccess" class="user-footer">
+              <div class="col-xs-4 text-center">
+                <button class="btn btn-info" (click)="logOut()">Log Out</button>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <!-- </div> -->
+        <!-- stat : profile bar;for this section user must to need to logged in. -->
+      </ul>
+    </div>
+  </nav>
+</header>

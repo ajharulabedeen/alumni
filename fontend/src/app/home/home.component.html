@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <app-topnavbar></app-topnavbar>
+  <app-asidenavbar></app-asidenavbar>
+  <div class="content-wrapper">
+
+
+    <app-data-table></app-data-table>
+
+    <button mat-raised-button color="accent">Click Me</button>
+
+
+    <section class="content-header">
+      <section class="content">
+        <h1 *ngIf="isAuthenticated">Welcome to Home</h1>
+        <!-- <h1 >Welcome to Home</h1> -->
+      </section>
+    </section>
+
+
+    <!-- ton trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Launch demo modal
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <h3>Modal Body h3</h3>
+            <br>
+            <br>
+            <h4>Modal Body h4</h4>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- <app-footernavbar></app-footernavbar> -->
+      <!-- <app-settingsnavbar></app-settingsnavbar> -->
+    </div>
+    <!-- <app-footernavbar></app-footernavbar> -->
+  </div>
