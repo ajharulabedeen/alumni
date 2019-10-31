@@ -1,0 +1,11 @@
+clone project repository
+run workspace 
+open terminal in visual stdio code
+install composer 
+copy .env.example .env
+create database and set database name and password 
+php artisan key:genarate
+php artisan migrate 
+php artisan serve 
+check browser 
+download nodeJS
