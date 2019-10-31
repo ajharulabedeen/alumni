@@ -9,3 +9,6 @@ php artisan migrate
 php artisan serve 
 check browser 
 download nodeJS
+postman download
+sss
+
