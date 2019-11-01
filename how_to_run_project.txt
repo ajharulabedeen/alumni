@@ -1,14 +1,13 @@
-clone project repository
-run workspace 
-open terminal in visual stdio code
-install composer 
-copy .env.example .env
-create database and set database name and password 
-php artisan key:genarate
-php artisan migrate 
-php artisan serve 
-check browser 
-download nodeJS
-postman download
-sss
+1.clone project repository(create a folder then open gitbash then git clone https://github.com/ajharulabedeen/alumni.git(clone address)) or download 
+2.run workspace 
+3.open terminal in visual stdio code
+4.install composer 
+5.xampp open (start apache and mysql)
+6.copy .env.example .env
+7.modify .env (create database and set database name and password) 
+8.php artisan key:genarate
+9.php artisan migrate 
+10.php artisan serve 
+11.check browser 
+
 
