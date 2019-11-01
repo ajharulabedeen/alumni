@@ -13,6 +13,7 @@ use App\Utils\Utils;
 class UTest_ProfileBasicRepo extends TestCase
 {
 
+    protected $repoProfileAbout =  new Profile_About_Repo_Impl();
     /**
      * Mother test
      * This method will w$ork as mother test method.
