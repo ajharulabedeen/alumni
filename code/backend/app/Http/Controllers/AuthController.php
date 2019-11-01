@@ -38,9 +38,10 @@ class AuthController extends Controller
         return $this->respondWithToken($token);
     }
 
+    // public function signup(SignUpRequest $request)
     public function signup(SignUpRequest $request)
     {
-        error_log("SignUpRequest");
+        error_log("SignUpRequest" . $request->name);
         User::create($request->all());
         return $this->login($request);
     }
