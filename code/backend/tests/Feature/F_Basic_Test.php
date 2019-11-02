@@ -37,22 +37,24 @@ class ExampleTest extends TestCase
                 'dept' => 'CSE',
                 'batch' => '130102096',
                 'student_id' => '130102096',
-                'last_name' => 'Khan',
+                'first_name' => '---',
+                'last_name' => "'Khan'",
                 'birth_date' => '13-01-2096',
                 'gender' => 'Other',
                 'blood_group' => 'A+',
                 'email' => 'dimdim@gmail.com',
                 'phone' => '01717-111000',
                 'research_interest' => 'Big Data',
-                'first_name' => '---',
                 'skills' => 'Laracast',
                 'image_address' => 'URL',
-                'religion' => 'ISLAM',
+                'religion' => 'ISLAM'
             ]
         );
-        // dd($response->exception);
         $d = $response->baseResponse->original;
         error_log($d);
+        error_log("Error : ");
+        dd($response->exception);
+
         // dd($d);
     }
 

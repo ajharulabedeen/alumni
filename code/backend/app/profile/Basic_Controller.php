@@ -30,8 +30,8 @@ class Basic_Controller extends Controller
         $pBasic->dept       = $data->dept;
         $pBasic->batch      = $data->batch;
         $pBasic->student_id = $data->student_id;
-        $pBasic->first_Name = $data->first_Name;
-        $pBasic->last_Name  = $data->last_Name;
+        $pBasic->first_Name = $data->first_name;
+        $pBasic->last_Name  = $data->last_name;
         $pBasic->birth_date = $data->birth_date;
         $pBasic->gender     = $data->gender;
         $pBasic->blood_group = $data->blood_group;
@@ -40,16 +40,8 @@ class Basic_Controller extends Controller
         $pBasic->religion   = $data->religion;
         $pBasic->research_interest = $data->research_interest;
         $pBasic->skills     = $data->skills;
-        error_log("FName pBasic : " . $pBasic->first_Name);
-        error_log("FName data " . $data->first_Name);
-        error_log($pBasic->skills);
-        error_log($pBasic->skills);
-        // return "Basic Creation!";
-        // return $pBasic->dept;
 
-        // return $this->basicRepo->save($pBasic);
-        // return $pBasic->first_Name;
-        return $pBasic->skills;
+        return $this->basicRepo->save($pBasic);
     }
 
     public function edit()
