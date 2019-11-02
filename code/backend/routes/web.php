@@ -40,4 +40,4 @@ Route::group(['middleware' => ['role:editor']], function () {
 // Route::post('/uploadfile',function(){
 //     return "Upload file.";
 // });
-
+Route::post('basic/create', 'Basic_Controller@create');
