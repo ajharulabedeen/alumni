@@ -28,7 +28,7 @@ class Basic_Controller extends Controller
         // $pBasic->user_id = Utils::getUserId();//error
         $pBasic->user_id = $data->user_id;
         $pBasic->dept = $data->dept;
-        // $pBasic->batch = $this->getBatchNumber();
+        $pBasic->batch = $data->batch;
         // $pBasic->student_id = $pBasic->batch . $this->getID();
         // $pBasic->first_Name = $this->getFName();
         // $pBasic->last_Name = $this->getLName();

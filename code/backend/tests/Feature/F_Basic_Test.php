@@ -34,7 +34,8 @@ class ExampleTest extends TestCase
             '/basic/create',
             [
                 'user_id' => '2',
-                'dept' => 'CSE'
+                'dept' => 'CSE',
+                'batch' => '130102096',
             ]
         );
         // dd($response->exception);
