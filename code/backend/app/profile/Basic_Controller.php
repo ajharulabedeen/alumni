@@ -34,4 +34,11 @@ class Basic_Controller extends Controller
     {
         return " Edit Post : ";
     }
+
+    public function delete()
+    {
+        return " Delete Post : ";
+    }
+
+
 }//class
