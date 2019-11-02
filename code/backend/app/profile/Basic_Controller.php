@@ -26,26 +26,30 @@ class Basic_Controller extends Controller
     {
         $pBasic = new ProfileBasic();
         // $pBasic->user_id = Utils::getUserId();//error
-        $pBasic->user_id = $data->user_id;
-        $pBasic->dept = $data->dept;
-        $pBasic->batch = $data->batch;
-        // $pBasic->student_id = $pBasic->batch . $this->getID();
-        // $pBasic->first_Name = $this->getFName();
-        // $pBasic->last_Name = $this->getLName();
-        // $pBasic->birth_date = rand(1, 30) ."-". rand(1, 12) ."-". rand(1990, 2000);
-        // $pBasic->gender = $this->getGender();
-        // $pBasic->blood_group = $this->getBlood();
-        // $pBasic->email = $pBasic->first_Name . "@gub.com";
-        // $pBasic->phone = $this->getPhoneNumber();
-        // $pBasic->religion = $this->getReligion();
-        // $pBasic->research_interest = "IoT";
-        // $pBasic->skills = "PHP";
-
-
+        $pBasic->user_id    = $data->user_id;
+        $pBasic->dept       = $data->dept;
+        $pBasic->batch      = $data->batch;
+        $pBasic->student_id = $data->student_id;
+        $pBasic->first_Name = $data->first_Name;
+        $pBasic->last_Name  = $data->last_Name;
+        $pBasic->birth_date = $data->birth_date;
+        $pBasic->gender     = $data->gender;
+        $pBasic->blood_group = $data->blood_group;
+        $pBasic->email      = $data->email;
+        $pBasic->phone      = $data->phone;
+        $pBasic->religion   = $data->religion;
+        $pBasic->research_interest = $data->research_interest;
+        $pBasic->skills     = $data->skills;
+        error_log("FName pBasic : " . $pBasic->first_Name);
+        error_log("FName data " . $data->first_Name);
+        error_log($pBasic->skills);
+        error_log($pBasic->skills);
         // return "Basic Creation!";
         // return $pBasic->dept;
 
-        return $this->basicRepo->save($pBasic);
+        // return $this->basicRepo->save($pBasic);
+        // return $pBasic->first_Name;
+        return $pBasic->skills;
     }
 
     public function edit()
