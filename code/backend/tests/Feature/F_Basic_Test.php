@@ -51,7 +51,10 @@ class ExampleTest extends TestCase
             ]
         );
         $d = $response->baseResponse->original;
-        error_log($d);
+        //exception not catching error, instead haulting program.
+        try {
+            error_log($d);
+        } catch (Exception $e) { error_log("Exception : "); }
         error_log("Error : ");
         dd($response->exception);
 
