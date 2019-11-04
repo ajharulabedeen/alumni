@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\profile\ProfileBasic;
 use App\profile\ProfileBasic_Repo_I;
 use App\profile\ProfileBasic_Repo_Impl;
@@ -46,15 +47,17 @@ class Basic_Controller extends Controller
 
     public function findOneByUserID(Request $data)
     {
-        return $this->basicRepo->findOneByUser($data->user_id);
+        return response($this->basicRepo->findOneByUser($data->user_id));
     }
 
+    //refactor : from font end have to send all the data else not given data will be saved as.
     public function update(Request $data)
     {
         $basicUpdate = new ProfileBasic();
+        $basicUpdate = $this->basicRepo->findOneByUser($data->user_id);
         // $basicUpdate->user_id = Utils::getUserId();//error//refactor
-        $basicUpdate->id    = $data->id;
-        $basicUpdate->user_id    = $data->user_id;
+        // $basicUpdate->id         = $data->id;
+        // $basicUpdate->user_id    = $data->user_id;
         $basicUpdate->dept       = $data->dept;
         $basicUpdate->batch      = $data->batch;
         $basicUpdate->student_id = $data->student_id;
@@ -62,7 +65,7 @@ class Basic_Controller extends Controller
         $basicUpdate->last_Name  = $data->last_name;
         $basicUpdate->birth_date = $data->birth_date;
         $basicUpdate->gender     = $data->gender;
-        $basicUpdate->blood_group = $data->blood_group;
+        $basicUpdate->blood_group= $data->blood_group;
         $basicUpdate->email      = $data->email;
         $basicUpdate->phone      = $data->phone;
         $basicUpdate->religion   = $data->religion;

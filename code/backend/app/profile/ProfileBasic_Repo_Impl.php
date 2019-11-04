@@ -33,7 +33,7 @@ class ProfileBasic_Repo_Impl implements ProfileBasic_Repo_I
             error_log("Profile Basic Update : failed to read existig profile.");
             return  $updateStatus;
         }
-        return  $updateStatus;
+        return (string) $updateStatus;
     }
     public function delete($id)
     {

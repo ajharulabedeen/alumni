@@ -26,10 +26,13 @@ class ExampleTest extends TestCase
         // -----------------------------------
         // $this->creation();
         $this->findOneByUserID();
+        $this->update();
     }
 
     public function findOneByUserID()
     {
+        // $response = new ProfileBasic();
+
         $response = $this->json(
             'POST',
             '/basic/findOneById',
@@ -40,49 +43,55 @@ class ExampleTest extends TestCase
         $d = $response->baseResponse->original;
         error_log("Error : ");
         error_log( "id :" .  $response->original['id']);
-        error_log( "user_id : " . $response->original['user_id']);
+        // error_log( "user_id : " . $response->original['user_id']);
+        error_log( "dept : " . $response->original['dept']);
         // dd($response->exception);
         $this->assertEquals('2', $response->original['user_id']);
+        // dd($response->baseResponse);
         // dd($d);
     }
 
-
-
-    //not active
+    //passed
     public function update()
     {
+        $dept = "EM";
         $response = $this->json(
             'POST',
-            '/basic/create',
+            '/basic/update',
             [
                 'user_id' => '2',
-                'dept' => 'CSE',
+                'dept' => $dept,
                 'batch' => '130102096',
                 'student_id' => '130102096',
-                'first_name' => '---',
+                'first_name' => 'Real Name',
                 'last_name' => "'Khan'",
                 'birth_date' => '13-01-2096',
-                'gender' => 'Other',
-                'blood_group' => 'A+',
-                'email' => 'dimdim@gmail.com',
-                'phone' => '01717-111000',
-                'research_interest' => 'Big Data',
-                'skills' => 'Laracast',
-                'image_address' => 'URL',
-                'religion' => 'ISLAM'
+                // 'gender' => 'Other',
+                // 'blood_group' => 'A+',
+                // 'email' => 'dimdim@gmail.com',
+                // 'phone' => '01717-111000',
+                'research_interest' => 'Electro Medicene',
+                // 'skills' => 'Laracast',
+                // 'image_address' => 'URL',
+                'religion' => 'Other'
             ]
         );
         $d = $response->baseResponse->original;
-        //exception not catching error, instead haulting program.
-        try {
-            error_log($d);
-        } catch (Exception $e) {
-            error_log("Exception : ");
-        }
-        error_log("Error : ");
-        dd($response->exception);
-
+        error_log("Response : " . $d);
+        // dd($d->exception);
+        $this->assertEquals('1', $d);
         // dd($d);
+        // --------confirm Update----------
+        $response = $this->json(
+            'POST',
+            '/basic/findOneById',
+            [
+                'user_id' => '2',
+            ]
+        );
+        $d = $response->baseResponse->original;
+        error_log("After : " . $response->original['dept']);
+        $this->assertEquals($dept, $response->original['dept']);
     }
 
 

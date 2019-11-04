@@ -42,3 +42,4 @@ Route::group(['middleware' => ['role:editor']], function () {
 // });
 Route::post('basic/create', 'Basic_Controller@create');
 Route::post('basic/findOneById', 'Basic_Controller@findOneByUserID');
+Route::post('basic/update', 'Basic_Controller@update');
