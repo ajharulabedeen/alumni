@@ -25,7 +25,7 @@ class Basic_Controller extends Controller
     public function create(Request $data)
     {
         $pBasic = new ProfileBasic();
-        // $pBasic->user_id = Utils::getUserId();//error
+        // $pBasic->user_id = Utils::getUserId();//error//refactor
         $pBasic->user_id    = $data->user_id;
         $pBasic->dept       = $data->dept;
         $pBasic->batch      = $data->batch;
@@ -44,9 +44,32 @@ class Basic_Controller extends Controller
         return $this->basicRepo->save($pBasic);
     }
 
-    public function edit()
+    public function findOneByUserID(Request $data)
     {
-        return " Edit Post : ";
+        return $this->basicRepo->save($data->user_id);
+    }
+
+    public function update(Request $data)
+    {
+        $basicUpdate = new ProfileBasic();
+        // $basicUpdate->user_id = Utils::getUserId();//error//refactor
+        $basicUpdate->id    = $data->id;
+        $basicUpdate->user_id    = $data->user_id;
+        $basicUpdate->dept       = $data->dept;
+        $basicUpdate->batch      = $data->batch;
+        $basicUpdate->student_id = $data->student_id;
+        $basicUpdate->first_Name = $data->first_name;
+        $basicUpdate->last_Name  = $data->last_name;
+        $basicUpdate->birth_date = $data->birth_date;
+        $basicUpdate->gender     = $data->gender;
+        $basicUpdate->blood_group = $data->blood_group;
+        $basicUpdate->email      = $data->email;
+        $basicUpdate->phone      = $data->phone;
+        $basicUpdate->religion   = $data->religion;
+        $basicUpdate->research_interest = $data->research_interest;
+        $basicUpdate->skills     = $data->skills;
+
+        return $this->basicRepo->update($basicUpdate);
     }
 
     public function delete()

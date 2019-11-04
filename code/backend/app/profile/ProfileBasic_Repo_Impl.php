@@ -48,6 +48,12 @@ class ProfileBasic_Repo_Impl implements ProfileBasic_Repo_I
         $data = ProfileBasic::find($id);
         return $data;
     }
+    public function findOneByUser($userId)
+    {
+        error_log("Profile Basic : FindOneByUser");
+        $data = ProfileBasic::where('user_id', $userId)->first();
+        return $data;
+    }
 
     private function setPostValues($basicOrgin, $basicUpdate)
     {

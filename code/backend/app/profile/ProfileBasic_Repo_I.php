@@ -6,4 +6,5 @@ interface ProfileBasic_Repo_I{
     public function update(ProfileBasic $profileBasicUpdate);
     public function delete($id);
     public function findOne( $id);
+    public function findOneByUser( $userId);
 }

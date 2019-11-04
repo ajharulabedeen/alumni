@@ -33,9 +33,10 @@ class UTest_ProfileBasicRepo extends TestCase
         // $this->update();
         // $this->objectConvertion();
         // $this->basicCRUD();
+        $this->FindBasicByUserId(2);
 
 
-        $this->insertingManyProfile();
+        // $this->insertingManyProfile();
         // $this->getPhoneNumber();
         // $this->getDept();
     } //main test
@@ -57,23 +58,11 @@ class UTest_ProfileBasicRepo extends TestCase
 
         error_log("\nAbout CRUD Test Done!\n");
     }
+
+
     //passed.
     public function save()
     {
-
-        // dept,
-        // batch,
-        // student_id,
-        // first_name,
-        // last_name,
-        // birth_date,
-        // gender,
-        // blood_group,
-        // email,
-        // phone,
-        // research_interest,
-        // skills
-
         // $repoProfileBasic = $this->getRepo();
         $repoProfileBasic =  new ProfileBasic_Repo_Impl();
         $pBasic = new ProfileBasic();
@@ -103,6 +92,15 @@ class UTest_ProfileBasicRepo extends TestCase
         // error_log($oneProfileBasic);
         return $oneProfileBasic;
     }
+    public function FindBasicByUserId($uID)
+    {
+        $repoProfileBasic =  new ProfileBasic_Repo_Impl();
+        $oneProfileBasic = $repoProfileBasic->findOneByUser($uID);
+        // error_log($oneProfileBasic->id);
+        dd($oneProfileBasic);
+        return $oneProfileBasic;
+    }
+
     public function update($id, $text)
     {
         $repoProfileBasic =  new ProfileBasic_Repo_Impl();
@@ -137,7 +135,7 @@ class UTest_ProfileBasicRepo extends TestCase
             $pBasic->student_id = $pBasic->batch . $this->getID();
             $pBasic->first_Name = $this->getFName();
             $pBasic->last_Name = $this->getLName();
-            $pBasic->birth_date = rand(1, 30) ."-". rand(1, 12) ."-". rand(1990, 2000);
+            $pBasic->birth_date = rand(1, 30) . "-" . rand(1, 12) . "-" . rand(1990, 2000);
             $pBasic->gender = $this->getGender();
             $pBasic->blood_group = $this->getBlood();
             $pBasic->email = $pBasic->first_Name . "@gub.com";

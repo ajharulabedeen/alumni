@@ -26,6 +26,49 @@ class ExampleTest extends TestCase
         $this->creation();
     }
 
+    public function findOne(){
+
+    }
+
+
+
+    //not active
+    public function update()
+    {
+        $response = $this->json(
+            'POST',
+            '/basic/create',
+            [
+                'user_id' => '2',
+                'dept' => 'CSE',
+                'batch' => '130102096',
+                'student_id' => '130102096',
+                'first_name' => '---',
+                'last_name' => "'Khan'",
+                'birth_date' => '13-01-2096',
+                'gender' => 'Other',
+                'blood_group' => 'A+',
+                'email' => 'dimdim@gmail.com',
+                'phone' => '01717-111000',
+                'research_interest' => 'Big Data',
+                'skills' => 'Laracast',
+                'image_address' => 'URL',
+                'religion' => 'ISLAM'
+            ]
+        );
+        $d = $response->baseResponse->original;
+        //exception not catching error, instead haulting program.
+        try {
+            error_log($d);
+        } catch (Exception $e) {
+            error_log("Exception : ");
+        }
+        error_log("Error : ");
+        dd($response->exception);
+
+        // dd($d);
+    }
+
 
     public function creation()
     {
@@ -54,13 +97,17 @@ class ExampleTest extends TestCase
         //exception not catching error, instead haulting program.
         try {
             error_log($d);
-        } catch (Exception $e) { error_log("Exception : "); }
+        } catch (Exception $e) {
+            error_log("Exception : ");
+        }
         error_log("Error : ");
         dd($response->exception);
 
         // dd($d);
     }
 
+
+    // thses method kept to use when feature test with auth will be done.
     public function Loggin()
     {
         $response = $this->json(
@@ -82,7 +129,6 @@ class ExampleTest extends TestCase
         // $t = json_decode($d);
         // prettyPrint( $t[0] );
     }
-
 
     public function SignUp()
     {
