@@ -23,11 +23,27 @@ class ExampleTest extends TestCase
         //both will not work together.
         // $this->Loggin();
         // $this->SignUp();
-        $this->creation();
+        // -----------------------------------
+        // $this->creation();
+        $this->findOneByUserID();
     }
 
-    public function findOne(){
-
+    public function findOneByUserID()
+    {
+        $response = $this->json(
+            'POST',
+            '/basic/findOneById',
+            [
+                'user_id' => '2',
+            ]
+        );
+        $d = $response->baseResponse->original;
+        error_log("Error : ");
+        error_log( "id :" .  $response->original['id']);
+        error_log( "user_id : " . $response->original['user_id']);
+        // dd($response->exception);
+        $this->assertEquals('2', $response->original['user_id']);
+        // dd($d);
     }
 
 

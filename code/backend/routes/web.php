@@ -41,3 +41,4 @@ Route::group(['middleware' => ['role:editor']], function () {
 //     return "Upload file.";
 // });
 Route::post('basic/create', 'Basic_Controller@create');
+Route::post('basic/findOneById', 'Basic_Controller@findOneByUserID');

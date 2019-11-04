@@ -46,7 +46,7 @@ class Basic_Controller extends Controller
 
     public function findOneByUserID(Request $data)
     {
-        return $this->basicRepo->save($data->user_id);
+        return $this->basicRepo->findOneByUser($data->user_id);
     }
 
     public function update(Request $data)
