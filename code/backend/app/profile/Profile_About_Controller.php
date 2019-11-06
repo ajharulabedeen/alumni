@@ -1,5 +1,5 @@
 <?php
-class Basic_Controller extends Controller
+class Profile_about_Controller extends Controller
 {
 protected $aboutRepo;
 
