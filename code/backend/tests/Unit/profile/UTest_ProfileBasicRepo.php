@@ -4,10 +4,10 @@ namespace Tests\Unit\profile;
 
 use App\profile\ProfileBasic;
 use Tests\TestCase;
-use App\profile\ProfileBasic_Repo_Impl;
+use App\profile\Profile_Basic_Repo_Impl;
 use App\Utils\Utils;
 
-$repoProfileBasic =  new ProfileBasic_Repo_Impl();
+$repoProfileBasic =  new Profile_Basic_Repo_Impl();
 
 $id = null;
 
@@ -64,7 +64,7 @@ class UTest_ProfileBasicRepo extends TestCase
     public function save()
     {
         // $repoProfileBasic = $this->getRepo();
-        $repoProfileBasic =  new ProfileBasic_Repo_Impl();
+        $repoProfileBasic =  new Profile_Basic_Repo_Impl();
         $pBasic = new ProfileBasic();
         $pBasic->user_id = Utils::getUserId();;
         $pBasic->first_Name = "Khan";
@@ -79,7 +79,7 @@ class UTest_ProfileBasicRepo extends TestCase
     public function delete($id)
     {
         // $repoProfileBasic = $this->getRepo();
-        $repoProfileBasic =  new ProfileBasic_Repo_Impl();
+        $repoProfileBasic =  new Profile_Basic_Repo_Impl();
         $status = $repoProfileBasic->delete($id);
         error_log("User ID after Save  : " . $status);
         return $status;
@@ -87,14 +87,14 @@ class UTest_ProfileBasicRepo extends TestCase
     //passed
     public function findOne($id)
     {
-        $repoProfileBasic =  new ProfileBasic_Repo_Impl();
+        $repoProfileBasic =  new Profile_Basic_Repo_Impl();
         $oneProfileBasic = $repoProfileBasic->findOne($id);
         // error_log($oneProfileBasic);
         return $oneProfileBasic;
     }
     public function FindBasicByUserId($uID)
     {
-        $repoProfileBasic =  new ProfileBasic_Repo_Impl();
+        $repoProfileBasic =  new Profile_Basic_Repo_Impl();
         $oneProfileBasic = $repoProfileBasic->findOneByUser($uID);
         // error_log($oneProfileBasic->id);
         dd($oneProfileBasic);
@@ -103,7 +103,7 @@ class UTest_ProfileBasicRepo extends TestCase
 
     public function update($id, $text)
     {
-        $repoProfileBasic =  new ProfileBasic_Repo_Impl();
+        $repoProfileBasic =  new Profile_Basic_Repo_Impl();
         $pBasic = new ProfileBasic();
         $pBasic = $this->findOne($id);
         error_log($pBasic->skills);
@@ -121,12 +121,12 @@ class UTest_ProfileBasicRepo extends TestCase
 
     public function getRepo()
     {
-        new ProfileBasic_Repo_Impl();
+        new Profile_Basic_Repo_Impl();
     }
     // -----------------------------------------------------
     public function insertingManyProfile()
     {
-        $repoProfileBasic =  new ProfileBasic_Repo_Impl();
+        $repoProfileBasic =  new Profile_Basic_Repo_Impl();
         for ($x = 0; $x < 10000; $x++) {
             $pBasic = new ProfileBasic();
             $pBasic->user_id = Utils::getUserId();;

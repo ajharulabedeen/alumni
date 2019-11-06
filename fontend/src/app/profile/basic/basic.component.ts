@@ -9,6 +9,13 @@ export class BasicComponent implements OnInit {
 
   constructor() { }
 
+
+  profileEdit = false;
+
+  public editProfile() {
+    this.profileEdit = !this.profileEdit;
+  }
+
   ngOnInit() {
   }
 

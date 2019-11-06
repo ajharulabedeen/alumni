@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\profile\ProfileBasic;
@@ -9,14 +10,13 @@ use App\profile\Profile_Basic_Repo_I;
 use App\profile\Profile_Basic_Repo_Impl;
 use App\Utils\Utils;
 
-class Basic_Controller extends Controller
+class Profile_Basic_Controller extends Controller
 {
-
     protected $basicRepo;
 
     public function __construct(Profile_Basic_Repo_I $basicRepo)
     {
-        error_log("Constructor : Basic");
+        error_log("Profile_Basic_Controller : ");
         // $this->middleware('auth:api');
         $this->basicRepo = $basicRepo;
     }
@@ -66,7 +66,7 @@ class Basic_Controller extends Controller
         $basicUpdate->last_Name  = $r->last_name;
         $basicUpdate->birth_date = $r->birth_date;
         $basicUpdate->gender     = $r->gender;
-        $basicUpdate->blood_group= $r->blood_group;
+        $basicUpdate->blood_group = $r->blood_group;
         $basicUpdate->email      = $r->email;
         $basicUpdate->phone      = $r->phone;
         $basicUpdate->religion   = $r->religion;
@@ -85,4 +85,4 @@ class Basic_Controller extends Controller
     {
         return " Delete Post : ";
     }
-}//class
+}

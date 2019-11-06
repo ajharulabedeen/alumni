@@ -26,7 +26,7 @@ class ExampleTest extends TestCase
         // -----------------------------------
         // $this->creation();
         $this->findOneByUserID();
-        $this->update();
+        // $this->update();
     }
 
     public function findOneByUserID()
@@ -41,11 +41,12 @@ class ExampleTest extends TestCase
             ]
         );
         $d = $response->baseResponse->original;
+        dd($response->exception);
+
         error_log("Error : ");
         error_log( "id :" .  $response->original['id']);
         // error_log( "user_id : " . $response->original['user_id']);
         error_log( "dept : " . $response->original['dept']);
-        // dd($response->exception);
         $this->assertEquals('2', $response->original['user_id']);
         // dd($response->baseResponse);
         // dd($d);
