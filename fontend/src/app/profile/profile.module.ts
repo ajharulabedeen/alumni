@@ -5,10 +5,11 @@ import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile/profile.component';
 import { LayoutModule } from '../layout/layout.module';
 import { TimelineComponent } from './timeline/timeline.component';
+import { BasicComponent } from './basic/basic.component';
 
 
 @NgModule({
-  declarations: [ProfileComponent, TimelineComponent],
+  declarations: [ProfileComponent, TimelineComponent, BasicComponent],
   imports: [
     CommonModule,
     ProfileRoutingModule,
