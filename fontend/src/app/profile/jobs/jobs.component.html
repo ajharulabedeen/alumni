@@ -1,0 +1,137 @@
+<!-- <p>jobs works!</p> -->
+<!-- Work History History -->
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#work_history">Work History</a>
+      </h4>
+    </div>
+    <div id="work_history" class="panel-collapse collapse">
+      <div class="panel-body">
+        <!-- ton trigger modal -->
+        <button type="button" class="btn btn-md btn-primary" data-toggle="modal" data-target="#modal_work">
+          Add New
+        </button>
+
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                <tbody>
+                  <tr>
+                    <th>Index</th>
+                    <th>Instition Name</th>
+                    <th>Type</th>
+                    <th>Role</th>
+                    <th>Started</th>
+                    <th>Leave</th>
+                    <th>Current Status</th>
+                    <th>Operation</th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>NEOM</td>
+                    <td>Private</td>
+                    <td>CEO</td>
+                    <td>11-7-2014</td>
+                    <td>Working</td>
+                    <td><span class="label label-success">Working</span></td>
+                    <td>
+                      <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#modal_work">Edit</button>
+                      <button class="btn btn-xs btn-warning">Delete</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>NEOM</td>
+                    <td>Private</td>
+                    <td>CEO</td>
+                    <td>11-7-2014</td>
+                    <td>Working</td>
+                    <td><span class="label label-success">Working</span></td>
+                    <td>
+                      <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#modal_work">Edit</button>
+                      <button class="btn btn-xs btn-warning">Delete</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>NEOM</td>
+                    <td>Private</td>
+                    <td>CEO</td>
+                    <td>11-7-2014</td>
+                    <td>Working</td>
+                    <td><span class="label label-success">Working</span></td>
+                    <td>
+                      <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#modal_work">Edit</button>
+                      <button class="btn btn-xs btn-warning">Delete</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="panel-footer">Work History</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <app-footernavbar></app-footernavbar> -->
+  </div>
+  <!-- content-wrapper -->
+  <!-- <app-footernavbar></app-footernavbar> -->
+</div>
+
+
+
+
+<!-- Modal  work-->
+<div class="modal fade" id="modal_work" tabindex="-1" role="dialog" aria-labelledby="modal_workLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal_workLabel">New Work History</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Institute Name</label>
+          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+        </div>
+        <div class="form-group">
+          <label>Type</label>
+          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+        </div>
+        <div class="form-group">
+          <label>Role</label>
+          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+        </div>
+        <div class="form-group">
+          <label>Stated</label>
+          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+        </div>
+        <div class="form-group">
+          <label>Leave</label>
+          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+        </div>
+        <div class="form-group">
+          <label>Current Status</label>
+          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add New</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- <app-footernavbar></app-footernavbar> -->
+  <!-- <app-settingsnavbar></app-settingsnavbar> -->
+</div>
