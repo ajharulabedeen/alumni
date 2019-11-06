@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\profile\ProfileBasic;
@@ -16,7 +15,7 @@ class Profile_Basic_Controller extends Controller
 
     public function __construct(Profile_Basic_Repo_I $basicRepo)
     {
-        error_log("Profile_Basic_Controller : ");
+        error_log("Profile_Basic_Controller : Basic");
         // $this->middleware('auth:api');
         $this->basicRepo = $basicRepo;
     }
@@ -66,7 +65,7 @@ class Profile_Basic_Controller extends Controller
         $basicUpdate->last_Name  = $r->last_name;
         $basicUpdate->birth_date = $r->birth_date;
         $basicUpdate->gender     = $r->gender;
-        $basicUpdate->blood_group = $r->blood_group;
+        $basicUpdate->blood_group= $r->blood_group;
         $basicUpdate->email      = $r->email;
         $basicUpdate->phone      = $r->phone;
         $basicUpdate->religion   = $r->religion;
