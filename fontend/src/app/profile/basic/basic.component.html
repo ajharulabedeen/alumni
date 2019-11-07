@@ -4,8 +4,9 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" href="#basic">Profile Basic Info</a>
-        <button class="btn btn-primary btn-xs"  (click)="editProfile()">Edit</button>
-        <button class="btn btn-primary btn-xs" *ngIf="profileEdit">Save</button>
+        <button class="btn btn-primary btn-xs" *ngIf="!profileEdit" (click)="editProfile()">Edit</button>
+        <button class="btn btn-primary btn-xs" *ngIf="profileEdit" (click)="editProfile()">Save</button>
+        <button class="btn btn-danger btn-xs" *ngIf="profileEdit" (click)="editProfile()">Cancel</button>
       </h4>
     </div>
     <div id="basic" class="panel-collapse collapse">
