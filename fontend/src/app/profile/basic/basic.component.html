@@ -1,0 +1,162 @@
+<!-- profile Basic Info -->
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" href="#basic">Profile Basic Info</a>
+        <button class="btn btn-primary btn-xs" *ngIf="!profileEdit" (click)="editProfile()">Edit</button>
+        <button class="btn btn-primary btn-xs" *ngIf="profileEdit" (click)="save()">Save</button>
+        <button class="btn btn-danger btn-xs" *ngIf="profileEdit" (click)="editProfile()">Cancel</button>
+      </h4>
+    </div>
+    <div id="basic" class="panel-collapse collapse">
+      <div class="panel-body">
+        <div class="box-body">
+
+
+          <!-- start : dept, batch, id, passing year -->
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form-group">
+                <label>Dept</label>
+                <div class="form-group">
+                  <div class="form-group" data-select2-id="27">
+                    <select [disabled]='!profileEdit' class="form-control select2 select2-hidden-accessible"
+                      style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                      <option selected="selected" *ngFor="let d of dept">{{d}}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group">
+                <label>Batch</label>
+                <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Ur Batch">
+              </div>
+            </div>
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group">
+                <label>ID</label>
+                <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Ur Student ID">
+              </div>
+            </div>
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group">
+                <label>Passing Year</label>
+                <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Ur Passing Year">
+              </div>
+            </div>
+          </div>
+          <!-- End : dept, batch, id, passing year -->
+
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>First Name</label>
+                <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Ur First Name">
+              </div>
+            </div>
+            <div class="col-md-6 offset-md-6">
+              <div class="form-group">
+                <label>Last Name</label>
+                <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Ur Last Name">
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Start : Gender, Date of Birth, Blood Group -->
+          <div class="row">
+            <div class="col-md-4">
+              <!-- Date -->
+              <div class="form-group">
+                <label>Date:</label>
+                <div class="input-group date">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar"></i>
+                  </div>
+                  <input [disabled]='!profileEdit' type="date" class="form-control pull-right" id="datepicker">
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 offset-md-4">
+              <label>Gender</label>
+              <div class="form-group">
+                <div class="form-group" data-select2-id="27">
+                  <select [disabled]='!profileEdit' class="form-control select2 select2-hidden-accessible"
+                    style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                    <option selected="selected" data-select2-id="3">Other</option>
+                    <option data-select2-id="28">Male</option>
+                    <option data-select2-id="29">Female</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 offset-md-4">
+              <label>Blood Group</label>
+              <div class="form-group">
+                <div class="form-group" data-select2-id="27">
+                  <select [disabled]='!profileEdit' class="form-control select2 select2-hidden-accessible"
+                    style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                    <option selected="selected" *ngFor="let b of blood">{{b}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end : Gender, Date of Birth, Blood Group -->
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label>Email</label>
+                <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Email Address...">
+              </div>
+            </div>
+            <div class="col-md-6 offset-md-6">
+              <div class="form-group">
+                <label>Phone</label>
+                <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Phone Number...">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Address (Present)</label>
+            <textarea [disabled]='!profileEdit' class="form-control" rows="3" placeholder="Present Adress">
+
+            </textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Address (Permanent)</label>
+            <textarea [disabled]='!profileEdit' class="form-control" rows="3" placeholder=" Permanenr Adress">
+
+            </textarea>
+          </div>
+          <div class="form-group">
+            <label>Research Interest</label>
+            <textarea [disabled]='!profileEdit' class="form-control" rows="3" placeholder="research Interest ...">
+
+            </textarea>
+          </div>
+          <div class="form-group">
+            <label>Skills</label>
+            <textarea [disabled]='!profileEdit' class="form-control" rows="3" placeholder="Skills ...">
+
+            </textarea>
+          </div>
+          <div class="form-group">
+            <label>Social Media Links (FaceBook, LinkedIn)</label>
+            <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Ur Social LInks...">
+          </div>
+
+
+        </div>
+      </div>
+      <div class="panel-footer">End Basic Info.</div>
+    </div>
+  </div>
+</div>

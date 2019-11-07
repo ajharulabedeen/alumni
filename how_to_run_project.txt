@@ -16,3 +16,4 @@ FONTEND:
 The project back has done by Angular 8 and AdminLTE.
 	1. To install angular, first have to install NodeJS. go to NodeJS web site, and download the latest LTS version.
 	2.	then have to install angular open cmd any where type : npm install -g @angular/cli
+sas

@@ -2,9 +2,9 @@
 
 namespace App\profile;
 
-use App\profile\ProfileBasic_Repo_I;
+use App\profile\Profile_Basic_Repo_I;
 
-class ProfileBasic_Repo_Impl implements ProfileBasic_Repo_I
+class Profile_Basic_Repo_Impl implements Profile_Basic_Repo_I
 {
     public function save(ProfileBasic $profileBasic)
     {
@@ -33,19 +33,25 @@ class ProfileBasic_Repo_Impl implements ProfileBasic_Repo_I
             error_log("Profile Basic Update : failed to read existig profile.");
             return  $updateStatus;
         }
-        return  $updateStatus;
+        return (string) $updateStatus;
     }
     public function delete($id)
     {
         error_log("Profile Basic : Delete");
         $status = ProfileBasic::where('id', $id)->delete();
-        return $status;
+        return (string) $status;
     }
     //passed
     public function findOne($id)
     {
         error_log("Profile Basic : FindOne");
         $data = ProfileBasic::find($id);
+        return $data;
+    }
+    public function findOneByUser($userId)
+    {
+        error_log("Profile Basic : FindOneByUser");
+        $data = ProfileBasic::where('user_id', $userId)->first();
         return $data;
     }
 

@@ -19,8 +19,8 @@ class ExampleTest extends TestCase
         // $response->assertStatus(200);
 
         //both will not work together.
-        // $this->Loggin();
-        $this->SignUp();
+        $this->Loggin();
+        // $this->SignUp();
     }
 
 
@@ -30,13 +30,15 @@ class ExampleTest extends TestCase
             'POST',
             '/api/login',
             [
-                'email' => 'louiugicar@uttmail.com',
+                'email' => 'louiugir@uttmail.com',
                 'password' => '123456'
             ]
         );
         // dd($response->exception);
         $d = $response->baseResponse->original;
-        dd($d);
+        error_log($d['access_token']);
+
+        // dd($d);
 
         //working
         // error_log(" data : ");
@@ -59,7 +61,6 @@ class ExampleTest extends TestCase
                 'password_confirmation' => '123456'
             ]
         );
-
         $response = $this->json(
             'POST',
             '/api/signup',
@@ -91,5 +92,4 @@ class ExampleTest extends TestCase
         // $t = json_decode($d);
         // prettyPrint( $t[0] );
     }
-
 }//class
