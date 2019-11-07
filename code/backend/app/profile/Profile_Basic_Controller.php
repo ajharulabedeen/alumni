@@ -16,7 +16,7 @@ class Profile_Basic_Controller extends Controller
 
     public function __construct(Profile_Basic_Repo_I $basicRepo)
     {
-        error_log("Constructor : Basic");
+        error_log("Constructor : Profile_Basic_Controller");
         // $this->middleware('auth:api');
         $this->basicRepo = $basicRepo;
     }
