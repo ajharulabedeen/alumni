@@ -1,19 +1,19 @@
 export class Basic {
-  public user_id: string,
-  public dept: string,
-  public batch: string,
-  public student_id: string,
-  public first_name: string,
-  public last_name: string,
-  public birth_date: string,
-  public gender: string,
-  public blood_group: string,
-  public email: string,
-  public phone: string,
-  public research_interest: string,
-  public skills: string,
-  public image_address: string,
-  public religion: string
+  public user_id: string;
+  public dept: string;
+  public batch: string;
+  public student_id: string;
+  public first_name: string;
+  public last_name: string;
+  public birth_date: string;
+  public gender: string;
+  public blood_group: string;
+  public email: string;
+  public phone: string;
+  public research_interest: string;
+  public skills: string;
+  public image_address: string;
+  public religion: string;
 
   constructor(
      user_id: string,

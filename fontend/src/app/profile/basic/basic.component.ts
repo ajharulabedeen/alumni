@@ -8,15 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class BasicComponent implements OnInit {
 
   constructor() { }
-
-
-  profileEdit = false;
-
-  public editProfile() {
-    this.profileEdit = !this.profileEdit;
-  }
-
   ngOnInit() {
   }
 
+  dept: string[] = ["CSE", "EEE", "TEX", "FTDM","BBS","BBA","LAW"];
+
+profileEdit = false;
+
+public editProfile() {
+  this.profileEdit = !this.profileEdit;
 }
+
+
+
+
+}//class

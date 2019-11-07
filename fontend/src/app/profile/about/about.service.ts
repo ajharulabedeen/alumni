@@ -19,23 +19,23 @@ export class AboutService {
   constructor(private http: HttpClient) { }
 
   createAndStorePost(title: string, content: string) {
-    const postData : About = { title: title, content: content };
-    this.http
-      .post<{ name: string }>(
-        'https://ng-complete-guide-c56d3.firebaseio.com/posts.json',
-        postData,
-        {
-          observe: 'response'
-        }
-      )
-      .subscribe(
-        responseData => {
-          console.log(responseData);
-        },
-        error => {
-          this.error.next(error.message);
-        }
-      );
+    // const postData : About = { title: title, content: content };
+    // this.http
+    //   .post<{ name: string }>(
+    //     'https://ng-complete-guide-c56d3.firebaseio.com/posts.json',
+    //     postData,
+    //     {
+    //       observe: 'response'
+    //     }
+    //   )
+    //   .subscribe(
+    //     responseData => {
+    //       console.log(responseData);
+    //     },
+    //     error => {
+    //       this.error.next(error.message);
+    //     }
+    //   );
   }
 
 
