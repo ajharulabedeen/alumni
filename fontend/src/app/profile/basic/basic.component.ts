@@ -25,7 +25,8 @@ export class BasicComponent implements OnInit {
   }
 
   public save() {
-
+    this.basic.save();
+    this.editProfile()
   }
 
 

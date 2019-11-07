@@ -11,6 +11,10 @@ export class BasicService {
 
   }
 
+  public save(){
+    console.log("Prfile Basic Save : ");
+  }
+
   public getDept() {
     var dept: string[] = ["CSE", "EEE", "TEX", "FTDM", "BBS", "BBA", "LAW"];
     return dept;
