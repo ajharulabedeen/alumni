@@ -41,7 +41,7 @@ class ExampleTest extends TestCase
             ]
         );
         $d = $response->baseResponse->original;
-        dd($response->exception);
+        // dd($response->exception);
 
         error_log("Error : ");
         error_log( "id :" .  $response->original['id']);

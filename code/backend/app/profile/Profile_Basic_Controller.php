@@ -11,11 +11,12 @@ use App\Utils\Utils;
 
 class Profile_Basic_Controller extends Controller
 {
+
     protected $basicRepo;
 
     public function __construct(Profile_Basic_Repo_I $basicRepo)
     {
-        error_log("Profile_Basic_Controller : Basic");
+        error_log("Constructor : Basic");
         // $this->middleware('auth:api');
         $this->basicRepo = $basicRepo;
     }
@@ -84,4 +85,4 @@ class Profile_Basic_Controller extends Controller
     {
         return " Delete Post : ";
     }
-}
+}//class
