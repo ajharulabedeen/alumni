@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BasicService } from './basic.service';
 
 @Component({
   selector: 'app-basic',
@@ -7,18 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasicComponent implements OnInit {
 
-  constructor() { }
+  dept: string[];
+  blood: string[]
+  constructor(private basic: BasicService) { }
+
   ngOnInit() {
+    this.dept = this.basic.getDept();
+    this.blood = this.basic.getBloodGroup();
   }
 
-  dept: string[] = ["CSE", "EEE", "TEX", "FTDM","BBS","BBA","LAW"];
 
-profileEdit = false;
+  profileEdit = false;
 
-public editProfile() {
-  this.profileEdit = !this.profileEdit;
-}
+  public editProfile() {
+    this.profileEdit = !this.profileEdit;
+  }
 
+  public save() {
+
+  }
 
 
 
