@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\profile\Profile_About_Repo_I;
+use App\profile\Profile_About_Repo_Impl;
 use App\profile\Profile_Basic_Repo_I;
 use App\profile\Profile_Basic_Repo_Impl;
 use Illuminate\Support\ServiceProvider;
@@ -17,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(Profile_Basic_Repo_I::class, Profile_Basic_Repo_Impl::class);
+        $this->app->bind(Profile_About_Repo_I::class, Profile_About_Repo_Impl::class);
     }
 
     /**
