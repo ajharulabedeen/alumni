@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BasicService } from './basic.service';
+import { Basic } from './basic.model';
 
 @Component({
   selector: 'app-basic',
@@ -49,6 +50,29 @@ export class BasicComponent implements OnInit {
     this.basic.save();
     this.editProfile();
     // console.log(this.deptName);
+    var basic = new Basic(
+      this.id,
+      this.user_id,
+      this.dept,
+      this.batch,
+      this.student_id,
+      this.passing_year,
+      this.first_name,
+      this.last_name,
+      this.birth_date,
+      this.gender,
+      this.blood_group,
+      this.email,
+      this.phone,
+      this.address_present,
+      this.address_permanent,
+      this.research_interest,
+      this.skills,
+      this.image_address,
+      this.religion,
+      this.social_media_link);
+
+      console.log(basic);
   }
 
 }//class
