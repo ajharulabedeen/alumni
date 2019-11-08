@@ -8,17 +8,38 @@ import { BasicService } from './basic.service';
 })
 export class BasicComponent implements OnInit {
 
-  dept: string[];
-  blood: string[]
+  // dept: string[];
+  blood: string[];
+  profileEdit = false;
+
+  id: string;
+  user_id: string;
+  dept: string;
+  batch: string;
+  student_id: string;
+  passing_year: string;
+  first_name: string;
+  last_name: string;
+  birth_date: string;
+  gender: string;
+  blood_group: string;
+  email: string;
+  phone: string;
+  address_present: string;
+  address_permanent: string;
+  research_interest: string;
+  skills: string;
+  image_address: string;
+  religion: string;
+  social_media_link: string;
+
   constructor(private basic: BasicService) { }
 
   ngOnInit() {
-    this.dept = this.basic.getDept();
+    //not needed for now.
+    // this.dept = this.basic.getDept();
     this.blood = this.basic.getBloodGroup();
   }
-
-
-  profileEdit = false;
 
   public editProfile() {
     this.profileEdit = !this.profileEdit;
@@ -26,9 +47,8 @@ export class BasicComponent implements OnInit {
 
   public save() {
     this.basic.save();
-    this.editProfile()
+    this.editProfile();
+    // console.log(this.deptName);
   }
-
-
 
 }//class

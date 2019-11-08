@@ -21,10 +21,14 @@
                 <label>Dept</label>
                 <div class="form-group">
                   <div class="form-group" data-select2-id="27">
-                    <select [disabled]='!profileEdit' class="form-control select2 select2-hidden-accessible"
+                    <input [(ngModel)]="dept" [disabled]='!profileEdit' type="text" class="form-control"
+                      placeholder="Enter Ur Department">
+                    <!-- not for now later can be added. -->
+                    <!-- <select [disabled]='!profileEdit' class="form-control select2 select2-hidden-accessible"
                       style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
                       <option selected="selected" *ngFor="let d of dept">{{d}}</option>
-                    </select>
+                    </select> -->
+
                   </div>
                 </div>
               </div>
@@ -32,19 +36,22 @@
             <div class="col-md-3 offset-md-3">
               <div class="form-group">
                 <label>Batch</label>
-                <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Ur Batch">
+                <input [(ngModel)]="batch" [disabled]='!profileEdit' type="text" class="form-control"
+                  placeholder="Enter Ur Batch">
               </div>
             </div>
             <div class="col-md-3 offset-md-3">
               <div class="form-group">
                 <label>ID</label>
-                <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Ur Student ID">
+                <input [(ngModel)]="student_id" [disabled]='!profileEdit' type="text" class="form-control"
+                  placeholder="Enter Ur Student ID">
               </div>
             </div>
             <div class="col-md-3 offset-md-3">
               <div class="form-group">
                 <label>Passing Year</label>
-                <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Ur Passing Year">
+                <input [(ngModel)]="passing_year" [disabled]='!profileEdit' type="text" class="form-control"
+                  placeholder="Enter Ur Passing Year">
               </div>
             </div>
           </div>
@@ -55,13 +62,15 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>First Name</label>
-                <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Ur First Name">
+                <input [(ngModel)]="first_name" [disabled]='!profileEdit' type="text" class="form-control"
+                  placeholder="Enter Ur First Name">
               </div>
             </div>
             <div class="col-md-6 offset-md-6">
               <div class="form-group">
                 <label>Last Name</label>
-                <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Ur Last Name">
+                <input [(ngModel)]="last_name" [disabled]='!profileEdit' type="text" class="form-control"
+                  placeholder="Enter Ur Last Name">
               </div>
             </div>
           </div>
@@ -77,7 +86,8 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input [disabled]='!profileEdit' type="date" class="form-control pull-right" id="datepicker">
+                  <input [(ngModel)]="birth_date" [disabled]='!profileEdit' type="date" class="form-control pull-right"
+                    id="datepicker">
                 </div>
               </div>
             </div>
@@ -85,12 +95,14 @@
               <label>Gender</label>
               <div class="form-group">
                 <div class="form-group" data-select2-id="27">
-                  <select [disabled]='!profileEdit' class="form-control select2 select2-hidden-accessible"
+                  <input [(ngModel)]="gender" [disabled]='!profileEdit' type="text" class="form-control pull-right">
+                  <!-- not now due to complexity to set data after read. -->
+                  <!-- <select [disabled]='!profileEdit' class="form-control select2 select2-hidden-accessible"
                     style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
                     <option selected="selected" data-select2-id="3">Other</option>
                     <option data-select2-id="28">Male</option>
                     <option data-select2-id="29">Female</option>
-                  </select>
+                  </select> -->
                 </div>
               </div>
             </div>
@@ -98,10 +110,12 @@
               <label>Blood Group</label>
               <div class="form-group">
                 <div class="form-group" data-select2-id="27">
-                  <select [disabled]='!profileEdit' class="form-control select2 select2-hidden-accessible"
+                  <input [(ngModel)]="blood_group" [disabled]='!profileEdit' type="text"
+                    class="form-control pull-right">
+                  <!-- <select [disabled]='!profileEdit' class="form-control select2 select2-hidden-accessible"
                     style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
                     <option selected="selected" *ngFor="let b of blood">{{b}}</option>
-                  </select>
+                  </select> -->
                 </div>
               </div>
             </div>
@@ -112,7 +126,8 @@
             <div class="col-md-6">
               <div class="form-group">
                 <label>Email</label>
-                <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Email Address...">
+                <input [(ngModel)]="email" [disabled]='!profileEdit' type="email" class="form-control"
+                  placeholder="Enter Email Address...">
               </div>
             </div>
             <div class="col-md-6 offset-md-6">
@@ -125,32 +140,39 @@
 
           <div class="form-group">
             <label>Address (Present)</label>
-            <textarea [disabled]='!profileEdit' class="form-control" rows="3" placeholder="Present Adress">
+            <textarea [(ngModel)]="address_present" [disabled]='!profileEdit' class="form-control" rows="3"
+              placeholder=" (max: 512 ) Present Adress">
 
             </textarea>
           </div>
 
           <div class="form-group">
             <label>Address (Permanent)</label>
-            <textarea [disabled]='!profileEdit' class="form-control" rows="3" placeholder=" Permanenr Adress">
+            <textarea [(ngModel)]="address_permanent" [disabled]='!profileEdit' class="form-control" rows="3"
+              placeholder=" (max: 512 ) Permanenr Adress">
 
             </textarea>
           </div>
           <div class="form-group">
             <label>Research Interest</label>
-            <textarea [disabled]='!profileEdit' class="form-control" rows="3" placeholder="research Interest ...">
+            <textarea [(ngModel)]="research_interest" [disabled]='!profileEdit' class="form-control" rows="3"
+              placeholder="(max: 512 )Research Interest ...">
 
             </textarea>
           </div>
           <div class="form-group">
             <label>Skills</label>
-            <textarea [disabled]='!profileEdit' class="form-control" rows="3" placeholder="Skills ...">
+            <textarea [(ngModel)]="skills" [disabled]='!profileEdit' class="form-control" rows="3"
+              placeholder="(max: 512 ) Skills ...">
 
             </textarea>
           </div>
           <div class="form-group">
             <label>Social Media Links (FaceBook, LinkedIn)</label>
-            <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Ur Social LInks...">
+            <textarea [(ngModel)]="skills" [disabled]='!profileEdit' class="form-control" rows="3"
+              placeholder="(max: 512 )Social Media Links (FaceBook, LinkedIn)">
+
+              </textarea>
           </div>
 
 

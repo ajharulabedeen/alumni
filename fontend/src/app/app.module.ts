@@ -6,7 +6,7 @@ import { LoginModule } from './login/login.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { HomeComponent } from './home/home.component';
 import { LayoutModule } from './layout/layout.module';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule, NgModel} from '@angular/forms';
 import { PublicModule } from './public/public.module';
 import { AuthComponent } from './auth/auth.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -49,6 +49,7 @@ import { FileUploaderTestComponent } from './file-uploader-test/file-uploader-te
     MatProgressSpinnerModule,
     MatButtonModule,
     MatInputModule
+    // NgModel
   ],
   providers: [],
   bootstrap: [AppComponent]

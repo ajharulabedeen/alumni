@@ -9,6 +9,7 @@ import { BasicComponent } from './basic/basic.component';
 import { AboutComponent } from './about/about.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { EducationComponent } from './education/education.component';
+import { NgModel, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { EducationComponent } from './education/education.component';
   imports: [
     CommonModule,
     ProfileRoutingModule,
-    LayoutModule
+    LayoutModule,
+    FormsModule
   ]
 })
 export class ProfileModule {}
