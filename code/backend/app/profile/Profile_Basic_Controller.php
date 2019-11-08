@@ -48,7 +48,14 @@ class Profile_Basic_Controller extends Controller
 
     public function findOneByUserID(Request $r)
     {
+        error_log($r->user_id);
+        // $r->user_id='2';
+        error_log($r->user_id);
+
+        $data = $this->basicRepo->findOneByUser($r->user_id);
+        error_log($data->id);
         return response($this->basicRepo->findOneByUser($r->user_id));
+        // return "FIND_ONE";
     }
 
     //refactor : from font end have to send all the data else not given data will be saved as.
