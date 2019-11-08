@@ -78,7 +78,7 @@
 
           <!-- Start : Gender, Date of Birth, Blood Group -->
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
               <!-- Date -->
               <div class="form-group">
                 <label>Date:</label>
@@ -91,35 +91,48 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4 offset-md-4">
+            <div class="col-md-3 offset-md-3">
               <label>Gender</label>
-              <div class="form-group">
-                <input [(ngModel)]="gender" [disabled]='!profileEdit' type="text" class="form-control pull-right">
+              <input [(ngModel)]="gender" [disabled]='!profileEdit' type="text" class="form-control pull-right">
+              <!-- not now due to complexity to set data after read. -->
+              <!-- <div class="form-group">
                 <div class="form-group" data-select2-id="27">
-                  <!-- not now due to complexity to set data after read. -->
-                  <!-- <select [disabled]='!profileEdit' class="form-control select2 select2-hidden-accessible"
+                  <select [disabled]='!profileEdit' class="form-control select2 select2-hidden-accessible"
                     style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
                     <option selected="selected" data-select2-id="3">Other</option>
                     <option data-select2-id="28">Male</option>
                     <option data-select2-id="29">Female</option>
-                  </select> -->
+                  </select>
                 </div>
-              </div>
+              </div> -->
             </div>
-            <div class="col-md-4 offset-md-4">
+            <div class="col-md-3 offset-md-3">
               <label>Blood Group</label>
-              <div class="form-group">
+              <input [(ngModel)]="blood_group" [disabled]='!profileEdit' type="text" class="form-control pull-right">
+              <!-- <div class="form-group">
                 <div class="form-group" data-select2-id="27">
-                  <input [(ngModel)]="blood_group" [disabled]='!profileEdit' type="text"
-                    class="form-control pull-right">
-                  <!-- <select [disabled]='!profileEdit' class="form-control select2 select2-hidden-accessible"
+                  <select [disabled]='!profileEdit' class="form-control select2 select2-hidden-accessible"
                     style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
                     <option selected="selected" *ngFor="let b of blood">{{b}}</option>
-                  </select> -->
+                  </select>
                 </div>
-              </div>
+              </div> -->
+            </div>
+
+            <div class="col-md-3 offset-md-3">
+              <label>Religeon</label>
+              <input [(ngModel)]="religion" [disabled]='!profileEdit' type="text" class="form-control pull-right">
+              <!-- <div class="form-group">
+                  <div class="form-group" data-select2-id="27">
+                    <select [disabled]='!profileEdit' class="form-control select2 select2-hidden-accessible"
+                      style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                      <option selected="selected" *ngFor="let b of blood">{{b}}</option>
+                    </select>
+                  </div>
+                </div> -->
             </div>
           </div>
+
           <!-- end : Gender, Date of Birth, Blood Group -->
 
           <div class="row">
@@ -133,7 +146,7 @@
             <div class="col-md-6 offset-md-6">
               <div class="form-group">
                 <label>Phone</label>
-                <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Phone Number...">
+                <input [(ngModel)]="phone" [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Phone Number...">
               </div>
             </div>
           </div>
