@@ -32,6 +32,7 @@ class Profile_Basic_Controller extends Controller
         $pBasic->dept       = $r->dept;
         $pBasic->batch      = $r->batch;
         $pBasic->student_id = $r->student_id;
+        $pBasic->passing_year = $r->passing_year;
         $pBasic->first_Name = $r->first_name;
         $pBasic->last_Name  = $r->last_name;
         $pBasic->gender     = $r->gender;
@@ -39,9 +40,12 @@ class Profile_Basic_Controller extends Controller
         $pBasic->blood_group = $r->blood_group;
         $pBasic->email      = $r->email;
         $pBasic->phone      = $r->phone;
+        $pBasic->address_present      = $r->address_present;
+        $pBasic->address_permanent      = $r->address_permanent;
         $pBasic->religion   = $r->religion;
         $pBasic->research_interest = $r->research_interest;
         $pBasic->skills     = $r->skills;
+        $pBasic->social_media_link     = $r->social_media_link;
 
         return $this->basicRepo->save($pBasic);
     }
