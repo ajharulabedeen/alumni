@@ -50,6 +50,11 @@ export class BasicComponent implements OnInit {
     this.basic.save();
     this.editProfile();
     // console.log(this.deptName);
+    // this.getBasic();
+    this.basic.create(this.getBasic());
+  }
+
+  public getBasic() {
     var basic = new Basic(
       this.id,
       this.user_id,
@@ -72,7 +77,7 @@ export class BasicComponent implements OnInit {
       this.religion,
       this.social_media_link);
 
-      console.log(basic);
+    console.log(basic);
+    return basic;
   }
-
 }//class

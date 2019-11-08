@@ -45,26 +45,31 @@ export class Basic {
     social_media_link: string,
 
   ) {
-   this.id=id;
-   this.user_id=user_id;
-   this.dept=dept;
-   this.batch=batch;
-   this.student_id=student_id;
-   this.passing_year =passing_year;
-   this.first_name=first_name;
-   this.last_name=last_name;
-   this.birth_date=birth_date;
-   this.gender=gender;
-   this.blood_group=blood_group;
-   this.email=email;
-   this.phone=phone;
-   this.address_present=address_present;
-   this.address_permanent=address_permanent;
-   this.research_interest=research_interest;
-   this.skills=skills;
-   this.image_address=image_address;
-   this.religion=religion;
-   this.social_media_link=social_media_link;
+    this.id = id;
+    this.user_id = user_id;
+    this.dept = dept;
+    this.batch = batch;
+    this.student_id = student_id;
+    this.passing_year = passing_year;
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.birth_date = birth_date;
+    this.gender = gender;
+    this.blood_group = blood_group;
+    this.email = email;
+    this.phone = phone;
+    this.address_present = address_present;
+    this.address_permanent = address_permanent;
+    this.research_interest = research_interest;
+    this.skills = skills;
+    this.image_address = image_address;
+    this.religion = religion;
+    this.social_media_link = social_media_link;
+  }
+
+  public getName() {
+    return this.last_name;
+
   }
 
 }//class

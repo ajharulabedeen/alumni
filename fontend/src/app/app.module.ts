@@ -48,7 +48,7 @@ import { FileUploaderTestComponent } from './file-uploader-test/file-uploader-te
     MatSortModule,
     MatProgressSpinnerModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
     // NgModel
   ],
   providers: [],

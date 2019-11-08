@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { EducationComponent } from './education/education.component';
 import { NgModel, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NgModel, FormsModule } from '@angular/forms';
     CommonModule,
     ProfileRoutingModule,
     LayoutModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ]
 })
 export class ProfileModule {}
