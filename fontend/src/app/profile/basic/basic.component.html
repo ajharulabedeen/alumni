@@ -5,7 +5,9 @@
       <h4 class="panel-title">
         <a data-toggle="collapse" href="#basic">Profile Basic Info</a>
         <button class="btn btn-primary btn-xs" *ngIf="!profileEdit" (click)="editProfile()">Edit</button>
-        <button class="btn btn-primary btn-xs" *ngIf="profileEdit" (click)="save()">Save</button>
+        <button class="btn btn-primary btn-xs" *ngIf="profileEdit" (click)="save()">
+          {{ basicExist ? 'Update' : 'Save' }}
+        </button>
         <button class="btn btn-danger btn-xs" *ngIf="profileEdit" (click)="editProfile()">Cancel</button>
       </h4>
     </div>

@@ -34,12 +34,15 @@ export class BasicComponent implements OnInit {
   religion: string;
   social_media_link: string;
 
+  basicExist : boolean;
+
   constructor(private basic: BasicService) { }
 
   ngOnInit() {
     //not needed for now.
     // this.dept = this.basic.getDept();
     this.blood = this.basic.getBloodGroup();
+    this.basicExist = true;
   }
 
   public editProfile() {
