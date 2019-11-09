@@ -40,12 +40,12 @@ class Profile_Basic_Controller extends Controller
         $pBasic->blood_group = $r->blood_group;
         $pBasic->email      = $r->email;
         $pBasic->phone      = $r->phone;
-        $pBasic->address_present      = $r->address_present;
-        $pBasic->address_permanent      = $r->address_permanent;
-        $pBasic->religion   = $r->religion;
-        $pBasic->research_interest = $r->research_interest;
-        $pBasic->skills     = $r->skills;
-        $pBasic->social_media_link     = $r->social_media_link;
+        $pBasic->address_present    = $r->address_present;
+        $pBasic->address_permanent  = $r->address_permanent;
+        $pBasic->religion           = $r->religion;
+        $pBasic->research_interest  = $r->research_interest;
+        $pBasic->skills             = $r->skills;
+        $pBasic->social_media_link  = $r->social_media_link;
 
         return $this->basicRepo->save($pBasic);
     }

@@ -53,14 +53,14 @@ class AuthController extends Controller
      */
     public function me()
     {
-        $user= User::find(2);
+        // $user= User::find(2);
         // dd($user);
-        $role = Role::findById(2);
+        // $role = Role::findById(2);
         // auth()->user()->assignRole("writer");
         // auth()->user()->assignRole($role);
-        $user->assignRole($role);
-        // return response()->json(auth()->user());
-        return response()->json($user);
+        // $user->assignRole($role);
+        return response()->json(auth()->user());
+        // return response()->json($user);
     }
 
     /**
