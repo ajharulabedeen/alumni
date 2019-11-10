@@ -27,27 +27,38 @@ class Profile_Basic_Controller extends Controller
     public function create(Request $r)
     {
         $pBasic = new ProfileBasic();
-        $pBasic->user_id = Utils::getUserId();//error//refactor
-        // $pBasic->user_id    = $r->user_id;
-        $pBasic->dept       = $r->dept;
-        $pBasic->batch      = $r->batch;
-        $pBasic->student_id = $r->student_id;
-        $pBasic->passing_year = $r->passing_year;
-        $pBasic->first_Name = $r->first_name;
-        $pBasic->last_Name  = $r->last_name;
-        $pBasic->gender     = $r->gender;
-        $pBasic->birth_date = $r->birth_date;
-        $pBasic->blood_group = $r->blood_group;
-        $pBasic->email      = $r->email;
-        $pBasic->phone      = $r->phone;
-        $pBasic->address_present    = $r->address_present;
-        $pBasic->address_permanent  = $r->address_permanent;
-        $pBasic->religion           = $r->religion;
-        $pBasic->research_interest  = $r->research_interest;
-        $pBasic->skills             = $r->skills;
-        $pBasic->social_media_link  = $r->social_media_link;
+        $pBasic->user_id = Utils::getUserId(); //error//refactor
+        error_log( "Profile  : " . $pBasic->user_id);
+        $basic = $this->basicRepo->findOneByUser($pBasic->user_id);
 
-        return $this->basicRepo->save($pBasic);
+        if ($basic != null) {
+            error_log("Basic Exist!");
+            $id = $basic->id;
+        } else {
+            // $pBasic->user_id    = $r->user_id;
+            $pBasic->dept       = $r->dept;
+            $pBasic->batch      = $r->batch;
+            $pBasic->student_id = $r->student_id;
+            $pBasic->passing_year = $r->passing_year;
+            $pBasic->first_Name = $r->first_name;
+            $pBasic->last_Name  = $r->last_name;
+            $pBasic->gender     = $r->gender;
+            $pBasic->birth_date = $r->birth_date;
+            $pBasic->blood_group = $r->blood_group;
+            $pBasic->email      = $r->email;
+            $pBasic->phone      = $r->phone;
+            $pBasic->address_present    = $r->address_present;
+            $pBasic->address_permanent  = $r->address_permanent;
+            $pBasic->religion           = $r->religion;
+            $pBasic->research_interest  = $r->research_interest;
+            $pBasic->skills             = $r->skills;
+            $pBasic->social_media_link  = $r->social_media_link;
+
+            $id = $this->basicRepo->save($pBasic);
+        }//else
+
+        // return $this->basicRepo->save($pBasic);
+        return $id;
     }
 
     public function findOneByUserID(Request $r)
@@ -77,7 +88,7 @@ class Profile_Basic_Controller extends Controller
         $basicUpdate->last_Name  = $r->last_name;
         $basicUpdate->birth_date = $r->birth_date;
         $basicUpdate->gender     = $r->gender;
-        $basicUpdate->blood_group= $r->blood_group;
+        $basicUpdate->blood_group = $r->blood_group;
         $basicUpdate->email      = $r->email;
         $basicUpdate->phone      = $r->phone;
         $basicUpdate->religion   = $r->religion;

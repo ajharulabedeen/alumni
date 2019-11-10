@@ -24,7 +24,7 @@ class ExampleTest extends TestCase
         // $this->Loggin();
         // $this->SignUp();
         // -----------------------------------
-        // $this->creation();
+        $this->creation();
         $this->findOneByUserID();
         // $this->update();
     }
@@ -44,9 +44,9 @@ class ExampleTest extends TestCase
         // dd($response->exception);
 
         error_log("Error : ");
-        error_log( "id :" .  $response->original['id']);
+        error_log("id :" .  $response->original['id']);
         // error_log( "user_id : " . $response->original['user_id']);
-        error_log( "dept : " . $response->original['dept']);
+        error_log("dept : " . $response->original['dept']);
         $this->assertEquals('2', $response->original['user_id']);
         // dd($response->baseResponse);
         // dd($d);
@@ -100,7 +100,8 @@ class ExampleTest extends TestCase
     {
         $response = $this->json(
             'POST',
-            '/basic/create',
+            // '/basic/create',
+            'api/basic/create',
             [
                 // 'user_id' => '2',
                 'dept' => 'CSE',
@@ -117,20 +118,36 @@ class ExampleTest extends TestCase
                 'skills' => 'Laracast',
                 'image_address' => 'URL',
                 'religion' => 'ISLAM'
+            ],
+            [
+                // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+                "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
             ]
         );
         $d = $response->baseResponse->original;
         //exception not catching error, instead haulting program.
-        try {
-            error_log($d);
-        } catch (Exception $e) {
-            error_log("Exception : ");
-        }
+        // error_log($d);
         error_log("Error : ");
-        dd($response->exception);
+        // dd($response->exception);
 
-        // dd($d);
+        dd($d);
     }
+
+
+    public function getToken($mail, $pass)
+    {
+        $response = $this->json(
+            'POST',
+            '/api/login',
+            [
+                'email' => $mail,
+                'password' => $pass
+            ]
+        );
+        $d = $response->baseResponse->original;
+        error_log($d['access_token']);
+    }
+
 
 
     // thses method kept to use when feature test with auth will be done.

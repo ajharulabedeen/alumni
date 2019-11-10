@@ -7,4 +7,5 @@ interface Profile_Basic_Repo_I{
     public function delete($id);
     public function findOne( $id);
     public function findOneByUser( $userId);
+    public function basicExist( $userId );
 }

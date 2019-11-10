@@ -55,6 +55,11 @@ class Profile_Basic_Repo_Impl implements Profile_Basic_Repo_I
         return $data;
     }
 
+    public function basicExist($userId){
+
+    }
+
+    // private area : -------------------
     private function setPostValues($basicOrgin, $basicUpdate)
     {
         if ($basicUpdate->id != null) {
