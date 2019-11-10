@@ -6,7 +6,9 @@ use PHPUnit\Framework\Exception;
 class Utils{
 
     public static function getUserId(){
-        $currentLoggedMail = "gub.cse.files@gmail.com";
+        // $currentLoggedMail = "gub.cse.files@gmail.com";
+        $currentLoggedMail = auth()->user()->email;
+        error_log("currentLoggedMail : " . $currentLoggedMail);
         try{
             $userID = User::select('id')->where('email', $currentLoggedMail)->get()[0]->id;
         }catch(Exception $e){

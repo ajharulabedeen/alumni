@@ -20,11 +20,50 @@ class ExampleTest extends TestCase
 
         //both will not work together.
         // $this->Loggin();
-        $this->me("mail@g.com","123456");
-        $this->me("u1@umail.com","123456");
+        // $this->me("mail@g.com", "123456");
+        // $this->me("u1@umail.com", "123456");
+        $this->creation();
         // $this->getToken("mail@g.com","123456");
         // $this->SignUp();
     }
+
+
+
+    public function creation()
+    {
+        $response = $this->json(
+            'POST',
+            'api/basic/create',
+            [
+                // 'user_id' => '2',
+                'dept' => 'CSE',
+                'batch' => '130102096',
+                'student_id' => '130102096',
+                'first_name' => '---',
+                'last_name' => "'Khan'",
+                'birth_date' => '13-01-2096',
+                'gender' => 'Other',
+                'blood_group' => 'A+',
+                'email' => 'dimdim@gmail.com',
+                'phone' => '01717-111000',
+                'research_interest' => 'Big Data',
+                'skills' => 'Laracast',
+                'image_address' => 'URL',
+                'religion' => 'ISLAM'
+            ],
+            [
+                // "HTTP_AUTHORIZATION" => "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvbG9naW4iLCJpYXQiOjE1NzMyODg2MTEsImV4cCI6MTU3MzI5MjIxMSwibmJmIjoxNTczMjg4NjExLCJqdGkiOiJJZHRpQ2JGcXg4eG5WQXZuIiwic3ViIjo2LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.y_472J3YaNKkgcEtk1GqhIVU26EQ80Xyc7O8USLhfyE"
+                // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("mail@g.com","123456")
+                "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+            ]
+        );
+        $d = $response->baseResponse->original;
+        // error_log($d);
+        error_log("Error : ");
+        dd($response->exception);
+        dd($d);
+    }
+
 
     public function getToken($mail, $pass)
     {
@@ -49,7 +88,7 @@ class ExampleTest extends TestCase
             [
                 // "HTTP_AUTHORIZATION" => "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvbG9naW4iLCJpYXQiOjE1NzMyODg2MTEsImV4cCI6MTU3MzI5MjIxMSwibmJmIjoxNTczMjg4NjExLCJqdGkiOiJJZHRpQ2JGcXg4eG5WQXZuIiwic3ViIjo2LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.y_472J3YaNKkgcEtk1GqhIVU26EQ80Xyc7O8USLhfyE"
                 // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("mail@g.com","123456")
-                "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken($mail,$pass)
+                "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken($mail, $pass)
             ]
         );
         // dd($response);

@@ -24,4 +24,7 @@ Route::group([
     // Route::post('/create', 'PostController@create');
     Route::post('uploadfile', 'UploadFileController@update');//working test purpose.
     Route::get('/getfile', 'UploadFileController@getFile');//working test purpose.
+
+    Route::post('basic/create', 'Profile_Basic_Controller@create');
+
 });

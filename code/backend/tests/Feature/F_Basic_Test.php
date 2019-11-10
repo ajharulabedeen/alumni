@@ -102,7 +102,7 @@ class ExampleTest extends TestCase
             'POST',
             '/basic/create',
             [
-                'user_id' => '2',
+                // 'user_id' => '2',
                 'dept' => 'CSE',
                 'batch' => '130102096',
                 'student_id' => '130102096',

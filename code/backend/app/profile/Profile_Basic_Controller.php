@@ -27,8 +27,8 @@ class Profile_Basic_Controller extends Controller
     public function create(Request $r)
     {
         $pBasic = new ProfileBasic();
-        // $pBasic->user_id = Utils::getUserId();//error//refactor
-        $pBasic->user_id    = $r->user_id;
+        $pBasic->user_id = Utils::getUserId();//error//refactor
+        // $pBasic->user_id    = $r->user_id;
         $pBasic->dept       = $r->dept;
         $pBasic->batch      = $r->batch;
         $pBasic->student_id = $r->student_id;
