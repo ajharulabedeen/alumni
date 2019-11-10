@@ -63,13 +63,17 @@ class Profile_Basic_Controller extends Controller
 
     public function findOneByUserID(Request $r)
     {
+
+        //user have to logged in.
+        $user_id = Utils::getUserId();
         error_log($r->user_id);
         // $r->user_id='2';
         error_log($r->user_id);
 
         $data = $this->basicRepo->findOneByUser($r->user_id);
         error_log($data->id);
-        return response($this->basicRepo->findOneByUser($r->user_id));
+        // return response($this->basicRepo->findOneByUser($r->user_id));
+        return response($this->basicRepo->findOneByUser($user_id));
         // return "FIND_ONE";
     }
 

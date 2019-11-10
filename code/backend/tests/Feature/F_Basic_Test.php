@@ -24,7 +24,7 @@ class ExampleTest extends TestCase
         // $this->Loggin();
         // $this->SignUp();
         // -----------------------------------
-        $this->creation();
+        // $this->creation();
         $this->findOneByUserID();
         // $this->update();
     }
@@ -35,21 +35,26 @@ class ExampleTest extends TestCase
 
         $response = $this->json(
             'POST',
-            '/basic/findOneById',
+            // '/basic/findOneById',
+            'api/basic/findOneById',
             [
-                'user_id' => '2',
+                'user_id' => '4',//have to send 4
+            ],
+            [
+                // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+                "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
             ]
         );
         $d = $response->baseResponse->original;
         // dd($response->exception);
 
         error_log("Error : ");
-        error_log("id :" .  $response->original['id']);
+        // error_log("id :" .  $response->original['id']);
         // error_log( "user_id : " . $response->original['user_id']);
-        error_log("dept : " . $response->original['dept']);
-        $this->assertEquals('2', $response->original['user_id']);
+        // error_log("dept : " . $response->original['dept']);
+        // $this->assertEquals('2', $response->original['user_id']);
         // dd($response->baseResponse);
-        // dd($d);
+        dd($d);
     }
 
     //passed

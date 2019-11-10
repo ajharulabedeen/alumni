@@ -22,9 +22,10 @@ Route::group([
 
     Route::post('/create', 'PostController@create')->middleware('role:writer');
     // Route::post('/create', 'PostController@create');
-    Route::post('uploadfile', 'UploadFileController@update');//working test purpose.
-    Route::get('/getfile', 'UploadFileController@getFile');//working test purpose.
+    Route::post('uploadfile', 'UploadFileController@update'); //working test purpose.
+    Route::get('/getfile', 'UploadFileController@getFile'); //working test purpose.
 
+    // api : -----
     Route::post('basic/create', 'Profile_Basic_Controller@create');
-
+    Route::post('basic/findOneById', 'Profile_Basic_Controller@findOneByUserID');
 });
