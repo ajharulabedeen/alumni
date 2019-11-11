@@ -1,4 +1,5 @@
 <?php
+namespace App\Http\Controllers;
 
 class Profile_About_Controller extends Controller
 {
