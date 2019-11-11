@@ -19,7 +19,7 @@ protected $aboutRepo;
     public function create(Request $r)
     {
         $pAbout = new ProfileAbout();
-        $pAbout->user_id = Utils::getUserId(); //error//refactor
+        $pAbout->user_id = Utils::getUserId();
         error_log( "Profile  : " . $pAbout->user_id);
         $about = $this->aboutRepo->findOneByUser($pBasic->user_id);
 

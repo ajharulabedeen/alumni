@@ -53,3 +53,4 @@ Route::group(['middleware' => ['role:editor']], function () {
 // Route::post('basic/create', 'Profile_Basic_Controller@create');//moved in api
 // Route::post('basic/findOneById', 'Profile_Basic_Controller@findOneByUserID');
 Route::post('basic/update', 'Profile_Basic_Controller@update');
+Route::post('about/create', 'Profile_About_Controller@create');
