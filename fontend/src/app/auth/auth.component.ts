@@ -15,6 +15,7 @@ export class AuthComponent implements OnInit {
   isLoading = false;
   error: string = null;
 
+
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -49,7 +50,8 @@ export class AuthComponent implements OnInit {
         // console.log(resData);
         // console.log(resData.access_token);
         this.isLoading = false;
-        this.router.navigate(['/timeline']);
+        // this.router.navigate(['/timeline']);
+        this.router.navigate(['/profile']);
         // this.router.navigate(['/dashboard']);
         // this.router.navigate(['/home']);
       },

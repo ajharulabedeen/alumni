@@ -20,9 +20,11 @@ class ExampleTest extends TestCase
 
         //both will not work together.
         // $this->Loggin();
+        $this->getToken("u2@umail.com","123456");
+        // $this->getToken("mail@g.com","123456");
         // $this->me("mail@g.com", "123456");
         // $this->me("u1@umail.com", "123456");
-        $this->creation();
+        // $this->creation();
         // $this->getToken("mail@g.com","123456");
         // $this->SignUp();
     }
@@ -105,7 +107,7 @@ class ExampleTest extends TestCase
             'POST',
             '/api/login',
             [
-                'email' => 'louiugir@uttmail.com',
+                'email' => 'u1@umail.com',
                 'password' => '123456'
             ]
         );
