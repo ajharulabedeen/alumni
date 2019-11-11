@@ -162,7 +162,7 @@ class ExampleTest extends TestCase
             'POST',
             '/api/login',
             [
-                'email' => 'louiugicar@uttmail.com',
+                'email' => 'u1@umail.com',
                 'password' => '123456'
             ]
         );
