@@ -15,6 +15,7 @@ export interface AuthResponseData {
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   user = new BehaviorSubject<User>(null);
+  token: string;
 
   constructor(private http: HttpClient) { }
 
@@ -74,6 +75,7 @@ export class AuthService {
           return throwError(errorMessage);
         }),
         tap(resData => {
+          this.token = resData.access_token;
           return this.handleAuthentication(
             resData.user,
             resData.token_type,
@@ -112,7 +114,10 @@ export class AuthService {
     const user = new User(email, userId, token, expirationDate);
     this.user.next(user);
     console.log("New User Created : next");
+  }
 
+  public getToken(){
+    return this.token;
   }
 
 
