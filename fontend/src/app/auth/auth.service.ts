@@ -120,5 +120,9 @@ export class AuthService {
     return this.token;
   }
 
+  public removeToken(){
+    this.token = '';
+  }
+
 
 }//main class

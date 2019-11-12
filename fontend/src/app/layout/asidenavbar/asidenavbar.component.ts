@@ -1,4 +1,4 @@
-import { Component, OnInit,OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LoginComponent } from '../../login/login/login.component';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/auth/auth.service';
@@ -17,22 +17,25 @@ export class AsidenavbarComponent implements OnInit, OnDestroy {
   profile = true;
   loggedIn = LoginComponent.loggedIn;
 
-  constructor(private authService: AuthService,  private router: Router) { }
+  constructor(private authService: AuthService,
+    private router: Router,
+  ) { }
 
-  public logOut(){
+  public logOut() {
     this.isAuthenticated = false;
     this.userSub.unsubscribe();
-    console.log("Log Out : isAuthenticated "+this.isAuthenticated);
-    this.router.navigate(['']);
+    this.authService.removeToken();
+    console.log("Log Out : isAuthenticated " + this.isAuthenticated);
+    this.router.navigate(['/admin']);
   }
 
   ngOnInit() {
     console.log("Asidebar onInit() : ");
     this.userSub = this.authService.user.subscribe(user => {
-    console.log("Auth Subscriber: ");
+      console.log("Auth Subscriber: ");
       this.isAuthenticated = !!user;
-      console.log("B:"+!user);
-      console.log("A:"+!!user);
+      console.log("B:" + !user);
+      console.log("A:" + !!user);
     });
   }//onInit
 
