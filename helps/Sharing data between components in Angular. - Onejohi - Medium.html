@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<!-- saved from url=(0085)https://medium.com/@onejohi/sharing-data-between-components-in-angularjs-c34ff20b7fee -->
+<html lang="en" style="" data-rh="lang"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="stndz-style"></style><script async="" src="./Sharing data between components in Angular. - Onejohi - Medium_files/branch-latest.min.js.download"></script><script async="" src="./Sharing data between components in Angular. - Onejohi - Medium_files/analytics.js.download"></script><script>!function(c,f){var t,o,i,e=[],r={passive:!0,capture:!0},n=new Date,a="pointerup",u="pointercancel";function p(n,e){t||(t=e,o=n,i=new Date,w(f),s())}function s(){0<=o&&o<i-n&&(e.forEach(function(n){n(o,t)}),e=[])}function l(n){if(n.cancelable){var e=(1e12<n.timeStamp?new Date:performance.now())-n.timeStamp;"pointerdown"==n.type?function(n,e){function t(){p(n,e),i()}function o(){i()}function i(){f(a,t,r),f(u,o,r)}c(a,t,r),c(u,o,r)}(e,n):p(e,n)}}function w(e){["click","mousedown","keydown","touchstart","pointerdown"].forEach(function(n){e(n,l,r)})}w(c),self.perfMetrics=self.perfMetrics||{},self.perfMetrics.onFirstInputDelay=function(n){e.push(n),s()}}(addEventListener,removeEventListener)</script><title>Sharing data between components in Angular. - Onejohi - Medium</title><meta data-rh="true" name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><meta data-rh="true" name="theme-color" content="#000000"><meta data-rh="true" name="twitter:app:name:iphone" content="Medium"><meta data-rh="true" name="twitter:app:id:iphone" content="828256236"><meta data-rh="true" property="al:ios:app_name" content="Medium"><meta data-rh="true" property="al:ios:app_store_id" content="828256236"><meta data-rh="true" property="al:android:package" content="com.medium.reader"><meta data-rh="true" property="fb:app_id" content="542599432471018"><meta data-rh="true" property="og:site_name" content="Medium"><meta data-rh="true" property="og:type" content="article"><meta data-rh="true" property="article:published_time" content="2019-10-30T09:14:36.276Z"><meta data-rh="true" name="title" content="Sharing data between components in Angular. - Onejohi - Medium"><meta data-rh="true" property="og:title" content="Sharing data between components in AngularJS."><meta data-rh="true" property="twitter:title" content="Sharing data between components in AngularJS."><meta data-rh="true" name="twitter:site" content="@Medium"><meta data-rh="true" name="twitter:app:url:iphone" content="medium://p/c34ff20b7fee"><meta data-rh="true" property="al:android:url" content="medium://p/c34ff20b7fee"><meta data-rh="true" property="al:ios:url" content="medium://p/c34ff20b7fee"><meta data-rh="true" property="al:android:app_name" content="Medium"><meta data-rh="true" name="description" content="Angular uses a component-based approach where developers create components that can run independently, therefore, modularizing their application. The advantage to this is you can easily understand…"><meta data-rh="true" property="og:description" content="Learn using @Input() and @Output() , @ViewChild() , and using RxJS BehaviourSubject."><meta data-rh="true" property="twitter:description" content="Learn using @Input() and @Output() , @ViewChild() , and using RxJS BehaviourSubject."><meta data-rh="true" property="og:url" content="https://medium.com/@onejohi/sharing-data-between-components-in-angularjs-c34ff20b7fee"><meta data-rh="true" property="al:web:url" content="https://medium.com/@onejohi/sharing-data-between-components-in-angularjs-c34ff20b7fee"><meta data-rh="true" property="og:image" content="https://miro.medium.com/max/1200/1*MmAqcb9p0CshWGMJAABRbQ.png"><meta data-rh="true" name="twitter:image:src" content="https://miro.medium.com/max/1200/1*MmAqcb9p0CshWGMJAABRbQ.png"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="article:author" content="https://medium.com/@onejohi"><meta data-rh="true" name="twitter:creator" content="@onejohi"><meta data-rh="true" name="author" content="Onejohi"><meta data-rh="true" name="robots" content="index,follow"><meta data-rh="true" name="referrer" content="unsafe-url"><meta data-rh="true" name="twitter:label1" value="Reading time"><meta data-rh="true" name="twitter:data1" value="4 min read"><meta data-rh="true" name="parsely-post-id" content="c34ff20b7fee"><link data-rh="true" rel="publisher" href="https://plus.google.com/103654360130207659246"><link data-rh="true" rel="search" type="application/opensearchdescription+xml" title="Medium" href="https://medium.com/osd.xml"><link data-rh="true" rel="apple-touch-icon" sizes="152x152" href="https://cdn-images-1.medium.com/fit/c/152/152/1*8I-HPL0bfoIzGied-dzOvA.png"><link data-rh="true" rel="apple-touch-icon" sizes="120x120" href="https://cdn-images-1.medium.com/fit/c/120/120/1*8I-HPL0bfoIzGied-dzOvA.png"><link data-rh="true" rel="apple-touch-icon" sizes="76x76" href="https://cdn-images-1.medium.com/fit/c/76/76/1*8I-HPL0bfoIzGied-dzOvA.png"><link data-rh="true" rel="apple-touch-icon" sizes="60x60" href="https://cdn-images-1.medium.com/fit/c/60/60/1*8I-HPL0bfoIzGied-dzOvA.png"><link data-rh="true" rel="mask-icon" href="https://cdn-static-1.medium.com/_/fp/icons/monogram-mask.KPLCSFEZviQN0jQ7veN2RQ.svg" color="#171717"><link data-rh="true" rel="icon" href="https://cdn-static-1.medium.com/_/fp/icons/favicon-rebrand-medium.3Y6xpZ-0FSdWDnPM3hSBIA.ico"><link data-rh="true" id="glyph_link" rel="stylesheet" type="text/css" href="./Sharing data between components in Angular. - Onejohi - Medium_files/m2.css"><link data-rh="true" rel="author" href="https://medium.com/@onejohi"><link data-rh="true" rel="canonical" href="https://medium.com/@onejohi/sharing-data-between-components-in-angularjs-c34ff20b7fee"><link data-rh="true" rel="alternate" href="android-app://com.medium.reader/https/medium.com/p/c34ff20b7fee"><script data-rh="true">(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-24232453-2', 'auto');
+ga('send', 'pageview');</script><link rel="preload" href="./Sharing data between components in Angular. - Onejohi - Medium_files/16180790160.js.download" as="script"><style type="text/css" data-fela-rehydration="375" data-fela-type="STATIC">html{box-sizing:border-box}*, *:before, *:after{box-sizing:inherit}body{margin:0;padding:0;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;color:rgba(0,0,0,0.8);position:relative;min-height:100vh}h1, h2, h3, h4, h5, h6, dl, dd, ol, ul, menu, figure, blockquote, p, pre, form{margin:0}menu, ol, ul{padding:0;list-style:none;list-style-image:none}main{display:block}a{color:inherit;text-decoration:none}a, button, input{-webkit-tap-highlight-color:transparent}img, svg{vertical-align:middle}button{background:transparent;overflow:visible}button, input, optgroup, select, textarea{margin:0}</style><style type="text/css" data-fela-rehydration="375" data-fela-type="KEYFRAME">@-webkit-keyframes k1{0%{transform:scale(1);opacity:1}70%{transform:scale(1.4);opacity:0}100%{opacity:0}}@-moz-keyframes k1{0%{transform:scale(1);opacity:1}70%{transform:scale(1.4);opacity:0}100%{opacity:0}}@keyframes k1{0%{transform:scale(1);opacity:1}70%{transform:scale(1.4);opacity:0}100%{opacity:0}}@-webkit-keyframes k2{0%{opacity:0}100%{opacity:1}}@-moz-keyframes k2{0%{opacity:0}100%{opacity:1}}@keyframes k2{0%{opacity:0}100%{opacity:1}}@-webkit-keyframes k3{0%{opacity:0}25%{transform:scale(.9)}100%{opacity:1;transform:scale(1)}}@-moz-keyframes k3{0%{opacity:0}25%{transform:scale(.9)}100%{opacity:1;transform:scale(1)}}@keyframes k3{0%{opacity:0}25%{transform:scale(.9)}100%{opacity:1;transform:scale(1)}}@-webkit-keyframes k4{0%{opacity:1}100%{opacity:0}}@-moz-keyframes k4{0%{opacity:1}100%{opacity:0}}@keyframes k4{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes k5{0%{opacity:1;transform:scale(1)}25%{opacity:0}100%{opacity:0;transform:scale(.9)}}@-moz-keyframes k5{0%{opacity:1;transform:scale(1)}25%{opacity:0}100%{opacity:0;transform:scale(.9)}}@keyframes k5{0%{opacity:1;transform:scale(1)}25%{opacity:0}100%{opacity:0;transform:scale(.9)}}</style><style type="text/css" data-fela-rehydration="375" data-fela-type="RULE">.a{font-family:medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif}.b{font-weight:400}.c{background-color:rgba(255, 255, 255, 1)}.l{height:100vh}.m{width:100vw}.n{display:flex}.o{align-items:center}.p{justify-content:center}.q{fill:rgba(0, 0, 0, 0.84)}.r{display:block}.s{position:fixed}.t{top:0}.u{left:0}.v{right:0}.w{z-index:500}.x{box-shadow:0 4px 12px 0 rgba(0, 0, 0, 0.05)}.ai{max-width:1192px}.aj{min-width:0}.ak{width:100%}.al{height:65px}.ao{flex:1 0 auto}.ap{display:none}.ar{flex:0 0 auto}.as{visibility:hidden}.at{color:inherit}.au{fill:inherit}.av{font-size:inherit}.aw{border:inherit}.ax{font-family:inherit}.ay{letter-spacing:inherit}.az{font-weight:inherit}.ba{padding:0}.bb{margin:0}.bc:hover{cursor:pointer}.bd:hover{color:rgba(0, 0, 0, 0.9)}.be:hover{fill:rgba(0, 0, 0, 0.9)}.bf:focus{outline:none}.bg:disabled{cursor:default}.bh:disabled{color:rgba(0, 0, 0, 0.54)}.bi:disabled{fill:rgba(0, 0, 0, 0.54)}.bj{font-family:medium-content-sans-serif-font, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif}.bk{font-style:normal}.bl{line-height:20px}.bm{font-size:15.8px}.bn{letter-spacing:0px}.bo{color:rgba(0, 0, 0, 0.54)}.bp{fill:rgba(0, 0, 0, 0.54)}.bq{margin-left:16px}.br{color:rgba(2, 158, 116, 1)}.bs{fill:rgba(3, 168, 124, 1)}.bt:hover{color:rgba(1, 143, 105, 1)}.bu:hover{fill:rgba(2, 158, 116, 1)}.bv:disabled{color:rgba(3, 168, 124, 0.5)}.bw:disabled{fill:rgba(3, 168, 124, 0.5)}.bx{padding:8px 16px}.by{background:0}.bz{border-color:rgba(3, 168, 124, 1)}.ca:hover{border-color:rgba(2, 158, 116, 1)}.cb{border-radius:4px}.cc{border-width:1px}.cd{border-style:solid}.ce{box-sizing:border-box}.cf{display:inline-block}.cg{text-decoration:none}.ch{margin-bottom:0px}.cj{padding-left:24px}.ck{padding-right:24px}.cl{margin-left:auto}.cm{margin-right:auto}.cn{max-width:728px}.co{flex-direction:column}.cp{position:absolute}.cq{top:calc(100vh + 100px)}.cr{bottom:calc(100vh + 100px)}.cs{width:10px}.ct{pointer-events:none}.cu{word-break:break-word}.cv{word-wrap:break-word}.cw:after{display:block}.cx:after{content:""}.cy:after{clear:both}.cz{max-width:680px}.da{max-width:1921px}.dg{clear:both}.dh{transition:transform 300ms cubic-bezier(0.2, 0, 0.2, 1)}.di{cursor:zoom-in}.dj{position:relative}.dk{z-index:auto}.dl{opacity:0}.dm{transition:opacity 100ms 400ms}.dn{height:100%}.do{overflow:hidden}.dp{will-change:transform}.dq{transform:translateZ(0)}.dr{margin:auto}.ds{background-color:rgba(0, 0, 0, 0.05)}.dt{padding-bottom:56.22071837584591%}.du{filter:blur(20px)}.dv{transform:scale(1.1)}.dw{visibility:visible}.dx{background:rgba(255, 255, 255, 1)}.dy{line-height:1.23}.dz{letter-spacing:0}.ea{color:rgba(0, 0, 0, 0.84)}.eb{font-family:medium-content-title-font, Georgia, Cambria, "Times New Roman", Times, serif}.ec{font-size:40px}.ei{margin-bottom:-0.27em}.ej{line-height:48px}.ek{line-height:1.394}.el{font-weight:300}.em{font-size:25px}.es{margin-bottom:-0.42em}.et{font-size:24px}.eu{line-height:32px}.ev{padding:2px 4px}.ew{font-size:75%}.ex> strong{font-family:inherit}.ey{font-family:Menlo, Monaco, "Courier New", Courier, monospace}.ez{margin-top:32px}.fa{border-radius:50%}.fb{height:48px}.fc{width:48px}.fd{margin-left:12px}.fe{margin-bottom:2px}.fg{font-size:16px}.fh{max-height:20px}.fi{text-overflow:ellipsis}.fj{display:-webkit-box}.fk{-webkit-line-clamp:1}.fl{-webkit-box-orient:vertical}.fm:hover{text-decoration:underline}.fn{margin-left:8px}.fo{padding:0px 8px}.fp{border-color:rgba(0, 0, 0, 0.54)}.fq:hover{color:rgba(0, 0, 0, 0.97)}.fr:hover{fill:rgba(0, 0, 0, 0.97)}.fs:hover{border-color:rgba(0, 0, 0, 0.84)}.ft:disabled{fill:rgba(0, 0, 0, 0.76)}.fu:disabled{border-color:rgba(0, 0, 0, 0.2)}.fv:disabled{cursor:inherit}.fw:disabled:hover{color:rgba(0, 0, 0, 0.54)}.fx:disabled:hover{fill:rgba(0, 0, 0, 0.76)}.fy:disabled:hover{border-color:rgba(0, 0, 0, 0.2)}.fz{line-height:18px}.ga{font-size:15px}.gb{line-height:1.58}.gc{letter-spacing:-0.004em}.gd{font-family:medium-content-serif-font, Georgia, Cambria, "Times New Roman", Times, serif}.go{margin-bottom:-0.46em}.gp{max-width:1197px}.gv{padding-bottom:44.44444444444444%}.gw{line-height:1.18}.gx{letter-spacing:-0.022em}.gy{font-weight:600}.hj{margin-bottom:-0.31em}.hp{font-weight:700}.hq{padding-bottom:NaN%}.hr{max-width:878px}.hs{padding-bottom:79.04328018223235%}.ht{box-shadow:0 1px 4px rgba(0, 0, 0, 0.1), inset 0 0 0 1px rgba(0, 0, 0, 0.1)}.hu{max-height:40px}.hv{-webkit-line-clamp:2}.hw{padding:0px}.im{padding:16px 20px}.in{flex:1 1 auto}.ip{font-size:18px}.iq{margin-top:8px}.ir{margin-top:12px}.is{width:160px}.it{background-image:url(https://miro.medium.com/max/320/1*VKY-Ldkt-iHobItql7G_5w.png)}.iu{background-origin:border-box}.iv{background-size:cover}.iw{height:167px}.ix{background-position:50% 50%}.iy{max-width:100%}.iz{box-shadow:inset 0 0 0 1px rgba(0, 0, 0, 0.1)}.ja{background-image:url(https://miro.medium.com/max/320/1*D1EMOVrXqZtOYZJ2YTej-w.png)}.jb{will-change:opacity}.jc{top:calc(65px + 54px + 40px)}.jf{width:131px}.jg{padding-top:28px}.jh{margin-bottom:19px}.ji{margin-left:-5px}.jj{margin-right:5px}.jk{outline:0}.jl{border:0}.jm{user-select:none}.jn{cursor:pointer}.jo> svg{pointer-events:none}.jp:active{border-style:none}.jq{-webkit-user-select:none}.jr{fill:rgba(0, 0, 0, 0.76)}.js:focus{fill:rgba(0, 0, 0, 0.54)}.jt:hover{fill:rgba(0, 0, 0, 0.54)}.ju{margin-top:5px}.jv button{text-align:left}.jw{width:188px}.jx{left:50%}.jy{transform:translateX(406px)}.jz{top:calc(65px + 54px + 14px)}.kb{margin-top:40px}.kc{flex-wrap:wrap}.kd{margin-top:25px}.ke{list-style-type:none}.kf{margin-right:8px}.kg{margin-bottom:8px}.kh{border-radius:3px}.ki{padding:5px 10px}.kj{background:rgba(0, 0, 0, 0.05)}.kk{line-height:22px}.kl{margin-top:15px}.km{justify-content:space-between}.kn{margin-right:16px}.ko{border:1px solid rgba(0, 0, 0, 0.1)}.kp{height:60px}.kq{width:60px}.ld:hover{border-color:rgba(0, 0, 0, 0.54)}.le:active{border-style:solid}.lf{z-index:2}.lh{padding-right:8px}.li{padding-top:32px}.lj{border-top:1px solid rgba(0, 0, 0, 0.1)}.lk{margin-bottom:25px}.ll{margin-bottom:32px}.lm{min-height:80px}.lr{height:80px}.ls{width:80px}.lt{padding-left:102px}.lv{text-transform:uppercase}.lw{letter-spacing:0.05em}.lx{margin-bottom:6px}.ly{font-size:28px}.lz{line-height:36px}.ma{padding:4px 12px}.mb{max-width:555px}.mc{max-width:450px}.md{line-height:24px}.mf{padding-top:25px}.mg{color:rgba(0, 0, 0, 0.76)}.mh{opacity:1}.mi{padding:20px}.mj{border:1px solid rgba(3, 168, 124, 1)}.mk{text-align:center}.ml{margin-top:64px}.mm{background-color:rgba(0, 0, 0, 0.02)}.mn{padding:60px 0}.mo{background-color:rgba(0, 0, 0, 0.9)}.mq{padding-bottom:48px}.mr{border-bottom:1px solid rgba(255, 255, 255, 0.54)}.ms{margin:0 -12px}.mt{margin:0 12px}.mu{flex:1 1 0}.mv{padding-bottom:12px}.mw:hover{color:rgba(255, 255, 255, 0.99)}.mx:hover{fill:rgba(255, 255, 255, 0.99)}.my:disabled{color:rgba(255, 255, 255, 0.7)}.mz:disabled{fill:rgba(255, 255, 255, 0.7)}.na{color:rgba(255, 255, 255, 0.98)}.nb{fill:rgba(255, 255, 255, 0.98)}.nc{text-align:inherit}.nd{font-size:21.6px}.ne{letter-spacing:-0.32px}.nf{color:rgba(255, 255, 255, 0.7)}.ng{fill:rgba(255, 255, 255, 0.7)}.nh{text-decoration:underline}.ni{padding-bottom:8px}.nj{padding-top:8px}.nk{width:200px}.nm{background-image:url(https://miro.medium.com/max/200/1*VKY-Ldkt-iHobItql7G_5w.png)}.nn{background-image:url(https://miro.medium.com/max/200/1*D1EMOVrXqZtOYZJ2YTej-w.png)}.no{-webkit-user-select:none}</style><style type="text/css" data-fela-rehydration="375" data-fela-type="RULE" media="all and (min-width: 1080px)">.d{display:none}.ah{margin:0 64px}.df{margin-top:32px}.eh{margin-top:0.78em}.er{margin-top:0.74em}.gm{font-size:21px}.gn{margin-top:2em}.gu{margin-top:56px}.hh{font-size:26px}.hi{margin-top:1.72em}.ho{margin-top:0.86em}.ij{padding-left:64px}.ik{padding-right:64px}.il{max-width:1320px}</style><style type="text/css" data-fela-rehydration="375" data-fela-type="RULE" media="all and (max-width: 1079.98px)">.e{display:none}.ig{padding-left:64px}.ih{padding-right:64px}.ii{max-width:1080px}</style><style type="text/css" data-fela-rehydration="375" data-fela-type="RULE" media="all and (max-width: 903.98px)">.f{display:none}.id{padding-left:48px}.ie{padding-right:48px}.if{max-width:904px}</style><style type="text/css" data-fela-rehydration="375" data-fela-type="RULE" media="all and (max-width: 727.98px)">.g{display:none}.am{height:56px}.an{display:flex}.aq{display:block}.ci{margin-bottom:0px}.ia{padding-left:24px}.ib{padding-right:24px}.ic{max-width:728px}.io{padding:10px 12px 10px}.ln{margin-bottom:24px}.lo{align-items:center}.lp{width:102px}.lq{position:relative}.lu{padding-left:0}.me{margin-top:24px}.mp{padding:32px 0}.nl{width:140px}</style><style type="text/css" data-fela-rehydration="375" data-fela-type="RULE" media="all and (max-width: 551.98px)">.h{display:none}.ac{margin:0 24px}.db{margin-top:24px}.ed{margin-top:0.39em}.en{margin-top:0.42em}.ff{margin-bottom:0px}.ge{font-size:18px}.gf{margin-top:1.56em}.gq{margin-top:40px}.gz{font-size:24px}.ha{margin-top:1.23em}.hk{margin-top:0.67em}.hx{padding-left:24px}.hy{padding-right:24px}.hz{max-width:552px}</style><style type="text/css" data-fela-rehydration="375" data-fela-type="RULE" media="all and (min-width: 904px) and (max-width: 1079.98px)">.i{display:none}.ag{margin:0 64px}.de{margin-top:32px}.eg{margin-top:0.78em}.eq{margin-top:0.74em}.gk{font-size:21px}.gl{margin-top:2em}.gt{margin-top:56px}.hf{font-size:26px}.hg{margin-top:1.72em}.hn{margin-top:0.86em}</style><style type="text/css" data-fela-rehydration="375" data-fela-type="RULE" media="all and (min-width: 728px) and (max-width: 903.98px)">.j{display:none}.af{margin:0 48px}.dd{margin-top:32px}.ef{margin-top:0.78em}.ep{margin-top:0.74em}.gi{font-size:21px}.gj{margin-top:2em}.gs{margin-top:56px}.hd{font-size:26px}.he{margin-top:1.72em}.hm{margin-top:0.86em}</style><style type="text/css" data-fela-rehydration="375" data-fela-type="RULE" media="all and (min-width: 552px) and (max-width: 727.98px)">.k{display:none}.ae{margin:0 24px}.dc{margin-top:24px}.ee{margin-top:0.39em}.eo{margin-top:0.42em}.gg{font-size:18px}.gh{margin-top:1.56em}.gr{margin-top:40px}.hb{font-size:24px}.hc{margin-top:1.23em}.hl{margin-top:0.67em}</style><style type="text/css" data-fela-rehydration="375" data-fela-type="RULE" media="print">.ab{display:none}</style><style type="text/css" data-fela-rehydration="375" data-fela-type="RULE" media="(prefers-reduced-motion: no-preference)">.y{transition:transform 300ms ease}.z{will-change:transform}.jd{transition:opacity 200ms}.kr{transition:border-color 150ms ease}.ks::before{background:
+      radial-gradient(circle, rgba(0, 0, 0, 0.84) 60%, transparent 70%)
+    }.kt::before{border-radius:50%}.ku::before{content:""}.kv::before{display:block}.kw::before{z-index:0}.kx::before{left:0}.ky::before{height:100%}.kz::before{position:absolute}.la::before{top:0}.lb::before{width:100%}.lc:hover::before{animation:k1 2000ms infinite cubic-bezier(.1,.12,.25,1)}.lg{transition:fill 200ms ease}</style><style type="text/css" data-fela-rehydration="375" data-fela-type="RULE" media="all and (max-width: 1198px)">.je{display:none}</style><style type="text/css" data-fela-rehydration="375" data-fela-type="RULE" media="all and (max-width: 1230px)">.ka{display:none}</style><script charset="utf-8" src="./Sharing data between components in Angular. - Onejohi - Medium_files/vendors_tracing.28033849.chunk.js.download"></script><script charset="utf-8" src="./Sharing data between components in Angular. - Onejohi - Medium_files/tracing.a9025c45.chunk.js.download"></script><style data-fela-type="RULE" type="text/css" media="(prefers-reduced-motion: reduce)"></style><script type="application/ld+json" data-rh="true">{"@context":"http:\u002F\u002Fschema.org","@type":"NewsArticle","image":["https:\u002F\u002Fmiro.medium.com\u002Fmax\u002F1200\u002F1*MmAqcb9p0CshWGMJAABRbQ.png"],"url":"https:\u002F\u002Fmedium.com\u002F@onejohi\u002Fsharing-data-between-components-in-angularjs-c34ff20b7fee","dateCreated":"2019-07-17T09:39:35.410Z","datePublished":"2019-07-17T09:39:35.410Z","dateModified":"2019-10-30T09:14:36.463Z","headline":"Sharing data between components in AngularJS.","name":"Sharing data between components in AngularJS.","description":"Angular uses a component-based approach where developers create components that can run independently, therefore, modularizing their application. The advantage to this is you can easily understand…","identifier":"c34ff20b7fee","keywords":["Lite:true","Tag:JavaScript","Tag:Angular","Tag:Components","Elevated:false","LockedPostSource:LOCKED_POST_SOURCE_NONE","LayerCake:4"],"author":{"@type":"Person","name":"Onejohi","url":"https:\u002F\u002Fmedium.com\u002F@onejohi"},"creator":["Onejohi"],"publisher":{"@type":"Organization","name":"Medium","url":"https:\u002F\u002Fmedium.com\u002F","logo":{"@type":"ImageObject","width":308,"height":60,"url":"https:\u002F\u002Fmiro.medium.com\u002Fmax\u002F385\u002F1*OMF3fSqH8t4xBJ9-6oZDZw.png"}},"mainEntityOfPage":"https:\u002F\u002Fmedium.com\u002F@onejohi\u002Fsharing-data-between-components-in-angularjs-c34ff20b7fee"}</script><script type="text/javascript" data-rh="true">(function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent".split(" "), 0);
+branch.init('key_live_ofxXr2qTrrU9NqURK8ZwEhknBxiI6KBm', {metadata: {}, 'no_journeys': true, 'disable_exit_animation': true, 'disable_entry_animation': true, 'tracking_disabled': null}, function(err, data) {});</script><script type="text/javascript" async="" src="./Sharing data between components in Angular. - Onejohi - Medium_files/_r"></script><script type="text/javascript" async="" src="./Sharing data between components in Angular. - Onejohi - Medium_files/_r(1)"></script><script type="text/javascript" async="" src="./Sharing data between components in Angular. - Onejohi - Medium_files/_r(2)"></script></head><body><div id="root"><div class="a b c"><div class="d e f g h i j k"></div><script>document.domain = document.domain;</script><script>window.PARSELY = window.PARSELY || {autotrack: false}</script><nav class="r s t u v c w x y z ab" style=""><div class="branch-journeys-top"><div class="n p"><div class="ac ae af ag ah ai aj ak"><div class="al n o am an"><div class="r ao w"><div class="n o"><a aria-label="Homepage" rel="noopener" href="https://medium.com/?source=post_page-----c34ff20b7fee----------------------"><div class="ap g"><svg height="22" width="112" viewBox="0 0 111.5 22" class="q"><path d="M56.3 19.5c0 .4 0 .5.3.7l1.5 1.4v.1h-6.5V19c-.7 1.8-2.4 3-4.3 3-3.3 0-5.8-2.6-5.8-7.5 0-4.5 2.6-7.6 6.3-7.6 1.6-.1 3.1.8 3.8 2.4V3.2c0-.3-.1-.6-.3-.7l-1.4-1.4V1l6.5-.8v19.3zm-4.8-.8V9.5c-.5-.6-1.2-.9-1.9-.9-1.6 0-3.1 1.4-3.1 5.7 0 4 1.3 5.4 3 5.4.8.1 1.6-.3 2-1zm9.1 3.1V9.4c0-.3-.1-.6-.3-.7l-1.4-1.5v-.1h6.5v12.5c0 .4 0 .5.3.7l1.4 1.4v.1h-6.5zm-.2-19.2C60.4 1.2 61.5 0 63 0c1.4 0 2.6 1.2 2.6 2.6S64.4 5.3 63 5.3a2.6 2.6 0 0 1-2.6-2.7zm22.5 16.9c0 .4 0 .5.3.7l1.5 1.4v.1h-6.5v-3.2c-.6 2-2.4 3.4-4.5 3.4-2.9 0-4.4-2.1-4.4-6.2 0-1.9 0-4.1.1-6.5 0-.3-.1-.5-.3-.7L67.7 7v.1H74v8c0 2.6.4 4.4 2 4.4.9-.1 1.7-.6 2.1-1.3V9.5c0-.3-.1-.6-.3-.7l-1.4-1.5v-.2h6.5v12.4zm22 2.3c0-.5.1-6.5.1-7.9 0-2.6-.4-4.5-2.2-4.5-.9 0-1.8.5-2.3 1.3.2.8.3 1.7.3 2.5 0 1.8-.1 4.2-.1 6.5 0 .3.1.5.3.7l1.5 1.4v.1H96c0-.4.1-6.5.1-7.9 0-2.7-.4-4.5-2.2-4.5-.9 0-1.7.5-2.2 1.3v9c0 .4 0 .5.3.7l1.4 1.4v.1h-6.5V9.5c0-.3-.1-.6-.3-.7l-1.4-1.5v-.2h6.5v3.1a4.6 4.6 0 0 1 4.6-3.4c2.2 0 3.6 1.2 4.2 3.5.7-2.1 2.7-3.6 4.9-3.5 2.9 0 4.5 2.2 4.5 6.2 0 1.9-.1 4.2-.1 6.5-.1.3.1.6.3.7l1.4 1.4v.1h-6.6zm-81.4-2l1.9 1.9v.1h-9.8v-.1l2-1.9c.2-.2.3-.4.3-.7V7.3c0-.5 0-1.2.1-1.8L11.4 22h-.1L4.5 6.8c-.1-.4-.2-.4-.3-.6v10c-.1.7 0 1.3.3 1.9l2.7 3.6v.1H0v-.1L2.7 18c.3-.6.4-1.3.3-1.9v-11c0-.5-.1-1.1-.5-1.5L.7 1.1V1h7l5.8 12.9L18.6 1h6.8v.1l-1.9 2.2c-.2.2-.3.5-.3.7v15.2c0 .2.1.5.3.6zm7.6-5.9c0 3.8 1.9 5.3 4.2 5.3 1.9.1 3.6-1 4.4-2.7h.1c-.8 3.7-3.1 5.5-6.5 5.5-3.7 0-7.2-2.2-7.2-7.4 0-5.5 3.5-7.6 7.3-7.6 3.1 0 6.4 1.5 6.4 6.2v.8h-8.7zm0-.8h4.3v-.8c0-3.9-.8-4.9-2-4.9-1.4.1-2.3 1.6-2.3 5.7z"></path></svg></div><div class="r aq"><svg width="35" height="35" viewBox="5 5 35 35" class="q"><path d="M5 40V5h35v35H5zm8.56-12.63c0 .56-.03.69-.32 1.03L10.8 31.4v.4h6.97v-.4L15.3 28.4c-.29-.34-.34-.5-.34-1.03v-8.95l6.13 13.36h.71l5.26-13.36v10.64c0 .3 0 .35-.19.53l-1.85 1.8v.4h9.2v-.4l-1.83-1.8c-.18-.18-.2-.24-.2-.53V15.94c0-.3.02-.35.2-.53l1.82-1.8v-.4h-6.47l-4.62 11.55-5.2-11.54h-6.8v.4l2.15 2.63c.24.3.29.37.29.77v10.35z"></path></svg></div></a></div></div><div class="r ar w"><div class="n o"><div class="n g"><div class="dw" id="lo-post-page-navbar-upsell-button"><div><a href="https://medium.com/membership?source=upgrade_membership---nav_full------------------------" class="at au av aw ax ay az ba bb bc bd be bf bg bh bi" rel="noopener"><span class="bj b bk bl bm bn r bo bp">Become a member</span></a></div></div><div class="dw" id="lo-post-page-navbar-sign-in-link"><div class="bq r"><span class="bj b bk bl bm bn r bo bp"><a href="https://medium.com/m/signin?operation=login&amp;redirect=https%3A%2F%2Fmedium.com%2F%40onejohi%2Fsharing-data-between-components-in-angularjs-c34ff20b7fee&amp;source=post_page-----c34ff20b7fee---------------------nav_reg-" class="br bs av aw ax ay az ba bb bc bt bu bf bg bv bw" rel="noopener">Sign in</a></span></div></div></div><div class="dw" id="lo-post-page-navbar-get-started-button"><div class="bq r"><button class="bx by br bs bz bt bu ca bc cb bj b bk bl bm bn cc cd ce cf cg bf">Get started</button></div></div></div></div></div></div></div></div></nav><div class="ch al r ci am"></div><article><section class="cj ck cl cm ak cn ce n co"></section><span class="r"></span><div><div class="cp u cq cr cs ct"></div><section class="cu cv cw cx cy"><div class="n p"><div class="ac ae af ag ah cz aj ak"><figure class="db dc dd de df dg cl cm paragraph-image"><div class="dh di dj dk ak"><div class="cl cm da"><div class="dr r dj ds"><div class="dt r"><div class="dl dm cp t u dn ak do dp dq"><img class="cp t u dn ak du dv as td" src="./Sharing data between components in Angular. - Onejohi - Medium_files/1_MmAqcb9p0CshWGMJAABRbQ.png" width="1921" height="1080" role="presentation"></div><img class="mh pv cp t u dn ak dx" width="1921" height="1080" role="presentation" src="./Sharing data between components in Angular. - Onejohi - Medium_files/1_MmAqcb9p0CshWGMJAABRbQ(1).png"><noscript><img class="cp t u dn ak" src="https://miro.medium.com/max/3842/1*MmAqcb9p0CshWGMJAABRbQ.png" width="1921" height="1080" role="presentation"/></noscript></div></div></div></div></figure><div><div id="9d17" class="dy dz ea bk eb b ec ed ee ef eg eh ei"><h1 class="eb b ec ej ea">Sharing data between components in Angular.</h1></div></div><div id="fda4" class="ek dz bo bk bj el em en eo ep eq er es"><h2 class="bj el et eu bo">Learn using <code class="ds ev ew ex ey b">@Input()</code> and <code class="ds ev ew ex ey b">@Output()</code> , <code class="ds ev ew ex ey b">@ViewChild()</code> , and using RxJS <code class="ds ev ew ex ey b">BehaviourSubject</code>.</h2></div><div class="ez"><div class="o n"><div><a rel="noopener" href="https://medium.com/@onejohi?source=post_page-----c34ff20b7fee----------------------"><img alt="Onejohi" class="r fa fb fc" src="./Sharing data between components in Angular. - Onejohi - Medium_files/1_Gd0D1ABMEFA5W-xsWLYtUA.jpeg" width="48" height="48"></a></div><div class="fd ak r"><div class="n"><div style="flex:1"><span class="bj b bk bl bm bn r ea q"><div class="fe n o ff"><span class="bj el fg bl do fh fi fj fk fl ea"><a class="at au av aw ax ay az ba bb bc fm bf bg bh bi" rel="noopener" href="https://medium.com/@onejohi?source=post_page-----c34ff20b7fee----------------------">Onejohi</a></span><div class="fn r ar h"><button class="fo ea q by fp fq fr fs bc bh ft fu fv fw fx fy cb bj b bk fz ga bn cc cd ce cf cg bf">Follow</button></div></div></span></div></div><span class="bj b bk bl bm bn r bo bp"><span class="bj el fg bl do fh fi fj fk fl bo"><div><a class="at au av aw ax ay az ba bb bc fm bf bg bh bi" rel="noopener" href="https://medium.com/@onejohi/sharing-data-between-components-in-angularjs-c34ff20b7fee?source=post_page-----c34ff20b7fee----------------------">Jul 17</a> <!-- -->·<!-- --> <!-- -->4<!-- --> min read</div></span></span></div></div></div><p id="f447" class="gb gc ea bk gd b ge gf gg gh gi gj gk gl gm gn go" data-selectable-paragraph="">Angular uses a component-based approach where developers create components that can run independently, therefore, modularizing their application. The advantage to this is you can easily understand your application by separating it into multiple chunks where you can work on small segments without being overwhelmed by the thousands of lines of code. Maintenance of code becomes easier. Also, a team can work efficiently where each developer works on independent components then tie them all to the main application. What if you want the components to interact whereby clicking a particular button creates a notification icon. These two components should be able to communicate for the component holding the button to let the component holding the notification icon that the application state has changed.<br>Let’s identify a few ways we can do this.</p><figure class="gq gr gs gt gu dg cl cm paragraph-image"><div class="dh di dj dk ak"><div class="cl cm gp"><div class="dr r dj ds"><div class="gv r"><div class="dl dm cp t u dn ak do dp dq"><img class="cp t u dn ak du dv as td" src="./Sharing data between components in Angular. - Onejohi - Medium_files/1__GApyQ-Q3A45KWl8ImbLbw.png" width="1197" height="532" role="presentation"></div><img class="mh pv cp t u dn ak dx" width="1197" height="532" role="presentation" src="./Sharing data between components in Angular. - Onejohi - Medium_files/1__GApyQ-Q3A45KWl8ImbLbw(1).png"><noscript><img class="cp t u dn ak" src="https://miro.medium.com/max/2394/1*_GApyQ-Q3A45KWl8ImbLbw.png" width="1197" height="532" role="presentation"/></noscript></div></div></div></div></figure><h2 id="f2bd" class="gw gx ea bk bj gy gz ha hb hc hd he hf hg hh hi hj" data-selectable-paragraph=""><strong class="az">Parent to Child via </strong><code class="ds ev ew ex ey b"><strong class="az">@Input()</strong></code><strong class="az"> decorator.</strong></h2><p id="9c0c" class="gb gc ea bk gd b ge hk gg hl gi hm gk hn gm ho go" data-selectable-paragraph="">When you declare a variable in the child component with the <code class="ds ev ew ex ey b">@Input()</code> decorator, it allows that variable to be “received” from the parent component <strong class="gd hp">template</strong>.</p><figure class="gq gr gs gt gu dg"><div class="dr r dj"><div class="sz r"><iframe src="./Sharing data between components in Angular. - Onejohi - Medium_files/b8677c681135054aff7867dd8f27f106.html" allowfullscreen="" frameborder="0" height="406" width="680" title="child_component_input.ts" class="cp t u dn ak" scrolling="auto"></iframe></div></div></figure><p id="b556" class="gb gc ea bk gd b ge gf gg gh gi gj gk gl gm gn go" data-selectable-paragraph="">In our case here, we will be receiving an array of objects from the parent template and storing the value received in the variable <code class="ds ev ew ex ey b">notifications</code>. Let’s construct our parent component…</p><figure class="gq gr gs gt gu dg"><div class="dr r dj"><div class="tc r"><iframe src="./Sharing data between components in Angular. - Onejohi - Medium_files/d7c6710562d1bfdce269164ac2992222.html" allowfullscreen="" frameborder="0" height="471" width="680" title="parent_component.ts" class="cp t u dn ak" scrolling="auto"></iframe></div></div></figure><p id="658c" class="gb gc ea bk gd b ge gf gg gh gi gj gk gl gm gn go" data-selectable-paragraph="">In the parent component, we can pass data to the child component directly in the template (view line: 8). Alright, what if you want to pass data from the child component to the parent component?</p><figure class="gq gr gs gt gu dg cl cm paragraph-image"><div class="dh di dj dk ak"><div class="cl cm gp"><div class="dr r dj ds"><div class="gv r"><div class="dl dm cp t u dn ak do dp dq"><img class="cp t u dn ak du dv as td" src="./Sharing data between components in Angular. - Onejohi - Medium_files/1_IomnS2TCY9wxr0cz-AhAmQ.png" width="1197" height="532" role="presentation"></div><img class="mh pv cp t u dn ak dx" width="1197" height="532" role="presentation" src="./Sharing data between components in Angular. - Onejohi - Medium_files/1_IomnS2TCY9wxr0cz-AhAmQ(1).png"><noscript><img class="cp t u dn ak" src="https://miro.medium.com/max/2394/1*IomnS2TCY9wxr0cz-AhAmQ.png" width="1197" height="532" role="presentation"/></noscript></div></div></div></div></figure><h2 id="820a" class="gw gx ea bk bj gy gz ha hb hc hd he hf hg hh hi hj" data-selectable-paragraph="">Child to parent via <code class="ds ev ew ex ey b">@Output()</code> and <code class="ds ev ew ex ey b">EventEmitter</code></h2><p id="394a" class="gb gc ea bk gd b ge hk gg hl gi hm gk hn gm ho go" data-selectable-paragraph="">To pass data from the child to the parent, you have to emit it from the child. The parent will be listening for the event will grab the data.</p><figure class="gq gr gs gt gu dg"><div class="dr r dj"><div class="sy r"><iframe src="./Sharing data between components in Angular. - Onejohi - Medium_files/9daaf0f7801363d01a161e27ec3a9d40.html" allowfullscreen="" frameborder="0" height="536" width="680" title="child_component_output.ts" class="cp t u dn ak" scrolling="auto"></iframe></div></div></figure><p id="3ad0" class="gb gc ea bk gd b ge gf gg gh gi gj gk gl gm gn go" data-selectable-paragraph="">In our child component, we create a username emitter that sends the username anytime the user clicks the Send Name button. To receive the username in the parent, we have to create a function to grab that data and put it into a variable…</p><figure class="gq gr gs gt gu dg"><div class="dr r dj"><div class="sy r"><iframe src="./Sharing data between components in Angular. - Onejohi - Medium_files/3b6990dd20cb7e8dfa7841c9b3581c25.html" allowfullscreen="" frameborder="0" height="536" width="680" title="parent_component_reciever.js" class="cp t u dn ak" scrolling="auto"></iframe></div></div></figure><p id="b314" class="gb gc ea bk gd b ge gf gg gh gi gj gk gl gm gn go" data-selectable-paragraph="">In our parent component, <code class="ds ev ew ex ey b">(usernameEmitter)</code> listens for the event with the message attached to it and when the message is emitted, it captures the data in the <code class="ds ev ew ex ey b">$event</code> and sets <code class="ds ev ew ex ey b">this.username</code> to the value of <code class="ds ev ew ex ey b">$event</code>.</p><p id="8c8e" class="gb gc ea bk gd b ge gf gg gh gi gj gk gl gm gn go" data-selectable-paragraph=""><strong class="gd hp">Using @ViewChild</strong></p><p id="45a9" class="gb gc ea bk gd b ge gf gg gh gi gj gk gl gm gn go" data-selectable-paragraph="">Another simple way is to use the<code class="ds ev ew ex ey b">@ViewChild</code> decorator. The child component file remains largely the same and the only changes we will make is to the parent.</p><figure class="gq gr gs gt gu dg"><div class="dr r dj"><div class="sy r"><iframe src="./Sharing data between components in Angular. - Onejohi - Medium_files/f09fb7f706d7c333acb7fb49714bc556.html" allowfullscreen="" frameborder="0" height="536" width="680" title="parent_component_viewChild.js" class="cp t u dn ak" scrolling="auto"></iframe></div></div></figure><h2 id="6eb0" class="gw gx ea bk bj gy gz ha hb hc hd he hf hg hh hi hj" data-selectable-paragraph="">Any =&gt; Any via a shared service</h2><p id="ffeb" class="gb gc ea bk gd b ge hk gg hl gi hm gk hn gm ho go" data-selectable-paragraph="">Components can get a little tricky sharing data when the application starts to grow and you find components within components that require to share data with components outside their parent components. Consider the following theoretical application structure below.</p><figure class="gq gr gs gt gu dg cl cm paragraph-image"><div class="dh di dj dk ak"><div class="cl cm hr"><div class="dr r dj ds"><div class="hs r"><div class="dl dm cp t u dn ak do dp dq"><img class="cp t u dn ak du dv as td" src="./Sharing data between components in Angular. - Onejohi - Medium_files/1_vvZexePxpIfMUrkhPxh1Wg.png" width="878" height="694" role="presentation"></div><img class="mh pv cp t u dn ak dx" width="878" height="694" role="presentation" src="./Sharing data between components in Angular. - Onejohi - Medium_files/1_vvZexePxpIfMUrkhPxh1Wg(1).png"><noscript><img class="cp t u dn ak" src="https://miro.medium.com/max/1756/1*vvZexePxpIfMUrkhPxh1Wg.png" width="878" height="694" role="presentation"/></noscript></div></div></div></div></figure><p id="d783" class="gb gc ea bk gd b ge gf gg gh gi gj gk gl gm gn go" data-selectable-paragraph="">If you want an action made on the <code class="ds ev ew ex ey b">card-item</code> component to affect the <code class="ds ev ew ex ey b">profile-avatar-status</code> component, it could be complicated to emit an event up to the <code class="ds ev ew ex ey b">content</code> component, further up to the <code class="ds ev ew ex ey b">app</code> component, then down to <code class="ds ev ew ex ey b">navbar</code> component, then down <code class="ds ev ew ex ey b">navmenu</code> and finally to <code class="ds ev ew ex ey b">profile-avatar-status</code>. It gets even more complex as the app grows. And even if you think you can manage to keep track of all the flows of data, what happens when you have to remove or merge two components? This becomes very tricky and complex. Using a shared service, all components can subscribe to channels of data that are called observables. When these observables change, all components that had subscribed to the observable gets updated. Having a central source of information makes it easier to track changes in data in a large application.</p><p id="443f" class="gb gc ea bk gd b ge gf gg gh gi gj gk gl gm gn go" data-selectable-paragraph="">Use your Angular CLI to generate a new service using the command <code class="ds ev ew ex ey b">ng g service service-name</code> to create a service. I’ll call mine <code class="ds ev ew ex ey b">State</code> since it keeps track of the application state.</p><figure class="gq gr gs gt gu dg"><div class="dr r dj"><div class="ta r"><iframe src="./Sharing data between components in Angular. - Onejohi - Medium_files/4443c2bf70f84531270ec8a689864e35.html" allowfullscreen="" frameborder="0" height="363" width="680" title="state.service.ts" class="cp t u dn ak" scrolling="auto"></iframe></div></div></figure><p id="5332" class="gb gc ea bk gd b ge gf gg gh gi gj gk gl gm gn go" data-selectable-paragraph="">Using behavior subject, we are able to set username as an observable that can be changed using the <code class="ds ev ew ex ey b">.next()</code> method. We can, therefore, import this service and utilize it from any component. Let’s create a component that makes changes to username and subscribes to username and reflects these changes. You can subscribe and change the username from different components, they don’t have to know about each other’s existence.</p><figure class="gq gr gs gt gu dg"><div class="dr r dj"><div class="tb r"><iframe src="./Sharing data between components in Angular. - Onejohi - Medium_files/3b273537c919042df8c2a0dba3f2fc5f.html" allowfullscreen="" frameborder="0" height="666" width="680" title="change_state.ts" class="cp t u dn ak" scrolling="auto"></iframe></div></div></figure><p id="c0eb" class="gb gc ea bk gd b ge gf gg gh gi gj gk gl gm gn go" data-selectable-paragraph="">When the state changes any property that has subscribed to it will update it’s value to the new change.</p><h2 id="8816" class="gw gx ea bk bj gy gz ha hb hc hd he hf hg hh hi hj" data-selectable-paragraph="">Conclusion.</h2><p id="378e" class="gb gc ea bk gd b ge hk gg hl gi hm gk hn gm ho go" data-selectable-paragraph="">Angular provides a number of ways to pass data in between components. I would recommend using a service as much as possible to keep your logic clean and easily accessible from one point. If you’re working on a simple application, you can use the various decorators that the frameworks provide. If you would like a Kickstarter on Angular, here is a previous article along with two more related to Angular from me. Thanks!</p><div class="db dc dd de df ht"><a rel="noopener" href="https://medium.com/@onejohi/getting-started-with-angular-5-5099104eb2f?source=post_page-----c34ff20b7fee----------------------"><section class="hw cl cm ak ce n ar hx hy hz ia ib ic id ie if ig ih ii ij ik il"><div class="im n co p in io"><h2 class="bj gy ip bl ea"><div class="do hu fi fj hv fl">Getting started with Angular 5</div></h2><div class="iq r"><h3 class="bj el fg bl bo"><div class="do hu fi fj hv fl">Hi, are you a beginner in Web Development? Perfect. You’ve come to the right place. First, we need to understand what…</div></h3></div><div class="ir r"><h4 class="bj el ga bl bo"><div class="do hu fi fj hv fl">medium.com</div></h4></div></div><div class="is r"><div class="it r iu iv iw is ix iy iz"></div></div></section></a></div><p id="2522" class="gb gc ea bk gd b ge gf gg gh gi gj gk gl gm gn go" data-selectable-paragraph="">More on decorators…</p><div class="db dc dd de df ht"><a rel="noopener" href="https://medium.com/@onejohi/angular-6-cheat-sheet-b36e04bf008a?source=post_page-----c34ff20b7fee----------------------"><section class="hw cl cm ak ce n ar hx hy hz ia ib ic id ie if ig ih ii ij ik il"><div class="im n co p in io"><h2 class="bj gy ip bl ea"><div class="do hu fi fj hv fl">Angular 6 Cheat Sheet</div></h2><div class="iq r"><h3 class="bj el fg bl bo"><div class="do hu fi fj hv fl">What various Angular Code snippets do.</div></h3></div><div class="ir r"><h4 class="bj el ga bl bo"><div class="do hu fi fj hv fl">medium.com</div></h4></div></div><div class="is r"><div class="ja r iu iv iw is ix iy iz"></div></div></section></a></div><div class="db dc dd de df ht"><a rel="noopener" href="https://medium.com/@onejohi/angular-6-cheat-sheet-part-ii-2136f63f3bbd?source=post_page-----c34ff20b7fee----------------------"><section class="hw cl cm ak ce n ar hx hy hz ia ib ic id ie if ig ih ii ij ik il"><div class="im n co p in io"><h2 class="bj gy ip bl ea"><div class="do hu fi fj hv fl">Angular 6 Cheat Sheet (Part II)</div></h2><div class="iq r"><h3 class="bj el fg bl bo"><div class="do hu fi fj hv fl">The final segment on various Angular Code snippets and their uses.</div></h3></div><div class="ir r"><h4 class="bj el ga bl bo"><div class="do hu fi fj hv fl">medium.com</div></h4></div></div></section></a></div></div></div></section></div></article><div class="mh ct jb s ak jc jd je" data-test-id="post-sidebar"><div class="n p"><div class="ac ae af ag ah ai aj ak"><div class="jf n co"><div class="te"><div class="jg jh ji n"><div class="n o"><div class="jj r dj"><a href="https://medium.com/m/signin?operation=register&amp;redirect=https%3A%2F%2Fmedium.com%2F%40onejohi%2Fsharing-data-between-components-in-angularjs-c34ff20b7fee&amp;source=post_sidebar-----c34ff20b7fee---------------------clap_sidebar-" class="at au av aw ax ay az ba bb bc bd be bf bg bh bi" rel="noopener"><div class="ba jk jl jm jn jo jp jq jr js jt"><svg width="29" height="29"><g fill-rule="evenodd"><path d="M13.74 1l.76 2.97.76-2.97zM16.82 4.78l1.84-2.56-1.43-.47zM10.38 2.22l1.84 2.56-.41-3.03zM22.38 22.62a5.11 5.11 0 0 1-3.16 1.61l.49-.45c2.88-2.89 3.45-5.98 1.69-9.21l-1.1-1.94-.96-2.02c-.31-.67-.23-1.18.25-1.55a.84.84 0 0 1 .66-.16c.34.05.66.28.88.6l2.85 5.02c1.18 1.97 1.38 5.12-1.6 8.1M9.1 22.1l-5.02-5.02a1 1 0 0 1 .7-1.7 1 1 0 0 1 .72.3l2.6 2.6a.44.44 0 0 0 .63-.62L6.1 15.04l-1.75-1.75a1 1 0 1 1 1.41-1.41l4.15 4.15a.44.44 0 0 0 .63 0 .44.44 0 0 0 0-.62L6.4 11.26l-1.18-1.18a1 1 0 0 1 0-1.4 1.02 1.02 0 0 1 1.41 0l1.18 1.16L11.96 14a.44.44 0 0 0 .62 0 .44.44 0 0 0 0-.63L8.43 9.22a.99.99 0 0 1-.3-.7.99.99 0 0 1 .3-.7 1 1 0 0 1 1.41 0l7 6.98a.44.44 0 0 0 .7-.5l-1.35-2.85c-.31-.68-.23-1.19.25-1.56a.85.85 0 0 1 .66-.16c.34.06.66.28.88.6L20.63 15c1.57 2.88 1.07 5.54-1.55 8.16a5.62 5.62 0 0 1-5.06 1.65 9.35 9.35 0 0 1-4.93-2.72zM13 6.98l2.56 2.56c-.5.6-.56 1.41-.15 2.28l.26.56-4.25-4.25a.98.98 0 0 1-.12-.45 1 1 0 0 1 .29-.7 1.02 1.02 0 0 1 1.41 0zm8.89 2.06c-.38-.56-.9-.92-1.49-1.01a1.74 1.74 0 0 0-1.34.33c-.38.29-.61.65-.71 1.06a2.1 2.1 0 0 0-1.1-.56 1.78 1.78 0 0 0-.99.13l-2.64-2.64a1.88 1.88 0 0 0-2.65 0 1.86 1.86 0 0 0-.48.85 1.89 1.89 0 0 0-2.67-.01 1.87 1.87 0 0 0-.5.9c-.76-.75-2-.75-2.7-.04a1.88 1.88 0 0 0 0 2.66c-.3.12-.61.29-.87.55a1.88 1.88 0 0 0 0 2.66l.62.62a1.88 1.88 0 0 0-.9 3.16l5.01 5.02c1.6 1.6 3.52 2.64 5.4 2.96a7.16 7.16 0 0 0 1.18.1c1.03 0 2-.25 2.9-.7A5.9 5.9 0 0 0 23 23.24c3.34-3.34 3.08-6.93 1.74-9.17l-2.87-5.04z"></path></g></svg></div></a></div><div class="ju r"><div class="jv"><h4 class="bj el fg bl bo"><button class="at au av aw ax ay az ba bb bc bd be bf bg bh bi">16 </button></h4></div></div></div></div><div><div class="cf"><a href="https://medium.com/m/signin?operation=register&amp;redirect=https%3A%2F%2Fmedium.com%2F%40onejohi%2Fsharing-data-between-components-in-angularjs-c34ff20b7fee&amp;source=post_sidebar--------------------------bookmark_sidebar-" class="at au av aw ax ay az ba bb bc bd be bf bg bh bi" rel="noopener"><svg width="25" height="25" viewBox="0 0 25 25"><path d="M19 6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14.66h.01c.01.1.05.2.12.28a.5.5 0 0 0 .7.03l5.67-4.12 5.66 4.13a.5.5 0 0 0 .71-.03.5.5 0 0 0 .12-.29H19V6zm-6.84 9.97L7 19.64V6a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v13.64l-5.16-3.67a.49.49 0 0 0-.68 0z" fill-rule="evenodd"></path></svg></a></div></div></div></div></div></div></div><div class="mh te jb s jw jx jy jz jd ka"></div><div><div class="kb dg n co p"><div class="n p"><div class="ac ae af ag ah cz aj ak"><div class="n kc"></div><div class="n o kc"></div><div class="kd r"><ul class="ba bb"><li class="cf ke kf kg"><a href="https://medium.com/tag/javascript" class="kh ki cg bo r kj kk a b ga">JavaScript</a></li><li class="cf ke kf kg"><a href="https://medium.com/tag/angular" class="kh ki cg bo r kj kk a b ga">Angular</a></li><li class="cf ke kf kg"><a href="https://medium.com/tag/components" class="kh ki cg bo r kj kk a b ga">Components</a></li></ul></div><div class="kl n km ab"><div class="n o"><div class="kn r dj"><a href="https://medium.com/m/signin?operation=register&amp;redirect=https%3A%2F%2Fmedium.com%2F%40onejohi%2Fsharing-data-between-components-in-angularjs-c34ff20b7fee&amp;source=post_actions_footer-----c34ff20b7fee---------------------clap_footer-" class="at au av aw ax ay az ba bb bc bd be bf bg bh bi" rel="noopener"><div class="c ko fa n o kp dj kq kr ks kt ku kv kw kx ky kz la lb lc ld"><div class="ba jk jl jm jn jo le jq o dx fa n p lf u dn cp t ak jr js jt lg"><svg width="33" height="33" viewBox="0 0 33 33"><path d="M28.86 17.34l-3.64-6.4c-.3-.43-.71-.73-1.16-.8a1.12 1.12 0 0 0-.9.21c-.62.5-.73 1.18-.32 2.06l1.22 2.6 1.4 2.45c2.23 4.09 1.51 8-2.15 11.66a9.6 9.6 0 0 1-.8.71 6.53 6.53 0 0 0 4.3-2.1c3.82-3.82 3.57-7.87 2.05-10.39zm-6.25 11.08c3.35-3.35 4-6.78 1.98-10.47L21.2 12c-.3-.43-.71-.72-1.16-.8a1.12 1.12 0 0 0-.9.22c-.62.49-.74 1.18-.32 2.06l1.72 3.63a.5.5 0 0 1-.81.57l-8.91-8.9a1.33 1.33 0 0 0-1.89 1.88l5.3 5.3a.5.5 0 0 1-.71.7l-5.3-5.3-1.49-1.49c-.5-.5-1.38-.5-1.88 0a1.34 1.34 0 0 0 0 1.89l1.49 1.5 5.3 5.28a.5.5 0 0 1-.36.86.5.5 0 0 1-.36-.15l-5.29-5.29a1.34 1.34 0 0 0-1.88 0 1.34 1.34 0 0 0 0 1.89l2.23 2.23L9.3 21.4a.5.5 0 0 1-.36.85.5.5 0 0 1-.35-.14l-3.32-3.33a1.33 1.33 0 0 0-1.89 0 1.32 1.32 0 0 0-.39.95c0 .35.14.69.4.94l6.39 6.4c3.53 3.53 8.86 5.3 12.82 1.35zM12.73 9.26l5.68 5.68-.49-1.04c-.52-1.1-.43-2.13.22-2.89l-3.3-3.3a1.34 1.34 0 0 0-1.88 0 1.33 1.33 0 0 0-.4.94c0 .22.07.42.17.61zm14.79 19.18a7.46 7.46 0 0 1-6.41 2.31 7.92 7.92 0 0 1-3.67.9c-3.05 0-6.12-1.63-8.36-3.88l-6.4-6.4A2.31 2.31 0 0 1 2 19.72a2.33 2.33 0 0 1 1.92-2.3l-.87-.87a2.34 2.34 0 0 1 0-3.3 2.33 2.33 0 0 1 1.24-.64l-.14-.14a2.34 2.34 0 0 1 0-3.3 2.39 2.39 0 0 1 3.3 0l.14.14a2.33 2.33 0 0 1 3.95-1.24l.09.09c.09-.42.29-.83.62-1.16a2.34 2.34 0 0 1 3.3 0l3.38 3.39a2.17 2.17 0 0 1 1.27-.17c.54.08 1.03.35 1.45.76.1-.55.41-1.03.9-1.42a2.12 2.12 0 0 1 1.67-.4 2.8 2.8 0 0 1 1.85 1.25l3.65 6.43c1.7 2.83 2.03 7.37-2.2 11.6zM13.22.48l-1.92.89 2.37 2.83-.45-3.72zm8.48.88L19.78.5l-.44 3.7 2.36-2.84zM16.5 3.3L15.48 0h2.04L16.5 3.3z" fill-rule="evenodd"></path></svg></div></div></a></div><div class="ju r"><div class="jv"><h4 class="bj el fg bl ea"><button class="at au av aw ax ay az ba bb bc bd be bf bg bh bi">16 claps</button></h4></div></div></div><div class="n o"><div class="lh r ar g"><a href="https://medium.com/p/c34ff20b7fee/share/twitter?source=post_actions_footer---------------------------" class="at au av aw ax ay az ba bb bc bd be bf bg bh bi" target="_blank" rel="noopener"><svg width="29" height="29" class="q"><path d="M22.05 7.54a4.47 4.47 0 0 0-3.3-1.46 4.53 4.53 0 0 0-4.53 4.53c0 .35.04.7.08 1.05A12.9 12.9 0 0 1 5 6.89a5.1 5.1 0 0 0-.65 2.26c.03 1.6.83 2.99 2.02 3.79a4.3 4.3 0 0 1-2.02-.57v.08a4.55 4.55 0 0 0 3.63 4.44c-.4.08-.8.13-1.21.16l-.81-.08a4.54 4.54 0 0 0 4.2 3.15 9.56 9.56 0 0 1-5.66 1.94l-1.05-.08c2 1.27 4.38 2.02 6.94 2.02 8.3 0 12.86-6.9 12.84-12.85.02-.24 0-.43 0-.65a8.68 8.68 0 0 0 2.26-2.34c-.82.38-1.7.62-2.6.72a4.37 4.37 0 0 0 1.95-2.51c-.84.53-1.81.9-2.83 1.13z"></path></svg></a></div><div class="lh r ar g"><a href="https://medium.com/p/c34ff20b7fee/share/facebook?source=post_actions_footer---------------------------" class="at au av aw ax ay az ba bb bc bd be bf bg bh bi" target="_blank" rel="noopener"><svg width="29" height="29" class="q"><path d="M23.2 5H5.8a.8.8 0 0 0-.8.8V23.2c0 .44.35.8.8.8h9.3v-7.13h-2.38V13.9h2.38v-2.38c0-2.45 1.55-3.66 3.74-3.66 1.05 0 1.95.08 2.2.11v2.57h-1.5c-1.2 0-1.48.57-1.48 1.4v1.96h2.97l-.6 2.97h-2.37l.05 7.12h5.1a.8.8 0 0 0 .79-.8V5.8a.8.8 0 0 0-.8-.79"></path></svg></a></div><div class="lh ap aq"><div class="cf"><button class="at au av aw ax ay az ba bb bc bd be bf bg bh bi"><svg width="25" height="25" class="q"><g fill-rule="evenodd"><path d="M15.6 5a.42.42 0 0 0 .17-.3.42.42 0 0 0-.12-.33l-2.8-2.79a.5.5 0 0 0-.7 0l-2.8 2.8a.4.4 0 0 0-.1.32c0 .12.07.23.16.3h.02a.45.45 0 0 0 .57-.04l2-2V10c0 .28.23.5.5.5s.5-.22.5-.5V2.93l2.02 2.02c.08.07.18.12.3.13.11.01.21-.02.3-.08v.01"></path><path d="M18 7h-1.5a.5.5 0 0 0 0 1h1.6c.5 0 .9.4.9.9v10.2c0 .5-.4.9-.9.9H6.9a.9.9 0 0 1-.9-.9V8.9c0-.5.4-.9.9-.9h1.6a.5.5 0 0 0 .35-.15A.5.5 0 0 0 9 7.5a.5.5 0 0 0-.15-.35A.5.5 0 0 0 8.5 7H7a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h11a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"></path></g></svg></button></div></div><div class="lh r ar"><div><div class="cf"><a href="https://medium.com/m/signin?operation=register&amp;redirect=https%3A%2F%2Fmedium.com%2F%40onejohi%2Fsharing-data-between-components-in-angularjs-c34ff20b7fee&amp;source=post_actions_footer--------------------------bookmark_sidebar-" class="at au av aw ax ay az ba bb bc bd be bf bg bh bi" rel="noopener"><svg width="25" height="25" viewBox="0 0 25 25"><path d="M19 6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14.66h.01c.01.1.05.2.12.28a.5.5 0 0 0 .7.03l5.67-4.12 5.66 4.13a.5.5 0 0 0 .71-.03.5.5 0 0 0 .12-.29H19V6zm-6.84 9.97L7 19.64V6a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v13.64l-5.16-3.67a.49.49 0 0 0-.68 0z" fill-rule="evenodd"></path></svg></a></div></div></div><div class="cf"><div class="r ar"><button class="at au av aw ax ay az ba bb bc bd be bf bg bh bi"><svg width="25" height="25" viewBox="-480.5 272.5 21 21" class="q"><path d="M-463 284.6c.9 0 1.6-.7 1.6-1.6s-.7-1.6-1.6-1.6-1.6.7-1.6 1.6.7 1.6 1.6 1.6zm0 .9c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5zm-7-.9c.9 0 1.6-.7 1.6-1.6s-.7-1.6-1.6-1.6-1.6.7-1.6 1.6.7 1.6 1.6 1.6zm0 .9c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5zm-7-.9c.9 0 1.6-.7 1.6-1.6s-.7-1.6-1.6-1.6-1.6.7-1.6 1.6.7 1.6 1.6 1.6zm0 .9c-1.4 0-2.5-1.1-2.5-2.5s1.1-2.5 2.5-2.5 2.5 1.1 2.5 2.5-1.1 2.5-2.5 2.5z"></path></svg></button></div></div></div></div><div class="li lj lk kd r ab"><div class="ll lm r dj"><span class="r ln an lo"><div class="r cp lp lq"><a rel="noopener" href="https://medium.com/@onejohi?source=follow_footer--------------------------follow_footer-"><img alt="Onejohi" class="r fa lr ls" src="./Sharing data between components in Angular. - Onejohi - Medium_files/1_Gd0D1ABMEFA5W-xsWLYtUA(1).jpeg" width="80" height="80"></a></div><span class="r"><div class="lt r lu"><p class="bj el ga bl bo lv lw">Written by</p></div><div class="lt lx n lu"><div class="ak n o km"><h2 class="bj gy ly lz ea"><a class="at au av aw ax ay az ba bb bc bd be bf bg bh bi" rel="noopener" href="https://medium.com/@onejohi?source=follow_footer--------------------------follow_footer-">Onejohi</a></h2><div class="r g"><button class="ma ea q by fp fq fr fs bc bh ft fu fv fw fx fy cb bj b bk bl bm bn cc cd ce cf cg bf">Follow</button></div></div></div></span></span><div class="lt mb r lu aq"><div class="mc r"><h4 class="bj el ip md bo">Creative 🚀 | Gamer 🎮 | Web &amp; App developer 💻📱 | Graphics Designer 📏📝 | Entrepreneur 💶 | Cool AF 😎🤓 https://onejohi.herokuapp.com</h4></div><div class="ap me aq"><button class="ma ea q by fp fq fr fs bc bh ft fu fv fw fx fy cb bj b bk bl bm bn cc cd ce cf cg bf">Follow</button></div></div></div></div><div class="mf lj r ab"><a href="https://medium.com/p/c34ff20b7fee/responses/show?source=follow_footer--------------------------follow_footer-" class="at au av aw ax ay az ba bb bc bd be bf bg bh bi" rel="noopener"><span class="mg mh jn"><div class="mi mj cb r mk aq"><span class="br">See responses (2)</span></div></span></a></div></div></div><div class="ml r mm ab"><div class="n p"><div class="ac ae af ag ah ai aj ak"><div class="pw r px"><div class="ni py ll r"><h2 class="bj gy pz qa ea">More From Medium</h2></div><div class="qb n ok kc qc qd qe qf qg qh qi qj qk ql qm qn qo qp qq"><div class="qr qs qt qu qv qw qx qy qz ra rb rc rd re rf rg rh ri rj rk rl"><div class="ak dn"><div class="r rm"><div class="rn ro qc qd qe rp rq qf qg qh rr rs qi qj qk rt ru ql qm qn rv rw qo qp qq n kc"><div class="qr qs qt qu qv qw rx ry qz ra rz sa rd re sb sc rh ri sd se rl"><div class="sf r sg f"><h4 class="bj el fg bl bo">More from Onejohi</h4></div><div class="sh r si px"><a class="at au av aw ax ay az ba bb bc bd be bf bg bh bi r" rel="noopener" href="https://medium.com/@onejohi/building-a-simple-rest-api-with-nodejs-and-express-da6273ed7ca9?source=post_recirc---------0------------------"><div class="sj dj"><div class="dn cp ak"><div class="sk r iu iv dn ak ix iy"></div></div></div></a></div></div><div class="qr qs qt qu qv qw rx ry qz ra rz sa rd re sb sc rh ri sd se rl"><div class="sh r"><div class="sl ap h sm"><h4 class="bj el fg bl bo">More from Onejohi</h4></div><a rel="noopener" href="https://medium.com/@onejohi/building-a-simple-rest-api-with-nodejs-and-express-da6273ed7ca9?source=post_recirc---------0------------------"><h3 class="ea q eb ot bk et eu sn">Building a simple REST API with NodeJS and Express.</h3></a></div><div class="n o km"><div class="so r sp"><div class="o n"><div><a rel="noopener" href="https://medium.com/@onejohi?source=post_recirc---------0------------------"><img alt="Onejohi" class="r fa sq sr" src="./Sharing data between components in Angular. - Onejohi - Medium_files/1_Gd0D1ABMEFA5W-xsWLYtUA(2).jpeg" width="40" height="40"></a></div><div class="fd ak r"><div class="n"><div style="flex: 1 1 0%;"><span class="bj b bk bl bm bn r ea q"><div class="ch n o ff"><span class="bj el fg bl do fh fi fj fk fl ea"><a class="at au av aw ax ay az ba bb bc fm bf bg bh bi" rel="noopener" href="https://medium.com/@onejohi?source=post_recirc---------0------------------">Onejohi</a></span></div></span></div></div><span class="bj b bk bl bm bn r bo bp"><span class="bj el fg bl do fh fi fj fk fl bo"><div><a class="at au av aw ax ay az ba bb bc fm bf bg bh bi" rel="noopener" href="https://medium.com/@onejohi/building-a-simple-rest-api-with-nodejs-and-express-da6273ed7ca9?source=post_recirc---------0------------------">Jun 28, 2018</a> · 8 min read</div></span></span></div></div></div><div class="n o"><div class="n o"><div class="jj r dj"><a href="https://medium.com/m/signin?operation=register&amp;redirect=https%3A%2F%2Fmedium.com%2F%40onejohi%2Fsharing-data-between-components-in-angularjs-c34ff20b7fee&amp;source=post_recirc-----da6273ed7ca9----0-----------------clap_preview-" class="at au av aw ax ay az ba bb bc bd be bf bg bh bi" rel="noopener"><div class="ba jk jl jm jn jo jp no jr js jt"><svg width="25" height="25" viewBox="0 0 25 25"><g fill-rule="evenodd"><path d="M11.74 0l.76 2.97.76-2.97zM14.81 3.78l1.84-2.56-1.42-.47zM8.38 1.22l1.84 2.56L9.8.75zM20.38 21.62a5.11 5.11 0 0 1-3.16 1.61l.49-.45c2.88-2.89 3.45-5.98 1.69-9.21l-1.1-1.94-.96-2.02c-.31-.67-.23-1.18.25-1.55a.84.84 0 0 1 .66-.16c.34.05.66.28.88.6l2.85 5.02c1.18 1.97 1.38 5.12-1.6 8.1M7.1 21.1l-5.02-5.02a1 1 0 0 1 .7-1.7 1 1 0 0 1 .72.3l2.6 2.6a.44.44 0 0 0 .63-.62L4.1 14.04l-1.75-1.75a1 1 0 1 1 1.41-1.41l4.15 4.15a.44.44 0 0 0 .63 0 .44.44 0 0 0 0-.62L4.4 10.26 3.22 9.08a1 1 0 0 1 0-1.4 1.02 1.02 0 0 1 1.41 0l1.18 1.16L9.96 13a.44.44 0 0 0 .62 0 .44.44 0 0 0 0-.63L6.43 8.22a.99.99 0 0 1-.3-.7.99.99 0 0 1 .3-.7 1 1 0 0 1 1.41 0l7 6.98a.44.44 0 0 0 .7-.5l-1.35-2.85c-.31-.68-.23-1.19.25-1.56a.85.85 0 0 1 .66-.16c.34.06.66.28.88.6L18.63 14c1.57 2.88 1.07 5.54-1.55 8.16a5.62 5.62 0 0 1-5.06 1.65 9.35 9.35 0 0 1-4.93-2.72zM11 5.98l2.56 2.56c-.5.6-.56 1.41-.15 2.28l.26.56-4.25-4.25a.98.98 0 0 1-.12-.45 1 1 0 0 1 .29-.7 1.02 1.02 0 0 1 1.41 0zm8.89 2.06c-.38-.56-.9-.92-1.49-1.01a1.74 1.74 0 0 0-1.34.33c-.38.29-.61.65-.71 1.06a2.1 2.1 0 0 0-1.1-.56 1.78 1.78 0 0 0-.99.13l-2.64-2.64a1.88 1.88 0 0 0-2.65 0 1.86 1.86 0 0 0-.48.85 1.89 1.89 0 0 0-2.67-.01 1.87 1.87 0 0 0-.5.9c-.76-.75-2-.75-2.7-.04a1.88 1.88 0 0 0 0 2.66c-.3.12-.61.29-.87.55a1.88 1.88 0 0 0 0 2.66l.62.62a1.88 1.88 0 0 0-.9 3.16l5.01 5.02c1.6 1.6 3.52 2.64 5.4 2.96a7.16 7.16 0 0 0 1.18.1c1.03 0 2-.25 2.9-.7A5.9 5.9 0 0 0 21 22.24c3.34-3.34 3.08-6.93 1.74-9.17l-2.87-5.04z"></path></g></svg></div></a></div><div class="ju r"><div class="jv"><h4 class="bj el fg bl bo">3.3K </h4></div></div></div><div class="ss fd so st su r"></div><div><div class="cf"><a href="https://medium.com/m/signin?operation=register&amp;redirect=https%3A%2F%2Fmedium.com%2F%40onejohi%2Fsharing-data-between-components-in-angularjs-c34ff20b7fee&amp;source=post_recirc---------0-----------------bookmark_sidebar-" class="at au av aw ax ay az ba bb bc bd be bf bg bh bi" rel="noopener"><svg width="25" height="25" viewBox="0 0 25 25"><path d="M19 6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14.66h.01c.01.1.05.2.12.28a.5.5 0 0 0 .7.03l5.67-4.12 5.66 4.13a.5.5 0 0 0 .71-.03.5.5 0 0 0 .12-.29H19V6zm-6.84 9.97L7 19.64V6a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v13.64l-5.16-3.67a.49.49 0 0 0-.68 0z" fill-rule="evenodd"></path></svg></a></div></div></div></div></div></div></div></div></div><div class="qr qs qt qu qv qw qx qy qz ra rb rc rd re rf rg rh ri rj rk rl"><div class="ak dn"><div class="r rm"><div class="rn ro qc qd qe rp rq qf qg qh rr rs qi qj qk rt ru ql qm qn rv rw qo qp qq n kc"><div class="qr qs qt qu qv qw rx ry qz ra rz sa rd re sb sc rh ri sd se rl"><div class="sf r sg f"><h4 class="bj el fg bl bo">Related reads</h4></div><div class="sh r si px"><a href="https://itnext.io/understanding-angular-interceptors-405b84d7ad69?source=post_recirc---------1------------------" class="at au av aw ax ay az ba bb bc bd be bf bg bh bi r" rel="noopener nofollow"><div class="sj dj"><div class="dn cp ak"><div class="sv r iu iv dn ak ix iy"></div></div></div></a></div></div><div class="qr qs qt qu qv qw rx ry qz ra rz sa rd re sb sc rh ri sd se rl"><div class="sh r"><div class="sl ap h sm"><h4 class="bj el fg bl bo">Related reads</h4></div><a href="https://itnext.io/understanding-angular-interceptors-405b84d7ad69?source=post_recirc---------1------------------" rel="noopener nofollow"><h3 class="ea q eb ot bk et eu sn">Understanding Angular Interceptors</h3></a></div><div class="n o km"><div class="so r sp"><div class="o n"><div><a rel="noopener" href="https://medium.com/@leonardo.giroto?source=post_recirc---------1------------------"><img alt="Leonardo Giroto" class="r fa sq sr" src="./Sharing data between components in Angular. - Onejohi - Medium_files/1_ZVhGXc1rq1sJhMI1Ufabyw.jpeg" width="40" height="40"></a></div><div class="fd ak r"><div class="n"><div style="flex: 1 1 0%;"><span class="bj b bk bl bm bn r ea q"><div class="ch n o ff"><span class="bj el fg bl do fh fi fj fk fl ea"><a class="at au av aw ax ay az ba bb bc fm bf bg bh bi" rel="noopener" href="https://medium.com/@leonardo.giroto?source=post_recirc---------1------------------">Leonardo Giroto</a><span> in <a href="https://itnext.io/?source=post_recirc---------1------------------" class="at au av aw ax ay az ba bb bc fm bf bg bh bi" rel="noopener nofollow">ITNEXT</a></span></span></div></span></div></div><span class="bj b bk bl bm bn r bo bp"><span class="bj el fg bl do fh fi fj fk fl bo"><div><a href="https://itnext.io/understanding-angular-interceptors-405b84d7ad69?source=post_recirc---------1------------------" class="at au av aw ax ay az ba bb bc fm bf bg bh bi" rel="noopener nofollow">May 28</a> · 5 min read<span style="padding-left: 4px;"><svg class="star-15px_svg__svgIcon-use" width="15" height="15" viewBox="0 0 15 15" style="margin-top: -2px;"><path d="M7.44 2.32c.03-.1.09-.1.12 0l1.2 3.53a.29.29 0 0 0 .26.2h3.88c.11 0 .13.04.04.1L9.8 8.33a.27.27 0 0 0-.1.29l1.2 3.53c.03.1-.01.13-.1.07l-3.14-2.18a.3.3 0 0 0-.32 0L4.2 12.22c-.1.06-.14.03-.1-.07l1.2-3.53a.27.27 0 0 0-.1-.3L2.06 6.16c-.1-.06-.07-.12.03-.12h3.89a.29.29 0 0 0 .26-.19l1.2-3.52z"></path></svg></span></div></span></span></div></div></div><div class="n o"><div class="n o"><div class="jj r dj"><a href="https://medium.com/m/signin?operation=register&amp;redirect=https%3A%2F%2Fmedium.com%2F%40onejohi%2Fsharing-data-between-components-in-angularjs-c34ff20b7fee&amp;source=post_recirc-----405b84d7ad69----1-----------------clap_preview-" class="at au av aw ax ay az ba bb bc bd be bf bg bh bi" rel="noopener"><div class="ba jk jl jm jn jo jp no jr js jt"><svg width="25" height="25" viewBox="0 0 25 25"><g fill-rule="evenodd"><path d="M11.74 0l.76 2.97.76-2.97zM14.81 3.78l1.84-2.56-1.42-.47zM8.38 1.22l1.84 2.56L9.8.75zM20.38 21.62a5.11 5.11 0 0 1-3.16 1.61l.49-.45c2.88-2.89 3.45-5.98 1.69-9.21l-1.1-1.94-.96-2.02c-.31-.67-.23-1.18.25-1.55a.84.84 0 0 1 .66-.16c.34.05.66.28.88.6l2.85 5.02c1.18 1.97 1.38 5.12-1.6 8.1M7.1 21.1l-5.02-5.02a1 1 0 0 1 .7-1.7 1 1 0 0 1 .72.3l2.6 2.6a.44.44 0 0 0 .63-.62L4.1 14.04l-1.75-1.75a1 1 0 1 1 1.41-1.41l4.15 4.15a.44.44 0 0 0 .63 0 .44.44 0 0 0 0-.62L4.4 10.26 3.22 9.08a1 1 0 0 1 0-1.4 1.02 1.02 0 0 1 1.41 0l1.18 1.16L9.96 13a.44.44 0 0 0 .62 0 .44.44 0 0 0 0-.63L6.43 8.22a.99.99 0 0 1-.3-.7.99.99 0 0 1 .3-.7 1 1 0 0 1 1.41 0l7 6.98a.44.44 0 0 0 .7-.5l-1.35-2.85c-.31-.68-.23-1.19.25-1.56a.85.85 0 0 1 .66-.16c.34.06.66.28.88.6L18.63 14c1.57 2.88 1.07 5.54-1.55 8.16a5.62 5.62 0 0 1-5.06 1.65 9.35 9.35 0 0 1-4.93-2.72zM11 5.98l2.56 2.56c-.5.6-.56 1.41-.15 2.28l.26.56-4.25-4.25a.98.98 0 0 1-.12-.45 1 1 0 0 1 .29-.7 1.02 1.02 0 0 1 1.41 0zm8.89 2.06c-.38-.56-.9-.92-1.49-1.01a1.74 1.74 0 0 0-1.34.33c-.38.29-.61.65-.71 1.06a2.1 2.1 0 0 0-1.1-.56 1.78 1.78 0 0 0-.99.13l-2.64-2.64a1.88 1.88 0 0 0-2.65 0 1.86 1.86 0 0 0-.48.85 1.89 1.89 0 0 0-2.67-.01 1.87 1.87 0 0 0-.5.9c-.76-.75-2-.75-2.7-.04a1.88 1.88 0 0 0 0 2.66c-.3.12-.61.29-.87.55a1.88 1.88 0 0 0 0 2.66l.62.62a1.88 1.88 0 0 0-.9 3.16l5.01 5.02c1.6 1.6 3.52 2.64 5.4 2.96a7.16 7.16 0 0 0 1.18.1c1.03 0 2-.25 2.9-.7A5.9 5.9 0 0 0 21 22.24c3.34-3.34 3.08-6.93 1.74-9.17l-2.87-5.04z"></path></g></svg></div></a></div><div class="ju r"><div class="jv"><h4 class="bj el fg bl bo">317 </h4></div></div></div><div class="ss fd so st su r"></div><div><div class="cf"><a href="https://medium.com/m/signin?operation=register&amp;redirect=https%3A%2F%2Fmedium.com%2F%40onejohi%2Fsharing-data-between-components-in-angularjs-c34ff20b7fee&amp;source=post_recirc---------1-----------------bookmark_sidebar-" class="at au av aw ax ay az ba bb bc bd be bf bg bh bi" rel="noopener"><svg width="25" height="25" viewBox="0 0 25 25"><path d="M19 6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14.66h.01c.01.1.05.2.12.28a.5.5 0 0 0 .7.03l5.67-4.12 5.66 4.13a.5.5 0 0 0 .71-.03.5.5 0 0 0 .12-.29H19V6zm-6.84 9.97L7 19.64V6a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v13.64l-5.16-3.67a.49.49 0 0 0-.68 0z" fill-rule="evenodd"></path></svg></a></div></div></div></div></div></div></div></div></div><div class="qr qs qt qu qv qw qx qy qz ra rb rc rd re rf rg rh ri rj rk rl"><div class="ak dn"><div class="r rm"><div class="rn ro qc qd qe rp rq qf qg qh rr rs qi qj qk rt ru ql qm qn rv rw qo qp qq n kc"><div class="qr qs qt qu qv qw rx ry qz ra rz sa rd re sb sc rh ri sd se rl"><div class="sf r sg f"><h4 class="bj el fg bl bo">Related reads</h4></div><div class="sh r si px"><a class="at au av aw ax ay az ba bb bc bd be bf bg bh bi r" rel="noopener" href="https://medium.com/@zeljkoradic/custom-form-validators-in-angular-6-using-regular-expressions-d421a5655adf?source=post_recirc---------2------------------"><div class="sj dj"><div class="dn cp ak"><div class="sw r iu iv dn ak ix iy"></div></div></div></a></div></div><div class="qr qs qt qu qv qw rx ry qz ra rz sa rd re sb sc rh ri sd se rl"><div class="sh r"><div class="sl ap h sm"><h4 class="bj el fg bl bo">Related reads</h4></div><a rel="noopener" href="https://medium.com/@zeljkoradic/custom-form-validators-in-angular-6-using-regular-expressions-d421a5655adf?source=post_recirc---------2------------------"><h3 class="ea q eb ot bk et eu sn">Custom Form Validators in Angular 6 Using Regular Expressions</h3></a></div><div class="n o km"><div class="so r sp"><div class="o n"><div><a rel="noopener" href="https://medium.com/@zeljkoradic?source=post_recirc---------2------------------"><img alt="Zeljko Radic" class="r fa sq sr" src="./Sharing data between components in Angular. - Onejohi - Medium_files/1_qk7duAJz5HQo8NBBV_DxEg.png" width="40" height="40"></a></div><div class="fd ak r"><div class="n"><div style="flex: 1 1 0%;"><span class="bj b bk bl bm bn r ea q"><div class="ch n o ff"><span class="bj el fg bl do fh fi fj fk fl ea"><a class="at au av aw ax ay az ba bb bc fm bf bg bh bi" rel="noopener" href="https://medium.com/@zeljkoradic?source=post_recirc---------2------------------">Zeljko Radic</a></span></div></span></div></div><span class="bj b bk bl bm bn r bo bp"><span class="bj el fg bl do fh fi fj fk fl bo"><div><a class="at au av aw ax ay az ba bb bc fm bf bg bh bi" rel="noopener" href="https://medium.com/@zeljkoradic/custom-form-validators-in-angular-6-using-regular-expressions-d421a5655adf?source=post_recirc---------2------------------">Aug 19, 2018</a> · 4 min read</div></span></span></div></div></div><div class="n o"><div class="n o"><div class="jj r dj"><a href="https://medium.com/m/signin?operation=register&amp;redirect=https%3A%2F%2Fmedium.com%2F%40onejohi%2Fsharing-data-between-components-in-angularjs-c34ff20b7fee&amp;source=post_recirc-----d421a5655adf----2-----------------clap_preview-" class="at au av aw ax ay az ba bb bc bd be bf bg bh bi" rel="noopener"><div class="ba jk jl jm jn jo jp no jr js jt"><svg width="25" height="25" viewBox="0 0 25 25"><g fill-rule="evenodd"><path d="M11.74 0l.76 2.97.76-2.97zM14.81 3.78l1.84-2.56-1.42-.47zM8.38 1.22l1.84 2.56L9.8.75zM20.38 21.62a5.11 5.11 0 0 1-3.16 1.61l.49-.45c2.88-2.89 3.45-5.98 1.69-9.21l-1.1-1.94-.96-2.02c-.31-.67-.23-1.18.25-1.55a.84.84 0 0 1 .66-.16c.34.05.66.28.88.6l2.85 5.02c1.18 1.97 1.38 5.12-1.6 8.1M7.1 21.1l-5.02-5.02a1 1 0 0 1 .7-1.7 1 1 0 0 1 .72.3l2.6 2.6a.44.44 0 0 0 .63-.62L4.1 14.04l-1.75-1.75a1 1 0 1 1 1.41-1.41l4.15 4.15a.44.44 0 0 0 .63 0 .44.44 0 0 0 0-.62L4.4 10.26 3.22 9.08a1 1 0 0 1 0-1.4 1.02 1.02 0 0 1 1.41 0l1.18 1.16L9.96 13a.44.44 0 0 0 .62 0 .44.44 0 0 0 0-.63L6.43 8.22a.99.99 0 0 1-.3-.7.99.99 0 0 1 .3-.7 1 1 0 0 1 1.41 0l7 6.98a.44.44 0 0 0 .7-.5l-1.35-2.85c-.31-.68-.23-1.19.25-1.56a.85.85 0 0 1 .66-.16c.34.06.66.28.88.6L18.63 14c1.57 2.88 1.07 5.54-1.55 8.16a5.62 5.62 0 0 1-5.06 1.65 9.35 9.35 0 0 1-4.93-2.72zM11 5.98l2.56 2.56c-.5.6-.56 1.41-.15 2.28l.26.56-4.25-4.25a.98.98 0 0 1-.12-.45 1 1 0 0 1 .29-.7 1.02 1.02 0 0 1 1.41 0zm8.89 2.06c-.38-.56-.9-.92-1.49-1.01a1.74 1.74 0 0 0-1.34.33c-.38.29-.61.65-.71 1.06a2.1 2.1 0 0 0-1.1-.56 1.78 1.78 0 0 0-.99.13l-2.64-2.64a1.88 1.88 0 0 0-2.65 0 1.86 1.86 0 0 0-.48.85 1.89 1.89 0 0 0-2.67-.01 1.87 1.87 0 0 0-.5.9c-.76-.75-2-.75-2.7-.04a1.88 1.88 0 0 0 0 2.66c-.3.12-.61.29-.87.55a1.88 1.88 0 0 0 0 2.66l.62.62a1.88 1.88 0 0 0-.9 3.16l5.01 5.02c1.6 1.6 3.52 2.64 5.4 2.96a7.16 7.16 0 0 0 1.18.1c1.03 0 2-.25 2.9-.7A5.9 5.9 0 0 0 21 22.24c3.34-3.34 3.08-6.93 1.74-9.17l-2.87-5.04z"></path></g></svg></div></a></div><div class="ju r"><div class="jv"><h4 class="bj el fg bl bo">291 </h4></div></div></div><div class="ss fd so st su r"></div><div><div class="cf"><a href="https://medium.com/m/signin?operation=register&amp;redirect=https%3A%2F%2Fmedium.com%2F%40onejohi%2Fsharing-data-between-components-in-angularjs-c34ff20b7fee&amp;source=post_recirc---------2-----------------bookmark_sidebar-" class="at au av aw ax ay az ba bb bc bd be bf bg bh bi" rel="noopener"><svg width="25" height="25" viewBox="0 0 25 25"><path d="M19 6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14.66h.01c.01.1.05.2.12.28a.5.5 0 0 0 .7.03l5.67-4.12 5.66 4.13a.5.5 0 0 0 .71-.03.5.5 0 0 0 .12-.29H19V6zm-6.84 9.97L7 19.64V6a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v13.64l-5.16-3.67a.49.49 0 0 0-.68 0z" fill-rule="evenodd"></path></svg></a></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div><div class="mn r mo mp"><section class="cl cm ak ce r hx hy hz ia ib ic id ie if ig ih ii ij ik il"><div class="mq mr ll n km g"><div class="ms n km"><div class="mt r mu"><div class="mv r"><a href="https://medium.com/about?autoplay=1&amp;source=post_page-----c34ff20b7fee----------------------" class="at au av aw ax ay az ba bb bc mw mx bf bg my mz" rel="noopener"><h4 class="na nb nc bj gy bk md nd ne r">Discover <!-- -->Medium</h4></a></div><span class="bj b bk bl bm bn r nf ng">Welcome to a place where words matter. On <!-- -->Medium<!-- -->, smart voices and original ideas take center stage - with no ads in sight.<!-- --> <a href="https://medium.com/about?autoplay=1&amp;source=post_page-----c34ff20b7fee----------------------" class="at au av aw ax ay az ba bb bc bf bg my mz nh" rel="noopener">Watch</a></span></div><div class="mt r mu"><div class="ni r"><a href="https://medium.com/topics?source=post_page-----c34ff20b7fee----------------------" class="at au av aw ax ay az ba bb bc mw mx bf bg my mz" rel="noopener"><h4 class="na nb nc bj gy bk md nd ne r">Make <!-- -->Medium<!-- --> yours</h4></a></div><span class="bj b bk bl bm bn r nf ng">Follow all the topics you care about, and we’ll deliver the best stories for you to your homepage and inbox.<!-- --> <a href="https://medium.com/topics?source=post_page-----c34ff20b7fee----------------------" class="at au av aw ax ay az ba bb bc bf bg my mz nh" rel="noopener">Explore</a></span></div><div class="mt r mu"><div class="mv r"><a href="https://medium.com/membership?source=post_page-----c34ff20b7fee----------------------" class="at au av aw ax ay az ba bb bc mw mx bf bg my mz" rel="noopener"><h4 class="na nb nc bj gy bk md nd ne r">Become a member</h4></a></div><span class="bj b bk bl bm bn r nf ng">Get unlimited access to the best stories on <!-- -->Medium<!-- --> — and support writers while you’re at it. Just $5/month.<!-- --> <a href="https://medium.com/membership?source=post_page-----c34ff20b7fee----------------------" class="at au av aw ax ay az ba bb bc bf bg my mz nh" rel="noopener">Upgrade</a></span></div></div></div><div class="n o km"><a class="at au av aw ax ay az ba bb bc mw mx bf bg my mz" rel="noopener" href="https://medium.com/?source=post_page-----c34ff20b7fee----------------------"><svg height="22" width="112" viewBox="0 0 111.5 22" class="nb"><path d="M56.3 19.5c0 .4 0 .5.3.7l1.5 1.4v.1h-6.5V19c-.7 1.8-2.4 3-4.3 3-3.3 0-5.8-2.6-5.8-7.5 0-4.5 2.6-7.6 6.3-7.6 1.6-.1 3.1.8 3.8 2.4V3.2c0-.3-.1-.6-.3-.7l-1.4-1.4V1l6.5-.8v19.3zm-4.8-.8V9.5c-.5-.6-1.2-.9-1.9-.9-1.6 0-3.1 1.4-3.1 5.7 0 4 1.3 5.4 3 5.4.8.1 1.6-.3 2-1zm9.1 3.1V9.4c0-.3-.1-.6-.3-.7l-1.4-1.5v-.1h6.5v12.5c0 .4 0 .5.3.7l1.4 1.4v.1h-6.5zm-.2-19.2C60.4 1.2 61.5 0 63 0c1.4 0 2.6 1.2 2.6 2.6S64.4 5.3 63 5.3a2.6 2.6 0 0 1-2.6-2.7zm22.5 16.9c0 .4 0 .5.3.7l1.5 1.4v.1h-6.5v-3.2c-.6 2-2.4 3.4-4.5 3.4-2.9 0-4.4-2.1-4.4-6.2 0-1.9 0-4.1.1-6.5 0-.3-.1-.5-.3-.7L67.7 7v.1H74v8c0 2.6.4 4.4 2 4.4.9-.1 1.7-.6 2.1-1.3V9.5c0-.3-.1-.6-.3-.7l-1.4-1.5v-.2h6.5v12.4zm22 2.3c0-.5.1-6.5.1-7.9 0-2.6-.4-4.5-2.2-4.5-.9 0-1.8.5-2.3 1.3.2.8.3 1.7.3 2.5 0 1.8-.1 4.2-.1 6.5 0 .3.1.5.3.7l1.5 1.4v.1H96c0-.4.1-6.5.1-7.9 0-2.7-.4-4.5-2.2-4.5-.9 0-1.7.5-2.2 1.3v9c0 .4 0 .5.3.7l1.4 1.4v.1h-6.5V9.5c0-.3-.1-.6-.3-.7l-1.4-1.5v-.2h6.5v3.1a4.6 4.6 0 0 1 4.6-3.4c2.2 0 3.6 1.2 4.2 3.5.7-2.1 2.7-3.6 4.9-3.5 2.9 0 4.5 2.2 4.5 6.2 0 1.9-.1 4.2-.1 6.5-.1.3.1.6.3.7l1.4 1.4v.1h-6.6zm-81.4-2l1.9 1.9v.1h-9.8v-.1l2-1.9c.2-.2.3-.4.3-.7V7.3c0-.5 0-1.2.1-1.8L11.4 22h-.1L4.5 6.8c-.1-.4-.2-.4-.3-.6v10c-.1.7 0 1.3.3 1.9l2.7 3.6v.1H0v-.1L2.7 18c.3-.6.4-1.3.3-1.9v-11c0-.5-.1-1.1-.5-1.5L.7 1.1V1h7l5.8 12.9L18.6 1h6.8v.1l-1.9 2.2c-.2.2-.3.5-.3.7v15.2c0 .2.1.5.3.6zm7.6-5.9c0 3.8 1.9 5.3 4.2 5.3 1.9.1 3.6-1 4.4-2.7h.1c-.8 3.7-3.1 5.5-6.5 5.5-3.7 0-7.2-2.2-7.2-7.4 0-5.5 3.5-7.6 7.3-7.6 3.1 0 6.4 1.5 6.4 6.2v.8h-8.7zm0-.8h4.3v-.8c0-3.9-.8-4.9-2-4.9-1.4.1-2.3 1.6-2.3 5.7z"></path></svg></a><span class="bj b bk bl bm bn r nf ng"><div class="nj nk n km nl an"><a href="https://medium.com/about?autoplay=1&amp;source=post_page-----c34ff20b7fee----------------------" class="at au av aw ax ay az ba bb bc fm bf bg my mz" rel="noopener">About</a><a href="https://help.medium.com/?source=post_page-----c34ff20b7fee----------------------" class="at au av aw ax ay az ba bb bc fm bf bg my mz" rel="noopener">Help</a><a class="at au av aw ax ay az ba bb bc fm bf bg my mz" rel="noopener" href="https://medium.com/policy/9db0094a1e0f?source=post_page-----c34ff20b7fee----------------------">Legal</a></div></span></div></section></div></div></div><script src="./Sharing data between components in Angular. - Onejohi - Medium_files/16180790160.js.download"></script><iframe src="./Sharing data between components in Angular. - Onejohi - Medium_files/a16180790160.html" hidden="" aria-hidden="true" tabindex="-1" title="Optimizely Internal Frame" height="0" width="0" style="display: none;"></iframe><script>window.__BUILD_ID__ = "development"</script><script>window.__GRAPHQL_URI__ = "https://medium.com/_/graphql"</script><script>window.__PRELOADED_STATE__ = {"config":{"nodeEnv":"production","version":"master-20191113-214929-50810d2209","productName":"Medium","publicUrl":"https:\u002F\u002Fcdn-client.medium.com\u002Flite","authDomain":"medium.com","authGoogleClientId":"216296035834-k1k6qe060s2tp2a2jam4ljdcms00sttg.apps.googleusercontent.com","favicon":"production","glyphUrl":"https:\u002F\u002Fglyph.medium.com","branchKey":"key_live_ofxXr2qTrrU9NqURK8ZwEhknBxiI6KBm","lightStep":{"name":"lite-web","host":"collector-medium.lightstep.com","token":"ce5be895bef60919541332990ac9fef2","appVersion":"master-20191113-214929-50810d2209"},"algolia":{"appId":"MQ57UUUQZ2","apiKeySearch":"394474ced050e3911ae2249ecc774921","indexPrefix":"medium_","host":"-dsn.algolia.net"},"recaptchaKey":"6Lfc37IUAAAAAKGGtC6rLS13R1Hrw_BqADfS1LRk","sentry":{"dsn":"https:\u002F\u002F589e367c28ca47b195ce200d1507d18b@sentry.io\u002F1423575","environment":"production"},"isAmp":false,"googleAnalyticsCode":"UA-24232453-2","signInWallCustomDomainCollectionIds":["3a8144eabfe3","336d898217ee","61061eb0c96b","138adf9c44c","819cc2aaeee0"],"mediumOwnedAndOperatedCollectionIds":["544c7006046e","bcc38c8f6edf","444d13b52878","8d6b8a439e32","92d2092dc598","1285ba81cada","cb8577c9149e","8ccfed20cbb2","ae2a65f35510","3f6ecf56618","7b6769f2748b","fc8964313712","ef8e90590e66","191186aaafa0","d944778ce714","bdc4052bbdba","88d9857e584e"],"tierOneDomains":["medium.com","thebolditalic.com","arcdigital.media","towardsdatascience.com","uxdesign.cc","codeburst.io","psiloveyou.xyz","writingcooperative.com","entrepreneurshandbook.co","prototypr.io","betterhumans.coach.me","theascent.pub"]},"debug":{"requestId":"be6af1b8-3764-4ff5-8186-a31c31ef5de2","originalSpanCarrier":{"ot-tracer-spanid":"06b7755877c0dbdc","ot-tracer-traceid":"380b894c2a4a7115","ot-tracer-sampled":"true"}},"session":{"user":{"id":"lo_ajDSFR6PxvPw"},"xsrf":""},"stats":{"itemCount":0,"sending":false,"timeout":null,"backup":{}},"navigation":{"showBranchBanner":null,"hasRenderedBranchBanner":null,"hideGoogleOneTap":false,"hideAlternateUser":false,"branchData":{"loaded":false},"currentLocation":"https:\u002F\u002Fmedium.com\u002F@onejohi\u002Fsharing-data-between-components-in-angularjs-c34ff20b7fee","host":"medium.com","hostname":"medium.com","referrer":"https:\u002F\u002Fwww.google.com\u002F"},"client":{"isBot":false,"isEu":false,"isNativeMedium":false,"isCustomDomain":false},"multiVote":{"clapsPerPost":{}},"metadata":{"faviconImageId":null}}</script><script>window.__APOLLO_STATE__ = {"ROOT_QUERY":{"viewer":null,"variantFlags":[{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.0","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.1","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.2","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.3","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.4","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.5","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.6","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.7","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.8","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.9","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.10","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.11","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.12","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.13","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.14","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.15","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.16","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.17","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.18","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.19","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.20","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.21","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.22","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.23","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.24","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.25","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.26","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.27","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.28","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.29","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.30","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.31","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.32","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.33","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.34","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.35","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.36","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.37","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.38","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.39","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.40","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.41","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.42","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.43","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.44","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.45","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.46","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.47","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.48","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.49","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.50","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.51","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.52","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.53","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.54","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.55","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.56","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.57","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.58","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.59","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.60","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.61","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.62","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.63","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.64","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.65","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.66","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.67","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.68","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.69","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.70","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.71","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.72","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.73","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.74","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.75","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.76","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.77","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.78","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.79","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.80","typename":"VariantFlag"},{"type":"id","generated":true,"id":"ROOT_QUERY.variantFlags.81","typename":"VariantFlag"}],"meterPost({\"postId\":\"c34ff20b7fee\",\"postMeteringOptions\":{\"referrer\":\"https:\u002F\u002Fwww.google.com\u002F\"}})":{"type":"id","generated":false,"id":"MeteringInfo:singleton","typename":"MeteringInfo"},"postResult({\"id\":\"c34ff20b7fee\"})":{"type":"id","generated":false,"id":"Post:c34ff20b7fee","typename":"Post"}},"ROOT_QUERY.variantFlags.0":{"name":"allow_access","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.0.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.0.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.1":{"name":"allow_signup","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.1.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.1.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.2":{"name":"allow_test_auth","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.2.valueType","typename":"VariantFlagString"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.2.valueType":{"__typename":"VariantFlagString","value":"disallow"},"ROOT_QUERY.variantFlags.3":{"name":"available_annual_plan","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.3.valueType","typename":"VariantFlagString"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.3.valueType":{"__typename":"VariantFlagString","value":"2c754bcc2995"},"ROOT_QUERY.variantFlags.4":{"name":"available_monthly_plan","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.4.valueType","typename":"VariantFlagString"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.4.valueType":{"__typename":"VariantFlagString","value":"60e220181034"},"ROOT_QUERY.variantFlags.5":{"name":"browsable_stream_config_bucket","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.5.valueType","typename":"VariantFlagString"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.5.valueType":{"__typename":"VariantFlagString","value":"curated-topics"},"ROOT_QUERY.variantFlags.6":{"name":"disable_gosocial_followers_that_you_follow","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.6.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.6.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.7":{"name":"disable_ios_resume_reading_toast","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.7.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.7.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.8":{"name":"disable_mobile_featured_chunk","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.8.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.8.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.9":{"name":"enable_annual_renewal_reminder_email","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.9.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.9.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.10":{"name":"enable_app_flirty_thirty","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.10.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.10.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.11":{"name":"enable_automated_mission_control_triggers","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.11.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.11.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.12":{"name":"enable_branch_io","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.12.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.12.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.13":{"name":"enable_branding","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.13.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.13.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.14":{"name":"enable_branding_fonts","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.14.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.14.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.15":{"name":"enable_dedicated_series_tab_api_ios","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.15.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.15.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.16":{"name":"enable_different_grid","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.16.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.16.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.17":{"name":"enable_disregard_trunc_state_for_footer","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.17.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.17.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.18":{"name":"enable_edit_alt_text","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.18.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.18.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.19":{"name":"enable_email_sign_in_captcha","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.19.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.19.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.20":{"name":"enable_embedding_based_diversification","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.20.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.20.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.21":{"name":"enable_first_name_on_paywall","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.21.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.21.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.22":{"name":"enable_google_one_tap","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.22.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.22.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.23":{"name":"enable_graphql_lo_cache","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.23.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.23.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.24":{"name":"enable_inline_search_lite","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.24.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.24.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.25":{"name":"enable_inline_search_popover_lite","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.25.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.25.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.26":{"name":"enable_ios_post_stats","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.26.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.26.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.27":{"name":"enable_janky_spam_rules","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.27.valueType","typename":"VariantFlagString"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.27.valueType":{"__typename":"VariantFlagString","value":"users,posts"},"ROOT_QUERY.variantFlags.28":{"name":"enable_kafka_events","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.28.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.28.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.29":{"name":"enable_limit_diversification_heuristic","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.29.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.29.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.30":{"name":"enable_lite_notifications","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.30.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.30.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.31":{"name":"enable_lite_post","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.31.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.31.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.32":{"name":"enable_lite_post_cd","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.32.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.32.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.33":{"name":"enable_lite_post_highlights","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.33.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.33.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.34":{"name":"enable_lite_post_highlights_view_only","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.34.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.34.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.35":{"name":"enable_lite_profile","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.35.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.35.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.36":{"name":"enable_lite_pub_header_menu","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.36.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.36.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.37":{"name":"enable_lite_read_next","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.37.valueType","typename":"VariantFlagString"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.37.valueType":{"__typename":"VariantFlagString","value":"sidebar"},"ROOT_QUERY.variantFlags.38":{"name":"enable_lite_stories","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.38.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.38.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.39":{"name":"enable_lite_topics","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.39.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.39.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.40":{"name":"enable_lite_unread_notification_count_mutation","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.40.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.40.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.41":{"name":"enable_lo_homepage","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.41.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.41.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.42":{"name":"enable_lo_scroll_away_metabar","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.42.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.42.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.43":{"name":"enable_logged_out_homepage_signup","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.43.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.43.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.44":{"name":"enable_marketing_emails","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.44.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.44.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.45":{"name":"enable_media_resource_try_catch","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.45.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.45.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.46":{"name":"enable_membership_remove_section_b","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.46.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.46.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.47":{"name":"enable_more_branch_data","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.47.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.47.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.48":{"name":"enable_multi_day_pub_digests","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.48.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.48.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.49":{"name":"enable_new_collaborative_filtering_data","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.49.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.49.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.50":{"name":"enable_new_gdpr_partner_export","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.50.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.50.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.51":{"name":"enable_new_partner_dashboard","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.51.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.51.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.52":{"name":"enable_new_partner_payout_email","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.52.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.52.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.53":{"name":"enable_new_partner_program_copy_updates","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.53.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.53.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.54":{"name":"enable_new_partner_program_updates","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.54.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.54.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.55":{"name":"enable_new_paypal_billing_plan","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.55.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.55.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.56":{"name":"enable_new_post_stats","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.56.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.56.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.57":{"name":"enable_optimizely","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.57.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.57.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.58":{"name":"enable_parsely","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.58.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.58.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.59":{"name":"enable_patronus_on_kubernetes","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.59.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.59.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.60":{"name":"enable_popularity_feature_exp_retrain","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.60.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.60.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.61":{"name":"enable_post_import","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.61.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.61.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.62":{"name":"enable_primary_topic_for_mobile","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.62.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.62.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.63":{"name":"enable_pub_digest_send_after_pub_follow","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.63.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.63.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.64":{"name":"enable_rito_caching","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.64.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.64.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.65":{"name":"enable_rtr_channel","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.65.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.65.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.66":{"name":"enable_save_to_medium","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.66.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.66.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.67":{"name":"enable_susi_font_changes","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.67.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.67.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.68":{"name":"enable_tick_landing_page","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.68.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.68.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.69":{"name":"enable_tipalti_onboarding","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.69.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.69.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.70":{"name":"enable_topic_lifecycle_email","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.70.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.70.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.71":{"name":"enable_trumpland_landing_page","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.71.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.71.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.72":{"name":"glyph_font_set","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.72.valueType","typename":"VariantFlagString"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.72.valueType":{"__typename":"VariantFlagString","value":"m2"},"ROOT_QUERY.variantFlags.73":{"name":"google_sign_in_android","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.73.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.73.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.74":{"name":"is_not_medium_subscriber","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.74.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.74.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.75":{"name":"new_transition_page","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.75.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.75.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.76":{"name":"pub_sidebar","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.76.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.76.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.77":{"name":"rank_model","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.77.valueType","typename":"VariantFlagString"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.77.valueType":{"__typename":"VariantFlagString","value":"default"},"ROOT_QUERY.variantFlags.78":{"name":"redis_read_write_splitting","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.78.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.78.valueType":{"__typename":"VariantFlagBoolean","value":true},"ROOT_QUERY.variantFlags.79":{"name":"signin_services","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.79.valueType","typename":"VariantFlagString"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.79.valueType":{"__typename":"VariantFlagString","value":"twitter,facebook,google,email,google-fastidv,google-one-tap"},"ROOT_QUERY.variantFlags.80":{"name":"signup_services","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.80.valueType","typename":"VariantFlagString"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.80.valueType":{"__typename":"VariantFlagString","value":"twitter,facebook,google,email,google-fastidv,google-one-tap"},"ROOT_QUERY.variantFlags.81":{"name":"use_new_admin_topic_backend","valueType":{"type":"id","generated":true,"id":"$ROOT_QUERY.variantFlags.81.valueType","typename":"VariantFlagBoolean"},"__typename":"VariantFlag"},"$ROOT_QUERY.variantFlags.81.valueType":{"__typename":"VariantFlagBoolean","value":true},"MeteringInfo:singleton":{"__typename":"MeteringInfo","postIds":{"type":"json","json":[]},"maxUnlockCount":3,"unlocksRemaining":3},"Post:c34ff20b7fee":{"__typename":"Post","visibility":"PUBLIC","latestPublishedVersion":"eb6847212f68","collection":null,"id":"c34ff20b7fee","creator":{"type":"id","generated":false,"id":"User:6d494b5c8cb4","typename":"User"},"isLocked":false,"lockedSource":"LOCKED_POST_SOURCE_NONE","sequence":null,"mediumUrl":"https:\u002F\u002Fmedium.com\u002F@onejohi\u002Fsharing-data-between-components-in-angularjs-c34ff20b7fee","canonicalUrl":"","content({\"postMeteringOptions\":{\"referrer\":\"https:\u002F\u002Fwww.google.com\u002F\"}})":{"type":"id","generated":true,"id":"$Post:c34ff20b7fee.content({\"postMeteringOptions\":{\"referrer\":\"https:\u002F\u002Fwww.google.com\u002F\"}})","typename":"PostContent"},"firstPublishedAt":1563356375410,"isPublished":true,"layerCake":4,"primaryTopic":null,"title":"Sharing data between components in AngularJS.","isLimitedState":false,"pendingCollection":null,"shareKey":null,"statusForCollection":null,"readingTime":3.824528301886793,"license":"ALL_RIGHTS_RESERVED","allowResponses":true,"tags":[{"type":"id","generated":false,"id":"Tag:javascript","typename":"Tag"},{"type":"id","generated":false,"id":"Tag:angular","typename":"Tag"},{"type":"id","generated":false,"id":"Tag:components","typename":"Tag"}],"viewerClapCount":0,"readingList":"READING_LIST_NONE","clapCount":16,"voterCount":10,"recommenders":[],"responsesCount":2,"collaborators":[],"translationSourcePost":null,"newsletterId":"","inResponseToPostResult":null,"inResponseToMediaResource":null,"curationEligibleAt":1563356373887,"audioVersionUrl":"","socialTitle":"","socialDek":"","metaDescription":"","latestPublishedAt":1572426876276,"previewContent":{"type":"id","generated":true,"id":"$Post:c34ff20b7fee.previewContent","typename":"PreviewContent"},"previewImage":{"type":"id","generated":false,"id":"ImageMetadata:1*MmAqcb9p0CshWGMJAABRbQ.png","typename":"ImageMetadata"},"updatedAt":1572426876463,"topics":[],"isSuspended":false},"User:6d494b5c8cb4":{"id":"6d494b5c8cb4","__typename":"User","isSuspended":false,"allowNotes":true,"name":"Onejohi","isFollowing":false,"username":"onejohi","bio":"Creative 🚀 | Gamer 🎮 | Web & App developer 💻📱 | Graphics Designer 📏📝 | Entrepreneur 💶 | Cool AF 😎🤓 https:\u002F\u002Fonejohi.herokuapp.com","imageId":"1*Gd0D1ABMEFA5W-xsWLYtUA.jpeg","mediumMemberAt":0,"isBlocking":false,"isPartnerProgramEnrolled":false,"twitterScreenName":"onejohi"},"$Post:c34ff20b7fee.content({\"postMeteringOptions\":{\"referrer\":\"https:\u002F\u002Fwww.google.com\u002F\"}})":{"isLockedPreviewOnly":false,"validatedShareKey":"","__typename":"PostContent","bodyModel":{"type":"id","generated":true,"id":"$Post:c34ff20b7fee.content({\"postMeteringOptions\":{\"referrer\":\"https:\u002F\u002Fwww.google.com\u002F\"}}).bodyModel","typename":"RichText"}},"$Post:c34ff20b7fee.content({\"postMeteringOptions\":{\"referrer\":\"https:\u002F\u002Fwww.google.com\u002F\"}}).bodyModel.sections.0":{"name":"7251","startIndex":0,"textLayout":null,"imageLayout":null,"backgroundImage":null,"videoLayout":null,"backgroundVideo":null,"__typename":"Section"},"$Post:c34ff20b7fee.content({\"postMeteringOptions\":{\"referrer\":\"https:\u002F\u002Fwww.google.com\u002F\"}}).bodyModel":{"sections":[{"type":"id","generated":true,"id":"$Post:c34ff20b7fee.content({\"postMeteringOptions\":{\"referrer\":\"https:\u002F\u002Fwww.google.com\u002F\"}}).bodyModel.sections.0","typename":"Section"}],"paragraphs":[{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_0","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_1","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_2","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_3","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_4","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_5","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_6","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_7","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_8","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_9","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_10","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_11","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_12","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_13","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_14","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_15","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_16","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_17","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_18","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_19","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_20","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_21","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_22","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_23","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_24","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_25","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_26","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_27","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_28","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_29","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_30","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_31","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_32","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_33","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_34","typename":"Paragraph"},{"type":"id","generated":false,"id":"Paragraph:eb6847212f68_35","typename":"Paragraph"}],"__typename":"RichText"},"Paragraph:eb6847212f68_0":{"id":"eb6847212f68_0","name":"1421","__typename":"Paragraph","type":"IMG","href":null,"layout":"INSET_CENTER","metadata":{"type":"id","generated":false,"id":"ImageMetadata:1*MmAqcb9p0CshWGMJAABRbQ.png","typename":"ImageMetadata"},"text":"","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":null,"mixtapeMetadata":null},"ImageMetadata:1*MmAqcb9p0CshWGMJAABRbQ.png":{"id":"1*MmAqcb9p0CshWGMJAABRbQ.png","originalHeight":1080,"originalWidth":1921,"focusPercentX":null,"focusPercentY":null,"alt":null,"__typename":"ImageMetadata"},"Paragraph:eb6847212f68_1":{"id":"eb6847212f68_1","name":"9d17","__typename":"Paragraph","type":"H3","href":null,"layout":null,"metadata":null,"text":"Sharing data between components in Angular.","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_2":{"id":"eb6847212f68_2","name":"fda4","__typename":"Paragraph","type":"H4","href":null,"layout":null,"metadata":null,"text":"Learn using @Input() and @Output() , @ViewChild() , and using RxJS BehaviourSubject.","hasDropCap":null,"dropCapImage":null,"markups":[{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_2.markups.0","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_2.markups.1","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_2.markups.2","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_2.markups.3","typename":"Markup"}],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_2.markups.0":{"type":"CODE","start":12,"end":20,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_2.markups.1":{"type":"CODE","start":25,"end":34,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_2.markups.2":{"type":"CODE","start":37,"end":49,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_2.markups.3":{"type":"CODE","start":67,"end":83,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_3":{"id":"eb6847212f68_3","name":"f447","__typename":"Paragraph","type":"P","href":null,"layout":null,"metadata":null,"text":"Angular uses a component-based approach where developers create components that can run independently, therefore, modularizing their application. The advantage to this is you can easily understand your application by separating it into multiple chunks where you can work on small segments without being overwhelmed by the thousands of lines of code. Maintenance of code becomes easier. Also, a team can work efficiently where each developer works on independent components then tie them all to the main application. What if you want the components to interact whereby clicking a particular button creates a notification icon. These two components should be able to communicate for the component holding the button to let the component holding the notification icon that the application state has changed.\nLet’s identify a few ways we can do this.","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_4":{"id":"eb6847212f68_4","name":"8b58","__typename":"Paragraph","type":"IMG","href":null,"layout":"INSET_CENTER","metadata":{"type":"id","generated":false,"id":"ImageMetadata:1*_GApyQ-Q3A45KWl8ImbLbw.png","typename":"ImageMetadata"},"text":"","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":null,"mixtapeMetadata":null},"ImageMetadata:1*_GApyQ-Q3A45KWl8ImbLbw.png":{"id":"1*_GApyQ-Q3A45KWl8ImbLbw.png","originalHeight":532,"originalWidth":1197,"focusPercentX":null,"focusPercentY":null,"alt":null,"__typename":"ImageMetadata"},"Paragraph:eb6847212f68_5":{"id":"eb6847212f68_5","name":"f2bd","__typename":"Paragraph","type":"H4","href":null,"layout":null,"metadata":null,"text":"Parent to Child via @Input() decorator.","hasDropCap":null,"dropCapImage":null,"markups":[{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_5.markups.0","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_5.markups.1","typename":"Markup"}],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_5.markups.0":{"type":"CODE","start":20,"end":28,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_5.markups.1":{"type":"STRONG","start":0,"end":39,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_6":{"id":"eb6847212f68_6","name":"9c0c","__typename":"Paragraph","type":"P","href":null,"layout":null,"metadata":null,"text":"When you declare a variable in the child component with the @Input() decorator, it allows that variable to be “received” from the parent component template.","hasDropCap":null,"dropCapImage":null,"markups":[{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_6.markups.0","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_6.markups.1","typename":"Markup"}],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_6.markups.0":{"type":"CODE","start":60,"end":68,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_6.markups.1":{"type":"STRONG","start":147,"end":155,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_7":{"id":"eb6847212f68_7","name":"510f","__typename":"Paragraph","type":"IFRAME","href":null,"layout":"INSET_CENTER","metadata":null,"text":"","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":{"type":"id","generated":true,"id":"$Paragraph:eb6847212f68_7.iframe","typename":"Iframe"},"mixtapeMetadata":null},"MediaResource:b8677c681135054aff7867dd8f27f106":{"id":"b8677c681135054aff7867dd8f27f106","iframeSrc":"","iframeHeight":0,"iframeWidth":0,"title":"child_component_input.ts","__typename":"MediaResource"},"$Paragraph:eb6847212f68_7.iframe":{"mediaResource":{"type":"id","generated":false,"id":"MediaResource:b8677c681135054aff7867dd8f27f106","typename":"MediaResource"},"__typename":"Iframe"},"Paragraph:eb6847212f68_8":{"id":"eb6847212f68_8","name":"b556","__typename":"Paragraph","type":"P","href":null,"layout":null,"metadata":null,"text":"In our case here, we will be receiving an array of objects from the parent template and storing the value received in the variable notifications. Let’s construct our parent component…","hasDropCap":null,"dropCapImage":null,"markups":[{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_8.markups.0","typename":"Markup"}],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_8.markups.0":{"type":"CODE","start":131,"end":144,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_9":{"id":"eb6847212f68_9","name":"15c6","__typename":"Paragraph","type":"IFRAME","href":null,"layout":"INSET_CENTER","metadata":null,"text":"","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":{"type":"id","generated":true,"id":"$Paragraph:eb6847212f68_9.iframe","typename":"Iframe"},"mixtapeMetadata":null},"MediaResource:d7c6710562d1bfdce269164ac2992222":{"id":"d7c6710562d1bfdce269164ac2992222","iframeSrc":"","iframeHeight":0,"iframeWidth":0,"title":"parent_component.ts","__typename":"MediaResource"},"$Paragraph:eb6847212f68_9.iframe":{"mediaResource":{"type":"id","generated":false,"id":"MediaResource:d7c6710562d1bfdce269164ac2992222","typename":"MediaResource"},"__typename":"Iframe"},"Paragraph:eb6847212f68_10":{"id":"eb6847212f68_10","name":"658c","__typename":"Paragraph","type":"P","href":null,"layout":null,"metadata":null,"text":"In the parent component, we can pass data to the child component directly in the template (view line: 8). Alright, what if you want to pass data from the child component to the parent component?","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_11":{"id":"eb6847212f68_11","name":"d0e8","__typename":"Paragraph","type":"IMG","href":null,"layout":"INSET_CENTER","metadata":{"type":"id","generated":false,"id":"ImageMetadata:1*IomnS2TCY9wxr0cz-AhAmQ.png","typename":"ImageMetadata"},"text":"","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":null,"mixtapeMetadata":null},"ImageMetadata:1*IomnS2TCY9wxr0cz-AhAmQ.png":{"id":"1*IomnS2TCY9wxr0cz-AhAmQ.png","originalHeight":532,"originalWidth":1197,"focusPercentX":null,"focusPercentY":null,"alt":null,"__typename":"ImageMetadata"},"Paragraph:eb6847212f68_12":{"id":"eb6847212f68_12","name":"820a","__typename":"Paragraph","type":"H4","href":null,"layout":null,"metadata":null,"text":"Child to parent via @Output() and EventEmitter","hasDropCap":null,"dropCapImage":null,"markups":[{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_12.markups.0","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_12.markups.1","typename":"Markup"}],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_12.markups.0":{"type":"CODE","start":20,"end":29,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_12.markups.1":{"type":"CODE","start":34,"end":46,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_13":{"id":"eb6847212f68_13","name":"394a","__typename":"Paragraph","type":"P","href":null,"layout":null,"metadata":null,"text":"To pass data from the child to the parent, you have to emit it from the child. The parent will be listening for the event will grab the data.","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_14":{"id":"eb6847212f68_14","name":"15e1","__typename":"Paragraph","type":"IFRAME","href":null,"layout":"INSET_CENTER","metadata":null,"text":"","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":{"type":"id","generated":true,"id":"$Paragraph:eb6847212f68_14.iframe","typename":"Iframe"},"mixtapeMetadata":null},"MediaResource:9daaf0f7801363d01a161e27ec3a9d40":{"id":"9daaf0f7801363d01a161e27ec3a9d40","iframeSrc":"","iframeHeight":0,"iframeWidth":0,"title":"child_component_output.ts","__typename":"MediaResource"},"$Paragraph:eb6847212f68_14.iframe":{"mediaResource":{"type":"id","generated":false,"id":"MediaResource:9daaf0f7801363d01a161e27ec3a9d40","typename":"MediaResource"},"__typename":"Iframe"},"Paragraph:eb6847212f68_15":{"id":"eb6847212f68_15","name":"3ad0","__typename":"Paragraph","type":"P","href":null,"layout":null,"metadata":null,"text":"In our child component, we create a username emitter that sends the username anytime the user clicks the Send Name button. To receive the username in the parent, we have to create a function to grab that data and put it into a variable…","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_16":{"id":"eb6847212f68_16","name":"f3b5","__typename":"Paragraph","type":"IFRAME","href":null,"layout":"INSET_CENTER","metadata":null,"text":"","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":{"type":"id","generated":true,"id":"$Paragraph:eb6847212f68_16.iframe","typename":"Iframe"},"mixtapeMetadata":null},"MediaResource:3b6990dd20cb7e8dfa7841c9b3581c25":{"id":"3b6990dd20cb7e8dfa7841c9b3581c25","iframeSrc":"","iframeHeight":0,"iframeWidth":0,"title":"parent_component_reciever.js","__typename":"MediaResource"},"$Paragraph:eb6847212f68_16.iframe":{"mediaResource":{"type":"id","generated":false,"id":"MediaResource:3b6990dd20cb7e8dfa7841c9b3581c25","typename":"MediaResource"},"__typename":"Iframe"},"Paragraph:eb6847212f68_17":{"id":"eb6847212f68_17","name":"b314","__typename":"Paragraph","type":"P","href":null,"layout":null,"metadata":null,"text":"In our parent component, (usernameEmitter) listens for the event with the message attached to it and when the message is emitted, it captures the data in the $event and sets this.username to the value of $event.","hasDropCap":null,"dropCapImage":null,"markups":[{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_17.markups.0","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_17.markups.1","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_17.markups.2","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_17.markups.3","typename":"Markup"}],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_17.markups.0":{"type":"CODE","start":25,"end":42,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_17.markups.1":{"type":"CODE","start":158,"end":164,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_17.markups.2":{"type":"CODE","start":174,"end":187,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_17.markups.3":{"type":"CODE","start":204,"end":210,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_18":{"id":"eb6847212f68_18","name":"8c8e","__typename":"Paragraph","type":"P","href":null,"layout":null,"metadata":null,"text":"Using @ViewChild","hasDropCap":null,"dropCapImage":null,"markups":[{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_18.markups.0","typename":"Markup"}],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_18.markups.0":{"type":"STRONG","start":0,"end":16,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_19":{"id":"eb6847212f68_19","name":"45a9","__typename":"Paragraph","type":"P","href":null,"layout":null,"metadata":null,"text":"Another simple way is to use the@ViewChild decorator. The child component file remains largely the same and the only changes we will make is to the parent.","hasDropCap":null,"dropCapImage":null,"markups":[{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_19.markups.0","typename":"Markup"}],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_19.markups.0":{"type":"CODE","start":32,"end":42,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_20":{"id":"eb6847212f68_20","name":"7881","__typename":"Paragraph","type":"IFRAME","href":null,"layout":"INSET_CENTER","metadata":null,"text":"","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":{"type":"id","generated":true,"id":"$Paragraph:eb6847212f68_20.iframe","typename":"Iframe"},"mixtapeMetadata":null},"MediaResource:f09fb7f706d7c333acb7fb49714bc556":{"id":"f09fb7f706d7c333acb7fb49714bc556","iframeSrc":"","iframeHeight":0,"iframeWidth":0,"title":"parent_component_viewChild.js","__typename":"MediaResource"},"$Paragraph:eb6847212f68_20.iframe":{"mediaResource":{"type":"id","generated":false,"id":"MediaResource:f09fb7f706d7c333acb7fb49714bc556","typename":"MediaResource"},"__typename":"Iframe"},"Paragraph:eb6847212f68_21":{"id":"eb6847212f68_21","name":"6eb0","__typename":"Paragraph","type":"H4","href":null,"layout":null,"metadata":null,"text":"Any =\u003E Any via a shared service","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_22":{"id":"eb6847212f68_22","name":"ffeb","__typename":"Paragraph","type":"P","href":null,"layout":null,"metadata":null,"text":"Components can get a little tricky sharing data when the application starts to grow and you find components within components that require to share data with components outside their parent components. Consider the following theoretical application structure below.","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_23":{"id":"eb6847212f68_23","name":"aea7","__typename":"Paragraph","type":"IMG","href":null,"layout":"INSET_CENTER","metadata":{"type":"id","generated":false,"id":"ImageMetadata:1*vvZexePxpIfMUrkhPxh1Wg.png","typename":"ImageMetadata"},"text":"","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":null,"mixtapeMetadata":null},"ImageMetadata:1*vvZexePxpIfMUrkhPxh1Wg.png":{"id":"1*vvZexePxpIfMUrkhPxh1Wg.png","originalHeight":694,"originalWidth":878,"focusPercentX":null,"focusPercentY":null,"alt":null,"__typename":"ImageMetadata"},"Paragraph:eb6847212f68_24":{"id":"eb6847212f68_24","name":"d783","__typename":"Paragraph","type":"P","href":null,"layout":null,"metadata":null,"text":"If you want an action made on the card-item component to affect the profile-avatar-status component, it could be complicated to emit an event up to the content component, further up to the app component, then down to navbar component, then down navmenu and finally to profile-avatar-status. It gets even more complex as the app grows. And even if you think you can manage to keep track of all the flows of data, what happens when you have to remove or merge two components? This becomes very tricky and complex. Using a shared service, all components can subscribe to channels of data that are called observables. When these observables change, all components that had subscribed to the observable gets updated. Having a central source of information makes it easier to track changes in data in a large application.","hasDropCap":null,"dropCapImage":null,"markups":[{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_24.markups.0","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_24.markups.1","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_24.markups.2","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_24.markups.3","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_24.markups.4","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_24.markups.5","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_24.markups.6","typename":"Markup"}],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_24.markups.0":{"type":"CODE","start":34,"end":43,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_24.markups.1":{"type":"CODE","start":68,"end":89,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_24.markups.2":{"type":"CODE","start":152,"end":159,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_24.markups.3":{"type":"CODE","start":189,"end":192,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_24.markups.4":{"type":"CODE","start":217,"end":223,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_24.markups.5":{"type":"CODE","start":245,"end":252,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_24.markups.6":{"type":"CODE","start":268,"end":289,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_25":{"id":"eb6847212f68_25","name":"443f","__typename":"Paragraph","type":"P","href":null,"layout":null,"metadata":null,"text":"Use your Angular CLI to generate a new service using the command ng g service service-name to create a service. I’ll call mine State since it keeps track of the application state.","hasDropCap":null,"dropCapImage":null,"markups":[{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_25.markups.0","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_25.markups.1","typename":"Markup"}],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_25.markups.0":{"type":"CODE","start":65,"end":90,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_25.markups.1":{"type":"CODE","start":127,"end":132,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_26":{"id":"eb6847212f68_26","name":"08fe","__typename":"Paragraph","type":"IFRAME","href":null,"layout":"INSET_CENTER","metadata":null,"text":"","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":{"type":"id","generated":true,"id":"$Paragraph:eb6847212f68_26.iframe","typename":"Iframe"},"mixtapeMetadata":null},"MediaResource:4443c2bf70f84531270ec8a689864e35":{"id":"4443c2bf70f84531270ec8a689864e35","iframeSrc":"","iframeHeight":0,"iframeWidth":0,"title":"state.service.ts","__typename":"MediaResource"},"$Paragraph:eb6847212f68_26.iframe":{"mediaResource":{"type":"id","generated":false,"id":"MediaResource:4443c2bf70f84531270ec8a689864e35","typename":"MediaResource"},"__typename":"Iframe"},"Paragraph:eb6847212f68_27":{"id":"eb6847212f68_27","name":"5332","__typename":"Paragraph","type":"P","href":null,"layout":null,"metadata":null,"text":"Using behavior subject, we are able to set username as an observable that can be changed using the .next() method. We can, therefore, import this service and utilize it from any component. Let’s create a component that makes changes to username and subscribes to username and reflects these changes. You can subscribe and change the username from different components, they don’t have to know about each other’s existence.","hasDropCap":null,"dropCapImage":null,"markups":[{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_27.markups.0","typename":"Markup"}],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_27.markups.0":{"type":"CODE","start":99,"end":106,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_28":{"id":"eb6847212f68_28","name":"4159","__typename":"Paragraph","type":"IFRAME","href":null,"layout":"INSET_CENTER","metadata":null,"text":"","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":{"type":"id","generated":true,"id":"$Paragraph:eb6847212f68_28.iframe","typename":"Iframe"},"mixtapeMetadata":null},"MediaResource:3b273537c919042df8c2a0dba3f2fc5f":{"id":"3b273537c919042df8c2a0dba3f2fc5f","iframeSrc":"","iframeHeight":0,"iframeWidth":0,"title":"change_state.ts","__typename":"MediaResource"},"$Paragraph:eb6847212f68_28.iframe":{"mediaResource":{"type":"id","generated":false,"id":"MediaResource:3b273537c919042df8c2a0dba3f2fc5f","typename":"MediaResource"},"__typename":"Iframe"},"Paragraph:eb6847212f68_29":{"id":"eb6847212f68_29","name":"c0eb","__typename":"Paragraph","type":"P","href":null,"layout":null,"metadata":null,"text":"When the state changes any property that has subscribed to it will update it’s value to the new change.","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_30":{"id":"eb6847212f68_30","name":"8816","__typename":"Paragraph","type":"H4","href":null,"layout":null,"metadata":null,"text":"Conclusion.","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_31":{"id":"eb6847212f68_31","name":"378e","__typename":"Paragraph","type":"P","href":null,"layout":null,"metadata":null,"text":"Angular provides a number of ways to pass data in between components. I would recommend using a service as much as possible to keep your logic clean and easily accessible from one point. If you’re working on a simple application, you can use the various decorators that the frameworks provide. If you would like a Kickstarter on Angular, here is a previous article along with two more related to Angular from me. Thanks!","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_32":{"id":"eb6847212f68_32","name":"98ff","__typename":"Paragraph","type":"MIXTAPE_EMBED","href":null,"layout":null,"metadata":null,"text":"Getting started with Angular 5\nHi, are you a beginner in Web Development? Perfect. You’ve come to the right place. First, we need to understand what…medium.com","hasDropCap":null,"dropCapImage":null,"markups":[{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_32.markups.0","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_32.markups.1","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_32.markups.2","typename":"Markup"}],"iframe":null,"mixtapeMetadata":{"type":"id","generated":true,"id":"$Paragraph:eb6847212f68_32.mixtapeMetadata","typename":"MixtapeMetadata"}},"Paragraph:eb6847212f68_32.markups.0":{"type":"A","start":0,"end":159,"href":"https:\u002F\u002Fmedium.com\u002F@onejohi\u002Fgetting-started-with-angular-5-5099104eb2f","anchorType":"LINK","userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_32.markups.1":{"type":"STRONG","start":0,"end":30,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_32.markups.2":{"type":"EM","start":31,"end":149,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"$Paragraph:eb6847212f68_32.mixtapeMetadata":{"href":"https:\u002F\u002Fmedium.com\u002F@onejohi\u002Fgetting-started-with-angular-5-5099104eb2f","thumbnailImageId":"1*VKY-Ldkt-iHobItql7G_5w.png","mediaResourceId":"1*VKY-Ldkt-iHobItql7G_5w.png","__typename":"MixtapeMetadata"},"Paragraph:eb6847212f68_33":{"id":"eb6847212f68_33","name":"2522","__typename":"Paragraph","type":"P","href":null,"layout":null,"metadata":null,"text":"More on decorators…","hasDropCap":null,"dropCapImage":null,"markups":[],"iframe":null,"mixtapeMetadata":null},"Paragraph:eb6847212f68_34":{"id":"eb6847212f68_34","name":"9304","__typename":"Paragraph","type":"MIXTAPE_EMBED","href":null,"layout":null,"metadata":null,"text":"Angular 6 Cheat Sheet\nWhat various Angular Code snippets do.medium.com","hasDropCap":null,"dropCapImage":null,"markups":[{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_34.markups.0","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_34.markups.1","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_34.markups.2","typename":"Markup"}],"iframe":null,"mixtapeMetadata":{"type":"id","generated":true,"id":"$Paragraph:eb6847212f68_34.mixtapeMetadata","typename":"MixtapeMetadata"}},"Paragraph:eb6847212f68_34.markups.0":{"type":"A","start":0,"end":70,"href":"https:\u002F\u002Fmedium.com\u002F@onejohi\u002Fangular-6-cheat-sheet-b36e04bf008a","anchorType":"LINK","userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_34.markups.1":{"type":"STRONG","start":0,"end":21,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_34.markups.2":{"type":"EM","start":22,"end":60,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"$Paragraph:eb6847212f68_34.mixtapeMetadata":{"href":"https:\u002F\u002Fmedium.com\u002F@onejohi\u002Fangular-6-cheat-sheet-b36e04bf008a","thumbnailImageId":"1*D1EMOVrXqZtOYZJ2YTej-w.png","mediaResourceId":"1*D1EMOVrXqZtOYZJ2YTej-w.png","__typename":"MixtapeMetadata"},"Paragraph:eb6847212f68_35":{"id":"eb6847212f68_35","name":"e805","__typename":"Paragraph","type":"MIXTAPE_EMBED","href":null,"layout":null,"metadata":null,"text":"Angular 6 Cheat Sheet (Part II)\nThe final segment on various Angular Code snippets and their uses.medium.com","hasDropCap":null,"dropCapImage":null,"markups":[{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_35.markups.0","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_35.markups.1","typename":"Markup"},{"type":"id","generated":true,"id":"Paragraph:eb6847212f68_35.markups.2","typename":"Markup"}],"iframe":null,"mixtapeMetadata":{"type":"id","generated":true,"id":"$Paragraph:eb6847212f68_35.mixtapeMetadata","typename":"MixtapeMetadata"}},"Paragraph:eb6847212f68_35.markups.0":{"type":"A","start":0,"end":108,"href":"https:\u002F\u002Fmedium.com\u002F@onejohi\u002Fangular-6-cheat-sheet-part-ii-2136f63f3bbd","anchorType":"LINK","userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_35.markups.1":{"type":"STRONG","start":0,"end":31,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"Paragraph:eb6847212f68_35.markups.2":{"type":"EM","start":32,"end":98,"href":null,"anchorType":null,"userId":null,"linkMetadata":null,"__typename":"Markup"},"$Paragraph:eb6847212f68_35.mixtapeMetadata":{"href":"https:\u002F\u002Fmedium.com\u002F@onejohi\u002Fangular-6-cheat-sheet-part-ii-2136f63f3bbd","thumbnailImageId":"","mediaResourceId":"","__typename":"MixtapeMetadata"},"Tag:javascript":{"id":"javascript","displayTitle":"JavaScript","__typename":"Tag"},"Tag:angular":{"id":"angular","displayTitle":"Angular","__typename":"Tag"},"Tag:components":{"id":"components","displayTitle":"Components","__typename":"Tag"},"$Post:c34ff20b7fee.previewContent":{"subtitle":"Learn using @Input() and @Output() , @ViewChild() , and using RxJS BehaviourSubject.","__typename":"PreviewContent"}}</script><script src="./Sharing data between components in Angular. - Onejohi - Medium_files/manifest.fb0fea35.js.download"></script><script src="./Sharing data between components in Angular. - Onejohi - Medium_files/vendors_main.7359e630.chunk.js.download"></script><script src="./Sharing data between components in Angular. - Onejohi - Medium_files/main.918b5780.chunk.js.download"></script><script src="./Sharing data between components in Angular. - Onejohi - Medium_files/vendors_screen.collection.packageBuilder_screen.landingpages.pres45_screen.landingpages.tribute_scre_3e410f11.6e71.download"></script>
+<script src="./Sharing data between components in Angular. - Onejohi - Medium_files/screen.collection.packageBuilder_screen.landingpages.pres45_screen.landingpages.tribute_screen.post__73c4bb05.188f.download"></script>
+<script src="./Sharing data between components in Angular. - Onejohi - Medium_files/screen.post_screen.post.amp_screen.post.series_screen.profile_screen.sequence.library_screen.sequenc_036c6b37.8549.download"></script>
+<script src="./Sharing data between components in Angular. - Onejohi - Medium_files/screen.collection.packageBuilder_screen.landingpages.pres45_screen.landingpages.tick_screen.landingp_ed90ee39.63e8.download"></script>
+<script src="./Sharing data between components in Angular. - Onejohi - Medium_files/screen.post.3e4a67a8.chunk.js.download"></script><script>window.main();</script><script src="./Sharing data between components in Angular. - Onejohi - Medium_files/p.js.download" async="" id="parsely-cf"></script><style class="sf-download-bar-styles">
+.sf-download-bar__circle {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sf-download-bar__circle .sf-download-bar__circle-slice,
+.sf-download-bar__circle .sf-download-bar__circle-fill {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    transition: transform 0.3s;
+    border-radius: 50%;
+}
+
+.sf-download-bar__circle .sf-download-bar__circle-slice {
+    clip: rect(0px, 40px, 40px, 20px);
+}
+
+.sf-download-bar__circle .sf-download-bar__circle-slice .sf-download-bar__circle-fill {
+    clip: rect(0px, 20px, 40px, 0px);
+    background-color: #fff;
+}
+
+.sf-download-bar__circle .sf-download-bar__circle-overlay {
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    margin-left: 1px;
+    margin-top: 1px;
+    background-color: #5181B8;
+    border-radius: 50%;
+}
+
+.sf-download-bar__circle[data-progress='0'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='0'] .sf-download-bar__circle-fill {
+    transform: rotate(0deg);
+}
+
+.sf-download-bar__circle[data-progress='0'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(0deg);
+}
+
+.sf-download-bar__circle[data-progress='1'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='1'] .sf-download-bar__circle-fill {
+    transform: rotate(1.8deg);
+}
+
+.sf-download-bar__circle[data-progress='1'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(3.6deg);
+}
+
+.sf-download-bar__circle[data-progress='2'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='2'] .sf-download-bar__circle-fill {
+    transform: rotate(3.6deg);
+}
+
+.sf-download-bar__circle[data-progress='2'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(7.2deg);
+}
+
+.sf-download-bar__circle[data-progress='3'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='3'] .sf-download-bar__circle-fill {
+    transform: rotate(5.4deg);
+}
+
+.sf-download-bar__circle[data-progress='3'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(10.8deg);
+}
+
+.sf-download-bar__circle[data-progress='4'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='4'] .sf-download-bar__circle-fill {
+    transform: rotate(7.2deg);
+}
+
+.sf-download-bar__circle[data-progress='4'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(14.4deg);
+}
+
+.sf-download-bar__circle[data-progress='5'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='5'] .sf-download-bar__circle-fill {
+    transform: rotate(9deg);
+}
+
+.sf-download-bar__circle[data-progress='5'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(18deg);
+}
+
+.sf-download-bar__circle[data-progress='6'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='6'] .sf-download-bar__circle-fill {
+    transform: rotate(10.8deg);
+}
+
+.sf-download-bar__circle[data-progress='6'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(21.6deg);
+}
+
+.sf-download-bar__circle[data-progress='7'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='7'] .sf-download-bar__circle-fill {
+    transform: rotate(12.6deg);
+}
+
+.sf-download-bar__circle[data-progress='7'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(25.2deg);
+}
+
+.sf-download-bar__circle[data-progress='8'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='8'] .sf-download-bar__circle-fill {
+    transform: rotate(14.4deg);
+}
+
+.sf-download-bar__circle[data-progress='8'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(28.8deg);
+}
+
+.sf-download-bar__circle[data-progress='9'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='9'] .sf-download-bar__circle-fill {
+    transform: rotate(16.2deg);
+}
+
+.sf-download-bar__circle[data-progress='9'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(32.4deg);
+}
+
+.sf-download-bar__circle[data-progress='10'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='10'] .sf-download-bar__circle-fill {
+    transform: rotate(18deg);
+}
+
+.sf-download-bar__circle[data-progress='10'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(36deg);
+}
+
+.sf-download-bar__circle[data-progress='11'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='11'] .sf-download-bar__circle-fill {
+    transform: rotate(19.8deg);
+}
+
+.sf-download-bar__circle[data-progress='11'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(39.6deg);
+}
+
+.sf-download-bar__circle[data-progress='12'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='12'] .sf-download-bar__circle-fill {
+    transform: rotate(21.6deg);
+}
+
+.sf-download-bar__circle[data-progress='12'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(43.2deg);
+}
+
+.sf-download-bar__circle[data-progress='13'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='13'] .sf-download-bar__circle-fill {
+    transform: rotate(23.4deg);
+}
+
+.sf-download-bar__circle[data-progress='13'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(46.8deg);
+}
+
+.sf-download-bar__circle[data-progress='14'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='14'] .sf-download-bar__circle-fill {
+    transform: rotate(25.2deg);
+}
+
+.sf-download-bar__circle[data-progress='14'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(50.4deg);
+}
+
+.sf-download-bar__circle[data-progress='15'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='15'] .sf-download-bar__circle-fill {
+    transform: rotate(27deg);
+}
+
+.sf-download-bar__circle[data-progress='15'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(54deg);
+}
+
+.sf-download-bar__circle[data-progress='16'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='16'] .sf-download-bar__circle-fill {
+    transform: rotate(28.8deg);
+}
+
+.sf-download-bar__circle[data-progress='16'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(57.6deg);
+}
+
+.sf-download-bar__circle[data-progress='17'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='17'] .sf-download-bar__circle-fill {
+    transform: rotate(30.6deg);
+}
+
+.sf-download-bar__circle[data-progress='17'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(61.2deg);
+}
+
+.sf-download-bar__circle[data-progress='18'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='18'] .sf-download-bar__circle-fill {
+    transform: rotate(32.4deg);
+}
+
+.sf-download-bar__circle[data-progress='18'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(64.8deg);
+}
+
+.sf-download-bar__circle[data-progress='19'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='19'] .sf-download-bar__circle-fill {
+    transform: rotate(34.2deg);
+}
+
+.sf-download-bar__circle[data-progress='19'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(68.4deg);
+}
+
+.sf-download-bar__circle[data-progress='20'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='20'] .sf-download-bar__circle-fill {
+    transform: rotate(36deg);
+}
+
+.sf-download-bar__circle[data-progress='20'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(72deg);
+}
+
+.sf-download-bar__circle[data-progress='21'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='21'] .sf-download-bar__circle-fill {
+    transform: rotate(37.8deg);
+}
+
+.sf-download-bar__circle[data-progress='21'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(75.6deg);
+}
+
+.sf-download-bar__circle[data-progress='22'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='22'] .sf-download-bar__circle-fill {
+    transform: rotate(39.6deg);
+}
+
+.sf-download-bar__circle[data-progress='22'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(79.2deg);
+}
+
+.sf-download-bar__circle[data-progress='23'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='23'] .sf-download-bar__circle-fill {
+    transform: rotate(41.4deg);
+}
+
+.sf-download-bar__circle[data-progress='23'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(82.8deg);
+}
+
+.sf-download-bar__circle[data-progress='24'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='24'] .sf-download-bar__circle-fill {
+    transform: rotate(43.2deg);
+}
+
+.sf-download-bar__circle[data-progress='24'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(86.4deg);
+}
+
+.sf-download-bar__circle[data-progress='25'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='25'] .sf-download-bar__circle-fill {
+    transform: rotate(45deg);
+}
+
+.sf-download-bar__circle[data-progress='25'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(90deg);
+}
+
+.sf-download-bar__circle[data-progress='26'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='26'] .sf-download-bar__circle-fill {
+    transform: rotate(46.8deg);
+}
+
+.sf-download-bar__circle[data-progress='26'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(93.6deg);
+}
+
+.sf-download-bar__circle[data-progress='27'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='27'] .sf-download-bar__circle-fill {
+    transform: rotate(48.6deg);
+}
+
+.sf-download-bar__circle[data-progress='27'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(97.2deg);
+}
+
+.sf-download-bar__circle[data-progress='28'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='28'] .sf-download-bar__circle-fill {
+    transform: rotate(50.4deg);
+}
+
+.sf-download-bar__circle[data-progress='28'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(100.8deg);
+}
+
+.sf-download-bar__circle[data-progress='29'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='29'] .sf-download-bar__circle-fill {
+    transform: rotate(52.2deg);
+}
+
+.sf-download-bar__circle[data-progress='29'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(104.4deg);
+}
+
+.sf-download-bar__circle[data-progress='30'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='30'] .sf-download-bar__circle-fill {
+    transform: rotate(54deg);
+}
+
+.sf-download-bar__circle[data-progress='30'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(108deg);
+}
+
+.sf-download-bar__circle[data-progress='31'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='31'] .sf-download-bar__circle-fill {
+    transform: rotate(55.8deg);
+}
+
+.sf-download-bar__circle[data-progress='31'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(111.6deg);
+}
+
+.sf-download-bar__circle[data-progress='32'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='32'] .sf-download-bar__circle-fill {
+    transform: rotate(57.6deg);
+}
+
+.sf-download-bar__circle[data-progress='32'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(115.2deg);
+}
+
+.sf-download-bar__circle[data-progress='33'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='33'] .sf-download-bar__circle-fill {
+    transform: rotate(59.4deg);
+}
+
+.sf-download-bar__circle[data-progress='33'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(118.8deg);
+}
+
+.sf-download-bar__circle[data-progress='34'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='34'] .sf-download-bar__circle-fill {
+    transform: rotate(61.2deg);
+}
+
+.sf-download-bar__circle[data-progress='34'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(122.4deg);
+}
+
+.sf-download-bar__circle[data-progress='35'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='35'] .sf-download-bar__circle-fill {
+    transform: rotate(63deg);
+}
+
+.sf-download-bar__circle[data-progress='35'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(126deg);
+}
+
+.sf-download-bar__circle[data-progress='36'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='36'] .sf-download-bar__circle-fill {
+    transform: rotate(64.8deg);
+}
+
+.sf-download-bar__circle[data-progress='36'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(129.6deg);
+}
+
+.sf-download-bar__circle[data-progress='37'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='37'] .sf-download-bar__circle-fill {
+    transform: rotate(66.6deg);
+}
+
+.sf-download-bar__circle[data-progress='37'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(133.2deg);
+}
+
+.sf-download-bar__circle[data-progress='38'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='38'] .sf-download-bar__circle-fill {
+    transform: rotate(68.4deg);
+}
+
+.sf-download-bar__circle[data-progress='38'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(136.8deg);
+}
+
+.sf-download-bar__circle[data-progress='39'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='39'] .sf-download-bar__circle-fill {
+    transform: rotate(70.2deg);
+}
+
+.sf-download-bar__circle[data-progress='39'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(140.4deg);
+}
+
+.sf-download-bar__circle[data-progress='40'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='40'] .sf-download-bar__circle-fill {
+    transform: rotate(72deg);
+}
+
+.sf-download-bar__circle[data-progress='40'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(144deg);
+}
+
+.sf-download-bar__circle[data-progress='41'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='41'] .sf-download-bar__circle-fill {
+    transform: rotate(73.8deg);
+}
+
+.sf-download-bar__circle[data-progress='41'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(147.6deg);
+}
+
+.sf-download-bar__circle[data-progress='42'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='42'] .sf-download-bar__circle-fill {
+    transform: rotate(75.6deg);
+}
+
+.sf-download-bar__circle[data-progress='42'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(151.2deg);
+}
+
+.sf-download-bar__circle[data-progress='43'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='43'] .sf-download-bar__circle-fill {
+    transform: rotate(77.4deg);
+}
+
+.sf-download-bar__circle[data-progress='43'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(154.8deg);
+}
+
+.sf-download-bar__circle[data-progress='44'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='44'] .sf-download-bar__circle-fill {
+    transform: rotate(79.2deg);
+}
+
+.sf-download-bar__circle[data-progress='44'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(158.4deg);
+}
+
+.sf-download-bar__circle[data-progress='45'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='45'] .sf-download-bar__circle-fill {
+    transform: rotate(81deg);
+}
+
+.sf-download-bar__circle[data-progress='45'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(162deg);
+}
+
+.sf-download-bar__circle[data-progress='46'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='46'] .sf-download-bar__circle-fill {
+    transform: rotate(82.8deg);
+}
+
+.sf-download-bar__circle[data-progress='46'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(165.6deg);
+}
+
+.sf-download-bar__circle[data-progress='47'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='47'] .sf-download-bar__circle-fill {
+    transform: rotate(84.6deg);
+}
+
+.sf-download-bar__circle[data-progress='47'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(169.2deg);
+}
+
+.sf-download-bar__circle[data-progress='48'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='48'] .sf-download-bar__circle-fill {
+    transform: rotate(86.4deg);
+}
+
+.sf-download-bar__circle[data-progress='48'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(172.8deg);
+}
+
+.sf-download-bar__circle[data-progress='49'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='49'] .sf-download-bar__circle-fill {
+    transform: rotate(88.2deg);
+}
+
+.sf-download-bar__circle[data-progress='49'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(176.4deg);
+}
+
+.sf-download-bar__circle[data-progress='50'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='50'] .sf-download-bar__circle-fill {
+    transform: rotate(90deg);
+}
+
+.sf-download-bar__circle[data-progress='50'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(180deg);
+}
+
+.sf-download-bar__circle[data-progress='51'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='51'] .sf-download-bar__circle-fill {
+    transform: rotate(91.8deg);
+}
+
+.sf-download-bar__circle[data-progress='51'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(183.6deg);
+}
+
+.sf-download-bar__circle[data-progress='52'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='52'] .sf-download-bar__circle-fill {
+    transform: rotate(93.6deg);
+}
+
+.sf-download-bar__circle[data-progress='52'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(187.2deg);
+}
+
+.sf-download-bar__circle[data-progress='53'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='53'] .sf-download-bar__circle-fill {
+    transform: rotate(95.4deg);
+}
+
+.sf-download-bar__circle[data-progress='53'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(190.8deg);
+}
+
+.sf-download-bar__circle[data-progress='54'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='54'] .sf-download-bar__circle-fill {
+    transform: rotate(97.2deg);
+}
+
+.sf-download-bar__circle[data-progress='54'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(194.4deg);
+}
+
+.sf-download-bar__circle[data-progress='55'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='55'] .sf-download-bar__circle-fill {
+    transform: rotate(99deg);
+}
+
+.sf-download-bar__circle[data-progress='55'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(198deg);
+}
+
+.sf-download-bar__circle[data-progress='56'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='56'] .sf-download-bar__circle-fill {
+    transform: rotate(100.8deg);
+}
+
+.sf-download-bar__circle[data-progress='56'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(201.6deg);
+}
+
+.sf-download-bar__circle[data-progress='57'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='57'] .sf-download-bar__circle-fill {
+    transform: rotate(102.6deg);
+}
+
+.sf-download-bar__circle[data-progress='57'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(205.2deg);
+}
+
+.sf-download-bar__circle[data-progress='58'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='58'] .sf-download-bar__circle-fill {
+    transform: rotate(104.4deg);
+}
+
+.sf-download-bar__circle[data-progress='58'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(208.8deg);
+}
+
+.sf-download-bar__circle[data-progress='59'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='59'] .sf-download-bar__circle-fill {
+    transform: rotate(106.2deg);
+}
+
+.sf-download-bar__circle[data-progress='59'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(212.4deg);
+}
+
+.sf-download-bar__circle[data-progress='60'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='60'] .sf-download-bar__circle-fill {
+    transform: rotate(108deg);
+}
+
+.sf-download-bar__circle[data-progress='60'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(216deg);
+}
+
+.sf-download-bar__circle[data-progress='61'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='61'] .sf-download-bar__circle-fill {
+    transform: rotate(109.8deg);
+}
+
+.sf-download-bar__circle[data-progress='61'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(219.6deg);
+}
+
+.sf-download-bar__circle[data-progress='62'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='62'] .sf-download-bar__circle-fill {
+    transform: rotate(111.6deg);
+}
+
+.sf-download-bar__circle[data-progress='62'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(223.2deg);
+}
+
+.sf-download-bar__circle[data-progress='63'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='63'] .sf-download-bar__circle-fill {
+    transform: rotate(113.4deg);
+}
+
+.sf-download-bar__circle[data-progress='63'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(226.8deg);
+}
+
+.sf-download-bar__circle[data-progress='64'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='64'] .sf-download-bar__circle-fill {
+    transform: rotate(115.2deg);
+}
+
+.sf-download-bar__circle[data-progress='64'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(230.4deg);
+}
+
+.sf-download-bar__circle[data-progress='65'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='65'] .sf-download-bar__circle-fill {
+    transform: rotate(117deg);
+}
+
+.sf-download-bar__circle[data-progress='65'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(234deg);
+}
+
+.sf-download-bar__circle[data-progress='66'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='66'] .sf-download-bar__circle-fill {
+    transform: rotate(118.8deg);
+}
+
+.sf-download-bar__circle[data-progress='66'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(237.6deg);
+}
+
+.sf-download-bar__circle[data-progress='67'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='67'] .sf-download-bar__circle-fill {
+    transform: rotate(120.6deg);
+}
+
+.sf-download-bar__circle[data-progress='67'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(241.2deg);
+}
+
+.sf-download-bar__circle[data-progress='68'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='68'] .sf-download-bar__circle-fill {
+    transform: rotate(122.4deg);
+}
+
+.sf-download-bar__circle[data-progress='68'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(244.8deg);
+}
+
+.sf-download-bar__circle[data-progress='69'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='69'] .sf-download-bar__circle-fill {
+    transform: rotate(124.2deg);
+}
+
+.sf-download-bar__circle[data-progress='69'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(248.4deg);
+}
+
+.sf-download-bar__circle[data-progress='70'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='70'] .sf-download-bar__circle-fill {
+    transform: rotate(126deg);
+}
+
+.sf-download-bar__circle[data-progress='70'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(252deg);
+}
+
+.sf-download-bar__circle[data-progress='71'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='71'] .sf-download-bar__circle-fill {
+    transform: rotate(127.8deg);
+}
+
+.sf-download-bar__circle[data-progress='71'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(255.6deg);
+}
+
+.sf-download-bar__circle[data-progress='72'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='72'] .sf-download-bar__circle-fill {
+    transform: rotate(129.6deg);
+}
+
+.sf-download-bar__circle[data-progress='72'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(259.2deg);
+}
+
+.sf-download-bar__circle[data-progress='73'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='73'] .sf-download-bar__circle-fill {
+    transform: rotate(131.4deg);
+}
+
+.sf-download-bar__circle[data-progress='73'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(262.8deg);
+}
+
+.sf-download-bar__circle[data-progress='74'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='74'] .sf-download-bar__circle-fill {
+    transform: rotate(133.2deg);
+}
+
+.sf-download-bar__circle[data-progress='74'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(266.4deg);
+}
+
+.sf-download-bar__circle[data-progress='75'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='75'] .sf-download-bar__circle-fill {
+    transform: rotate(135deg);
+}
+
+.sf-download-bar__circle[data-progress='75'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(270deg);
+}
+
+.sf-download-bar__circle[data-progress='76'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='76'] .sf-download-bar__circle-fill {
+    transform: rotate(136.8deg);
+}
+
+.sf-download-bar__circle[data-progress='76'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(273.6deg);
+}
+
+.sf-download-bar__circle[data-progress='77'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='77'] .sf-download-bar__circle-fill {
+    transform: rotate(138.6deg);
+}
+
+.sf-download-bar__circle[data-progress='77'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(277.2deg);
+}
+
+.sf-download-bar__circle[data-progress='78'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='78'] .sf-download-bar__circle-fill {
+    transform: rotate(140.4deg);
+}
+
+.sf-download-bar__circle[data-progress='78'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(280.8deg);
+}
+
+.sf-download-bar__circle[data-progress='79'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='79'] .sf-download-bar__circle-fill {
+    transform: rotate(142.2deg);
+}
+
+.sf-download-bar__circle[data-progress='79'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(284.4deg);
+}
+
+.sf-download-bar__circle[data-progress='80'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='80'] .sf-download-bar__circle-fill {
+    transform: rotate(144deg);
+}
+
+.sf-download-bar__circle[data-progress='80'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(288deg);
+}
+
+.sf-download-bar__circle[data-progress='81'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='81'] .sf-download-bar__circle-fill {
+    transform: rotate(145.8deg);
+}
+
+.sf-download-bar__circle[data-progress='81'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(291.6deg);
+}
+
+.sf-download-bar__circle[data-progress='82'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='82'] .sf-download-bar__circle-fill {
+    transform: rotate(147.6deg);
+}
+
+.sf-download-bar__circle[data-progress='82'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(295.2deg);
+}
+
+.sf-download-bar__circle[data-progress='83'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='83'] .sf-download-bar__circle-fill {
+    transform: rotate(149.4deg);
+}
+
+.sf-download-bar__circle[data-progress='83'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(298.8deg);
+}
+
+.sf-download-bar__circle[data-progress='84'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='84'] .sf-download-bar__circle-fill {
+    transform: rotate(151.2deg);
+}
+
+.sf-download-bar__circle[data-progress='84'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(302.4deg);
+}
+
+.sf-download-bar__circle[data-progress='85'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='85'] .sf-download-bar__circle-fill {
+    transform: rotate(153deg);
+}
+
+.sf-download-bar__circle[data-progress='85'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(306deg);
+}
+
+.sf-download-bar__circle[data-progress='86'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='86'] .sf-download-bar__circle-fill {
+    transform: rotate(154.8deg);
+}
+
+.sf-download-bar__circle[data-progress='86'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(309.6deg);
+}
+
+.sf-download-bar__circle[data-progress='87'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='87'] .sf-download-bar__circle-fill {
+    transform: rotate(156.6deg);
+}
+
+.sf-download-bar__circle[data-progress='87'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(313.2deg);
+}
+
+.sf-download-bar__circle[data-progress='88'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='88'] .sf-download-bar__circle-fill {
+    transform: rotate(158.4deg);
+}
+
+.sf-download-bar__circle[data-progress='88'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(316.8deg);
+}
+
+.sf-download-bar__circle[data-progress='89'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='89'] .sf-download-bar__circle-fill {
+    transform: rotate(160.2deg);
+}
+
+.sf-download-bar__circle[data-progress='89'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(320.4deg);
+}
+
+.sf-download-bar__circle[data-progress='90'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='90'] .sf-download-bar__circle-fill {
+    transform: rotate(162deg);
+}
+
+.sf-download-bar__circle[data-progress='90'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(324deg);
+}
+
+.sf-download-bar__circle[data-progress='91'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='91'] .sf-download-bar__circle-fill {
+    transform: rotate(163.8deg);
+}
+
+.sf-download-bar__circle[data-progress='91'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(327.6deg);
+}
+
+.sf-download-bar__circle[data-progress='92'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='92'] .sf-download-bar__circle-fill {
+    transform: rotate(165.6deg);
+}
+
+.sf-download-bar__circle[data-progress='92'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(331.2deg);
+}
+
+.sf-download-bar__circle[data-progress='93'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='93'] .sf-download-bar__circle-fill {
+    transform: rotate(167.4deg);
+}
+
+.sf-download-bar__circle[data-progress='93'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(334.8deg);
+}
+
+.sf-download-bar__circle[data-progress='94'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='94'] .sf-download-bar__circle-fill {
+    transform: rotate(169.2deg);
+}
+
+.sf-download-bar__circle[data-progress='94'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(338.4deg);
+}
+
+.sf-download-bar__circle[data-progress='95'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='95'] .sf-download-bar__circle-fill {
+    transform: rotate(171deg);
+}
+
+.sf-download-bar__circle[data-progress='95'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(342deg);
+}
+
+.sf-download-bar__circle[data-progress='96'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='96'] .sf-download-bar__circle-fill {
+    transform: rotate(172.8deg);
+}
+
+.sf-download-bar__circle[data-progress='96'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(345.6deg);
+}
+
+.sf-download-bar__circle[data-progress='97'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='97'] .sf-download-bar__circle-fill {
+    transform: rotate(174.6deg);
+}
+
+.sf-download-bar__circle[data-progress='97'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(349.2deg);
+}
+
+.sf-download-bar__circle[data-progress='98'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='98'] .sf-download-bar__circle-fill {
+    transform: rotate(176.4deg);
+}
+
+.sf-download-bar__circle[data-progress='98'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(352.8deg);
+}
+
+.sf-download-bar__circle[data-progress='99'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='99'] .sf-download-bar__circle-fill {
+    transform: rotate(178.2deg);
+}
+
+.sf-download-bar__circle[data-progress='99'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(356.4deg);
+}
+
+.sf-download-bar__circle[data-progress='100'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='100'] .sf-download-bar__circle-fill {
+    transform: rotate(180deg);
+}
+
+.sf-download-bar__circle[data-progress='100'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(360deg);
+}
+
+.sf-download-bar {
+    position: fixed;
+    right: 110px;
+    bottom: 100px;
+    z-index: 99999;
+
+    width: 64px;
+    height: 64px;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+
+    transition: width, height, right, 0.2s;
+
+    border-radius: 50%;
+}
+
+.sf-download-bar_opened_yes {
+    width: 184px;
+
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    box-shadow: 0px 0px 18px rgba(49, 51, 106, 0.15);
+}
+
+.sf-download-bar_hide_yes {
+    right: -64px;
+}
+
+.sf-download-bar__head {
+    position: relative;
+    z-index: 10;
+
+    display: block;
+    white-space: nowrap;
+
+    width: 100%;
+    height: 64px;
+
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+
+    background: #5181B8;
+    border-radius: 100px;
+    box-shadow: none;
+}
+
+/* .sf-download-bar:not(.sf-download-bar_opened_yes) .sf-download-bar__head {
+    box-shadow: 0px 0px 18px rgba(49, 51, 106, 0.15);
+} */
+
+.sf-download-bar__head:after {
+    content: '';
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: #5181B8;
+    border-radius: 100px;
+    transition: width, height, left, top, 0.2s;
+}
+
+.sf-download-bar:not(.sf-download-bar_opened_yes):hover .sf-download-bar__head:after {
+    width: 68px;
+    height: 68px;
+    top: -2px;
+    left: -2px;
+    box-shadow: 0px 0px 18px rgba(49, 51, 106, 0.15);
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__head:after {
+    opacity: 0;
+    display: none;
+}
+
+.sf-download-bar__ticker {
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    width: 17px;
+    height: 17px;
+
+    background: #FF734C;
+    border-radius: 100px;
+
+    color: #fff;
+    text-align: center;
+    line-height: 17px;
+    font-size: 10px;
+    font-weight: bold;
+
+    transition: opacity 0.2s;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__ticker {
+    opacity: 0;
+}
+
+.sf-download-bar__ticker-big {
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    width: 40px;
+    height: 40px;
+    ;
+
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+
+    transition: opacity 0.2s;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__ticker-big {
+    opacity: 1;
+}
+
+.sf-download-bar__circle svg {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    margin: -7px 0 0 -5px;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__circle svg {
+    opacity: 0;
+}
+
+.sf-download-bar__content {
+    overflow: hidden;
+}
+
+.sf-download-bar__text {
+    opacity: 0.6;
+
+    color: #fff;
+    font-size: 11px;
+    text-align: center;
+    line-height: 64px;
+
+    overflow: hidden;
+
+    margin-left: -90px;
+    margin-right: 26px;
+
+    width: 64px;
+    height: 64px;
+
+    vertical-align: middle;
+    display: inline-block;
+    transition: margin-left 0.2s;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__text {
+    margin-left: 30px;
+}
+
+.sf-download-bar__footer {
+    width: 100%;
+    height: 0;
+    background-color: #fff;
+    overflow-y: auto;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__footer {
+    padding-top: 32px;
+    margin-top: -32px;
+}
+
+.sf-download-bar__stop {
+    opacity: 0.5;
+    width: 8px;
+    height: 8px;
+    visibility: hidden;
+    margin-right: 7px;
+    margin-left: 15px;
+    margin-top: 6px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.sf-download-bar__stop:hover {
+    opacity: 1;
+}
+
+.sf-download-bar__item {
+    overflow: hidden;
+    height: 48px;
+    line-height: 40px;
+    transition: background-color 0.1s;
+}
+
+.sf-download-bar__item:first-child {
+    margin-top: 5px;
+}
+
+.sf-download-bar__item:hover {
+    background-color: #E9EDF1;
+}
+
+.sf-download-bar__item:hover .sf-download-bar__stop {
+    visibility: visible;
+}
+
+.sf-download-bar__item-info {
+    height: 30px;
+    position: relative;
+    display: inline-block;
+    width: 135px;
+}
+
+.sf-download-bar__item-name {
+    line-height: 1em;
+    font-size: 11px;
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sf-download-bar__item-progress,
+.sf-download-bar__item-progress-bg {
+    position: absolute;
+    top: 18px;
+    left: 0;
+    height: 1px;
+}
+
+.sf-download-bar__item-progress-bg {
+    width: 100%;
+    background-color: #E7E8EC;
+    z-index: 1;
+}
+
+.sf-download-bar__item-progress {
+    width: 0;
+    background-color: #5181B8;
+    z-index: 2;
+}
+
+.sf-download-bar__cancel {
+    display: none;
+    height: 40px;
+    line-height: 40px;
+    color: #5181B8;
+    font-size: 9px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background: #fff;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__cancel {
+    display: block;
+}
+
+.sf-download-bar__cancel:hover {
+    text-decoration: none;
+    background-color: #5181B8;
+    color: #fff;
+}
+</style><div class="sf-download-bar sf-download-bar_hide_yes"><a href="https://medium.com/@onejohi/sharing-data-between-components-in-angularjs-c34ff20b7fee#" class="sf-download-bar__head"><div class="sf-download-bar__ticker">1</div><div class="sf-download-bar__content"><div class="sf-download-bar__text">Downloading</div><div class="sf-download-bar__circle" data-progress="0"><div class="sf-download-bar__ticker-big">1</div><svg width="16" height="16" viewBox="0 0 16 16"><path d="M0 13.3623H11.0043V11.7903H0V13.3623ZM11.0043 4.71611H7.86018V0H3.14407V4.71611H0L5.50213 10.2182L11.0043 4.71611Z" fill="#fff"></path></svg><div class="sf-download-bar__circle-slice sf-download-bar__circle-slice_view_full"><div class="sf-download-bar__circle-fill"></div></div><div class="sf-download-bar__circle-slice"><div class="sf-download-bar__circle-fill"></div><div class="sf-download-bar__circle-fill sf-download-bar__circle-bar"></div></div><div class="sf-download-bar__circle-overlay"></div></div></div></a><div class="sf-download-bar__footer"><div class="sf-download-bar__list"></div></div><a href="https://medium.com/@onejohi/sharing-data-between-components-in-angularjs-c34ff20b7fee#" class="sf-download-bar__cancel">Cancel all downloads</a></div></body></html>

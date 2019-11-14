@@ -53,9 +53,12 @@ export class BasicService {
       });
   }
 
+  public getCurrentUserBasic(){
+
+  }
+
   public save() {
     console.log("Prfile Basic Save : ");
-
   }
 
   public getDept() {
