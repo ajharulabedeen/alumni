@@ -20,6 +20,13 @@ export class BasicService {
 
     var token: string;
     token = "bearer" + this.authService.getToken();
+    console.log(this.authService.getCurrentUser());
+
+    //working but not understanding where to use.
+    this.authService.getCurrentUser().subscribe(user =>{
+      console.log(user.token);
+      console.log(user.email);
+    });
     // token = "bearer" + "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvbG9naW4iLCJpYXQiOjE1NzM0NDg2ODUsImV4cCI6MTU3MzQ1MjI4NSwibmJmIjoxNTczNDQ4Njg1LCJqdGkiOiJVMUtMR2lmSTV1a2c4QzNiIiwic3ViIjo0LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.RbA2CyB37SQIuHUl6fknC1wg4Dl7ycHEywr5VC-4iXw";
     // token = "bearer" + "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvbG9naW4iLCJpYXQiOjE1NzM0NDkxNjEsImV4cCI6MTU3MzQ1Mjc2MSwibmJmIjoxNTczNDQ5MTYxLCJqdGkiOiJtYjdPeTU4MUtvcXp3dHpxIiwic3ViIjo1LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.ueCunE8u3vkbBF2Wbw8E6ctyYn3TaEy_l8vw2O1DEjM";
     // let headers = new Headers();

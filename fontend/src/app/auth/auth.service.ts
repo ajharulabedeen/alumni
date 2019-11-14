@@ -15,6 +15,7 @@ export interface AuthResponseData {
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   user = new BehaviorSubject<User>(null);
+  currentUser = this.user.asObservable();
   token: string;
 
   constructor(private http: HttpClient) { }
@@ -118,6 +119,11 @@ export class AuthService {
 
   public getToken(){
     return this.token;
+    // return this.user.asObservable;
+  }
+
+  public getCurrentUser(){
+    return this.currentUser;
   }
 
   public removeToken(){
