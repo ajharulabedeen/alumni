@@ -68,39 +68,45 @@ export class BasicService {
     return this.http.post<Basic>(
       'http://127.0.0.1:8000/api/basic/findOneById', [], options,
     )
-    
-    //working
-    // .pipe(
-    //   map(responseData => {
-    //     const postsArray: Basic[] = [];
-    //     for (const key in responseData) {
-    //       console.log(key);
-    //       if (responseData.hasOwnProperty(key)) {
-    //         postsArray.push({ ...responseData[key], id: key });
-    //       }
-    //     }
-    //     return postsArray;
-    //   }),
-    //   catchError(errorRes => {
-    //     // Send to analytics server
-    //     return throwError(errorRes);
-    //   })
-    // );
 
-    .subscribe((b: Basic) => {
-      this.loading = false;
-      const bas = new Basic(b.id, b.user_id, b.dept, b.batch, b.student_id, b.passing_year, b.first_name, b.last_name, b.birth_date, b.gender, b.blood_group, b.email, b.phone, b.address_present, b.address_permanent, b.research_interest, b.skills, b.image_address, b.religion, b.social_media_link);
-      console.log("bas : " + bas.dept);
-      this.basic.next(bas);
-    });
+      //working
+      // .pipe(
+      //   map(responseData => {
+      //     const postsArray: Basic[] = [];
+      //     for (const key in responseData) {
+      //       console.log(key);
+      //       if (responseData.hasOwnProperty(key)) {
+      //         postsArray.push({ ...responseData[key], id: key });
+      //       }
+      //     }
+      //     return postsArray;
+      //   }),
+      //   catchError(errorRes => {
+      //     // Send to analytics server
+      //     return throwError(errorRes);
+      //   })
+      // );
 
-
-
+      .subscribe((b: Basic) => {
+        this.loading = false;
+        console.log(b);
+        console.log(b["dept"]);
+        // const bas = new Basic(b.id, b.user_id, b.dept, b.batch, b.student_id, b.passing_year, b.first_name, b.last_name, b.birth_date, b.gender, b.blood_group, b.email, b.phone, b.address_present, b.address_permanent, b.research_interest, b.skills, b.image_address, b.religion, b.social_media_link);
+        const bas = new Basic();
+        bas.$id     = b["id"];
+        bas.$dept   = b["dept"];
+        bas.$batch  = b["batch"];
+        bas.$student_id = b["student_id"];
+        bas.$passing_year = b["passing_year"];
+        bas.$first_name = b["first_name"];
+        bas.$last_name = b["last_name"];
+        // bas.$ = b["last_name"];
+        bas.$address_permanent = b["address_permanent"];
+        console.log("bas : " + bas.$dept);
+        this.basic.next(bas);
+      });
   }//get current user basic.
 
-  private getB() {
-
-  }
 
   public getCu() {
     return this.currentBasic;

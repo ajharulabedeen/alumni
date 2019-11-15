@@ -57,9 +57,8 @@ export class BasicComponent implements OnInit {
     this.basicService.getCurrentUserBasic();
 
     this.basicService.basic.subscribe(b => {
-      console.log(b);
       for (const key in b) {
-        // console.log(key);
+        console.log(key + " : " + b[key]);
 
         switch (key) {
           case "user_id": {
@@ -143,8 +142,6 @@ export class BasicComponent implements OnInit {
             break;
           }
         }
-
-
       }//for
 
       console.log("Length : " + this.loadedPosts.length);
@@ -168,28 +165,28 @@ export class BasicComponent implements OnInit {
   }
 
   public getBasic() {
-    // var b : Basic;
-    var basic = new Basic(
-      this.id,
-      this.user_id,
-      this.dept,
-      this.batch,
-      this.student_id,
-      this.passing_year,
-      this.first_name,
-      this.last_name,
-      this.birth_date,
-      this.gender,
-      this.blood_group,
-      this.email,
-      this.phone,
-      this.address_present,
-      this.address_permanent,
-      this.research_interest,
-      this.skills,
-      this.image_address,
-      this.religion,
-      this.social_media_link);
+    var basic: Basic;
+    // var basic = new Basic(
+    //   this.id,
+    //   this.user_id,
+    //   this.dept,
+    //   this.batch,
+    //   this.student_id,
+    //   this.passing_year,
+    //   this.first_name,
+    //   this.last_name,
+    //   this.birth_date,
+    //   this.gender,
+    //   this.blood_group,
+    //   this.email,
+    //   this.phone,
+    //   this.address_present,
+    //   this.address_permanent,
+    //   this.research_interest,
+    //   this.skills,
+    //   this.image_address,
+    //   this.religion,
+    //   this.social_media_link);
 
     console.log(basic);
     return basic;
