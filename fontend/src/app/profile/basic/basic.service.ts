@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
 import { Basic } from './basic.model';
 import { AuthService } from '../../auth/auth.service';
-import { tap, catchError } from 'rxjs/operators';
+import { tap, catchError, map } from 'rxjs/operators';
 import { throwError, BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -65,28 +65,37 @@ export class BasicService {
       'Authorization': token
     });
     let options = { headers: headers };
-
-    this.http.post<Basic>(
+    return this.http.post<Basic>(
       'http://127.0.0.1:8000/api/basic/findOneById', [], options,
-    ).subscribe((b: Basic) => {
+    )
+    
+    //working
+    // .pipe(
+    //   map(responseData => {
+    //     const postsArray: Basic[] = [];
+    //     for (const key in responseData) {
+    //       console.log(key);
+    //       if (responseData.hasOwnProperty(key)) {
+    //         postsArray.push({ ...responseData[key], id: key });
+    //       }
+    //     }
+    //     return postsArray;
+    //   }),
+    //   catchError(errorRes => {
+    //     // Send to analytics server
+    //     return throwError(errorRes);
+    //   })
+    // );
+
+    .subscribe((b: Basic) => {
       this.loading = false;
       const bas = new Basic(b.id, b.user_id, b.dept, b.batch, b.student_id, b.passing_year, b.first_name, b.last_name, b.birth_date, b.gender, b.blood_group, b.email, b.phone, b.address_present, b.address_permanent, b.research_interest, b.skills, b.image_address, b.religion, b.social_media_link);
       console.log("bas : " + bas.dept);
       this.basic.next(bas);
-      // this.currentBasic.
-
-      for (const key in b) {
-        const postsArray: Post[] = [];
-        // console.log("dept : " + b[key]);
-        console.log("dept : " + key);
-
-        // if (responseData.hasOwnProperty(key)) {
-        //   postsArray.push({ ...responseData[key], id: key });
-        // }
-      }//for
-
-
     });
+
+
+
   }//get current user basic.
 
   private getB() {

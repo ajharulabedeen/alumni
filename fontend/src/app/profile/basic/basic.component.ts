@@ -40,29 +40,119 @@ export class BasicComponent implements OnInit {
 
   constructor(private basicService: BasicService) { }
 
+
+  loadedPosts: Basic[] = [];
+  isFetching = false;
+  error = null;
+
   ngOnInit() {
     this.blood = this.basicService.getBloodGroup();
     this.basicExist = true;
     var b: Basic;
     console.log("---" + this.basicService.getCurrentUserBasic());
-    console.log(this.basicService.basic.subscribe((b: Basic) => {
-      console.log("Init : " + b.batch);
-    }));
+    // console.log(this.basicService.basic.subscribe((b: Basic) => {
+    //   console.log("Init : " + b.batch);
+    // }));
+
+    this.basicService.getCurrentUserBasic();
 
     this.basicService.basic.subscribe(b => {
       console.log(b);
-      // for (const key in b) {
-      //   const postsArray: Post[] = [];
-      //   // console.log("Key : ");
-      //   // console.log(b[key]);
-      //   this.dept = b[key];
-      //   console.log("dept : " + this.dept);
-      // }
+      for (const key in b) {
+        // console.log(key);
+
+        switch (key) {
+          case "user_id": {
+            this.user_id = b[key];
+            break;
+          }
+          case "dept": {
+            this.dept = b[key];
+            break;
+          }
+          case "batch": {
+            this.batch = b[key];
+            break;
+          }
+          case "student_id": {
+            this.student_id = b[key];
+            break;
+          }
+          case "passing_year": {
+            this.passing_year = b[key];
+            break;
+          }
+          case "first_name": {
+            this.first_name = b[key];
+            break;
+          }
+          case "last_name": {
+            this.last_name = b[key];
+            break;
+          }
+          case "birth_date": {
+            this.birth_date = b[key];
+            break;
+          }
+          case "gender": {
+            this.gender = b[key];
+            break;
+          }
+          case "blood_group": {
+            this.blood_group = b[key];
+            break;
+          }
+          case "email": {
+            this.email = b[key];
+            break;
+          }
+          case "phone": {
+            this.phone = b[key];
+            break;
+          }
+          case "address_present": {
+            this.address_present = b[key];
+            break;
+          }
+          case "address_permanent": {
+            this.address_permanent = b[key];
+            break;
+          }
+          case "research_interest": {
+            this.research_interest = b[key];
+            break;
+          }
+          case "skills": {
+            this.skills = b[key];
+            break;
+          }
+          case "image_address": {
+            this.image_address = b[key];
+            break;
+          }
+          case "religion": {
+            this.religion = b[key];
+            break;
+          }
+          case "social_media_link": {
+            this.social_media_link = b[key];
+            break;
+          }
+          default: {
+            // console.log("Invalid choice");
+            break;
+          }
+        }
+
+
+      }//for
+
+      console.log("Length : " + this.loadedPosts.length);
     });
 
-    this.basicService.currentBasic.subscribe(b => {
-      console.log(b.batch);
-    });
+    // this.basicService.currentBasic.subscribe(b => {
+    //   console.log(b.batch);
+    // });
   }
 
   public editProfile() {
@@ -78,6 +168,7 @@ export class BasicComponent implements OnInit {
   }
 
   public getBasic() {
+    // var b : Basic;
     var basic = new Basic(
       this.id,
       this.user_id,

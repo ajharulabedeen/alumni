@@ -1,4 +1,5 @@
 export class Basic {
+// export interface Basic {
   public id: string;
   public user_id: string;
   public dept: string;
