@@ -66,13 +66,17 @@ class Profile_Basic_Controller extends Controller
 
         //user have to logged in.
         $user_id = Utils::getUserId();
-        error_log($r->user_id);
-        // $r->user_id='2';
-        error_log($r->user_id);
 
-        $data = $this->basicRepo->findOneByUser($r->user_id);
-        error_log($data->id);
+        // no need as, user id can be taken automatically
+        // error_log($r->user_id);
+        // $r->user_id='2';
+        // error_log($r->user_id);
+
+        // $data = $this->basicRepo->findOneByUser($r->user_id);
+        // error_log($data->id);
         // return response($this->basicRepo->findOneByUser($r->user_id));
+        // no need as, user id can be taken automatically
+
         return response($this->basicRepo->findOneByUser($user_id));
     }
 
