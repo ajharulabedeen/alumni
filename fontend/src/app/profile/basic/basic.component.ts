@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BasicService } from './basic.service';
 import { Basic } from './basic.model';
+import { Observable } from 'rxjs';
+import { subscribeOn } from 'rxjs/operators';
 
 @Component({
   selector: 'app-basic',
@@ -34,15 +36,24 @@ export class BasicComponent implements OnInit {
   religion: string;
   social_media_link: string;
 
-  basicExist : boolean;
+  basicExist: boolean;
 
-  constructor(private basic: BasicService) { }
+  constructor(private basicService: BasicService) { }
 
   ngOnInit() {
     //not needed for now.
     // this.dept = this.basic.getDept();
-    this.blood = this.basic.getBloodGroup();
+    this.blood = this.basicService.getBloodGroup();
     this.basicExist = true;
+    var b: Basic;
+    // b = this.basic.getCurrentUserBasic();
+    console.log("---" + this.basicService.getCurrentUserBasic());
+    console.log(this.basicService.basic.subscribe(b => {
+      console.log(b);
+      // b.
+      // console.log(b.last_name);
+      // this.dept = b.dept;
+    }));
   }
 
   public editProfile() {
@@ -50,11 +61,11 @@ export class BasicComponent implements OnInit {
   }
 
   public save() {
-    this.basic.save();
+    this.basicService.save();
     this.editProfile();
     // console.log(this.deptName);
     // this.getBasic();
-    this.basic.create(this.getBasic());
+    this.basicService.create(this.getBasic());
   }
 
   public getBasic() {

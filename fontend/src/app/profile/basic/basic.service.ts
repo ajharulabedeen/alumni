@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse, HttpHeaders } from '@angular/common/http';
-// import {Http, Response} from '@angular/http';
 import { Basic } from './basic.model';
 import { AuthService } from '../../auth/auth.service';
+import { tap, catchError } from 'rxjs/operators';
+import { throwError, BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BasicService {
+  // currentBasic : Basic;
+  basic = new BehaviorSubject<Basic>(null);
+  currentBasic = this.basic.asObservable();
 
   // constructor(private http: HttpClient) { }
   constructor(private http: HttpClient,
@@ -23,7 +27,7 @@ export class BasicService {
     console.log(this.authService.getCurrentUser());
 
     //working but not understanding where to use.
-    this.authService.getCurrentUser().subscribe(user =>{
+    this.authService.getCurrentUser().subscribe(user => {
       console.log(user.token);
       console.log(user.email);
     });
@@ -53,8 +57,50 @@ export class BasicService {
       });
   }
 
-  public getCurrentUserBasic(){
+  public getCurrentUserBasic() {
+    var token: string;
+    token = "bearer" + this.authService.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': token
+    });
+    let options = { headers: headers };
 
+    this.http.post<Basic>(
+      'http://127.0.0.1:8000/api/basic/findOneById', [], options,
+    )
+      // .pipe(
+      //   tap(b => {
+      //     console.log("tap");
+      //     const bas = new Basic(b.id, b.user_id, b.dept, b.batch, b.student_id, b.passing_year, b.first_name, b.last_name, b.birth_date, b.gender, b.blood_group, b.email, b.phone, b.address_present, b.address_permanent, b.research_interest, b.skills, b.image_address, b.religion, b.social_media_link);
+      //     console.log("bas : " + bas);
+      //     this.basic.next(bas);
+      //   })
+      // );
+      .subscribe((b: Basic) => {
+        // this.data = res.json();
+        // console.log(b.last_name);
+        this.loading = false;
+        const bas = new Basic(b.id, b.user_id, b.dept, b.batch, b.student_id, b.passing_year, b.first_name, b.last_name, b.birth_date, b.gender, b.blood_group, b.email, b.phone, b.address_present, b.address_permanent, b.research_interest, b.skills, b.image_address, b.religion, b.social_media_link);
+        console.log("bas : " + bas.dept);
+        this.basic.next(bas);
+        // console.log("bas dept: " + this.currentBasic.dept);
+
+      });
+
+    // return new Basic();
+  }//get current user basic.
+
+  private getB() {
+
+  }
+
+  public getCu() {
+    return this.currentBasic;
+  }
+
+  public setBasic(res: Response) {
+    // return new Basic(res.);
   }
 
   public save() {

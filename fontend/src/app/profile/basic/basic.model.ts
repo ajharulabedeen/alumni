@@ -22,6 +22,7 @@ export class Basic {
 
 
 
+
   constructor(
     id: string,
     user_id: string,
@@ -42,7 +43,7 @@ export class Basic {
     skills: string,
     image_address: string,
     religion: string,
-    social_media_link: string,
+    social_media_link: string
 
   ) {
     this.id = id;
