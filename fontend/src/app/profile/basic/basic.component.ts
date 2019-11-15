@@ -41,19 +41,28 @@ export class BasicComponent implements OnInit {
   constructor(private basicService: BasicService) { }
 
   ngOnInit() {
-    //not needed for now.
-    // this.dept = this.basic.getDept();
     this.blood = this.basicService.getBloodGroup();
     this.basicExist = true;
     var b: Basic;
-    // b = this.basic.getCurrentUserBasic();
     console.log("---" + this.basicService.getCurrentUserBasic());
-    console.log(this.basicService.basic.subscribe(b => {
-      console.log(b);
-      // b.
-      // console.log(b.last_name);
-      // this.dept = b.dept;
+    console.log(this.basicService.basic.subscribe((b: Basic) => {
+      console.log("Init : " + b.batch);
     }));
+
+    this.basicService.basic.subscribe(b => {
+      console.log(b);
+      // for (const key in b) {
+      //   const postsArray: Post[] = [];
+      //   // console.log("Key : ");
+      //   // console.log(b[key]);
+      //   this.dept = b[key];
+      //   console.log("dept : " + this.dept);
+      // }
+    });
+
+    this.basicService.currentBasic.subscribe(b => {
+      console.log(b.batch);
+    });
   }
 
   public editProfile() {

@@ -70,7 +70,6 @@ export class Basic {
 
   public getName() {
     return this.last_name;
-
   }
 
 }//class
