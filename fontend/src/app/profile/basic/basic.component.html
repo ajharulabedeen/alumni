@@ -88,8 +88,9 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input [(ngModel)]="birth_date" [disabled]='!profileEdit' type="date" class="form-control pull-right"
-                    id="datepicker">
+                  <!-- <input [(ngModel)]="birth_date" [disabled]='!profileEdit' type="date" class="form-control pull-right"
+                    id="datepicker"> -->
+                  <input [(ngModel)]="birth_date" [disabled]='!profileEdit' type="text" class="form-control pull-right">
                 </div>
               </div>
             </div>
@@ -148,7 +149,8 @@
             <div class="col-md-6 offset-md-6">
               <div class="form-group">
                 <label>Phone</label>
-                <input [(ngModel)]="phone" [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter Phone Number...">
+                <input [(ngModel)]="phone" [disabled]='!profileEdit' type="text" class="form-control"
+                  placeholder="Enter Phone Number...">
               </div>
             </div>
           </div>
