@@ -19,7 +19,7 @@ export class Basic {
   private skills: string;
   private image_address: string;
   private religion: string;
-  private _social_media_link: string;
+  private social_media_link: string;
 
     /**
      * Getter $id
@@ -177,8 +177,8 @@ export class Basic {
      * Getter social_media_link
      * @return {string}
      */
-	public get social_media_link(): string {
-		return this._social_media_link;
+	public get $social_media_link(): string {
+		return this.social_media_link;
 	}
 
     /**
@@ -337,8 +337,8 @@ export class Basic {
      * Setter social_media_link
      * @param {string} value
      */
-	public set social_media_link(value: string) {
-		this._social_media_link = value;
+	public set $social_media_link(value: string) {
+		this.social_media_link = value;
 	}
 
 

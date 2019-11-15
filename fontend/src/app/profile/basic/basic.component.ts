@@ -91,6 +91,7 @@ export class BasicComponent implements OnInit {
           }
           case "birth_date": {
             this.birth_date = b[key];
+            console.log("this.birth_date  : " + this.birth_date);
             break;
           }
           case "gender": {

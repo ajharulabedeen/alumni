@@ -100,8 +100,16 @@ export class BasicService {
         bas.$passing_year = b["passing_year"];
         bas.$first_name = b["first_name"];
         bas.$last_name = b["last_name"];
-        // bas.$ = b["last_name"];
+        bas.$birth_date = b["birth_date"];
+        bas.$gender = b["gender"];
+        bas.$blood_group = b["blood_group"];
+        bas.$religion = b["religion"];
+        bas.$email = b["email"];
         bas.$address_permanent = b["address_permanent"];
+        bas.$address_present = b["address_present"];
+        bas.$research_interest = b["research_interest"];
+        bas.$skills = b["skills"];
+        bas.$social_media_link = b["social_media_link"];
         console.log("bas : " + bas.$dept);
         this.basic.next(bas);
       });
