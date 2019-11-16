@@ -84,10 +84,12 @@ class Profile_Basic_Controller extends Controller
     public function update(Request $r)
     {
         $basicUpdate = new ProfileBasic();
-        $basicUpdate = $this->basicRepo->findOneByUser($r->user_id);
-        // $basicUpdate->user_id = Utils::getUserId();//error//refactor
+        $user_id = Utils::getUserId();
+        $basicUpdate = $this->basicRepo->findOneByUser($user_id);
         // $basicUpdate->id         = $data->id;
         // $basicUpdate->user_id    = $data->user_id;
+        // error_log(" r->dept : " . $r->dept);
+        // error_log(" exiting->dept : " . $basicUpdate->dept);
         $basicUpdate->dept       = $r->dept;
         $basicUpdate->batch      = $r->batch;
         $basicUpdate->student_id = $r->student_id;

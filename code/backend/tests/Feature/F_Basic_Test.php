@@ -25,8 +25,8 @@ class ExampleTest extends TestCase
         // $this->SignUp();
         // -----------------------------------
         // $this->creation();
-        $this->findOneByUserID();
-        // $this->update();
+        // $this->findOneByUserID();
+        $this->update();
     }
 
     public function findOneByUserID()
@@ -38,7 +38,7 @@ class ExampleTest extends TestCase
             // '/basic/findOneById',
             'api/basic/findOneById',
             [
-                'user_id' => '4',//have to send 4
+                'user_id' => '4', //have to send 4
             ],
             [
                 // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
@@ -65,7 +65,7 @@ class ExampleTest extends TestCase
             'POST',
             '/basic/update',
             [
-                'user_id' => '2',
+                // 'user_id' => '2',
                 'dept' => $dept,
                 'batch' => '130102096',
                 'student_id' => '130102096',
@@ -80,13 +80,18 @@ class ExampleTest extends TestCase
                 // 'skills' => 'Laracast',
                 // 'image_address' => 'URL',
                 'religion' => 'Other'
+            ],
+            [
+                // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+                "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
             ]
         );
-        $d = $response->baseResponse->original;
-        error_log("Response : " . $d);
+        // $d = $response->baseResponse->original;
+        $d = $response->exception;
+        // error_log("Response : " . $d);
         // dd($d->exception);
-        $this->assertEquals('1', $d);
-        // dd($d);
+        // $this->assertEquals('1', $d);
+        dd($d);
         // --------confirm Update----------
         $response = $this->json(
             'POST',

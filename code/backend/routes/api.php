@@ -28,4 +28,5 @@ Route::group([
     // api : -----
     Route::post('basic/create', 'Profile_Basic_Controller@create');
     Route::post('basic/findOneById', 'Profile_Basic_Controller@findOneByUserID');
+    Route::post('basic/update', 'Profile_Basic_Controller@update');
 });
