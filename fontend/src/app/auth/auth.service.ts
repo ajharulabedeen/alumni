@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { throwError, BehaviorSubject } from 'rxjs';
 import { catchError, tap, subscribeOn } from 'rxjs/operators';
 import { User } from './user.model';
@@ -104,6 +104,8 @@ export class AuthService {
     return throwError(errorMessage);
   }//handleError
 
+
+
   private handleAuthentication(
     email: string,
     userId: string,
@@ -117,16 +119,27 @@ export class AuthService {
     console.log("New User Created : next");
   }
 
-  public getToken(){
+  public getHeader() {
+    var token: string;
+    token = "bearer" + this.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': token
+    });
+    let options = { headers: headers };
+    return options;
+  }
+
+  public getToken() {
     return this.token;
     // return this.user.asObservable;
   }
 
-  public getCurrentUser(){
+  public getCurrentUser() {
     return this.currentUser;
   }
 
-  public removeToken(){
+  public removeToken() {
     this.token = '';
   }
 

@@ -22,7 +22,7 @@ export class BasicService {
 
   create(basic: Basic) {
     this.http.post(
-      'http://127.0.0.1:8000/api/basic/create', basic, this.getHeader()
+      'http://127.0.0.1:8000/api/basic/create', basic, this.authService.getHeader()
     ).subscribe((res: Response) => {
       console.log(res);
       this.loading = false;
@@ -42,7 +42,7 @@ export class BasicService {
 
   public getCurrentUserBasic() {
     return this.http.post<Basic>(
-      'http://127.0.0.1:8000/api/basic/findOneById', [], this.getHeader(),
+      'http://127.0.0.1:8000/api/basic/findOneById', [], this.authService.getHeader(),
     ).subscribe((b: Basic) => {
       this.loading = false;
       console.log(b);
