@@ -29,16 +29,16 @@ export class BasicService {
     });
   }//create
 
-  public getHeader() {
-    var token: string;
-    token = "bearer" + this.authService.getToken();
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': token
+
+  update(basic: Basic) {
+    this.http.post(
+      'http://127.0.0.1:8000/api/basic/update', basic, this.authService.getHeader()
+    ).subscribe((res: Response) => {
+      console.log(res);
+      this.loading = false;
     });
-    let options = { headers: headers };
-    return options;
-  }
+  }//create
+
 
   public getCurrentUserBasic() {
     return this.http.post<Basic>(
@@ -46,7 +46,7 @@ export class BasicService {
     ).subscribe((b: Basic) => {
       this.loading = false;
       console.log(b);
-      console.log(b["dept"]);
+      // console.log(b["dept"]);
       const bas = new Basic();
       bas.$id = b["id"];
       bas.$dept = b["dept"];
@@ -69,10 +69,6 @@ export class BasicService {
       this.basic.next(bas);
     });
   }//get current user basic.
-
-  public save() {
-    console.log("Prfile Basic Save : ");
-  }
 
   public getDept() {
     var dept: string[] = ["CSE", "EEE", "TEX", "FTDM", "BBS", "BBA", "LAW"];

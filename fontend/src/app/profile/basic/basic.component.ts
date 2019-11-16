@@ -3,6 +3,7 @@ import { BasicService } from './basic.service';
 import { Basic } from './basic.model';
 import { Observable } from 'rxjs';
 import { subscribeOn } from 'rxjs/operators';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-basic',
@@ -47,7 +48,8 @@ export class BasicComponent implements OnInit {
 
   ngOnInit() {
     this.blood = this.basicService.getBloodGroup();
-    this.basicExist = true;
+    this.basicExist = false;
+    console.log("this.basicExist  : " + this.basicExist );
     this.basicService.getCurrentUserBasic();
     this.basicService.basic.subscribe(b => {
       for (const key in b) {
@@ -135,7 +137,9 @@ export class BasicComponent implements OnInit {
           }
         }
       }//for
+
     });
+    console.log("this.basicExist  : " + this.basicExist );
   }//ngOnInint.
 
   public editProfile() {
@@ -143,10 +147,15 @@ export class BasicComponent implements OnInit {
   }
 
   public save() {
-    this.basicService.save();
     this.editProfile();
     this.basicService.create(this.getBasic());
   }
+
+  public update() {
+    this.editProfile();
+    this.basicService.update(this.getBasic());
+  }
+
 
   public getBasic() {
     var basic = new Basic();
