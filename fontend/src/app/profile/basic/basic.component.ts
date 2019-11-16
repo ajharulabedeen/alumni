@@ -48,14 +48,7 @@ export class BasicComponent implements OnInit {
   ngOnInit() {
     this.blood = this.basicService.getBloodGroup();
     this.basicExist = true;
-    var b: Basic;
-    console.log("---" + this.basicService.getCurrentUserBasic());
-    // console.log(this.basicService.basic.subscribe((b: Basic) => {
-    //   console.log("Init : " + b.batch);
-    // }));
-
     this.basicService.getCurrentUserBasic();
-
     this.basicService.basic.subscribe(b => {
       for (const key in b) {
         console.log(key + " : " + b[key]);
@@ -144,14 +137,8 @@ export class BasicComponent implements OnInit {
           }
         }
       }//for
-
-      console.log("Length : " + this.loadedPosts.length);
     });
-
-    // this.basicService.currentBasic.subscribe(b => {
-    //   console.log(b.batch);
-    // });
-  }
+  }//ngOnInint.
 
   public editProfile() {
     this.profileEdit = !this.profileEdit;
@@ -160,36 +147,31 @@ export class BasicComponent implements OnInit {
   public save() {
     this.basicService.save();
     this.editProfile();
-    // console.log(this.deptName);
-    // this.getBasic();
     this.basicService.create(this.getBasic());
   }
 
   public getBasic() {
-    var basic: Basic;
-    // var basic = new Basic(
-    //   this.id,
-    //   this.user_id,
-    //   this.dept,
-    //   this.batch,
-    //   this.student_id,
-    //   this.passing_year,
-    //   this.first_name,
-    //   this.last_name,
-    //   this.birth_date,
-    //   this.gender,
-    //   this.blood_group,
-    //   this.email,
-    //   this.phone,
-    //   this.address_present,
-    //   this.address_permanent,
-    //   this.research_interest,
-    //   this.skills,
-    //   this.image_address,
-    //   this.religion,
-    //   this.social_media_link);
+    var basic = new Basic();
+    basic.$dept = this.dept;
+    basic.$batch = this.batch;
+    basic.$student_id = this.student_id;
+    basic.$passing_year = this.passing_year;
+    basic.$first_name = this.first_name;
+    basic.$last_name = this.last_name;
+    basic.$birth_date = this.birth_date;
+    basic.$gender = this.gender;
+    basic.$blood_group = this.blood_group;
+    basic.$email = this.email;
+    basic.$phone = this.phone;
+    basic.$address_permanent = this.address_present;
+    basic.$address_permanent = this.address_permanent;
+    basic.$research_interest = this.research_interest;
+    basic.$skills = this.skills;
+    basic.$image_address = this.image_address;
+    basic.$religion = this.religion;
+    basic.$social_media_link = this.social_media_link;
 
-    console.log(basic);
+    console.log(basic);//remove
     return basic;
   }
 }//class
