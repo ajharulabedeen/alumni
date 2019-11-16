@@ -51,8 +51,6 @@ export class BasicComponent implements OnInit {
     this.basicService.getCurrentUserBasic();
     this.basicService.basic.subscribe(b => {
       for (const key in b) {
-        console.log(key + " : " + b[key]);
-
         switch (key) {
           case "user_id": {
             this.user_id = b[key];
