@@ -3,9 +3,26 @@ namespace App\profile;
 use App\profile\ProfileEducation;
 
 interface Profile_Education_Repo_I {
+    /**
+     * @return id id of the new created profile.
+     */
     public function save(ProfileEducation $education);
+    /**
+     *@return updateStatus boolean; 1: succes, 0: falies.
+     */
     public function update(ProfileEducation $educationUpdate);
+    /**
+     * @param id id of the profile, not the user id.
+     * @uses    currently not in use. have to active latter if needed. cause if someone wants to remove the information, he/she can send
+     * empty data for updating.
+     */
     public function delete($id);
+    /**
+     * @param id id of the profile, not the user id.
+     * @uses    not is use now. cause findOne is security risk. Random id can be send from front end. more rboust method that
+     * user_id will be taken from the system : user_id of the current logged user.
+     *
+     */
     public function findOne( $id);
     /**
      * to get the all educations of a particular user.
