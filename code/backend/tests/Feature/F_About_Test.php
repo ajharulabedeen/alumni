@@ -29,6 +29,7 @@ class ExampleTest extends TestCase
         $this->update();
     }
 
+    //not done.
     public function findOneByUserID()
     {
         // $response = new ProfileBasic();
@@ -57,7 +58,7 @@ class ExampleTest extends TestCase
         dd($d);
     }
 
-    //passed
+    //done
     public function update()
     {
         $response = $this->json(
@@ -94,6 +95,7 @@ class ExampleTest extends TestCase
     }
 
 
+    //test done.
     public function creation()
     {
         $response = $this->json(

@@ -30,6 +30,7 @@ Route::group([
     Route::post('basic/findOneById', 'Profile_Basic_Controller@findOneByUserID');
     Route::post('basic/update', 'Profile_Basic_Controller@update');
 
-    Route::post('about/create', 'Profile_About_Controller@create');
-    Route::post('about/update', 'Profile_About_Controller@update');
+    Route::post('about/create',  'Profile_About_Controller@create');
+    Route::post('about/update',  'Profile_About_Controller@update');
+    Route::post('about/getAboutByUserId', 'Profile_About_Controller@getAboutByUserId');
 });
