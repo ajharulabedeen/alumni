@@ -45,6 +45,6 @@ class Profile_About_Controller extends Controller
         $user_id = Utils::getUserId();
         $aboutUpdate = $this->aboutRepo->findAboutByUser($user_id);
         $aboutUpdate->about_me      = $r->about_me;
-        return $this->aboutRepo->update($aboutUpdate);
+        return ['status' => $this->aboutRepo->update($aboutUpdate)];
     }
 }//class
