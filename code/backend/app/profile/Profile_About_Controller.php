@@ -24,25 +24,15 @@ protected $aboutRepo;
     {
         $pAbout = new ProfileAbout();
         $pAbout->user_id = Utils::getUserId();
-        error_log( "Profile  : " . $pAbout->user_id);
-        // $about = $this->aboutRepo->findOneByUser($pBasic->user_id);
-        // $about = $this->aboutRepo->fin;
-
+        $about = $this->aboutRepo->findAboutByUser($pAbout->user_id);
         if ($about != null) {
             error_log("about Exist!");
             $id = $about->id;
         } else {
-
-            $pAbout->user_id       = $r->user_id;
             $pAbout->about_me      = $r->about_me;
-
             $id = $this->aboutRepo->save($pAbout);
         }
-
-
         return $id;
-    }
+    }//m
 
-}
-
-?>
+}//class
