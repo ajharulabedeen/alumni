@@ -24,9 +24,9 @@ class ExampleTest extends TestCase
         // $this->Loggin();
         // $this->SignUp();
         // -----------------------------------
-        // $this->creation();
+        $this->creation();
         // $this->findOneByUserID();
-        $this->update();
+        // $this->update();
     }
 
     public function findOneByUserID()
@@ -110,27 +110,12 @@ class ExampleTest extends TestCase
     {
         $response = $this->json(
             'POST',
-            // '/basic/create',
-            'api/basic/create',
+            'about/create',
             [
                 // 'user_id' => '2',
-                'dept' => 'CSE',
-                'batch' => '130102096',
-                'student_id' => '130102096',
-                'first_name' => '---',
-                'last_name' => "'Khan'",
-                'birth_date' => '13-01-2096',
-                'gender' => 'Other',
-                'blood_group' => 'A+',
-                'email' => 'dimdim@gmail.com',
-                'phone' => '01717-111000',
-                'research_interest' => 'Big Data',
-                'skills' => 'Laracast',
-                'image_address' => 'URL',
-                'religion' => 'ISLAM'
+                'about_me' => 'CSE-------',
             ],
             [
-                // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
                 "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
             ]
         );
@@ -227,6 +212,4 @@ class ExampleTest extends TestCase
         // $t = json_decode($d);
         // prettyPrint( $t[0] );
     }
-
-
 }//class

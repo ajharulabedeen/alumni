@@ -1,7 +1,9 @@
 <?php
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
 use App\profile\Profile_About_Repo_I;
-use App\profile\Profile_About_Repo_Impl;
+use App\profile\ProfileAbout;
+use App\Utils\Utils;
 
 class Profile_About_Controller extends Controller
 {
@@ -23,7 +25,8 @@ protected $aboutRepo;
         $pAbout = new ProfileAbout();
         $pAbout->user_id = Utils::getUserId();
         error_log( "Profile  : " . $pAbout->user_id);
-        $about = $this->aboutRepo->findOneByUser($pBasic->user_id);
+        // $about = $this->aboutRepo->findOneByUser($pBasic->user_id);
+        // $about = $this->aboutRepo->fin;
 
         if ($about != null) {
             error_log("about Exist!");
