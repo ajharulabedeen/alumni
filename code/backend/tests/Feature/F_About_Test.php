@@ -25,8 +25,8 @@ class ExampleTest extends TestCase
         // $this->SignUp();
         // -----------------------------------
         // $this->creation();
-        // $this->findOneByUserID();
-        $this->update();
+        $this->findOneByUserID();
+        // $this->update();
     }
 
     //not done.
@@ -37,12 +37,8 @@ class ExampleTest extends TestCase
         $response = $this->json(
             'POST',
             // '/basic/findOneById',
-            'api/basic/findOneById',
+            'api/about/getAboutByUserId',[],
             [
-                'user_id' => '4', //have to send 4
-            ],
-            [
-                // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
                 "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
             ]
         );
