@@ -7,4 +7,5 @@ interface Profile_About_Repo_I {
     public function update(ProfileAbout $profileAboutUpdate);
     public function delete($id);
     public function findOne( $id);
+    public function findAboutByUser( $userID );
 }

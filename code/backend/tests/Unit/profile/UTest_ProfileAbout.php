@@ -28,10 +28,10 @@ class UTest_ProfileBasicRepo extends TestCase
         // $this->delete(2);
         // $this->findOne(2);
         // $this->getCurrentLoggedUserID();
+        $this->findAboutByUserID(2);
     } //main test
-
-
-    public function testAboutCRUD(){
+    public function AboutCRUD()
+    {
         $id = $this->save();
         $about = $this->findOne($id);
         $this->assertEquals($id, $about->id);
@@ -47,10 +47,16 @@ class UTest_ProfileBasicRepo extends TestCase
 
         error_log("\nAbout CRUD Test Done!\n");
     }
+    public function findAboutByUserID($uesrID)
+    {
+        $repoProfileAbout =  new Profile_About_Repo_Impl();
+        $oneProfileAboutByUserID = $repoProfileAbout->findAboutByUser($uesrID);
+        error_log($oneProfileAboutByUserID);
+        return $oneProfileAboutByUserID;
+    }
 
-
-    //passed
-    public function update($id, $text){
+    public function update($id, $text)
+    {
         error_log("--Update Test : ");
         $repoProfileAbout =  new Profile_About_Repo_Impl();
         $proAbout = new ProfileAbout();
@@ -82,19 +88,22 @@ class UTest_ProfileBasicRepo extends TestCase
     }
 
     //passed
-    public function findOne($id){
+    public function findOne($id)
+    {
         $repoProfileAbout =  new Profile_About_Repo_Impl();
         $oneProfileAbout = $repoProfileAbout->findOne($id);
         return $oneProfileAbout;
     }
 
     //passed
-    public function getCurrentLoggedUserID(){
+    public function getCurrentLoggedUserID()
+    {
         $id = Utils::getUserId();
         error_log($id);
     }
 
-    public function getRepo(){
+    public function getRepo()
+    {
         new Profile_About_Repo_Impl();
     }
 }//class
