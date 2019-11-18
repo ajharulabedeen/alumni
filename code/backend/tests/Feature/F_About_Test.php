@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestUtil;
 
 class ExampleTest extends TestCase
 {
@@ -27,9 +28,10 @@ class ExampleTest extends TestCase
         // $this->creation();
         $this->findOneByUserID();
         // $this->update();
+
     }
 
-    //not done.
+    //done.
     public function findOneByUserID()
     {
         // $response = new ProfileBasic();
@@ -40,6 +42,8 @@ class ExampleTest extends TestCase
             'api/about/getAboutByUserId',[],
             [
                 "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+                //error : Error: Using $this when not in object context
+                // "HTTP_AUTHORIZATION" => "bearer" .  TestUtil::getToken("u1@umail.com", "123456")
             ]
         );
         $d = $response->baseResponse->original;
@@ -102,7 +106,8 @@ class ExampleTest extends TestCase
                 'about_me' => 'CSE-------',
             ],
             [
-                "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+                // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+                "HTTP_AUTHORIZATION" => "bearer" .  TestUtil::getToken("u1@umail.com", "123456")
             ]
         );
         $d = $response->baseResponse->original;
