@@ -24,9 +24,9 @@ class ExampleTest extends TestCase
         // $this->Loggin();
         // $this->SignUp();
         // -----------------------------------
-        $this->creation();
+        // $this->creation();
         // $this->findOneByUserID();
-        // $this->update();
+        $this->update();
     }
 
     public function findOneByUserID()
@@ -60,49 +60,37 @@ class ExampleTest extends TestCase
     //passed
     public function update()
     {
-        $dept = "EM";
         $response = $this->json(
             'POST',
-            '/basic/update',
+            'api/about/update',
             [
                 // 'user_id' => '2',
-                'dept' => $dept,
-                'batch' => '130102096',
-                'student_id' => '130102096',
-                'first_name' => 'Real Name',
-                'last_name' => "'Khan'",
-                'birth_date' => '13-01-2096',
-                // 'gender' => 'Other',
-                // 'blood_group' => 'A+',
-                // 'email' => 'dimdim@gmail.com',
-                // 'phone' => '01717-111000',
-                'research_interest' => 'Electro Medicene',
-                // 'skills' => 'Laracast',
-                // 'image_address' => 'URL',
-                'religion' => 'Other'
+                'about_me' => 'CSE---: update.',
             ],
             [
-                // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
                 "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
             ]
         );
-        // $d = $response->baseResponse->original;
-        $d = $response->exception;
-        // error_log("Response : " . $d);
-        // dd($d->exception);
-        // $this->assertEquals('1', $d);
-        dd($d);
-        // --------confirm Update----------
-        $response = $this->json(
-            'POST',
-            '/basic/findOneById',
-            [
-                'user_id' => '2',
-            ]
-        );
         $d = $response->baseResponse->original;
-        error_log("After : " . $response->original['dept']);
-        $this->assertEquals($dept, $response->original['dept']);
+        //exception not catching error, instead haulting program.
+        // error_log($d);
+        error_log("Error : ");
+        // dd($response->exception);
+
+        dd($d);
+
+
+        // --------confirm Update----------
+        // $response = $this->json(
+        //     'POST',
+        //     '/basic/findOneById',
+        //     [
+        //         'user_id' => '2',
+        //     ]
+        // );
+        // $d = $response->baseResponse->original;
+        // error_log("After : " . $response->original['dept']);
+        // $this->assertEquals($dept, $response->original['dept']);
     }
 
 

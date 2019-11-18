@@ -29,4 +29,7 @@ Route::group([
     Route::post('basic/create', 'Profile_Basic_Controller@create');
     Route::post('basic/findOneById', 'Profile_Basic_Controller@findOneByUserID');
     Route::post('basic/update', 'Profile_Basic_Controller@update');
+
+    Route::post('about/create', 'Profile_About_Controller@create');
+    Route::post('about/update', 'Profile_About_Controller@update');
 });

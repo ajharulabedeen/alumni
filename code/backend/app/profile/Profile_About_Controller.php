@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\profile\Profile_About_Repo_I;
 use App\profile\ProfileAbout;
@@ -7,7 +9,7 @@ use App\Utils\Utils;
 
 class Profile_About_Controller extends Controller
 {
-protected $aboutRepo;
+    protected $aboutRepo;
 
     public function __construct(Profile_About_Repo_I $aboutRepo)
     {
@@ -18,7 +20,7 @@ protected $aboutRepo;
 
 
     /**
-     * Method is not complete! Have to add values.
+     * conpleted. afterinsertion id will be backed.
      */
     public function create(Request $r)
     {
@@ -33,6 +35,16 @@ protected $aboutRepo;
             $id = $this->aboutRepo->save($pAbout);
         }
         return $id;
-    }//m
+    } //m
 
+
+    //refactor : from font end have to send all the data else not given data will be saved as.
+    public function update(Request $r)
+    {
+        $aboutUpdate = new ProfileAbout();
+        $user_id = Utils::getUserId();
+        $aboutUpdate = $this->aboutRepo->findAboutByUser($user_id);
+        $aboutUpdate->about_me      = $r->about_me;
+        return $this->aboutRepo->update($aboutUpdate);
+    }
 }//class
