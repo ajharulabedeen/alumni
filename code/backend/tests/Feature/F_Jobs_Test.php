@@ -21,15 +21,15 @@ class F_Jobs_Test extends TestCase
         // -----------------------------------
         // $this->creation();//done
         // $this->update();//done
-        $this->getAllEducations();
-        // $this->delete();
+        // $this->getAllEducations();//done
+        $this->delete();
     }
 
     public function delete()
     {
         $response = $this->json(
             'POST',
-            'api/education/deleteOne',
+            'api/jobs/deleteOne',
             [
                 'id' => '10004'
             ],
@@ -46,6 +46,7 @@ class F_Jobs_Test extends TestCase
         dd($d);
     }
 
+    //done
     public function getAllEducations()
     {
         $response = $this->json(
