@@ -19,8 +19,8 @@ class F_Jobs_Test extends TestCase
         // $this->Loggin();
         // $this->SignUp();
         // -----------------------------------
-        $this->creation();
-        // $this->update();
+        // $this->creation();//done
+        $this->update();
         // $this->getAllEducations();
         // $this->delete();
     }
@@ -69,26 +69,28 @@ class F_Jobs_Test extends TestCase
     {
         $response = $this->json(
             'POST',
-            'api/education/update',
+            'api/jobs/update',
             [
-                'id' => '10003',
-                'degree_name' => 'HSC',
-                'institue_name' => 'Shapur Madhugram Collage',
-                'passing_year' => '2012',
-                'result' => '4.19'
+                'id' => '10006',
+                'organization_name' => 'Tiger IT',
+                'type' => 'Private/Public',
+                'role' => 'Software Engineer',
+                'started' => '2018',
+                'leave' => '2019',
+                'current_status' => 'Leave',
             ],
             [
-                "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u1@umail.com", "123456")
             ]
         );
         $d = $response->baseResponse->original;
-        //exception not catching error, instead haulting program.
+        // $d = $response->exception;
+        //exception not catching error,instead haulting program.
         // error_log($d);
         error_log("Error : ");
         // dd($response->exception);
 
         dd($d);
-
 
         // --------confirm Update----------
         // $response = $this->json(
@@ -110,7 +112,7 @@ class F_Jobs_Test extends TestCase
             'POST',
             'api/jobs/create',
             [
-                'organization_name' => 'ISTL',
+                'organization_name' => 'Tiger IT',
                 'type' => 'Private',
                 'role' => 'Software Engineer',
                 'started' => '2018',
