@@ -25,9 +25,9 @@ class F_Education_Test extends TestCase
         // $this->Loggin();
         // $this->SignUp();
         // -----------------------------------
-        $this->creation();
+        // $this->creation();
         // $this->findOneByUserID();
-        // $this->update();
+        $this->update();
 
     }
 
@@ -38,7 +38,8 @@ class F_Education_Test extends TestCase
 
         $response = $this->json(
             'POST',
-            'api/about/getAboutByUserId',[],
+            'api/about/getAboutByUserId',
+            [],
             [
                 "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
             ]
@@ -55,15 +56,18 @@ class F_Education_Test extends TestCase
         dd($d);
     }
 
-    //not done
+    //done
     public function update()
     {
         $response = $this->json(
             'POST',
             'api/education/update',
             [
-                // 'user_id' => '2',
-                'about_me' => 'CSE---: update.',
+                'id' => '10003',
+                'degree_name' => 'HSC',
+                'institue_name' => 'Shapur Madhugram Collage',
+                'passing_year' => '2012',
+                'result' => '4.19'
             ],
             [
                 "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
