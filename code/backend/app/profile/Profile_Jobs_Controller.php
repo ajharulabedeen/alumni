@@ -56,7 +56,7 @@ class Profile_Jobs_Controller extends Controller
 
     public function getAllJobsByUserId()
     {
-        return $this->jobsRepo->getAllJobsByUserId(Utils::getUserId());
+        return $this->jobsRepo->getAllJobs(Utils::getUserId());
     }
 
     public function deleteOne(Request $r)

@@ -20,8 +20,8 @@ class F_Jobs_Test extends TestCase
         // $this->SignUp();
         // -----------------------------------
         // $this->creation();//done
-        $this->update();
-        // $this->getAllEducations();
+        // $this->update();//done
+        $this->getAllEducations();
         // $this->delete();
     }
 
@@ -50,7 +50,7 @@ class F_Jobs_Test extends TestCase
     {
         $response = $this->json(
             'POST',
-            'api/education/getAllEducationsByUserId',
+            'api/jobs/getAllJobsByUserId',
             [],
             [
                 "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
@@ -65,6 +65,7 @@ class F_Jobs_Test extends TestCase
         dd($d);
     }
 
+    //done
     public function update()
     {
         $response = $this->json(

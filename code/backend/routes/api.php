@@ -41,6 +41,6 @@ Route::group([
 
     Route::post('jobs/create', 'Profile_Jobs_Controller@create');
     Route::post('jobs/update', 'Profile_Jobs_Controller@update');
-    Route::post('jobs/getAllEducationsByUserId', 'Profile_Jobs_Controller@getAllJobsByUserId');
+    Route::post('jobs/getAllJobsByUserId', 'Profile_Jobs_Controller@getAllJobsByUserId');
     Route::post('jobs/deleteOne', 'Profile_Jobs_Controller@deleteOne');
 });
