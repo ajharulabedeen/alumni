@@ -6,7 +6,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestUtil;
 
-class ExampleTest extends TestCase
+class F_About_Test extends TestCase
 {
     /**
      * A basic test example.

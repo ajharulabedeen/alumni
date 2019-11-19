@@ -4,8 +4,9 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestUtil;
 
-class F_Auth_Test extends TestCase
+class F_Education_Test extends TestCase
 {
     /**
      * A basic test example.
@@ -15,50 +16,104 @@ class F_Auth_Test extends TestCase
     public function testBasicTest()
     {
         //working
-        // $response = $this->get('/');
+        // $response = $this->get('/basic/create');
         // $response->assertStatus(200);
+        // error_log($response->original);
+        // dd($response);
 
         //both will not work together.
         // $this->Loggin();
-        $this->getToken("u2@umail.com","123456");
-        // $this->getToken("mail@g.com","123456");
-        // $this->me("mail@g.com", "123456");
-        // $this->me("u1@umail.com", "123456");
-        // $this->creation();
-        // $this->getToken("mail@g.com","123456");
         // $this->SignUp();
+        // -----------------------------------
+        // $this->creation();
+        $this->findOneByUserID();
+        // $this->update();
+
     }
 
-    public function creation()
+    //done.
+    public function findOneByUserID()
+    {
+        // $response = new ProfileBasic();
+
+        $response = $this->json(
+            'POST',
+            // '/basic/findOneById',
+            'api/about/getAboutByUserId',[],
+            [
+                "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+            ]
+        );
+        $d = $response->baseResponse->original;
+        // dd($response->exception);
+
+        error_log("Error : ");
+        // error_log("id :" .  $response->original['id']);
+        // error_log( "user_id : " . $response->original['user_id']);
+        // error_log("dept : " . $response->original['dept']);
+        // $this->assertEquals('2', $response->original['user_id']);
+        // dd($response->baseResponse);
+        dd($d);
+    }
+
+    //done
+    public function update()
     {
         $response = $this->json(
             'POST',
-            'api/basic/create',
+            'api/about/update',
             [
                 // 'user_id' => '2',
-                'dept' => 'CSE',
-                'batch' => '130102096',
-                'student_id' => '130102096',
-                'first_name' => '---',
-                'last_name' => "'Khan'",
-                'birth_date' => '13-01-2096',
-                'gender' => 'Other',
-                'blood_group' => 'A+',
-                'email' => 'dimdim@gmail.com',
-                'phone' => '01717-111000',
-                'research_interest' => 'Big Data',
-                'skills' => 'Laracast',
-                'image_address' => 'URL',
-                'religion' => 'ISLAM'
+                'about_me' => 'CSE---: update.',
             ],
             [
                 "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
             ]
         );
         $d = $response->baseResponse->original;
+        //exception not catching error, instead haulting program.
         // error_log($d);
         error_log("Error : ");
-        dd($response->exception);
+        // dd($response->exception);
+
+        dd($d);
+
+
+        // --------confirm Update----------
+        // $response = $this->json(
+        //     'POST',
+        //     '/basic/findOneById',
+        //     [
+        //         'user_id' => '2',
+        //     ]
+        // );
+        // $d = $response->baseResponse->original;
+        // error_log("After : " . $response->original['dept']);
+        // $this->assertEquals($dept, $response->original['dept']);
+    }
+
+
+    //test done.
+    public function creation()
+    {
+        $response = $this->json(
+            'POST',
+            'about/create',
+            [
+                // 'user_id' => '2',
+                'about_me' => 'CSE-------',
+            ],
+            [
+                // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+                "HTTP_AUTHORIZATION" => "bearer" .  TestUtil::getToken("u1@umail.com", "123456")
+            ]
+        );
+        $d = $response->baseResponse->original;
+        //exception not catching error, instead haulting program.
+        // error_log($d);
+        error_log("Error : ");
+        // dd($response->exception);
+
         dd($d);
     }
 
@@ -77,30 +132,9 @@ class F_Auth_Test extends TestCase
         error_log($d['access_token']);
     }
 
-    public function me($mail, $pass)
-    {
-        $response = $this->json(
-            'POST',
-            '/api/me',
-            [],
-            [
-                // "HTTP_AUTHORIZATION" => "bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3RcL2FwaVwvbG9naW4iLCJpYXQiOjE1NzMyODg2MTEsImV4cCI6MTU3MzI5MjIxMSwibmJmIjoxNTczMjg4NjExLCJqdGkiOiJJZHRpQ2JGcXg4eG5WQXZuIiwic3ViIjo2LCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0.y_472J3YaNKkgcEtk1GqhIVU26EQ80Xyc7O8USLhfyE"
-                // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("mail@g.com","123456")
-                "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken($mail, $pass)
-            ]
-        );
-        // dd($response);
-        // dd($response->exception);
-        $d = $response->baseResponse->original;
-        // $s = $this->transformHeadersToServerVars([ 'Authorization' => $d['access_token'] ]);
-        // error_log($s);
-        // error_log($d['access_token']);
 
-        // dd($d);
-        // dd($d->email);
-        error_log($d->email);
-    }
 
+    // thses method kept to use when feature test with auth will be done.
     public function Loggin()
     {
         $response = $this->json(
@@ -113,11 +147,7 @@ class F_Auth_Test extends TestCase
         );
         // dd($response->exception);
         $d = $response->baseResponse->original;
-        $s = $this->transformHeadersToServerVars(['Authorization' => $d['access_token']]);
-        // error_log($s);
-        error_log($d['access_token']);
-        dd($s);
-        // dd($d);
+        dd($d);
 
         //working
         // error_log(" data : ");
@@ -126,7 +156,6 @@ class F_Auth_Test extends TestCase
         // $t = json_decode($d);
         // prettyPrint( $t[0] );
     }
-
 
     public function SignUp()
     {
@@ -140,6 +169,7 @@ class F_Auth_Test extends TestCase
                 'password_confirmation' => '123456'
             ]
         );
+
         $response = $this->json(
             'POST',
             '/api/signup',

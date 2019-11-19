@@ -33,4 +33,6 @@ Route::group([
     Route::post('about/create',  'Profile_About_Controller@create');
     Route::post('about/update',  'Profile_About_Controller@update');
     Route::post('about/getAboutByUserId', 'Profile_About_Controller@getAboutByUserId');
+
+    Route::post('education/create', 'Profile_Education_Controller@create');
 });
