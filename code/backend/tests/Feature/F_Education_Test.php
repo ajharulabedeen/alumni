@@ -25,20 +25,19 @@ class F_Education_Test extends TestCase
         // $this->Loggin();
         // $this->SignUp();
         // -----------------------------------
-        // $this->creation();
-        $this->findOneByUserID();
+        $this->creation();
+        // $this->findOneByUserID();
         // $this->update();
 
     }
 
-    //done.
+    // not done.
     public function findOneByUserID()
     {
         // $response = new ProfileBasic();
 
         $response = $this->json(
             'POST',
-            // '/basic/findOneById',
             'api/about/getAboutByUserId',[],
             [
                 "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
@@ -56,7 +55,7 @@ class F_Education_Test extends TestCase
         dd($d);
     }
 
-    //done
+    //not done
     public function update()
     {
         $response = $this->json(
@@ -92,31 +91,31 @@ class F_Education_Test extends TestCase
         // $this->assertEquals($dept, $response->original['dept']);
     }
 
-
-    //test done.
+    //not done.
     public function creation()
     {
         $response = $this->json(
             'POST',
-            'about/create',
+            'api/education/create',
             [
-                // 'user_id' => '2',
-                'about_me' => 'CSE-------',
+                'degree_name' => 'HSC',
+                'institue_name' => 'Shapur Madhugram Collage',
+                'passing_year' => '2012',
+                'result' => '4.19'
             ],
             [
-                // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
-                "HTTP_AUTHORIZATION" => "bearer" .  TestUtil::getToken("u1@umail.com", "123456")
+                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u1@umail.com", "123456")
             ]
         );
         $d = $response->baseResponse->original;
-        //exception not catching error, instead haulting program.
+        // $d = $response->exception;
+        //exception not catching error,instead haulting program.
         // error_log($d);
         error_log("Error : ");
         // dd($response->exception);
 
         dd($d);
     }
-
 
     public function getToken($mail, $pass)
     {
@@ -131,8 +130,6 @@ class F_Education_Test extends TestCase
         $d = $response->baseResponse->original;
         error_log($d['access_token']);
     }
-
-
 
     // thses method kept to use when feature test with auth will be done.
     public function Loggin()

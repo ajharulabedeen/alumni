@@ -35,4 +35,7 @@ Route::group([
     Route::post('about/getAboutByUserId', 'Profile_About_Controller@getAboutByUserId');
 
     Route::post('education/create', 'Profile_Education_Controller@create');
+    Route::post('education/update', 'Profile_Education_Controller@update');
+    Route::post('education/getAllEducationsByUserId', 'Profile_Education_Controller@getAllEducationsByUserId');
+    Route::post('education/deleteOne', 'Profile_Education_Controller@deleteOne');
 });
