@@ -38,4 +38,9 @@ Route::group([
     Route::post('education/update', 'Profile_Education_Controller@update');
     Route::post('education/getAllEducationsByUserId', 'Profile_Education_Controller@getAllEducationsByUserId');
     Route::post('education/deleteOne', 'Profile_Education_Controller@deleteOne');
+
+    Route::post('jobs/create', 'Profile_Jobs_Controller@create');
+    Route::post('jobs/update', 'Profile_Jobs_Controller@update');
+    Route::post('jobs/getAllEducationsByUserId', 'Profile_Jobs_Controller@getAllJobsByUserId');
+    Route::post('jobs/deleteOne', 'Profile_Jobs_Controller@deleteOne');
 });

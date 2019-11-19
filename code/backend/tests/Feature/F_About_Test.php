@@ -15,18 +15,12 @@ class F_About_Test extends TestCase
      */
     public function testBasicTest()
     {
-        //working
-        // $response = $this->get('/basic/create');
-        // $response->assertStatus(200);
-        // error_log($response->original);
-        // dd($response);
-
         //both will not work together.
         // $this->Loggin();
         // $this->SignUp();
         // -----------------------------------
         // $this->creation();
-        $this->findOneByUserID();
+        // $this->findOneByUserID();
         // $this->update();
 
     }

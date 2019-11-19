@@ -13,7 +13,6 @@ class Profile_Education_Controller extends Controller
 
     public function __construct(Profile_Education_Repo_I $educationRepo)
     {
-        // $this->middleware('auth:api');
         $this->educationRepo = $educationRepo;
     }
 
