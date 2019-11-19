@@ -25,34 +25,51 @@ class F_Education_Test extends TestCase
         // $this->Loggin();
         // $this->SignUp();
         // -----------------------------------
-        // $this->creation();
+        // $this->creation();//done
         // $this->findOneByUserID();
-        $this->update();
-
+        // $this->update();//done
+        // $this->getAllEducations(); //done
+        $this->delete(); //done
     }
 
-    // not done.
-    public function findOneByUserID()
+    public function delete()
     {
-        // $response = new ProfileBasic();
-
         $response = $this->json(
             'POST',
-            'api/about/getAboutByUserId',
+            'api/education/deleteOne',
+            [
+                'id' => '10004'
+            ],
+            [
+                "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+            ]
+        );
+        $d = $response->baseResponse->original;
+        //exception not catching error, instead haulting program.
+        // error_log($d);
+        error_log("Error : ");
+        // dd($response->exception);
+
+        dd($d);
+    }
+
+    //done
+    public function getAllEducations()
+    {
+        $response = $this->json(
+            'POST',
+            'api/education/getAllEducationsByUserId',
             [],
             [
                 "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
             ]
         );
         $d = $response->baseResponse->original;
+        //exception not catching error, instead haulting program.
+        // error_log($d);
+        error_log("Error : ");
         // dd($response->exception);
 
-        error_log("Error : ");
-        // error_log("id :" .  $response->original['id']);
-        // error_log( "user_id : " . $response->original['user_id']);
-        // error_log("dept : " . $response->original['dept']);
-        // $this->assertEquals('2', $response->original['user_id']);
-        // dd($response->baseResponse);
         dd($d);
     }
 

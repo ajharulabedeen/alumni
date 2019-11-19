@@ -46,8 +46,6 @@ class Profile_Education_Controller extends Controller
         $education->institue_name = $r->institue_name;
         $education->passing_year = $r->passing_year;
         $education->result = $r->result;
-
-        // $id = $this->educationRepo->update($education);
         return ['status' => $this->educationRepo->update($education)];
     }
 
