@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\profile\Profile_Education_Repo_I;
 use App\profile\ProfileEducation;
@@ -21,24 +23,31 @@ class Profile_Education_Controller extends Controller
     public function create(Request $r)
     {
         $education = new ProfileEducation();
-        $education->user_id = Utils::getUserId();
+        $education->user_id     = Utils::getUserId();
         $education->degree_name = $r->degree_name;
         $education->institue_name = $r->institue_name;
-        $education->passing_year = $r->passing_year;
+        $education->passing_year  = $r->passing_year;
         $education->result = $r->result;
         $id = $this->educationRepo->save($education);
         return $id;
     } //m
 
 
-    //refactor : from font end have to send all the data else not given data will be saved as.
+    /**
+     * @uses Risk Security.
+     *
+     */
     public function update(Request $r)
     {
-        // $aboutUpdate = new ProfileAbout();
-        // $user_id = Utils::getUserId();
-        // $aboutUpdate = $this->aboutRepo->findAboutByUser($user_id);
-        // $aboutUpdate->about_me      = $r->about_me;
-        // return ['status' => $this->aboutRepo->update($aboutUpdate)];
+        $education = new ProfileEducation();
+        // $education->user_id = Utils::getUserId();
+        $education = $this->educationRepo->findOne($r->id);
+        $education->degree_name = $r->degree_name;
+        $education->institue_name = $r->institue_name;
+        $education->passing_year = $r->passing_year;
+        $education->result = $r->result;
+        // $id = $this->educationRepo->update($education);
+        return ['status' => $this->aboutRepo->update($education)];
     }
 
     public function getAllEducationsByUserId()
@@ -48,7 +57,6 @@ class Profile_Education_Controller extends Controller
 
     public function deleteOne(Request $r)
     {
-        return ['status'=>$this->educationRepo->delete($r->id)];
+        return ['status' => $this->educationRepo->delete($r->id)];
     }
-
 }//class

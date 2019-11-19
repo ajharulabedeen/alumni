@@ -18,7 +18,7 @@ interface Profile_Education_Repo_I {
      */
     public function delete($id);
     /**
-     * @param   id id of the profile, not the user id.
+     * @param   id id of the education, not the user id.
      * @return  status  boolean. 1 : success; 0 : fail.
      * @uses    not is use now. cause findOne is security risk. Random id can be send from front end. more rboust method that
      * user_id will be taken from the system : user_id of the current logged user.

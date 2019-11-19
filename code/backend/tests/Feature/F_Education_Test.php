@@ -60,7 +60,7 @@ class F_Education_Test extends TestCase
     {
         $response = $this->json(
             'POST',
-            'api/about/update',
+            'api/education/update',
             [
                 // 'user_id' => '2',
                 'about_me' => 'CSE---: update.',
@@ -91,7 +91,7 @@ class F_Education_Test extends TestCase
         // $this->assertEquals($dept, $response->original['dept']);
     }
 
-    //not done.
+    //done.
     public function creation()
     {
         $response = $this->json(
