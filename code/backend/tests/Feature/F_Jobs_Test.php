@@ -22,7 +22,7 @@ class F_Jobs_Test extends TestCase
         // $this->creation();//done
         // $this->update();//done
         // $this->getAllEducations();//done
-        $this->delete();
+        // $this->delete();
     }
 
     public function delete()
