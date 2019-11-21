@@ -6,9 +6,10 @@ import {
   HttpEventType
 } from '@angular/common/http';
 import { map, catchError, tap } from 'rxjs/operators';
-import { Subject, throwError } from 'rxjs';
+import { Subject, throwError, BehaviorSubject } from 'rxjs';
 
 import { About } from './about.model';
+import { AuthService } from 'src/app/auth/auth.service';
 
 
 @Injectable({
@@ -16,27 +17,33 @@ import { About } from './about.model';
 })
 export class AboutService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private authService: AuthService) { }
 
-  createAndStorePost(title: string, content: string) {
-    // const postData : About = { title: title, content: content };
-    // this.http
-    //   .post<{ name: string }>(
-    //     'https://ng-complete-guide-c56d3.firebaseio.com/posts.json',
-    //     postData,
-    //     {
-    //       observe: 'response'
-    //     }
-    //   )
-    //   .subscribe(
-    //     responseData => {
-    //       console.log(responseData);
-    //     },
-    //     error => {
-    //       this.error.next(error.message);
-    //     }
-    //   );
+  data: Object;
+  loading: boolean;
+
+  basic = new BehaviorSubject<About>(null);
+
+  create(basic: About) {
+    this.http.post(
+      'http://127.0.0.1:8000/api/about/create', basic, this.authService.getHeader()
+    ).subscribe((res: Response) => {
+      console.log(res);
+      this.loading = false;
+    });
+  }//create
+
+
+  update(basic: About) {
+
+  }
+
+  /**
+   * name
+   */
+  public getCurrentUserAbout() {
+
   }
 
 
-}
+}//class

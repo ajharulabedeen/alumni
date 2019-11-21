@@ -9,7 +9,7 @@
     </div>
     <div id="about_me" class="panel-collapse collapse">
       <div class="panel-body">
-        <textarea [disabled]='!profileEdit' class="form-control" rows="3" placeholder="Enter ...">
+        <textarea [(ngModel)]="about_me" [disabled]='!profileEdit' class="form-control" rows="3" placeholder="Enter ...">
                   I am slow waker but never come back.
           </textarea>
       </div>
