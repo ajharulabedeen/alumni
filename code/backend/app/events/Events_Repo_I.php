@@ -13,7 +13,7 @@ interface Events_Repo_I {
     /**
      * @return status boolean; 1 : sucess; 0 : fail.
      */
-    public function update(Events $events);
+    public function update(Events $eventsUpdate);
     /**
      * @param   id id of the event not the user ID.
      */
@@ -30,4 +30,8 @@ interface Events_Repo_I {
      *  @param  event_id   primary key of the event.
      */
     public function getDescription( $event_id);
+    /**
+     *
+     */
+    public function getOneEvent($event_id);
 }

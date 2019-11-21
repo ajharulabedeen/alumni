@@ -34,6 +34,7 @@ class Profile_Education_Repo_Impl implements Profile_Education_Repo_I
             error_log("Profile Education Update : failed to read existig Education.");
             return  $updateStatus;
         }
+        // return  ["updateStatus" => $updateStatus];
         return  $updateStatus;
     }
     public function delete($id)

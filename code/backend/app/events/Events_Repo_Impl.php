@@ -27,9 +27,21 @@ class Events_Repo_Impl implements Events_Repo_I
     /**
      * @return status boolean; 1 : sucess; 0 : fail.
      */
-    public function update(Events $events)
+    public function update(Events $eventsUpdate)
     {
         error_log("event update : ");
+        $updateStatus = false;
+        try {
+            $events_id = $eventsUpdate->id;
+            $eventsOrgin = Events::find($events_id);
+            $eventsOrgin = $eventsUpdate;
+            $eventsOrgin->update();
+            $updateStatus = true;
+        } catch (Exception $e) {
+            error_log("Events Update : failed to read existig Education.");
+            return  $updateStatus;
+        }
+        return  $updateStatus;
     }
     /**
      * @param   id id of the event not the user ID.
@@ -56,4 +68,8 @@ class Events_Repo_Impl implements Events_Repo_I
     {
         error_log("getDescription event");
     }
+    public function getOneEvent($event_id)
+    {
+        return Events::find($event_id);
+     }
 }//class

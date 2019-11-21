@@ -20,10 +20,10 @@ class UTest_Event extends TestCase
     public function testMain()
     {
         echo "\n >----------- Test Main : ---------> \n";
-        error_log($this->save());
-        // $this->update();
+        // error_log($this->save());//d
+        error_log($this->update(3,"500"));
         // $this->delete(2);
-        // $this->findOne(2);
+        // error_log($this->findOne(3));//d
         // $this->getCurrentLoggedUserID();
         // $this->findAboutByUserID(2);
     } //main test
@@ -58,15 +58,16 @@ class UTest_Event extends TestCase
     public function update($id, $text)
     {
         error_log("--Update Test : ");
-        $repoProfileAbout =  new Profile_About_Repo_Impl();
-        $proAbout = new ProfileAbout();
-        $proAbout = $this->findOne($id);
-        $proAbout->about_me = $text;
-        $updateStatus = $repoProfileAbout->update($proAbout);
+        $repoEvent =  new Events_Repo_Impl();
+        $event = new Events();
+        $event = $this->findOne($id);
+        $event->fee = $text;
+        $updateStatus = $repoEvent->update($event);
         $this->assertEquals(true, $updateStatus);
-        return $this->findOne($id)->about_me;
+        return $this->findOne($id)->fee;
     }
 
+    //done
     public function save()
     {
         error_log("-- Save Test Event : ---");
@@ -93,11 +94,12 @@ class UTest_Event extends TestCase
         return $deleteStatus;
     }
 
+    //d
     public function findOne($id)
     {
-        $repoProfileAbout =  new Profile_About_Repo_Impl();
-        $oneProfileAbout = $repoProfileAbout->findOne($id);
-        return $oneProfileAbout;
+        $eventRepo =  new Events_Repo_Impl();
+        $oneEvent = $eventRepo->getOneEvent($id);
+        return $oneEvent;
     }
 
     public function getCurrentLoggedUserID()
