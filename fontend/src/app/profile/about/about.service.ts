@@ -22,11 +22,12 @@ export class AboutService {
   data: Object;
   loading: boolean;
 
-  basic = new BehaviorSubject<About>(null);
+  about = new BehaviorSubject<About>(null);
 
-  create(basic: About) {
+  create(about: About) {
+    console.log("Create : ");
     this.http.post(
-      'http://127.0.0.1:8000/api/about/create', basic, this.authService.getHeader()
+      'http://127.0.0.1:8000/api/about/create ', about, this.authService.getHeader()
     ).subscribe((res: Response) => {
       console.log(res);
       this.loading = false;

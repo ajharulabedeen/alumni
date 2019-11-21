@@ -15,7 +15,7 @@ export class AboutComponent implements OnInit {
   user_id: string;
   about_me: string;
 
-  profileEdit = false;
+  aboutEdit = false;
   aboutExist = false;
 
   ngOnInit() {
@@ -43,17 +43,17 @@ export class AboutComponent implements OnInit {
   }
 
 
-  public editProfile() {
-    this.profileEdit = !this.profileEdit;
+  public editAbout() {
+    this.aboutEdit = !this.aboutEdit;
   }
 
   public save() {
-    this.editProfile();
+    this.editAbout();
     this.aboutService.create(this.getAbout());
   }
 
   public update() {
-    this.editProfile();
+    this.editAbout();
     this.aboutService.update(this.getAbout());
   }
 
@@ -64,6 +64,7 @@ export class AboutComponent implements OnInit {
    */
   public getAbout(): About {
     var about = new About();
+    about.$about_me = this.about_me;
     return about;
   }
 
