@@ -1,7 +1,8 @@
 <?php
-namespace events;
+namespace App\events;
 
 use App\events\Events;
+use Swift_Events_EventDispatcher;
 
 interface Events_Repo_I {
     /**
@@ -9,6 +10,9 @@ interface Events_Repo_I {
      *
      */
     public function create(Events $events);
+    /**
+     * @return status boolean; 1 : sucess; 0 : fail.
+     */
     public function update(Events $events);
     /**
      * @param   id id of the event not the user ID.
@@ -21,4 +25,9 @@ interface Events_Repo_I {
      *  @return eventsList  List of events will be returned. Just the even title will be retuned. description can be loaded later by the user if needed.
      */
     public function getAllEvents( $order, $perPage, $start);
+    /**
+     *  @return description description of an event will be given. to save data, only description will be back.
+     *  @param  event_id   primary key of the event.
+     */
+    public function getDescription( $event_id);
 }
