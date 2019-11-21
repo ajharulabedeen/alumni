@@ -34,16 +34,31 @@ export class AboutService {
     });
   }//create
 
-
-  update(basic: About) {
-
+  update(aboutUpdate: About) {
+    this.http.post(
+      'http://127.0.0.1:8000/api/about/update', aboutUpdate, this.authService.getHeader()
+    ).subscribe((res: Response) => {
+      console.log(res);
+      this.loading = false;
+    });
   }
 
   /**
    * name
    */
   public getCurrentUserAbout() {
-
+    return this.http.post<About>(
+      'http://127.0.0.1:8000/api/about/getAboutByUserId', [], this.authService.getHeader(),
+    ).subscribe((a: About) => {
+      this.loading = false;
+      console.log(a);
+      // console.log(b["dept"]);
+      const ab = new About();
+      ab.$id = a["id"];
+      ab.$about_me = a["about_me"];
+      console.log("about_me : " + a.$about_me);
+      this.about.next(ab);
+    });
   }
 
 

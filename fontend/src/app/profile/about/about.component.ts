@@ -20,26 +20,33 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
 
-    // this.aboutExist = false;
-    // console.log("this.aboutExist  : " + this.aboutExist);
-    // this.aboutService.getCurrentUserAbout();
-    // this.aboutService.basic.subscribe(b => {
-    //   for (const key in b) {
-    //     switch (key) {
-    //       case "user_id": {
-    //         this.user_id = b[key];
-    //         break;
-    //       }
-    //       default: {
-    //         // console.log("Invalid choice");
-    //         break;
-    //       }
-    //     }
-    //   }//for
+    this.aboutExist = false;
+    console.log("this.aboutExist  : " + this.aboutExist);
+    this.aboutService.getCurrentUserAbout();
+    this.aboutService.about.subscribe(a => {
+      for (const key in a) {
+        switch (key) {
+          case "id": {
+            this.id = a[key];
+            break;
+          }
+          case "user_id": {
+            this.user_id = a[key];
+            break;
+          }
+          case "about_me": {
+            this.about_me = a[key];
+            break;
+          }
+          default: {
+            // console.log("Invalid choice");
+            break;
+          }
+        }
+      }//for
 
-    // });
-    // console.log("this.basicExist  : " + this.aboutExist);
-
+    });
+    console.log("this.basicExist  : " + this.aboutExist);
   }
 
 
