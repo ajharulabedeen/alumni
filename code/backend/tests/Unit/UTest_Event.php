@@ -21,8 +21,8 @@ class UTest_Event extends TestCase
     {
         echo "\n >----------- Test Main : ---------> \n";
         // error_log($this->save());//d
-        error_log($this->update(3,"500"));
-        // $this->delete(2);
+        // error_log($this->update(3,"500"));//d
+        // error_log($this->delete(4));//d
         // error_log($this->findOne(3));//d
         // $this->getCurrentLoggedUserID();
         // $this->findAboutByUserID(2);
@@ -49,12 +49,13 @@ class UTest_Event extends TestCase
 
     public function findAboutByUserID($uesrID)
     {
-        $repoProfileAbout =  new Profile_About_Repo_Impl();
-        $oneProfileAboutByUserID = $repoProfileAbout->findAboutByUser($uesrID);
-        error_log($oneProfileAboutByUserID);
-        return $oneProfileAboutByUserID;
+        $repoEvent =  new Events_Repo_Impl();
+        $eventsByAUser = $repoEvent->getAllEvents($uesrID);
+        error_log($eventsByAUser);
+        return $eventsByAUser;
     }
 
+    //d
     public function update($id, $text)
     {
         error_log("--Update Test : ");
@@ -86,11 +87,12 @@ class UTest_Event extends TestCase
         return $id;
     }
 
+    //d
     public function delete($id)
     {
         error_log("--Delete  Test: ");
-        $repoProfileAbout =  new Profile_About_Repo_Impl();
-        $deleteStatus = $repoProfileAbout->delete($id);
+        $repoEvent =  new Events_Repo_Impl();
+        $deleteStatus = $repoEvent->delete($id);
         return $deleteStatus;
     }
 

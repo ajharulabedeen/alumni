@@ -49,6 +49,8 @@ class Events_Repo_Impl implements Events_Repo_I
     public function delete($event_id)
     {
         error_log("Event Delete : ");
+        $status = Events::where('id', $event_id)->delete();
+        return $status;
     }
     /**
      *  @param  order vales : Ascending/Desecending.

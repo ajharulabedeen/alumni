@@ -2,3 +2,5 @@
 after adding new URL, have to give : composer update
 Unless error will be shown that no controller found.
 -----------
+TS : Getter/Setter
+	Have to make all the fields private.  need extention. 

@@ -16,9 +16,6 @@ class Profile_About_Controller extends Controller
         // $this->middleware('auth:api');
         $this->aboutRepo = $aboutRepo;
     }
-
-
-
     /**
      * conpleted. afterinsertion id will be backed.
      */
@@ -27,6 +24,7 @@ class Profile_About_Controller extends Controller
         $pAbout = new ProfileAbout();
         $pAbout->user_id = Utils::getUserId();
         $about = $this->aboutRepo->findAboutByUser($pAbout->user_id);
+        // $about = null;
         if ($about != null) {
             error_log("about Exist!");
             $id = $about->id;
@@ -48,7 +46,8 @@ class Profile_About_Controller extends Controller
         return ['status' => $this->aboutRepo->update($aboutUpdate)];
     }
 
-    public function getAboutByUserId(){
+    public function getAboutByUserId()
+    {
         $user_id = Utils::getUserId();
         return $this->aboutRepo->findAboutByUser($user_id);
     }
