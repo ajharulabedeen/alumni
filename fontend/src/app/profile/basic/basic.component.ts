@@ -53,6 +53,8 @@ export class BasicComponent implements OnInit {
     this.basicService.getCurrentUserBasic();
     this.basicService.basic.subscribe(b => {
       for (const key in b) {
+        console.log(key);
+
         switch (key) {
           case "user_id": {
             this.user_id = b[key];
@@ -84,7 +86,7 @@ export class BasicComponent implements OnInit {
           }
           case "birth_date": {
             this.birth_date = b[key];
-            console.log("this.birth_date  : " + this.birth_date);
+            // console.log("this.birth_date  : " + this.birth_date);
             break;
           }
           case "gender": {
@@ -101,6 +103,7 @@ export class BasicComponent implements OnInit {
           }
           case "phone": {
             this.phone = b[key];
+            console.log("Phone : " + this.phone );
             break;
           }
           case "address_present": {

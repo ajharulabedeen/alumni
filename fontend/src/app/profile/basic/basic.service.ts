@@ -60,6 +60,7 @@ export class BasicService {
       bas.$blood_group = b["blood_group"];
       bas.$religion = b["religion"];
       bas.$email = b["email"];
+      bas.$phone = b["phone"];
       bas.$address_permanent = b["address_permanent"];
       bas.$address_present = b["address_present"];
       bas.$research_interest = b["research_interest"];
