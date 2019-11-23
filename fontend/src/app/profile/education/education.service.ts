@@ -37,17 +37,7 @@ export class EducationService {
     return this.http.post<Education>(
       'http://127.0.0.1:8000/api/education/getAllEducationsByUserId', [], this.authService.getHeader(),
     ).subscribe((e: Education) => {
-      // console.log(e);
-      console.log("One Education : " + e["0"]);
-      for (const key in e["0"]) {
-        console.log(key);
-      }
-
-      // // console.log(b["dept"]);
-      // const ab = new About();
-      // ab.$id = a["id"];
-      // ab.$about_me = a["about_me"];
-      // console.log("about_me : " + a.$about_me);
+      console.log("One Education : " + e["0"]["institue_name"]);
       this.educations.next(e);
     });
   }
