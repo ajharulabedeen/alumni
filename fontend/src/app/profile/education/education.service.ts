@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Education } from './education.model';
 import { HttpClient } from '@angular/common/http';
@@ -7,7 +7,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 @Injectable({
   providedIn: 'root'
 })
-export class EducationService {
+export class EducationService implements OnDestroy {
 
   // educations = new BehaviorSubject<Education>(null);
   educations = new BehaviorSubject<any>(null);
@@ -15,12 +15,19 @@ export class EducationService {
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
-  /**
-   * name
-   */
-  public save() {
-
+  ngOnDestroy() {
+    // this.educations.closed;
   }
+
+  create( education : Education) {
+
+    console.log("Create : ");
+    this.http.post(
+      'http://127.0.0.1:8000/api/education/create', education, this.authService.getHeader()
+    ).subscribe((res: Response) => {
+      console.log(res);
+    });
+  }//create
 
   /**
    * name
@@ -34,6 +41,7 @@ export class EducationService {
    */
   public getCurrentUserEducation() {
     // this.dummyEducationArray();
+    this.educations = new BehaviorSubject<any>(null);
     return this.http.post<Education>(
       'http://127.0.0.1:8000/api/education/getAllEducationsByUserId', [], this.authService.getHeader(),
     ).subscribe((e: Education) => {

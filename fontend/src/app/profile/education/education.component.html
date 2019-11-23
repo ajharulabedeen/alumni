@@ -46,8 +46,6 @@
                       <button class="btn btn-xs btn-warning">Delete</button>
                     </td>
                   </tr>
-
-
                 </tbody>
               </table>
             </div>
@@ -77,24 +75,24 @@
       <div class="modal-body">
 
         <div class="form-group">
-          <label>Degre Name</label>
-          <input [disabled]='!edit' type="text" class="form-control" placeholder="Enter ...">
+          <label>Degree Name</label>
+          <input [(ngModel)]="degree_name" [disabled]='!edit' type="text" class="form-control" placeholder="Enter Degree Name... (Max : 512 Character)">
         </div>
         <div class="form-group">
           <label>Institute Name</label>
-          <input [disabled]='!edit' type="text" class="form-control" placeholder="Enter ...">
+          <input [(ngModel)]="institue_name" [disabled]='!edit' type="text" class="form-control" placeholder="Enter Institute Name...... (Max : 512 Character)">
         </div>
         <div class="form-group">
           <label>Passing Year</label>
-          <input [disabled]='!edit' type="text" class="form-control" placeholder="Enter ...">
+          <input [(ngModel)]="passing_year" [disabled]='!edit' type="text" class="form-control" placeholder="Enter Passing Year ...... (Max : 512 Character)">
         </div>
         <div class="form-group">
           <label>Result</label>
-          <input [disabled]='!edit' type="text" class="form-control" placeholder="Enter ...">
+          <input [(ngModel)]="result" [disabled]='!edit' type="text" class="form-control" placeholder="Enter Result...... (Max : 512 Character)">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Add New</button>
+          <button type="button" class="btn btn-primary" (click)="save()">Save</button>
         </div>
       </div>
     </div>
