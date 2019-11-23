@@ -4,3 +4,8 @@ Unless error will be shown that no controller found.
 -----------
 TS : Getter/Setter
 	Have to make all the fields private.  need extention. 
+--------
+Because a model is a class, to generate it use --type option like this:
+	ng generate class hero --type=model
+will result in:
+	hero.model.ts	
