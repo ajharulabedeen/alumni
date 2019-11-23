@@ -34,54 +34,20 @@
                     <th>Result</th>
                     <th>Operation</th>
                   </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>SSC</td>
-                    <td>Sahapur High School</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-success">A+</span></td>
+                  <tr *ngFor="let e of educations; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{e.degree_name}}</td>
+                    <td>{{e.institue_name}}</td>
+                    <td>{{e.passing_year}}</td>
+                    <td><span class="label label-success">{{e.result}}</span></td>
                     <td>
                       <button class="btn btn-xs btn-primary" data-toggle="modal"
                         data-target="#modal_education">Edit</button>
                       <button class="btn btn-xs btn-warning">Delete</button>
                     </td>
                   </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>HSC</td>
-                    <td>S M Collage</td>
-                    <td>11-7-2016</td>
-                    <td><span class="label label-success">A-</span></td>
-                    <td>
-                      <button class="btn btn-xs btn-primary" data-toggle="modal"
-                        data-target="#modal_education">Edit</button>
-                      <button class="btn btn-xs btn-warning">Delete</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>BSC</td>
-                    <td>Green University of Bangladesh</td>
-                    <td>11-7-2020</td>
-                    <td><span class="label label-success">A+</span></td>
-                    <td>
-                      <button class="btn btn-xs btn-primary" data-toggle="modal"
-                        data-target="#modal_education">Edit</button>
-                      <button class="btn btn-xs btn-warning">Delete</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>Phd</td>
-                    <td>GUB</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-success">On Going..</span></td>
-                    <td>
-                      <button class="btn btn-xs btn-primary" data-toggle="modal"
-                        data-target="#modal_education">Edit</button>
-                      <button class="btn btn-xs btn-warning">Delete</button>
-                    </td>
-                  </tr>
+
+
                 </tbody>
               </table>
             </div>
