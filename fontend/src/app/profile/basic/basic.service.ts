@@ -48,7 +48,7 @@ export class BasicService {
       console.log(b);
       // console.log(b["dept"]);
       const bas = new Basic();
-      bas.$id = b["id"];
+      bas.$id   = b["id"];
       bas.$dept = b["dept"];
       bas.$batch = b["batch"];
       bas.$student_id = b["student_id"];
