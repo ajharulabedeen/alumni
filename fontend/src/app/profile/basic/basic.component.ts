@@ -53,7 +53,7 @@ export class BasicComponent implements OnInit {
     this.basicService.getCurrentUserBasic();
     this.basicService.basic.subscribe(b => {
       for (const key in b) {
-        console.log(key);
+        // console.log(key);
 
         switch (key) {
           case "user_id": {

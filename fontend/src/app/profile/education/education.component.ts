@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EducationService } from './education.service';
 
 @Component({
   selector: 'app-education',
@@ -7,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private eduService : EducationService) { }
 
   edit = false;
 
   ngOnInit() {
+    this.eduService.getCurrentUserEducation();
+    this.eduService.educations.subscribe(e =>{
+        console.log(e);
+    });
   }
 
   /**
@@ -26,14 +31,14 @@ export class EducationComponent implements OnInit {
    * name
    */
   public save() {
-    
+
   }
 
   /**
    * name
    */
   public update() {
-    
+
   }
 
 }//class
