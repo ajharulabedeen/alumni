@@ -26,7 +26,7 @@ protected $aboutRepo;
         $about = $this->aboutRepo->findOneByUser($pBasic->user_id);
 
         if ($about != null) {
-            error_log("about Exist!");
+            error_log("about Exist!");   
             $id = $about->id;
         } else {
 
