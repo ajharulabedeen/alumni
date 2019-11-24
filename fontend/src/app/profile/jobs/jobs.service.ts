@@ -14,7 +14,7 @@ export class JobsService {
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
-  create(job : Jobs) {
+  create(job: Jobs) {
     console.log("Create : ");
     console.log(job);
     this.http.post(
@@ -22,7 +22,17 @@ export class JobsService {
     ).subscribe((res: Response) => {
       console.log(res);
     });
-  }//create
+  }
+
+  update(job: Jobs) {
+    console.log("Update : ");
+    console.log(job);
+    this.http.post(
+      'http://127.0.0.1:8000/api/jobs/update', job, this.authService.getHeader()
+    ).subscribe((res: Response) => {
+      console.log(res);
+    });
+  }
 
   public delete(id: string) {
     this.http.post(

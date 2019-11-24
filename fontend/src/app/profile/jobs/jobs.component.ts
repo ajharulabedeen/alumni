@@ -34,6 +34,9 @@ export class JobsComponent implements OnInit {
   public save() {
     if (this.updateJob) {
       console.log("Jobs Update!");
+      this.jobUpdate = this.getJob();
+      this.jobUpdate.$id = this.idUpdate;
+      this.jobsService.update(this.jobUpdate);
     } else {
       this.jobsService.create(this.getJob());
     }
@@ -48,8 +51,22 @@ export class JobsComponent implements OnInit {
     this.jobsService.delete(id);
     this.setJobs();
   }
-  
 
+  public update(j: Jobs) {
+    this.updateJob = true;
+    // console.log("E CompEdit : " + e.$degree_name);
+    this.setJobForUpdate(j);
+    this.idUpdate = j.$id;
+  }
+
+  public setJobForUpdate(j: Jobs) {
+    this.organization_name = j.$organization_name;
+    this.type = j.$type;
+    this.role = j.$role;
+    this.started = j.$started;
+    j.$leave = this.leave;
+    j.$current_status = this.current_status;
+  }
 
   public setJobs() {
     this.jobsArray = new Array();
