@@ -21,6 +21,9 @@ export class EducationComponent implements OnInit, OnDestroy {
 
   edit = false;
   educations = new Array();
+  updateEducation = false;
+  educationUpdate: Education;
+  idUpdate: string;
 
   ngOnDestroy() {
     console.log("EducationComponent Destroyed!");
@@ -42,11 +45,24 @@ export class EducationComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * name
+   *  this save method is called from Modal save(), have to use for both save and update.
+   *
    */
   public save() {
-    console.log(this.getEducation());
-    this.eduService.create(this.getEducation());
+    // this.addNew = true;
+    // console.log(this.getEducation());
+    console.log("updateEducation : " + this.updateEducation);
+    if (this.updateEducation) {
+      this.educationUpdate = this.getEducation();
+      this.educationUpdate.$id = this.idUpdate;
+      console.log("Education Update : ");
+      console.log(this.educationUpdate);
+      this.eduService.update(this.educationUpdate);
+      this.updateEducation = false;
+      this.idUpdate = null;
+    } else {
+      this.eduService.create(this.getEducation());
+    }
     this.setEducations();
   }
 
@@ -58,26 +74,23 @@ export class EducationComponent implements OnInit, OnDestroy {
   /**
    * name
    */
-  public update(e : Education) {
+  public update(e: Education) {
+    this.updateEducation = true;
+    // this.addNew = false;
     console.log("E CompEdit : " + e.$degree_name);
     this.setEducationForUpdate(e);
-    var educationUpdate =  this.getEducation();
-    educationUpdate.$id=e.$id;
-    this.eduService.update(educationUpdate);
   }
-
   /**
    *
    * @param education
    * this method will set the modal values.
    */
-  public setEducationForUpdate(education : Education){
-    this.degree_name = education.$degree_name ;
-    this.institue_name = education.$institue_name  ;
+  public setEducationForUpdate(education: Education) {
+    this.degree_name = education.$degree_name;
+    this.institue_name = education.$institue_name;
     this.passing_year = education.$passing_year;
     this.result = education.$result;
   }
-
   public getEducation(): Education {
     var education = new Education();
     education.$degree_name = this.degree_name;
@@ -86,7 +99,6 @@ export class EducationComponent implements OnInit, OnDestroy {
     education.$result = this.result;
     return education;
   }
-
   public setEducations() {
     this.educations = new Array();
     this.eduService.getCurrentUserEducation();

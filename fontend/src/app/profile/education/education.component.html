@@ -41,8 +41,8 @@
                     <td>{{e.passing_year}}</td>
                     <td><span class="label label-success">{{e.result}}</span></td>
                     <td>
-                      <button class="btn btn-xs btn-primary" data-toggle="modal"
-                        data-target="#modal_education" (click)="update(e)">Edit</button>
+                      <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#modal_education"
+                        (click)="update(e)">Edit</button>
                       <button class="btn btn-xs btn-warning" (click)="delete(e.id)">Delete</button>
                     </td>
                   </tr>
@@ -76,19 +76,23 @@
 
         <div class="form-group">
           <label>Degree Name</label>
-          <input [(ngModel)]="degree_name" [disabled]='!edit' type="text" class="form-control" placeholder="Enter Degree Name... (Max : 512 Character)">
+          <input [(ngModel)]="degree_name" [disabled]='!edit' type="text" class="form-control"
+            placeholder="Enter Degree Name... (Max : 512 Character)">
         </div>
         <div class="form-group">
           <label>Institute Name</label>
-          <input [(ngModel)]="institue_name" [disabled]='!edit' type="text" class="form-control" placeholder="Enter Institute Name...... (Max : 512 Character)">
+          <input [(ngModel)]="institue_name" [disabled]='!edit' type="text" class="form-control"
+            placeholder="Enter Institute Name...... (Max : 512 Character)">
         </div>
         <div class="form-group">
           <label>Passing Year</label>
-          <input [(ngModel)]="passing_year" [disabled]='!edit' type="text" class="form-control" placeholder="Enter Passing Year ...... (Max : 512 Character)">
+          <input [(ngModel)]="passing_year" [disabled]='!edit' type="text" class="form-control"
+            placeholder="Enter Passing Year ...... (Max : 512 Character)">
         </div>
         <div class="form-group">
           <label>Result</label>
-          <input [(ngModel)]="result" [disabled]='!edit' type="text" class="form-control" placeholder="Enter Result...... (Max : 512 Character)">
+          <input [(ngModel)]="result" [disabled]='!edit' type="text" class="form-control"
+            placeholder="Enter Result...... (Max : 512 Character)">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
