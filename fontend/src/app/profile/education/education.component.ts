@@ -53,6 +53,7 @@ export class EducationComponent implements OnInit, OnDestroy {
   public delete(id: string) {
     console.log( "Comp ID : " + id);
     this.eduService.delete(id);
+    this.setEducations();
   }
 
   /**
