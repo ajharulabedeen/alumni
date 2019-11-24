@@ -15,11 +15,10 @@ class CreatePaymentTypesTable extends Migration
     {
         Schema::create('payment_types', function (Blueprint $table) {
             $table->bigIncrements('id');
-
-            $table->string('payment_type_id',512)->nullable();
             $table->string('name', 512)->nullable();
+            $table->string('start_date', 512)->nullable();
             $table->string('last_date', 512)->nullable();
-            $table->string('description', 512)->nullable();
+            $table->mediumText('description')->nullable();
             $table->string('amount', 512)->nullable();
 
             $table->timestamps();
