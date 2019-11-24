@@ -19,8 +19,7 @@ export class EducationService implements OnDestroy {
     // this.educations.closed;
   }
 
-  create( education : Education) {
-
+  create(education: Education) {
     console.log("Create : ");
     this.http.post(
       'http://127.0.0.1:8000/api/education/create', education, this.authService.getHeader()
@@ -28,6 +27,11 @@ export class EducationService implements OnDestroy {
       console.log(res);
     });
   }//create
+
+  public delete(id: string) {
+    console.log("Edu ID Delete : " + id);
+  }
+
 
   /**
    * name
