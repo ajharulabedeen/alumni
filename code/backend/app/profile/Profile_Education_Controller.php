@@ -55,6 +55,7 @@ class Profile_Education_Controller extends Controller
 
     public function deleteOne(Request $r)
     {
+        error_log("Education Delete ID : " . $r->id);
         return ['status' => $this->educationRepo->delete($r->id)];
     }
 }//class
