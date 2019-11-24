@@ -24,6 +24,13 @@ export class JobsService {
     });
   }//create
 
+  public delete(id: string) {
+    this.http.post(
+      'http://127.0.0.1:8000/api/jobs/deleteOne', { 'id': id }, this.authService.getHeader()
+    ).subscribe((res: Response) => {
+      console.log(res);
+    });
+  }
 
   public getCurrentUserJobs() {
     this.jobs = new BehaviorSubject<any>(null);
