@@ -26,7 +26,7 @@ class Profile_About_Controller extends Controller
         $about = $this->aboutRepo->findAboutByUser($pAbout->user_id);
         // $about = null;
         if ($about != null) {
-            error_log("about Exist!");
+            error_log("about Exist!");   
             $id = $about->id;
         } else {
             $pAbout->about_me      = $r->about_me;
