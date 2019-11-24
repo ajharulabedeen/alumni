@@ -9,6 +9,14 @@ import { Jobs } from './jobs.model';
 })
 export class JobsComponent implements OnInit {
 
+   id: string;
+   user_id: string;
+   organization_name: string;
+   type: string;
+   role: string;
+   started: string;
+   leave: string;
+   current_status: string;
 
   constructor(private jobsService: JobsService) { }
 
@@ -23,8 +31,13 @@ export class JobsComponent implements OnInit {
     this.setJobs();
   }
 
-  public save(){
-
+  public save() {
+    if(this.updateJob){
+      console.log("Jobs Update!");
+    }else{
+      this.jobsService.create(this.getJob());
+    }
+    this.setJobs();
   }
 
   public editJobs() {
@@ -56,5 +69,16 @@ export class JobsComponent implements OnInit {
       }
     });
   }
+
+  public getJob(): Jobs {
+    var job = new Jobs();
+    job.$organization_name = this.organization_name;
+    job.$type = this.type;
+    job.$role = this.role;
+    job.$started = this.started;
+    job.$leave = this.leave;
+    job.$current_status = this.current_status;
+    return job;
+  } 
 
 }//class

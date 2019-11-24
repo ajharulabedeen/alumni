@@ -84,34 +84,34 @@
 
       <div class="modal-body">
         <div class="form-group">
-          <label>Institute Name</label>
-          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+          <label>Organization Name</label>
+          <input [(ngModel)]="organization_name" [disabled]='!edit' type="text" class="form-control" placeholder="Enter ...">
         </div>
         <div class="form-group">
           <label>Type</label>
-          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+          <input [(ngModel)]="type" [disabled]='!edit' type="text" class="form-control" placeholder="Enter ...">
         </div>
         <div class="form-group">
           <label>Role</label>
-          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+          <input [(ngModel)]="role" [disabled]='!edit' type="text" class="form-control" placeholder="Enter ...">
         </div>
         <div class="form-group">
-          <label>Stated</label>
-          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+          <label>Started</label>
+          <input [(ngModel)]="started" [disabled]='!edit' type="text" class="form-control" placeholder="Enter ...">
         </div>
         <div class="form-group">
           <label>Leave</label>
-          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+          <input [(ngModel)]="leave" [disabled]='!edit' type="text" class="form-control" placeholder="Enter ...">
         </div>
         <div class="form-group">
           <label>Current Status</label>
-          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+          <input [(ngModel)]="current_status" [disabled]='!edit' type="text" class="form-control" placeholder="Enter ...">
         </div>
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add New</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="save()" >Save</button>
       </div>
     </div>
   </div>

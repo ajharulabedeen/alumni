@@ -14,6 +14,17 @@ export class JobsService {
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
+  create(job : Jobs) {
+    console.log("Create : ");
+    console.log(job);
+    this.http.post(
+      'http://127.0.0.1:8000/api/jobs/create', job, this.authService.getHeader()
+    ).subscribe((res: Response) => {
+      console.log(res);
+    });
+  }//create
+
+
   public getCurrentUserJobs() {
     this.jobs = new BehaviorSubject<any>(null);
     return this.http.post<Jobs>(
