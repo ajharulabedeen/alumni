@@ -5,6 +5,15 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" href="#work_history">Work History</a>
+        <button class="btn btn-primary btn-xs" *ngIf="!edit" (click)="editJobs()">Edit</button>
+        <button class="btn btn-primary btn-xs" *ngIf="edit" (click)="update()">
+          Update
+          <!-- {{ basicExist ? 'Update' : 'Save' }} -->
+        </button>
+        <button class="btn btn-danger btn-xs" *ngIf="edit" (click)="editJobs()">Cancel</button>
+        <button class="btn btn-warnning btn-xs" *ngIf="edit" (click)="save()">
+          Save
+        </button>
       </h4>
     </div>
     <div id="work_history" class="panel-collapse collapse">
@@ -29,43 +38,17 @@
                     <th>Current Status</th>
                     <th>Operation</th>
                   </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>NEOM</td>
-                    <td>Private</td>
-                    <td>CEO</td>
-                    <td>11-7-2014</td>
-                    <td>Working</td>
-                    <td><span class="label label-success">Working</span></td>
+                  <tr *ngFor="let j of jobsArray; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{j.organization_name}}</td>
+                    <td>{{j.type}}</td>
+                    <td>{{j.role}}</td>
+                    <td>{{j.started}}</td>
+                    <td>{{j.leave}}</td>
+                    <td>{{j.current_status}}</td>
                     <td>
-                      <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#modal_work">Edit</button>
-                      <button class="btn btn-xs btn-warning">Delete</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>NEOM</td>
-                    <td>Private</td>
-                    <td>CEO</td>
-                    <td>11-7-2014</td>
-                    <td>Working</td>
-                    <td><span class="label label-success">Working</span></td>
-                    <td>
-                      <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#modal_work">Edit</button>
-                      <button class="btn btn-xs btn-warning">Delete</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>NEOM</td>
-                    <td>Private</td>
-                    <td>CEO</td>
-                    <td>11-7-2014</td>
-                    <td>Working</td>
-                    <td><span class="label label-success">Working</span></td>
-                    <td>
-                      <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#modal_work">Edit</button>
-                      <button class="btn btn-xs btn-warning">Delete</button>
+                      <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#modal_work" (click)="update(j)">Edit</button>
+                      <button class="btn btn-xs btn-warning" (click)="delete(j.id)">Delete</button>
                     </td>
                   </tr>
                 </tbody>
@@ -100,34 +83,34 @@
 
       <div class="modal-body">
         <div class="form-group">
-          <label>Institute Name</label>
-          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+          <label>Organization Name</label>
+          <input [(ngModel)]="organization_name" [disabled]='!edit' type="text" class="form-control" placeholder="Enter ...">
         </div>
         <div class="form-group">
           <label>Type</label>
-          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+          <input [(ngModel)]="type" [disabled]='!edit' type="text" class="form-control" placeholder="Enter ...">
         </div>
         <div class="form-group">
           <label>Role</label>
-          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+          <input [(ngModel)]="role" [disabled]='!edit' type="text" class="form-control" placeholder="Enter ...">
         </div>
         <div class="form-group">
-          <label>Stated</label>
-          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+          <label>Started</label>
+          <input [(ngModel)]="started" [disabled]='!edit' type="text" class="form-control" placeholder="Enter ...">
         </div>
         <div class="form-group">
           <label>Leave</label>
-          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+          <input [(ngModel)]="leave" [disabled]='!edit' type="text" class="form-control" placeholder="Enter ...">
         </div>
         <div class="form-group">
           <label>Current Status</label>
-          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+          <input [(ngModel)]="current_status" [disabled]='!edit' type="text" class="form-control" placeholder="Enter ...">
         </div>
 
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add New</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="save()" >Save</button>
       </div>
     </div>
   </div>
