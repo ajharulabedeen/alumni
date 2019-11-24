@@ -9,3 +9,20 @@ Because a model is a class, to generate it use --type option like this:
 	ng generate class hero --type=model
 will result in:
 	hero.model.ts	
+--------
+Always have to take pull from the main folder of the repo:
+Means : 
+		Alumni/
+			code
+			fontend
+			helps
+			Old_Code
+			UI
+			alumni.code-workspace
+			dummyJSON.json
+			how_to_run_project.txt
+			project.sql
+			projectPlan_Alumni.ods
+			README.md
+if the main folder is "Alumni", then have to open git bash here and have to pull from here. 
+If pull taken from other, changes regarding	only that specefic folder may load.		
