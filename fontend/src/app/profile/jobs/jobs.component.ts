@@ -37,6 +37,7 @@ export class JobsComponent implements OnInit {
       this.jobUpdate = this.getJob();
       this.jobUpdate.$id = this.idUpdate;
       this.jobsService.update(this.jobUpdate);
+      this.updateJob = false;
     } else {
       this.jobsService.create(this.getJob());
     }
