@@ -79,6 +79,7 @@ export class EducationComponent implements OnInit, OnDestroy {
     // this.addNew = false;
     console.log("E CompEdit : " + e.$degree_name);
     this.setEducationForUpdate(e);
+    this.idUpdate = e.$id;
   }
   /**
    *
