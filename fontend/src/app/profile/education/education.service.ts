@@ -30,7 +30,7 @@ export class EducationService implements OnDestroy {
 
   public delete(id: string) {
     this.http.post(
-      'http://127.0.0.1:8000/api/education/deleteOne', { 'id' : id }, this.authService.getHeader()
+      'http://127.0.0.1:8000/api/education/deleteOne', { 'id': id }, this.authService.getHeader()
     ).subscribe((res: Response) => {
       console.log(res);
     });
@@ -40,8 +40,13 @@ export class EducationService implements OnDestroy {
   /**
    * name
    */
-  public update(e : Education) {
+  public update(e: Education) {
     console.log(e);
+    this.http.post(
+      'http://127.0.0.1:8000/api/education/update', e, this.authService.getHeader()
+    ).subscribe((res: Response) => {
+      console.log(res);
+    });
   }
 
   /**
