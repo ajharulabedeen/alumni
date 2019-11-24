@@ -42,7 +42,7 @@
                     <td><span class="label label-success">{{e.result}}</span></td>
                     <td>
                       <button class="btn btn-xs btn-primary" data-toggle="modal"
-                        data-target="#modal_education">Edit</button>
+                        data-target="#modal_education" (click)="update(e)">Edit</button>
                       <button class="btn btn-xs btn-warning" (click)="delete(e.id)">Delete</button>
                     </td>
                   </tr>

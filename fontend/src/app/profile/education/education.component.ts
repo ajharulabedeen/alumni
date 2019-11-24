@@ -51,7 +51,6 @@ export class EducationComponent implements OnInit, OnDestroy {
   }
 
   public delete(id: string) {
-    console.log( "Comp ID : " + id);
     this.eduService.delete(id);
     this.setEducations();
   }
@@ -59,8 +58,24 @@ export class EducationComponent implements OnInit, OnDestroy {
   /**
    * name
    */
-  public update() {
+  public update(e : Education) {
+    console.log("E CompEdit : " + e.$degree_name);
+    this.setEducationForUpdate(e);
+    var educationUpdate =  this.getEducation();
+    educationUpdate.$id=e.$id;
+    this.eduService.update(educationUpdate);
+  }
 
+  /**
+   *
+   * @param education
+   * this method will set the modal values.
+   */
+  public setEducationForUpdate(education : Education){
+    this.degree_name = education.$degree_name ;
+    this.institue_name = education.$institue_name  ;
+    this.passing_year = education.$passing_year;
+    this.result = education.$result;
   }
 
   public getEducation(): Education {

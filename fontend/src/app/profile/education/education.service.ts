@@ -29,7 +29,6 @@ export class EducationService implements OnDestroy {
   }//create
 
   public delete(id: string) {
-    console.log("Edu ID Delete : " + id);
     this.http.post(
       'http://127.0.0.1:8000/api/education/deleteOne', { 'id' : id }, this.authService.getHeader()
     ).subscribe((res: Response) => {
@@ -41,8 +40,8 @@ export class EducationService implements OnDestroy {
   /**
    * name
    */
-  public update() {
-
+  public update(e : Education) {
+    console.log(e);
   }
 
   /**
