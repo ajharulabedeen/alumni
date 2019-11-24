@@ -2,7 +2,6 @@ export class Jobs {
 
   private id: string;
   private user_id: string;
-  private degree_name: string;
   private organization_name: string;
   private type: string;
   private role: string;
@@ -24,14 +23,6 @@ export class Jobs {
    */
   public get $user_id(): string {
     return this.user_id;
-  }
-
-  /**
-   * Getter $degree_name
-   * @return {string}
-   */
-  public get $degree_name(): string {
-    return this.degree_name;
   }
 
   /**
@@ -96,14 +87,6 @@ export class Jobs {
    */
   public set $user_id(value: string) {
     this.user_id = value;
-  }
-
-  /**
-   * Setter $degree_name
-   * @param {string} value
-   */
-  public set $degree_name(value: string) {
-    this.degree_name = value;
   }
 
   /**
