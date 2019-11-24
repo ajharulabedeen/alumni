@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { throwError, BehaviorSubject } from 'rxjs';
 import { catchError, tap, subscribeOn } from 'rxjs/operators';
 import { User } from './user.model';
@@ -15,6 +15,7 @@ export interface AuthResponseData {
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   user = new BehaviorSubject<User>(null);
+  currentUser = this.user.asObservable();
   token: string;
 
   constructor(private http: HttpClient) { }
@@ -103,6 +104,8 @@ export class AuthService {
     return throwError(errorMessage);
   }//handleError
 
+
+
   private handleAuthentication(
     email: string,
     userId: string,
@@ -116,11 +119,27 @@ export class AuthService {
     console.log("New User Created : next");
   }
 
-  public getToken(){
-    return this.token;
+  public getHeader() {
+    var token: string;
+    token = "bearer" + this.getToken();
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': token
+    });
+    let options = { headers: headers };
+    return options;
   }
 
-  public removeToken(){
+  public getToken() {
+    return this.token;
+    // return this.user.asObservable;
+  }
+
+  public getCurrentUser() {
+    return this.currentUser;
+  }
+
+  public removeToken() {
     this.token = '';
   }
 

@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://www.tutorialspoint.com/typescript/typescript_switch_statement.htm -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/publishertag.prebid.js.download"></script><style type="text/css">.mui-textfield.mui-textfield--float-label > label {-webkit-transition:all .15s ease-out;-moz-transition:all .15s ease-out;-o-transition:all .15s ease-out;transition:all .15s ease-out;}</style><style type="text/css">@keyframes mui-btn-inserted{from{transform:none;}to{transform:none;}}.mui-btn{animation-duration:0.0001s;animation-name:mui-btn-inserted;}@keyframes mui-dropdown-inserted{from{transform:none;}to{transform:none;}}[data-mui-toggle="dropdown"]{animation-duration:0.0001s;animation-name:mui-dropdown-inserted;}@keyframes mui-btn-inserted,mui-dropdown-inserted{from{transform:none;}to{transform:none;}}.mui-btn[data-mui-toggle="dropdown"]{animation-duration:0.0001s;animation-name:mui-btn-inserted,mui-dropdown-inserted;}@keyframes mui-tab-inserted{from{transform:none;}to{transform:none;}}[data-mui-toggle="tab"]{animation-duration:0.0001s;animation-name:mui-tab-inserted;}@keyframes mui-textfield-inserted{from{transform:none;}to{transform:none;}}.mui-textfield > input{animation-duration:0.0001s;animation-name:mui-textfield-inserted;}@keyframes mui-textfield-inserted{from{transform:none;}to{transform:none;}}.mui-textfield > textarea{animation-duration:0.0001s;animation-name:mui-textfield-inserted;}@keyframes mui-select-inserted{from{transform:none;}to{transform:none;}}.mui-select > select{animation-duration:0.0001s;animation-name:mui-select-inserted;}@keyframes mui-node-inserted{from{transform:none;}to{transform:none;}}.mui-select > select ~ .mui-event-trigger{animation-duration:0.0001s;animation-name:mui-node-inserted;}@keyframes mui-node-disabled{from{transform:none;}to{transform:none;}}.mui-select > select:disabled ~ .mui-event-trigger{animation-duration:0.0001s;animation-name:mui-node-disabled;}</style><style id="stndz-style"></style>
+<title>TypeScript - Switchâ¦case Statement - Tutorialspoint</title>
+
+<meta name="description" content="TypeScript - Switchâ¦case Statement - The switch statement evaluates an expression, matches the expressionâs value to a case clause, and executes statements associated with that case.">
+<meta name="keywords" content="C, C++, Python, Java, HTML, CSS, JavaScript, SQL, PHP, jQuery, XML, DOM, Bootstrap, Tutorials, Articles, Programming, training, learning, quiz, preferences, examples, code">
+<link rel="canonical" href="https://www.tutorialspoint.com/typescript/typescript_switch_statement.htm">
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="stylesheet" href="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/style-min-v1.css">
+<script type="text/javascript" async="" src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/analytics.js.download"></script><script src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/script-min-v1.js.download"></script><link rel="stylesheet" type="text/css" href="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/prettify.css">
+<script src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/saved_resource" defer="" async=""></script>
+<script>var vitag = vitag || {};</script>
+<script>vitag.outStreamConfig = { enablePC: false, enableMobile: false };</script>  
+<script>function printPage() { window.print(); }</script>
+<script data-cfasync="false" type="text/javascript">(function(w, d) { var s = d.createElement('script'); s.src = '//cdn.adpushup.com/40046/adpushup.js'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script><script src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/adpushup.js.download" type="text/javascript" async=""></script>
+<script data-cfasync="false" type="text/javascript">(function(w, d) { var s = d.createElement('script'); s.src = '//delivery.adrecover.com/18107/adRecover.js?ts=1572590509085'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script><script src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/adRecover.js.download" type="text/javascript" async=""></script>
+<style>
+.right-menu .mui-btn {
+    background-color:#007acd;
+}
+a.demo {
+    background:#007acd;
+}
+li.heading {
+    background:#007acd;
+}
+.course-box{background:#007acd}
+.home-intro-sub p{color:#007acd}
+</style>
+<script src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/gpt.js.download" async=""></script><script src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/saved_resource(1)"></script><script>window._BidFilter={site_id:1046,pbjsKey:'vlipb',checkAudio:false};</script><script src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/bidfilter.js.download"></script><script src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/prebid-v2.40.0.js.download"></script><script src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/gpt.js(1).download"></script><script src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/viPlayer_v25.js.download"></script><script src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/ima3.js.download"></script><script src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/sf_host.min.js.download"></script><script src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/apstag.js.download"></script><link rel="preload" href="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/f.txt" as="script"><script type="text/javascript" src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/f.txt"></script><script src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/pubads_impl_2019110401.js.download" async=""></script></head>
+<body>
+<header id="header" class="fixed">
+<!-- Top sub-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid top-menu">
+<div class="mui-container">
+<div class="top-menu-item home">
+<a href="https://www.tutorialspoint.com/index.htm" target="_blank" title="TutorialsPoint - Home"><i class="fal fa-home"></i> <span>Home</span></a>
+</div>
+<div class="top-menu-item qa">
+<a href="https://www.tutorialspoint.com/about/about_careers.htm" target="_blank" title="Job @ Tutorials Point"><i class="fa fa-suitcase"></i> <span>Jobs</span></a>
+</div>
+<div class="top-menu-item tools">
+<a href="https://www.tutorialspoint.com/online_dev_tools.htm" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fal fa-cogs"></i> <span>Tools</span></a>
+</div>
+<div class="top-menu-item coding-ground">
+<a href="https://www.tutorialspoint.com/codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fal fa-code"></i> <span>Coding Ground </span></a> 
+</div>
+<div class="top-menu-item current-affairs">
+<a href="https://www.tutorialspoint.com/current_affairs.htm" target="_blank" title="Daily Current Affairs"><i class="fal fa-layer-plus"></i> <span>Current Affairs</span></a>
+</div>
+<div class="top-menu-item upsc-notes">
+<a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fal fa-user-tie"></i> <span>UPSC Notes</span></a>
+</div>      
+<div class="top-menu-item online-tutoris">
+<a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fal fa-user"></i> <span>Online Tutors</span></a>
+</div>
+<div class="top-menu-item whiteboard">
+<a href="https://www.tutorialspoint.com/whiteboard.htm" target="_blank" title="Free Online Whiteboard"><i class="fal fa-chalkboard"></i> <span>Whiteboard</span></a>
+</div>
+<div class="top-menu-item net-meeting">
+<a href="https://www.tutorialspoint.com/netmeeting.php" target="_blank" title="A free tool for online video conferencing"><i class="fal fa-chalkboard-teacher"></i> <span>Net Meeting</span></a> 
+</div>
+<div class="top-menu-item articles">
+<a href="https://www.tutorix.com/" target="_blank" title="Tutorx - The Best Learning App" rel="nofollow"><i class="fal fa-video"></i> <span>Tutorix</span></a> 
+</div>        
+<div class="social-menu-item">
+<a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook"><i class="fab fa-facebook-f"></i></a> 
+<a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter"><i class="fab fa-twitter"></i></a>
+<a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube"><i class="fab fa-youtube"></i></a>
+</div>        
+</div>
+</div>
+<!-- Top sub-menu Ends Here -->
+<!-- Top main-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid mui--appbar-line-height mui--z1 sticky" id="logo-menu">
+<div class="mui-container">
+<div class="left-menu">
+<a href="https://www.tutorialspoint.com/index.htm" title="Tutorialspoint">
+<img class="tp-logo" alt="tutorialspoint" src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/logo.png">
+</a>
+<div class="mui-dropdown">
+<a class="mui-btn mui-btn--primary categories" data-mui-toggle="dropdown"><i class="fa fa-th-large"></i> 
+<span>Categories <span class="mui-caret"></span></span></a>            
+<ul class="mui-dropdown__menu cat-menu">
+<li>
+<ul>
+<li><a href="https://www.tutorialspoint.com/academic_tutorials.htm"><i class="fa fa-caret-right"></i> Academic Tutorials</a></li>
+<li><a href="https://www.tutorialspoint.com/big_data_tutorials.htm"><i class="fa fa-caret-right"></i> Big Data &amp; Analytics </a></li>
+<li><a href="https://www.tutorialspoint.com/computer_programming_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Programming </a></li>
+<li><a href="https://www.tutorialspoint.com/computer_science_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Science </a></li>
+<li><a href="https://www.tutorialspoint.com/database_tutorials.htm"><i class="fa fa-caret-right"></i> Databases </a></li>
+<li><a href="https://www.tutorialspoint.com/devops_tutorials.htm"><i class="fa fa-caret-right"></i> DevOps </a></li>
+<li><a href="https://www.tutorialspoint.com/digital_marketing_tutorials.htm"><i class="fa fa-caret-right"></i> Digital Marketing </a></li>
+<li><a href="https://www.tutorialspoint.com/engineering_tutorials.htm"><i class="fa fa-caret-right"></i> Engineering Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> Exams Syllabus </a></li>
+<li><a href="https://www.tutorialspoint.com/famous_monuments.htm"><i class="fa fa-caret-right"></i> Famous Monuments </a></li>
+<li><a href="https://www.tutorialspoint.com/gate_exams_tutorials.htm"><i class="fa fa-caret-right"></i> GATE Exams Tutorials</a></li>
+<li><a href="https://www.tutorialspoint.com/latest_technologies.htm"><i class="fa fa-caret-right"></i> Latest Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/machine_learning_tutorials.htm"><i class="fa fa-caret-right"></i> Machine Learning </a></li>
+<li><a href="https://www.tutorialspoint.com/mainframe_tutorials.htm"><i class="fa fa-caret-right"></i> Mainframe Development </a></li>
+<li><a href="https://www.tutorialspoint.com/management_tutorials.htm"><i class="fa fa-caret-right"></i> Management Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/maths_tutorials.htm"><i class="fa fa-caret-right"></i> Mathematics Tutorials</a></li>
+<li><a href="https://www.tutorialspoint.com/microsoft_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Microsoft Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/misc_tutorials.htm"><i class="fa fa-caret-right"></i> Misc tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/mobile_development_tutorials.htm"><i class="fa fa-caret-right"></i> Mobile Development </a></li>
+<li><a href="https://www.tutorialspoint.com/java_technology_tutorials.htm"><i class="fa fa-caret-right"></i> Java Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/python_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Python Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/sap_tutorials.htm"><i class="fa fa-caret-right"></i> SAP Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/scripting_lnaguage_tutorials.htm"><i class="fa fa-caret-right"></i>Programming Scripts </a></li>
+<li><a href="https://www.tutorialspoint.com/selected_reading.htm"><i class="fa fa-caret-right"></i> Selected Reading </a></li>
+<li><a href="https://www.tutorialspoint.com/software_quality_tutorials.htm"><i class="fa fa-caret-right"></i> Software Quality </a></li>
+<li><a href="https://www.tutorialspoint.com/soft_skill_tutorials.htm"><i class="fa fa-caret-right"></i> Soft Skills </a></li>
+<li><a href="https://www.tutorialspoint.com/telecom_tutorials.htm"><i class="fa fa-caret-right"></i> Telecom Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> UPSC IAS Exams </a></li>
+<li><a href="https://www.tutorialspoint.com/web_development_tutorials.htm"><i class="fa fa-caret-right"></i> Web Development </a></li>
+<li><a href="https://www.tutorialspoint.com/sports_tutorials.htm"><i class="fa fa-caret-right"></i> Sports Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/xml_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> XML Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/multi_language_tutorials.htm"><i class="fa fa-caret-right"></i> Multi-Language</a></li>
+<li><a href="https://www.tutorialspoint.com/questions_and_answers.htm"><i class="fa fa-caret-right"></i> Interview Questions</a></li>
+</ul>
+</li>
+</ul>
+<div class="clear"></div>
+</div> 
+</div>
+<div class="right-menu">
+<div class="toc-toggle">
+<a href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+</div>
+<div class="mobile-search-btn">
+<a href="https://www.tutorialspoint.com/search.htm"><i class="fal fa-search"></i></a>
+</div>
+<div class="search-box">
+<form method="get" class="" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid">
+<input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == &#39;Search your favorite tutorials...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search your favorite tutorials...&#39;;}" autocomplete="off">
+<button><i class="fal fa-search"></i></button>
+</form>
+</div>
+<div class="menu-btn library-btn">
+<a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fal fa-cubes"></i> <span>Library</span></a>
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/videotutorials/index.php"><i class="fal fa-video"></i> <span>Videos</span></a> 
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/questions/index.php"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a>
+</div>
+<div class="menu-btn ebooks-btn">
+<a href="https://store.tutorialspoint.com/"><i class="fal fa-book"></i> <span>eBooks</span></a>
+</div>
+<div class="mui-dropdown">
+<button class="mui-btn mui-btn--primary" data-mui-toggle="dropdown" type="button">
+<span class="mui-caret"></span>
+</button>
+<ul class="mui-dropdown__menu">
+<li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fal fa-cubes"></i> <span>Library</span></a></li>
+<li><a href="https://www.tutorialspoint.com/videotutorials/index.php"><i class="fal fa-video"></i> <span>Videos</span></a></li>
+<li><a href="https://store.tutorialspoint.com/"><i class="fal fa-book"></i> <span>eBooks</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Top main-menu Ends Here -->
+</header>
+<div class="mui-container-fluid content">
+<div class="mui-container">
+<!-- Tutorial ToC Starts Here -->
+<div class="mui-col-md-3 tutorial-toc">
+<div class="mini-logo">
+<img src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/typescript-mini-logo.jpg" alt="TypeScript Tutorial">
+</div>
+<ul class="toc chapters">
+<li class="heading">TypeScript Tutorial</li>
+<li><a href="https://www.tutorialspoint.com/typescript/index.htm">TypeScript - Home</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_overview.htm">TypeScript - Overview</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_environment_setup.htm">TypeScript - Environment Setup</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_basic_syntax.htm">TypeScript - Basic Syntax</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_types.htm">TypeScript - Types</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_variables.htm">TypeScript - Variables</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_operators.htm">TypeScript - Operators</a></li>
+<li style="background-color: rgb(214, 214, 214);"><a href="https://www.tutorialspoint.com/typescript/typescript_decision_making.htm">TypeScript - Decision Making</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_loops.htm">TypeScript - Loops</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_functions.htm">TypeScript - Functions</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_numbers.htm">TypeScript - Numbers</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_strings.htm">TypeScript - Strings</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_arrays.htm">TypeScript - Arrays</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_tuples.htm">TypeScript - Tuples</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_union.htm">TypeScript - Union</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_interfaces.htm">TypeScript - Interfaces</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_classes.htm">TypeScript - Classes</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_objects.htm">TypeScript - Objects</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_namespaces.htm">TypeScript - Namespaces</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_modules.htm">TypeScript - Modules</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_ambients.htm">TypeScript - Ambients</a></li>
+</ul>
+<ul class="toc chapters">
+<li class="heading">TypeScript Useful Resources</li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_quick_guide.htm">TypeScript - Quick Guide</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_useful_resources.htm">TypeScript - Useful Resources</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_discussion.htm">TypeScript - Discussion</a></li>
+</ul>
+<ul class="toc reading">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="https://www.tutorialspoint.com/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+<div style="height:250px;">
+<div id="00000001-e19e433c-e39c-4983-b738-74d8fe5c4b2c" class="_ap_apex_ad" data-section="00000001-e19e433c-e39c-4983-b738-74d8fe5c4b2c" data-orig-id="f0f6cff6-393d-4170-b63a-d9ff06ca9f25" data-render-time="1573821254731" style="width: 300px; height: 250px; display: block; margin: 10px auto; text-align: center;" data-refresh-time="1573825172657" data-timeout="5898">
+<script>
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+adpushup.triggerAd("f0f6cff6-393d-4170-b63a-d9ff06ca9f25");
+});
+</script>
+<div id="ADP_40046_300x250_00000001-e19e433c-e39c-4983-b738-74d8fe5c4b2c">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_40046_300x250_00000001-e19e433c-e39c-4983-b738-74d8fe5c4b2c");
+});
+</script>
+</div></div>
+</div>
+</div>
+<!-- Tutorial ToC Ends Here -->
+<!-- Tutorial Content Starts Here -->
+<div class="mui-col-md-6 tutorial-content">
+<h1>TypeScript - Switch…case Statement</h1>
+<hr>
+<div class="top-ad-heading">Advertisements</div>
+<div style="text-align:center;" class="google-top-ads">
+<div id="00000001-7d97b0fd-7f9a-4a46-8154-d23c9763d4df" class="_ap_apex_ad" max-height="150" data-section="00000001-7d97b0fd-7f9a-4a46-8154-d23c9763d4df" data-orig-id="3584b306-b0ce-4f40-8e35-2d32d6c00d35" data-render-time="1573821254732" style="display: block; margin: 10px auto; text-align: center;" data-refresh-time="1573825174961" data-timeout="5919">
+<script>
+    var adpushup = adpushup || {};
+    adpushup.que = adpushup.que || [];
+    adpushup.que.push(function() {
+         adpushup.triggerAd("3584b306-b0ce-4f40-8e35-2d32d6c00d35");
+    });
+</script>
+<div id="ADP_40046_responsivexresponsive_00000001-7d97b0fd-7f9a-4a46-8154-d23c9763d4df">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_40046_responsivexresponsive_00000001-7d97b0fd-7f9a-4a46-8154-d23c9763d4df");
+});
+</script>
+</div></div>
+</div>
+<div class="mui-container-fluid button-borders">
+<div class="pre-btn">
+<a href="https://www.tutorialspoint.com/typescript/typescript_decision_making.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="https://www.tutorialspoint.com/typescript/typescript_decision_making.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="clearer"></div>
+<p>The <b>switch</b> statement evaluates an expression, matches the expression’s value to a case clause, and executes statements associated with that case.</p>
+<h2>Syntax</h2>
+<pre class="result notranslate">switch(variable_expression) { 
+   case constant_expr1: { 
+      //statements; 
+      break; 
+   } 
+   case constant_expr2: { 
+      //statements; 
+      break; 
+   } 
+   default: { 
+      //statements; 
+      break; 
+   } 
+} 
+</pre>
+<p>The value of the variable_expression is tested against all cases in the switch. If the variable matches one of the cases, the corresponding code block is executed. If no case expression matches the matches the value of the variable_expression, the code within the default block is associated.</p>
+<p>The following rules apply to a switch statement −</p>
+<ul class="list">
+<li><p>There can be any number of case statements within a switch.</p></li>
+<li><p>The case statements can include only constants. It cannot be a variable or an expression.</p></li>
+<li><p>The data type of the variable_expression and the constant expression must match.</p></li>
+<li><p>Unless you put a break after each block of code, execution flows into the next block.</p></li>
+<li><p>The case expression must be unique.</p></li>
+<li><p>The default block is optional.</p></li>
+</ul>
+<h2>Flowchart</h2>
+<img src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/switch_case_statement.jpg" alt="Switch Case Statement">
+<h2>Example: switch…case</h2>
+<pre class="prettyprint notranslate tryit prettyprinted" style=""><span class="kwd">var</span><span class="pln"> grade</span><span class="pun">:</span><span class="kwd">string</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"A"</span><span class="pun">;</span><span class="pln"> 
+</span><span class="kwd">switch</span><span class="pun">(</span><span class="pln">grade</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+   </span><span class="kwd">case</span><span class="pln"> </span><span class="str">"A"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+      console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"Excellent"</span><span class="pun">);</span><span class="pln"> 
+      </span><span class="kwd">break</span><span class="pun">;</span><span class="pln"> 
+   </span><span class="pun">}</span><span class="pln"> 
+   </span><span class="kwd">case</span><span class="pln"> </span><span class="str">"B"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+      console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"Good"</span><span class="pun">);</span><span class="pln"> 
+      </span><span class="kwd">break</span><span class="pun">;</span><span class="pln"> 
+   </span><span class="pun">}</span><span class="pln"> 
+   </span><span class="kwd">case</span><span class="pln"> </span><span class="str">"C"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"Fair"</span><span class="pun">);</span><span class="pln"> 
+      </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">    
+   </span><span class="pun">}</span><span class="pln"> 
+   </span><span class="kwd">case</span><span class="pln"> </span><span class="str">"D"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+      console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"Poor"</span><span class="pun">);</span><span class="pln"> 
+      </span><span class="kwd">break</span><span class="pun">;</span><span class="pln"> 
+   </span><span class="pun">}</span><span class="pln">  
+   </span><span class="kwd">default</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> 
+      console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"Invalid choice"</span><span class="pun">);</span><span class="pln"> 
+      </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">              
+   </span><span class="pun">}</span><span class="pln"> 
+</span><span class="pun">}</span></pre>
+<p>The example verifies the value of the variable grade against the set of constants (A, B, C, D, and E) and executes the corresponding blocks. If the value in the variable doesn’t match any of the constants mentioned above, the default block will be executed.</p>
+<p>On compiling, it will generate the following JavaScript code −</p>
+<pre class="prettyprint notranslate prettyprinted" style=""><span class="com">//Generated by typescript 1.8.10</span><span class="pln">
+</span><span class="kwd">var</span><span class="pln"> grade </span><span class="pun">=</span><span class="pln"> </span><span class="str">"A"</span><span class="pun">;</span><span class="pln">
+</span><span class="kwd">switch</span><span class="pln"> </span><span class="pun">(</span><span class="pln">grade</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   </span><span class="kwd">case</span><span class="pln"> </span><span class="str">"A"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"Excellent"</span><span class="pun">);</span><span class="pln">
+      </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+	
+   </span><span class="kwd">case</span><span class="pln"> </span><span class="str">"B"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"Good"</span><span class="pun">);</span><span class="pln">
+      </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+	
+   </span><span class="kwd">case</span><span class="pln"> </span><span class="str">"C"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"Fair"</span><span class="pun">);</span><span class="pln">
+      </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+	
+   </span><span class="kwd">case</span><span class="pln"> </span><span class="str">"D"</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"Poor"</span><span class="pun">);</span><span class="pln">
+      </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+	
+   </span><span class="kwd">default</span><span class="pun">:</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"Invalid choice"</span><span class="pun">);</span><span class="pln">
+      </span><span class="kwd">break</span><span class="pun">;</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></pre>
+<p>The above code will produce the following output −</p>
+<pre class="result notranslate">Excellent
+</pre>
+<div class="parent-file">typescript_decision_making.htm</div>
+<div class="mui-container-fluid button-borders show">
+<div class="pre-btn">
+<a href="https://www.tutorialspoint.com/typescript/typescript_decision_making.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+<a class="hide-on-mobile" href="javascript:printPage();"><i class="fa fa-print"></i> Print Page</a>
+</div>
+<div class="nxt-btn">
+<a href="https://www.tutorialspoint.com/typescript/typescript_decision_making.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="google-bottom-ads">
+<div>Advertisements</div>
+<div>
+   <div id="vi_bottom_ads"><div class="adsbyvli" data-ad-slot="vi_9013190"></div></div>
+   <script>
+     (function() {
+     var adPos = document.getElementById('vi_bottom_ads');
+     var mobile_ad_id = "vi_9012177";
+     var desktop_ad_id = "vi_9013190";
+     var ad_id = window.innerWidth <= 768 ? mobile_ad_id : desktop_ad_id;
+     adPos.innerHTML = '<div class="adsbyvli" data-ad-slot="' + ad_id + '"></div>';
+     (vitag.displayInit = window.vitag.displayInit || []).push(function () {
+         viAPItag.display(ad_id);
+     });
+     }())
+   </script>
+</div>
+<div class="space-bottom"></div>
+</div>
+</div>
+<!-- Tutorial Content Ends Here -->
+<!-- Right Column Starts Here -->
+<div class="mui-col-md-2 google-right-ads">
+<div class="space-top"></div>
+<div class="google-right-ad" style="margin: 0px auto !important;margin-top:5px;">
+<div id="00000001-99196ee5-ea08-447d-a409-2ddd2559ea4e" class="_ap_apex_ad" data-section="00000001-99196ee5-ea08-447d-a409-2ddd2559ea4e" data-orig-id="f0f6cff6-393d-4170-b63a-d9ff06ca9f25" data-render-time="1573821254733" style="width: 300px; height: 250px; display: block; margin: 10px auto; text-align: center;" data-refresh-time="1573825172658" data-timeout="5899">
+<script>
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+adpushup.triggerAd("f0f6cff6-393d-4170-b63a-d9ff06ca9f25");
+});
+</script>
+<div id="ADP_40046_300x250_00000001-99196ee5-ea08-447d-a409-2ddd2559ea4e">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_40046_300x250_00000001-99196ee5-ea08-447d-a409-2ddd2559ea4e");
+});
+</script>
+</div></div>
+</div>
+<div class="google-right-ad" style="margin-top:5px;">
+<div class="adsbyvli" data-ad-slot="vi_9012177"></div>
+<script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9012177")})</script>
+</div>
+<div class="google-right-ad" style="margin-top:5px;">
+<div class="adsbyvli" data-ad-slot="vi_9013289"></div>
+<script>(vitag.Init = window.vitag.Init || []).push(function(){viAPItag.display("vi_9013289")})</script>
+</div>
+<div class="space-bottom" style="margin-bottom:15px;"></div>
+</div>
+<!-- Right Column Ends Here -->
+</div>
+</div>
+<div class="clear"></div>
+<footer id="footer">
+<div class="mui--text-center">
+<div class="mui--text-caption mui--text-light">
+<a href="https://www.tutorialspoint.com/index.htm" class="logo"><img class="img-responsive" src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/logo-black.png" alt="Tutorials Point" title="Tutorials Point"></a>
+</div>
+<ul class="mui-list--inline mui--text-body2 mui--text-light">
+<li><a href="https://www.tutorialspoint.com/about/index.htm"><i class="fal fa-globe"></i> About us</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_terms_of_use.htm"><i class="fal fa-asterisk"></i> Terms of use</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_privacy.htm"> <i class="fal fa-shield-check"></i> Privacy Policy</a></li>
+<li><a href="https://www.tutorialspoint.com/about/faq.htm"><i class="fal fa-question-circle"></i> FAQ's</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_helping.htm"><i class="fal fa-hands-helping"></i> Helping</a></li>
+<li><a href="https://www.tutorialspoint.com/about/contact_us.htm"><i class="fal fa-map-marker-alt"></i> Contact</a></li>
+</ul>
+<div class="mui--text-caption mui--text-light bottom-copyright-text">© Copyright 2019. All Rights Reserved.</div>
+</div>
+<script async="" src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/js"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-6');
+</script>
+</footer>
+
+
+<img width="0" height="0" src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/impimg.php" style="visibility: hidden !important;display: none;" stndz-blocked=""><div id="vi_pixel_8383" style="width: 0px; height: 0px; display: none;"></div><style class="sf-download-bar-styles">
+.sf-download-bar__circle {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sf-download-bar__circle .sf-download-bar__circle-slice,
+.sf-download-bar__circle .sf-download-bar__circle-fill {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    transition: transform 0.3s;
+    border-radius: 50%;
+}
+
+.sf-download-bar__circle .sf-download-bar__circle-slice {
+    clip: rect(0px, 40px, 40px, 20px);
+}
+
+.sf-download-bar__circle .sf-download-bar__circle-slice .sf-download-bar__circle-fill {
+    clip: rect(0px, 20px, 40px, 0px);
+    background-color: #fff;
+}
+
+.sf-download-bar__circle .sf-download-bar__circle-overlay {
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    margin-left: 1px;
+    margin-top: 1px;
+    background-color: #5181B8;
+    border-radius: 50%;
+}
+
+.sf-download-bar__circle[data-progress='0'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='0'] .sf-download-bar__circle-fill {
+    transform: rotate(0deg);
+}
+
+.sf-download-bar__circle[data-progress='0'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(0deg);
+}
+
+.sf-download-bar__circle[data-progress='1'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='1'] .sf-download-bar__circle-fill {
+    transform: rotate(1.8deg);
+}
+
+.sf-download-bar__circle[data-progress='1'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(3.6deg);
+}
+
+.sf-download-bar__circle[data-progress='2'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='2'] .sf-download-bar__circle-fill {
+    transform: rotate(3.6deg);
+}
+
+.sf-download-bar__circle[data-progress='2'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(7.2deg);
+}
+
+.sf-download-bar__circle[data-progress='3'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='3'] .sf-download-bar__circle-fill {
+    transform: rotate(5.4deg);
+}
+
+.sf-download-bar__circle[data-progress='3'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(10.8deg);
+}
+
+.sf-download-bar__circle[data-progress='4'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='4'] .sf-download-bar__circle-fill {
+    transform: rotate(7.2deg);
+}
+
+.sf-download-bar__circle[data-progress='4'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(14.4deg);
+}
+
+.sf-download-bar__circle[data-progress='5'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='5'] .sf-download-bar__circle-fill {
+    transform: rotate(9deg);
+}
+
+.sf-download-bar__circle[data-progress='5'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(18deg);
+}
+
+.sf-download-bar__circle[data-progress='6'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='6'] .sf-download-bar__circle-fill {
+    transform: rotate(10.8deg);
+}
+
+.sf-download-bar__circle[data-progress='6'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(21.6deg);
+}
+
+.sf-download-bar__circle[data-progress='7'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='7'] .sf-download-bar__circle-fill {
+    transform: rotate(12.6deg);
+}
+
+.sf-download-bar__circle[data-progress='7'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(25.2deg);
+}
+
+.sf-download-bar__circle[data-progress='8'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='8'] .sf-download-bar__circle-fill {
+    transform: rotate(14.4deg);
+}
+
+.sf-download-bar__circle[data-progress='8'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(28.8deg);
+}
+
+.sf-download-bar__circle[data-progress='9'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='9'] .sf-download-bar__circle-fill {
+    transform: rotate(16.2deg);
+}
+
+.sf-download-bar__circle[data-progress='9'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(32.4deg);
+}
+
+.sf-download-bar__circle[data-progress='10'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='10'] .sf-download-bar__circle-fill {
+    transform: rotate(18deg);
+}
+
+.sf-download-bar__circle[data-progress='10'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(36deg);
+}
+
+.sf-download-bar__circle[data-progress='11'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='11'] .sf-download-bar__circle-fill {
+    transform: rotate(19.8deg);
+}
+
+.sf-download-bar__circle[data-progress='11'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(39.6deg);
+}
+
+.sf-download-bar__circle[data-progress='12'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='12'] .sf-download-bar__circle-fill {
+    transform: rotate(21.6deg);
+}
+
+.sf-download-bar__circle[data-progress='12'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(43.2deg);
+}
+
+.sf-download-bar__circle[data-progress='13'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='13'] .sf-download-bar__circle-fill {
+    transform: rotate(23.4deg);
+}
+
+.sf-download-bar__circle[data-progress='13'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(46.8deg);
+}
+
+.sf-download-bar__circle[data-progress='14'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='14'] .sf-download-bar__circle-fill {
+    transform: rotate(25.2deg);
+}
+
+.sf-download-bar__circle[data-progress='14'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(50.4deg);
+}
+
+.sf-download-bar__circle[data-progress='15'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='15'] .sf-download-bar__circle-fill {
+    transform: rotate(27deg);
+}
+
+.sf-download-bar__circle[data-progress='15'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(54deg);
+}
+
+.sf-download-bar__circle[data-progress='16'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='16'] .sf-download-bar__circle-fill {
+    transform: rotate(28.8deg);
+}
+
+.sf-download-bar__circle[data-progress='16'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(57.6deg);
+}
+
+.sf-download-bar__circle[data-progress='17'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='17'] .sf-download-bar__circle-fill {
+    transform: rotate(30.6deg);
+}
+
+.sf-download-bar__circle[data-progress='17'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(61.2deg);
+}
+
+.sf-download-bar__circle[data-progress='18'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='18'] .sf-download-bar__circle-fill {
+    transform: rotate(32.4deg);
+}
+
+.sf-download-bar__circle[data-progress='18'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(64.8deg);
+}
+
+.sf-download-bar__circle[data-progress='19'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='19'] .sf-download-bar__circle-fill {
+    transform: rotate(34.2deg);
+}
+
+.sf-download-bar__circle[data-progress='19'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(68.4deg);
+}
+
+.sf-download-bar__circle[data-progress='20'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='20'] .sf-download-bar__circle-fill {
+    transform: rotate(36deg);
+}
+
+.sf-download-bar__circle[data-progress='20'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(72deg);
+}
+
+.sf-download-bar__circle[data-progress='21'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='21'] .sf-download-bar__circle-fill {
+    transform: rotate(37.8deg);
+}
+
+.sf-download-bar__circle[data-progress='21'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(75.6deg);
+}
+
+.sf-download-bar__circle[data-progress='22'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='22'] .sf-download-bar__circle-fill {
+    transform: rotate(39.6deg);
+}
+
+.sf-download-bar__circle[data-progress='22'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(79.2deg);
+}
+
+.sf-download-bar__circle[data-progress='23'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='23'] .sf-download-bar__circle-fill {
+    transform: rotate(41.4deg);
+}
+
+.sf-download-bar__circle[data-progress='23'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(82.8deg);
+}
+
+.sf-download-bar__circle[data-progress='24'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='24'] .sf-download-bar__circle-fill {
+    transform: rotate(43.2deg);
+}
+
+.sf-download-bar__circle[data-progress='24'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(86.4deg);
+}
+
+.sf-download-bar__circle[data-progress='25'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='25'] .sf-download-bar__circle-fill {
+    transform: rotate(45deg);
+}
+
+.sf-download-bar__circle[data-progress='25'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(90deg);
+}
+
+.sf-download-bar__circle[data-progress='26'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='26'] .sf-download-bar__circle-fill {
+    transform: rotate(46.8deg);
+}
+
+.sf-download-bar__circle[data-progress='26'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(93.6deg);
+}
+
+.sf-download-bar__circle[data-progress='27'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='27'] .sf-download-bar__circle-fill {
+    transform: rotate(48.6deg);
+}
+
+.sf-download-bar__circle[data-progress='27'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(97.2deg);
+}
+
+.sf-download-bar__circle[data-progress='28'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='28'] .sf-download-bar__circle-fill {
+    transform: rotate(50.4deg);
+}
+
+.sf-download-bar__circle[data-progress='28'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(100.8deg);
+}
+
+.sf-download-bar__circle[data-progress='29'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='29'] .sf-download-bar__circle-fill {
+    transform: rotate(52.2deg);
+}
+
+.sf-download-bar__circle[data-progress='29'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(104.4deg);
+}
+
+.sf-download-bar__circle[data-progress='30'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='30'] .sf-download-bar__circle-fill {
+    transform: rotate(54deg);
+}
+
+.sf-download-bar__circle[data-progress='30'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(108deg);
+}
+
+.sf-download-bar__circle[data-progress='31'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='31'] .sf-download-bar__circle-fill {
+    transform: rotate(55.8deg);
+}
+
+.sf-download-bar__circle[data-progress='31'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(111.6deg);
+}
+
+.sf-download-bar__circle[data-progress='32'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='32'] .sf-download-bar__circle-fill {
+    transform: rotate(57.6deg);
+}
+
+.sf-download-bar__circle[data-progress='32'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(115.2deg);
+}
+
+.sf-download-bar__circle[data-progress='33'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='33'] .sf-download-bar__circle-fill {
+    transform: rotate(59.4deg);
+}
+
+.sf-download-bar__circle[data-progress='33'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(118.8deg);
+}
+
+.sf-download-bar__circle[data-progress='34'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='34'] .sf-download-bar__circle-fill {
+    transform: rotate(61.2deg);
+}
+
+.sf-download-bar__circle[data-progress='34'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(122.4deg);
+}
+
+.sf-download-bar__circle[data-progress='35'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='35'] .sf-download-bar__circle-fill {
+    transform: rotate(63deg);
+}
+
+.sf-download-bar__circle[data-progress='35'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(126deg);
+}
+
+.sf-download-bar__circle[data-progress='36'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='36'] .sf-download-bar__circle-fill {
+    transform: rotate(64.8deg);
+}
+
+.sf-download-bar__circle[data-progress='36'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(129.6deg);
+}
+
+.sf-download-bar__circle[data-progress='37'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='37'] .sf-download-bar__circle-fill {
+    transform: rotate(66.6deg);
+}
+
+.sf-download-bar__circle[data-progress='37'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(133.2deg);
+}
+
+.sf-download-bar__circle[data-progress='38'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='38'] .sf-download-bar__circle-fill {
+    transform: rotate(68.4deg);
+}
+
+.sf-download-bar__circle[data-progress='38'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(136.8deg);
+}
+
+.sf-download-bar__circle[data-progress='39'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='39'] .sf-download-bar__circle-fill {
+    transform: rotate(70.2deg);
+}
+
+.sf-download-bar__circle[data-progress='39'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(140.4deg);
+}
+
+.sf-download-bar__circle[data-progress='40'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='40'] .sf-download-bar__circle-fill {
+    transform: rotate(72deg);
+}
+
+.sf-download-bar__circle[data-progress='40'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(144deg);
+}
+
+.sf-download-bar__circle[data-progress='41'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='41'] .sf-download-bar__circle-fill {
+    transform: rotate(73.8deg);
+}
+
+.sf-download-bar__circle[data-progress='41'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(147.6deg);
+}
+
+.sf-download-bar__circle[data-progress='42'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='42'] .sf-download-bar__circle-fill {
+    transform: rotate(75.6deg);
+}
+
+.sf-download-bar__circle[data-progress='42'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(151.2deg);
+}
+
+.sf-download-bar__circle[data-progress='43'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='43'] .sf-download-bar__circle-fill {
+    transform: rotate(77.4deg);
+}
+
+.sf-download-bar__circle[data-progress='43'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(154.8deg);
+}
+
+.sf-download-bar__circle[data-progress='44'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='44'] .sf-download-bar__circle-fill {
+    transform: rotate(79.2deg);
+}
+
+.sf-download-bar__circle[data-progress='44'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(158.4deg);
+}
+
+.sf-download-bar__circle[data-progress='45'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='45'] .sf-download-bar__circle-fill {
+    transform: rotate(81deg);
+}
+
+.sf-download-bar__circle[data-progress='45'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(162deg);
+}
+
+.sf-download-bar__circle[data-progress='46'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='46'] .sf-download-bar__circle-fill {
+    transform: rotate(82.8deg);
+}
+
+.sf-download-bar__circle[data-progress='46'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(165.6deg);
+}
+
+.sf-download-bar__circle[data-progress='47'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='47'] .sf-download-bar__circle-fill {
+    transform: rotate(84.6deg);
+}
+
+.sf-download-bar__circle[data-progress='47'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(169.2deg);
+}
+
+.sf-download-bar__circle[data-progress='48'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='48'] .sf-download-bar__circle-fill {
+    transform: rotate(86.4deg);
+}
+
+.sf-download-bar__circle[data-progress='48'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(172.8deg);
+}
+
+.sf-download-bar__circle[data-progress='49'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='49'] .sf-download-bar__circle-fill {
+    transform: rotate(88.2deg);
+}
+
+.sf-download-bar__circle[data-progress='49'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(176.4deg);
+}
+
+.sf-download-bar__circle[data-progress='50'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='50'] .sf-download-bar__circle-fill {
+    transform: rotate(90deg);
+}
+
+.sf-download-bar__circle[data-progress='50'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(180deg);
+}
+
+.sf-download-bar__circle[data-progress='51'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='51'] .sf-download-bar__circle-fill {
+    transform: rotate(91.8deg);
+}
+
+.sf-download-bar__circle[data-progress='51'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(183.6deg);
+}
+
+.sf-download-bar__circle[data-progress='52'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='52'] .sf-download-bar__circle-fill {
+    transform: rotate(93.6deg);
+}
+
+.sf-download-bar__circle[data-progress='52'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(187.2deg);
+}
+
+.sf-download-bar__circle[data-progress='53'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='53'] .sf-download-bar__circle-fill {
+    transform: rotate(95.4deg);
+}
+
+.sf-download-bar__circle[data-progress='53'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(190.8deg);
+}
+
+.sf-download-bar__circle[data-progress='54'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='54'] .sf-download-bar__circle-fill {
+    transform: rotate(97.2deg);
+}
+
+.sf-download-bar__circle[data-progress='54'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(194.4deg);
+}
+
+.sf-download-bar__circle[data-progress='55'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='55'] .sf-download-bar__circle-fill {
+    transform: rotate(99deg);
+}
+
+.sf-download-bar__circle[data-progress='55'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(198deg);
+}
+
+.sf-download-bar__circle[data-progress='56'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='56'] .sf-download-bar__circle-fill {
+    transform: rotate(100.8deg);
+}
+
+.sf-download-bar__circle[data-progress='56'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(201.6deg);
+}
+
+.sf-download-bar__circle[data-progress='57'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='57'] .sf-download-bar__circle-fill {
+    transform: rotate(102.6deg);
+}
+
+.sf-download-bar__circle[data-progress='57'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(205.2deg);
+}
+
+.sf-download-bar__circle[data-progress='58'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='58'] .sf-download-bar__circle-fill {
+    transform: rotate(104.4deg);
+}
+
+.sf-download-bar__circle[data-progress='58'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(208.8deg);
+}
+
+.sf-download-bar__circle[data-progress='59'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='59'] .sf-download-bar__circle-fill {
+    transform: rotate(106.2deg);
+}
+
+.sf-download-bar__circle[data-progress='59'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(212.4deg);
+}
+
+.sf-download-bar__circle[data-progress='60'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='60'] .sf-download-bar__circle-fill {
+    transform: rotate(108deg);
+}
+
+.sf-download-bar__circle[data-progress='60'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(216deg);
+}
+
+.sf-download-bar__circle[data-progress='61'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='61'] .sf-download-bar__circle-fill {
+    transform: rotate(109.8deg);
+}
+
+.sf-download-bar__circle[data-progress='61'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(219.6deg);
+}
+
+.sf-download-bar__circle[data-progress='62'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='62'] .sf-download-bar__circle-fill {
+    transform: rotate(111.6deg);
+}
+
+.sf-download-bar__circle[data-progress='62'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(223.2deg);
+}
+
+.sf-download-bar__circle[data-progress='63'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='63'] .sf-download-bar__circle-fill {
+    transform: rotate(113.4deg);
+}
+
+.sf-download-bar__circle[data-progress='63'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(226.8deg);
+}
+
+.sf-download-bar__circle[data-progress='64'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='64'] .sf-download-bar__circle-fill {
+    transform: rotate(115.2deg);
+}
+
+.sf-download-bar__circle[data-progress='64'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(230.4deg);
+}
+
+.sf-download-bar__circle[data-progress='65'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='65'] .sf-download-bar__circle-fill {
+    transform: rotate(117deg);
+}
+
+.sf-download-bar__circle[data-progress='65'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(234deg);
+}
+
+.sf-download-bar__circle[data-progress='66'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='66'] .sf-download-bar__circle-fill {
+    transform: rotate(118.8deg);
+}
+
+.sf-download-bar__circle[data-progress='66'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(237.6deg);
+}
+
+.sf-download-bar__circle[data-progress='67'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='67'] .sf-download-bar__circle-fill {
+    transform: rotate(120.6deg);
+}
+
+.sf-download-bar__circle[data-progress='67'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(241.2deg);
+}
+
+.sf-download-bar__circle[data-progress='68'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='68'] .sf-download-bar__circle-fill {
+    transform: rotate(122.4deg);
+}
+
+.sf-download-bar__circle[data-progress='68'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(244.8deg);
+}
+
+.sf-download-bar__circle[data-progress='69'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='69'] .sf-download-bar__circle-fill {
+    transform: rotate(124.2deg);
+}
+
+.sf-download-bar__circle[data-progress='69'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(248.4deg);
+}
+
+.sf-download-bar__circle[data-progress='70'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='70'] .sf-download-bar__circle-fill {
+    transform: rotate(126deg);
+}
+
+.sf-download-bar__circle[data-progress='70'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(252deg);
+}
+
+.sf-download-bar__circle[data-progress='71'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='71'] .sf-download-bar__circle-fill {
+    transform: rotate(127.8deg);
+}
+
+.sf-download-bar__circle[data-progress='71'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(255.6deg);
+}
+
+.sf-download-bar__circle[data-progress='72'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='72'] .sf-download-bar__circle-fill {
+    transform: rotate(129.6deg);
+}
+
+.sf-download-bar__circle[data-progress='72'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(259.2deg);
+}
+
+.sf-download-bar__circle[data-progress='73'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='73'] .sf-download-bar__circle-fill {
+    transform: rotate(131.4deg);
+}
+
+.sf-download-bar__circle[data-progress='73'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(262.8deg);
+}
+
+.sf-download-bar__circle[data-progress='74'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='74'] .sf-download-bar__circle-fill {
+    transform: rotate(133.2deg);
+}
+
+.sf-download-bar__circle[data-progress='74'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(266.4deg);
+}
+
+.sf-download-bar__circle[data-progress='75'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='75'] .sf-download-bar__circle-fill {
+    transform: rotate(135deg);
+}
+
+.sf-download-bar__circle[data-progress='75'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(270deg);
+}
+
+.sf-download-bar__circle[data-progress='76'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='76'] .sf-download-bar__circle-fill {
+    transform: rotate(136.8deg);
+}
+
+.sf-download-bar__circle[data-progress='76'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(273.6deg);
+}
+
+.sf-download-bar__circle[data-progress='77'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='77'] .sf-download-bar__circle-fill {
+    transform: rotate(138.6deg);
+}
+
+.sf-download-bar__circle[data-progress='77'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(277.2deg);
+}
+
+.sf-download-bar__circle[data-progress='78'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='78'] .sf-download-bar__circle-fill {
+    transform: rotate(140.4deg);
+}
+
+.sf-download-bar__circle[data-progress='78'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(280.8deg);
+}
+
+.sf-download-bar__circle[data-progress='79'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='79'] .sf-download-bar__circle-fill {
+    transform: rotate(142.2deg);
+}
+
+.sf-download-bar__circle[data-progress='79'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(284.4deg);
+}
+
+.sf-download-bar__circle[data-progress='80'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='80'] .sf-download-bar__circle-fill {
+    transform: rotate(144deg);
+}
+
+.sf-download-bar__circle[data-progress='80'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(288deg);
+}
+
+.sf-download-bar__circle[data-progress='81'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='81'] .sf-download-bar__circle-fill {
+    transform: rotate(145.8deg);
+}
+
+.sf-download-bar__circle[data-progress='81'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(291.6deg);
+}
+
+.sf-download-bar__circle[data-progress='82'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='82'] .sf-download-bar__circle-fill {
+    transform: rotate(147.6deg);
+}
+
+.sf-download-bar__circle[data-progress='82'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(295.2deg);
+}
+
+.sf-download-bar__circle[data-progress='83'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='83'] .sf-download-bar__circle-fill {
+    transform: rotate(149.4deg);
+}
+
+.sf-download-bar__circle[data-progress='83'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(298.8deg);
+}
+
+.sf-download-bar__circle[data-progress='84'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='84'] .sf-download-bar__circle-fill {
+    transform: rotate(151.2deg);
+}
+
+.sf-download-bar__circle[data-progress='84'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(302.4deg);
+}
+
+.sf-download-bar__circle[data-progress='85'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='85'] .sf-download-bar__circle-fill {
+    transform: rotate(153deg);
+}
+
+.sf-download-bar__circle[data-progress='85'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(306deg);
+}
+
+.sf-download-bar__circle[data-progress='86'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='86'] .sf-download-bar__circle-fill {
+    transform: rotate(154.8deg);
+}
+
+.sf-download-bar__circle[data-progress='86'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(309.6deg);
+}
+
+.sf-download-bar__circle[data-progress='87'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='87'] .sf-download-bar__circle-fill {
+    transform: rotate(156.6deg);
+}
+
+.sf-download-bar__circle[data-progress='87'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(313.2deg);
+}
+
+.sf-download-bar__circle[data-progress='88'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='88'] .sf-download-bar__circle-fill {
+    transform: rotate(158.4deg);
+}
+
+.sf-download-bar__circle[data-progress='88'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(316.8deg);
+}
+
+.sf-download-bar__circle[data-progress='89'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='89'] .sf-download-bar__circle-fill {
+    transform: rotate(160.2deg);
+}
+
+.sf-download-bar__circle[data-progress='89'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(320.4deg);
+}
+
+.sf-download-bar__circle[data-progress='90'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='90'] .sf-download-bar__circle-fill {
+    transform: rotate(162deg);
+}
+
+.sf-download-bar__circle[data-progress='90'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(324deg);
+}
+
+.sf-download-bar__circle[data-progress='91'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='91'] .sf-download-bar__circle-fill {
+    transform: rotate(163.8deg);
+}
+
+.sf-download-bar__circle[data-progress='91'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(327.6deg);
+}
+
+.sf-download-bar__circle[data-progress='92'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='92'] .sf-download-bar__circle-fill {
+    transform: rotate(165.6deg);
+}
+
+.sf-download-bar__circle[data-progress='92'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(331.2deg);
+}
+
+.sf-download-bar__circle[data-progress='93'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='93'] .sf-download-bar__circle-fill {
+    transform: rotate(167.4deg);
+}
+
+.sf-download-bar__circle[data-progress='93'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(334.8deg);
+}
+
+.sf-download-bar__circle[data-progress='94'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='94'] .sf-download-bar__circle-fill {
+    transform: rotate(169.2deg);
+}
+
+.sf-download-bar__circle[data-progress='94'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(338.4deg);
+}
+
+.sf-download-bar__circle[data-progress='95'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='95'] .sf-download-bar__circle-fill {
+    transform: rotate(171deg);
+}
+
+.sf-download-bar__circle[data-progress='95'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(342deg);
+}
+
+.sf-download-bar__circle[data-progress='96'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='96'] .sf-download-bar__circle-fill {
+    transform: rotate(172.8deg);
+}
+
+.sf-download-bar__circle[data-progress='96'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(345.6deg);
+}
+
+.sf-download-bar__circle[data-progress='97'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='97'] .sf-download-bar__circle-fill {
+    transform: rotate(174.6deg);
+}
+
+.sf-download-bar__circle[data-progress='97'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(349.2deg);
+}
+
+.sf-download-bar__circle[data-progress='98'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='98'] .sf-download-bar__circle-fill {
+    transform: rotate(176.4deg);
+}
+
+.sf-download-bar__circle[data-progress='98'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(352.8deg);
+}
+
+.sf-download-bar__circle[data-progress='99'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='99'] .sf-download-bar__circle-fill {
+    transform: rotate(178.2deg);
+}
+
+.sf-download-bar__circle[data-progress='99'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(356.4deg);
+}
+
+.sf-download-bar__circle[data-progress='100'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='100'] .sf-download-bar__circle-fill {
+    transform: rotate(180deg);
+}
+
+.sf-download-bar__circle[data-progress='100'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(360deg);
+}
+
+.sf-download-bar {
+    position: fixed;
+    right: 110px;
+    bottom: 100px;
+    z-index: 99999;
+
+    width: 64px;
+    height: 64px;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+
+    transition: width, height, right, 0.2s;
+
+    border-radius: 50%;
+}
+
+.sf-download-bar_opened_yes {
+    width: 184px;
+
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    box-shadow: 0px 0px 18px rgba(49, 51, 106, 0.15);
+}
+
+.sf-download-bar_hide_yes {
+    right: -64px;
+}
+
+.sf-download-bar__head {
+    position: relative;
+    z-index: 10;
+
+    display: block;
+    white-space: nowrap;
+
+    width: 100%;
+    height: 64px;
+
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+
+    background: #5181B8;
+    border-radius: 100px;
+    box-shadow: none;
+}
+
+/* .sf-download-bar:not(.sf-download-bar_opened_yes) .sf-download-bar__head {
+    box-shadow: 0px 0px 18px rgba(49, 51, 106, 0.15);
+} */
+
+.sf-download-bar__head:after {
+    content: '';
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: #5181B8;
+    border-radius: 100px;
+    transition: width, height, left, top, 0.2s;
+}
+
+.sf-download-bar:not(.sf-download-bar_opened_yes):hover .sf-download-bar__head:after {
+    width: 68px;
+    height: 68px;
+    top: -2px;
+    left: -2px;
+    box-shadow: 0px 0px 18px rgba(49, 51, 106, 0.15);
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__head:after {
+    opacity: 0;
+    display: none;
+}
+
+.sf-download-bar__ticker {
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    width: 17px;
+    height: 17px;
+
+    background: #FF734C;
+    border-radius: 100px;
+
+    color: #fff;
+    text-align: center;
+    line-height: 17px;
+    font-size: 10px;
+    font-weight: bold;
+
+    transition: opacity 0.2s;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__ticker {
+    opacity: 0;
+}
+
+.sf-download-bar__ticker-big {
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    width: 40px;
+    height: 40px;
+    ;
+
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+
+    transition: opacity 0.2s;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__ticker-big {
+    opacity: 1;
+}
+
+.sf-download-bar__circle svg {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    margin: -7px 0 0 -5px;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__circle svg {
+    opacity: 0;
+}
+
+.sf-download-bar__content {
+    overflow: hidden;
+}
+
+.sf-download-bar__text {
+    opacity: 0.6;
+
+    color: #fff;
+    font-size: 11px;
+    text-align: center;
+    line-height: 64px;
+
+    overflow: hidden;
+
+    margin-left: -90px;
+    margin-right: 26px;
+
+    width: 64px;
+    height: 64px;
+
+    vertical-align: middle;
+    display: inline-block;
+    transition: margin-left 0.2s;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__text {
+    margin-left: 30px;
+}
+
+.sf-download-bar__footer {
+    width: 100%;
+    height: 0;
+    background-color: #fff;
+    overflow-y: auto;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__footer {
+    padding-top: 32px;
+    margin-top: -32px;
+}
+
+.sf-download-bar__stop {
+    opacity: 0.5;
+    width: 8px;
+    height: 8px;
+    visibility: hidden;
+    margin-right: 7px;
+    margin-left: 15px;
+    margin-top: 6px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.sf-download-bar__stop:hover {
+    opacity: 1;
+}
+
+.sf-download-bar__item {
+    overflow: hidden;
+    height: 48px;
+    line-height: 40px;
+    transition: background-color 0.1s;
+}
+
+.sf-download-bar__item:first-child {
+    margin-top: 5px;
+}
+
+.sf-download-bar__item:hover {
+    background-color: #E9EDF1;
+}
+
+.sf-download-bar__item:hover .sf-download-bar__stop {
+    visibility: visible;
+}
+
+.sf-download-bar__item-info {
+    height: 30px;
+    position: relative;
+    display: inline-block;
+    width: 135px;
+}
+
+.sf-download-bar__item-name {
+    line-height: 1em;
+    font-size: 11px;
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sf-download-bar__item-progress,
+.sf-download-bar__item-progress-bg {
+    position: absolute;
+    top: 18px;
+    left: 0;
+    height: 1px;
+}
+
+.sf-download-bar__item-progress-bg {
+    width: 100%;
+    background-color: #E7E8EC;
+    z-index: 1;
+}
+
+.sf-download-bar__item-progress {
+    width: 0;
+    background-color: #5181B8;
+    z-index: 2;
+}
+
+.sf-download-bar__cancel {
+    display: none;
+    height: 40px;
+    line-height: 40px;
+    color: #5181B8;
+    font-size: 9px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background: #fff;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__cancel {
+    display: block;
+}
+
+.sf-download-bar__cancel:hover {
+    text-decoration: none;
+    background-color: #5181B8;
+    color: #fff;
+}
+</style><div class="sf-download-bar sf-download-bar_hide_yes"><a href="https://www.tutorialspoint.com/typescript/typescript_switch_statement.htm#" class="sf-download-bar__head"><div class="sf-download-bar__ticker">1</div><div class="sf-download-bar__content"><div class="sf-download-bar__text">Downloading</div><div class="sf-download-bar__circle" data-progress="0"><div class="sf-download-bar__ticker-big">1</div><svg width="16" height="16" viewBox="0 0 16 16"><path d="M0 13.3623H11.0043V11.7903H0V13.3623ZM11.0043 4.71611H7.86018V0H3.14407V4.71611H0L5.50213 10.2182L11.0043 4.71611Z" fill="#fff"></path></svg><div class="sf-download-bar__circle-slice sf-download-bar__circle-slice_view_full"><div class="sf-download-bar__circle-fill"></div></div><div class="sf-download-bar__circle-slice"><div class="sf-download-bar__circle-fill"></div><div class="sf-download-bar__circle-fill sf-download-bar__circle-bar"></div></div><div class="sf-download-bar__circle-overlay"></div></div></div></a><div class="sf-download-bar__footer"><div class="sf-download-bar__list"></div></div><a href="https://www.tutorialspoint.com/typescript/typescript_switch_statement.htm#" class="sf-download-bar__cancel">Cancel all downloads</a></div></body><iframe sandbox="allow-scripts allow-same-origin" id="4281063db711141" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/index.html">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="438ba1e07ce888a" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="visibility: hidden !important;height:0px;width:0px;display:none;" scrolling="no" src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/usync.html" stndz-blocked="">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="4421fdc456b439d" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="visibility: hidden !important;height:0px;width:0px;display:none;" scrolling="no" src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/showad.html" stndz-blocked="">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="45b49c923d81c66" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="visibility: hidden !important;height:0px;width:0px;display:none;" scrolling="no" src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/async_usersync.html" stndz-blocked="">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="46f08acccbd7a07" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="visibility: hidden !important;height:0px;width:0px;display:none;" scrolling="no" src="./TypeScript - Switchâ_¦case Statement - Tutorialspoint_files/async_usersync(1).html" stndz-blocked="">
+    </iframe></html>

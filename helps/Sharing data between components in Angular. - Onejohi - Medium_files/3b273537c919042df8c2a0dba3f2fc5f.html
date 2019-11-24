@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://medium.com/media/3b273537c919042df8c2a0dba3f2fc5f -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="stndz-style"></style><title>change_state.ts – Medium</title><meta name="description" content="GitHub Gist: instantly share code, notes, and snippets."><meta name="twitter:widgets:csp" content="on"><meta name="robots" content="noindex"><!--<base target="_blank">--><base href="." target="_blank"><style>body {text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif; font-weight: 400; color: #333332; font-size: 18px; line-height: 1.4; margin: 0; background-color: white; overflow: hidden;}iframe {max-width: 100%;}</style></head><body><style>.gist .gist-file { margin-bottom: 0 !important; }.gist { text-rendering: auto; }</style><script src="./08391cec0077c5cce3083d015e09504e.js.download" charset="utf-8"></script><link rel="stylesheet" href="./gist-embed-123720f37c57ce9a8f29de081c38ed61.css"><div id="gist97259694" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-change_state-ts" class="file">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-typescript ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8">
+      <tbody><tr>
+        <td id="file-change_state-ts-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-change_state-ts-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> { <span class="pl-smi">Component</span>, <span class="pl-smi">OnInit</span> } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>@angular/core<span class="pl-pds">'</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-change_state-ts-LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-k">import</span> <span class="pl-smi">StateService</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>../services/state.service.ts<span class="pl-pds">'</span></span>;</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-change_state-ts-LC3" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-change_state-ts-LC4" class="blob-code blob-code-inner js-file-line">@<span class="pl-en">Component</span>({</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-change_state-ts-LC5" class="blob-code blob-code-inner js-file-line">  selector: <span class="pl-s"><span class="pl-pds">'</span>app-change-state<span class="pl-pds">'</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-change_state-ts-LC6" class="blob-code blob-code-inner js-file-line">  template: <span class="pl-s"><span class="pl-pds">`</span></span></td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-change_state-ts-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s">  &lt;div&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-change_state-ts-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-s">    &lt;div&gt; {{username }} &lt;/div&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-change_state-ts-LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-s">    &lt;input [(ngModel)]="username" placeholder="enter username" /&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-change_state-ts-LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-s">    &lt;button (click)="updateUsername()"&gt;&lt;/button&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-change_state-ts-LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-s">  &lt;/div&gt;</span></td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-change_state-ts-LC12" class="blob-code blob-code-inner js-file-line"><span class="pl-s">  <span class="pl-pds">`</span></span>,</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-change_state-ts-LC13" class="blob-code blob-code-inner js-file-line">})</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-change_state-ts-LC14" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-change_state-ts-LC15" class="blob-code blob-code-inner js-file-line"><span class="pl-k">export</span> <span class="pl-k">class</span> <span class="pl-en">ChangeState</span> <span class="pl-k">implements</span> <span class="pl-e">OnInit</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-change_state-ts-LC16" class="blob-code blob-code-inner js-file-line">  username<span class="pl-k">:</span> <span class="pl-c1">string</span>;</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-change_state-ts-LC17" class="blob-code blob-code-inner js-file-line">  </td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-change_state-ts-LC18" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">constructor</span>(<span class="pl-k">private</span> <span class="pl-v">state</span><span class="pl-k">:</span> <span class="pl-en">StateService</span>) { }</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-change_state-ts-LC19" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-change_state-ts-LC20" class="blob-code blob-code-inner js-file-line">  ngOnInit() {</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-change_state-ts-LC21" class="blob-code blob-code-inner js-file-line">    <span class="pl-c1">this</span>.<span class="pl-smi">state</span>.<span class="pl-smi">username</span>.<span class="pl-en">subscribe</span>(<span class="pl-v">result</span> <span class="pl-k">=&gt;</span> {</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-change_state-ts-LC22" class="blob-code blob-code-inner js-file-line">      <span class="pl-c1">this</span>.<span class="pl-smi">username</span> <span class="pl-k">=</span> <span class="pl-smi">result</span>; <span class="pl-c"><span class="pl-c">//</span> this set's the username to the default observable value</span></td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-change_state-ts-LC23" class="blob-code blob-code-inner js-file-line">    });</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-change_state-ts-LC24" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-change_state-ts-LC25" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L26" class="blob-num js-line-number" data-line-number="26"></td>
+        <td id="file-change_state-ts-LC26" class="blob-code blob-code-inner js-file-line">  updateUsername() {</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L27" class="blob-num js-line-number" data-line-number="27"></td>
+        <td id="file-change_state-ts-LC27" class="blob-code blob-code-inner js-file-line">    <span class="pl-c1">this</span>.<span class="pl-smi">state</span>.<span class="pl-en">changeUsername</span>(<span class="pl-c1">this</span>.<span class="pl-smi">username</span>);</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L28" class="blob-num js-line-number" data-line-number="28"></td>
+        <td id="file-change_state-ts-LC28" class="blob-code blob-code-inner js-file-line">  }</td>
+      </tr>
+      <tr>
+        <td id="file-change_state-ts-L29" class="blob-num js-line-number" data-line-number="29"></td>
+        <td id="file-change_state-ts-LC29" class="blob-code blob-code-inner js-file-line">}</td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/onejohi/08391cec0077c5cce3083d015e09504e/raw/ca31bc39b287c04cc7e0b24a5a8033e944ef200b/change_state.ts" style="float:right">view raw</a>
+        <a href="https://gist.github.com/onejohi/08391cec0077c5cce3083d015e09504e#file-change_state-ts">change_state.ts</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<script>var height = -1; var delayMs = 200; if (document) {document.domain = document.domain;}function notifyResize(height) {height = height ? height : document.documentElement.offsetHeight; var resized = false; if (window.donkey && donkey.resize) {donkey.resize(height);var elements = document.getElementsByClassName("gist-data"); for (var i = 0; i < elements.length; i++) {elements[i].style.overflow = "visible"}resized = true;}if (parent && parent._resizeIframe) {var obj = {iframe: window.frameElement, height: height}; parent._resizeIframe(obj); resized = true;}if (window.location && window.location.hash === "#amp=1" && window.parent && window.parent.postMessage) {window.parent.postMessage({sentinel: "amp", type: "embed-size", height: height}, "*");}if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.resize) {window.webkit.messageHandlers.resize.postMessage(height); resized = true;}return resized;}function maybeResize() {try {if (document.documentElement.offsetHeight != height && notifyResize()) {height = document.documentElement.offsetHeight;}delayMs = Math.min(delayMs * 2, 1000000); setTimeout(maybeResize, delayMs);} catch(error) {console.log('maybeResize error: ', error)}}maybeResize();</script></body></html>

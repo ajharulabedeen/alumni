@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://docs.phpdoc.org/guides/docblocks.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="stndz-style"></style>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Inside DocBlocks — phpDocumentor</title>
+
+    <link rel="stylesheet" href="./Inside DocBlocks — phpDocumentor_files/classic.css" type="text/css">
+    <link rel="stylesheet" href="./Inside DocBlocks — phpDocumentor_files/pygments.css" type="text/css">
+    <!--<link rel="stylesheet" href="../_static/configurationblock.css" type="text/css"/>-->
+
+    <link href="./Inside DocBlocks — phpDocumentor_files/template.css" rel="stylesheet" media="all">
+    <style>
+        h1 {
+            font-family: serif;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            color: #333;
+        }
+        h2:first-of-type {
+            margin-top: 25px;
+        }
+        h2 {
+            font-family: serif;
+            color: #333;
+            border: none;
+            font-style: italic;
+            margin-top: 15px;
+        }
+        .well table.docutils {
+            width: 100%;
+        }
+    </style>
+
+    <script src="./Inside DocBlocks — phpDocumentor_files/jquery-1.7.1.min.js.download" type="text/javascript"></script>
+    <script src="./Inside DocBlocks — phpDocumentor_files/jquery-ui-1.8.2.custom.min.js.download" type="text/javascript"></script>
+    <script src="./Inside DocBlocks — phpDocumentor_files/bootstrap.js.download" type="text/javascript"></script>
+    <script src="./Inside DocBlocks — phpDocumentor_files/prettify.min.js.download" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        function equalHeight(group) {
+            var tallest = 0;
+
+            group.each(function() {
+                var thisHeight = $(this).height();
+                if(thisHeight > tallest) {
+                    tallest = thisHeight;
+                }
+            });
+
+            group.height(tallest);
+        }
+
+        $(document).ready(function() {
+            $('.contents .row').each(function() {
+                equalHeight(jQuery(this).find('.well'));
+            });
+
+            // remove the classes added by Sphinx; the container class is
+            // used in Twitter bootstrap and this collides
+            $('.container .container').removeClass('container');
+        });
+    </script>
+
+    <link rel="shortcut icon" href="https://demo.phpdoc.org/Responsive/img/favicon.ico">
+    <link rel="apple-touch-icon" href="https://demo.phpdoc.org/Responsive/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://demo.phpdoc.org/Responsive/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://demo.phpdoc.org/Responsive/img/apple-touch-icon-114x114.png">
+        <link rel="index" title="Index" href="https://docs.phpdoc.org/genindex.html">
+        <link rel="search" title="Search" href="https://docs.phpdoc.org/search.html">
+        <link rel="top" title="phpDocumentor" href="https://docs.phpdoc.org/index.html">
+        <link rel="up" title="Guides" href="https://docs.phpdoc.org/guides/index.html">
+        <link rel="next" title="Types" href="https://docs.phpdoc.org/guides/types.html">
+        <link rel="prev" title="Guides" href="https://docs.phpdoc.org/guides/index.html"> 
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="https://www.phpdoc.org/git">phpDocumentor</a>
+
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li class="dropdown">
+                        <a href="https://docs.phpdoc.org/guides/docblocks.html#documentation" class="dropdown-toggle" data-toggle="dropdown"> Documentation<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://docs.phpdoc.org/"><i class="icon-th"></i> phpDocumentor 2</a></li>
+                            <li><a href="http://manual.phpdoc.org/"><i class="icon-th"></i> phpDocumentor 1</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="https://docs.phpdoc.org/guides/docblocks.html#demo" class="dropdown-toggle" data-toggle="dropdown"> Demo<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://demo.phpdoc.org/Responsive/"><i class="icon-list-alt"></i> Responsive</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://www.phpdoc.org/templates"><i class="icon-list-alt"></i> Templates</a></li>
+                    <li><a href="https://www.phpdoc.org/contact"><i class="icon-list-alt"></i> Contact</a></li>
+                    <li><a href="https://www.phpdoc.org/about"><i class="icon-list-alt"></i> About</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="go_to_top"><a href="https://docs.phpdoc.org/guides/docblocks.html#___" style="color: inherit">Back to top <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+    <noscript>
+        <div class="alert alert-warning">
+            Javascript is disabled; several features are only available if Javascript is enabled.
+        </div>
+    </noscript>
+
+    <div class="row">
+        <div class="span3">
+        <h3><a href="https://docs.phpdoc.org/index.html">Table Of Contents</a>
+        </h3>
+        <ul>
+<li><a class="reference internal" href="https://docs.phpdoc.org/guides/docblocks.html#">Inside DocBlocks</a><ul>
+<li><a class="reference internal" href="https://docs.phpdoc.org/guides/docblocks.html#overview">Overview</a></li>
+<li><a class="reference internal" href="https://docs.phpdoc.org/guides/docblocks.html#anatomy-of-a-docblock">Anatomy of a DocBlock</a><ul>
+<li><a class="reference internal" href="https://docs.phpdoc.org/guides/docblocks.html#summary">Summary</a></li>
+<li><a class="reference internal" href="https://docs.phpdoc.org/guides/docblocks.html#description">Description</a></li>
+<li><a class="reference internal" href="https://docs.phpdoc.org/guides/docblocks.html#tags">Tags</a><ul>
+<li><a class="reference internal" href="https://docs.phpdoc.org/guides/docblocks.html#list-of-tags">List of tags</a></li>
+<li><a class="reference internal" href="https://docs.phpdoc.org/guides/docblocks.html#annotations">Annotations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="https://docs.phpdoc.org/guides/docblocks.html#related-topics">Related topics</a></li>
+</ul>
+</li>
+</ul>
+
+        <h4>Previous topic</h4>
+
+        <p class="topless"><a href="https://docs.phpdoc.org/guides/index.html" title="previous chapter">Guides</a></p>
+        <h4>Next topic</h4>
+
+        <p class="topless"><a href="https://docs.phpdoc.org/guides/types.html" title="next chapter">Types</a></p>
+        <div id="searchbox" style="">
+            <h3>Search</h3>
+
+            <form class="search" action="https://docs.phpdoc.org/search.html" method="get">
+                <input type="text" name="q" size="18">
+                <input type="submit" value="Go">
+                <input type="hidden" name="check_keywords" value="yes">
+                <input type="hidden" name="area" value="default">
+            </form>
+        </div>
+        <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+        <div class="span9 contents">
+            <div class="breadcrumb">
+<div class="related">
+    <h3>Navigation</h3>
+    <ul>
+        <li class="right" style="margin-right: 10px; margin-top: 6px;">
+            <a href="https://docs.phpdoc.org/genindex.html" title="General Index" accesskey="I">
+                index
+            </a>
+        </li>
+        <li class="right" style="margin-right: 10px; margin-top: 6px;">
+            <a href="https://docs.phpdoc.org/guides/types.html" title="Types" accesskey="N">
+                next
+            </a> |
+        </li>
+        <li class="right" style="margin-right: 10px; margin-top: 6px;">
+            <a href="https://docs.phpdoc.org/guides/index.html" title="Guides" accesskey="P">
+                previous
+            </a> |
+        </li>
+        <li>
+            <a href="https://www.phpdoc.org/">Homepage</a>  »
+        </li>
+        <li>
+            <a href="https://docs.phpdoc.org/index.html">Documentation</a>  »
+        </li>
+        <li>
+            <a href="https://docs.phpdoc.org/guides/index.html" accesskey="U">
+                Guides
+            </a>  »
+        </li> 
+    </ul>
+</div>
+            </div>
+
+            
+            <div class="well">
+            
+
+            
+  <div class="section" id="inside-docblocks">
+<h1>Inside DocBlocks<a class="headerlink" href="https://docs.phpdoc.org/guides/docblocks.html#inside-docblocks" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="https://docs.phpdoc.org/guides/docblocks.html#overview" title="Permalink to this headline">¶</a></h2>
+<p>If all is well you have read the <a class="reference internal" href="https://docs.phpdoc.org/getting-started/your-first-set-of-documentation.html"><span class="doc">Getting Started</span></a> and got a
+basic idea on what a <a class="reference internal" href="https://docs.phpdoc.org/glossary.html#term-docblock"><span class="xref std std-term">DocBlock</span></a> is and what you can do with it. In this guide I will repeat some of the bits and
+then dive a lot deeper in and discuss the details on what constitutes a DocBlock and what you can do with it.</p>
+</div>
+<div class="section" id="anatomy-of-a-docblock">
+<h2>Anatomy of a DocBlock<a class="headerlink" href="https://docs.phpdoc.org/guides/docblocks.html#anatomy-of-a-docblock" title="Permalink to this headline">¶</a></h2>
+<p>Using a DocBlock you are able to effectively document your application’s API (Application Programming Interface) by
+describing the function of, and relations between, elements in your source code, such as classes and methods.</p>
+<p>In reality a <a class="reference internal" href="https://docs.phpdoc.org/glossary.html#term-docblock"><span class="xref std std-term">DocBlock</span></a> is in fact the name for a combination of a, so-called, <a class="reference internal" href="https://docs.phpdoc.org/glossary.html#term-doccomment"><span class="xref std std-term">DocComment</span></a> and a block of
+the <a class="reference internal" href="https://docs.phpdoc.org/glossary.html#term-phpdoc"><span class="xref std std-term">PHPDoc</span></a> Domain Specific Language (DSL). A DocComment is the container that contains documentation that can
+be formatted according to the <a class="reference internal" href="https://docs.phpdoc.org/references/phpdoc/index.html"><span class="doc">PHPDoc Standard</span></a>.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">A DocBlock is always associated with one, and just one, <a class="reference internal" href="https://docs.phpdoc.org/glossary.html#term-structural-element"><span class="xref std std-term">Structural Element</span></a> in PHP; so this may either be
+a file, class, interface, trait, function, constant, method, property or variable.</p>
+</div>
+<p><strong>DocComments</strong></p>
+<p>A DocComment starts with a forward slash and two asterisks (<code class="docutils literal"><span class="pre">/**</span></code>), which is similar to how you start a multiline
+comment but with an additional asterisk, and ends with an asterisk and forward slash (<code class="docutils literal"><span class="pre">*/</span></code>).
+DocComments may be a single line in size but may also span multiple lines, in which case each line must start with an
+asterisk. It is customary, and recommended, to align the asterisks vertically when spanning multiple lines.</p>
+<p>So, a single line DocComment looks like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/**</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">single</span> <span class="n">line</span> <span class="n">DocComment</span><span class="o">.</span> <span class="o">*/</span>
+</pre></div>
+</div>
+<p>And a multiline DocComment looks like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/**</span>
+ <span class="o">*</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">multi</span><span class="o">-</span><span class="n">line</span> <span class="n">DocComment</span><span class="o">.</span>
+ <span class="o">*/</span>
+</pre></div>
+</div>
+<p>That is easy, right?</p>
+<p><strong>PHPDoc</strong></p>
+<p>Something a little more extensive is the PHPDoc DSL. Inside <a class="reference internal" href="https://docs.phpdoc.org/glossary.html#term-doccomments"><span class="xref std std-term">DocComments</span></a> phpDocumentor, and many other tools with
+it, expect to find a block of text that matches the <a class="reference internal" href="https://docs.phpdoc.org/references/phpdoc/index.html"><span class="doc">PHPDoc Standard</span></a>.</p>
+<p>Commonly a piece of PHPDoc consists of the following three parts in order of appearance:</p>
+<dl class="docutils">
+<dt>Summary</dt>
+<dd>A short piece of text, usually one line, providing the basic function of the associated element.</dd>
+<dt>Description</dt>
+<dd>An optional longer piece of text providing more details on the associated element’s function. This
+is very useful when working with a complex element.</dd>
+<dt>A series of tags</dt>
+<dd>These provide additional information in a structured manner. With these tags you can link to other
+elements, provide type information for properties and arguments, and more.</dd>
+</dl>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">The order of these elements matter; you cannot put a summary or description after the tags as it will be seen as part
+of the last tag.</p>
+</div>
+<div class="section" id="summary">
+<h3>Summary<a class="headerlink" href="https://docs.phpdoc.org/guides/docblocks.html#summary" title="Permalink to this headline">¶</a></h3>
+<p>The summary is a short but effective overview of an element; you can compare it to a slogan or headline.
+Summaries are plain and simple, they cannot contain formatting or inline tags (see the next chapter for more information
+on this) and can be used to skim through, for example, a list of methods.</p>
+<p>The summary can be separated from the description in two ways:</p>
+<ol class="arabic">
+<li><p class="first">With an empty whiteline:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/**</span>
+ <span class="o">*</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">summary</span>
+ <span class="o">*</span>
+ <span class="o">*</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">description</span>
+ <span class="o">*/</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Or by adding a period followed by a new-line:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/**</span>
+ <span class="o">*</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">summary</span><span class="o">.</span>
+ <span class="o">*</span> <span class="n">This</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">description</span>
+ <span class="o">*/</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>There is not much more to summaries, they are simple and straightforward to use.</p>
+</div>
+<div class="section" id="description">
+<h3>Description<a class="headerlink" href="https://docs.phpdoc.org/guides/docblocks.html#description" title="Permalink to this headline">¶</a></h3>
+<p>This is where the fun starts! A description can be a long text with an elaborate explanation what the associated
+element does. The description is <em>optional</em>, as there are many elements that are so straightforward that they do
+not need a length explanation.</p>
+<p><strong>Even worse</strong>: proper methods are often so simple that a description could be considered overkill!</p>
+<p>The nice thing about this description is that you can format your text according to <a class="reference external" href="https://daringfireball.net/projects/markdown/">Markdown</a>, more specifically
+<a href="https://docs.phpdoc.org/guides/docblocks.html#id1"><span class="problematic" id="id2">`Github-flavoured Markdown`_</span></a>. Using this format it is easy to make your text bold, add inline code examples or
+easily generate links to other sites.</p>
+<p>Another nifty feature is that you can use a series of <a class="reference internal" href="https://docs.phpdoc.org/glossary.html#term-inline-tags"><span class="xref std std-term">Inline Tags</span></a> to refer to other parts of the documentation
+(<code class="docutils literal"><span class="pre">{@see}</span></code>), inherit the description of a parent (<code class="docutils literal"><span class="pre">{@inheritDoc}</span></code>) and more. Once you finish reading this guide
+you should definitely take a look at the <a class="reference internal" href="https://docs.phpdoc.org/references/phpdoc/inline-tags/index.html"><span class="doc">Inline tag reference</span></a> to see which <cite>Inline Tags</cite> there
+are and what they do.</p>
+<p>The description can be as long as you would like and ends when a tag is encountered for the first time.</p>
+</div>
+<div class="section" id="tags">
+<h3>Tags<a class="headerlink" href="https://docs.phpdoc.org/guides/docblocks.html#tags" title="Permalink to this headline">¶</a></h3>
+<p>Tags are a type of specialized information (meta-data) about the associated element. At the time of writing of this
+guide PHPDoc counts twenty-eight (28) types of tags.</p>
+<p>A tag always starts on a new line with an at-sign (@) followed by the name of the tag. Between the start of the line and
+the tag’s name (including at-sign) there may be one or more spaces or tabs.</p>
+<p>The following is an example of a simple tag:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/**</span>
+ <span class="o">*</span> <span class="nd">@source</span>
+ <span class="o">*/</span>
+</pre></div>
+</div>
+<p>In addition to their name each tag may have arguments that can provide additional context specific for that tag. The
+most common example of this is the <cite>@param</cite> tag, with which the argument of a method or function is documented:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>/**
+ * @param string $argument1 This is the description.
+ */
+</pre></div>
+</div>
+<p>In the example above we can see that the @param tag features an argument that tells you that the argument with name
+<code class="docutils literal"><span class="pre">$argument1</span></code> is of type <code class="docutils literal"><span class="pre">string</span></code> and has a description <code class="docutils literal"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">the</span> <span class="pre">description.</span></code> that, in real life, will tell
+you the function of that argument.</p>
+<p>The best way to discover which options a tag supports is by reading the documentation for that specific tag.</p>
+<p>Most tags are associated with a specific element type. So some tags only apply to classes, some only to methods, etc.
+The easiest way to see to which element a tag applies is to check the documentation for each tag, or consult the
+table in the next chapter.</p>
+<div class="section" id="list-of-tags">
+<h4>List of tags<a class="headerlink" href="https://docs.phpdoc.org/guides/docblocks.html#list-of-tags" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="docutils">
+<colgroup>
+<col width="12%">
+<col width="14%">
+<col width="75%">
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Tag</th>
+<th class="head">Element</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>api</td>
+<td>Methods</td>
+<td>declares that elements are suitable for consumption by third parties.</td>
+</tr>
+<tr class="row-odd"><td>author</td>
+<td>Any</td>
+<td>documents the author of the associated element.</td>
+</tr>
+<tr class="row-even"><td>category</td>
+<td>File, Class</td>
+<td>groups a series of packages together.</td>
+</tr>
+<tr class="row-odd"><td>copyright</td>
+<td>Any</td>
+<td>documents the copyright information for the associated element.</td>
+</tr>
+<tr class="row-even"><td>deprecated</td>
+<td>Any</td>
+<td>indicates that the associated element is deprecated and can be removed in a future
+version.</td>
+</tr>
+<tr class="row-odd"><td>example</td>
+<td>Any</td>
+<td>shows the code of a specified example file or, optionally, just a portion of it.</td>
+</tr>
+<tr class="row-even"><td>filesource</td>
+<td>File</td>
+<td>includes the source of the current file for use in the output.</td>
+</tr>
+<tr class="row-odd"><td>global</td>
+<td>Variable</td>
+<td>informs phpDocumentor of a global variable or its usage.</td>
+</tr>
+<tr class="row-even"><td>ignore</td>
+<td>Any</td>
+<td>tells phpDocumentor that the associated element is not to be included in the
+documentation.</td>
+</tr>
+<tr class="row-odd"><td>internal</td>
+<td>Any</td>
+<td>denotes that the associated elements is internal to this application or library and
+hides it by default.</td>
+</tr>
+<tr class="row-even"><td>license</td>
+<td>File, Class</td>
+<td>indicates which license is applicable for the associated element.</td>
+</tr>
+<tr class="row-odd"><td>link</td>
+<td>Any</td>
+<td>indicates a relation between the associated element and a page of a website.</td>
+</tr>
+<tr class="row-even"><td>method</td>
+<td>Class</td>
+<td>allows a class to know which ‘magic’ methods are callable.</td>
+</tr>
+<tr class="row-odd"><td>package</td>
+<td>File, Class</td>
+<td>categorizes the associated element into a logical grouping or subdivision.</td>
+</tr>
+<tr class="row-even"><td>param</td>
+<td>Method, Function</td>
+<td>documents a single argument of a function or method.</td>
+</tr>
+<tr class="row-odd"><td>property</td>
+<td>Class</td>
+<td>allows a class to know which ‘magic’ properties are present.</td>
+</tr>
+<tr class="row-even"><td>property-read</td>
+<td>Class</td>
+<td>allows a class to know which ‘magic’ properties are present that are read-only.</td>
+</tr>
+<tr class="row-odd"><td>property-write</td>
+<td>Class</td>
+<td>allows a class to know which ‘magic’ properties are present that are write-only.</td>
+</tr>
+<tr class="row-even"><td>return</td>
+<td>Method, Function</td>
+<td>documents the return value of functions or methods.</td>
+</tr>
+<tr class="row-odd"><td>see</td>
+<td>Any</td>
+<td>indicates a reference from the associated element to a website or other elements.</td>
+</tr>
+<tr class="row-even"><td>since</td>
+<td>Any</td>
+<td>indicates at which version the associated element became available.</td>
+</tr>
+<tr class="row-odd"><td>source</td>
+<td>Any, except File</td>
+<td>shows the source code of the associated element.</td>
+</tr>
+<tr class="row-even"><td>subpackage</td>
+<td>File, Class</td>
+<td>categorizes the associated element into a logical grouping or subdivision.</td>
+</tr>
+<tr class="row-odd"><td>throws</td>
+<td>Method, Function</td>
+<td>indicates whether the associated element could throw a specific type of exception.</td>
+</tr>
+<tr class="row-even"><td>todo</td>
+<td>Any</td>
+<td>indicates whether any development activity should still be executed on the associated
+element.</td>
+</tr>
+<tr class="row-odd"><td>uses</td>
+<td>Any</td>
+<td>indicates a reference to (and from) a single associated element.</td>
+</tr>
+<tr class="row-even"><td>var</td>
+<td>Properties</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>version</td>
+<td>Any</td>
+<td>indicates the current version of Structural Elements.</td>
+</tr>
+</tbody>
+</table>
+<p>Please see the <a class="reference internal" href="https://docs.phpdoc.org/references/phpdoc/tags/index.html"><span class="doc">tag reference</span></a> for the canonical list of tags and their complete
+descriptions.</p>
+</div>
+<div class="section" id="annotations">
+<h4>Annotations<a class="headerlink" href="https://docs.phpdoc.org/guides/docblocks.html#annotations" title="Permalink to this headline">¶</a></h4>
+<p>In addition to the above you might also encounter <a class="reference internal" href="https://docs.phpdoc.org/glossary.html#term-annotations"><span class="xref std std-term">Annotations</span></a> when viewing DocBlocks. An <a class="reference internal" href="https://docs.phpdoc.org/glossary.html#term-annotation"><span class="xref std std-term">Annotation</span></a> is
+a specialized form of tag that not only documents a specific aspect of the associated element but also influences the
+way the application behaves.</p>
+<p>Annotations come in various forms, many look exactly like normal tags but some have a more complicated syntax:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">/**</span>
+ <span class="o">*</span> <span class="nd">@ORM</span>\<span class="n">Entity</span><span class="p">(</span><span class="n">repositoryClass</span><span class="o">=</span><span class="s2">"MyProject\UserRepository"</span><span class="p">)</span>
+ <span class="o">*/</span>
+</pre></div>
+</div>
+<p>In the example above we demonstrate how you define that a class represents a database entity in Doctrine; as you can see
+the tag name is separated into two parts, a namespace and the actual annotation name,</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>Some annotation libraries support Annotations both with and without a namespace. When given the opportunity use a
+namespace to prevent conflicts with existing tags in the <span class="xref std std-term">PHPDoc Standard</span>.</p>
+<p>When you are using the regular tag syntax it is recommended to prefix the tag with a name representing your
+application or organisation’s name and a hyphen. For example:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">phpdoc</span><span class="o">-</span><span class="n">event</span> <span class="n">onClick</span>
+</pre></div>
+</div>
+</div>
+<p>To read more on annotations I recommend taking a look at the slides for Rafael Dohms’ talk on annotations
+(<a class="reference external" href="http://www.slideshare.net/rdohms/annotations-in-php-they-exist">http://www.slideshare.net/rdohms/annotations-in-php-they-exist</a>) or view his talk
+(<a class="reference external" href="http://protalk.me/annotating-with-annotations">http://protalk.me/annotating-with-annotations</a>).</p>
+</div>
+</div>
+</div>
+<div class="section" id="related-topics">
+<h2>Related topics<a class="headerlink" href="https://docs.phpdoc.org/guides/docblocks.html#related-topics" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="https://docs.phpdoc.org/guides/types.html"><span class="doc">Types</span></a>, for details on which types are supported by phpDocumentor.</li>
+<li><a class="reference internal" href="https://docs.phpdoc.org/guides/inheritance.html"><span class="doc">Inheritance</span></a>, to read how DocBlocks inherit information from elements in superclasses.</li>
+<li><a class="reference internal" href="https://docs.phpdoc.org/getting-started/your-first-set-of-documentation.html"><span class="doc">Your First Set of Documentation</span></a>, for an introduction in writing DocBlocks.</li>
+<li><a class="reference internal" href="https://docs.phpdoc.org/references/phpdoc/index.html"><span class="doc">PHPDoc reference</span></a>, for a complete, and more elaborate, reference on the syntax and capabilities of
+DocBlocks.</li>
+</ul>
+</div>
+</div>
+
+
+
+            
+            </div>
+            
+        </div>
+    </div>
+
+  <div class="row">
+    <footer class="span12">
+        <p>
+            Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.9.
+        </p>
+    </footer>
+  </div>
+</div>
+
+
+<style class="sf-download-bar-styles">
+.sf-download-bar__circle {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.sf-download-bar__circle .sf-download-bar__circle-slice,
+.sf-download-bar__circle .sf-download-bar__circle-fill {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    transition: transform 0.3s;
+    border-radius: 50%;
+}
+
+.sf-download-bar__circle .sf-download-bar__circle-slice {
+    clip: rect(0px, 40px, 40px, 20px);
+}
+
+.sf-download-bar__circle .sf-download-bar__circle-slice .sf-download-bar__circle-fill {
+    clip: rect(0px, 20px, 40px, 0px);
+    background-color: #fff;
+}
+
+.sf-download-bar__circle .sf-download-bar__circle-overlay {
+    width: 38px;
+    height: 38px;
+    position: absolute;
+    margin-left: 1px;
+    margin-top: 1px;
+    background-color: #5181B8;
+    border-radius: 50%;
+}
+
+.sf-download-bar__circle[data-progress='0'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='0'] .sf-download-bar__circle-fill {
+    transform: rotate(0deg);
+}
+
+.sf-download-bar__circle[data-progress='0'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(0deg);
+}
+
+.sf-download-bar__circle[data-progress='1'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='1'] .sf-download-bar__circle-fill {
+    transform: rotate(1.8deg);
+}
+
+.sf-download-bar__circle[data-progress='1'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(3.6deg);
+}
+
+.sf-download-bar__circle[data-progress='2'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='2'] .sf-download-bar__circle-fill {
+    transform: rotate(3.6deg);
+}
+
+.sf-download-bar__circle[data-progress='2'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(7.2deg);
+}
+
+.sf-download-bar__circle[data-progress='3'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='3'] .sf-download-bar__circle-fill {
+    transform: rotate(5.4deg);
+}
+
+.sf-download-bar__circle[data-progress='3'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(10.8deg);
+}
+
+.sf-download-bar__circle[data-progress='4'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='4'] .sf-download-bar__circle-fill {
+    transform: rotate(7.2deg);
+}
+
+.sf-download-bar__circle[data-progress='4'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(14.4deg);
+}
+
+.sf-download-bar__circle[data-progress='5'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='5'] .sf-download-bar__circle-fill {
+    transform: rotate(9deg);
+}
+
+.sf-download-bar__circle[data-progress='5'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(18deg);
+}
+
+.sf-download-bar__circle[data-progress='6'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='6'] .sf-download-bar__circle-fill {
+    transform: rotate(10.8deg);
+}
+
+.sf-download-bar__circle[data-progress='6'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(21.6deg);
+}
+
+.sf-download-bar__circle[data-progress='7'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='7'] .sf-download-bar__circle-fill {
+    transform: rotate(12.6deg);
+}
+
+.sf-download-bar__circle[data-progress='7'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(25.2deg);
+}
+
+.sf-download-bar__circle[data-progress='8'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='8'] .sf-download-bar__circle-fill {
+    transform: rotate(14.4deg);
+}
+
+.sf-download-bar__circle[data-progress='8'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(28.8deg);
+}
+
+.sf-download-bar__circle[data-progress='9'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='9'] .sf-download-bar__circle-fill {
+    transform: rotate(16.2deg);
+}
+
+.sf-download-bar__circle[data-progress='9'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(32.4deg);
+}
+
+.sf-download-bar__circle[data-progress='10'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='10'] .sf-download-bar__circle-fill {
+    transform: rotate(18deg);
+}
+
+.sf-download-bar__circle[data-progress='10'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(36deg);
+}
+
+.sf-download-bar__circle[data-progress='11'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='11'] .sf-download-bar__circle-fill {
+    transform: rotate(19.8deg);
+}
+
+.sf-download-bar__circle[data-progress='11'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(39.6deg);
+}
+
+.sf-download-bar__circle[data-progress='12'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='12'] .sf-download-bar__circle-fill {
+    transform: rotate(21.6deg);
+}
+
+.sf-download-bar__circle[data-progress='12'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(43.2deg);
+}
+
+.sf-download-bar__circle[data-progress='13'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='13'] .sf-download-bar__circle-fill {
+    transform: rotate(23.4deg);
+}
+
+.sf-download-bar__circle[data-progress='13'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(46.8deg);
+}
+
+.sf-download-bar__circle[data-progress='14'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='14'] .sf-download-bar__circle-fill {
+    transform: rotate(25.2deg);
+}
+
+.sf-download-bar__circle[data-progress='14'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(50.4deg);
+}
+
+.sf-download-bar__circle[data-progress='15'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='15'] .sf-download-bar__circle-fill {
+    transform: rotate(27deg);
+}
+
+.sf-download-bar__circle[data-progress='15'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(54deg);
+}
+
+.sf-download-bar__circle[data-progress='16'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='16'] .sf-download-bar__circle-fill {
+    transform: rotate(28.8deg);
+}
+
+.sf-download-bar__circle[data-progress='16'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(57.6deg);
+}
+
+.sf-download-bar__circle[data-progress='17'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='17'] .sf-download-bar__circle-fill {
+    transform: rotate(30.6deg);
+}
+
+.sf-download-bar__circle[data-progress='17'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(61.2deg);
+}
+
+.sf-download-bar__circle[data-progress='18'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='18'] .sf-download-bar__circle-fill {
+    transform: rotate(32.4deg);
+}
+
+.sf-download-bar__circle[data-progress='18'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(64.8deg);
+}
+
+.sf-download-bar__circle[data-progress='19'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='19'] .sf-download-bar__circle-fill {
+    transform: rotate(34.2deg);
+}
+
+.sf-download-bar__circle[data-progress='19'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(68.4deg);
+}
+
+.sf-download-bar__circle[data-progress='20'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='20'] .sf-download-bar__circle-fill {
+    transform: rotate(36deg);
+}
+
+.sf-download-bar__circle[data-progress='20'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(72deg);
+}
+
+.sf-download-bar__circle[data-progress='21'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='21'] .sf-download-bar__circle-fill {
+    transform: rotate(37.8deg);
+}
+
+.sf-download-bar__circle[data-progress='21'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(75.6deg);
+}
+
+.sf-download-bar__circle[data-progress='22'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='22'] .sf-download-bar__circle-fill {
+    transform: rotate(39.6deg);
+}
+
+.sf-download-bar__circle[data-progress='22'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(79.2deg);
+}
+
+.sf-download-bar__circle[data-progress='23'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='23'] .sf-download-bar__circle-fill {
+    transform: rotate(41.4deg);
+}
+
+.sf-download-bar__circle[data-progress='23'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(82.8deg);
+}
+
+.sf-download-bar__circle[data-progress='24'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='24'] .sf-download-bar__circle-fill {
+    transform: rotate(43.2deg);
+}
+
+.sf-download-bar__circle[data-progress='24'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(86.4deg);
+}
+
+.sf-download-bar__circle[data-progress='25'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='25'] .sf-download-bar__circle-fill {
+    transform: rotate(45deg);
+}
+
+.sf-download-bar__circle[data-progress='25'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(90deg);
+}
+
+.sf-download-bar__circle[data-progress='26'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='26'] .sf-download-bar__circle-fill {
+    transform: rotate(46.8deg);
+}
+
+.sf-download-bar__circle[data-progress='26'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(93.6deg);
+}
+
+.sf-download-bar__circle[data-progress='27'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='27'] .sf-download-bar__circle-fill {
+    transform: rotate(48.6deg);
+}
+
+.sf-download-bar__circle[data-progress='27'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(97.2deg);
+}
+
+.sf-download-bar__circle[data-progress='28'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='28'] .sf-download-bar__circle-fill {
+    transform: rotate(50.4deg);
+}
+
+.sf-download-bar__circle[data-progress='28'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(100.8deg);
+}
+
+.sf-download-bar__circle[data-progress='29'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='29'] .sf-download-bar__circle-fill {
+    transform: rotate(52.2deg);
+}
+
+.sf-download-bar__circle[data-progress='29'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(104.4deg);
+}
+
+.sf-download-bar__circle[data-progress='30'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='30'] .sf-download-bar__circle-fill {
+    transform: rotate(54deg);
+}
+
+.sf-download-bar__circle[data-progress='30'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(108deg);
+}
+
+.sf-download-bar__circle[data-progress='31'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='31'] .sf-download-bar__circle-fill {
+    transform: rotate(55.8deg);
+}
+
+.sf-download-bar__circle[data-progress='31'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(111.6deg);
+}
+
+.sf-download-bar__circle[data-progress='32'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='32'] .sf-download-bar__circle-fill {
+    transform: rotate(57.6deg);
+}
+
+.sf-download-bar__circle[data-progress='32'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(115.2deg);
+}
+
+.sf-download-bar__circle[data-progress='33'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='33'] .sf-download-bar__circle-fill {
+    transform: rotate(59.4deg);
+}
+
+.sf-download-bar__circle[data-progress='33'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(118.8deg);
+}
+
+.sf-download-bar__circle[data-progress='34'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='34'] .sf-download-bar__circle-fill {
+    transform: rotate(61.2deg);
+}
+
+.sf-download-bar__circle[data-progress='34'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(122.4deg);
+}
+
+.sf-download-bar__circle[data-progress='35'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='35'] .sf-download-bar__circle-fill {
+    transform: rotate(63deg);
+}
+
+.sf-download-bar__circle[data-progress='35'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(126deg);
+}
+
+.sf-download-bar__circle[data-progress='36'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='36'] .sf-download-bar__circle-fill {
+    transform: rotate(64.8deg);
+}
+
+.sf-download-bar__circle[data-progress='36'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(129.6deg);
+}
+
+.sf-download-bar__circle[data-progress='37'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='37'] .sf-download-bar__circle-fill {
+    transform: rotate(66.6deg);
+}
+
+.sf-download-bar__circle[data-progress='37'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(133.2deg);
+}
+
+.sf-download-bar__circle[data-progress='38'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='38'] .sf-download-bar__circle-fill {
+    transform: rotate(68.4deg);
+}
+
+.sf-download-bar__circle[data-progress='38'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(136.8deg);
+}
+
+.sf-download-bar__circle[data-progress='39'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='39'] .sf-download-bar__circle-fill {
+    transform: rotate(70.2deg);
+}
+
+.sf-download-bar__circle[data-progress='39'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(140.4deg);
+}
+
+.sf-download-bar__circle[data-progress='40'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='40'] .sf-download-bar__circle-fill {
+    transform: rotate(72deg);
+}
+
+.sf-download-bar__circle[data-progress='40'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(144deg);
+}
+
+.sf-download-bar__circle[data-progress='41'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='41'] .sf-download-bar__circle-fill {
+    transform: rotate(73.8deg);
+}
+
+.sf-download-bar__circle[data-progress='41'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(147.6deg);
+}
+
+.sf-download-bar__circle[data-progress='42'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='42'] .sf-download-bar__circle-fill {
+    transform: rotate(75.6deg);
+}
+
+.sf-download-bar__circle[data-progress='42'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(151.2deg);
+}
+
+.sf-download-bar__circle[data-progress='43'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='43'] .sf-download-bar__circle-fill {
+    transform: rotate(77.4deg);
+}
+
+.sf-download-bar__circle[data-progress='43'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(154.8deg);
+}
+
+.sf-download-bar__circle[data-progress='44'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='44'] .sf-download-bar__circle-fill {
+    transform: rotate(79.2deg);
+}
+
+.sf-download-bar__circle[data-progress='44'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(158.4deg);
+}
+
+.sf-download-bar__circle[data-progress='45'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='45'] .sf-download-bar__circle-fill {
+    transform: rotate(81deg);
+}
+
+.sf-download-bar__circle[data-progress='45'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(162deg);
+}
+
+.sf-download-bar__circle[data-progress='46'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='46'] .sf-download-bar__circle-fill {
+    transform: rotate(82.8deg);
+}
+
+.sf-download-bar__circle[data-progress='46'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(165.6deg);
+}
+
+.sf-download-bar__circle[data-progress='47'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='47'] .sf-download-bar__circle-fill {
+    transform: rotate(84.6deg);
+}
+
+.sf-download-bar__circle[data-progress='47'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(169.2deg);
+}
+
+.sf-download-bar__circle[data-progress='48'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='48'] .sf-download-bar__circle-fill {
+    transform: rotate(86.4deg);
+}
+
+.sf-download-bar__circle[data-progress='48'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(172.8deg);
+}
+
+.sf-download-bar__circle[data-progress='49'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='49'] .sf-download-bar__circle-fill {
+    transform: rotate(88.2deg);
+}
+
+.sf-download-bar__circle[data-progress='49'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(176.4deg);
+}
+
+.sf-download-bar__circle[data-progress='50'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='50'] .sf-download-bar__circle-fill {
+    transform: rotate(90deg);
+}
+
+.sf-download-bar__circle[data-progress='50'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(180deg);
+}
+
+.sf-download-bar__circle[data-progress='51'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='51'] .sf-download-bar__circle-fill {
+    transform: rotate(91.8deg);
+}
+
+.sf-download-bar__circle[data-progress='51'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(183.6deg);
+}
+
+.sf-download-bar__circle[data-progress='52'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='52'] .sf-download-bar__circle-fill {
+    transform: rotate(93.6deg);
+}
+
+.sf-download-bar__circle[data-progress='52'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(187.2deg);
+}
+
+.sf-download-bar__circle[data-progress='53'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='53'] .sf-download-bar__circle-fill {
+    transform: rotate(95.4deg);
+}
+
+.sf-download-bar__circle[data-progress='53'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(190.8deg);
+}
+
+.sf-download-bar__circle[data-progress='54'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='54'] .sf-download-bar__circle-fill {
+    transform: rotate(97.2deg);
+}
+
+.sf-download-bar__circle[data-progress='54'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(194.4deg);
+}
+
+.sf-download-bar__circle[data-progress='55'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='55'] .sf-download-bar__circle-fill {
+    transform: rotate(99deg);
+}
+
+.sf-download-bar__circle[data-progress='55'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(198deg);
+}
+
+.sf-download-bar__circle[data-progress='56'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='56'] .sf-download-bar__circle-fill {
+    transform: rotate(100.8deg);
+}
+
+.sf-download-bar__circle[data-progress='56'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(201.6deg);
+}
+
+.sf-download-bar__circle[data-progress='57'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='57'] .sf-download-bar__circle-fill {
+    transform: rotate(102.6deg);
+}
+
+.sf-download-bar__circle[data-progress='57'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(205.2deg);
+}
+
+.sf-download-bar__circle[data-progress='58'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='58'] .sf-download-bar__circle-fill {
+    transform: rotate(104.4deg);
+}
+
+.sf-download-bar__circle[data-progress='58'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(208.8deg);
+}
+
+.sf-download-bar__circle[data-progress='59'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='59'] .sf-download-bar__circle-fill {
+    transform: rotate(106.2deg);
+}
+
+.sf-download-bar__circle[data-progress='59'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(212.4deg);
+}
+
+.sf-download-bar__circle[data-progress='60'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='60'] .sf-download-bar__circle-fill {
+    transform: rotate(108deg);
+}
+
+.sf-download-bar__circle[data-progress='60'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(216deg);
+}
+
+.sf-download-bar__circle[data-progress='61'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='61'] .sf-download-bar__circle-fill {
+    transform: rotate(109.8deg);
+}
+
+.sf-download-bar__circle[data-progress='61'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(219.6deg);
+}
+
+.sf-download-bar__circle[data-progress='62'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='62'] .sf-download-bar__circle-fill {
+    transform: rotate(111.6deg);
+}
+
+.sf-download-bar__circle[data-progress='62'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(223.2deg);
+}
+
+.sf-download-bar__circle[data-progress='63'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='63'] .sf-download-bar__circle-fill {
+    transform: rotate(113.4deg);
+}
+
+.sf-download-bar__circle[data-progress='63'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(226.8deg);
+}
+
+.sf-download-bar__circle[data-progress='64'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='64'] .sf-download-bar__circle-fill {
+    transform: rotate(115.2deg);
+}
+
+.sf-download-bar__circle[data-progress='64'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(230.4deg);
+}
+
+.sf-download-bar__circle[data-progress='65'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='65'] .sf-download-bar__circle-fill {
+    transform: rotate(117deg);
+}
+
+.sf-download-bar__circle[data-progress='65'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(234deg);
+}
+
+.sf-download-bar__circle[data-progress='66'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='66'] .sf-download-bar__circle-fill {
+    transform: rotate(118.8deg);
+}
+
+.sf-download-bar__circle[data-progress='66'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(237.6deg);
+}
+
+.sf-download-bar__circle[data-progress='67'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='67'] .sf-download-bar__circle-fill {
+    transform: rotate(120.6deg);
+}
+
+.sf-download-bar__circle[data-progress='67'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(241.2deg);
+}
+
+.sf-download-bar__circle[data-progress='68'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='68'] .sf-download-bar__circle-fill {
+    transform: rotate(122.4deg);
+}
+
+.sf-download-bar__circle[data-progress='68'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(244.8deg);
+}
+
+.sf-download-bar__circle[data-progress='69'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='69'] .sf-download-bar__circle-fill {
+    transform: rotate(124.2deg);
+}
+
+.sf-download-bar__circle[data-progress='69'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(248.4deg);
+}
+
+.sf-download-bar__circle[data-progress='70'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='70'] .sf-download-bar__circle-fill {
+    transform: rotate(126deg);
+}
+
+.sf-download-bar__circle[data-progress='70'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(252deg);
+}
+
+.sf-download-bar__circle[data-progress='71'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='71'] .sf-download-bar__circle-fill {
+    transform: rotate(127.8deg);
+}
+
+.sf-download-bar__circle[data-progress='71'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(255.6deg);
+}
+
+.sf-download-bar__circle[data-progress='72'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='72'] .sf-download-bar__circle-fill {
+    transform: rotate(129.6deg);
+}
+
+.sf-download-bar__circle[data-progress='72'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(259.2deg);
+}
+
+.sf-download-bar__circle[data-progress='73'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='73'] .sf-download-bar__circle-fill {
+    transform: rotate(131.4deg);
+}
+
+.sf-download-bar__circle[data-progress='73'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(262.8deg);
+}
+
+.sf-download-bar__circle[data-progress='74'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='74'] .sf-download-bar__circle-fill {
+    transform: rotate(133.2deg);
+}
+
+.sf-download-bar__circle[data-progress='74'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(266.4deg);
+}
+
+.sf-download-bar__circle[data-progress='75'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='75'] .sf-download-bar__circle-fill {
+    transform: rotate(135deg);
+}
+
+.sf-download-bar__circle[data-progress='75'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(270deg);
+}
+
+.sf-download-bar__circle[data-progress='76'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='76'] .sf-download-bar__circle-fill {
+    transform: rotate(136.8deg);
+}
+
+.sf-download-bar__circle[data-progress='76'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(273.6deg);
+}
+
+.sf-download-bar__circle[data-progress='77'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='77'] .sf-download-bar__circle-fill {
+    transform: rotate(138.6deg);
+}
+
+.sf-download-bar__circle[data-progress='77'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(277.2deg);
+}
+
+.sf-download-bar__circle[data-progress='78'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='78'] .sf-download-bar__circle-fill {
+    transform: rotate(140.4deg);
+}
+
+.sf-download-bar__circle[data-progress='78'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(280.8deg);
+}
+
+.sf-download-bar__circle[data-progress='79'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='79'] .sf-download-bar__circle-fill {
+    transform: rotate(142.2deg);
+}
+
+.sf-download-bar__circle[data-progress='79'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(284.4deg);
+}
+
+.sf-download-bar__circle[data-progress='80'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='80'] .sf-download-bar__circle-fill {
+    transform: rotate(144deg);
+}
+
+.sf-download-bar__circle[data-progress='80'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(288deg);
+}
+
+.sf-download-bar__circle[data-progress='81'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='81'] .sf-download-bar__circle-fill {
+    transform: rotate(145.8deg);
+}
+
+.sf-download-bar__circle[data-progress='81'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(291.6deg);
+}
+
+.sf-download-bar__circle[data-progress='82'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='82'] .sf-download-bar__circle-fill {
+    transform: rotate(147.6deg);
+}
+
+.sf-download-bar__circle[data-progress='82'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(295.2deg);
+}
+
+.sf-download-bar__circle[data-progress='83'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='83'] .sf-download-bar__circle-fill {
+    transform: rotate(149.4deg);
+}
+
+.sf-download-bar__circle[data-progress='83'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(298.8deg);
+}
+
+.sf-download-bar__circle[data-progress='84'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='84'] .sf-download-bar__circle-fill {
+    transform: rotate(151.2deg);
+}
+
+.sf-download-bar__circle[data-progress='84'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(302.4deg);
+}
+
+.sf-download-bar__circle[data-progress='85'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='85'] .sf-download-bar__circle-fill {
+    transform: rotate(153deg);
+}
+
+.sf-download-bar__circle[data-progress='85'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(306deg);
+}
+
+.sf-download-bar__circle[data-progress='86'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='86'] .sf-download-bar__circle-fill {
+    transform: rotate(154.8deg);
+}
+
+.sf-download-bar__circle[data-progress='86'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(309.6deg);
+}
+
+.sf-download-bar__circle[data-progress='87'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='87'] .sf-download-bar__circle-fill {
+    transform: rotate(156.6deg);
+}
+
+.sf-download-bar__circle[data-progress='87'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(313.2deg);
+}
+
+.sf-download-bar__circle[data-progress='88'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='88'] .sf-download-bar__circle-fill {
+    transform: rotate(158.4deg);
+}
+
+.sf-download-bar__circle[data-progress='88'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(316.8deg);
+}
+
+.sf-download-bar__circle[data-progress='89'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='89'] .sf-download-bar__circle-fill {
+    transform: rotate(160.2deg);
+}
+
+.sf-download-bar__circle[data-progress='89'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(320.4deg);
+}
+
+.sf-download-bar__circle[data-progress='90'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='90'] .sf-download-bar__circle-fill {
+    transform: rotate(162deg);
+}
+
+.sf-download-bar__circle[data-progress='90'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(324deg);
+}
+
+.sf-download-bar__circle[data-progress='91'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='91'] .sf-download-bar__circle-fill {
+    transform: rotate(163.8deg);
+}
+
+.sf-download-bar__circle[data-progress='91'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(327.6deg);
+}
+
+.sf-download-bar__circle[data-progress='92'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='92'] .sf-download-bar__circle-fill {
+    transform: rotate(165.6deg);
+}
+
+.sf-download-bar__circle[data-progress='92'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(331.2deg);
+}
+
+.sf-download-bar__circle[data-progress='93'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='93'] .sf-download-bar__circle-fill {
+    transform: rotate(167.4deg);
+}
+
+.sf-download-bar__circle[data-progress='93'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(334.8deg);
+}
+
+.sf-download-bar__circle[data-progress='94'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='94'] .sf-download-bar__circle-fill {
+    transform: rotate(169.2deg);
+}
+
+.sf-download-bar__circle[data-progress='94'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(338.4deg);
+}
+
+.sf-download-bar__circle[data-progress='95'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='95'] .sf-download-bar__circle-fill {
+    transform: rotate(171deg);
+}
+
+.sf-download-bar__circle[data-progress='95'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(342deg);
+}
+
+.sf-download-bar__circle[data-progress='96'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='96'] .sf-download-bar__circle-fill {
+    transform: rotate(172.8deg);
+}
+
+.sf-download-bar__circle[data-progress='96'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(345.6deg);
+}
+
+.sf-download-bar__circle[data-progress='97'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='97'] .sf-download-bar__circle-fill {
+    transform: rotate(174.6deg);
+}
+
+.sf-download-bar__circle[data-progress='97'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(349.2deg);
+}
+
+.sf-download-bar__circle[data-progress='98'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='98'] .sf-download-bar__circle-fill {
+    transform: rotate(176.4deg);
+}
+
+.sf-download-bar__circle[data-progress='98'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(352.8deg);
+}
+
+.sf-download-bar__circle[data-progress='99'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='99'] .sf-download-bar__circle-fill {
+    transform: rotate(178.2deg);
+}
+
+.sf-download-bar__circle[data-progress='99'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(356.4deg);
+}
+
+.sf-download-bar__circle[data-progress='100'] .sf-download-bar__circle-slice.sf-download-bar__circle-slice_view_full,
+.sf-download-bar__circle[data-progress='100'] .sf-download-bar__circle-fill {
+    transform: rotate(180deg);
+}
+
+.sf-download-bar__circle[data-progress='100'] .sf-download-bar__circle-fill.sf-download-bar__circle-bar {
+    transform: rotate(360deg);
+}
+
+.sf-download-bar {
+    position: fixed;
+    right: 110px;
+    bottom: 100px;
+    z-index: 99999;
+
+    width: 64px;
+    height: 64px;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+
+    transition: width, height, right, 0.2s;
+
+    border-radius: 50%;
+}
+
+.sf-download-bar_opened_yes {
+    width: 184px;
+
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+
+    box-shadow: 0px 0px 18px rgba(49, 51, 106, 0.15);
+}
+
+.sf-download-bar_hide_yes {
+    right: -64px;
+}
+
+.sf-download-bar__head {
+    position: relative;
+    z-index: 10;
+
+    display: block;
+    white-space: nowrap;
+
+    width: 100%;
+    height: 64px;
+
+    outline: none;
+    text-align: center;
+    text-decoration: none;
+
+    background: #5181B8;
+    border-radius: 100px;
+    box-shadow: none;
+}
+
+/* .sf-download-bar:not(.sf-download-bar_opened_yes) .sf-download-bar__head {
+    box-shadow: 0px 0px 18px rgba(49, 51, 106, 0.15);
+} */
+
+.sf-download-bar__head:after {
+    content: '';
+    width: 64px;
+    height: 64px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: #5181B8;
+    border-radius: 100px;
+    transition: width, height, left, top, 0.2s;
+}
+
+.sf-download-bar:not(.sf-download-bar_opened_yes):hover .sf-download-bar__head:after {
+    width: 68px;
+    height: 68px;
+    top: -2px;
+    left: -2px;
+    box-shadow: 0px 0px 18px rgba(49, 51, 106, 0.15);
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__head:after {
+    opacity: 0;
+    display: none;
+}
+
+.sf-download-bar__ticker {
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    width: 17px;
+    height: 17px;
+
+    background: #FF734C;
+    border-radius: 100px;
+
+    color: #fff;
+    text-align: center;
+    line-height: 17px;
+    font-size: 10px;
+    font-weight: bold;
+
+    transition: opacity 0.2s;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__ticker {
+    opacity: 0;
+}
+
+.sf-download-bar__ticker-big {
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    width: 40px;
+    height: 40px;
+    ;
+
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+
+    transition: opacity 0.2s;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__ticker-big {
+    opacity: 1;
+}
+
+.sf-download-bar__circle svg {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    margin: -7px 0 0 -5px;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__circle svg {
+    opacity: 0;
+}
+
+.sf-download-bar__content {
+    overflow: hidden;
+}
+
+.sf-download-bar__text {
+    opacity: 0.6;
+
+    color: #fff;
+    font-size: 11px;
+    text-align: center;
+    line-height: 64px;
+
+    overflow: hidden;
+
+    margin-left: -90px;
+    margin-right: 26px;
+
+    width: 64px;
+    height: 64px;
+
+    vertical-align: middle;
+    display: inline-block;
+    transition: margin-left 0.2s;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__text {
+    margin-left: 30px;
+}
+
+.sf-download-bar__footer {
+    width: 100%;
+    height: 0;
+    background-color: #fff;
+    overflow-y: auto;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__footer {
+    padding-top: 32px;
+    margin-top: -32px;
+}
+
+.sf-download-bar__stop {
+    opacity: 0.5;
+    width: 8px;
+    height: 8px;
+    visibility: hidden;
+    margin-right: 7px;
+    margin-left: 15px;
+    margin-top: 6px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.sf-download-bar__stop:hover {
+    opacity: 1;
+}
+
+.sf-download-bar__item {
+    overflow: hidden;
+    height: 48px;
+    line-height: 40px;
+    transition: background-color 0.1s;
+}
+
+.sf-download-bar__item:first-child {
+    margin-top: 5px;
+}
+
+.sf-download-bar__item:hover {
+    background-color: #E9EDF1;
+}
+
+.sf-download-bar__item:hover .sf-download-bar__stop {
+    visibility: visible;
+}
+
+.sf-download-bar__item-info {
+    height: 30px;
+    position: relative;
+    display: inline-block;
+    width: 135px;
+}
+
+.sf-download-bar__item-name {
+    line-height: 1em;
+    font-size: 11px;
+    color: #000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.sf-download-bar__item-progress,
+.sf-download-bar__item-progress-bg {
+    position: absolute;
+    top: 18px;
+    left: 0;
+    height: 1px;
+}
+
+.sf-download-bar__item-progress-bg {
+    width: 100%;
+    background-color: #E7E8EC;
+    z-index: 1;
+}
+
+.sf-download-bar__item-progress {
+    width: 0;
+    background-color: #5181B8;
+    z-index: 2;
+}
+
+.sf-download-bar__cancel {
+    display: none;
+    height: 40px;
+    line-height: 40px;
+    color: #5181B8;
+    font-size: 9px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background: #fff;
+}
+
+.sf-download-bar_opened_yes .sf-download-bar__cancel {
+    display: block;
+}
+
+.sf-download-bar__cancel:hover {
+    text-decoration: none;
+    background-color: #5181B8;
+    color: #fff;
+}
+</style><div class="sf-download-bar sf-download-bar_hide_yes"><a href="https://docs.phpdoc.org/guides/docblocks.html#" class="sf-download-bar__head"><div class="sf-download-bar__ticker">1</div><div class="sf-download-bar__content"><div class="sf-download-bar__text">Downloading</div><div class="sf-download-bar__circle" data-progress="0"><div class="sf-download-bar__ticker-big">1</div><svg width="16" height="16" viewBox="0 0 16 16"><path d="M0 13.3623H11.0043V11.7903H0V13.3623ZM11.0043 4.71611H7.86018V0H3.14407V4.71611H0L5.50213 10.2182L11.0043 4.71611Z" fill="#fff"></path></svg><div class="sf-download-bar__circle-slice sf-download-bar__circle-slice_view_full"><div class="sf-download-bar__circle-fill"></div></div><div class="sf-download-bar__circle-slice"><div class="sf-download-bar__circle-fill"></div><div class="sf-download-bar__circle-fill sf-download-bar__circle-bar"></div></div><div class="sf-download-bar__circle-overlay"></div></div></div></a><div class="sf-download-bar__footer"><div class="sf-download-bar__list"></div></div><a href="https://docs.phpdoc.org/guides/docblocks.html#" class="sf-download-bar__cancel">Cancel all downloads</a></div></body></html>

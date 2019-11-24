@@ -43,7 +43,6 @@ class Profile_About_Repo_Impl implements Profile_About_Repo_I
         }
         return  $updateStatus;
     }
-
     public function delete($id)
     {
         error_log("About : delete");
@@ -56,6 +55,14 @@ class Profile_About_Repo_Impl implements Profile_About_Repo_I
         $data = ProfileAbout::find($id);
         return $data;
     }
+
+    public function findAboutByUser($userID)
+    {
+        error_log(" findAboutByUser : ");
+        $data = ProfileAbout::where('user_id', $userID)->first();
+        return $data;
+    }
+
 
     private function setPostValues(ProfileAbout $aboutOrgin,  ProfileAbout $profileAboutUpdate)
     {

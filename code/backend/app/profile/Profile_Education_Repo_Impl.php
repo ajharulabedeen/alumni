@@ -25,15 +25,16 @@ class Profile_Education_Repo_Impl implements Profile_Education_Repo_I
         error_log("Education :  Update");
         $updateStatus = false;
         try {
-            $basic_id = $educationUpdate->id;
-            $basicOrgin = ProfileEducation::find($basic_id);
-            $basicOrgin = $educationUpdate;
-            $basicOrgin->update();
+            $education_id = $educationUpdate->id;
+            $educationOrgin = ProfileEducation::find($education_id);
+            $educationOrgin = $educationUpdate;
+            $educationOrgin->update();
             $updateStatus = true;
         } catch (Exception $e) {
             error_log("Profile Education Update : failed to read existig Education.");
             return  $updateStatus;
         }
+        // return  ["updateStatus" => $updateStatus];
         return  $updateStatus;
     }
     public function delete($id)

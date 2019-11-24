@@ -5,6 +5,15 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" href="#education">Education</a>
+        <button class="btn btn-primary btn-xs" *ngIf="!edit" (click)="editEducation()">Edit</button>
+        <button class="btn btn-primary btn-xs" *ngIf="edit" (click)="update()">
+          Update
+          <!-- {{ basicExist ? 'Update' : 'Save' }} -->
+        </button>
+        <button class="btn btn-danger btn-xs" *ngIf="edit" (click)="editEducation()">Cancel</button>
+        <button class="btn btn-warnning btn-xs" *ngIf="edit" (click)="save()">
+          Save
+        </button>
       </h4>
     </div>
     <div id="education" class="panel-collapse collapse">
@@ -25,52 +34,16 @@
                     <th>Result</th>
                     <th>Operation</th>
                   </tr>
-                  <tr>
-                    <td>1</td>
-                    <td>SSC</td>
-                    <td>Sahapur High School</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-success">A+</span></td>
+                  <tr *ngFor="let e of educations; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{e.degree_name}}</td>
+                    <td>{{e.institue_name}}</td>
+                    <td>{{e.passing_year}}</td>
+                    <td><span class="label label-success">{{e.result}}</span></td>
                     <td>
-                      <button class="btn btn-xs btn-primary" data-toggle="modal"
-                        data-target="#modal_education">Edit</button>
-                      <button class="btn btn-xs btn-warning">Delete</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>HSC</td>
-                    <td>S M Collage</td>
-                    <td>11-7-2016</td>
-                    <td><span class="label label-success">A-</span></td>
-                    <td>
-                      <button class="btn btn-xs btn-primary" data-toggle="modal"
-                        data-target="#modal_education">Edit</button>
-                      <button class="btn btn-xs btn-warning">Delete</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>BSC</td>
-                    <td>Green University of Bangladesh</td>
-                    <td>11-7-2020</td>
-                    <td><span class="label label-success">A+</span></td>
-                    <td>
-                      <button class="btn btn-xs btn-primary" data-toggle="modal"
-                        data-target="#modal_education">Edit</button>
-                      <button class="btn btn-xs btn-warning">Delete</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>Phd</td>
-                    <td>GUB</td>
-                    <td>11-7-2014</td>
-                    <td><span class="label label-success">On Going..</span></td>
-                    <td>
-                      <button class="btn btn-xs btn-primary" data-toggle="modal"
-                        data-target="#modal_education">Edit</button>
-                      <button class="btn btn-xs btn-warning">Delete</button>
+                      <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#modal_education"
+                        (click)="update(e)">Edit</button>
+                      <button class="btn btn-xs btn-warning" (click)="delete(e.id)">Delete</button>
                     </td>
                   </tr>
                 </tbody>
@@ -86,6 +59,8 @@
   </div>
 </div>
 
+
+
 <!-- Modal  Education-->
 <div class="modal fade" id="modal_education" tabindex="-1" role="dialog" aria-labelledby="modal_educationLabel"
   aria-hidden="true">
@@ -98,26 +73,29 @@
         </button>
       </div>
       <div class="modal-body">
-
         <div class="form-group">
-          <label>Degre Name</label>
-          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+          <label>Degree Name</label>
+          <input [(ngModel)]="degree_name" [disabled]='!edit' type="text" class="form-control"
+            placeholder="Enter Degree Name... (Max : 512 Character)">
         </div>
         <div class="form-group">
           <label>Institute Name</label>
-          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+          <input [(ngModel)]="institue_name" [disabled]='!edit' type="text" class="form-control"
+            placeholder="Enter Institute Name...... (Max : 512 Character)">
         </div>
         <div class="form-group">
           <label>Passing Year</label>
-          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+          <input [(ngModel)]="passing_year" [disabled]='!edit' type="text" class="form-control"
+            placeholder="Enter Passing Year ...... (Max : 512 Character)">
         </div>
         <div class="form-group">
           <label>Result</label>
-          <input [disabled]='!profileEdit' type="text" class="form-control" placeholder="Enter ...">
+          <input [(ngModel)]="result" [disabled]='!edit' type="text" class="form-control"
+            placeholder="Enter Result...... (Max : 512 Character)">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Add New</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="save()">Save</button>
         </div>
       </div>
     </div>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://www.tutorialspoint.com/typescript/typescript_array_push.htm -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./TypeScript - Array push() - Tutorialspoint_files/publishertag.prebid.js.download"></script><style type="text/css">.mui-textfield.mui-textfield--float-label > label {-webkit-transition:all .15s ease-out;-moz-transition:all .15s ease-out;-o-transition:all .15s ease-out;transition:all .15s ease-out;}</style><style type="text/css">@keyframes mui-btn-inserted{from{transform:none;}to{transform:none;}}.mui-btn{animation-duration:0.0001s;animation-name:mui-btn-inserted;}@keyframes mui-dropdown-inserted{from{transform:none;}to{transform:none;}}[data-mui-toggle="dropdown"]{animation-duration:0.0001s;animation-name:mui-dropdown-inserted;}@keyframes mui-btn-inserted,mui-dropdown-inserted{from{transform:none;}to{transform:none;}}.mui-btn[data-mui-toggle="dropdown"]{animation-duration:0.0001s;animation-name:mui-btn-inserted,mui-dropdown-inserted;}@keyframes mui-tab-inserted{from{transform:none;}to{transform:none;}}[data-mui-toggle="tab"]{animation-duration:0.0001s;animation-name:mui-tab-inserted;}@keyframes mui-textfield-inserted{from{transform:none;}to{transform:none;}}.mui-textfield > input{animation-duration:0.0001s;animation-name:mui-textfield-inserted;}@keyframes mui-textfield-inserted{from{transform:none;}to{transform:none;}}.mui-textfield > textarea{animation-duration:0.0001s;animation-name:mui-textfield-inserted;}@keyframes mui-select-inserted{from{transform:none;}to{transform:none;}}.mui-select > select{animation-duration:0.0001s;animation-name:mui-select-inserted;}@keyframes mui-node-inserted{from{transform:none;}to{transform:none;}}.mui-select > select ~ .mui-event-trigger{animation-duration:0.0001s;animation-name:mui-node-inserted;}@keyframes mui-node-disabled{from{transform:none;}to{transform:none;}}.mui-select > select:disabled ~ .mui-event-trigger{animation-duration:0.0001s;animation-name:mui-node-disabled;}</style><style id="stndz-style"></style>
+<title>TypeScript - Array push() - Tutorialspoint</title>
+
+<meta name="description" content="TypeScript - Array push() - push() method appends the given element(s) in the last of the array and returns the length of the new array.">
+<meta name="keywords" content="C, C++, Python, Java, HTML, CSS, JavaScript, SQL, PHP, jQuery, XML, DOM, Bootstrap, Tutorials, Articles, Programming, training, learning, quiz, preferences, examples, code">
+<link rel="canonical" href="https://www.tutorialspoint.com/typescript/typescript_array_push.htm">
+<link rel="shortcut icon" href="https://www.tutorialspoint.com/favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+<link rel="stylesheet" href="./TypeScript - Array push() - Tutorialspoint_files/style-min-v1.css">
+<script type="text/javascript" async="" src="./TypeScript - Array push() - Tutorialspoint_files/analytics.js.download"></script><script src="./TypeScript - Array push() - Tutorialspoint_files/script-min-v1.js.download"></script><link rel="stylesheet" type="text/css" href="./TypeScript - Array push() - Tutorialspoint_files/prettify.css">
+<script>function printPage() { window.print(); }</script>
+<script data-cfasync="false" type="text/javascript">(function(w, d) { var s = d.createElement('script'); s.src = '//cdn.adpushup.com/40046/adpushup.js'; s.type = 'text/javascript'; s.async = true; (d.getElementsByTagName('head')[0] || d.getElementsByTagName('body')[0]).appendChild(s); })(window, document);</script><script src="./TypeScript - Array push() - Tutorialspoint_files/adpushup.js.download" type="text/javascript" async=""></script>
+<style>
+.right-menu .mui-btn {
+    background-color:#007acd;
+}
+a.demo {
+    background:#007acd;
+}
+li.heading {
+    background:#007acd;
+}
+.course-box{background:#007acd}
+.home-intro-sub p{color:#007acd}
+</style>
+<script src="./TypeScript - Array push() - Tutorialspoint_files/gpt.js.download" async=""></script></head>
+<body>
+<header id="header" class="fixed">
+<!-- Top sub-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid top-menu">
+<div class="mui-container">
+<div class="top-menu-item home">
+<a href="https://www.tutorialspoint.com/index.htm" target="_blank" title="TutorialsPoint - Home"><i class="fal fa-home"></i> <span>Home</span></a>
+</div>
+<div class="top-menu-item qa">
+<a href="https://www.tutorialspoint.com/about/about_careers.htm" target="_blank" title="Job @ Tutorials Point"><i class="fa fa-suitcase"></i> <span>Jobs</span></a>
+</div>
+<div class="top-menu-item tools">
+<a href="https://www.tutorialspoint.com/online_dev_tools.htm" target="_blank" title="Tools - Online Development and Testing Tools"><i class="fal fa-cogs"></i> <span>Tools</span></a>
+</div>
+<div class="top-menu-item coding-ground">
+<a href="https://www.tutorialspoint.com/codingground.htm" target="_blank" title="Coding Ground - Free Online IDE and Terminal"><i class="fal fa-code"></i> <span>Coding Ground </span></a> 
+</div>
+<div class="top-menu-item current-affairs">
+<a href="https://www.tutorialspoint.com/current_affairs.htm" target="_blank" title="Daily Current Affairs"><i class="fal fa-layer-plus"></i> <span>Current Affairs</span></a>
+</div>
+<div class="top-menu-item upsc-notes">
+<a href="https://www.tutorialspoint.com/upsc_ias_exams.htm" target="_blank" title="UPSC IAS Exams Notes - TutorialsPoint"><i class="fal fa-user-tie"></i> <span>UPSC Notes</span></a>
+</div>      
+<div class="top-menu-item online-tutoris">
+<a href="https://www.tutorialspoint.com/tutor_connect/index.php" target="_blank" title="Top Online Tutors - Tutor Connect"><i class="fal fa-user"></i> <span>Online Tutors</span></a>
+</div>
+<div class="top-menu-item whiteboard">
+<a href="https://www.tutorialspoint.com/whiteboard.htm" target="_blank" title="Free Online Whiteboard"><i class="fal fa-chalkboard"></i> <span>Whiteboard</span></a>
+</div>
+<div class="top-menu-item net-meeting">
+<a href="https://www.tutorialspoint.com/netmeeting.php" target="_blank" title="A free tool for online video conferencing"><i class="fal fa-chalkboard-teacher"></i> <span>Net Meeting</span></a> 
+</div>
+<div class="top-menu-item articles">
+<a href="https://www.tutorix.com/" target="_blank" title="Tutorx - The Best Learning App" rel="nofollow"><i class="fal fa-video"></i> <span>Tutorix</span></a> 
+</div>        
+<div class="social-menu-item">
+<a href="https://www.facebook.com/tutorialspointindia" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Facebook"><i class="fab fa-facebook-f"></i></a> 
+<a href="https://www.twitter.com/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Twitter"><i class="fab fa-twitter"></i></a>
+<a href="https://www.linkedin.com/company/tutorialspoint" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint @ Linkedin"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://www.youtube.com/channel/UCVLbzhxVTiTLiVKeGV7WEBg" target="_blank" rel="nofollow" data-placement="bottom" title="tutorialspoint YouTube"><i class="fab fa-youtube"></i></a>
+</div>        
+</div>
+</div>
+<!-- Top sub-menu Ends Here -->
+<!-- Top main-menu Starts Here -->
+<div class="mui-appbar mui-container-fulid mui--appbar-line-height mui--z1 sticky" id="logo-menu">
+<div class="mui-container">
+<div class="left-menu">
+<a href="https://www.tutorialspoint.com/index.htm" title="Tutorialspoint">
+<img class="tp-logo" alt="tutorialspoint" src="./TypeScript - Array push() - Tutorialspoint_files/logo.png">
+</a>
+<div class="mui-dropdown">
+<a class="mui-btn mui-btn--primary categories" data-mui-toggle="dropdown"><i class="fa fa-th-large"></i> 
+<span>Categories <span class="mui-caret"></span></span></a>            
+<ul class="mui-dropdown__menu cat-menu">
+<li>
+<ul>
+<li><a href="https://www.tutorialspoint.com/academic_tutorials.htm"><i class="fa fa-caret-right"></i> Academic Tutorials</a></li>
+<li><a href="https://www.tutorialspoint.com/big_data_tutorials.htm"><i class="fa fa-caret-right"></i> Big Data &amp; Analytics </a></li>
+<li><a href="https://www.tutorialspoint.com/computer_programming_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Programming </a></li>
+<li><a href="https://www.tutorialspoint.com/computer_science_tutorials.htm"><i class="fa fa-caret-right"></i> Computer Science </a></li>
+<li><a href="https://www.tutorialspoint.com/database_tutorials.htm"><i class="fa fa-caret-right"></i> Databases </a></li>
+<li><a href="https://www.tutorialspoint.com/devops_tutorials.htm"><i class="fa fa-caret-right"></i> DevOps </a></li>
+<li><a href="https://www.tutorialspoint.com/digital_marketing_tutorials.htm"><i class="fa fa-caret-right"></i> Digital Marketing </a></li>
+<li><a href="https://www.tutorialspoint.com/engineering_tutorials.htm"><i class="fa fa-caret-right"></i> Engineering Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> Exams Syllabus </a></li>
+<li><a href="https://www.tutorialspoint.com/famous_monuments.htm"><i class="fa fa-caret-right"></i> Famous Monuments </a></li>
+<li><a href="https://www.tutorialspoint.com/gate_exams_tutorials.htm"><i class="fa fa-caret-right"></i> GATE Exams Tutorials</a></li>
+<li><a href="https://www.tutorialspoint.com/latest_technologies.htm"><i class="fa fa-caret-right"></i> Latest Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/machine_learning_tutorials.htm"><i class="fa fa-caret-right"></i> Machine Learning </a></li>
+<li><a href="https://www.tutorialspoint.com/mainframe_tutorials.htm"><i class="fa fa-caret-right"></i> Mainframe Development </a></li>
+<li><a href="https://www.tutorialspoint.com/management_tutorials.htm"><i class="fa fa-caret-right"></i> Management Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/maths_tutorials.htm"><i class="fa fa-caret-right"></i> Mathematics Tutorials</a></li>
+<li><a href="https://www.tutorialspoint.com/microsoft_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Microsoft Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/misc_tutorials.htm"><i class="fa fa-caret-right"></i> Misc tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/mobile_development_tutorials.htm"><i class="fa fa-caret-right"></i> Mobile Development </a></li>
+<li><a href="https://www.tutorialspoint.com/java_technology_tutorials.htm"><i class="fa fa-caret-right"></i> Java Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/python_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> Python Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/sap_tutorials.htm"><i class="fa fa-caret-right"></i> SAP Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/scripting_lnaguage_tutorials.htm"><i class="fa fa-caret-right"></i>Programming Scripts </a></li>
+<li><a href="https://www.tutorialspoint.com/selected_reading.htm"><i class="fa fa-caret-right"></i> Selected Reading </a></li>
+<li><a href="https://www.tutorialspoint.com/software_quality_tutorials.htm"><i class="fa fa-caret-right"></i> Software Quality </a></li>
+<li><a href="https://www.tutorialspoint.com/soft_skill_tutorials.htm"><i class="fa fa-caret-right"></i> Soft Skills </a></li>
+<li><a href="https://www.tutorialspoint.com/telecom_tutorials.htm"><i class="fa fa-caret-right"></i> Telecom Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/upsc_ias_exams.htm"><i class="fa fa-caret-right"></i> UPSC IAS Exams </a></li>
+<li><a href="https://www.tutorialspoint.com/web_development_tutorials.htm"><i class="fa fa-caret-right"></i> Web Development </a></li>
+<li><a href="https://www.tutorialspoint.com/sports_tutorials.htm"><i class="fa fa-caret-right"></i> Sports Tutorials </a></li>
+<li><a href="https://www.tutorialspoint.com/xml_technologies_tutorials.htm"><i class="fa fa-caret-right"></i> XML Technologies </a></li>
+<li><a href="https://www.tutorialspoint.com/multi_language_tutorials.htm"><i class="fa fa-caret-right"></i> Multi-Language</a></li>
+<li><a href="https://www.tutorialspoint.com/questions_and_answers.htm"><i class="fa fa-caret-right"></i> Interview Questions</a></li>
+</ul>
+</li>
+</ul>
+<div class="clear"></div>
+</div> 
+</div>
+<div class="right-menu">
+<div class="toc-toggle">
+<a href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+</div>
+<div class="mobile-search-btn">
+<a href="https://www.tutorialspoint.com/search.htm"><i class="fal fa-search"></i></a>
+</div>
+<div class="search-box">
+<form method="get" class="search-form" name="searchform" action="https://www.google.com/search" target="_blank" novalidate="">
+<input type="hidden" name="sitesearch" value="www.tutorialspoint.com" class="user-valid valid">
+<input class="header-search-box" type="text" id="search-string" name="q" placeholder="Search your favorite tutorials..." onfocus="if (this.value == &#39;Search your favorite tutorials...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search your favorite tutorials...&#39;;}" autocomplete="off">
+<button><i class="fal fa-search"></i></button>
+</form>
+</div>
+<div class="menu-btn library-btn">
+<a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fal fa-cubes"></i> <span>Library</span></a>
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/videotutorials/index.php"><i class="fal fa-video"></i> <span>Videos</span></a> 
+</div>
+<div class="menu-btn videos-btn">
+<a href="https://www.tutorialspoint.com/questions/index.php"><i class="fa fa-location-arrow"></i> <span>Q/A</span></a>
+</div>
+<div class="menu-btn ebooks-btn">
+<a href="https://store.tutorialspoint.com/"><i class="fal fa-book"></i> <span>eBooks</span></a>
+</div>
+<div class="mui-dropdown">
+<button class="mui-btn mui-btn--primary mobile-menu" data-mui-toggle="dropdown" type="button">
+<span class="mui-caret"></span>
+</button>
+<ul class="mui-dropdown__menu">
+<li><a href="https://www.tutorialspoint.com/tutorialslibrary.htm"><i class="fal fa-cubes"></i> <span>Library</span></a></li>
+<li><a href="https://www.tutorialspoint.com/videotutorials/index.php"><i class="fal fa-video"></i> <span>Videos</span></a></li>
+<li><a href="https://store.tutorialspoint.com/"><i class="fal fa-book"></i> <span>eBooks</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Top main-menu Ends Here -->
+</header>
+<div class="mui-container-fluid content">
+<div class="mui-container">
+<!-- Tutorial ToC Starts Here -->
+<div class="mui-col-md-3 tutorial-toc">
+<div class="mini-logo">
+<img src="./TypeScript - Array push() - Tutorialspoint_files/typescript-mini-logo.jpg" alt="TypeScript Tutorial">
+</div>
+<ul class="toc chapters">
+<li class="heading">TypeScript Tutorial</li>
+<li><a href="https://www.tutorialspoint.com/typescript/index.htm">TypeScript - Home</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_overview.htm">TypeScript - Overview</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_environment_setup.htm">TypeScript - Environment Setup</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_basic_syntax.htm">TypeScript - Basic Syntax</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_types.htm">TypeScript - Types</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_variables.htm">TypeScript - Variables</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_operators.htm">TypeScript - Operators</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_decision_making.htm">TypeScript - Decision Making</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_loops.htm">TypeScript - Loops</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_functions.htm">TypeScript - Functions</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_numbers.htm">TypeScript - Numbers</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_strings.htm">TypeScript - Strings</a></li>
+<li style="background-color: rgb(214, 214, 214);"><a href="https://www.tutorialspoint.com/typescript/typescript_arrays.htm">TypeScript - Arrays</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_tuples.htm">TypeScript - Tuples</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_union.htm">TypeScript - Union</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_interfaces.htm">TypeScript - Interfaces</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_classes.htm">TypeScript - Classes</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_objects.htm">TypeScript - Objects</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_namespaces.htm">TypeScript - Namespaces</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_modules.htm">TypeScript - Modules</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_ambients.htm">TypeScript - Ambients</a></li>
+</ul>
+<ul class="toc chapters">
+<li class="heading">TypeScript Useful Resources</li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_quick_guide.htm">TypeScript - Quick Guide</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_useful_resources.htm">TypeScript - Useful Resources</a></li>
+<li><a href="https://www.tutorialspoint.com/typescript/typescript_discussion.htm">TypeScript - Discussion</a></li>
+</ul>
+<ul class="toc reading">
+<li class="sreading">Selected Reading</li>
+<li><a target="_top" href="https://www.tutorialspoint.com/upsc_ias_exams.htm">UPSC IAS Exams Notes</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/developers_best_practices/index.htm">Developer's Best Practices</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/questions_and_answers.htm">Questions and Answers</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/effective_resume_writing.htm">Effective Resume Writing</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/hr_interview_questions/index.htm">HR Interview Questions</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_glossary.htm">Computer Glossary</a></li>
+<li><a target="_top" href="https://www.tutorialspoint.com/computer_whoiswho.htm">Who is Who</a></li>
+</ul>
+<div style="height:250px;">
+<div id="00000001-1fc48287-7228-4738-90c9-7f2bf9b605b9" class="_ap_apex_ad" data-section="00000001-1fc48287-7228-4738-90c9-7f2bf9b605b9" data-orig-id="430c9911-782f-495d-88f9-69f58ca8c9a4" data-render-time="1574486792596" style="width: 300px; height: 250px; display: block; margin: 10px auto; text-align: center;" data-refresh-time="1574487715655" data-timeout="1485">
+<script>
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+adpushup.triggerAd("430c9911-782f-495d-88f9-69f58ca8c9a4");
+});
+</script>
+<div id="ADP_40046_300x250_00000001-1fc48287-7228-4738-90c9-7f2bf9b605b9">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_40046_300x250_00000001-1fc48287-7228-4738-90c9-7f2bf9b605b9");
+});
+</script>
+</div></div>
+</div>
+</div>
+<!-- Tutorial ToC Ends Here -->
+<!-- Tutorial Content Starts Here -->
+<div class="mui-col-md-6 tutorial-content" style="min-height: 1631px;">
+<h1>TypeScript - Array push()</h1>
+<hr>
+<div class="top-ad-heading">Advertisements</div>
+<div style="text-align:center;" class="google-top-ads">
+<div id="00000001-ce1b6b94-1188-4abc-b198-77fe1018108d" class="_ap_apex_ad" max-height="150" data-section="00000001-ce1b6b94-1188-4abc-b198-77fe1018108d" data-orig-id="3584b306-b0ce-4f40-8e35-2d32d6c00d35" data-render-time="1574486792599" data-refresh-time="1574487700915" data-timeout="1433" style="display: block; margin: 10px auto; text-align: center;">
+<script>
+    var adpushup = adpushup || {};
+    adpushup.que = adpushup.que || [];
+    adpushup.que.push(function() {
+         adpushup.triggerAd("3584b306-b0ce-4f40-8e35-2d32d6c00d35");
+    });
+</script>
+<div id="ADP_40046_responsivexresponsive_00000001-ce1b6b94-1188-4abc-b198-77fe1018108d">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_40046_responsivexresponsive_00000001-ce1b6b94-1188-4abc-b198-77fe1018108d");
+});
+</script>
+</div></div>
+</div>
+<div class="mui-container-fluid button-borders">
+<div class="pre-btn">
+<a href="https://www.tutorialspoint.com/typescript/typescript_arrays.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+</div>
+<div class="nxt-btn">
+<a href="https://www.tutorialspoint.com/typescript/typescript_arrays.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="clearer"></div>
+<p>push() method appends the given element(s) in the last of the array and returns the length of the new array.</p>
+<h2>Syntax</h2>
+<pre class="result notranslate">array.push(element1, ..., elementN);
+</pre>
+<h2>Parameter Details</h2>
+<p><b>element1, ..., elementN</b> − The elements to add to the end of the array.</p>
+<h2>Return Value</h2>
+<p>Returns the length of the new array.</p>
+<h2>Example</h2>
+<pre class="prettyprint notranslate tryit prettyprinted" style=""><span class="kwd">var</span><span class="pln"> numbers </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Array</span><span class="pun">(</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="lit">4</span><span class="pun">,</span><span class="pln"> </span><span class="lit">9</span><span class="pun">);</span><span class="pln"> 
+</span><span class="kwd">var</span><span class="pln"> length </span><span class="pun">=</span><span class="pln"> numbers</span><span class="pun">.</span><span class="pln">push</span><span class="pun">(</span><span class="lit">10</span><span class="pun">);</span><span class="pln"> 
+console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"new numbers is : "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> numbers </span><span class="pun">);</span><span class="pln">  
+length </span><span class="pun">=</span><span class="pln"> numbers</span><span class="pun">.</span><span class="pln">push</span><span class="pun">(</span><span class="lit">20</span><span class="pun">);</span><span class="pln"> 
+console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="str">"new numbers is : "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> numbers </span><span class="pun">);</span></pre>
+<p>On compiling, it will generate the same code in JavaScript.</p>
+<p>Its output is as follows −</p>
+<pre class="result notranslate">new numbers is : 1,4,9,10 
+new numbers is : 1,4,9,10,20
+</pre>
+<div class="parent-file">typescript_arrays.htm</div>
+<div class="mui-container-fluid button-borders show">
+<div class="pre-btn">
+<a href="https://www.tutorialspoint.com/typescript/typescript_arrays.htm"><i class="fal fa-chevron-circle-left"></i> Previous Page</a>
+<a class="hide-on-mobile" href="javascript:printPage();"><i class="fa fa-print"></i> Print Page</a>
+</div>
+<div class="nxt-btn">
+<a href="https://www.tutorialspoint.com/typescript/typescript_arrays.htm">Next Page <i class="fal fa-chevron-circle-right"></i>&nbsp;</a>
+</div>
+</div>
+<div class="google-bottom-ads">
+<div>Advertisements</div>
+<div id="00000001-35a5abc1-a121-4884-97e3-151fa24e1a11" class="_ap_apex_ad" max-height="400" data-section="00000001-35a5abc1-a121-4884-97e3-151fa24e1a11" data-orig-id="83833f5e-14e4-4e52-a07c-74e19ca35b7e" data-render-time="1574486792600" style="display: block; margin: 10px auto; text-align: center;" data-refresh-time="1574487698387" data-timeout="1409">
+<script>
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+adpushup.triggerAd("83833f5e-14e4-4e52-a07c-74e19ca35b7e");
+});
+</script>
+<div id="ADP_40046_responsivexresponsive_00000001-35a5abc1-a121-4884-97e3-151fa24e1a11">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_40046_responsivexresponsive_00000001-35a5abc1-a121-4884-97e3-151fa24e1a11");
+});
+</script>
+</div></div>
+<div class="space-bottom"></div>
+</div>
+</div>
+<!-- Tutorial Content Ends Here -->
+<!-- Right Column Starts Here -->
+<div class="mui-col-md-2 google-right-ads">
+<div class="space-top"></div>
+<div class="google-right-ad" style="margin: 0px auto !important;margin-top:5px;">
+<div id="00000001-08766109-6ed0-4f55-9de4-ce6e80f3ca29" class="_ap_apex_ad" data-section="00000001-08766109-6ed0-4f55-9de4-ce6e80f3ca29" data-orig-id="f0f6cff6-393d-4170-b63a-d9ff06ca9f25" data-render-time="1574486792602" data-refresh-time="1574487698390" data-timeout="1410" style="width: 300px; height: 250px; display: block; margin: 10px auto; text-align: center;">
+<script>
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+adpushup.triggerAd("f0f6cff6-393d-4170-b63a-d9ff06ca9f25");
+});
+</script>
+<div id="ADP_40046_300x250_00000001-08766109-6ed0-4f55-9de4-ce6e80f3ca29">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_40046_300x250_00000001-08766109-6ed0-4f55-9de4-ce6e80f3ca29");
+});
+</script>
+</div></div>
+</div>
+<div class="google-right-ad" style="margin-top:5px;">
+<div id="00000001-50f6a309-83f1-488a-922a-42ec5af7cd71" class="_ap_apex_ad" data-section="00000001-50f6a309-83f1-488a-922a-42ec5af7cd71" data-orig-id="5c0affd5-724a-475c-bfcd-cecbc7660c36" data-render-time="1574486792604" data-refresh-time="1574487698390" data-timeout="1411" style="width: 300px; height: 250px; display: block; margin: 10px auto; text-align: center;">
+<script>
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+adpushup.triggerAd("5c0affd5-724a-475c-bfcd-cecbc7660c36");
+});
+</script>
+<div id="ADP_40046_300x250_00000001-50f6a309-83f1-488a-922a-42ec5af7cd71">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_40046_300x250_00000001-50f6a309-83f1-488a-922a-42ec5af7cd71");
+});
+</script>
+</div></div>
+</div>
+<div class="google-right-ad" style="margin-top:5px;">
+<div id="00000001-039efbeb-a3b7-4070-96e0-2c6239a2bf65" class="_ap_apex_ad" data-section="00000001-039efbeb-a3b7-4070-96e0-2c6239a2bf65" data-orig-id="8f8814c2-d64c-4d26-9cb9-543653c0b48f" data-render-time="1574486792606" style="width: 300px; height: 600px; display: block; margin: 10px auto; text-align: center;" data-refresh-time="1574487715305" data-timeout="1475">
+<script>
+var adpushup = adpushup || {};
+adpushup.que = adpushup.que || [];
+adpushup.que.push(function() {
+adpushup.triggerAd("8f8814c2-d64c-4d26-9cb9-543653c0b48f");
+});
+</script>
+<div id="ADP_40046_300x600_00000001-039efbeb-a3b7-4070-96e0-2c6239a2bf65">
+<script type="text/javascript">
+window.adpushup.adpTags.que.push(function(){
+window.adpushup.adpTags.display("ADP_40046_300x600_00000001-039efbeb-a3b7-4070-96e0-2c6239a2bf65");
+});
+</script>
+</div></div>
+</div>
+<div class="space-bottom" style="margin-bottom:15px;"></div>
+</div>
+<!-- Right Column Ends Here -->
+</div>
+</div>
+<div class="clear"></div>
+<footer id="footer">
+<div class="mui--text-center">
+<div class="mui--text-caption mui--text-light">
+<a href="https://www.tutorialspoint.com/index.htm" class="logo"><img class="img-responsive" src="./TypeScript - Array push() - Tutorialspoint_files/logo-black.png" alt="Tutorials Point" title="Tutorials Point"></a>
+</div>
+<ul class="mui-list--inline mui--text-body2 mui--text-light">
+<li><a href="https://www.tutorialspoint.com/about/index.htm"><i class="fal fa-globe"></i> About us</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_terms_of_use.htm"><i class="fal fa-asterisk"></i> Terms of use</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_privacy.htm"> <i class="fal fa-shield-check"></i> Privacy Policy</a></li>
+<li><a href="https://www.tutorialspoint.com/about/faq.htm"><i class="fal fa-question-circle"></i> FAQ's</a></li>
+<li><a href="https://www.tutorialspoint.com/about/about_helping.htm"><i class="fal fa-hands-helping"></i> Helping</a></li>
+<li><a href="https://www.tutorialspoint.com/about/contact_us.htm"><i class="fal fa-map-marker-alt"></i> Contact</a></li>
+</ul>
+<div class="mui--text-caption mui--text-light bottom-copyright-text">© Copyright 2019. All Rights Reserved.</div>
+</div>
+<script async="" src="./TypeScript - Array push() - Tutorialspoint_files/js"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-232293-6');
+</script>
+</footer>
+
+
+</body><iframe sandbox="allow-scripts allow-same-origin" id="70317f53a7df86f" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="height:0px;width:0px;display:none;" scrolling="no" src="./TypeScript - Array push() - Tutorialspoint_files/index.html">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="717b20bfc9cd771" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="visibility: hidden !important;height:0px;width:0px;display:none;" scrolling="no" src="./TypeScript - Array push() - Tutorialspoint_files/showad.html" stndz-blocked="">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="72845cf19c06718" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="visibility: hidden !important;height:0px;width:0px;display:none;" scrolling="no" src="./TypeScript - Array push() - Tutorialspoint_files/usync.html" stndz-blocked="">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="73fc3a9e068d5f9" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="visibility: hidden !important;height:0px;width:0px;display:none;" scrolling="no" src="./TypeScript - Array push() - Tutorialspoint_files/async_usersync.html" stndz-blocked="">
+    </iframe><iframe sandbox="allow-scripts allow-same-origin" id="74016832f21cc2c" frameborder="0" allowtransparency="true" marginheight="0" marginwidth="0" width="0" hspace="0" vspace="0" height="0" style="visibility: hidden !important;height:0px;width:0px;display:none;" scrolling="no" src="./TypeScript - Array push() - Tutorialspoint_files/async_usersync(1).html" stndz-blocked="">
+    </iframe></html>

@@ -1,5 +1,9 @@
 <header class="main-header">
 
+  <!-- <marquee direction="scroll" ><h6 style="background-color: yellow">Alpha</h6></marquee> -->
+  <marquee direction="scroll"><span style="background-color: yellow"> <a
+        href="https://en.wikipedia.org/wiki/Software_release_life_cycle">Alpha : Pre Realse</a> </span></marquee>
+
   <!-- Logo -->
   <a href="index2.html" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -7,9 +11,6 @@
     <!-- logo for regular state and mobile devices -->
     <span class="logo-lg"><b>Alumni</b>LTE GUB</span>
   </a>
-
-
-
 
   <!-- Header Navbar: style can be found in header.less -->
   <nav class="navbar navbar-static-top">
@@ -33,7 +34,7 @@
           <button class="btn btn-danger">Forgot Password</button>
           <button class="btn btn-warning">Register</button>
         </li> -->
-        <!-- <li *ngIf="loginButton"> 
+        <!-- <li *ngIf="loginButton">
           <button class="btn btn-info" (click)="logginTryToggle()">
             Loggin
           </button>
@@ -45,7 +46,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <img *ngIf="!loginSuccess" src="assets/dist/img/images.png" class="user-image" alt="User Image">
             <img *ngIf="loginSuccess" src={{imageUrl}} class="user-image" alt="User Image">
-            
+
             <span *ngIf="!loginSuccess" class="hidden-xs">Loggin</span>
             <span *ngIf="loginSuccess" class="hidden-xs">Name of The User</span>
           </a>

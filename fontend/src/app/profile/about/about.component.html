@@ -5,11 +5,21 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" href="#about_me">About Me</a>
+        <button class="btn btn-primary btn-xs" *ngIf="!aboutEdit" (click)="editAbout()">Edit</button>
+        <button class="btn btn-primary btn-xs" *ngIf="aboutEdit" (click)="update()">
+          Update
+          <!-- {{ basicExist ? 'Update' : 'Save' }} -->
+        </button>
+        <button class="btn btn-danger btn-xs" *ngIf="aboutEdit" (click)="editAbout()">Cancel</button>
+        <button class="btn btn-warnning btn-xs" *ngIf="aboutEdit" (click)="save()">
+          Save
+        </button>
       </h4>
     </div>
     <div id="about_me" class="panel-collapse collapse">
       <div class="panel-body">
-        <textarea [disabled]='!profileEdit' class="form-control" rows="3" placeholder="Enter ...">
+        <textarea [(ngModel)]="about_me" [disabled]='!aboutEdit' class="form-control" rows="3"
+          placeholder="Enter ...">
                   I am slow waker but never come back.
           </textarea>
       </div>

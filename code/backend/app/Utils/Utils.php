@@ -5,8 +5,12 @@ use PHPUnit\Framework\Exception;
 
 class Utils{
 
+    /**
+     *  @return userID userID of the current logged user will be back. Not the email address, it is the primary key.
+     *  @uses   for security purpose, so out the system, will not able to logged in.
+     */
     public static function getUserId(){
-        // $currentLoggedMail = "gub.cse.files@gmail.com";
+        // $currentLoggedMail = "gub.cse.+files@gmail.com";
         $currentLoggedMail = auth()->user()->email;
         error_log("currentLoggedMail : " . $currentLoggedMail);
         try{

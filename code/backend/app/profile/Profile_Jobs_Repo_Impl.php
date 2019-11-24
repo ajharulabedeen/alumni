@@ -2,7 +2,7 @@
 
 namespace App\profile;
 
-use App\profile\ProfileEducation;
+use App\profile\ProfileJobs;
 
 class Profile_Jobs_Repo_Impl implements Profile_Jobs_Repo_I
 {
@@ -50,7 +50,7 @@ class Profile_Jobs_Repo_Impl implements Profile_Jobs_Repo_I
     }
 
     public function getAllJobs( $userID){
-        return ProfileJobds::where('user_id', $userID)->get();
+        return ProfileJobs::where('user_id', $userID)->get();
     }
 
 }//class

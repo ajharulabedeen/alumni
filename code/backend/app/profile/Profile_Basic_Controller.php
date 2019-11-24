@@ -28,7 +28,7 @@ class Profile_Basic_Controller extends Controller
     {
         $pBasic = new ProfileBasic();
         $pBasic->user_id = Utils::getUserId(); //error//refactor
-        error_log( "Profile  : " . $pBasic->user_id);
+        error_log("Profile  : " . $pBasic->user_id);
         $basic = $this->basicRepo->findOneByUser($pBasic->user_id);
 
         if ($basic != null) {
@@ -55,7 +55,7 @@ class Profile_Basic_Controller extends Controller
             $pBasic->social_media_link  = $r->social_media_link;
 
             $id = $this->basicRepo->save($pBasic);
-        }//else
+        } //else
 
         // return $this->basicRepo->save($pBasic);
         return $id;
@@ -63,16 +63,8 @@ class Profile_Basic_Controller extends Controller
 
     public function findOneByUserID(Request $r)
     {
-
         //user have to logged in.
         $user_id = Utils::getUserId();
-        error_log($r->user_id);
-        // $r->user_id='2';
-        error_log($r->user_id);
-
-        $data = $this->basicRepo->findOneByUser($r->user_id);
-        error_log($data->id);
-        // return response($this->basicRepo->findOneByUser($r->user_id));
         return response($this->basicRepo->findOneByUser($user_id));
     }
 
@@ -80,10 +72,12 @@ class Profile_Basic_Controller extends Controller
     public function update(Request $r)
     {
         $basicUpdate = new ProfileBasic();
-        $basicUpdate = $this->basicRepo->findOneByUser($r->user_id);
-        // $basicUpdate->user_id = Utils::getUserId();//error//refactor
+        $user_id = Utils::getUserId();
+        $basicUpdate = $this->basicRepo->findOneByUser($user_id);
         // $basicUpdate->id         = $data->id;
         // $basicUpdate->user_id    = $data->user_id;
+        // error_log(" r->dept : " . $r->dept);
+        // error_log(" exiting->dept : " . $basicUpdate->dept);
         $basicUpdate->dept       = $r->dept;
         $basicUpdate->batch      = $r->batch;
         $basicUpdate->student_id = $r->student_id;
