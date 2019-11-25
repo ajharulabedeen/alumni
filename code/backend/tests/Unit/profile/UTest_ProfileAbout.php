@@ -23,12 +23,12 @@ class UTest_ProfileBasicRepo extends TestCase
     public function testMain()
     {
         echo "\n >----------- Test Main : ---------> \n";
-        // error_log($this->save());
+        error_log("About ID : " . $this->save());
         // $this->update();
         // $this->delete(2);
         // $this->findOne(2);
         // $this->getCurrentLoggedUserID();
-        $this->findAboutByUserID(2);
+        // $this->findAboutByUserID(23);
     } //main test
     public function AboutCRUD()
     {
@@ -73,8 +73,9 @@ class UTest_ProfileBasicRepo extends TestCase
         error_log("--Save Test: ");
         $repoProfileAbout =  new Profile_About_Repo_Impl();
         $proAbout = new ProfileAbout();
-        $proAbout->user_id = Utils::getUserId();;
-        $proAbout->about_me = "This is test about!";
+        // $proAbout->user_id = Utils::getUserId();;
+        $proAbout->user_id = "4";
+        $proAbout->about_me = "Sajib : This is test about!";
         $id = $repoProfileAbout->save($proAbout);
         return $id;
     }

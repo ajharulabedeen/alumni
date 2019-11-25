@@ -4,23 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UploadFileController extends Controller
+class Profile_Photo_Controller extends Controller
 {
     public function __construct()
     {
         error_log("Constructor : upload");
         // $this->middleware('auth:api', ['except' => ['uploadfile']]);
-        $this->middleware('auth:api', ['except' => ['uploadfile']]);
         error_log("Constructor after : upload");
     }
 
 
-    public function update(request $request)
+    public function upload(request $request)
     {
-        error_log($request->hasFile('photo'));
-        error_log($request->photo);
-
-        $fileName = $request->photo->getClientOriginalName();
+        $extension = $request->file('photo')->extension();
+        $fileName = auth()->user()->email;
+        $fileName =  $fileName . "." . $extension;
 
         if ($request->hasFile('photo')) {
             error_log("FILE RECEIVED!");
@@ -30,6 +28,7 @@ class UploadFileController extends Controller
 
     public function getFile()
     {
-        return response()->download(storage_path('app/public/' . 'avatar.jpg'), null, [], null);
+        $fileName = auth()->user()->email;
+        return response()->download(storage_path('app/public/' . '$fileName'), null, [], null);
     }
 }//class
