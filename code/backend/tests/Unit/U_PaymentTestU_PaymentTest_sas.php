@@ -20,7 +20,14 @@ class U_PaymentTest extends TestCase
         $repoPayment = new Payment_Type_Repo_Impl();
         $p = new PaymentType();
         error_log(" Name Before Set : "  . $p->name);
-        $p->name = "Seminar 101!";
+
+        $p->name = "Seminar 106!";
+        $p->description = "nice";
+        $p->last_date = "23/3/2019";
+        $p->Start_date = "23/3/2019";
+        $p->amount = "453";
+        
+
         error_log("Name after set : "  . $p->name);
         dd($repoPayment->create($p));
         $this->assertTrue(true);
@@ -31,9 +38,14 @@ class U_PaymentTest extends TestCase
 
         $repoPayment = new Payment_Type_Repo_Impl();
         $p = new PaymentType();
-        $p = $repoPayment->findOnePaymentType(2);
+        $p = $repoPayment->findOnePaymentType(3);
 
-        $p->name = "Seminar 104!";
+        $p->name = "Seminar 109!";
+        $p->description = "nice man";
+        $p->last_date = "27/3/2019";
+        $p->Start_date = "26/3/2019";
+        $p->amount = "500";
+
         dd($repoPayment->update($p));
         $this->assertTrue(true);
         
