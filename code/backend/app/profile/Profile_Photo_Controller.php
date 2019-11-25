@@ -27,7 +27,6 @@ class Profile_Photo_Controller extends Controller
         }
 
         $savedPhotoName = $request->photo->storeAs('public', $fileName);
-        $profileBasic = new ProfileBasic();
         $profileBasic = $this->basicRepo->findOneByUser(Utils::getUserId());
         error_log(" savedPhotoName : " . $savedPhotoName);
         /**
