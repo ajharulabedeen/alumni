@@ -24,10 +24,13 @@ class Payment_Type_Controller extends Controller
     {
         $repoPaymentType = new Payment_Type_Repo_Impl();
         $paymentType = new PaymentType();
-        $paymentType->name     = $r->name;
 
-        // $id = $this->paymentTypeRepo->save($pType);
-        // $id = $repoPaymentType.create($paymentType);
+        $paymentType->name     = $r->name;
+        $paymentType->start_date     = $r->start_date;
+        $paymentType->last_date     = $r->last_date;
+        $paymentType->desdription     = $r->desdription;
+        $paymentType->amount     = $r->amount;
+        
         $id = $repoPaymentType.create($paymentType);
 
         return $id;

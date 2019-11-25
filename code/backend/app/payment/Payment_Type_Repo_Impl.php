@@ -11,7 +11,7 @@ class Payment_Type_Repo_Impl implements Payment_Type_Repo_I
      */
     public function create(PaymentType $paymentType)
     {
-        $paymentType->save()->id;
+        $paymentType->save();
         $id = $paymentType->id;
         return $id;
     }
