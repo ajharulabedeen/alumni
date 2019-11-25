@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\profile\Profile_Basic_Repo_I;
-
+use App\profile\ProfileBasic;
+use App\Utils\Utils;
 
 class Profile_Photo_Controller extends Controller
 {
@@ -27,13 +28,15 @@ class Profile_Photo_Controller extends Controller
 
         $savedPhotoName = $request->photo->storeAs('public', $fileName);
         $profileBasic = new ProfileBasic();
-        $profileBasic = $this->basicRepo->findOneByUser(auth()->user()->email);
+        $profileBasic = $this->basicRepo->findOneByUser(Utils::getUserId());
+        error_log(" savedPhotoName : " . $savedPhotoName);
         /**
          * no need to think about the image name length cause current user email will be the image name.
          */
-        $profileBasic->image_address = $savedPhotoName;
-        return $savedPhotoName;
+        $profileBasic->image_address = $fileName;
 
+        $this->basicRepo->update($profileBasic);
+        return $savedPhotoName;
     }
 
     public function getFile()

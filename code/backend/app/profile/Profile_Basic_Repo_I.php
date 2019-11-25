@@ -18,7 +18,7 @@ interface Profile_Basic_Repo_I{
      */
     public function findOne( $id);
     /**
-     *  @param userId email Address is the usedID.
+     *  @param userId where('user_id', $userId)->first();.
      *  @return ProfileBasic    here one profile basic will be returned.
      */
     public function findOneByUser( $userId);
