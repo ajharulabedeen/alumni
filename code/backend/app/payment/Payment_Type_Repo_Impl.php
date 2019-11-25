@@ -41,9 +41,9 @@ class Payment_Type_Repo_Impl implements Payment_Type_Repo_I
 
 
 
-    public function findPaymentTypeByUser($id)
+    public function findOnePaymentType($id)
     {
-        error_log(" findPaymentTypeByUser : ");
+        error_log(" findOnePaymentType : ");
         $data = PaymentType::where('id', $id)->first();
         return $data;
     }

@@ -40,11 +40,11 @@ class Payment_Type_Controller extends Controller
     public function update(Request $r)
     {
 
-
+        $repoPaymentType = new Payment_Type_Repo_Impl();
 
         $paymentType = new paymentType();
 
-        $paymentType = $this->educationRepo->findPaymentTypeByUser($r->id);
+        $paymentType = $this->repoPaymentType->findOnePaymentType($r->id);
         
 
         $paymentType->name     = $r->name;
@@ -53,7 +53,7 @@ class Payment_Type_Controller extends Controller
         $paymentType->desdription     = $r->desdription;
         $paymentType->amount     = $r->amount;
 
-        return ['status' => $this->aboutRepo->update($aboutUpdate)];
+        return ['status' => $this->repoPaymentType->update($paymentType)];
     }
 
 
