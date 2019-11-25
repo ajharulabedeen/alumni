@@ -11,7 +11,16 @@ interface Profile_Basic_Repo_I{
      */
     public function update(ProfileBasic $profileBasicUpdate);
     public function delete($id);
+    /**
+     *  @param  id here id is the primary key of the BasicRepo, it is not the userID.
+     *  @return ProfileBasic    here one profile basic will be returned.
+     *  @uses   currently not any use.
+     */
     public function findOne( $id);
+    /**
+     *  @param userId email Address is the usedID.
+     *  @return ProfileBasic    here one profile basic will be returned.
+     */
     public function findOneByUser( $userId);
     public function basicExist( $userId );
 }

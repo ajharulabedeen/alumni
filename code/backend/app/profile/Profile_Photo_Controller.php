@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\profile\Profile_Basic_Repo_I;
+
 
 class Profile_Photo_Controller extends Controller
 {
-    public function __construct()
-    {
-        error_log("Constructor : upload");
-        // $this->middleware('auth:api', ['except' => ['uploadfile']]);
-        error_log("Constructor after : upload");
-    }
+    protected $basicRepo;
 
+    public function __construct(Profile_Basic_Repo_I $basicRepo )
+    {
+        $this->basicRepo = $basicRepo;
+    }
 
     public function upload(request $request)
     {
@@ -23,7 +24,16 @@ class Profile_Photo_Controller extends Controller
         if ($request->hasFile('photo')) {
             error_log("FILE RECEIVED!");
         }
-        return $request->photo->storeAs('public', $fileName);
+
+        $savedPhotoName = $request->photo->storeAs('public', $fileName);
+        $profileBasic = new ProfileBasic();
+        $profileBasic = $this->basicRepo->findOneByUser(auth()->user()->email);
+        /**
+         * no need to think about the image name length cause current user email will be the image name.
+         */
+        $profileBasic->image_address = $savedPhotoName;
+        return $savedPhotoName;
+
     }
 
     public function getFile()

@@ -52,3 +52,8 @@ Route::group(['middleware' => ['role:editor']], function () {
 // Route::post('basic/create', 'Profile_Basic_Controller@create');//moved in api
 // Route::post('basic/findOneById', 'Profile_Basic_Controller@findOneByUserID');////moved in api
 // Route::post('basic/update', 'Profile_Basic_Controller@update');////moved in api
+
+
+ Route::post('paymentType/create', 'Payment_Type_Controller@create');
+ Route::post('paymentType/findOnePaymentType', 'Payment_Type_Controller@findOnePaymentType');
+ Route::post('paymentType/update', 'Payment_Type_Controller@update');
