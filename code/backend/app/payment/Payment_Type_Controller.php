@@ -28,7 +28,7 @@ class Payment_Type_Controller extends Controller
         $paymentType->name     = $r->name;
         $paymentType->start_date     = $r->start_date;
         $paymentType->last_date     = $r->last_date;
-        $paymentType->desdription     = $r->desdription;
+        $paymentType->description     = $r->description;
         $paymentType->amount     = $r->amount;
         
         $id = $repoPaymentType.create($paymentType);
@@ -50,7 +50,7 @@ class Payment_Type_Controller extends Controller
         $paymentType->name     = $r->name;
         $paymentType->start_date     = $r->start_date;
         $paymentType->last_date     = $r->last_date;
-        $paymentType->desdription     = $r->desdription;
+        $paymentType->description     = $r->description;
         $paymentType->amount     = $r->amount;
 
         return ['status' => $this->repoPaymentType->update($paymentType)];
