@@ -14,7 +14,7 @@ class U_PaymentTest extends TestCase
      *
      * @return void
      */
-    public function testBasicTest()
+    public function BasicTest()
     {
         error_log("Test 1!");
         $repoPayment = new Payment_Type_Repo_Impl();
@@ -25,10 +25,22 @@ class U_PaymentTest extends TestCase
         dd($repoPayment->create($p));
         $this->assertTrue(true);
     }
-    public function testBasicTest2()
+    public function testUpdate()
     {
         error_log("Test 2!");
+
+        $repoPayment = new Payment_Type_Repo_Impl();
+        $p = new PaymentType();
+        $p = $repoPayment->findOnePaymentType(2);
+
+        $p->name = "Seminar 104!";
+        dd($repoPayment->update($p));
         $this->assertTrue(true);
+        
+
+        error_log("Test 2!".$p);
+
+         $this->assertTrue(true);
     }
     public function testBasicTest3()
     {
