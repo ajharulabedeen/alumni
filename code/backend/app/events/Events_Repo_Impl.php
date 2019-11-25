@@ -73,5 +73,5 @@ class Events_Repo_Impl implements Events_Repo_I
     public function getOneEvent($event_id)
     {
         return Events::find($event_id);
-     }
+    }
 }//class
