@@ -11,5 +11,5 @@ interface Payment_Type_Repo_I {
 
     public function update(PaymentType $paymentTypeUpdate);
 
-    public function findPaymentTypeByUser($id);
+    public function findOnePaymentType($id);
 }
