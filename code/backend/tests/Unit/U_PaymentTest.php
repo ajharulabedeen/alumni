@@ -15,6 +15,7 @@ class U_PaymentTest extends TestCase
      * @return void
      */
     public function testBasicTest()
+
     {
         error_log("Test 1!");
         $repoPayment = new Payment_Type_Repo_Impl();

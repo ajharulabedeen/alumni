@@ -18,8 +18,6 @@ class Payment_Type_Repo_Impl implements Payment_Type_Repo_I
 
     public function update(PaymentType $paymentTypeUpdate)
     {
-
-
         error_log("Payment Type : Update");
         $updateStatus = false;
         try {
@@ -33,10 +31,6 @@ class Payment_Type_Repo_Impl implements Payment_Type_Repo_I
             return  $updateStatus;
         }
         return (string) $updateStatus;
-
-
-
-
     }
 
 
@@ -47,7 +41,4 @@ class Payment_Type_Repo_Impl implements Payment_Type_Repo_I
         $data = PaymentType::where('id', $id)->first();
         return $data;
     }
-
-
-
 }
