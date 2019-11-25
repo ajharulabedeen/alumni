@@ -38,9 +38,10 @@ class Profile_Photo_Controller extends Controller
         return $savedPhotoName;
     }
 
-    public function getFile()
+    public function getPhoto()
     {
-        $fileName = auth()->user()->email;
-        return response()->download(storage_path('app/public/' . '$fileName'), null, [], null);
+        $fileName = $this->basicRepo->findOneByUser(Utils::getUserId())->image_address;
+        error_log($fileName);
+        return response()->download(storage_path('app/public/' . $fileName), null, [], null);
     }
 }//class

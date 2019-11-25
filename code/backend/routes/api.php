@@ -45,6 +45,7 @@ Route::group([
     // Route::post('jobs/deleteOne', 'Profile_Jobs_Controller@deleteOne');
 
     Route::post('photo/upload', 'Profile_Photo_Controller@upload');
+    Route::post('photo/getPhoto', 'Profile_Photo_Controller@getPhoto');
 
 
 });
