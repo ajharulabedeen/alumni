@@ -123,7 +123,17 @@ export class AuthService {
     var token: string;
     token = "bearer" + this.getToken();
     let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
+      // 'Content-Type': 'application/json',
+      'Authorization': token
+    });
+    let options = { headers: headers };
+    return options;
+  }
+  public getHeaderFile() {
+    var token: string;
+    token = "bearer" + this.getToken();
+    let headers = new HttpHeaders({
+      // 'Content-Type': 'multipart/form-data',
       'Authorization': token
     });
     let options = { headers: headers };

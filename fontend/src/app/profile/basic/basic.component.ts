@@ -145,9 +145,7 @@ export class BasicComponent implements OnInit {
     console.log("this.basicExist  : " + this.basicExist);
   }//ngOnInint.
 
-  onFileChanged(event) {
-    const file = event.target.files[0];
-  }
+
 
   public editProfile() {
     this.profileEdit = !this.profileEdit;
