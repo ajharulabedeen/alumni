@@ -1,10 +1,11 @@
+
 <!-- profile Basic Info -->
 <div class="panel-group">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" href="#basic">Profile Basic Info</a>
-        <button class="btn btn-primary btn-xs" *ngIf="!profileEdit" (click)="editProfile()">Edit</button>
+        <button class="btn btn-primary btn-xs" *ngIf="!profileEdit" (click)="editProfile()">Change Photo</button>
         <button class="btn btn-primary btn-xs" *ngIf="profileEdit" (click)="update()">
           Update
           <!-- {{ basicExist ? 'Update' : 'Save' }} -->
@@ -18,8 +19,6 @@
     <div id="basic" class="panel-collapse collapse">
       <div class="panel-body">
         <div class="box-body">
-
-
           <!-- start : dept, batch, id, passing year -->
           <div class="row">
             <div class="col-md-3">

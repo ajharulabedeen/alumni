@@ -49,7 +49,7 @@ export class BasicComponent implements OnInit {
   ngOnInit() {
     this.blood = this.basicService.getBloodGroup();
     this.basicExist = false;
-    console.log("this.basicExist  : " + this.basicExist );
+    console.log("this.basicExist  : " + this.basicExist);
     this.basicService.getCurrentUserBasic();
     this.basicService.basic.subscribe(b => {
       for (const key in b) {
@@ -103,7 +103,7 @@ export class BasicComponent implements OnInit {
           }
           case "phone": {
             this.phone = b[key];
-            console.log("Phone : " + this.phone );
+            console.log("Phone : " + this.phone);
             break;
           }
           case "address_present": {
@@ -142,8 +142,12 @@ export class BasicComponent implements OnInit {
       }//for
 
     });
-    console.log("this.basicExist  : " + this.basicExist );
+    console.log("this.basicExist  : " + this.basicExist);
   }//ngOnInint.
+
+  onFileChanged(event) {
+    const file = event.target.files[0];
+  }
 
   public editProfile() {
     this.profileEdit = !this.profileEdit;

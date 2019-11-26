@@ -20,7 +20,6 @@
       <div class="col-md-4">
         <h3>
           Profile
-          <span *ngIf="profileEdit" class="label label-warning">Profile Editing Enable</span>
         </h3>
       </div>
       <div class="col-md-4 offset-md-4">
@@ -28,11 +27,7 @@
       </div>
       <!-- <div class="col-md-4 col-md-4 offset-md-8"> -->
       <div class="col-lg-4 col-lg-4 offset-lg-8">
-        <h5>
-          <button class="btn btn-small btn-primary" (click)="editProfile()">
-            Edit
-          </button>
-        </h5>
+
       </div>
     </div>
 
@@ -40,10 +35,13 @@
     <div class="row">
       <div class="col-md-3">
       </div>
-      <div class="col-md-4 offset-md-4">
+      <div class="col-md-6 offset-md-6">
         <!-- <img class="profile-user-img img-responsive img-circle" src="/assets/dist/img/user4-128x128.jpg" -->
         <img class="img-responsive" src="/assets/dist/img/photo3.jpg" alt="User profile picture">
-        <h5 *ngIf="profileEdit"><span class="label label-success">Edit Photo</span></h5>
+        <!-- <h5 *ngIf="photoEdit"><span class="label label-success">Edit Photo</span></h5> -->
+        <input type="file" *ngIf="photoEdit" (change)="onFileChanged($event)">
+        <button *ngIf="photoEdit" class="btn btn-xs btn-danger">Save</button>
+        <button class="btn btn-small btn-primary" (click)="editPhoto()">Change Photo</button>
       </div>
     </div>
 
