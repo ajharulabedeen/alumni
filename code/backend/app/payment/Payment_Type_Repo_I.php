@@ -13,11 +13,7 @@ interface Payment_Type_Repo_I {
 
     public function findOnePaymentType($id);
 
-    public function findOne($id);
-    /**
-     * to get the all educations of a particular user.
-     * Here userID will be taken as Param and educations will be retuened.
-     */
+    
 
     public function delete($id);
     /**
