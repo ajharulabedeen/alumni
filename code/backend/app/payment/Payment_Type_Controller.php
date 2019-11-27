@@ -48,17 +48,20 @@ class Payment_Type_Controller extends Controller
 
     public function findOnePaymentType(Request $r)
     {
-<<<<<<< HEAD
-       error_log("PaymentType find ID : " . $r->id);
-=======
+
         error_log("PaymentType find ID : " . $r->id);
->>>>>>> ad4eaa8a2f4f57dfd0abd5279d52bb388f1bc522
+
         return ['status' => $this->paymentTypeRepo->findOnePaymentType($r->id)];
     }
 
-    public function getAllPaymentType()
+    public function getAllPaymentType(Request $request)
     {
-        return $this->paymentTypeRepo->getAllPaymentType();
+
+      
+        $per_page = $request->per_page;
+        $sort_by = $request->sort_by;
+        $sort_on = $request->sort_on;
+        return $this->paymentTypeRepo->getAllPaymentType($per_page, $sort_by, $sort_on);
     }
 
 
