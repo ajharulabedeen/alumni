@@ -11,22 +11,28 @@ class U_PaymentType_Test extends TestCase
 {
     public function testMain(){
 
-        $this->create();
+        // $this->create();
+        $this->getAll(10,"ASC","last_date","10");
     }
 
-    public function getAll(Request $request){
-        $per_page = $request->per_page;
-        $sort_by = $request->sort_by;
-        $sort_on = $request->sort_on;
-        $postID = $request->postID;
-
+    public function getAll($per_page, $sort_by, $sort_on, $postID ){
+        error_log(" per_page : " . $per_page);
+        error_log(" sort_by : " . $sort_by);
+        error_log(" sort_on : " . $sort_on);
         if($sort_by=="ASC"){
             $order = "ASC";
         }
         else{
             $order = "DESC";
         }
-        return Expanses::where("post_id",$postID)->orderBy($sort_on,$order)->paginate($per_page)->all();
+        // $data = PaymentType::orderBy($sort_on,$order)->stapaginate($per_page)->all();
+        $data = PaymentType::orderBy($sort_on,$order)->sta;
+        // print_r($data);
+        for ($i=0; $i <10 ; $i++) {
+            error_log($data[$i]->last_date);
+        }
+        // dd($data);
+        // return PaymentType::orderBy($sort_on,$order)->paginate($per_page)->all();
     }
 
     /**
