@@ -10,7 +10,7 @@ use App\Utils\Utils;
 
 class Payment_Type_Controller extends Controller
 {
-    protected $aboutRepo;
+    protected $paymentTypeRepo;
 
     public function __construct(Payment_Type_Repo_I $paymentTypeRepo)
     {
