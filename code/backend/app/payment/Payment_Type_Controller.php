@@ -58,8 +58,6 @@ class Payment_Type_Controller extends Controller
 
     public function getAllPaymentType(Request $request)
     {
-
-      
         $per_page = $request->per_page;
         $sort_by = $request->sort_by;
         $sort_on = $request->sort_on;
