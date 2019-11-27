@@ -13,7 +13,7 @@ interface Payment_Type_Repo_I {
 
     public function findOnePaymentType($id);
 
-    
+    public function getAllPaymentType();
 
     public function delete($id);
     /**
