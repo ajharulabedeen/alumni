@@ -22,16 +22,17 @@ class F_PaymentType_Test extends TestCase
         // $this->creation(); //done
         // $this->update();//done
         // $this->getAllEducations();//done
-        $this->delete();
+        $this->delete(8);//done
     }
 
-    public function delete()
+    //done
+    public function delete($id)
     {
         $response = $this->json(
             'POST',
             'paymentType/delete',
             [
-                'id' => '8'
+                'id' => $id
             ]
             // ,
             // [
@@ -92,18 +93,6 @@ class F_PaymentType_Test extends TestCase
         // dd($response->exception);
 
         dd($d);
-
-        // --------confirm Update----------
-        // $response = $this->json(
-        //     'POST',
-        //     '/basic/findOneById',
-        //     [
-        //         'user_id' => '2',
-        //     ]
-        // );
-        // $d = $response->baseResponse->original;
-        // error_log("After : " . $response->original['dept']);
-        // $this->assertEquals($dept, $response->original['dept']);
     }
 
     //done
