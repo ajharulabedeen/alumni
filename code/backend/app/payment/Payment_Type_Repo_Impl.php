@@ -42,6 +42,12 @@ class Payment_Type_Repo_Impl implements Payment_Type_Repo_I
         return $data;
     }
 
+    public function findOne($id)
+    {
+        error_log("Payment Type :  FindOne");
+        return PaymentType::find($id);
+    }
+
 
     public function delete($id)
     {
