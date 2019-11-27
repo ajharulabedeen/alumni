@@ -13,12 +13,13 @@ export class ProfileComponent implements OnInit {
 
   photoEdit = false;
   selectedFile: File;
-  // photo: File;
-  photo: any;
+  imageToShow: any;
+  url = 'http://127.0.0.1:8000/api/photo/getPhoto';
 
   ngOnInit() {
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
+    this.getPhoto();
   }
 
   public editPhoto() {
@@ -32,17 +33,6 @@ export class ProfileComponent implements OnInit {
 
   }
 
-  // public getPhoto() {
-  //   console.log("Get Photo : ")
-  //   this.http.get('http://127.0.0.1:8000/photo', this.authService.getHeader())
-  //     .subscribe(event => {
-  //       console.log(event);
-  //       this.photo = event;
-  //     });
-  // }
-
-  url = 'http://127.0.0.1:8000/api/photo/getPhoto';
-
   public getPhoto() {
     this.getImage(this.url).subscribe(data => {
       this.createImageFromBlob(data);
@@ -55,8 +45,6 @@ export class ProfileComponent implements OnInit {
     // return this.http.post(imageUrl, this.authService.getHeaderFile(), {responseType : 'blob'}); //working, but to set static uName;
     return this.http.post<Blob>(imageUrl, [], this.authService.getHeaderFile());//it shows red mark but code works.
   }
-
-  imageToShow: any;
 
   createImageFromBlob(image: Blob) {
     let reader = new FileReader();
