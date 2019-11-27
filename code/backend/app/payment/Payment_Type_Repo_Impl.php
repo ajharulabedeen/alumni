@@ -43,6 +43,11 @@ class Payment_Type_Repo_Impl implements Payment_Type_Repo_I
     }
 
 
+    public function getAllPaymentType(){
+        return PaymentType::get();
+    }
+
+
     public function delete($id)
     {
         error_log("paymentType :  Delete");
