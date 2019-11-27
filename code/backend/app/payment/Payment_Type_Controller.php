@@ -49,6 +49,8 @@ class Payment_Type_Controller extends Controller
     public function findOnePaymentType(Request $r)
     {
 
+
+
         error_log("PaymentType find ID : " . $r->id);
 
         return ['status' => $this->paymentTypeRepo->findOnePaymentType($r->id)];

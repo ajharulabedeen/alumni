@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   isAuthenticated = false;
   private userSub: Subscription;
-
+  date : string;
   constructor(private authService: AuthService) { }
 
   top = new TopnavbarComponent();
@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
 
 
 }//class
-  
+
 
 // activeHome() {
   //   if (this.home) {
