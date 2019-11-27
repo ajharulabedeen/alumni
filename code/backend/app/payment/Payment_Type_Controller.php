@@ -29,7 +29,7 @@ class Payment_Type_Controller extends Controller
         $paymentType->last_date     = $r->last_date;
         $paymentType->description     = $r->description;
         $paymentType->amount     = $r->amount;
-        $id = $this->paymentTypeRepo . create($paymentType);
+        $id = $this->paymentTypeRepo->create($paymentType);
         return $id;
     }
 
