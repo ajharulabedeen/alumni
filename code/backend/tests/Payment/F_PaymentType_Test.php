@@ -22,7 +22,31 @@ class F_PaymentType_Test extends TestCase
         // $this->creation(); //done
         // $this->update();//done
         // $this->getAllEducations();//done
-        $this->delete(8);//done
+        // $this->delete(8);//done
+        $this->findOne(7);//done
+    }
+
+    //done
+    public function findOne($id)
+    {
+        $response = $this->json(
+            'POST',
+            'paymentType/findOnePaymentType',
+            [
+                'id' => $id
+            ]
+            // ,
+            // [
+            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+            // ]
+        );
+        $d = $response->baseResponse->original;
+        //exception not catching error, instead haulting program.
+        // error_log($d);
+        error_log("Error : ");
+        // dd($response->exception);
+
+        dd($d);
     }
 
     //done
