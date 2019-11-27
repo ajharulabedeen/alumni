@@ -16,8 +16,8 @@ class CreatePaymentTypesTable extends Migration
         Schema::create('payment_types', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name', 512)->nullable();
-            $table->string('start_date', 512)->nullable();
-            $table->string('last_date', 512)->nullable();
+            $table->date('start_date')->nullable();
+            $table->date('last_date')->nullable();
             $table->mediumText('description')->nullable();
             $table->string('amount', 512)->nullable();
 
