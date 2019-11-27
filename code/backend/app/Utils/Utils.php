@@ -11,7 +11,9 @@ class Utils{
      */
     public static function getUserId(){
         // $currentLoggedMail = "gub.cse.+files@gmail.com";
+        error_log("Auth User : " . auth()->user());
         $currentLoggedMail = auth()->user()->email;
+        // $currentLoggedMail = "u1@umail.com";
         error_log("currentLoggedMail : " . $currentLoggedMail);
         try{
             $userID = User::select('id')->where('email', $currentLoggedMail)->get()[0]->id;

@@ -67,6 +67,7 @@ class F_Auth_Test extends TestCase
         $response = $this->json(
             'POST',
             '/api/login',
+            // 'http://127.0.0.1:8000/api/login',
             [
                 'email' => $mail,
                 'password' => $pass

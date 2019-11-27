@@ -57,3 +57,4 @@ Route::group(['middleware' => ['role:editor']], function () {
  Route::post('paymentType/create', 'Payment_Type_Controller@create');
  Route::post('paymentType/findOnePaymentType', 'Payment_Type_Controller@findOnePaymentType');
  Route::post('paymentType/update', 'Payment_Type_Controller@update');
+
