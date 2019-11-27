@@ -20,22 +20,23 @@ class F_PaymentType_Test extends TestCase
         // $this->SignUp();
         // -----------------------------------
         // $this->creation(); //done
-        $this->update();//done
+        // $this->update();//done
         // $this->getAllEducations();//done
-        // $this->delete();
+        $this->delete();
     }
 
     public function delete()
     {
         $response = $this->json(
             'POST',
-            'api/jobs/deleteOne',
+            'paymentType/delete',
             [
-                'id' => '10004'
-            ],
-            [
-                "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+                'id' => '8'
             ]
+            // ,
+            // [
+            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+            // ]
         );
         $d = $response->baseResponse->original;
         //exception not catching error, instead haulting program.
