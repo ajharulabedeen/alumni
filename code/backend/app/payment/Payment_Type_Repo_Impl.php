@@ -41,4 +41,12 @@ class Payment_Type_Repo_Impl implements Payment_Type_Repo_I
         $data = PaymentType::where('id', $id)->first();
         return $data;
     }
+
+
+    public function delete($id)
+    {
+        error_log("paymentType :  Delete");
+        $status = PaymentType::where('id', $id)->delete();
+        return $status;
+    }
 }

@@ -46,4 +46,11 @@ class Payment_Type_Controller extends Controller
         return ['status' => $this->paymentTypeRepo->update($paymentType)];
     }
 
+
+    public function delete(Request $r)
+    {
+        error_log("PaymentType Delete ID : " . $r->id);
+        return ['status' => $this->paymentTypeRepo->delete($r->id)];
+    }
+
 }//class
