@@ -48,9 +48,6 @@ class Payment_Type_Controller extends Controller
 
     public function findOnePaymentType(Request $r)
     {
-
-
-
         error_log("PaymentType find ID : " . $r->id);
 
         return ['status' => $this->paymentTypeRepo->findOnePaymentType($r->id)];
@@ -63,7 +60,6 @@ class Payment_Type_Controller extends Controller
         $sort_on = $request->sort_on;
         return $this->paymentTypeRepo->getAllPaymentType($per_page, $sort_by, $sort_on);
     }
-
 
     public function delete(Request $r)
     {
