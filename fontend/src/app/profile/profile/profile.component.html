@@ -37,7 +37,9 @@
       </div>
       <div class="col-md-6 offset-md-6">
         <!-- <img class="profile-user-img img-responsive img-circle" src="/assets/dist/img/user4-128x128.jpg" -->
-        <img class="img-responsive" src="/assets/dist/img/photo3.jpg" alt="User profile picture">
+        <!-- <img class="img-responsive" src="/assets/dist/img/photo3.jpg" alt="User profile picture"> -->
+        <!-- <img class="img-responsive" [src]="photo" alt="User profile picture"> -->
+        <img class="img-responsive" [src]="imageToShow" alt="User profile picture">
         <!-- <h5 *ngIf="photoEdit"><span class="label label-success">Edit Photo</span></h5> -->
         <input *ngIf="photoEdit" type="file" (change)="onFileChanged($event)" #fileInput>
         <!-- <button *ngIf="photoEdit" (click)="fileInput.click()">Select File</button> -->

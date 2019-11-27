@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../auth/auth.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
@@ -12,7 +13,8 @@ export class ProfileComponent implements OnInit {
 
   photoEdit = false;
   selectedFile: File;
-  photo: File;
+  // photo: File;
+  photo: any;
 
   ngOnInit() {
     window.dispatchEvent(new Event('resize'));
@@ -30,12 +32,41 @@ export class ProfileComponent implements OnInit {
 
   }
 
+  // public getPhoto() {
+  //   console.log("Get Photo : ")
+  //   this.http.get('http://127.0.0.1:8000/photo', this.authService.getHeader())
+  //     .subscribe(event => {
+  //       console.log(event);
+  //       this.photo = event;
+  //     });
+  // }
+
+  url = 'http://127.0.0.1:8000/api/photo/getPhoto';
+
   public getPhoto() {
-    console.log("Get Photo : ")
-    this.http.post('http://127.0.0.1:8000/api/photo/getPhoto',[ ], this.authService.getHeader())
-      .subscribe(event => {
-        console.log(event);
-      });
+    this.getImage(this.url).subscribe(data => {
+      this.createImageFromBlob(data);
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  getImage(imageUrl: string): Observable<Blob> {
+    return this.http.post(imageUrl, this.authService.getHeaderFile(), {responseType : 'blob'}); //working
+    // return this.http.post<Blob>(imageUrl, [], this.authService.getHeaderFile()); //working
+  }
+
+  imageToShow: any;
+
+  createImageFromBlob(image: Blob) {
+    let reader = new FileReader();
+    reader.addEventListener("load", () => {
+      this.imageToShow = reader.result;
+    }, false);
+
+    if (image) {
+      reader.readAsDataURL(image);
+    }
   }
 
   public onUpload() {

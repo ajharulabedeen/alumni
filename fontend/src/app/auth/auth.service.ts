@@ -135,7 +135,11 @@ export class AuthService {
     let headers = new HttpHeaders({
       'Authorization': token
     });
-    let options = { headers: headers };
+    let options = {
+      headers: headers,
+      responseType: 'blob',
+      param : []
+    };
     return options;
   }
 
