@@ -19,8 +19,8 @@ class F_PaymentType_Test extends TestCase
         // $this->Loggin();
         // $this->SignUp();
         // -----------------------------------
-        $this->creation();//done
-        // $this->update();//done
+        // $this->creation(); //done
+        $this->update();//done
         // $this->getAllEducations();//done
         // $this->delete();
     }
@@ -69,19 +69,19 @@ class F_PaymentType_Test extends TestCase
     {
         $response = $this->json(
             'POST',
-            'api/jobs/update',
+            'paymentType/update',
             [
-                'id' => '10006',
-                'organization_name' => 'Tiger IT',
-                'type' => 'Private/Public',
-                'role' => 'Software Engineer',
-                'started' => '2018',
-                'leave' => '2019',
-                'current_status' => 'Leave',
-            ],
-            [
-                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u1@umail.com", "123456")
+                'id' => '7',
+                'name' => 'March-19 Fee',
+                'start_date' => '01-01-2019',
+                'last_date' => '31-12-2019',
+                'description' => ' Update : Please pay the FEE!',
+                'amount' => '500',
             ]
+            // ,
+            // [
+            //     "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u1@umail.com", "123456")
+            // ]
         );
         $d = $response->baseResponse->original;
         // $d = $response->exception;
@@ -105,6 +105,7 @@ class F_PaymentType_Test extends TestCase
         // $this->assertEquals($dept, $response->original['dept']);
     }
 
+    //done
     public function creation()
     {
         $response = $this->json(
