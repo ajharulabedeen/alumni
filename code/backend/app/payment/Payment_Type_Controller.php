@@ -20,41 +20,30 @@ class Payment_Type_Controller extends Controller
     /**
      * conpleted. afterinsertion id will be backed.
      */
-    public function create(Request $r)
+    
+     public function create(Request $r)
     {
-        $repoPaymentType = new Payment_Type_Repo_Impl();
         $paymentType = new PaymentType();
-
         $paymentType->name     = $r->name;
         $paymentType->start_date     = $r->start_date;
         $paymentType->last_date     = $r->last_date;
         $paymentType->description     = $r->description;
         $paymentType->amount     = $r->amount;
-
-        $id = $repoPaymentType.create($paymentType);
-
+        $id = $this->paymentTypeRepo . create($paymentType);
         return $id;
     }
 
 
     public function update(Request $r)
     {
-
-        $repoPaymentType = new Payment_Type_Repo_Impl();
-
         $paymentType = new paymentType();
-
-        $paymentType = $this->repoPaymentType->findOnePaymentType($r->id);
-
-
+        $paymentType = $this->paymentTypeRepo->findOnePaymentType($r->id);
         $paymentType->name     = $r->name;
         $paymentType->start_date     = $r->start_date;
         $paymentType->last_date     = $r->last_date;
         $paymentType->description     = $r->description;
         $paymentType->amount     = $r->amount;
-
-        return ['status' => $this->repoPaymentType->update($paymentType)];
+        return ['status' => $this->paymentTypeRepo->update($paymentType)];
     }
-
 
 }//class
