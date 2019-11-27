@@ -12,6 +12,7 @@ export class ProfileComponent implements OnInit {
 
   photoEdit = false;
   selectedFile: File;
+  photo: File;
 
   ngOnInit() {
     window.dispatchEvent(new Event('resize'));
@@ -20,6 +21,7 @@ export class ProfileComponent implements OnInit {
 
   public editPhoto() {
     this.photoEdit = !this.photoEdit;
+    this.getPhoto();
   }
 
   public onFileChanged(event) {
@@ -28,14 +30,18 @@ export class ProfileComponent implements OnInit {
 
   }
 
-  onUpload() {
+  public getPhoto() {
+    console.log("Get Photo : ")
+    this.http.post('http://127.0.0.1:8000/api/photo/getPhoto',[ ], this.authService.getHeader())
+      .subscribe(event => {
+        console.log(event);
+      });
+  }
+
+  public onUpload() {
     // this.http is the injected HttpClient
     const uploadData = new FormData();
     uploadData.append('photo', this.selectedFile, this.selectedFile.name);
-    // this.http.post('http://127.0.0.1:8000/api/photo/upload', { 'photo' : this.selectedFile }, this.authService.getHeader())
-    //   .subscribe(event => {
-    //     console.log(event);
-    //   });
     this.http.post('http://127.0.0.1:8000/api/photo/upload', uploadData, this.authService.getHeaderFile())
       .subscribe(event => {
         console.log(event);
