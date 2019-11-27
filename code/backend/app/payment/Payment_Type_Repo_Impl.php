@@ -43,9 +43,16 @@ class Payment_Type_Repo_Impl implements Payment_Type_Repo_I
     }
 
 
-    public function getAllPaymentType(){
-        return PaymentType::get();
-    }
+    public function getAllPaymentType($per_page, $sort_by, $sort_on){
+        if ($sort_by == "ASC") {
+            $order = "ASC";
+        } else {
+            $order = "DESC";
+        }
+        return PaymentType::orderBy($sort_on, $order)->paginate($per_page)->all();
+       }
+
+    
 
 
     public function delete($id)
