@@ -20,7 +20,7 @@ class Payment_Type_Controller extends Controller
     /**
      * conpleted. afterinsertion id will be backed.
      */
-    
+
      public function create(Request $r)
     {
         $paymentType = new PaymentType();
@@ -48,7 +48,11 @@ class Payment_Type_Controller extends Controller
 
     public function findOnePaymentType(Request $r)
     {
+<<<<<<< HEAD
        error_log("PaymentType find ID : " . $r->id);
+=======
+        error_log("PaymentType find ID : " . $r->id);
+>>>>>>> ad4eaa8a2f4f57dfd0abd5279d52bb388f1bc522
         return ['status' => $this->paymentTypeRepo->findOnePaymentType($r->id)];
     }
 

@@ -22,16 +22,41 @@ class F_PaymentType_Test extends TestCase
         // $this->creation(); //done
         // $this->update();//done
         // $this->getAllEducations();//done
-        $this->delete();
+        // $this->delete(8);//done
+        $this->findOne(7);//done
     }
 
-    public function delete()
+    //done
+    public function findOne($id)
+    {
+        $response = $this->json(
+            'POST',
+            'paymentType/findOnePaymentType',
+            [
+                'id' => $id
+            ]
+            // ,
+            // [
+            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+            // ]
+        );
+        $d = $response->baseResponse->original;
+        //exception not catching error, instead haulting program.
+        // error_log($d);
+        error_log("Error : ");
+        // dd($response->exception);
+
+        dd($d);
+    }
+
+    //done
+    public function delete($id)
     {
         $response = $this->json(
             'POST',
             'paymentType/delete',
             [
-                'id' => '8'
+                'id' => $id
             ]
             // ,
             // [
@@ -92,18 +117,6 @@ class F_PaymentType_Test extends TestCase
         // dd($response->exception);
 
         dd($d);
-
-        // --------confirm Update----------
-        // $response = $this->json(
-        //     'POST',
-        //     '/basic/findOneById',
-        //     [
-        //         'user_id' => '2',
-        //     ]
-        // );
-        // $d = $response->baseResponse->original;
-        // error_log("After : " . $response->original['dept']);
-        // $this->assertEquals($dept, $response->original['dept']);
     }
 
     //done
