@@ -19,18 +19,25 @@ export class PaymentTypeComponent implements OnInit {
   // ptsArray = new Array(PaymentType);
   ptsArray = new Array();
 
+  perPage : string;
+
   constructor(private ptService: PaymentTypeService) { }
 
   ngOnInit() {
     // this.start_date = "2019/01/12";
     // this.start_date = "19/01/2019";
     document.body.className = 'hold-transition skin-blue sidebar-mini';
+    this.perPage = "10";
+    this.setExistingPayments();
+  }
+
+  public refreshTable(){
     this.setExistingPayments();
   }
 
   public setExistingPayments() {
     this.ptsArray = new Array();
-    this.ptService.getAllPayments();
+    this.ptService.getAllPayments(this.perPage);
     this.ptService.pts.subscribe(pt => {
       for (const key1 in pt) {
         console.log(key1);
@@ -45,7 +52,6 @@ export class PaymentTypeComponent implements OnInit {
         this.ptsArray.push(pt1);
       }
     });
-    console.log(this.ptsArray);
   }//method
 
   public create() {

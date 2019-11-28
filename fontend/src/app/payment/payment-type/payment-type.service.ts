@@ -22,13 +22,13 @@ export class PaymentTypeService {
     });
   }
 
-  public getAllPayments() {
+  public getAllPayments(perPage : string) {
     //pt = paymentType
     this.pts = new BehaviorSubject<any>(null);
     return this.http.post<PaymentType>(
       'http://127.0.0.1:8000/paymentType/getAllPaymentType',
       {
-        'per_page': '10',
+        'per_page': perPage,
         "sort_by": "ASC",
         "sort_on": "last_date"
       },

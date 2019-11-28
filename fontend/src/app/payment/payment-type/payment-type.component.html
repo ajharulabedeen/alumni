@@ -93,7 +93,17 @@
         </div>
         <div id="all_payment" class="panel-collapse collapse">
           <div class="panel-body">
-            <h3>All Payment!</h3>
+            <h3>
+              All Payment!
+              <button class="btn btn-xs btn-primary" (click)="refreshTable()">Refresh</button>
+            </h3>
+
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group">
+                <label>Per Page</label>
+                <input [(ngModel)]="perPage" type="text" class="form-control" value="{{perPage}}" >
+              </div>
+            </div>
 
             <div class="col-xs-12">
               <div class="box">
@@ -126,7 +136,7 @@
                   </table>
                 </div>
               </div>
-              <div class="panel-footer">Work History</div>
+              <div class="panel-footer">All Payments Types</div>
             </div>
 
 
