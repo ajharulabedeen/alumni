@@ -94,6 +94,42 @@
         <div id="all_payment" class="panel-collapse collapse">
           <div class="panel-body">
             <h3>All Payment!</h3>
+
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tbody>
+                      <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Start Date</th>
+                        <th>Last Date</th>
+                        <th>Amount</th>
+                        <th>Description</th>
+                        <th>Operation</th>
+                      </tr>
+                      <tr *ngFor="let pt of ptsArray; let i=index">
+                        <td>{{i+1}}</td>
+                        <td>{{pt.name}}</td>
+                        <td>{{pt.start_date}}</td>
+                        <td>{{pt.last_date}}</td>
+                        <td>{{pt.amount}}</td>
+                        <td>{{pt.description}}</td>
+                        <td>
+                          <button class="btn btn-xs btn-primary" data-toggle="modal"
+                            data-target="#modal_work">Edit</button>
+                          <button class="btn btn-xs btn-warning">Delete</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="panel-footer">Work History</div>
+            </div>
+
+
           </div>
         </div>
         <div class="panel-footer">All Payment</div>

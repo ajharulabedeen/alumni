@@ -3,9 +3,8 @@ export class PaymentType {
   private name: string;
   private start_date: string;
   private last_date: string;
-  private student_id: string;
+  private amount: string;
   private description: string;
-
   /**
    * Getter $id
    * @return {string}
@@ -39,11 +38,11 @@ export class PaymentType {
   }
 
   /**
-   * Getter $student_id
+   * Getter $amount
    * @return {string}
    */
-  public get $student_id(): string {
-    return this.student_id;
+  public get $amount(): string {
+    return this.amount;
   }
 
   /**
@@ -52,14 +51,6 @@ export class PaymentType {
    */
   public get $description(): string {
     return this.description;
-  }
-
-  /**
-   * Getter $amount
-   * @return {string}
-   */
-  public get $amount(): string {
-    return this.amount;
   }
 
   /**
@@ -95,11 +86,11 @@ export class PaymentType {
   }
 
   /**
-   * Setter $student_id
+   * Setter $amount
    * @param {string} value
    */
-  public set $student_id(value: string) {
-    this.student_id = value;
+  public set $amount(value: string) {
+    this.amount = value;
   }
 
   /**
@@ -110,12 +101,5 @@ export class PaymentType {
     this.description = value;
   }
 
-  /**
-   * Setter $amount
-   * @param {string} value
-   */
-  public set $amount(value: string) {
-    this.amount = value;
-  }
-  private amount: string;
 }
+

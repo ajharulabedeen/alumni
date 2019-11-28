@@ -10,7 +10,6 @@ import { HttpClient } from '@angular/common/http';
 export class JobsService {
 
   jobs = new BehaviorSubject<any>(null);
-  jobArray = new Array();
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
