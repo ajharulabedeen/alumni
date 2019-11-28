@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentTypeComponent implements OnInit {
 
+  name: string;
+  start_date: string;
+  last_date: string;
+  amount: string;
+  description: string;
+
   constructor() { }
 
   ngOnInit() {
+    // this.start_date = "2019/01/12";
+    // this.start_date = "19/01/2019";
     document.body.className = 'hold-transition skin-blue sidebar-mini';
   }
 
