@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PaymentTypeComponent } from './payment-type/payment-type.component';
 import { LayoutModule } from '../layout/layout.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -11,7 +12,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     LayoutModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ]
 })
 export class PaymentModule { }
