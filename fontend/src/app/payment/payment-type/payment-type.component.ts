@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PaymentType } from './payment-type.model';
+import { debounce } from '../../../assets/bower_components/fullcalendar/dist/fullcalendar';
+import { PaymentTypeService } from './payment-type.service';
 
 @Component({
   selector: 'app-payment-type',
@@ -13,7 +16,7 @@ export class PaymentTypeComponent implements OnInit {
   amount: string;
   description: string;
 
-  constructor() { }
+  constructor(private ptService: PaymentTypeService) { }
 
   ngOnInit() {
     // this.start_date = "2019/01/12";
@@ -21,4 +24,28 @@ export class PaymentTypeComponent implements OnInit {
     document.body.className = 'hold-transition skin-blue sidebar-mini';
   }
 
-}
+  public create() {
+    this.ptService.create(this.getPaymentType());
+    // this.clearAllFields();
+  }
+
+  public getPaymentType(): PaymentType {
+    var pt = new PaymentType();
+    pt.$name = this.name;
+    pt.$start_date = this.start_date;
+    pt.$last_date = this.last_date;
+    pt.$amount = this.amount;
+    pt.$description = this.description;
+    return pt;
+  }
+
+  public clearAllFields() {
+    this.name = "";
+    this.start_date = "";
+    this.last_date = "";
+    this.amount = "";
+    this.description = "";
+
+  }
+
+}//class

@@ -58,7 +58,7 @@
             <div class="col-md-12 ">
               <div class="form-group">
                 <label>Amount</label>
-                <input [(ngModel)]="amount" type="text" class="form-control" value="{{last_date}}">
+                <input [(ngModel)]="amount" type="text" class="form-control">
               </div>
             </div>
 
@@ -73,15 +73,12 @@
 
             <div class="col-md-3 ">
               <div class="form-group">
-                <button class="btn btn-primary">Save</button>
-                <button class="btn btn-danger">Clear All</button>
+                <button class="btn btn-primary" (click)="create()">Save</button>
+                <button class="btn btn-danger" (click)="clearAllFields()">Clear All</button>
               </div>
-
             </div>
-
           </div>
           <!-- end : panel-body -->
-
         </div>
         <div class="panel-footer">Add Payment</div>
       </div>
