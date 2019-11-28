@@ -23,7 +23,37 @@ class F_PaymentType_Test extends TestCase
         // $this->update();//done
         // $this->getAllEducations();//done
         // $this->delete(8);//done
-        $this->findOne(7);//done
+        // $this->findOne(7); //done
+        $this->getAll(5,'ASC','last_date',3); //done
+    }
+
+    //working
+    public function getAll($per_page, $sort_by, $sort_on, $pageNumber)
+    {
+        $response = $this->json(
+            'POST',
+            'paymentType/getAllPaymentType?page=' . $pageNumber,
+            [
+                'per_page' => $per_page,
+                'sort_by' => $sort_by,
+                "sort_on" => $sort_on,
+            ]
+            // ,
+            // [
+            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+            // ]
+        );
+
+        $d = $response->baseResponse->original;
+        for ($i = 0; $i < $per_page; $i++) {
+            error_log($d[$i]->last_date);
+        }
+        //exception not catching error, instead haulting program.
+        // error_log($d);
+        error_log("Error : ");
+        // dd($response->exception);
+
+        // dd($d);
     }
 
     //done
@@ -91,6 +121,7 @@ class F_PaymentType_Test extends TestCase
         dd($d);
     }
 
+    //done
     public function update()
     {
         $response = $this->json(
