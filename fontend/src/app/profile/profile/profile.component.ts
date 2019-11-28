@@ -42,8 +42,8 @@ export class ProfileComponent implements OnInit {
   }
 
   getImage(imageUrl: string): Observable<Blob> {
-    // return this.http.post(imageUrl, this.authService.getHeaderFile(), {responseType : 'blob'}); //working, but to set static uName;
-    return this.http.post<Blob>(imageUrl, [], this.authService.getHeaderFile());//it shows red mark but code works.
+    return this.http.post(imageUrl, this.authService.getHeaderFile(), {responseType : 'blob'}); //working, but to set static uName;
+    // return this.http.post<Blob>(imageUrl, [], this.authService.getHeaderFile());//it shows red mark but code works.
   }
 
   createImageFromBlob(image: Blob) {
@@ -61,6 +61,7 @@ export class ProfileComponent implements OnInit {
     // this.http is the injected HttpClient
     const uploadData = new FormData();
     uploadData.append('photo', this.selectedFile, this.selectedFile.name);
+    // return this.http.post('http://127.0.0.1:8000/api/photo/upload', this.authService.getHeaderFile(), {responseType : 'blob'}) //working, but to set static uName;
     this.http.post('http://127.0.0.1:8000/api/photo/upload', uploadData, this.authService.getHeaderFile())
       .subscribe(event => {
         console.log(event);

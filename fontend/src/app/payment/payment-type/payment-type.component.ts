@@ -10,6 +10,7 @@ export class PaymentTypeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    document.body.className = 'hold-transition skin-blue sidebar-mini';
   }
 
 }
