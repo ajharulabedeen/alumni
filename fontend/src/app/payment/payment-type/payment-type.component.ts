@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PaymentType } from './payment-type.model';
-import { debounce } from '../../../assets/bower_components/fullcalendar/dist/fullcalendar';
 import { PaymentTypeService } from './payment-type.service';
 
 @Component({
@@ -20,6 +19,9 @@ export class PaymentTypeComponent implements OnInit {
   ptsArray = new Array();
 
   perPage: string;
+  idUpdate: string;
+  updatePaymentType = false;
+  ptForUpdate: PaymentType;
 
   constructor(private ptService: PaymentTypeService) { }
 
@@ -60,8 +62,34 @@ export class PaymentTypeComponent implements OnInit {
   }//method
 
   public create() {
-    this.ptService.create(this.getPaymentType());
+    if (this.updatePaymentType) {
+      this.ptForUpdate = this.getPaymentType();
+      this.ptForUpdate.$id = this.idUpdate;
+      this.ptService.update(this.ptForUpdate);
+      this.idUpdate = null;
+      this.updatePaymentType=false;
+    } else {
+      this.ptService.create(this.getPaymentType());
+    }
     // this.clearAllFields();
+    this.refreshTable();
+  }
+
+  public update(pt: PaymentType) {
+    this.updatePaymentType = true;
+    // this.addNew = false;
+    console.log("PT Name : " + pt.$name);
+    this.setPTForUpdate(pt);
+    this.idUpdate = pt.$id;
+  }
+
+  public setPTForUpdate(pt: PaymentType) {
+    this.name = pt.$name;
+    this.start_date = pt.$start_date;
+    this.last_date = pt.$last_date;
+    this.amount = pt.$amount;
+    this.description = pt.$description;
+
   }
 
   public getPaymentType(): PaymentType {

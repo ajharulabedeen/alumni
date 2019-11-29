@@ -14,14 +14,12 @@
         <div id="add_payment" class="panel-collapse collapse">
           <div class="panel-body">
             <h3>Add Payment!</h3>
-
             <div class="col-md-12 offset-md-12">
               <div class="form-group">
                 <label>Name : </label>
                 <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
               </div>
             </div>
-
             <div class="col-md-3 offset-md-3">
               <div class="form-group">
                 <label>Start Date</label>
@@ -46,14 +44,12 @@
                 <input [(ngModel)]="last_date" type="date" class="form-control" value="{{last_date}}">
               </div>
             </div>
-
             <div class="col-md-12 ">
               <div class="form-group">
                 <label>Amount</label>
                 <input [(ngModel)]="amount" type="text" class="form-control">
               </div>
             </div>
-
             <div class="col-md-12 ">
               <div class="form-group">
                 <label>Dscription</label>
@@ -62,7 +58,6 @@
                   </textarea>
               </div>
             </div>
-
             <div class="col-md-3 ">
               <div class="form-group">
                 <button class="btn btn-primary" (click)="create()">Save</button>
@@ -113,8 +108,9 @@
                       </tr>
                       <tr *ngFor="let pt of ptsArray; let i=index">
                         <td>
-                          <button class="btn btn-xs btn-primary" data-toggle="modal"
-                            data-target="#modal_work">Edit</button>
+                          <button class="btn btn-xs btn-primary" data-toggle="collapse" href="#add_payment" (click)="update(pt)">
+                            Edit
+                          </button>
                           <button class="btn btn-xs btn-warning" (click)="delete(pt.id)">Delete</button>
                         </td>
                         <td>{{i+1}}</td>

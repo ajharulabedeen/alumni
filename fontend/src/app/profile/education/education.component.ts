@@ -55,8 +55,8 @@ export class EducationComponent implements OnInit, OnDestroy {
     if (this.updateEducation) {
       this.educationUpdate = this.getEducation();
       this.educationUpdate.$id = this.idUpdate;
-      console.log("Education Update : ");
-      console.log(this.educationUpdate);
+      // console.log("Education Update : ");
+      // console.log(this.educationUpdate);
       this.eduService.update(this.educationUpdate);
       this.updateEducation = false;
       this.idUpdate = null;

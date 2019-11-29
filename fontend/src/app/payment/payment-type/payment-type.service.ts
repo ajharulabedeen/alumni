@@ -21,6 +21,15 @@ export class PaymentTypeService {
       console.log(res);
     });
   }
+  public update(pt: PaymentType) {
+    console.log(pt);
+    // this.http.post(
+    //   'http://127.0.0.1:8000/paymentType/update ', pt, this.authService.getHeader()
+    // ).subscribe((res: Response) => {
+    //   console.log(res);
+    // });
+  }
+
 
   public delete(id: string) {
     this.http.post(
