@@ -26,7 +26,7 @@ class U_PaymentType_Test extends TestCase
             $order = "DESC";
         }
         // $data = PaymentType::orderBy($sort_on,$order)->stapaginate($per_page)->all();
-        $data = PaymentType::orderBy($sort_on,$order)->sta;
+        // $data = PaymentType::orderBy($sort_on,$order)->sta;
         // print_r($data);
         for ($i=0; $i <10 ; $i++) {
             error_log($data[$i]->last_date);
