@@ -14,6 +14,7 @@ export class PaymentTypeService {
   constructor(private http: HttpClient, private authService: AuthService) { }
 
   public create(pt: PaymentType) {
+    console.log("Save : ");
     console.log(pt);
     this.http.post(
       'http://127.0.0.1:8000/paymentType/create ', pt, this.authService.getHeader()
@@ -22,12 +23,13 @@ export class PaymentTypeService {
     });
   }
   public update(pt: PaymentType) {
+    console.log("Update : ");
     console.log(pt);
-    // this.http.post(
-    //   'http://127.0.0.1:8000/paymentType/update ', pt, this.authService.getHeader()
-    // ).subscribe((res: Response) => {
-    //   console.log(res);
-    // });
+    this.http.post(
+      'http://127.0.0.1:8000/paymentType/update ', pt, this.authService.getHeader()
+    ).subscribe((res: Response) => {
+      console.log(res);
+    });
   }
 
 

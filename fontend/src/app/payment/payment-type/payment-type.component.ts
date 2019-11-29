@@ -47,7 +47,7 @@ export class PaymentTypeComponent implements OnInit {
     this.ptService.getAllPayments(this.perPage);
     this.ptService.pts.subscribe(pt => {
       for (const key1 in pt) {
-        console.log(key1);
+        // console.log(key1);
         // console.log(pt[key1]['id']);
         var pt1 = new PaymentType();
         pt1.$id = pt[key1]["id"];
