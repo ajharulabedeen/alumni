@@ -42,11 +42,11 @@ export class PaymentTypeService {
 
   }
 
-  public getAllPayments(perPage: string) {
+  public getAllPayments(perPage: number, pageNumber : number) {
     //pt = paymentType
     this.pts = new BehaviorSubject<any>(null);
     return this.http.post<PaymentType>(
-      'http://127.0.0.1:8000/paymentType/getAllPaymentType',
+      'http://127.0.0.1:8000/paymentType/getAllPaymentType?page='+pageNumber,
       {
         'per_page': perPage,
         "sort_by": "ASC",

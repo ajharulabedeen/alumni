@@ -18,10 +18,11 @@ export class PaymentTypeComponent implements OnInit {
   // ptsArray = new Array(PaymentType);
   ptsArray = new Array();
 
-  perPage: string;
+  perPage: number;
   idUpdate: string;
   updatePaymentType = false;
   ptForUpdate: PaymentType;
+  pageNumber: number;
 
   constructor(private ptService: PaymentTypeService) { }
 
@@ -29,7 +30,8 @@ export class PaymentTypeComponent implements OnInit {
     // this.start_date = "2019/01/12";
     // this.start_date = "19/01/2019";
     document.body.className = 'hold-transition skin-blue sidebar-mini';
-    this.perPage = "10";
+    this.perPage = 5;
+    this.pageNumber = 1;
     this.setExistingPayments();
   }
 
@@ -44,7 +46,7 @@ export class PaymentTypeComponent implements OnInit {
 
   public setExistingPayments() {
     this.ptsArray = new Array();
-    this.ptService.getAllPayments(this.perPage);
+    this.ptService.getAllPayments(this.perPage, this.pageNumber);
     this.ptService.pts.subscribe(pt => {
       for (const key1 in pt) {
         // console.log(key1);
@@ -67,7 +69,7 @@ export class PaymentTypeComponent implements OnInit {
       this.ptForUpdate.$id = this.idUpdate;
       this.ptService.update(this.ptForUpdate);
       this.idUpdate = null;
-      this.updatePaymentType=false;
+      this.updatePaymentType = false;
     } else {
       this.ptService.create(this.getPaymentType());
     }
@@ -81,6 +83,18 @@ export class PaymentTypeComponent implements OnInit {
     console.log("PT Name : " + pt.$name);
     this.setPTForUpdate(pt);
     this.idUpdate = pt.$id;
+  }
+
+  public previousPage() {
+    if (this.pageNumber > 0) {
+      this.pageNumber -= 1;
+    }
+    this.refreshTable();
+  }
+
+  public nextPage() {
+    this.pageNumber += 1;
+    this.refreshTable();
   }
 
   public setPTForUpdate(pt: PaymentType) {

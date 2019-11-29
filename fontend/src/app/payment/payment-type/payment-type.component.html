@@ -60,7 +60,8 @@
             </div>
             <div class="col-md-3 ">
               <div class="form-group">
-                <button class="btn btn-primary" data-toggle="collapse" href="#add_payment" (click)="create()">Save</button>
+                <button class="btn btn-primary" data-toggle="collapse" href="#add_payment"
+                  (click)="create()">Save</button>
                 <button class="btn btn-danger" (click)="clearAllFields()">Clear All</button>
               </div>
             </div>
@@ -85,12 +86,22 @@
               <button class="btn btn-xs btn-primary" (click)="refreshTable()">Refresh</button>
             </h3>
 
-            <div class="col-md-3 offset-md-3">
+            <div class="col-md-4 offset-md-4">
               <div class="form-group">
                 <label>Per Page</label>
-                <input [(ngModel)]="perPage" type="text" class="form-control" value="{{perPage}}">
+                <input [(ngModel)]="perPage" type="number" class="form-control" value="{{perPage}}">
               </div>
             </div>
+
+            <div class="col-md-4 offset-md-4">
+              <div class="form-group">
+                <button class="btn btn-primary btn-xs" (click)="previousPage()">Previous</button>
+                <label class="btn btn-danger ">Page Number</label>
+                <button class="btn btn-primary btn-xs" (click)="nextPage()">Next</button>
+                <input [(ngModel)]="pageNumber" type="number" class="form-control" value="{{pageNumber}}">
+              </div>
+            </div>
+
 
             <div class="col-xs-12">
               <div class="box">
@@ -108,7 +119,8 @@
                       </tr>
                       <tr *ngFor="let pt of ptsArray; let i=index">
                         <td>
-                          <button class="btn btn-xs btn-primary" data-toggle="collapse" href="#add_payment" (click)="update(pt)">
+                          <button class="btn btn-xs btn-primary" data-toggle="collapse" href="#add_payment"
+                            (click)="update(pt)">
                             Edit
                           </button>
                           <button class="btn btn-xs btn-warning" (click)="delete(pt.id)">Delete</button>
