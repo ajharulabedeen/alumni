@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<!-- saved from url=(0082)https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5 -->
+<html itemscope="" itemtype="http://schema.org/QAPage" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>(function(){if(window.googletag){var proxy=new Proxy(window.googletag,{get:function(a,b,c){return"pubads"==b||"display"==b?function(){return{}}:a[b]}});window.googletag=proxy}else{var pak;Object.defineProperty(window,"googletag",{configurable:!1,get:function(){return pak&&(pak.pubads=function(){return{}}),pak},set:function(a){return pak=a}})}var tmp;Object.defineProperty(window, "websredir",{configurable:false,get:function(){return tmp;},set:function(obj){if(obj instanceof Array)throw "";else tmp=obj;return tmp;}});})();;(function(){document.currentScript.parentElement.removeChild(document.currentScript);})();</script><style id="stndz-style"></style>
+                
+
+                <title>Getting Image from API in Angular 4/5+? - Stack Overflow</title>
+                <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/stackoverflow/img/favicon.ico?v=4f32ecc8f43d">
+                <link rel="apple-touch-icon image_src" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+                <script async="" src="./Image_Getting Image from API in Angular 4_5+_ - Stack Overflow_files/quant.js.download"></script><script async="" src="./Image_Getting Image from API in Angular 4_5+_ - Stack Overflow_files/beacon.js.download"></script><script async="" src="./Image_Getting Image from API in Angular 4_5+_ - Stack Overflow_files/analytics.js.download"></script><script src="./Image_Getting Image from API in Angular 4_5+_ - Stack Overflow_files/jquery.min.js.download"></script>
+                <script src="./Image_Getting Image from API in Angular 4_5+_ - Stack Overflow_files/stub.en.js.download"></script>
+                <script src="./Image_Getting Image from API in Angular 4_5+_ - Stack Overflow_files/mobile.en.js.download"></script>
+                
+                
+                <link rel="stylesheet" type="text/css" href="./Image_Getting Image from API in Angular 4_5+_ - Stack Overflow_files/stacks.css">
+                <link rel="stylesheet" type="text/css" href="./Image_Getting Image from API in Angular 4_5+_ - Stack Overflow_files/mobile.css">
+                
+                    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+                                
+                
+                
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Getting Image from API in Angular 4/5+?&#39;" href="https://stackoverflow.com/feeds/question/45530752">
+        <script>
+            StackExchange.ready(function () {
+                StackExchange.question.init({canOpenBounty:true,votesCast:[],totalCommentCount:2,shownCommentCount:2,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:45530752});
+
+                styleCode();
+            });
+        </script>
+
+                <script>
+                    var opts = {"locale":"en","serverTime":1574810976,"routeName":"Questions/Show","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","isMobile":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"id":1,"childUrl":"https://meta.stackoverflow.com","negativeVoteScoreFloor":null,"enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"1013871c9d5c9c8df60f4e65483a2ac9221af924b8ae75ec7bc381b207316c6d","tid":"491f0238-d914-7d7c-bbb0-9f5ee93de0e3","rep":604,"isRegistered":true,"keyboardShortcuts":true,"userType":3,"userId":3262551,"accountId":3952962,"gravatar":"<div class=\"gravatar-wrapper-32\"><img src=\"https://i.stack.imgur.com/u5g5b.jpg?s=32&amp;g=1\" alt=\"\" width=\"32\" height=\"32\" class=\"bar-sm\"></div>","profileUrl":"https://stackoverflow.com/users/3262551/black-swan","canSeeDeletedPosts":false,"ab":{"similar_questions_breakout":{"v":"collapsable_results","g":1},"show_new_question_notices":{"v":"notices","g":2}}},"realtime":{"newest":false,"active":false,"tagged":true,"staleDisconnectIntervalInHours":0},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4},"svgIconPath":"https://cdn.sstatic.net/Img/svg-icons","svgIconHash":"53fe1f91bb82"};
+                    opts.isMobile = true;
+                    opts.fullPostfix = "";
+                    StackExchange.init(opts, {"userProfile":{"openGraphAPIKey":"4a307e43-b625-49bb-af15-ffadf2bda017"},"userMessaging":{},"tags":{},"snippets":{"renderDomain":"stacksnippets.net","snippetsEnabled":true},"slack":{"sidebarAdDismissCookie":"slack-sidebar-ad"},"site":{"allowImageUploads":true,"enableImgurHttps":true,"enableUserHovercards":true,"forceHttpsImages":true,"styleCode":true},"questions":{"showPostNoticesV2":true},"paths":{},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000},"mentions":{"maxNumUsersInDropdown":50},"markdown":{"asteriskIntraWordEmphasis":true},"flags":{"allowRetractingCommentFlags":true,"allowRetractingFlags":true},"comments":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true}});
+                    StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"0b0379b652f6","js/moderator.en.js":"125735135d93","js/full-anon.en.js":"d02e23dbe228","js/full.en.js":"2162d8bee816","js/wmd.en.js":"d309fd610595","js/mobile.en.js":"a168d277c579","js/help.en.js":"28ab297b528e","js/tageditor.en.js":"37097f75c372","js/tageditornew.en.js":"6449a69727c0","js/inline-tag-editing.en.js":"ae192d78a2dd","js/revisions.en.js":"63c4156ea488","js/review.en.js":"34e466bb6773","js/tagsuggestions.en.js":"9b2c5d9791d2","js/post-validation.en.js":"3c25f30f3188","js/explore-qlist.en.js":"8338a28bee11","js/events.en.js":"166b6c3e33c3","js/keyboard-shortcuts.en.js":"26f27a05c9b8","js/adops.en.js":"6b9883f0531e","js/begin-edit-event.en.js":"cb9965ad8784","js/ask.en.js":"5b40a3748d82","js/question-editor.en.js":"","js/snippet-javascript-codemirror.en.js":"74127a64358c"});
+
+                    StackExchange.using("mobile", function() { StackExchange.mobile.init(); });
+
+                    StackExchange.using(
+                        "gps",
+                        function() {
+                            StackExchange.gps.init(true);
+                        }
+                    );
+                </script>
+                
+            <script async="" src="./Image_Getting Image from API in Angular 4_5+_ - Stack Overflow_files/full.en.js.download"></script><script async="" src="./Image_Getting Image from API in Angular 4_5+_ - Stack Overflow_files/prettify-full.en.js.download"></script><script async="" src="./Image_Getting Image from API in Angular 4_5+_ - Stack Overflow_files/keyboard-shortcuts.en.js.download"></script><style type="text/css">.keyboard-console { background-color: black; background-color: rgba(0, 0, 0, .8); position: fixed; left: 100px; bottom: 100px;padding: 10px; text-align: left; border-radius: 6px; z-index: 1000 }.keyboard-console pre { background-color: transparent; color: #ccc; width: auto; height: auto; padding: 0; margin: 0; overflow: visible; line-height:1.5; border: none;}.keyboard-console pre b, .keyboard-console pre a { color: white !important; }.keyboard-console pre kbd { display: inline-block; font-family: monospace; }.keyboard-selected { box-shadow: 15px 15px 50px rgba(0, 0, 0, .2) inset; }</style></head>
+            <body class="no-message-slide question-single">
+
+<div class="topbar _old">
+    <div class="network-items">
+                <a href="https://stackexchange.com/" class="topbar-icon js-site-switcher-button icon-site-switcher-bubble" aria-expanded="false">
+                    <span class="hidden">Stack Exchange</span>
+                    <i class="icon-hamburger"></i>
+                </a>
+            <div class="icon-site-name">
+                <a href="https://stackoverflow.com/">Stack Overflow</a>
+            </div>
+    
+    <a href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" class="topbar-icon icon-inbox js-inbox-button" aria-expanded="false">
+            <span class="hidden">Inbox</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    <a href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" class="topbar-icon icon-achievements js-achievements-button" data-unread-class="" aria-expanded="false">
+            <span class="hidden">Reputation and Badges</span>
+        <span class="unread-count" style="display:none"></span>
+    </a>
+    </div>
+    <div class="js-topbar-dialog-corral">
+
+
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="https://stackoverflow.com/">current community</a></h3>
+        <a href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" class="icon-close js-close-button">
+            <span class="hidden">Close</span>
+        </a>
+
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                    <div class="user-card">
+                        <a href="https://stackoverflow.com/users/3262551/black-swan">
+                            <div class="gravatar-wrapper-32"><img src="./Image_Getting Image from API in Angular 4_5+_ - Stack Overflow_files/u5g5b.jpg" alt="" width="32" height="32" class="bar-sm avatar"></div>
+                            <span class="name">Black Swan</span>
+                            <span class="reputation-score" title="reputation score " dir="ltr">604</span><span title="6 silver badges" aria-hidden="true"><span class="badge2">●</span><span class="badgecount">6</span></span><span class="v-visible-sr">6 silver badges</span><span title="20 bronze badges" aria-hidden="true"><span class="badge3">●</span><span class="badgecount">20</span></span><span class="v-visible-sr">20 bronze badges</span>
+                        </a>
+                    </div>
+                        <div class="related-links">
+                            <a href="https://stackoverflow.com/users/logout" data-gps-track="site_switcher.click({ item_type:8 })">log out</a>
+                        </div>
+                </li>
+                                 <li>
+                             <div class="related-links">
+            <a href="https://meta.stackoverflow.com/" data-gps-track="site_switcher.click({ item_type:4 })">meta</a>
+                            <a href="https://chat.stackoverflow.com/" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+    </div>
+    <a href="https://stackoverflow.com/" class="current-site-link site-link js-gps-track grid gs8 gsx" data-id="1" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="favicon favicon-stackoverflow site-icon grid--cell" title="Stack Overflow"></div>
+        <span class="grid--cell fl1">
+            Stack Overflow
+        </span>
+    </a>
+
+                     </li>
+        </ul>
+    </div>
+    
+        <div class="header" id="your-communities-header">
+            <h3>
+                    <a href="https://stackexchange.com/users/3952962/?tab=accounts">your communities</a>
+            </h3>
+
+        </div>
+
+    <div class="modal-content" id="your-communities-section">
+            
+                 <ul class="my-sites">
+                         <li>
+                                 <a href="https://stackoverflow.com/" class="site-link js-gps-track grid gs8 gsx" data-id="1" data-gps-track="site.switch({ target_site:1, item_type:3 }),site_switcher.click({ item_type:1 })">
+        <div class="favicon favicon-stackoverflow site-icon grid--cell" title="Stack Overflow"></div>
+        <span class="grid--cell fl1">
+            Stack Overflow
+        </span>
+            <span class="rep-score grid--cell">604</span>
+    </a>
+
+                         </li>
+                         <li>
+                                 <a href="https://superuser.com/" class="site-link js-gps-track grid gs8 gsx" data-id="3" data-gps-track="site.switch({ target_site:3, item_type:3 }),site_switcher.click({ item_type:1 })">
+        <div class="favicon favicon-superuser site-icon grid--cell" title="Super User"></div>
+        <span class="grid--cell fl1">
+            Super User
+        </span>
+            <span class="rep-score grid--cell">501</span>
+    </a>
+
+                         </li>
+                         <li>
+                                 <a href="https://unix.stackexchange.com/" class="site-link js-gps-track grid gs8 gsx" data-id="106" data-gps-track="site.switch({ target_site:106, item_type:3 }),site_switcher.click({ item_type:1 })">
+        <div class="favicon favicon-unix site-icon grid--cell" title="Unix &amp; Linux"></div>
+        <span class="grid--cell fl1">
+            Unix &amp; Linux
+        </span>
+            <span class="rep-score grid--cell">159</span>
+    </a>
+
+                         </li>
+                         <li>
+                                 <a href="https://math.stackexchange.com/" class="site-link js-gps-track grid gs8 gsx" data-id="69" data-gps-track="site.switch({ target_site:69, item_type:3 }),site_switcher.click({ item_type:1 })">
+        <div class="favicon favicon-math site-icon grid--cell" title="Mathematics"></div>
+        <span class="grid--cell fl1">
+            Mathematics
+        </span>
+            <span class="rep-score grid--cell">153</span>
+    </a>
+
+                         </li>
+                         <li>
+                                 <a href="https://softwarerecs.stackexchange.com/" class="site-link js-gps-track grid gs8 gsx" data-id="536" data-gps-track="site.switch({ target_site:536, item_type:3 }),site_switcher.click({ item_type:1 })">
+        <div class="favicon favicon-softwarerecs site-icon grid--cell" title="Software Recommendations"></div>
+        <span class="grid--cell fl1">
+            Software Recommendations
+        </span>
+            <span class="rep-score grid--cell">141</span>
+    </a>
+
+                         </li>
+                 </ul>
+    </div>
+    <div class="header">
+        <h3><a href="https://stackexchange.com/sites">more stack exchange communities</a>
+        </h3>
+        <div class="float-right">
+            <a href="https://stackoverflow.blog/">company blog</a>
+        </div>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+    </div>
+</div>
+
+
+    <script>
+        StackExchange.ready(function () {
+            StackExchange.topbar.init();
+        });
+    </script>
+
+                
+                    <nav class="nav">
+                        <ul>
+                                <li class="current "><a href="https://stackoverflow.com/questions" title="Questions">Questions</a></li>
+
+    <li><a href="https://stackoverflow.com/jobs" title="Jobs">Jobs</a></li>
+                                <li><a href="https://stackoverflow.com/tags" title="Tags">Tags</a></li>
+
+                                <li><a href="https://stackoverflow.com/users" title="Users">Users</a></li>
+
+                                <li><a href="https://stackoverflow.com/help/badges" title="Badges">Badges</a></li>
+
+                                <li class="nav-askquestion"><a href="https://stackoverflow.com/questions/ask" title="Ask">Ask</a></li>
+
+                        </ul>
+                    </nav>
+
+                <div id="notify-container">
+                </div>
+
+
+
+            
+
+
+
+                <main class="snippet-hidden">
+                    
+
+
+
+<div itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+
+
+<div class="question" id="question" data-questionid="45530752">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon.png?v=c78bd457575a">
+    <header class="-summary">
+
+<div class="-votes vote js-voting-container" data-post-id="45530752" data-ltu="False">
+        <a class="js-vote-up-btn vote-up-off" title="This question shows research effort; it is useful and clear" data-selected-classes="vote-up-on" aria-pressed="false" role="button" tabindex="0" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#">up vote</a>
+        <span itemprop="upvoteCount" class="js-vote-count vote-count-post mobile-vote-count" data-value="44">44</span>
+        <a class="js-vote-down-btn vote-down-off" title="This question does not show any research effort; it is unclear or not useful" data-selected-classes="vote-down-on" aria-pressed="false" role="button" tabindex="0" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#">down vote</a>
+
+        <a class="js-favorite-btn star-off js-gps-track" data-gps-track="post.click({ item: 1, priv: 27, post_type: 1 })" title="Click to mark as favorite question (click again to undo)" data-selected-classes="star-on" aria-pressed="false" role="button" tabindex="0" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#">favorite</a>
+</div><!-- / votes -->
+
+        <div class="-details">
+            <h2 itemprop="name">
+
+                    <a href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5" class="question-hyperlink">Getting Image from API in Angular 4/5+?</a>
+            </h2>
+            <div class="-tags">
+                    
+                        <a href="https://stackoverflow.com/questions/tagged/angular" class="post-tag">angular</a>
+                    
+                    
+                        <a href="https://stackoverflow.com/questions/tagged/typescript" class="post-tag">typescript</a>
+                    
+                    
+                        <a href="https://stackoverflow.com/questions/tagged/angular2-services" class="post-tag">angular2-services</a>
+                    
+            </div>
+        </div><!-- / details -->
+    </header>
+
+    <div class="post-text" itemprop="text">
+
+<p>I have new to develop Angular 4. I have facing issue while getting response from API about display image.In API,an image file has input-stream file,I don't know how to retrieve it and display it properly.</p>
+
+<p>Can you anyone resolve it?</p>
+
+<p>I tried this:</p>
+
+<ul>
+<li><p><strong>Image.Component.ts:</strong> </p>
+
+<pre class="lang-js prettyprint prettyprinted" style=""><code><span class="kwd">this</span><span class="pun">.</span><span class="pln">http</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="str">'http://localhost:8080/xxx/download/file/596fba76ed18aa54e4f80769'</span><span class="pun">)</span><span class="pln">
+         </span><span class="pun">.</span><span class="pln">subscribe</span><span class="pun">((</span><span class="pln">response</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> </span><span class="kwd">var</span><span class="pln"> blob </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">Blob</span><span class="pun">([</span><span class="pln">response</span><span class="pun">.</span><span class="pln">text</span><span class="pun">()],</span><span class="pln"> </span><span class="pun">{</span><span class="pln">type</span><span class="pun">:</span><span class="pln"> </span><span class="str">"image/png"</span><span class="pun">});</span><span class="pln">
+           console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">blob</span><span class="pun">);</span><span class="pln">
+           console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">window</span><span class="pun">.</span><span class="pln">btoa</span><span class="pun">(</span><span class="pln">blob</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">()));</span><span class="pln">           
+</span><span class="pun">});</span></code></pre></li>
+</ul>
+
+<p>Result of this =&gt; <code>W29iamVjdCBCbG9iXQ==</code> , but it was not correct format </p>
+
+<p>and tried this also:</p>
+
+<pre class="lang-js prettyprint prettyprinted" style=""><code><span class="kwd">this</span><span class="pun">.</span><span class="pln">http</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="str">'http://localhost:8080/xxx/download/file/596fba76ed18aa54e4f80769'</span><span class="pun">).</span><span class="pln">map</span><span class="pun">(</span><span class="typ">Image</span><span class="pun">=&gt;</span><span class="typ">Image</span><span class="pun">.</span><span class="pln">text</span><span class="pun">())</span><span class="pln">
+  </span><span class="pun">.</span><span class="pln">subscribe</span><span class="pun">(</span><span class="pln">data </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">((</span><span class="pln">data</span><span class="pun">.</span><span class="pln">toString</span><span class="pun">()));</span><span class="pln">   
+</span><span class="pun">});</span></code></pre>
+
+<p>Result like this =&gt;   </p>
+
+<pre class="lang-js prettyprint prettyprinted" style=""><code><span class="pln"> </span><span class="pun">����</span><span class="pln">\ExifII</span><span class="pun">*��</span><span class="lit">7</span><span class="pln">                                                      </span><span class="pun">��</span><span class="typ">DuckyK</span><span class="pun">��</span><span class="pln">fhttp</span><span class="pun">:</span><span class="com">//ns.adobe.com/xap/1.0/&lt;?xpacket begin="" id="W5M0MpCehiHzreSzNTczkc9d"?&gt; &lt;x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.3-c011 66.145661, 2012/02/06-14:56:27        "&gt; &lt;rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"&gt; &lt;rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#" xmlns:xmp="http://ns.adobe.com/xap/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmpMM:OriginalDocumentID="xmp.did:0280117407206811A2188F30B3BD015B" xmpMM:DocumentID="xmp.did:E2C71E85399511E7A5719C5BBD3DDB73" xmpMM:InstanceID="xmp.iid:E2C71E84399511E7A5719C5BBD3DDB73" xmp:CreatorTool="Adobe Photoshop CC 2014 (Windows)"&gt; &lt;xmpMM:DerivedFrom stRef:instanceID="xmp.iid:7092a9cd-b3fd-bb49-b53c-9b6e1aa1ac93" stRef:documentID="adobe:docid:photoshop:40615934-3680-11e7-911d-f07c687d49b8"/&gt; &lt;dc:rights&gt; &lt;rdf:Alt&gt; &lt;rdf:li xml:lang="x-default"&gt;                                                      &lt;/rdf:li&gt; &lt;/rdf:Alt&gt; &lt;/dc:rights&gt; &lt;dc:creator&gt; &lt;rdf:Seq/&gt; &lt;/dc:creator&gt; &lt;/rdf:Description&gt; &lt;/rdf:RDF&gt; &lt;/x:xmpmeta&gt; &lt;?xpacket end="r"?&gt;���Photoshop 3.08BIMJZ%Gt6                                                      8BIM%�&lt;".}��νz��܌��Adobed����  </span></code></pre>
+
+<p>but I used to encode using window.btoa it should be error like not latin range</p>
+    </div><!-- / post-text -->
+    <time itemprop="dateCreated" datetime="2017-08-06T09:52:56"></time>
+    <footer>
+<div class="util-bar post-menu">
+            <a href="https://stackoverflow.com/q/45530752/3262551" itemprop="url" class="js-share-link js-gps-track" title="short permalink to this question" data-gps-track="post.click({ item: 2, priv: 27, post_type: 1 })" data-controller="se-share-sheet s-popover" data-se-share-sheet-title="Share a link to this question" data-se-share-sheet-subtitle="(includes your user id)" data-se-share-sheet-post-type="question" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-location="1" data-s-popover-placement="bottom-start" aria-controls="se-share-sheet-0" data-action=" s-popover#toggle se-share-sheet#preventNavigation s-popover:show-&gt;se-share-sheet#willShow s-popover:shown-&gt;se-share-sheet#didShow">share</a><div class="s-popover z-dropdown" style="width: unset; max-width: 28em; position: absolute; transform: translate3d(5px, -10px, 0px); top: 0px; left: 0px; will-change: transform;" id="se-share-sheet-0" x-placement="top-start"><div class="s-popover--arrow"></div><div><span class="js-title fw-bold">Share a link to this question</span> <span class="js-subtitle">(includes your user id)</span></div><div class="my8"><input type="text" class="js-input s-input wmn3 sm:wmn-initial" readonly=""></div><div class="d-flex jc-space-between mbn4"><button class="js-copy-link-btn s-btn s-btn__link">Copy link</button><div class="js-social-container"></div></div></div>
+                    <a href="https://stackoverflow.com/posts/45530752/edit" title="revise and improve this post" class="js-gps-track" data-gps-track="post.click({ item: 6, priv: 27, post_type: 1 })">edit</a>
+
+
+
+        <a href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" class="flag-post-link js-gps-track" data-postid="45530752" title="flag this post for serious problems or moderator attention" data-gps-track="post.click({ item: 5, priv: 27, post_type: 1 })">flag</a>
+
+            <a class="bounty-link bounty js-gps-track" title="offer some of your reputation for better answers" data-gps-track="post.click({ item: 3, priv: 27, post_type: 1 })">
+                start a bounty
+            </a>
+</div>
+<div class="menu-popup-container" data-postid="45530752" style="display:none;"></div>
+
+    <div class="user-info owner" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+		<div class="user-action-time">
+            asked <span title="2017-08-06 09:52:56Z" class="relativetime">Aug 6 '17 at 9:52</span>
+		</div>
+		<div class="user-gravatar">
+            <a href="https://stackoverflow.com/users/4264464/karthic-g"><div class="gravatar-wrapper-30"><img src="./Image_Getting Image from API in Angular 4_5+_ - Stack Overflow_files/HjIyg.jpg" alt="" width="30" height="30" class="bar-sm"></div></a>
+		</div>
+		<div class="user-details">
+            <a href="https://stackoverflow.com/users/4264464/karthic-g">Karthic G</a><br><span class="d-none" itemprop="name">Karthic G</span>            <span class="reputation-score" title="reputation score " dir="ltr">544</span><span title="1 gold badge" aria-hidden="true"><span class="badge1">●</span><span class="badgecount">1</span></span><span class="v-visible-sr">1 gold badge</span><span title="8 silver badges" aria-hidden="true"><span class="badge2">●</span><span class="badgecount">8</span></span><span class="v-visible-sr">8 silver badges</span><span title="17 bronze badges" aria-hidden="true"><span class="badge3">●</span><span class="badgecount">17</span></span><span class="v-visible-sr">17 bronze badges</span>
+		</div>
+	</div>
+
+
+
+    <div class="user-info">
+		<div class="user-action-time">
+            <a href="https://stackoverflow.com/posts/45530752/revisions" title="show all edits to this post" class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 27, post_type: 1 })">edited <span title="2018-08-22 00:58:25Z" class="relativetime">Aug 22 '18 at 0:58</span></a>
+		</div>
+		<div class="user-gravatar">
+            <a href="https://stackoverflow.com/users/5535245/georgeawg"><div class="gravatar-wrapper-30"><img src="./Image_Getting Image from API in Angular 4_5+_ - Stack Overflow_files/YnjcO.jpg" alt="" width="30" height="30" class="bar-sm"></div></a>
+		</div>
+		<div class="user-details">
+            <a href="https://stackoverflow.com/users/5535245/georgeawg">georgeawg</a><br>            <span class="reputation-score" title="reputation score 40,947" dir="ltr">40.9k</span><span title="11 gold badges" aria-hidden="true"><span class="badge1">●</span><span class="badgecount">11</span></span><span class="v-visible-sr">11 gold badges</span><span title="59 silver badges" aria-hidden="true"><span class="badge2">●</span><span class="badgecount">59</span></span><span class="v-visible-sr">59 silver badges</span><span title="76 bronze badges" aria-hidden="true"><span class="badge3">●</span><span class="badgecount">76</span></span><span class="v-visible-sr">76 bronze badges</span>
+		</div>
+	</div>
+        
+    </footer>
+
+
+
+<div id="comments-45530752" class="comments-wrap comments js-comments-container " data-post-id="45530752" data-min-length="15">
+    <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="true" data-cansee="false" data-comments-unavailable="false" data-addlink-disabled="false">
+
+    <li id="comment-78022173" class="comment js-comment " data-comment-id="78022173">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+                <div class="comment-voting mtn2 js-comment-edit-hide">
+                        <a tabindex="0" role="button" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" class="comment-up comment-up-off" aria-label="Upvote Comment" title="This comment adds something useful to the post">
+                            <svg aria-hidden="true" class="svg-icon iconArrowUp" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13h16L9 5l-8 8z"></path></svg>
+                        </a>
+                </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">Check out <a href="https://stackoverflow.com/questions/36443172/extracting-image-data-from-response-angular2">this post</a></span>
+                
+                    –&nbsp;<a href="https://stackoverflow.com/users/6139866/andrei-matracaru" title="2,774 reputation" class="comment-user">Andrei Matracaru</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#comment78022173_45530752"><span title="2017-08-06 10:32:11Z" class="relativetime-clean">Aug 6 '17 at 10:32</span></a></span>
+                                                            </div>
+        </div>
+    </li>
+    <li id="comment-78025147" class="comment js-comment " data-comment-id="78025147">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+                <div class="comment-voting mtn2 js-comment-edit-hide">
+                        <a tabindex="0" role="button" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" class="comment-up comment-up-off" aria-label="Upvote Comment" title="This comment adds something useful to the post">
+                            <svg aria-hidden="true" class="svg-icon iconArrowUp" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13h16L9 5l-8 8z"></path></svg>
+                        </a>
+                </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">I tried that link but it shows as " unsafe:blob:<a href="http://localhost:4200/47c05912-5beb-41bf-a791-ca8f0d86f6af" rel="nofollow noreferrer">localhost:4200/47c05912-5beb-41bf-a791-ca8f0d86f6af</a> net::ERR_UNKNOWN_URL_SCHEME" and that uri has direct image</span>
+                
+                    –&nbsp;<a href="https://stackoverflow.com/users/4264464/karthic-g" title="544 reputation" class="comment-user owner">Karthic G</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#comment78025147_45530752"><span title="2017-08-06 13:41:54Z" class="relativetime-clean">Aug 6 '17 at 13:41</span></a></span>
+                        <span title="this comment was edited 1 time">
+                            <svg aria-hidden="true" class="svg-icon va-text-bottom o50 iconPencilSm" width="14" height="14" viewBox="0 0 14 14"><path d="M11.1 1.71l1.13 1.12c.2.2.2.51 0 .71L11.1 4.7 9.21 2.86l1.17-1.15c.2-.2.51-.2.71 0zM2 10.12l6.37-6.43 1.88 1.88L3.88 12H2v-1.88z"></path></svg>
+                        </span>
+                                                            </div>
+        </div>
+    </li>
+    </ul>
+    <div class="comment-form">
+        <div id="comments-link-45530752" class="comment-link-container">
+
+                <a class="js-add-link comments-link" title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments." href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#">add a comment</a>
+            <span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" onclick=""></a>
+        </div>
+
+            <form id="add-comment-45530752" class="mobile-comment-form" data-placeholdertext="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments."></form>
+    </div>
+</div></div>
+
+
+
+    <a name="tab-top"></a>
+
+    <div class="subheader">
+        <div class="-title">
+            <h2>2 Answers</h2>
+            <span style="display:none;" itemprop="answerCount">2</span>
+        </div>
+
+        <div class="-actions">
+            <form id="answersort" action="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#tab-top" class="-sorter" method="get">
+                <label>
+                    order by
+                    <select name="answertab" class="submit-on-change _naked _link">
+                        <option value="active">active</option>
+                        <option value="oldest">oldest</option>
+                        <option value="votes" selected="selected">votes</option>
+                    </select>
+                </label>
+            </form>
+        </div><!-- / actions -->
+        
+        
+    </div><!-- / subheader -->
+
+
+
+  
+    <a name="45630579"></a>
+    <div class="-summary answer" data-answerid="45630579" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+        <div class="answer-body">
+
+
+<div class="-votes vote js-voting-container" data-post-id="45630579" data-ltu="False">
+        <a class="js-vote-up-btn vote-up-off" title="This answer is useful" data-selected-classes="vote-up-on" aria-pressed="false" role="button" tabindex="0" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#">up vote</a>
+        <span itemprop="upvoteCount" class="js-vote-count vote-count-post mobile-vote-count" data-value="125">125</span>
+        <a class="js-vote-down-btn vote-down-off" title="This answer is not useful" data-selected-classes="vote-down-on" aria-pressed="false" role="button" tabindex="0" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#">down vote</a>
+
+</div><!-- / votes -->
+                <div class="post-text" itemprop="text">
+                    <p>You should set <code>responseType: ResponseContentType.Blob</code> in your GET-Request settings, because so you can get your image as blob and convert it later da base64-encoded source. You code above is not good. If you would like to do this correctly, then create separate service to get images from API. Beacuse it ism't good to call HTTP-Request in components.</p>
+
+<p>Here is an working example:</p>
+
+<p>Create <code>image.service.ts</code> and put following code:</p>
+
+<p><strong>Angular 4:</strong></p>
+
+<pre class="lang-js prettyprint prettyprinted" style=""><code><span class="pln">getImage</span><span class="pun">(</span><span class="pln">imageUrl</span><span class="pun">:</span><span class="pln"> string</span><span class="pun">):</span><span class="pln"> </span><span class="typ">Observable</span><span class="pun">&lt;</span><span class="typ">File</span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">http
+        </span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="pln">imageUrl</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> responseType</span><span class="pun">:</span><span class="pln"> </span><span class="typ">ResponseContentType</span><span class="pun">.</span><span class="typ">Blob</span><span class="pln"> </span><span class="pun">})</span><span class="pln">
+        </span><span class="pun">.</span><span class="pln">map</span><span class="pun">((</span><span class="pln">res</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Response</span><span class="pun">)</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> res</span><span class="pun">.</span><span class="pln">blob</span><span class="pun">());</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p><strong>Angular 5+:</strong></p>
+
+<pre class="lang-js prettyprint prettyprinted" style=""><code><span class="pln">getImage</span><span class="pun">(</span><span class="pln">imageUrl</span><span class="pun">:</span><span class="pln"> string</span><span class="pun">):</span><span class="pln"> </span><span class="typ">Observable</span><span class="pun">&lt;</span><span class="typ">Blob</span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+  </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">httpClient</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="pln">imageUrl</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="pln"> responseType</span><span class="pun">:</span><span class="pln"> </span><span class="str">'blob'</span><span class="pln"> </span><span class="pun">});</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p><strong>Important: Since Angular 5+ you should use the new <code>HttpClient</code>.</strong> </p>
+
+<p>The new <code>HttpClient</code> returns JSON by default. If you need other response type, so you can specify that by setting <code>responseType: 'blob'</code>. Read more about that <a href="https://angular.io/guide/http#requesting-non-json-data" rel="noreferrer">here</a>.</p>
+
+<p>Now you need to create some function in your <code>image.component.ts</code> to get image and show it in html.</p>
+
+<p>For creating an image from Blob you need to use JavaScript's <code>FileReader</code>.
+Here is function which creates new <code>FileReader</code> and listen to FileReader's load-Event. As result this function returns base64-encoded image, which you can use in img src-attribute:</p>
+
+<pre class="lang-js prettyprint prettyprinted" style=""><code><span class="pln">imageToShow</span><span class="pun">:</span><span class="pln"> any</span><span class="pun">;</span><span class="pln">
+
+createImageFromBlob</span><span class="pun">(</span><span class="pln">image</span><span class="pun">:</span><span class="pln"> </span><span class="typ">Blob</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+   </span><span class="kwd">let</span><span class="pln"> reader </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">FileReader</span><span class="pun">();</span><span class="pln">
+   reader</span><span class="pun">.</span><span class="pln">addEventListener</span><span class="pun">(</span><span class="str">"load"</span><span class="pun">,</span><span class="pln"> </span><span class="pun">()</span><span class="pln"> </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">imageToShow </span><span class="pun">=</span><span class="pln"> reader</span><span class="pun">.</span><span class="pln">result</span><span class="pun">;</span><span class="pln">
+   </span><span class="pun">},</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">);</span><span class="pln">
+
+   </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">image</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      reader</span><span class="pun">.</span><span class="pln">readAsDataURL</span><span class="pun">(</span><span class="pln">image</span><span class="pun">);</span><span class="pln">
+   </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Now you should use your created <code>ImageService</code> to get image from api. You should to subscribe to data and give this data to <code>createImageFromBlob</code>-function. Here is an example function:</p>
+
+<pre class="lang-js prettyprint prettyprinted" style=""><code><span class="pln">getImageFromService</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+      </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">isImageLoading </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">true</span><span class="pun">;</span><span class="pln">
+      </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">imageService</span><span class="pun">.</span><span class="pln">getImage</span><span class="pun">(</span><span class="pln">yourImageUrl</span><span class="pun">).</span><span class="pln">subscribe</span><span class="pun">(</span><span class="pln">data </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">createImageFromBlob</span><span class="pun">(</span><span class="pln">data</span><span class="pun">);</span><span class="pln">
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">isImageLoading </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+      </span><span class="pun">},</span><span class="pln"> error </span><span class="pun">=&gt;</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">isImageLoading </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">false</span><span class="pun">;</span><span class="pln">
+        console</span><span class="pun">.</span><span class="pln">log</span><span class="pun">(</span><span class="pln">error</span><span class="pun">);</span><span class="pln">
+      </span><span class="pun">});</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+
+<p>Now you can use your <code>imageToShow</code>-variable in HTML template like this:</p>
+
+<pre class="lang-js prettyprint prettyprinted" style=""><code><span class="pun">&lt;</span><span class="pln">img </span><span class="pun">[</span><span class="pln">src</span><span class="pun">]=</span><span class="str">"imageToShow"</span><span class="pln">
+     alt</span><span class="pun">=</span><span class="str">"Place image title"</span><span class="pln">
+     </span><span class="pun">*</span><span class="pln">ngIf</span><span class="pun">=</span><span class="str">"!isImageLoading; else noImageFound"</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="pun">&lt;</span><span class="pln">ng</span><span class="pun">-</span><span class="pln">template </span><span class="pun">#</span><span class="pln">noImageFound</span><span class="pun">&gt;</span><span class="pln">
+     </span><span class="pun">&lt;</span><span class="pln">img src</span><span class="pun">=</span><span class="str">"fallbackImage.png"</span><span class="pln"> alt</span><span class="pun">=</span><span class="str">"Fallbackimage"</span><span class="pun">&gt;</span><span class="pln">
+</span><span class="pun">&lt;/</span><span class="pln">ng</span><span class="pun">-</span><span class="pln">template</span><span class="pun">&gt;</span></code></pre>
+
+<p>I hope this description is clear to understand and you can use it in your project.</p>
+
+<p>See the working example for Angular 5+ <a href="https://stackblitz.com/edit/angular-1yr75s" rel="noreferrer">here</a>.</p>
+                </div>
+        </div>
+        <time itemprop="dateCreated" datetime="2017-08-11T08:37:25"></time>
+        <span class="d-none" itemprop="url">https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5/45630579#45630579</span>
+        <footer>
+<div class="util-bar post-menu">
+            <a href="https://stackoverflow.com/a/45630579/3262551" itemprop="url" class="js-share-link js-gps-track" title="short permalink to this answer" data-gps-track="post.click({ item: 2, priv: 27, post_type: 2 })" data-controller="se-share-sheet s-popover" data-se-share-sheet-title="Share a link to this answer" data-se-share-sheet-subtitle="(includes your user id)" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-location="2" data-s-popover-placement="bottom-start" aria-controls="se-share-sheet-1" data-action=" s-popover#toggle se-share-sheet#preventNavigation s-popover:show-&gt;se-share-sheet#willShow s-popover:shown-&gt;se-share-sheet#didShow">share</a><div class="s-popover z-dropdown" style="width: unset; max-width: 28em; position: absolute; transform: translate3d(5px, -10px, 0px); top: 0px; left: 0px; will-change: transform;" id="se-share-sheet-1" x-placement="top-start"><div class="s-popover--arrow"></div><div><span class="js-title fw-bold">Share a link to this answer</span> <span class="js-subtitle">(includes your user id)</span></div><div class="my8"><input type="text" class="js-input s-input wmn3 sm:wmn-initial" readonly=""></div><div class="d-flex jc-space-between mbn4"><button class="js-copy-link-btn s-btn s-btn__link">Copy link</button><div class="js-social-container"></div></div></div>
+                    <a href="https://stackoverflow.com/posts/45630579/edit" title="revise and improve this post" class="js-gps-track" data-gps-track="post.click({ item: 6, priv: 27, post_type: 2 })">edit</a>
+
+
+
+        <a href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" class="flag-post-link js-gps-track" data-postid="45630579" title="flag this post for serious problems or moderator attention" data-gps-track="post.click({ item: 5, priv: 27, post_type: 2 })">flag</a>
+
+</div>
+<div class="menu-popup-container" data-postid="45630579" style="display:none;"></div>
+
+    <div class="user-info " itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+		<div class="user-action-time">
+            answered <span title="2017-08-11 08:37:25Z" class="relativetime">Aug 11 '17 at 8:37</span>
+		</div>
+		<div class="user-gravatar">
+            <a href="https://stackoverflow.com/users/4389078/gregor-doroschenko"><div class="gravatar-wrapper-30"><img src="./Image_Getting Image from API in Angular 4_5+_ - Stack Overflow_files/CF1V9.jpg" alt="" width="30" height="30" class="bar-sm"></div></a>
+		</div>
+		<div class="user-details">
+            <a href="https://stackoverflow.com/users/4389078/gregor-doroschenko">Gregor Doroschenko</a><br><span class="d-none" itemprop="name">Gregor Doroschenko</span>            <span class="reputation-score" title="reputation score " dir="ltr">6,094</span><span title="5 gold badges" aria-hidden="true"><span class="badge1">●</span><span class="badgecount">5</span></span><span class="v-visible-sr">5 gold badges</span><span title="17 silver badges" aria-hidden="true"><span class="badge2">●</span><span class="badgecount">17</span></span><span class="v-visible-sr">17 silver badges</span><span title="32 bronze badges" aria-hidden="true"><span class="badge3">●</span><span class="badgecount">32</span></span><span class="v-visible-sr">32 bronze badges</span>
+		</div>
+	</div>
+
+
+    <div class="user-info">
+		<div class="user-action-time">
+            <a href="https://stackoverflow.com/posts/45630579/revisions" title="show all edits to this post" class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 27, post_type: 2 })">edited <span title="2018-06-21 22:36:04Z" class="relativetime">Jun 21 '18 at 22:36</span></a>
+		</div>
+		<div class="user-details">
+             <br>
+		</div>
+	</div>
+        </footer>
+        
+
+<div id="comments-45630579" class="comments-wrap comments js-comments-container " data-post-id="45630579" data-min-length="15">
+    <ul class="comments-list js-comments-list" data-remaining-comments-count="3" data-canpost="true" data-cansee="false" data-comments-unavailable="false" data-addlink-disabled="false">
+
+    <li id="comment-87246676" class="comment js-comment " data-comment-id="87246676">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+                <div class="comment-voting mtn2 js-comment-edit-hide">
+                        <a tabindex="0" role="button" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" class="comment-up comment-up-off" aria-label="Upvote Comment" title="This comment adds something useful to the post">
+                            <svg aria-hidden="true" class="svg-icon iconArrowUp" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13h16L9 5l-8 8z"></path></svg>
+                        </a>
+                </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">Well, this doesn't work with angular 5.</span>
+                
+                    –&nbsp;<a href="https://stackoverflow.com/users/1310469/malkoto1" title="225 reputation" class="comment-user">malkoto1</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#comment87246676_45630579"><span title="2018-05-01 10:23:21Z" class="relativetime-clean">May 1 '18 at 10:23</span></a></span>
+                                                            </div>
+        </div>
+    </li>
+    <li id="comment-87246949" class="comment js-comment " data-comment-id="87246949">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+                <div class="comment-voting mtn2 js-comment-edit-hide">
+                        <a tabindex="0" role="button" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" class="comment-up comment-up-off" aria-label="Upvote Comment" title="This comment adds something useful to the post">
+                            <svg aria-hidden="true" class="svg-icon iconArrowUp" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13h16L9 5l-8 8z"></path></svg>
+                        </a>
+                </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">@malkoto1 I know, because I doesn't have time to update this answer. In Angular 5 you should use HttpClient instead of Http.</span>
+                
+                    –&nbsp;<a href="https://stackoverflow.com/users/4389078/gregor-doroschenko" title="6,094 reputation" class="comment-user">Gregor Doroschenko</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#comment87246949_45630579"><span title="2018-05-01 10:34:20Z" class="relativetime-clean">May 1 '18 at 10:34</span></a></span>
+                                                            </div>
+        </div>
+    </li>
+    <li id="comment-87247219" class="comment js-comment " data-comment-id="87247219">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">3</span>
+            </div>
+                <div class="comment-voting mtn2 js-comment-edit-hide">
+                        <a tabindex="0" role="button" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" class="comment-up comment-up-off" aria-label="Upvote Comment" title="This comment adds something useful to the post">
+                            <svg aria-hidden="true" class="svg-icon iconArrowUp" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13h16L9 5l-8 8z"></path></svg>
+                        </a>
+                </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">Well, I have made it to work with HttpClient, but somehow it tries to parse JSON and is giving the following error: SyntaxError: JSON.parse: unexpected character at line 1 column 1 of the JSON data.  I will be thankful if you have some time to update it in th enear future :)</span>
+                
+                    –&nbsp;<a href="https://stackoverflow.com/users/1310469/malkoto1" title="225 reputation" class="comment-user">malkoto1</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#comment87247219_45630579"><span title="2018-05-01 10:43:21Z" class="relativetime-clean">May 1 '18 at 10:43</span></a></span>
+                        <span title="this comment was edited 2 times">
+                            <svg aria-hidden="true" class="svg-icon va-text-bottom o50 iconPencilSm" width="14" height="14" viewBox="0 0 14 14"><path d="M11.1 1.71l1.13 1.12c.2.2.2.51 0 .71L11.1 4.7 9.21 2.86l1.17-1.15c.2-.2.51-.2.71 0zM2 10.12l6.37-6.43 1.88 1.88L3.88 12H2v-1.88z"></path></svg>
+                        </span>
+                                                            </div>
+        </div>
+    </li>
+    <li id="comment-91952964" class="comment js-comment " data-comment-id="91952964">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+            </div>
+                <div class="comment-voting mtn2 js-comment-edit-hide">
+                        <a tabindex="0" role="button" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" class="comment-up comment-up-off" aria-label="Upvote Comment" title="This comment adds something useful to the post">
+                            <svg aria-hidden="true" class="svg-icon iconArrowUp" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13h16L9 5l-8 8z"></path></svg>
+                        </a>
+                </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">I have to pass headers as well. So my call is :  return this httpClient.get('url', {headers: this.httpHeaders});  So, how should I pass {response-type:'blob'} ?</span>
+                
+                    –&nbsp;<a href="https://stackoverflow.com/users/4673585/rahul-sharma" title="149 reputation" class="comment-user">Rahul Sharma</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#comment91952964_45630579"><span title="2018-09-25 20:33:01Z" class="relativetime-clean">Sep 25 '18 at 20:33</span></a></span>
+                                                            </div>
+        </div>
+    </li>
+    <li id="comment-94783657" class="comment js-comment " data-comment-id="94783657">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+                    <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+            </div>
+                <div class="comment-voting mtn2 js-comment-edit-hide">
+                        <a tabindex="0" role="button" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" class="comment-up comment-up-off" aria-label="Upvote Comment" title="This comment adds something useful to the post">
+                            <svg aria-hidden="true" class="svg-icon iconArrowUp" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13h16L9 5l-8 8z"></path></svg>
+                        </a>
+                </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">Thanks you! Works perfect in Angular 7.</span>
+                
+                    –&nbsp;<a href="https://stackoverflow.com/users/1141612/miguel-lara" title="93 reputation" class="comment-user">Miguel Lara</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#comment94783657_45630579"><span title="2018-12-29 20:18:03Z" class="relativetime-clean">Dec 29 '18 at 20:18</span></a></span>
+                                                            </div>
+        </div>
+    </li>
+    </ul>
+    <div class="comment-form">
+        <div id="comments-link-45630579" class="comment-link-container">
+
+                <a class="js-add-link comments-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”." href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#">add a comment</a>
+            <span class="js-link-separator ">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link " title="expand to show all comments on this post" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" onclick="">show <b>3</b> more comments</a>
+        </div>
+
+            <form id="add-comment-45630579" class="mobile-comment-form" data-placeholdertext="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></form>
+    </div>
+</div>    </div>
+
+  
+    <a name="50186895"></a>
+    <div class="-summary answer" data-answerid="50186895" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+        <div class="answer-body">
+
+
+<div class="-votes vote js-voting-container" data-post-id="50186895" data-ltu="False">
+        <a class="js-vote-up-btn vote-up-off" title="This answer is useful" data-selected-classes="vote-up-on" aria-pressed="false" role="button" tabindex="0" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#">up vote</a>
+        <span itemprop="upvoteCount" class="js-vote-count vote-count-post mobile-vote-count" data-value="12">12</span>
+        <a class="js-vote-down-btn vote-down-off" title="This answer is not useful" data-selected-classes="vote-down-on" aria-pressed="false" role="button" tabindex="0" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#">down vote</a>
+
+</div><!-- / votes -->
+                <div class="post-text" itemprop="text">
+                    <p>angular 5 : </p>
+
+<pre class="lang-js prettyprint prettyprinted" style=""><code><span class="pln"> getImage</span><span class="pun">(</span><span class="pln">id</span><span class="pun">:</span><span class="pln"> string</span><span class="pun">):</span><span class="pln"> </span><span class="typ">Observable</span><span class="pun">&lt;</span><span class="typ">Blob</span><span class="pun">&gt;</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">httpClient</span><span class="pun">.</span><span class="kwd">get</span><span class="pun">(</span><span class="str">'http://myip/image/'</span><span class="pun">+</span><span class="pln">id</span><span class="pun">,</span><span class="pln"> </span><span class="pun">{</span><span class="pln">responseType</span><span class="pun">:</span><span class="pln"> </span><span class="str">"blob"</span><span class="pun">});</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+                </div>
+        </div>
+        <time itemprop="dateCreated" datetime="2018-05-05T07:28:21"></time>
+        <span class="d-none" itemprop="url">https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5/50186895#50186895</span>
+        <footer>
+<div class="util-bar post-menu">
+            <a href="https://stackoverflow.com/a/50186895/3262551" itemprop="url" class="js-share-link js-gps-track" title="short permalink to this answer" data-gps-track="post.click({ item: 2, priv: 27, post_type: 2 })" data-controller="se-share-sheet s-popover" data-se-share-sheet-title="Share a link to this answer" data-se-share-sheet-subtitle="(includes your user id)" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter devto" data-se-share-sheet-location="2" data-s-popover-placement="bottom-start" aria-controls="se-share-sheet-2" data-action=" s-popover#toggle se-share-sheet#preventNavigation s-popover:show-&gt;se-share-sheet#willShow s-popover:shown-&gt;se-share-sheet#didShow">share</a><div class="s-popover z-dropdown" style="width: unset; max-width: 28em; position: absolute; transform: translate3d(5px, -10px, 0px); top: 0px; left: 0px; will-change: transform;" id="se-share-sheet-2" x-placement="top-start"><div class="s-popover--arrow"></div><div><span class="js-title fw-bold">Share a link to this answer</span> <span class="js-subtitle">(includes your user id)</span></div><div class="my8"><input type="text" class="js-input s-input wmn3 sm:wmn-initial" readonly=""></div><div class="d-flex jc-space-between mbn4"><button class="js-copy-link-btn s-btn s-btn__link">Copy link</button><div class="js-social-container"></div></div></div>
+                    <a href="https://stackoverflow.com/posts/50186895/edit" title="revise and improve this post" class="js-gps-track" data-gps-track="post.click({ item: 6, priv: 27, post_type: 2 })">edit</a>
+
+
+
+        <a href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" class="flag-post-link js-gps-track" data-postid="50186895" title="flag this post for serious problems or moderator attention" data-gps-track="post.click({ item: 5, priv: 27, post_type: 2 })">flag</a>
+
+</div>
+<div class="menu-popup-container" data-postid="50186895" style="display:none;"></div>
+
+    <div class="user-info ">
+		<div class="user-action-time">
+            answered <span title="2018-05-05 07:28:21Z" class="relativetime">May 5 '18 at 7:28</span>
+		</div>
+		<div class="user-gravatar">
+            <span class="anonymous-gravatar"></span>
+		</div>
+		<div class="user-details">
+            user5134904<br>            
+		</div>
+	</div>
+        </footer>
+        
+
+<div id="comments-50186895" class="comments-wrap comments js-comments-container " data-post-id="50186895" data-min-length="15">
+    <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="true" data-cansee="false" data-comments-unavailable="false" data-addlink-disabled="false">
+
+    <li id="comment-91952969" class="comment js-comment " data-comment-id="91952969">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+                <div class="comment-voting mtn2 js-comment-edit-hide">
+                        <a tabindex="0" role="button" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" class="comment-up comment-up-off" aria-label="Upvote Comment" title="This comment adds something useful to the post">
+                            <svg aria-hidden="true" class="svg-icon iconArrowUp" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13h16L9 5l-8 8z"></path></svg>
+                        </a>
+                </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">I have to pass headers as well. So my call is :  return this httpClient.get('url', {headers: this.httpHeaders});  So, how should I pass {response-type:'blob'} ?</span>
+                
+                    –&nbsp;<a href="https://stackoverflow.com/users/4673585/rahul-sharma" title="149 reputation" class="comment-user">Rahul Sharma</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#comment91952969_50186895"><span title="2018-09-25 20:33:07Z" class="relativetime-clean">Sep 25 '18 at 20:33</span></a></span>
+                                                            </div>
+        </div>
+    </li>
+    <li id="comment-94660857" class="comment js-comment " data-comment-id="94660857">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+                <div class="comment-voting mtn2 js-comment-edit-hide">
+                        <a tabindex="0" role="button" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" class="comment-up comment-up-off" aria-label="Upvote Comment" title="This comment adds something useful to the post">
+                            <svg aria-hidden="true" class="svg-icon iconArrowUp" width="18" height="18" viewBox="0 0 18 18"><path d="M1 13h16L9 5l-8 8z"></path></svg>
+                        </a>
+                </div>
+                    </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy"><code>{ headers: this.httpHeaders, responseType: 'blob' }</code></span>
+                
+                    –&nbsp;<a href="https://stackoverflow.com/users/5214911/tom" title="1,290 reputation" class="comment-user">tom</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#comment94660857_50186895"><span title="2018-12-24 00:15:05Z" class="relativetime-clean">Dec 24 '18 at 0:15</span></a></span>
+                                                            </div>
+        </div>
+    </li>
+    </ul>
+    <div class="comment-form">
+        <div id="comments-link-50186895" class="comment-link-container">
+
+                <a class="js-add-link comments-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”." href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#">add a comment</a>
+            <span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" onclick=""></a>
+        </div>
+
+            <form id="add-comment-50186895" class="mobile-comment-form" data-placeholdertext="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”."></form>
+    </div>
+</div>    </div>
+
+    <a name="new-answer"></a>
+        <div class="subheader ">
+            <div class="-title">
+                <h2>Your Answer</h2>
+            </div>
+        </div><!-- / subheader -->
+        <form id="post-form" class="wrapper _inner post-form " action="https://stackoverflow.com/questions/45530752/answer/submit" method="post">
+            <input type="hidden" id="post-id" value="45530752">
+
+            <fieldset>
+
+<div class="post-editor" data-role="uploader-scrolltotarget">  
+
+
+    <div class="field _toolbar">
+        <label for="wmd-input">Body</label>
+        <div class="-item">
+            <div class="-toolbar">
+                <ul>
+                    <li>
+                        <label for="upload-trigger">
+                            <svg aria-hidden="true" class="svg-icon iconImage" width="18" height="18" viewBox="0 0 18 18"><path d="M1 3c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3zm4.5 7.5L2 15h14l-4.5-6L8 13.51 5.5 10.5zm0-4.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"></path></svg>
+                            Add picture
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+        </div>
+
+        
+        <input type="checkbox" class="overlay-trigger js-overlay-trigger" id="upload-trigger">
+
+        <div class="overlay">
+            <header class="-header">
+                <div class="-title">
+                    <h2>Upload</h2>
+                </div>
+                <div class="-actions">
+                    <button type="button" class="btn _clear js-close">Cancel</button>
+                    <button type="button" class="btn js-submit">Add picture</button>
+                </div>
+            </header>
+            <section class="-body wrapper _inner">
+                <div class="uploader-error form-error" style="display: none"></div>
+                
+                <div class="field uploader">
+                    <div class="-area js-area">
+                        <label>
+                            <input type="file" accept="image/*" class="js-image-input">
+                            <i class="-illustration"></i>
+                            <p>
+                                Click here to upload your image
+                                <small>(max 2 MiB)</small>
+                            </p>
+                        </label>
+
+                        <figure class="hidden-important"><img></figure>
+                    </div>
+
+                    <div class="js-restart hidden-important">
+                        <p class="text-centered help-text">
+                            <small><a href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" class="js-restart-trigger">Cancel and add another image</a></small>
+                        </p>
+                    </div>
+
+                    <div class="js-image-url">
+                        <p class="js-image-url-info text-centered help-text">
+                            <small>You can also provide a <a href="https://stackoverflow.com/questions/45530752/getting-image-from-api-in-angular-4-5#" class="js-image-url-trigger">link from the web</a>.</small>
+                        </p>
+
+                        <div class="field _inline-flex js-image-url-field hidden-important">
+                            <div class="-item _wide">
+                                <input type="url" placeholder="http://example.com/image.png">
+                            </div>
+                            <div class="-item">
+                                <button type="button" class="btn _clear js-image-url-cancel">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+        <div class="field -checkbox">
+            <div class="-item">
+                <input id="communitymode" name="communitymode" type="checkbox">
+            </div>
+            <label for="communitymode">community wiki</label>
+        </div>
+    
+    <script>
+        StackExchange.ready(function () {
+            StackExchange.helpers.loadTicks();
+            StackExchange.mobile.overlay.init();
+                
+                StackExchange.mobile.uploader.init();
+                
+        });
+    </script>
+
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="1013871c9d5c9c8df60f4e65483a2ac9221af924b8ae75ec7bc381b207316c6d">
+        <input id="author" name="author" type="text">
+    <input type="hidden" name="i1l" value="ubxDA0m86W0ar+CyP4EVxyN4FlGqqy6iVmGtXR2V/d8="></div>
+</div>
+
+
+            </fieldset>
+
+            <fieldset class="actions">
+                    
+                        <input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+                        <script>
+                            StackExchange.mobile.initDraft('answer-on-45530752', '#post-form', '#submit-button', false);
+                        </script>
+                    
+            </fieldset><!-- / actions -->
+        </form><!-- / wrapper -->
+
+<script>StackExchange.ready(function(){$.get('/posts/45530752/ivc/afab');});</script>
+<noscript><div><img src="/posts/45530752/ivc/afab" class="dno" alt="" width="0" height="0"></div></noscript><div style="display:none" id="prettify-lang">lang-js</div></div>
+                </main>
+                
+                <footer class="footer">
+                    <nav class="links">
+                                <a href="https://meta.stackoverflow.com/">meta</a>
+                                <a href="https://chat.stackoverflow.com/">chat</a>
+                                <a href="https://stackoverflow.com/tour">tour</a>
+                            <a href="https://stackoverflow.com/help">help</a>
+                            <a href="https://stackoverflow.blog/">blog</a>
+                            <a href="https://stackoverflow.com/legal/privacy-policy">privacy policy</a>
+                            <a href="https://stackoverflow.com/legal">legal</a>
+                            <a href="https://stackoverflow.com/contact">contact us</a>
+                        <a onclick=" StackExchange.switchMobile(&quot;off&quot;) ">full site</a>
+                        
+                    </nav>
+
+                    <p class="copyrights">2019 Stack Exchange, Inc</p>
+
+                </footer>
+                
+                <div class="overlay-bg js-overlay-bg"></div>
+
+                <div id="footer" class="hidden"></div>
+
+<script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            StackExchange.ready(function () {
+
+                StackExchange.ga.init({
+                    sendTitles: true,
+                    tracker: window.ga,
+                    trackingCodes: [
+                        'UA-108242619-1'
+                    ],
+                        checkDimension: 'dimension42'
+                });
+
+                    StackExchange.ga.setDimension('dimension1', '3952962');
+
+                    StackExchange.ga.setDimension('dimension10', 'ActivelyLooking');
+
+                    StackExchange.ga.setDimension('dimension2', '|angular|typescript|angular2-services|');
+
+                    StackExchange.ga.setDimension('dimension3', 'Questions/Show');
+
+
+                StackExchange.ga.trackPageView();
+            });
+            
+/**/
+            
+            var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+            (function() {
+                var ssl = 'https:' == document.location.protocol,
+                    s = document.getElementsByTagName('script')[0],
+                    qc = document.createElement('script');
+                 qc.async = true;
+                    qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                    s.parentNode.insertBefore(qc, s);
+                    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+/**/
+                 var sc = document.createElement('script');
+                    sc.async = true;
+                    sc.src = (ssl ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js';
+                    s.parentNode.insertBefore(sc, s);
+                    _comscore.push({ c1: "2", c2: "17440561" });
+            })();
+            
+
+</script>
+    
+            
+
+</body></html>
