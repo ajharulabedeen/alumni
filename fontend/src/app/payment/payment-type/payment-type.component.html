@@ -93,7 +93,7 @@
             <div class="col-md-3 offset-md-3">
               <div class="form-group">
                 <label>Per Page</label>
-                <input [(ngModel)]="perPage" type="text" class="form-control" value="{{perPage}}" >
+                <input [(ngModel)]="perPage" type="text" class="form-control" value="{{perPage}}">
               </div>
             </div>
 
@@ -112,17 +112,17 @@
                         <th>Operation</th>
                       </tr>
                       <tr *ngFor="let pt of ptsArray; let i=index">
+                        <td>
+                          <button class="btn btn-xs btn-primary" data-toggle="modal"
+                            data-target="#modal_work">Edit</button>
+                          <button class="btn btn-xs btn-warning" (click)="delete(pt.id)">Delete</button>
+                        </td>
                         <td>{{i+1}}</td>
                         <td>{{pt.name}}</td>
                         <td>{{pt.start_date}}</td>
                         <td>{{pt.last_date}}</td>
                         <td>{{pt.amount}}</td>
                         <td>{{pt.description}}</td>
-                        <td>
-                          <button class="btn btn-xs btn-primary" data-toggle="modal"
-                            data-target="#modal_work">Edit</button>
-                          <button class="btn btn-xs btn-warning">Delete</button>
-                        </td>
                       </tr>
                     </tbody>
                   </table>

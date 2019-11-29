@@ -19,7 +19,7 @@ export class PaymentTypeComponent implements OnInit {
   // ptsArray = new Array(PaymentType);
   ptsArray = new Array();
 
-  perPage : string;
+  perPage: string;
 
   constructor(private ptService: PaymentTypeService) { }
 
@@ -31,7 +31,12 @@ export class PaymentTypeComponent implements OnInit {
     this.setExistingPayments();
   }
 
-  public refreshTable(){
+  public delete(id: string) {
+    this.ptService.delete(id);
+    this.setExistingPayments();
+  }
+
+  public refreshTable() {
     this.setExistingPayments();
   }
 
