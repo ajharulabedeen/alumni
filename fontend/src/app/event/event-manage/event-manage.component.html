@@ -1,0 +1,195 @@
+<div class="wrapper">
+  <app-topnavbar></app-topnavbar>
+  <app-asidenavbar></app-asidenavbar>
+  <div class="content-wrapper">
+
+    <div class="panel-group">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#add_event">Add Event</a>
+          </h4>
+        </div>
+        <div id="add_event" class="panel-collapse collapse">
+          <div class="panel-body">
+            <h3>Add Event!</h3>
+            <div class="col-md-12 offset-md-12">
+              <div class="form-group">
+                <label>Name : </label>
+                <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
+              </div>
+            </div>
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group">
+                <label>Start Date</label>
+                <input [(ngModel)]="start_date" type="text" class="form-control" placeholder="{{start_date}}">
+              </div>
+            </div>
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group">
+                <label>Select Date</label>
+                <input [(ngModel)]="start_date" type="date" class="form-control" value="{{start_date}}">
+              </div>
+            </div>
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group">
+                <label>Last Date</label>
+                <input [(ngModel)]="last_date" type="text" class="form-control" placeholder="{{last_date}}">
+              </div>
+            </div>
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group">
+                <label>Select Date</label>
+                <input [(ngModel)]="last_date" type="date" class="form-control" value="{{last_date}}">
+              </div>
+            </div>
+
+            <div class="col-md-12 ">
+              <div class="form-group">
+                <label>Amount</label>
+                <input [(ngModel)]="cost" type="text" class="form-control">
+              </div>
+            </div>
+
+            <div class="col-md-12 ">
+              <div class="form-group">
+                <label>Vanue</label>
+                <input [(ngModel)]="vanue" type="text" class="form-control">
+              </div>
+            </div>
+
+            <div class="col-md-12 ">
+              <div class="form-group">
+                <label>Dscription</label>
+                <textarea [(ngModel)]="description" class="form-control" rows="3" placeholder="Enter ...">
+                      Enter The Dscription of the Payment!
+                  </textarea>
+              </div>
+            </div>
+            <div class="col-md-3 ">
+              <div class="form-group">
+                <button class="btn btn-primary" data-toggle="collapse" href="#add_payment">Save</button>
+                <button class="btn btn-danger">Clear All</button>
+              </div>
+            </div>
+          </div>
+          <!-- end : panel-body -->
+        </div>
+        <div class="panel-footer">Add Event</div>
+      </div>
+
+
+      <!-- all Events -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#all_event">All Evensts</a>
+          </h4>
+        </div>
+        <div id="all_event" class="panel-collapse collapse">
+          <div class="panel-body">
+            <h3>
+              All Event!
+              <!-- <button class="btn btn-xs btn-primary" (click)="refreshTable()">Refresh</button> -->
+            </h3>
+
+            <div class="col-md-4 offset-md-4">
+              <div class="form-group">
+                <label>Per Page</label>
+                <!-- <input [(ngModel)]="perPage" type="number" class="form-control" value="{{perPage}}"> -->
+              </div>
+            </div>
+
+            <div class="col-md-4 offset-md-4">
+              <div class="form-group">
+                <!-- <button class="btn btn-primary btn-xs" (click)="previousPage()">Previous</button> -->
+                <label class="btn btn-danger ">Page Number</label>
+                <!-- <button class="btn btn-primary btn-xs" (click)="nextPage()">Next</button> -->
+                <!-- <input [(ngModel)]="pageNumber" type="number" class="form-control" value="{{pageNumber}}"> -->
+              </div>
+            </div>
+
+
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tbody>
+                      <h3>Showing All Events!</h3>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+        <div class="panel-footer">All Events</div>
+      </div>
+
+      <!-- panel-group -->
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ton trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3>Modal Body h3</h3>
+          <br>
+          <br>
+          <h4>Modal Body h4</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- <app-footernavbar></app-footernavbar> -->
+    <!-- <app-settingsnavbar></app-settingsnavbar> -->
+  </div>
+  <!-- <app-footernavbar></app-footernavbar> -->
+
+
+</div>
