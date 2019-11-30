@@ -53,6 +53,10 @@ class Payment_Type_Repo_Impl implements Payment_Type_Repo_I
         return PaymentType::orderBy($sort_on, $order)->paginate($per_page)->all();
     }
 
+    public function countAll(){
+        return PaymentType::count();
+    }
+
     public function delete($id)
     {
         error_log("paymentType :  Delete");

@@ -15,7 +15,10 @@ interface Payment_Type_Repo_I {
 
     public function getAllPaymentType($per_page, $sort_by, $sort_on);
 
+    public function countAll();
+
     public function delete($id);
+    
     /**
      * @param   id id of the education, not the user id.
      * @return  status  boolean. 1 : success; 0 : fail.
