@@ -9,26 +9,84 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class U_PaymentType_Test extends TestCase
 {
-    public function testMain(){
+    public function Main()
+    {
 
-        // $this->create();
-        $this->getAll(10,"ASC","last_date","10");
+        // $this->create();//done
+        // $this->getAll(10,"ASC","last_date","10");
+        // error_log($this->countAll());//done
+        // error_log($this->findOnePaymentType(25)->name);//done
+        // error_log($this->delete(25));//done
+        // error_log($this->update(25,"---Update PT Name!")); //done
+        // error_log($this->findOnePaymentType(25)->name);//done
     }
 
-    public function getAll($per_page, $sort_by, $sort_on, $postID ){
+    public function testPT_CRUD()
+    {
+        error_log("\nPaymentType : CRUD Test Done!\n");
+
+        // ---Create---
+        error_log("\n\n---Create---");
+        $id = $this->create();
+        $pt = $this->findOnePaymentType($id);
+        $this->assertEquals($id, $pt->id);
+        error_log($pt);
+
+        // ---update---findOne---
+        error_log("\n\n---update---findOne---");
+        $text = "PT Name Updated!";
+        $uStatus = $this->update($id, $text);
+        $this->assertEquals($uStatus, true);
+        $updatedText = $this->findOnePaymentType($id)->name;
+        $this->assertEquals($text, $updatedText);
+        error_log($this->findOnePaymentType($id));
+
+        // ---delete---
+        error_log("\n\n---delete---");
+        $status = $this->delete($id);
+        $this->assertEquals(1, $status);
+        $pt = $this->findOnePaymentType($id);
+        $this->assertEquals($pt, "");
+
+        error_log("\nPaymentType : CRUD Test Done!\n");
+    }
+
+    public function delete($id)
+    {
+        $repo = new Payment_Type_Repo_Impl();
+        $status = $repo->delete($id);
+        error_log($status);
+        return $status;
+    }
+
+    /**
+     *  @return PaymentType return a single payment Type.
+     */
+    public function findOnePaymentType($id)
+    {
+        $repo = new Payment_Type_Repo_Impl();
+        return $repo->findOnePaymentType($id);
+    }
+
+    public function countAll()
+    {
+        return PaymentType::count();
+    }
+
+    public function getAll($per_page, $sort_by, $sort_on, $postID)
+    {
         error_log(" per_page : " . $per_page);
         error_log(" sort_by : " . $sort_by);
         error_log(" sort_on : " . $sort_on);
-        if($sort_by=="ASC"){
+        if ($sort_by == "ASC") {
             $order = "ASC";
-        }
-        else{
+        } else {
             $order = "DESC";
         }
         // $data = PaymentType::orderBy($sort_on,$order)->stapaginate($per_page)->all();
         // $data = PaymentType::orderBy($sort_on,$order)->sta;
         // print_r($data);
-        for ($i=0; $i <10 ; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             error_log($data[$i]->last_date);
         }
         // dd($data);
@@ -50,38 +108,25 @@ class U_PaymentType_Test extends TestCase
         $p->last_date = "2022-06-07";
         $p->amount = "700";
 
-        error_log("Name after set : "  . $p->name);
-        dd($repoPayment->create($p));
-        $this->assertTrue(true);
+        $id = $repoPayment->create($p);
+        return $id;
     }
-    public function Update()
+    /**
+     *  @* @param String text this text will be assingned to the Name of the PaymentType.
+     *  @* @param String id PaymentType ID that have to update.
+     */
+    public function update($id, $text)
     {
-        error_log("Test 2!");
-
         $repoPayment = new Payment_Type_Repo_Impl();
-        $p = new PaymentType();
-        $p = $repoPayment->findOnePaymentType(4);
+        $pt = new PaymentType();
+        $pt = $this->findOnePaymentType($id);
 
-        $p->name = "Seminar 120!";
-        $p->description = "nice man";
-        $p->last_date = "27/3/2019";
-        $p->Start_date = "26/3/2019";
-        $p->amount = "500";
-
-        dd($repoPayment->update($p));
-        $this->assertTrue(true);
-
-
-        error_log("Test 2!".$p);
-
-         $this->assertTrue(true);
+        $pt->name = $text;
+        // $p->description = "nice man";
+        // $p->last_date = "27/3/2019";
+        // $p->Start_date = "26/3/2019";
+        // $p->amount = "500";
+        $status = $repoPayment->update($pt);
+        return $status;
     }
-    public function BasicTest3()
-    {
-        error_log("Test 3!");
-        $this->assertTrue(true);
-    }
-
-
-
 }//class
