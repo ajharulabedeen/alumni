@@ -61,6 +61,10 @@ class Payment_Type_Controller extends Controller
         return $this->paymentTypeRepo->getAllPaymentType($per_page, $sort_by, $sort_on);
     }
 
+    public function countPaymentType(){
+        return ['status' => $this->paymentTypeRepo->countAll()];
+    }
+
     public function delete(Request $r)
     {
         error_log("PaymentType Delete ID : " . $r->id);
