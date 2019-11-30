@@ -11,9 +11,21 @@ class U_PaymentType_Test extends TestCase
 {
     public function testMain(){
 
-        // $this->create();
-        $this->getAll(10,"ASC","last_date","10");
+        // $this->create();//done
+        // $this->getAll(10,"ASC","last_date","10");
+        // error_log($this->countAll());//done
+        // error_log($this->findOnePaymentType(21));//done
     }
+
+    public function findOnePaymentType($id){
+        $repo = new Payment_Type_Repo_Impl();
+        return $repo->findOnePaymentType($id);
+    }
+
+    public function countAll(){
+        return PaymentType::count();
+    }
+
 
     public function getAll($per_page, $sort_by, $sort_on, $postID ){
         error_log(" per_page : " . $per_page);
