@@ -15,6 +15,14 @@ class U_PaymentType_Test extends TestCase
         // $this->getAll(10,"ASC","last_date","10");
         // error_log($this->countAll());//done
         // error_log($this->findOnePaymentType(21));//done
+        error_log($this->delete(21));//done
+    }
+
+    public function delete($id){
+        $repo = new Payment_Type_Repo_Impl();
+        $status = $repo->delete($id);
+        error_log($status);
+        return $status;
     }
 
     public function findOnePaymentType($id){
