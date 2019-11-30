@@ -9,7 +9,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class U_PaymentType_Test extends TestCase
 {
-    public function testMain()
+    public function Main()
     {
 
         // $this->create();//done
@@ -21,6 +21,35 @@ class U_PaymentType_Test extends TestCase
         // error_log($this->findOnePaymentType(25)->name);//done
     }
 
+    public function testPT_CRUD()
+    {
+        error_log("\nPaymentType : CRUD Test Done!\n");
+
+        // ---Create---
+        error_log("\n\n---Create---");
+        $id = $this->create();
+        $pt = $this->findOnePaymentType($id);
+        $this->assertEquals($id, $pt->id);
+        error_log($pt);
+
+        // ---update---findOne---
+        error_log("\n\n---update---findOne---");
+        $text = "PT Name Updated!";
+        $uStatus = $this->update($id, $text);
+        $this->assertEquals($uStatus, true);
+        $updatedText = $this->findOnePaymentType($id)->name;
+        $this->assertEquals($text, $updatedText);
+        error_log($this->findOnePaymentType($id));
+
+        // ---delete---
+        error_log("\n\n---delete---");
+        $status = $this->delete($id);
+        $this->assertEquals(1, $status);
+        $pt = $this->findOnePaymentType($id);
+        $this->assertEquals($pt, "");
+
+        error_log("\nPaymentType : CRUD Test Done!\n");
+    }
 
     public function delete($id)
     {
@@ -30,6 +59,9 @@ class U_PaymentType_Test extends TestCase
         return $status;
     }
 
+    /**
+     *  @return PaymentType return a single payment Type.
+     */
     public function findOnePaymentType($id)
     {
         $repo = new Payment_Type_Repo_Impl();
@@ -40,7 +72,6 @@ class U_PaymentType_Test extends TestCase
     {
         return PaymentType::count();
     }
-
 
     public function getAll($per_page, $sort_by, $sort_on, $postID)
     {
@@ -77,9 +108,8 @@ class U_PaymentType_Test extends TestCase
         $p->last_date = "2022-06-07";
         $p->amount = "700";
 
-        error_log("Name after set : "  . $p->name);
-        dd($repoPayment->create($p));
-        $this->assertTrue(true);
+        $id = $repoPayment->create($p);
+        return $id;
     }
     /**
      *  @* @param String text this text will be assingned to the Name of the PaymentType.
