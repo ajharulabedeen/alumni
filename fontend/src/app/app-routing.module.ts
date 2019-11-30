@@ -11,6 +11,7 @@ import { ProfileComponent } from './profile/profile/profile.component';
 import { TimelineComponent } from './profile/timeline/timeline.component';
 import { FileUploaderTestComponent } from './file-uploader-test/file-uploader-test.component';
 import { PaymentTypeComponent } from './payment/payment-type/payment-type.component';
+import { EventManageComponent } from './event/event-manage/event-manage.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,8 @@ const routes: Routes = [
   { path: 'timeline', component: TimelineComponent },
   { path: 'file', component: FileUploaderTestComponent },
   { path: 'payment', component: PaymentTypeComponent },
+  { path: 'event', component: EventManageComponent },
+  // { path: 'event', component: EventsComponent },
 ];
 
 @NgModule({

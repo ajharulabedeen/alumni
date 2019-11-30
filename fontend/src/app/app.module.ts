@@ -20,6 +20,7 @@ import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
 import { DataTableComponent } from './data-table/data-table.component';
 import { FileUploaderTestComponent } from './file-uploader-test/file-uploader-test.component';
 import { PaymentModule } from './payment/payment.module';
+import { EventModule } from './event/event.module';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { PaymentModule } from './payment/payment.module';
     MatButtonModule,
     MatInputModule,
     PaymentModule,
+    EventModule
     // NgModel
   ],
   providers: [],

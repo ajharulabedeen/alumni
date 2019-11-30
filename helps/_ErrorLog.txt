@@ -1,0 +1,29 @@
+ErrorLog 1 : --------------------------------------------------
+    ERROR in src/app/payment/payment-type/payment-type.component.ts(3,26): error TS2306: File 'E:/Drive_H/recover/NTFS_3/backUp/Documents/1.projects/Alumni/fontend/src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts' is not a module.
+    src/app/profile/profile/profile.component.ts(68,74): error TS2345: Argument of type '{ headers: HttpHeaders; responseType: string; param: any[]; }' is not assignable to parameter of type '{ headers?: HttpHeaders | { [header: string]: string | string[]; }; observe?: "body"; params?: HttpParams | { [param: string]: string | string[]; }; reportProgress?: boolean; responseType?: "json"; withCredentials?: boolean; }'.
+      Types of property 'responseType' are incompatible.
+        Type 'string' is not assignable to type '"json"'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(62,47): error TS2503: Cannot find namespace 'moment'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(63,43): error TS2503: Cannot find namespace 'moment'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(64,57): error TS2503: Cannot find namespace 'moment'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(69,54): error TS2503: Cannot find namespace 'moment'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(328,26): error TS2307: Cannot find module 'moment'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(433,26): error TS2307: Cannot find module 'moment'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(696,36): error TS2304: Cannot find name 'JQueryPromise'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(697,29): error TS2304: Cannot find name 'JQueryPromise'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(698,20): error TS2304: Cannot find name 'JQueryPromise'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(718,26): error TS2307: Cannot find module 'moment'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(760,22): error TS2304: Cannot find name 'JQueryPromise'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(776,50): error TS2304: Cannot find name 'JQueryPromise'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(900,26): error TS2307: Cannot find module 'moment'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(989,23): error TS2304: Cannot find name 'JQueryEventObject'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(1043,26): error TS2307: Cannot find module 'moment'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(1213,26): error TS2307: Cannot find module 'moment'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(1259,26): error TS2307: Cannot find module 'moment'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(1368,26): error TS2307: Cannot find module 'moment'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(1402,70): error TS2304: Cannot find name 'JQueryAjaxSettings'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(1615,50): error TS2304: Cannot find name 'JQueryPromise'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(1635,50): error TS2304: Cannot find name 'JQueryPromise'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(2144,26): error TS2307: Cannot find module 'moment'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(2581,26): error TS2307: Cannot find module 'moment'.
+    src/assets/bower_components/fullcalendar/dist/fullcalendar.d.ts(2650,50): error TS2304: Cannot find name 'JQueryPromise'.
