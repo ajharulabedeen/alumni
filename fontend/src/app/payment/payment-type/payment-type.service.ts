@@ -31,22 +31,30 @@ export class PaymentTypeService {
       console.log(res);
     });
   }
-
-
   public delete(id: string) {
     this.http.post(
       'http://127.0.0.1:8000/paymentType/delete ', { "id": id }, this.authService.getHeader()
     ).subscribe((res: Response) => {
       console.log(res);
     });
-
   }
 
-  public getAllPayments(perPage: number, pageNumber : number) {
+  public getTotalCount() {
+    return this.http.post(
+      'http://127.0.0.1:8000/paymentType/countPaymentType ',[], this.authService.getHeader()
+    );
+    // .subscribe((res: Response) => {
+    //   console.log(res);
+    //   // return res;
+    //   // return res["status"];
+    // });
+  }
+
+  public getAllPayments(perPage: number, pageNumber: number) {
     //pt = paymentType
     this.pts = new BehaviorSubject<any>(null);
     return this.http.post<PaymentType>(
-      'http://127.0.0.1:8000/paymentType/getAllPaymentType?page='+pageNumber,
+      'http://127.0.0.1:8000/paymentType/getAllPaymentType?page=' + pageNumber,
       {
         'per_page': perPage,
         "sort_by": "ASC",

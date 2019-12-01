@@ -33,8 +33,15 @@ export class PaymentTypeComponent implements OnInit {
     document.body.className = 'hold-transition skin-blue sidebar-mini';
     this.perPage = 5;
     this.pageNumber = 1;
-    this.total = 8;
+    this.setTotalPaymentType();
     this.setExistingPayments();
+  }
+
+  public setTotalPaymentType() {
+    this.ptService.getTotalCount().subscribe(res => {
+      this.total = res["status"];
+    });
+
   }
 
   public delete(id: string) {
@@ -63,6 +70,7 @@ export class PaymentTypeComponent implements OnInit {
         this.ptsArray.push(pt1);
       }
     });
+    this.setTotalPaymentType();
   }//method
 
   public create() {
