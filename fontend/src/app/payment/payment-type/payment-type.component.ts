@@ -47,6 +47,7 @@ export class PaymentTypeComponent implements OnInit {
   public delete(id: string) {
     this.ptService.delete(id);
     this.setExistingPayments();
+    this.setTotalPaymentType();
   }
 
   public refreshTable() {
@@ -85,6 +86,7 @@ export class PaymentTypeComponent implements OnInit {
     }
     // this.clearAllFields();
     this.refreshTable();
+
   }
 
   public update(pt: PaymentType) {
@@ -98,13 +100,15 @@ export class PaymentTypeComponent implements OnInit {
   public previousPage() {
     if (this.pageNumber > 0) {
       this.pageNumber -= 1;
+      this.refreshTable();
     }
-    this.refreshTable();
   }
 
   public nextPage() {
-    this.pageNumber += 1;
-    this.refreshTable();
+    if (this.pageNumber < this.total) {
+      this.pageNumber += 1;
+      this.refreshTable();
+    }
   }
 
   public setPTForUpdate(pt: PaymentType) {
