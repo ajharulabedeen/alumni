@@ -86,19 +86,25 @@
               <button class="btn btn-xs btn-primary" (click)="refreshTable()">Refresh</button>
             </h3>
 
-            <div class="col-md-4 offset-md-4">
-              <div class="form-group">
+            <div class="col-md-2 offset-md-2">
+              <div style="text-align: center" class="form-group">
                 <label>Per Page</label>
-                <input [(ngModel)]="perPage" type="number" class="form-control" value="{{perPage}}">
+                <input style="text-align: center" [(ngModel)]="perPage" type="number" class="form-control" value="{{perPage}}">
+              </div>
+            </div>
+            <div class="col-md-2 offset-md-2">
+              <div style="text-align: center" class="form-group">
+                <label>Total </label>
+                <input style="text-align: center" disabled="true" [(ngModel)]="total" type="number" class="form-control" value="{{perPage}}">
               </div>
             </div>
 
-            <div class="col-md-4 offset-md-4">
-              <div class="form-group">
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group" style="text-align: center">
                 <button class="btn btn-primary btn-xs" (click)="previousPage()">Previous</button>
-                <label class="btn btn-danger ">Page Number</label>
+                <label class="btn btn-danger btn-xs ">Page Number</label>
                 <button class="btn btn-primary btn-xs" (click)="nextPage()">Next</button>
-                <input [(ngModel)]="pageNumber" type="number" class="form-control" value="{{pageNumber}}">
+                <input style="text-align: center" [(ngModel)]="pageNumber" type="number" class="form-control" value="{{pageNumber}}">
               </div>
             </div>
 

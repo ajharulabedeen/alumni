@@ -23,6 +23,7 @@ export class PaymentTypeComponent implements OnInit {
   updatePaymentType = false;
   ptForUpdate: PaymentType;
   pageNumber: number;
+  total: number;
 
   constructor(private ptService: PaymentTypeService) { }
 
@@ -32,6 +33,7 @@ export class PaymentTypeComponent implements OnInit {
     document.body.className = 'hold-transition skin-blue sidebar-mini';
     this.perPage = 5;
     this.pageNumber = 1;
+    this.total = 8;
     this.setExistingPayments();
   }
 
