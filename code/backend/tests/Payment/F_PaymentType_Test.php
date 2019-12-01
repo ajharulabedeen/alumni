@@ -24,10 +24,31 @@ class F_PaymentType_Test extends TestCase
         // $this->getAllEducations();//done
         // $this->delete(8);//done
         // $this->findOne(7); //done
-        $this->getAll(5,'ASC','last_date',3); //done
+        // $this->getAll(5, 'ASC', 'last_date', 3); //done
+        $this->countAll(); //done
     }
 
-    //working
+    public function countAll()
+    {
+        $response = $this->json(
+            'POST',
+            'paymentType/countPaymentType',[]
+            // ,
+            // [
+            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+            // ]
+        );
+
+        $d = $response->baseResponse->original;
+        //exception not catching error, instead haulting program.
+        error_log($d['status']);
+        error_log("Error : ");
+        // dd($response->exception);
+        // dd($d);
+
+    }
+
+    //passed
     public function getAll($per_page, $sort_by, $sort_on, $pageNumber)
     {
         $response = $this->json(
