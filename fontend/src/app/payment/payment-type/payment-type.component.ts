@@ -24,6 +24,7 @@ export class PaymentTypeComponent implements OnInit {
   ptForUpdate: PaymentType;
   pageNumber: number;
   total: number;
+  totalPage :number;
 
   constructor(private ptService: PaymentTypeService) { }
 
@@ -33,6 +34,7 @@ export class PaymentTypeComponent implements OnInit {
     document.body.className = 'hold-transition skin-blue sidebar-mini';
     this.perPage = 5;
     this.pageNumber = 1;
+    this.totalPage = (this.total/this.perPage);
     this.setTotalPaymentType();
     this.setExistingPayments();
   }
@@ -98,14 +100,14 @@ export class PaymentTypeComponent implements OnInit {
   }
 
   public previousPage() {
-    if (this.pageNumber > 0) {
+    if (this.pageNumber > 1) {
       this.pageNumber -= 1;
       this.refreshTable();
     }
   }
 
   public nextPage() {
-    if (this.pageNumber < this.total) {
+    if (this.pageNumber < (this.total/this.perPage)) {
       this.pageNumber += 1;
       this.refreshTable();
     }
