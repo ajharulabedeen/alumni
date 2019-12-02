@@ -25,7 +25,7 @@ class F_PaymentType_Test extends TestCase
         // $this->delete(8);//done
         // $this->findOne(7); //done
         // $this->getAll(5, 'ASC', 'last_date', 3); //done
-        $this->countAll(); //done
+        // $this->countAll(); //done
     }
 
     public function countAll()
