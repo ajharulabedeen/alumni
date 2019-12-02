@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
+use App\profile\Profile_Jobs_Repo_Impl;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestUtil;
 
@@ -19,10 +20,26 @@ class F_Jobs_Test extends TestCase
         // $this->Loggin();
         // $this->SignUp();
         // -----------------------------------
-        // $this->creation();//done
+        // $this->creation(); //done
         // $this->update();//done
         // $this->getAllEducations();//done
         // $this->delete();
+        $this->assertEquals(true,true);
+    }
+
+    public function testJobFeatureCrud()
+    {
+        $id = $this->creation();
+        $this->assertEquals($id,$this->findOne($id)->id);
+    }
+
+    //passed
+    public function findOne($id)
+    {
+        $repoProfileJob =  new Profile_Jobs_Repo_Impl();
+        $oneProfileJob = $repoProfileJob->findOne($id);
+        error_log($oneProfileJob);
+        return $oneProfileJob;
     }
 
     public function delete()
@@ -131,8 +148,8 @@ class F_Jobs_Test extends TestCase
         // error_log($d);
         error_log("Error : ");
         // dd($response->exception);
-
-        dd($d);
+        // dd($d);
+        return $d;
     }
 
     public function getToken($mail, $pass)
