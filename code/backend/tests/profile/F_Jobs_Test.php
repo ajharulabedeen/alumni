@@ -34,12 +34,17 @@ class F_Jobs_Test extends TestCase
         // $this->assertEquals(true, true);
         //creation
         $id = $this->creation();
-        $this->assertEquals($id,$this->findOne($id)->id);
+        $this->assertEquals($id, $this->findOne($id)->id);
+
+        //update
+        $text = "Matha-Mundu IT";
+        $this->assertEquals($this->update($id, $text)["status"],"1");
+        $this->assertEquals($text, $this->findOne($id)->organization_name);
+
 
         //delete
         $this->assertEquals($this->delete($id)["status"], "1");
         $this->assertEquals($this->findOne($id), "");
-
     }
 
     //refacot : boilderplate code! Two class has same lines of code.
@@ -95,14 +100,17 @@ class F_Jobs_Test extends TestCase
     }
 
     //done
-    public function update()
+    /**
+     *  @param  text here, organization_name will be updated!
+     */
+    public function update($id, $text)
     {
         $response = $this->json(
             'POST',
             'api/jobs/update',
             [
-                'id' => '10006',
-                'organization_name' => 'Tiger IT',
+                'id' => $id,
+                'organization_name' => $text,
                 'type' => 'Private/Public',
                 'role' => 'Software Engineer',
                 'started' => '2018',
@@ -120,7 +128,8 @@ class F_Jobs_Test extends TestCase
         error_log("Error : ");
         // dd($response->exception);
 
-        dd($d);
+        // dd($d);
+        return $d;
 
         // --------confirm Update----------
         // $response = $this->json(
