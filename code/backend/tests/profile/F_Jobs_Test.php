@@ -23,16 +23,26 @@ class F_Jobs_Test extends TestCase
         // $this->creation(); //done
         // $this->update();//done
         // $this->getAllEducations();//done
-        // $this->delete();
-        $this->assertEquals(true,true);
+        // error_log($this->delete("10014")["status"]);
+        // $this->assertEquals(true,true);
+        // error_log($this->findOne(1)->id);
+        $this->assertEquals($this->findOne(1), "");
     }
 
-    public function testJobFeatureCrud()
+    public function testJobFeatureCRUD()
     {
+        // $this->assertEquals(true, true);
+        //creation
         $id = $this->creation();
         $this->assertEquals($id,$this->findOne($id)->id);
+
+        //delete
+        $this->assertEquals($this->delete($id)["status"], "1");
+        $this->assertEquals($this->findOne($id), "");
+
     }
 
+    //refacot : boilderplate code! Two class has same lines of code.
     //passed
     public function findOne($id)
     {
@@ -42,13 +52,13 @@ class F_Jobs_Test extends TestCase
         return $oneProfileJob;
     }
 
-    public function delete()
+    public function delete($id)
     {
         $response = $this->json(
             'POST',
             'api/jobs/deleteOne',
             [
-                'id' => '10004'
+                'id' => $id
             ],
             [
                 "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
@@ -60,7 +70,8 @@ class F_Jobs_Test extends TestCase
         error_log("Error : ");
         // dd($response->exception);
 
-        dd($d);
+        // dd($d);
+        return $d;
     }
 
     //done
