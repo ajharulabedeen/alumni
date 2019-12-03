@@ -55,7 +55,7 @@ class Events_Repo_Impl implements Events_Repo_I
     /**
      *  @param  order vales : Ascending/Desecending.
      *  @param  perPage how mmany evetns perpage will be loaded.
-     *  @param  start start, from where the it start to load.
+     *  @param  start no need for. start, from where the it start to load.
      *  @return eventsList  List of events will be returned. Just the even title will be retuned. description can be loaded later by the user if needed.
      */
     public function getAllEvents($order, $perPage, $start)

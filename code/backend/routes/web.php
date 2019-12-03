@@ -1,6 +1,7 @@
 <?php
 
 use App\User;
+use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 /*
@@ -29,6 +30,17 @@ Route::get('/', function () {
     // return view('welcome');
     return "view('welcome')";
 });
+
+
+Route::post('/arif', function (Request $r) {
+    error_log("Index:\n");
+    $name = $r->data;
+    $message = "Welcome To HELL " . $name;
+    // return "view('welcome')";
+    // return ["data" => "<h1>Welcome Arif!</h1>"];
+    return ["data" => $message];
+});
+
 
 Route::group(['middleware' => ['role:editor']], function () {
     Route::get('/edit', 'PostController@edit');
