@@ -2,7 +2,6 @@
 
 namespace Tests\Unit;
 
-use App\events\Events_Repo_Impl;
 use App\payment\Payment_Type_Repo_Impl;
 use App\payment\PaymentType;
 use Tests\TestCase;
@@ -13,7 +12,7 @@ class U_PaymentType_Test extends TestCase
     public function Main()
     {
 
-        // $this->create();//done
+        $this->create();
         // $this->getAll(10,"ASC","last_date","10");
         // error_log($this->countAll());//done
         // error_log($this->findOnePaymentType(25)->name);//done
@@ -22,7 +21,9 @@ class U_PaymentType_Test extends TestCase
         // error_log($this->findOnePaymentType(25)->name);//done
     }
 
-    public function testPT_CRUD()
+
+
+    public function PT_CRUD()
     {
         error_log("\nPaymentType : CRUD Test Done!\n");
 
@@ -101,13 +102,13 @@ class U_PaymentType_Test extends TestCase
      */
     public function create()
     {
-        $repoEvent = new Events_Repo_Impl();
-        $e = new PaymentType();
-        $e->name = "MeetUp 22";
-        $e->description = "Picnic";
-        $e->start_date = "2022-06-01";
-        $e->last_date = "2022-06-07";
-        $e->amount = "700";
+        $repoPayment = new Payment_Type_Repo_Impl();
+        $p = new PaymentType();
+        $p->name = "MeetUp 22";
+        $p->description = "Picnic";
+        $p->start_date = "2022-06-01";
+        $p->last_date = "2022-06-07";
+        $p->amount = "700";
 
         $id = $repoPayment->create($p);
         return $id;
