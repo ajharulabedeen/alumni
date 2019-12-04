@@ -70,6 +70,7 @@ class Events_Repo_Impl implements Events_Repo_I
     public function getDescription($event_id)
     {
         error_log("getDescription event");
+
     }
     public function getOneEvent($event_id)
     {
