@@ -2,28 +2,29 @@
 
 namespace Tests\Unit;
 
-use App\payment\Payment_Type_Repo_Impl;
-use App\payment\PaymentType;
+use App\events\Events_Repo_Impl;
+use App\events\Events;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class U_PaymentType_Test extends TestCase
+class U_Test_Event extends TestCase
 {
-    public function Main()
+    public function testMain()
     {
+        // error_log($this->create());//done
 
-        $this->create();
         // $this->getAll(10,"ASC","last_date","10");
-        // error_log($this->countAll());//done
-        // error_log($this->findOnePaymentType(25)->name);//done
-        // error_log($this->delete(25));//done
-        // error_log($this->update(25,"---Update PT Name!")); //done
-        // error_log($this->findOnePaymentType(25)->name);//done
+        // error_log($this->countAll());
+        // error_log($this->findOneEvent(1)->title);//done
+        error_log($this->findOneEvent(1));
+        // error_log($this->delete(25));
+        // error_log($this->update(25,"---Update PT Name!"));
+        // error_log($this->findOnePaymentType(25)->name);
     }
 
 
 
-    public function PT_CRUD()
+    public function Event_CRUD()
     {
         error_log("\nPaymentType : CRUD Test Done!\n");
 
@@ -35,20 +36,20 @@ class U_PaymentType_Test extends TestCase
         error_log($pt);
 
         // ---update---findOne---
-        error_log("\n\n---update---findOne---");
-        $text = "PT Name Updated!";
-        $uStatus = $this->update($id, $text);
-        $this->assertEquals($uStatus, true);
-        $updatedText = $this->findOnePaymentType($id)->name;
-        $this->assertEquals($text, $updatedText);
-        error_log($this->findOnePaymentType($id));
+        // error_log("\n\n---update---findOne---");
+        // $text = "PT Name Updated!";
+        // $uStatus = $this->update($id, $text);
+        // $this->assertEquals($uStatus, true);
+        // $updatedText = $this->findOnePaymentType($id)->name;
+        // $this->assertEquals($text, $updatedText);
+        // error_log($this->findOnePaymentType($id));
 
         // ---delete---
-        error_log("\n\n---delete---");
-        $status = $this->delete($id);
-        $this->assertEquals(1, $status);
-        $pt = $this->findOnePaymentType($id);
-        $this->assertEquals($pt, "");
+        // error_log("\n\n---delete---");
+        // $status = $this->delete($id);
+        // $this->assertEquals(1, $status);
+        // $pt = $this->findOnePaymentType($id);
+        // $this->assertEquals($pt, "");
 
         error_log("\nPaymentType : CRUD Test Done!\n");
     }
@@ -64,10 +65,10 @@ class U_PaymentType_Test extends TestCase
     /**
      *  @return PaymentType return a single payment Type.
      */
-    public function findOnePaymentType($id)
+    public function findOneEvent($id)
     {
-        $repo = new Payment_Type_Repo_Impl();
-        return $repo->findOnePaymentType($id);
+        $repo = new Events_Repo_Impl();
+        return $repo->getOneEvent($id);
     }
 
     public function countAll()
@@ -97,20 +98,22 @@ class U_PaymentType_Test extends TestCase
 
     /**
      * A basic test example.
-     *
      * @return void
      */
     public function create()
     {
-        $repoPayment = new Payment_Type_Repo_Impl();
-        $p = new PaymentType();
-        $p->name = "MeetUp 22";
-        $p->description = "Picnic";
-        $p->start_date = "2022-06-01";
-        $p->last_date = "2022-06-07";
-        $p->amount = "700";
-
-        $id = $repoPayment->create($p);
+        $repoEvent = new Events_Repo_Impl();
+        $e = new Events();
+        $e->user_id = "2";
+        $e->title = "MeetUp 22";
+        $e->start_date = "2019/04/04";
+        $e->end_date = "2019/04/05";
+        $e->fee = "500";
+        $e->location = "Green Garden";
+        $e->description = "We all the previous student will meet at this day!";
+        $e->notes = "Please Dont Miss it!";
+        $e->images = "No Image Available!";
+        $id = $repoEvent->create($e);
         return $id;
     }
     /**
