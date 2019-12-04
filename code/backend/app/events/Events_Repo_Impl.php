@@ -69,7 +69,8 @@ class Events_Repo_Impl implements Events_Repo_I
      */
     public function getDescription($event_id)
     {
-        error_log("getDescription event");
+        return Events::find($event_id)->description;
+
     }
     public function getOneEvent($event_id)
     {

@@ -58,5 +58,12 @@ class Events_Controller extends Controller
     }
 
 
+    public function getDescription(Request $r)
+    {
+        return ['status' => $this->eventsRepo->getDescription($r->id)];
+
+    }
+
+
 
 }
