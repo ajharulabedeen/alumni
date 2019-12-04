@@ -73,5 +73,5 @@ Route::group(['middleware' => ['role:editor']], function () {
  Route::post('paymentType/countPaymentType', 'Payment_Type_Controller@countPaymentType');
  Route::post('paymentType/delete', 'Payment_Type_Controller@delete');
 
-
+ Route::post('events/create', 'Events_Controller@create');
 
