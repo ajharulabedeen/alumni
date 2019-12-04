@@ -16,8 +16,8 @@ class U_Test_Event extends TestCase
         // $this->getAll(10,"ASC","last_date","10");
         // error_log($this->countAll());
         // error_log($this->findOneEvent(1)->title);//done
-        // error_log($this->findOneEvent(1));//done
-        // error_log($this->delete(25));
+        // error_log($this->findOneEvent(2));//done
+        // error_log($this->delete(2));//done
         // error_log($this->update(25,"---Update PT Name!"));
         // error_log($this->findOnePaymentType(25)->name);
     }
@@ -54,14 +54,16 @@ class U_Test_Event extends TestCase
         error_log("\nPaymentType : CRUD Test Done!\n");
     }
 
+    //done
     public function delete($id)
     {
-        $repo = new Payment_Type_Repo_Impl();
+        $repo = new Events_Repo_Impl();
         $status = $repo->delete($id);
         error_log($status);
         return $status;
     }
 
+    //done
     /**
      *  @return PaymentType return a single payment Type.
      */
@@ -96,6 +98,7 @@ class U_Test_Event extends TestCase
         // return PaymentType::orderBy($sort_on,$order)->paginate($per_page)->all();
     }
 
+    //done
     /**
      * A basic test example.
      * @return void
@@ -116,6 +119,8 @@ class U_Test_Event extends TestCase
         $id = $repoEvent->create($e);
         return $id;
     }
+
+
     /**
      *  @* @param String text this text will be assingned to the Name of the PaymentType.
      *  @* @param String id PaymentType ID that have to update.
