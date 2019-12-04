@@ -32,7 +32,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(Profile_Jobs_Repo_I::class, Profile_Jobs_Repo_Impl::class);
         $this->app->bind(Payment_Type_Repo_I::class, Payment_Type_Repo_Impl::class);
         $this->app->bind(Events_Repo_I::class, Events_Repo_Impl::class);
-
     }
 
     /**
