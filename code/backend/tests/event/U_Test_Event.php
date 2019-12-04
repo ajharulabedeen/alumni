@@ -16,7 +16,7 @@ class U_Test_Event extends TestCase
         // $this->getAll(10,"ASC","last_date","10");
         // error_log($this->countAll());
         // error_log($this->findOneEvent(1)->title);//done
-        error_log($this->findOneEvent(1));
+        // error_log($this->findOneEvent(1));//done
         // error_log($this->delete(25));
         // error_log($this->update(25,"---Update PT Name!"));
         // error_log($this->findOnePaymentType(25)->name);
