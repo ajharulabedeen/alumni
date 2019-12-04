@@ -35,6 +35,22 @@ class Events_Controller extends Controller
         return $id;
     }
 
+    public function update(Request $r)
+    {
+        $events = new events();
+        $events = $this->eventsRepo->getOneEvent($r->id);
+        $events->user_id = Utils::getUserId();
+        $events->start_date     = $r->start_date;
+        $events->end_date     = $r->end_date;
+        $events->description     = $r->description;
+        $events->title     = $r->title;
+        $events->notes    = $r->notes;
+        $events->fee    = $r->fee;
+        $events->location  = $r->location;
+      //  $id = $this->eventsRepo->update($events);
+        return ['status' => $this->eventsRepo->update($events)];
+    }
+
 
 
 }
