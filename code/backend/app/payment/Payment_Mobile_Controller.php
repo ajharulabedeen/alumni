@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\payment\PaymentMobile;
+use App\payment\Payment_Mobile_Repo_Impl;
 
 class Payment_Mobile_Controller extends Controller
 {
    public function create(Request $r){
+       $repo = new Payment_Mobile_Repo_Impl();
        $ptmobile = new PaymentMobile();
        $ptmobile->user_id = $r->user_id ;
        $ptmobile->amount = $r->amount ;
@@ -18,6 +20,9 @@ class Payment_Mobile_Controller extends Controller
        $ptmobile->trx_id = $r->trx_id ;
        $ptmobile->status = $r->status ;
        
-       return $ptmobile;
+       error_log($r);
+       return $repo->create($ptmobile);
    }
+
+
 }//class
