@@ -23,8 +23,7 @@ class Events_Controller extends Controller
     {
         $events = new events();
 
-        // $events->user_id = Utils::getUserId();
-        
+        $events->user_id = Utils::getUserId();
         $events->start_date     = $r->start_date;
         $events->end_date     = $r->end_date;
         $events->description     = $r->description;
