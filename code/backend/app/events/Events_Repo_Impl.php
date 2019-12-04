@@ -59,10 +59,19 @@ class Events_Repo_Impl implements Events_Repo_I
      *  @param  start no need for. start, from where the it start to load.
      *  @return eventsList  List of events will be returned. Just the even title will be retuned. description can be loaded later by the user if needed.
      */
-    public function getAllEvents($order, $perPage, $start)
+
+    //public function getAllEvents($order, $perPage, $start)
+    public function getAllEvents( $per_page, $sort_by, $sort_on)
     {
-        error_log("getAllEvents : ");
+        if ($sort_by == "ASC") {
+            $order = "ASC";
+        } else {
+            $order = "DESC";
+        }
+        return Events::orderBy($sort_on, $order)->paginate($per_page)->all();
     }
+
+    
     /**
      *  @return description description of an event will be given. to save data, only description will be back.
      *  @param  event_id   primary key of the event.
