@@ -24,7 +24,8 @@ interface Events_Repo_I {
      *  @param  start start, from where the it start to load.
      *  @return eventsList  List of events will be returned. Just the even title will be retuned. description can be loaded later by the user if needed.
      */
-    public function getAllEvents( $order, $perPage, $start);
+   // public function getAllEvents( $order, $perPage, $start);
+    public function getAllEvents( $per_page, $sort_by, $sort_on);
     /**
      *  @return description description of an event will be given. to save data, only description will be back.
      *  @param  event_id   primary key of the event.
