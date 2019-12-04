@@ -75,4 +75,4 @@ Route::group(['middleware' => ['role:editor']], function () {
 
  Route::post('events/create', 'Events_Controller@create');
  Route::post('events/update', 'Events_Controller@update');
-
+ Route::post('events/delete', 'Events_Controller@delete');

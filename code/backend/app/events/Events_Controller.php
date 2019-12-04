@@ -51,6 +51,12 @@ class Events_Controller extends Controller
         return ['status' => $this->eventsRepo->update($events)];
     }
 
+    public function delete(Request $r)
+    {
+        error_log("Event Delete ID : " . $r->id);
+        return ['status' => $this->eventsRepo->delete($r->id)];
+    }
+
 
 
 }
