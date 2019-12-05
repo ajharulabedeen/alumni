@@ -8,6 +8,14 @@ use App\payment\Payment_Mobile_Repo_Impl;
 
 class Payment_Mobile_Controller extends Controller
 {
+
+    protected $paymentMobileRepo;
+    public function __construct(Payment_Mobile_Repo_I $paymentMobileRepo)
+    {
+        // $this->middleware('auth:api');
+        $this->paymentMobileRepo = $paymentMobileRepo;
+    }
+
    public function create(Request $r){
        $repo = new Payment_Mobile_Repo_Impl();
        $ptmobile = new PaymentMobile();
@@ -23,6 +31,11 @@ class Payment_Mobile_Controller extends Controller
        error_log($r);
        return $repo->create($ptmobile);
    }
+
+   public 
+   
+
+
 
 
 }//class
