@@ -32,13 +32,18 @@ class Payment_Mobile_Controller extends Controller
     //    error_log($r);
       
        $id = $this->paymentMobileRepo->create($ptmobile);
-        return $id;
+       return $id;
+   }
+
+   public function findOne(Request $r){
+      $id = $r->id;
+      $ptmobile = $this->paymentMobileRepo->findOnePaymentMobile($r->id);
+      return $ptmobile;
    }
 
    public function update(Request $r){
     $ptmobile = new PaymentMobile();
-    $ptmobile = $this->paymentTypeRepo->findOnePaymentType($r->id);
-
+    $ptmobile = $this->paymentMobileRepo->findOnePaymentMobile($r->id);
 
    }
 
