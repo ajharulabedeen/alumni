@@ -75,6 +75,7 @@ Route::group(['middleware' => ['role:editor']], function () {
 
  Route::post('payment/mobile/create', 'Payment_Mobile_Controller@create');
  Route::post('payment/mobile/find', 'Payment_Mobile_Controller@findOne');
+ Route::post('payment/mobile/delete', 'Payment_Mobile_Controller@delete');
 
 
 

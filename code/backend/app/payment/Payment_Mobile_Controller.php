@@ -41,6 +41,14 @@ class Payment_Mobile_Controller extends Controller
       return $ptmobile;
    }
 
+   public function delete(Request $r){
+      $id = $r->id;
+      $ptmobile = $this->paymentMobileRepo->deletePaymentMobile($r->id);
+      return $ptmobile;
+   }
+
+
+
    public function update(Request $r){
     $ptmobile = new PaymentMobile();
     $ptmobile = $this->paymentMobileRepo->findOnePaymentMobile($r->id);
