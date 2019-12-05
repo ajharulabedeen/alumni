@@ -6,6 +6,8 @@ use App\events\Events_Repo_I;
 use App\events\Events_Repo_Impl;
 use App\payment\Payment_Type_Repo_I;
 use App\payment\Payment_Type_Repo_Impl;
+use App\payment\Payment_Mobile_Repo_I;
+use App\payment\Payment_Mobile_Repo_Impl;
 use App\profile\Profile_About_Repo_I;
 use App\profile\Profile_About_Repo_Impl;
 use App\profile\Profile_Basic_Repo_I;
@@ -31,6 +33,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(Profile_Education_Repo_I::class, Profile_Education_Repo_Impl::class);
         $this->app->bind(Profile_Jobs_Repo_I::class, Profile_Jobs_Repo_Impl::class);
         $this->app->bind(Payment_Type_Repo_I::class, Payment_Type_Repo_Impl::class);
+        $this->app->bind(Payment_Mobile_Repo_I::class, Payment_Mobile_Repo_Impl::class);
         $this->app->bind(Events_Repo_I::class, Events_Repo_Impl::class);
     }
 

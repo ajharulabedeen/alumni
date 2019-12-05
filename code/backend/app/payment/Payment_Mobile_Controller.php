@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\payment\PaymentMobile;
+use App\payment\Payment_Mobile_Repo_I;
 use App\payment\Payment_Mobile_Repo_Impl;
 
 class Payment_Mobile_Controller extends Controller
@@ -17,7 +18,7 @@ class Payment_Mobile_Controller extends Controller
     }
 
    public function create(Request $r){
-       $repo = new Payment_Mobile_Repo_Impl();
+    //    $repo = new Payment_Mobile_Repo_Impl();
        $ptmobile = new PaymentMobile();
        $ptmobile->user_id = $r->user_id ;
        $ptmobile->amount = $r->amount ;
@@ -28,13 +29,22 @@ class Payment_Mobile_Controller extends Controller
        $ptmobile->trx_id = $r->trx_id ;
        $ptmobile->status = $r->status ;
        
-       error_log($r);
-       return $repo->create($ptmobile);
+    //    error_log($r);
+      
+       $id = $this->paymentMobileRepo->create($ptmobile);
+        return $id;
    }
 
-   public 
+   public function update(Request $r){
+    $ptmobile = new PaymentMobile();
+    $ptmobile = $this->paymentTypeRepo->findOnePaymentType($r->id);
+
+
+   }
+
    
 
+   
 
 
 
