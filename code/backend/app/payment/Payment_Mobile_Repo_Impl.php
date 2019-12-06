@@ -31,4 +31,14 @@ class Payment_Mobile_Repo_Impl implements Payment_Mobile_Repo_I{
 
     }
 
+    public function getAllPaymentMobile($per_page, $sort_by, $sort_on)
+    {
+        if ($sort_by == "ASC") {
+            $order = "ASC";
+        } else {
+            $order = "DESC";
+        }
+        return PaymentMobile::orderBy($sort_on, $order)->paginate($per_page)->all();
+    }
+
 }

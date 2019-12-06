@@ -64,6 +64,14 @@ class Payment_Mobile_Controller extends Controller
 
    }
 
+   public function getAllPaymentMobile(Request $r)
+    {
+        $per_page = $r->per_page;
+        $sort_by = $r->sort_by;
+        $sort_on = $r->sort_on;
+        return $this->paymentMobileRepo->getAllPaymentMobile($per_page, $sort_by, $sort_on);
+    }
+
    
 
    
