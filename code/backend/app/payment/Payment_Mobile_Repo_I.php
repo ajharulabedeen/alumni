@@ -12,5 +12,6 @@ interface Payment_Mobile_Repo_I {
     public function getAllPaymentMobile($per_page, $sort_by, $sort_on);
     public function showAllPaymentMobile($id);
     public function countPaymentMobile();
+    public function countPaymentMobileByAUser($user_id);
     
 }

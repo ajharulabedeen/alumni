@@ -138,7 +138,7 @@ class U_PaymentMobile_Test extends TestCase
             $pm->user_id = rand(1, 30);
             $pm->amount = rand(100, 2000);
             $pm->type_ID = rand(1, 30);
-            $pm->date = rand(1, 30) . "-" . rand(1, 12) . "-" . rand(1990, 2000);
+            $pm->date =  rand(1990, 2000) . "-" . rand(1, 12). "-" . rand(1, 30) ;
             $pm->payment_method = $this->getMethod();
             $pm->mobile_number = $this->getPhoneNumber();
             $pm->trx_id = rand(1000000, 5000000 );
