@@ -15,7 +15,7 @@ class Payment_Mobile_Repo_Impl implements Payment_Mobile_Repo_I{
         $data = PaymentMobile::where('id', $id)->first();
         return $data;
     }
-    
+
     public function deletePaymentMobile($id){
         $data = PaymentMobile::where('id', $id)->delete();
         return $data;
@@ -41,6 +41,7 @@ class Payment_Mobile_Repo_Impl implements Payment_Mobile_Repo_I{
         return PaymentMobile::orderBy($sort_on, $order)->paginate($per_page)->all();
     }
 
+<<<<<<< HEAD
     public function showAllPaymentMobile($id){
         $data = PaymentMobile::where('user_id',$id)->get();
         return $data;
@@ -51,3 +52,6 @@ class Payment_Mobile_Repo_Impl implements Payment_Mobile_Repo_I{
     }
 
 }
+=======
+}
+>>>>>>> bf04789e477d1bab086629115ae15f28b9bd3869

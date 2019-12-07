@@ -1,0 +1,201 @@
+<div class="wrapper">
+  <app-topnavbar></app-topnavbar>
+  <app-asidenavbar></app-asidenavbar>
+  <div class="content-wrapper">
+
+    <div class="panel-group">
+
+      <!-- all Payments -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#all_payment">All Payment</a>
+          </h4>
+        </div>
+        <div id="all_payment" class="panel-collapse collapse">
+          <div class="panel-body">
+            <h3>
+              All Payment!
+              <button class="btn btn-xs btn-primary" (click)="refreshTable()">Refresh</button>
+            </h3>
+
+            <div class="col-md-2 offset-md-2">
+              <div style="text-align: center" class="form-group">
+                <label>Per Page</label>
+                <input style="text-align: center" [(ngModel)]="perPage" type="number" class="form-control"
+                  value="{{perPage}}">
+              </div>
+            </div>
+            <div class="col-md-2 offset-md-2">
+              <div style="text-align: center" class="form-group">
+                <label>Total </label>
+                <input style="text-align: center" disabled="true" [(ngModel)]="total" type="number" class="form-control"
+                  value="{{total}}">
+              </div>
+            </div>
+
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group" style="text-align: center">
+                <button class="btn btn-primary btn-xs" (click)="previousPage()">Previous</button>
+                <label class="btn btn-danger btn-xs ">Page Number</label>
+                <button class="btn btn-primary btn-xs" (click)="nextPage()">Next</button>
+                <input style="text-align: center" [(ngModel)]="pageNumber" type="number" class="form-control"
+                  value="{{pageNumber}}">
+              </div>
+            </div>
+
+
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tbody>
+                      <tr>
+                        <th>Operation</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Start Date</th>
+                        <th>Last Date</th>
+                        <th>Amount</th>
+                        <th>Description</th>
+                      </tr>
+                      <tr *ngFor="let pt of ptsArray; let i=index">
+                        <td>
+                          <button class="btn btn-xs btn-primary" href="" data-toggle="modal"
+                            data-target="#modal_education">
+                            Pay
+                          </button>
+                        </td>
+                        <td>{{i+1}}</td>
+                        <td>{{pt.name}}</td>
+                        <td>{{pt.start_date}}</td>
+                        <td>{{pt.last_date}}</td>
+                        <td>{{pt.amount}}</td>
+                        <td>{{pt.description}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="panel-footer">All Payments Types</div>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="panel-footer">All Payment</div>
+      </div>
+      <!-- panel-group -->
+    </div>
+
+
+
+    <!-- modal -->
+    <div class="modal fade" id="modal_education" tabindex="-1" role="dialog" aria-labelledby="modal_educationLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal_educationLabel">Pay IT</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label>Date</label>
+              <input type="text" class="form-control" placeholder="Enter Degree Name... (Max : 512 Character)">
+            </div>
+            <div class="form-group">
+              <label>Amount</label>
+              <input type="number" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Mobile Number</label>
+              <input type="text" class="form-control" placeholder="Enter Passing Year ...... (Max : 512 Character)">
+            </div>
+            <div class="form-group">
+              <label>Medium</label>
+              <input type="text" class="form-control" placeholder="bKash, Rocket...... (Max : 512 Character)">
+            </div>
+            <div class="form-group">
+              <label>TrX ID</label>
+              <input type="text" class="form-control" placeholder="bKash, Rocket...... (Max : 512 Character)">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <app-footernavbar></app-footernavbar> -->
+      <!-- <app-settingsnavbar></app-settingsnavbar> -->
+    </div>
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- ton trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3>Modal Body h3</h3>
+          <br>
+          <br>
+          <h4>Modal Body h4</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- <app-footernavbar></app-footernavbar> -->
+    <!-- <app-settingsnavbar></app-settingsnavbar> -->
+  </div>
+  <!-- <app-footernavbar></app-footernavbar> -->
+
+
+</div>
