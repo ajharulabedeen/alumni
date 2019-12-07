@@ -14,13 +14,13 @@ class U_PaymentMobile_Test extends TestCase
     public function testMain()
     {
 
-        error_log($this->create());//done
+        // error_log($this->create());//done
         // $this->getAll(10,"ASC","last_date","10");
         // error_log($this->countAll());
         // error_log($this->findOnePaymentType(25)->name);
         // error_log($this->delete(25));
         // error_log($this->update(25,"---Update PT Name!"));
-        // error_log($this->findOnePaymentType(25)->name);
+        // error_log($this->findOnePaymentType(25)->date);//done
         //----------------------------------
         // $this->createDummyData();//
     }
@@ -67,8 +67,8 @@ class U_PaymentMobile_Test extends TestCase
      */
     public function findOnePaymentType($id)
     {
-        $repo = new Payment_Type_Repo_Impl();
-        return $repo->findOnePaymentType($id);
+        $repo = new Payment_Mobile_Repo_Impl();
+        return $repo->findOnePaymentMobile($id);
     }
     public function countAll()
     {
@@ -123,7 +123,7 @@ class U_PaymentMobile_Test extends TestCase
     public function update($id, $text)
     {
         $repoPayment = new Payment_Type_Repo_Impl();
-        $pt = new PaymentType();
+        $pt = new PaymentMobile();
         $pt = $this->findOnePaymentType($id);
 
         $pt->name = $text;
