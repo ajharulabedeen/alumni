@@ -47,13 +47,30 @@ class Payment_Mobile_Controller extends Controller
       return $ptmobile;
    }
 
-
-
    public function update(Request $r){
     $ptmobile = new PaymentMobile();
     $ptmobile = $this->paymentMobileRepo->findOnePaymentMobile($r->id);
+    $ptmobile->user_id = $r->user_id ;
+    $ptmobile->amount = $r->amount ;
+    $ptmobile->type_ID = $r->type_ID ;
+    $ptmobile->date = $r->date ;
+    $ptmobile->payment_method = $r->payment_method ;
+    $ptmobile->mobile_number = $r->mobile_number ;
+    $ptmobile->trx_id = $r->trx_id ;
+    $ptmobile->status = $r->status ;
+
+    $id = $this->paymentMobileRepo->update($ptmobile);
+       return $id;
 
    }
+
+   public function getAllPaymentMobile(Request $r)
+    {
+        $per_page = $r->per_page;
+        $sort_by = $r->sort_by;
+        $sort_on = $r->sort_on;
+        return $this->paymentMobileRepo->getAllPaymentMobile($per_page, $sort_by, $sort_on);
+    }
 
    
 
