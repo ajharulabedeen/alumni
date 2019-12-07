@@ -4,7 +4,6 @@
   <div class="content-wrapper">
 
     <div class="panel-group">
-
       <!-- all Payments -->
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -18,7 +17,6 @@
               All Payment!
               <button class="btn btn-xs btn-primary" (click)="refreshTable()">Refresh</button>
             </h3>
-
             <div class="col-md-2 offset-md-2">
               <div style="text-align: center" class="form-group">
                 <label>Per Page</label>
@@ -33,7 +31,6 @@
                   value="{{total}}">
               </div>
             </div>
-
             <div class="col-md-3 offset-md-3">
               <div class="form-group" style="text-align: center">
                 <button class="btn btn-primary btn-xs" (click)="previousPage()">Previous</button>
@@ -44,7 +41,7 @@
               </div>
             </div>
 
-
+            <!-- only show the payments that not yet paid. -->
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-body table-responsive no-padding">
@@ -79,18 +76,102 @@
               </div>
               <div class="panel-footer">All Payments Types</div>
             </div>
-
-
           </div>
         </div>
         <div class="panel-footer">All Payment</div>
       </div>
       <!-- panel-group -->
+
+      <!--Start : My Payments -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#my_payments">My Payment</a>
+          </h4>
+        </div>
+        <div id="my_payments" class="panel-collapse collapse">
+          <div class="panel-body">
+            <h3>
+              All Payment!
+              <button class="btn btn-xs btn-primary" (click)="refreshTable()">Refresh</button>
+            </h3>
+            <div class="col-md-2 offset-md-2">
+              <div style="text-align: center" class="form-group">
+                <label>Per Page</label>
+                <input style="text-align: center" [(ngModel)]="perPage" type="number" class="form-control"
+                  value="{{perPage}}">
+              </div>
+            </div>
+            <div class="col-md-2 offset-md-2">
+              <div style="text-align: center" class="form-group">
+                <label>Total </label>
+                <input style="text-align: center" disabled="true" [(ngModel)]="total" type="number" class="form-control"
+                  value="{{total}}">
+              </div>
+            </div>
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group" style="text-align: center">
+                <button class="btn btn-primary btn-xs" (click)="previousPage()">Previous</button>
+                <label class="btn btn-danger btn-xs ">Page Number</label>
+                <button class="btn btn-primary btn-xs" (click)="nextPage()">Next</button>
+                <input style="text-align: center" [(ngModel)]="pageNumber" type="number" class="form-control"
+                  value="{{pageNumber}}">
+              </div>
+            </div>
+
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tbody>
+                      <tr>
+                        <th>Operation</th>
+                        <th>Index</th>
+                        <!-- clicking on it will show details of the payment -->
+                        <th>Name</th>
+                        <th>Payed Date</th>
+                        <th>Last Date</th>
+                        <th>Approved Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <!-- click : modal about the note -->
+                        <th>Note</th>
+                      </tr>
+                      <tr *ngFor="let pt of ptsArray; let i=index">
+                        <td>
+                          <button class="btn btn-xs btn-primary" href="" data-toggle="modal"
+                            data-target="#modal_education">
+                            Pay
+                          </button>
+                        </td>
+                        <td>{{i+1}}</td>
+                        <td>{{pt.name}}</td>
+                        <td>{{pt.start_date}}</td>
+                        <td>{{pt.last_date}}</td>
+                        <td>{{pt.amount}}</td>
+                        <td>{{pt.description}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="panel-footer">My Payments</div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">My Payments</div>
+      </div>
+      <!-- panel-group -->
+
+      <!--End :  My Payments -->
+
+
+
     </div>
 
 
 
-    <!-- modal -->
+    <!-- modal : do payment-->
     <div class="modal fade" id="modal_education" tabindex="-1" role="dialog" aria-labelledby="modal_educationLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
@@ -125,6 +206,34 @@
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <app-footernavbar></app-footernavbar> -->
+      <!-- <app-settingsnavbar></app-settingsnavbar> -->
+    </div>
+
+
+    <button class="btn btn-danger" data-toggle="modal" data-target="#modal_note">Show Notes</button>
+    <!-- modal : Show Notes-->
+    <div class="modal fade" id="modal_note" tabindex="-1" role="dialog" aria-labelledby="modal_educationLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header center-block">
+            <h3 class="modal-title" id="show_note">Notes</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <textarea class="form-control" rows="3"
+                placeholder="Notes ...">
+                  I am slow waker but never come back.
+          </textarea>
             </div>
           </div>
         </div>
