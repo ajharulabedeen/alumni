@@ -41,7 +41,6 @@ class Payment_Mobile_Repo_Impl implements Payment_Mobile_Repo_I{
         return PaymentMobile::orderBy($sort_on, $order)->paginate($per_page)->all();
     }
 
-<<<<<<< HEAD
     public function showAllPaymentMobile($id){
         $data = PaymentMobile::where('user_id',$id)->get();
         return $data;
@@ -51,7 +50,10 @@ class Payment_Mobile_Repo_Impl implements Payment_Mobile_Repo_I{
         return PaymentMobile::count();
     }
 
+    public function countPaymentMobileByAUser($user_id){
+        $data = PaymentMobile::where("user_id",$user_id)->count();
+        return $data;
+    }
+
 }
-=======
-}
->>>>>>> bf04789e477d1bab086629115ae15f28b9bd3869
+

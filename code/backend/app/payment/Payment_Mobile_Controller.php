@@ -86,6 +86,14 @@ class Payment_Mobile_Controller extends Controller
         return $data;
     }
 
+    public function countPaymentMobileByAUser(){    
+        $user_id="5";//I will change it later.
+        $data = $this->paymentMobileRepo->countPaymentMobileByAUser($user_id);
+        return $data;
+    }
+
+
+
 
 
    

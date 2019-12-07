@@ -79,7 +79,7 @@ Route::group(['middleware' => ['role:editor']], function () {
  Route::post('payment/mobile/update', 'Payment_Mobile_Controller@update');
  Route::post('payment/mobile/showAllPaymentMobile', 'Payment_Mobile_Controller@showAllPaymentMobile');
  Route::post('payment/mobile/countPaymentMobile', 'Payment_Mobile_Controller@countPaymentMobile');
-
+ Route::post('payment/mobile/countPaymentMobileByAUser', 'Payment_Mobile_Controller@countPaymentMobileByAUser');
 
 
  Route::post('events/create', 'Events_Controller@create');
