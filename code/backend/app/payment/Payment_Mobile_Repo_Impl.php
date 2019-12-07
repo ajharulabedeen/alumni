@@ -15,7 +15,7 @@ class Payment_Mobile_Repo_Impl implements Payment_Mobile_Repo_I{
         $data = PaymentMobile::where('id', $id)->first();
         return $data;
     }
-    
+
     public function deletePaymentMobile($id){
         $data = PaymentMobile::where('id', $id)->delete();
         return $data;
