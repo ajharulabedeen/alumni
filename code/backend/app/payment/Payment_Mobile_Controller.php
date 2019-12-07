@@ -73,11 +73,14 @@ class Payment_Mobile_Controller extends Controller
     }
 
     public function showAllPaymentMobile(Request $r){
-        $id = $r->id;
-        $user = $this->paymentMobileRepo->showAllPaymentMobile($r->id);
+        $id = $r->user_id;
+        $user = $this->paymentMobileRepo->showAllPaymentMobile($r->user_id);
         return $user;
+    }
 
-
+    public function countPaymentMobile(){
+        $data = $this->paymentMobileRepo->countPaymentMobile();
+        return $data;
     }
 
 

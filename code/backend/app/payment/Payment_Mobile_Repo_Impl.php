@@ -46,4 +46,8 @@ class Payment_Mobile_Repo_Impl implements Payment_Mobile_Repo_I{
         return $data;
     }
 
+    public function countPaymentMobile(){
+        return PaymentMobile::count();
+    }
+
 }
