@@ -41,6 +41,9 @@ class Payment_Mobile_Repo_Impl implements Payment_Mobile_Repo_I{
         return PaymentMobile::orderBy($sort_on, $order)->paginate($per_page)->all();
     }
 
+    /**
+     * All the payments done by particular User.
+     */
     public function showAllPaymentMobile($id){
         $data = PaymentMobile::where('user_id',$id)->get();
         return $data;

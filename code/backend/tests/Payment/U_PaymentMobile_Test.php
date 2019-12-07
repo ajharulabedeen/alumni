@@ -14,14 +14,15 @@ class U_PaymentMobile_Test extends TestCase
     public function testMain()
     {
 
-        // $this->create();
+        error_log($this->create());//done
         // $this->getAll(10,"ASC","last_date","10");
         // error_log($this->countAll());
         // error_log($this->findOnePaymentType(25)->name);
         // error_log($this->delete(25));
         // error_log($this->update(25,"---Update PT Name!"));
         // error_log($this->findOnePaymentType(25)->name);
-        $this->createDummyData();
+        //----------------------------------
+        // $this->createDummyData();//
     }
 
     public function PT_CRUD()
@@ -92,24 +93,29 @@ class U_PaymentMobile_Test extends TestCase
         // dd($data);
         // return PaymentType::orderBy($sort_on,$order)->paginate($per_page)->all();
     }
+
     /**
      * A basic test example.
      *
-     * @return void
+     * @return id
      */
     public function create()
     {
-        $repoPayment = new Payment_Type_Repo_Impl();
-        $p = new PaymentType();
-        $p->name = "MeetUp 22";
-        $p->description = "Picnic";
-        $p->start_date = "2022-06-01";
-        $p->last_date = "2022-06-07";
-        $p->amount = "700";
-
-        $id = $repoPayment->create($p);
+        $repo = new Payment_Mobile_Repo_Impl();
+        $pm = new PaymentMobile();
+        $pm->user_id = rand(1, 30);
+        $pm->amount = rand(100, 2000);
+        $pm->type_ID = rand(1, 30);
+        $pm->date =  rand(1990, 2000) . "-" . "0".rand(1, 9) . "-" . rand(1, 30);
+        $pm->payment_method = $this->getMethod();
+        $pm->mobile_number = $this->getPhoneNumber();
+        $pm->trx_id = rand(1000000, 5000000);
+        $pm->status = rand(0, 3);
+        $id = $repo->create($pm);
+        error_log($id);
         return $id;
     }
+
     /**
      *  @* @param String text this text will be assingned to the Name of the PaymentType.
      *  @* @param String id PaymentType ID that have to update.
@@ -130,24 +136,26 @@ class U_PaymentMobile_Test extends TestCase
     }
 
     // -------------- Dummy Data Section -----------------
-    public function createDummyData(){
+    public function createDummyData()
+    {
         $repo = new Payment_Mobile_Repo_Impl();
-        for ($i=0; $i <1000 ; $i++) {
+
+        for ($i = 0; $i < 1000; $i++) {
             $pm = new PaymentMobile();
 
             $pm->user_id = rand(1, 30);
             $pm->amount = rand(100, 2000);
             $pm->type_ID = rand(1, 30);
-            $pm->date =  rand(1990, 2000) . "-" . rand(1, 12). "-" . rand(1, 30) ;
+            $pm->date =  rand(1990, 2000) . "-" . rand(1, 12) . "-" . rand(1, 30);
             $pm->payment_method = $this->getMethod();
             $pm->mobile_number = $this->getPhoneNumber();
-            $pm->trx_id = rand(1000000, 5000000 );
-            $pm->status = rand( 0, 3 );
+            $pm->trx_id = rand(1000000, 5000000);
+            $pm->status = rand(0, 3);
 
             $id = $repo->create($pm);
-            error_log($id);
 
-        }//for
+            error_log($id);
+        } //for
 
     }
 
@@ -167,5 +175,4 @@ class U_PaymentMobile_Test extends TestCase
         // error_log($phone);
         return $phone;
     }
-
 }//class
