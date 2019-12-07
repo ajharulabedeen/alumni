@@ -1,5 +1,5 @@
 export class PaymentMobile {
-  private id: string;
+  private paymentType_id: string;
   private amount: string;
   private date: string;
   private paymentMethod: string;

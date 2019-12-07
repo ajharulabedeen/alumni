@@ -72,6 +72,9 @@ class Payment_Mobile_Controller extends Controller
         return $this->paymentMobileRepo->getAllPaymentMobile($per_page, $sort_by, $sort_on);
     }
 
+    /**
+     * 
+     */
     public function showAllPaymentMobile(Request $r){
         $id = $r->user_id;
         $user = $this->paymentMobileRepo->showAllPaymentMobile($r->user_id);

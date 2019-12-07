@@ -9,6 +9,13 @@ import { PaymentType } from '../payment-type/payment-type.model';
 })
 export class PaymentMobileComponent implements OnInit {
 
+  private paymentType_id: string;
+  private amount: string;
+  private date: string;
+  private paymentMethod: string;
+  private trxID: string;
+
+
   perPage: number;
   idUpdate: string;
   updatePaymentType = false;
