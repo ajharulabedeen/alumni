@@ -17,8 +17,6 @@ export class PaymentMobileComponent implements OnInit {
 
   mymodel: string;
 
-
-
   perPage: number;
   idUpdate: string;
   updatePaymentType = false;
@@ -84,9 +82,23 @@ export class PaymentMobileComponent implements OnInit {
   }
 
   public refreshTable() {
-
+    this.setExistingPayments();
   }
 
+
+  public nextPage() {
+    if (this.pageNumber < (this.total / this.perPage)) {
+      this.pageNumber += 1;
+      this.refreshTable();
+    }
+  }
+
+  public previousPage() {
+    if (this.pageNumber > 1) {
+      this.pageNumber -= 1;
+      this.refreshTable();
+    }
+  }
 
 
 

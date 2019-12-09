@@ -21,7 +21,8 @@
               <div style="text-align: center" class="form-group">
                 <label>Per Page</label>
                 <input style="text-align: center" [(ngModel)]="perPage" type="number" class="form-control"
-                  value="{{perPage}}">
+                  value="{{perPage}}"
+                  (ngModelChange)="refreshTable()">
               </div>
             </div>
             <div class="col-md-2 offset-md-2">
@@ -243,10 +244,6 @@
       <!-- <app-footernavbar></app-footernavbar> -->
       <!-- <app-settingsnavbar></app-settingsnavbar> -->
     </div>
-
-
-
-
 
   </div>
 
