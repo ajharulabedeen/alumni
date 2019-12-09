@@ -34,6 +34,8 @@ export class PaymentMobileComponent implements OnInit {
   ngOnInit() {
     document.body.className = 'hold-transition skin-blue sidebar-mini';
     this.totalPage = (this.total / this.perPage);
+    this.pageNumber=1;
+    this.perPage = 10;
     this.setTotalPaymentType();
     this.setExistingPayments();
   }
@@ -52,9 +54,11 @@ export class PaymentMobileComponent implements OnInit {
 
 
   public setExistingPayments() {
-    this.ptsArray = new Array();
+    this.ptsArray = [];
+    // this.ptsArray = new Array();
     this.ptService.getAllPayments(this.perPage, this.pageNumber);
     this.ptService.pts.subscribe(pt => {
+      this.ptsArray = [];
       for (const key1 in pt) {
         // console.log(key1);
         // console.log(pt[key1]['id']);
@@ -76,12 +80,14 @@ export class PaymentMobileComponent implements OnInit {
    * start of the component all the data will be set.
    */
   public setTotalPaymentType() {
+    this.ptsArray = [];
     this.ptService.getTotalCount().subscribe(res => {
       this.total = res["status"];
     });
   }
 
   public refreshTable() {
+    this.ptsArray = [];
     this.setExistingPayments();
   }
 
