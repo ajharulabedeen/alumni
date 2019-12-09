@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://investmentnovel.com/angular-6-event-binding-example-tutorial/ -->
+<html class="js js csstransforms csstransforms3d csstransitions" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="stndz-style"></style>
+	
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<!--iOS/android/handheld specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="prefetch" href="https://investmentnovel.com/">
+    <link rel="prerender" href="https://investmentnovel.com/">
+    <meta itemprop="name" content="InvestmentNovel">
+    <meta itemprop="url" content="https://investmentnovel.com">
+        <meta itemprop="creator accountablePerson" content="InvestmentNovel ">
+    	<link rel="pingback" href="https://investmentnovel.com/xmlrpc.php">
+	<title>Angular 6 Event Binding Example Tutorial</title>
+
+<!-- Social Warfare v3.6.1 https://warfareplugins.com --><style>@font-face {font-family: "sw-icon-font";src:url("https://investmentnovel.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.eot?ver=3.6.1");src:url("https://investmentnovel.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.eot?ver=3.6.1#iefix") format("embedded-opentype"),url("https://investmentnovel.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.woff?ver=3.6.1") format("woff"),
+	url("https://investmentnovel.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.ttf?ver=3.6.1") format("truetype"),url("https://investmentnovel.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.svg?ver=3.6.1#1445203416") format("svg");font-weight: normal;font-style: normal;}</style>
+<!-- Social Warfare v3.6.1 https://warfareplugins.com -->
+
+<script src="./Angular 6 Event Binding Example Tutorial_files/cb=gapi.loaded_1" async=""></script><script src="./Angular 6 Event Binding Example Tutorial_files/cb=gapi(1).loaded_0" async=""></script><script src="./Angular 6 Event Binding Example Tutorial_files/all.js.download" id="fbjssdk"></script><script src="./Angular 6 Event Binding Example Tutorial_files/plusone.js.download" id="gplus1js" gapi_processed="true"></script><script src="./Angular 6 Event Binding Example Tutorial_files/widgets.js.download" id="tweetjs"></script><script src="https://assets.pinterest.com/js/pinit.js" id="pinterestjs"></script><script src="./Angular 6 Event Binding Example Tutorial_files/sdk.js.download" async="" crossorigin="anonymous"></script><script id="twitter-wjs" src="./Angular 6 Event Binding Example Tutorial_files/widgets.js.download"></script><script type="text/javascript" async="" src="./Angular 6 Event Binding Example Tutorial_files/platform.js.download" gapi_processed="true"></script><script type="text/javascript" async="" src="./Angular 6 Event Binding Example Tutorial_files/plusone.js.download" gapi_processed="true"></script><script id="facebook-jssdk" src="./Angular 6 Event Binding Example Tutorial_files/sdk.js(1).download"></script><script async="" src="./Angular 6 Event Binding Example Tutorial_files/analytics.js.download"></script><script type="text/javascript">document.documentElement.className = document.documentElement.className.replace( /\bno-js\b/,'js' );</script>
+<!-- This site is optimized with the Yoast SEO plugin v11.4 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Angular 6 Event Binding Example Tutorial. When a user interacts with an application in the form of a keyboard movement, a mouse click, or a mouseover.">
+<link rel="canonical" href="https://investmentnovel.com/angular-6-event-binding-example-tutorial/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular 6 Event Binding Example Tutorial">
+<meta property="og:description" content="Angular 6 Event Binding Example Tutorial. When a user interacts with an application in the form of a keyboard movement, a mouse click, or a mouseover.">
+<meta property="og:url" content="https://investmentnovel.com/angular-6-event-binding-example-tutorial/">
+<meta property="og:site_name" content="InvestmentNovel">
+<meta property="article:publisher" content="https://www.facebook.com/InvestmentNovel/">
+<meta property="article:tag" content="Angular">
+<meta property="article:tag" content="Angular 6">
+<meta property="article:section" content="Angular">
+<meta property="article:published_time" content="2018-09-18T11:22:34+00:00">
+<meta property="article:modified_time" content="2018-09-18T11:26:37+00:00">
+<meta property="og:updated_time" content="2018-09-18T11:26:37+00:00">
+<meta property="og:image" content="https://investmentnovel.com/wp-content/uploads/2018/09/Angular-6-Events-Example-Tutorial.png">
+<meta property="og:image:secure_url" content="https://investmentnovel.com/wp-content/uploads/2018/09/Angular-6-Events-Example-Tutorial.png">
+<meta property="og:image:width" content="1164">
+<meta property="og:image:height" content="888">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Angular 6 Event Binding Example Tutorial. When a user interacts with an application in the form of a keyboard movement, a mouse click, or a mouseover.">
+<meta name="twitter:title" content="Angular 6 Event Binding Example Tutorial">
+<meta name="twitter:site" content="@InvestmentNovel">
+<meta name="twitter:image" content="https://investmentnovel.com/wp-content/uploads/2018/09/Angular-6-Events-Example-Tutorial.png">
+<meta name="twitter:creator" content="@InvestmentNovel">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="InvestmentNovel » Feed" href="https://investmentnovel.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="InvestmentNovel » Comments Feed" href="https://investmentnovel.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="InvestmentNovel » Angular 6 Event Binding Example Tutorial Comments Feed" href="https://investmentnovel.com/angular-6-event-binding-example-tutorial/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/12.0.0-1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/investmentnovel.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.2.4"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56424,55356,57342,8205,55358,56605,8205,55357,56424,55356,57340],[55357,56424,55356,57342,8203,55358,56605,8203,55357,56424,55356,57340]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Angular 6 Event Binding Example Tutorial_files/wp-emoji-release.min.js.download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="social-warfare-block-css-css" href="./Angular 6 Event Binding Example Tutorial_files/blocks.style.build.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="./Angular 6 Event Binding Example Tutorial_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="./Angular 6 Event Binding Example Tutorial_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="toc-screen-css" href="./Angular 6 Event Binding Example Tutorial_files/screen.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="SFSImainCss-css" href="./Angular 6 Event Binding Example Tutorial_files/sfsi-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="ez-icomoon-css" href="./Angular 6 Event Binding Example Tutorial_files/style.min(1).css" type="text/css" media="all">
+<link rel="stylesheet" id="ez-toc-css" href="./Angular 6 Event Binding Example Tutorial_files/screen.min(1).css" type="text/css" media="all">
+<style id="ez-toc-inline-css" type="text/css">
+div#ez-toc-container p.ez-toc-title {font-size: 120%;}div#ez-toc-container p.ez-toc-title {font-weight: 500;}div#ez-toc-container ul li {font-size: 95%;}
+</style>
+<link rel="stylesheet" id="social_warfare-css" href="./Angular 6 Event Binding Example Tutorial_files/style.min(2).css" type="text/css" media="all">
+<link rel="stylesheet" id="wp_review-style-css" href="./Angular 6 Event Binding Example Tutorial_files/wp-review.css" type="text/css" media="all">
+<link rel="stylesheet" id="stylesheet-css" href="./Angular 6 Event Binding Example Tutorial_files/style.css" type="text/css" media="all">
+<style id="stylesheet-inline-css" type="text/css">
+
+        .pace .pace-progress, #mobile-menu-wrapper ul li a:hover, .full-width-page article .featured-overlay .thecategory { background: #113f8c; }
+		.postauthor h5, .copyrights a, .single_post a:not(.wp-block-button__link):not(.wp-block-file__button), .textwidget a, #logo a, .pnavigation2 a, .copyrights a:hover, .title a:hover, .post-info a:hover, .sidebar .tagcloud a, .comm, #tabber .inside li a:hover, .readMore a:hover, .fn a { color:#113f8c; }
+        .main-container .full-slider-container .thecategory, .reply a, .currenttext, .full-width-page .featured-overlay .thecategory, .single-featured-thumbnail header .thecategory, #commentform input#submit, .contactform #submit, #move-to-top:hover, .primary-navigation #navigation ul .current-menu-item a, #tabber ul.tabs li a.selected, .tagcloud a:hover, .pagination .nav-previous a, .pagination .nav-next a, #load-posts a, #navigation ul .sfHover a, #searchsubmit, .contact-form input[type='submit'] { background-color:#113f8c; }
+        a, a:hover, .latestPost .title a:hover, .widget .wp_review_tab_widget_content .entry-title a:hover, .widget .wpt_widget_content .tab-content li a:hover, .advanced-recent-posts li .post-title a:hover, .popular-posts li .post-title a:hover, .category-posts li .post-title a:hover, .related-posts-widget li .post-title a:hover, .author-posts-widget li .post-title a:hover, .featured-contributors-posts li .post-title a:hover, .sidebar.sidebar-left .widget li:hover > a, .sidebar.sidebar-left .widget li:hover:before, #navigation.mobile-menu-wrapper li a:hover, .f-widget li a:hover, .social-profile-icons ul li a:hover, .toggle-menu .toggle-caret .fa:hover, .primary-navigation #navigation ul.menu ul li a:hover, .latestPost .post-info.thecategory, #cancel-comment-reply-link {color:#238faa;}
+        .primary-navigation #navigation ul > li a:hover, .widget .wp_review_tab_widget_content .tab_title.selected a, .widget .wpt_widget_content .tab_title.selected a, .widget .review-total-only, .widget .review-total-only.small-thumb.review-type-star, .tags a:hover, .reply a:hover, .latestPost-review-wrapper, #move-to-top,  .pagination a:hover, #wpmm-megamenu .review-total-only, #commentform input#submit:hover, #load-posts a:hover, .sidebar .tagcloud a:hover, .contactform #submit:hover, .pagination ul li:last-child a:hover, .header-social a:hover {background-color:#238faa;}
+
+		
+		
+		
+		
+		
+		@media screen and (max-width: 1060px) {
+.main-header {
+    padding-right: 0 !important;
+}}
+			
+</style>
+<link rel="stylesheet" id="magnificPopup-css" href="./Angular 6 Event Binding Example Tutorial_files/magnific-popup.css" type="text/css" media="all">
+<link rel="stylesheet" id="fontawesome-css" href="./Angular 6 Event Binding Example Tutorial_files/font-awesome.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="responsive-css" href="./Angular 6 Event Binding Example Tutorial_files/responsive.css" type="text/css" media="all">
+<script>if (document.location.protocol != "https:") {document.location = document.URL.replace(/^http:/i, "https:");}</script><script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/jquery.js.download"></script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/jquery-migrate.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var mts_customscript = {"responsive":"1","nav_menu":"both"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/customscript.js.download"></script>
+<link rel="https://api.w.org/" href="https://investmentnovel.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://investmentnovel.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://investmentnovel.com/wp-includes/wlwmanifest.xml"> 
+<!--Theme by MyThemeShop.com-->
+<link rel="shortlink" href="https://investmentnovel.com/?p=1715">
+<link rel="alternate" type="application/json+oembed" href="https://investmentnovel.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Finvestmentnovel.com%2Fangular-6-event-binding-example-tutorial%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://investmentnovel.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Finvestmentnovel.com%2Fangular-6-event-binding-example-tutorial%2F&amp;format=xml">
+
+
+<!-- This site is optimized with the Schema plugin v1.7.5 - https://schema.press -->
+<script type="application/ld+json">{"@context":"http:\/\/schema.org\/","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/investmentnovel.com\/angular-6-event-binding-example-tutorial\/"},"url":"https:\/\/investmentnovel.com\/angular-6-event-binding-example-tutorial\/","headline":"Angular 6 Event Binding Example...","datePublished":"2018-09-18T11:22:34-08:00","dateModified":"2018-09-18T04:26:37+00:00","publisher":{"@type":"Organization","@id":"https:\/\/investmentnovel.com\/#organization","name":"InvestmentNovel","logo":{"@type":"ImageObject","url":"","width":600,"height":60}},"image":{"@type":"ImageObject","url":"https:\/\/investmentnovel.com\/wp-content\/uploads\/2018\/09\/Angular-6-Events-Example-Tutorial.png","width":1164,"height":888},"articleSection":"Angular","keywords":"Angular, Angular 6","description":"Angular 6 Event Binding Example Tutorial.  When the user interacts with a web application in the form of keyboard movement, keystrokes, a mouse click, double click, or a mouseover, on the form submits; it will generate an event. Those events need to be handled to perform some action. This is","author":{"@type":"Person","name":"admin admin","url":"https:\/\/investmentnovel.com\/author\/admin\/","image":{"@type":"ImageObject","url":"https:\/\/investmentnovel.com\/wp-content\/uploads\/2018\/05\/17241-200.png","height":96,"width":96}}}</script>
+
+<meta name="specificfeeds-verification-code-SitkV0h2U1VKdkFjVHQ5TTFxSUpQRElvMENnMzF5K3FmVC9vaFFMN090NGRIckxuSVBWRm1YN1cwUExQU25ad1hZd2M3Rkx0NDNoNmdvaDhtdS9wL1UzT21tV05mRkZLZzhML2RlaFRibVdZdDNyWG1HVEVoSHhYYjA4ei9GY1N8c2QxMGd5YTN3S1VybVVlQUFJdUlja0ZJMC9Na051SUNZM29sWTk3YkZiVT0=" content="GtG9sEAwUjvzHQxzMpFP"><script type="text/javascript">
+(function(url){
+	if(/(?:Chrome\/26\.0\.1410\.63 Safari\/537\.31|WordfenceTestMonBot)/.test(navigator.userAgent)){ return; }
+	var addEvent = function(evt, handler) {
+		if (window.addEventListener) {
+			document.addEventListener(evt, handler, false);
+		} else if (window.attachEvent) {
+			document.attachEvent('on' + evt, handler);
+		}
+	};
+	var removeEvent = function(evt, handler) {
+		if (window.removeEventListener) {
+			document.removeEventListener(evt, handler, false);
+		} else if (window.detachEvent) {
+			document.detachEvent('on' + evt, handler);
+		}
+	};
+	var evts = 'contextmenu dblclick drag dragend dragenter dragleave dragover dragstart drop keydown keypress keyup mousedown mousemove mouseout mouseover mouseup mousewheel scroll'.split(' ');
+	var logHuman = function() {
+		if (window.wfLogHumanRan) { return; }
+		window.wfLogHumanRan = true;
+		var wfscr = document.createElement('script');
+		wfscr.type = 'text/javascript';
+		wfscr.async = true;
+		wfscr.src = url + '&r=' + Math.random();
+		(document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(wfscr);
+		for (var i = 0; i < evts.length; i++) {
+			removeEvent(evts[i], logHuman);
+		}
+	};
+	for (var i = 0; i < evts.length; i++) {
+		addEvent(evts[i], logHuman);
+	}
+})('//investmentnovel.com/?wordfence_lh=1&hid=933899C8FA4C241D139A363376662799');
+</script><link href="./Angular 6 Event Binding Example Tutorial_files/css" rel="stylesheet" type="text/css">
+<style type="text/css">
+#header h1, #header h2 { font-family: 'Montserrat'; font-weight: 700; font-size: 18px; color: #222222; }
+.menu li, .menu li a { font-family: 'Montserrat'; font-weight: 700; font-size: 13px; color: #353535; }
+body { font-family: 'Merriweather'; font-weight: normal; font-size: 13px; color: #444444; }
+.latestPost.full-image-1 .title a { font-family: 'Montserrat'; font-weight: normal; font-size: 30px; color: #ffffff; }
+.latestPost .title a { font-family: 'Montserrat'; font-weight: 700; font-size: 18px; color: #353535; }
+.single header .title { font-family: 'Montserrat'; font-weight: normal; font-size: 30px; color: #ffffff; }
+.post-info, .pagination a, #comments .thetime, #copyright-note { font-family: 'Montserrat'; font-weight: normal; font-size: 13px; color: #A5A5A5; }
+#sidebars .widget, .ajax-search-results-container { font-family: 'Montserrat'; font-weight: normal; font-size: 13px; color: #444444; }
+.footer-widgets { font-family: 'Montserrat'; font-weight: normal; font-size: 13px; color: #444444; }
+h1 { font-family: 'Montserrat'; font-weight: 700; font-size: 30px; color: #222222; }
+h2 { font-family: 'Montserrat'; font-weight: 700; font-size: 26px; color: #222222; }
+h3 { font-family: 'Montserrat'; font-weight: 700; font-size: 24px; color: #222222; }
+h4 { font-family: 'Montserrat'; font-weight: 700; font-size: 22px; color: #222222; }
+h5 { font-family: 'Montserrat'; font-weight: 700; font-size: 20px; color: #222222; }
+h6 { font-family: 'Montserrat'; font-weight: 700; font-size: 18px; color: #222222; }
+</style>
+<link rel="amphtml" href="https://investmentnovel.com/angular-6-event-binding-example-tutorial/amp/"><link rel="icon" href="https://investmentnovel.com/wp-content/uploads/2018/09/cropped-Screen-Shot-2018-09-19-at-1.33.50-PM-32x32.png" sizes="32x32">
+<link rel="icon" href="https://investmentnovel.com/wp-content/uploads/2018/09/cropped-Screen-Shot-2018-09-19-at-1.33.50-PM-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://investmentnovel.com/wp-content/uploads/2018/09/cropped-Screen-Shot-2018-09-19-at-1.33.50-PM-180x180.png">
+<meta name="msapplication-TileImage" content="https://investmentnovel.com/wp-content/uploads/2018/09/cropped-Screen-Shot-2018-09-19-at-1.33.50-PM-270x270.png">
+
+<!-- BEGIN ExactMetrics v5.3.8 Universal Analytics - https://exactmetrics.com/ -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-96639872-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- END ExactMetrics Universal Analytics -->
+<style type="text/css">.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q{display:block!important;border:1px solid #cdcfd2!important;background-color:#fff!important;color:#373a3d!important;width:100vw!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-24GeGuJgk9LrMLp7qVvlyz{background:#6a7e89!important;color:#fff!important;padding:10px!important;font-size:18px!important;font-family:sans-serif!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-KVjdulkCFfUZps29EbgAC{background:#f3f6f8!important;border-bottom:1px solid #cdcfd2!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-KVjdulkCFfUZps29EbgAC>*{margin-right:10px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1OeZ2PQ98oAp6Vc5mMc6V5{list-style:none!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-vCwYmWF_l83ScZBrGnRoi,.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1OeZ2PQ98oAp6Vc5mMc6V5{margin:0!important;padding:0!important;width:100%!important;display:block!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-vCwYmWF_l83ScZBrGnRoi:not(:last-child){border-bottom:1px solid #cdcfd2!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1XQZkb-FlHWABUp4_uShaZ{color:inherit!important;cursor:pointer!important;width:100%!important;display:inline-block!important;margin:10px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1XTzMvb2XKitWz0mFLlyyp{margin:5px!important;display:block!important;width:auto!important;white-space:pre!important;overflow-x:scroll!important;background:inherit!important;color:inherit!important;font-family:monospace}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1XTzMvb2XKitWz0mFLlyyp:not(.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-39QUvFFn5B7GMcqMQkOXZ3){display:none!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-295DY3nO0DbJWMsOqmjCli{background:#f5f5f5!important;color:#5a5a5a!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1aQZwu6CUzAf2zUcI7tg0Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-295DY3nO0DbJWMsOqmjCli{display:none!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-38EPFyKXMtoP12rPlmrHxs{background:#e6f7ff!important;color:#006097!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3W4ZnQjhoGfT1gTNcqRXdi .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-38EPFyKXMtoP12rPlmrHxs{display:none!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-HGYnfzlmgOZ-l7eANhQe_{background:#fff3ea!important;color:#993a00!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-24e52A11B1UIErbKHtBmqc .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-HGYnfzlmgOZ-l7eANhQe_{display:none!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-jji74ZzulHScD0OAD_G7h{background:#fef2f1!important;color:#b10823!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3npS60y-EvfF7G_lioSx2Q.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-28jAOA7cDee-95LvwGsOP- .IN-2bc0215c-7188-4274-b598-1969e06d4d7c-jji74ZzulHScD0OAD_G7h{display:none!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu{background-color:#0073b1!important;border:0!important;border-radius:2px!important;box-sizing:border-box!important;color:#fff!important;cursor:pointer!important;display:inline-block!important;font-family:-apple-system,system-ui,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Fira Sans,Ubuntu,Oxygen,Oxygen Sans,Cantarell,Droid Sans,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Lucida Grande,Helvetica,Arial,sans-serif!important;font-weight:600!important;overflow:hidden!important;outline-width:2px!important;position:relative!important;text-align:center!important;text-decoration:none!important;vertical-align:middle!important;white-space:nowrap!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu:disabled{cursor:not-allowed!important;opacity:.7!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu:not(:disabled):not(.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1zhzkayakwEXovVYUbq5Gy):hover{background-color:#006097!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu:not(:disabled):not(.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1zhzkayakwEXovVYUbq5Gy):active{background-color:#004b7c!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1zhzkayakwEXovVYUbq5Gy{background-color:#fff!important;color:#0073b1!important;box-shadow:inset 0 0 0 1px rgba(0,0,0,.3)!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1zhzkayakwEXovVYUbq5Gy:not(:disabled):hover{color:#006097!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1zhzkayakwEXovVYUbq5Gy:not(:disabled):active{color:#004b7c!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu>xdoor-icon{display:inline-block!important;height:100%!important;vertical-align:top!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu>xdoor-icon>svg{pointer-events:none!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-7inSbaAsvG5bf7w6lJTEr{font-size:10px!important;height:16px!important;line-height:16px!important;padding:0 6px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-7inSbaAsvG5bf7w6lJTEr>xdoor-icon{margin-left:-6px!important;margin-right:3px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-7inSbaAsvG5bf7w6lJTEr>xdoor-icon>svg{height:16px!important;width:16px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-7inSbaAsvG5bf7w6lJTEr.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon{margin-right:-6px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu,.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3uCBSbQNVNf2QjqHe1rfb6{font-size:11px!important;height:20px!important;line-height:20px!important;padding:0 7px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3uCBSbQNVNf2QjqHe1rfb6>xdoor-icon,.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu>xdoor-icon{margin-left:-7px!important;margin-right:3.5px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3uCBSbQNVNf2QjqHe1rfb6>xdoor-icon>svg,.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu>xdoor-icon>svg{height:20px!important;width:20px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-3uCBSbQNVNf2QjqHe1rfb6.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon,.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon{margin-right:-7px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-21Smv9YG-5V6M6KP-5v2WG{font-size:14px!important;height:24px!important;line-height:24px!important;padding:0 12px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-21Smv9YG-5V6M6KP-5v2WG>xdoor-icon{margin-left:-12px!important;margin-right:6px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-21Smv9YG-5V6M6KP-5v2WG>xdoor-icon>svg{height:24px!important;width:24px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-21Smv9YG-5V6M6KP-5v2WG.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon{margin-right:-12px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1TGdQUTLZdNG4R87OfAB-q{font-size:16px!important;height:32px!important;line-height:32px!important;padding:0 16px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1TGdQUTLZdNG4R87OfAB-q>xdoor-icon{margin-left:-16px!important;margin-right:8px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1TGdQUTLZdNG4R87OfAB-q>xdoor-icon>svg{height:32px!important;width:32px!important}.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1G9ISYhSF8XoOmdcl0yKDu.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-1TGdQUTLZdNG4R87OfAB-q.IN-2bc0215c-7188-4274-b598-1969e06d4d7c-2lrEjt4SOTxqrYsv1piG4c>xdoor-icon{margin-right:-16px!important}</style><script type="text/javascript" async="" src="./Angular 6 Event Binding Example Tutorial_files/saved_resource"></script><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Expires" content="0"><style>.ez-toc-widget-container ul.ez-toc-list li::before{line-height:undefined;height:undefined}</style><script charset="utf-8" src="./Angular 6 Event Binding Example Tutorial_files/button.9a57558490548c2dde66afe19af6c010.js.download"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_dialog_advanced{border-radius:8px;padding:10px}.fb_dialog_content{background:#fff;color:#373737}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{left:5px;right:auto;top:5px}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{height:100%;left:0;margin:0;overflow:visible;position:absolute;top:-10000px;transform:none;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{background:none;height:auto;min-height:initial;min-width:initial;width:auto}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{clear:both;color:#fff;display:block;font-size:18px;padding-top:20px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .4);bottom:0;left:0;min-height:100%;position:absolute;right:0;top:0;width:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_mobile .fb_dialog_iframe{position:sticky;top:0}.fb_dialog_content .dialog_header{background:linear-gradient(from(#738aba), to(#2c4987));border-bottom:1px solid;border-color:#043b87;box-shadow:white 0 1px 1px -1px inset;color:#fff;font:bold 14px Helvetica, sans-serif;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:linear-gradient(from(#4267B2), to(#2a4887));background-clip:padding-box;border:1px solid #29487d;border-radius:3px;display:inline-block;line-height:18px;margin-top:3px;max-width:85px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{background:none;border:none;color:#fff;font:bold 12px Helvetica, sans-serif;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #4a4a4a;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f5f6f7;border:1px solid #4a4a4a;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-position:50% 50%;background-repeat:no-repeat;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}</style></head>
+<body data-rsssl="1" id="blog" class="post-template-default single single-post postid-1715 single-format-standard main sfsi_2.24" itemscope="" itemtype="http://schema.org/WebPage" style="padding-top: 0px; padding-bottom: 50px;"><a href="https://investmentnovel.com/angular-6-event-binding-example-tutorial/#" id="move-to-top" class="to-top animate filling"><i class="fa fa-angle-double-up"></i></a><a id="move-to-top" class="animate " href="https://investmentnovel.com/angular-6-event-binding-example-tutorial/#blog"><i class="fa fa-angle-up"></i></a>       
+	<div class="main-container">
+		<header class="main-header" role="banner" itemscope="" itemtype="http://schema.org/WPHeader">
+			<div id="header"> 
+				<div class="logo-wrap">
+																		<h2 id="logo" class="text-logo" itemprop="headline">
+								<a href="https://investmentnovel.com/">InvestmentNovel</a>
+							</h2><!-- END #logo -->
+															</div>
+            	<div class="container">
+             					    		<div class="primary-navigation" role="navigation" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+					 		<div class="page_inner"> 
+								<nav id="navigation" class="clearfix">
+																			<ul id="menu-code" class="menu clearfix toggle-menu"><li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a href="https://investmentnovel.com/">Home</a></li>
+<li id="menu-item-4378" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children toggle-menu-item-parent"><a href="https://investmentnovel.com/category/basics/">Basics</a>
+<ul class="sub-menu toggle-submenu" style="display: none;">
+	<li id="menu-item-4344" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://investmentnovel.com/category/c/">C</a></li>
+</ul>
+</li>
+<li id="menu-item-4377" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children toggle-menu-item-parent"><a href="https://investmentnovel.com/category/backend/">Backend</a>
+<ul class="sub-menu toggle-submenu" style="display: none;">
+	<li id="menu-item-2573" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://investmentnovel.com/category/laravel/">Laravel</a></li>
+	<li id="menu-item-4381" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://investmentnovel.com/category/node-js/">Node.js</a></li>
+	<li id="menu-item-3011" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://investmentnovel.com/category/mongodb/">MongoDB</a></li>
+</ul>
+</li>
+<li id="menu-item-4380" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children toggle-menu-item-parent"><a href="https://investmentnovel.com/category/frontend/">Frontend</a>
+<ul class="sub-menu toggle-submenu" style="display: none;">
+	<li id="menu-item-48" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent"><a href="https://investmentnovel.com/category/angular/">Angular</a></li>
+	<li id="menu-item-2822" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://investmentnovel.com/category/vue-js/">Vue.js</a></li>
+	<li id="menu-item-3191" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://investmentnovel.com/category/bootstrap/">Bootstrap</a></li>
+</ul>
+</li>
+<li id="menu-item-3079" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://investmentnovel.com/about-us/">About Us</a></li>
+<li id="menu-item-3082" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://investmentnovel.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-3087" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://investmentnovel.com/contact-us/">Contact Us</a></li>
+</ul>																	</nav>
+			        		</div>
+						</div>
+										
+					        	 						</div>
+          	</div><!--#header--> 	
+		</header>
+		<div class="secondary-navigation">
+	    	<aside id="" class="sidebar c-4-12 sidebar-left" role="complementary" itemscope="" itemtype="http://schema.org/WPSideBar">
+	     		<a href="https://investmentnovel.com/angular-6-event-binding-example-tutorial/#" id="pull" class="toggle-mobile-menu">Menu</a>
+	     		<nav id="navigation" class="mobile-menu-wrapper"><ul id="menu-code" class="menu clearfix toggle-menu" style="display: none;"><li id="menu-item-7" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home"><a href="https://investmentnovel.com/">Home</a></li>
+<li id="menu-item-4378" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children toggle-menu-item-parent"><a href="https://investmentnovel.com/category/basics/">Basics</a>
+<ul class="sub-menu toggle-submenu">
+	<li id="menu-item-4344" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://investmentnovel.com/category/c/">C</a></li>
+</ul>
+</li>
+<li id="menu-item-4377" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children toggle-menu-item-parent"><a href="https://investmentnovel.com/category/backend/">Backend</a>
+<ul class="sub-menu toggle-submenu">
+	<li id="menu-item-2573" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://investmentnovel.com/category/laravel/">Laravel</a></li>
+	<li id="menu-item-4381" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://investmentnovel.com/category/node-js/">Node.js</a></li>
+	<li id="menu-item-3011" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://investmentnovel.com/category/mongodb/">MongoDB</a></li>
+</ul>
+</li>
+<li id="menu-item-4380" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children toggle-menu-item-parent"><a href="https://investmentnovel.com/category/frontend/">Frontend</a>
+<ul class="sub-menu toggle-submenu">
+	<li id="menu-item-48" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent"><a href="https://investmentnovel.com/category/angular/">Angular</a></li>
+	<li id="menu-item-2822" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://investmentnovel.com/category/vue-js/">Vue.js</a></li>
+	<li id="menu-item-3191" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="https://investmentnovel.com/category/bootstrap/">Bootstrap</a></li>
+</ul>
+</li>
+<li id="menu-item-3079" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://investmentnovel.com/about-us/">About Us</a></li>
+<li id="menu-item-3082" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://investmentnovel.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-3087" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://investmentnovel.com/contact-us/">Contact Us</a></li>
+</ul>
+	    				    									<div id="mts_related_posts_widget-3" class="widget widget_mts_related_posts_widget horizontal-small"><ul class="related-posts-widget">			<li class="post-box horizontal-small horizontal-container no-thumb"><div class="horizontal-container-inner">								<div class="post-data">
+					<div class="post-data-container">
+						<div class="post-title">
+							<a href="https://investmentnovel.com/angular-6-form-validation-example-tutorial/" title="Angular 6 Form Validation Example Tutorial">Angular 6 Form Validation Example Tutorial</a>
+						</div>
+																	</div>
+				</div>
+			</div></li>					<li class="post-box horizontal-small horizontal-container no-thumb"><div class="horizontal-container-inner">								<div class="post-data">
+					<div class="post-data-container">
+						<div class="post-title">
+							<a href="https://investmentnovel.com/angular-6-loading-spinner-example/" title="Angular 6 Loading Spinner Example">Angular 6 Loading Spinner Example</a>
+						</div>
+																	</div>
+				</div>
+			</div></li>					<li class="post-box horizontal-small horizontal-container no-thumb"><div class="horizontal-container-inner">								<div class="post-data">
+					<div class="post-data-container">
+						<div class="post-title">
+							<a href="https://investmentnovel.com/angular-7-components-tutorial-with-example/" title="Angular 7 Components Tutorial With Example">Angular 7 Components Tutorial With Example</a>
+						</div>
+																	</div>
+				</div>
+			</div></li>					<li class="post-box horizontal-small horizontal-container no-thumb"><div class="horizontal-container-inner">								<div class="post-data">
+					<div class="post-data-container">
+						<div class="post-title">
+							<a href="https://investmentnovel.com/angular-6-http-get-example/" title="Angular 6 Http Get Example">Angular 6 Http Get Example</a>
+						</div>
+																	</div>
+				</div>
+			</div></li>					<li class="post-box horizontal-small horizontal-container no-thumb"><div class="horizontal-container-inner">								<div class="post-data">
+					<div class="post-data-container">
+						<div class="post-title">
+							<a href="https://investmentnovel.com/angular-6-charts-example-tutorial/" title="Angular 6 Charts Example Tutorial From Scratch">Angular 6 Charts Example Tutorial From Scratch</a>
+						</div>
+																	</div>
+				</div>
+			</div></li>					<li class="post-box horizontal-small horizontal-container no-thumb"><div class="horizontal-container-inner">								<div class="post-data">
+					<div class="post-data-container">
+						<div class="post-title">
+							<a href="https://investmentnovel.com/angular-6-crud-example-tutorial-from-scratch/" title="Angular 6 CRUD Example Tutorial From Scratch">Angular 6 CRUD Example Tutorial From Scratch</a>
+						</div>
+																	</div>
+				</div>
+			</div></li>					<li class="post-box horizontal-small horizontal-container no-thumb"><div class="horizontal-container-inner">								<div class="post-data">
+					<div class="post-data-container">
+						<div class="post-title">
+							<a href="https://investmentnovel.com/angular-material-datepicker-example-tutorial/" title="Angular Material Datepicker Example Tutorial">Angular Material Datepicker Example Tutorial</a>
+						</div>
+																	</div>
+				</div>
+			</div></li>					<li class="post-box horizontal-small horizontal-container no-thumb"><div class="horizontal-container-inner">								<div class="post-data">
+					<div class="post-data-container">
+						<div class="post-title">
+							<a href="https://investmentnovel.com/angular-6-dependency-injection-tutorial-example-from-scratch/" title="Angular 6 Dependency Injection Tutorial Example From Scratch">Angular 6 Dependency Injection Tutorial Example From Scratch</a>
+						</div>
+																	</div>
+				</div>
+			</div></li>					<li class="post-box horizontal-small horizontal-container no-thumb"><div class="horizontal-container-inner">								<div class="post-data">
+					<div class="post-data-container">
+						<div class="post-title">
+							<a href="https://investmentnovel.com/angular-6-routing-example/" title="Angular 6 Routing Example">Angular 6 Routing Example</a>
+						</div>
+																	</div>
+				</div>
+			</div></li>					<li class="post-box horizontal-small horizontal-container no-thumb"><div class="horizontal-container-inner">								<div class="post-data">
+					<div class="post-data-container">
+						<div class="post-title">
+							<a href="https://investmentnovel.com/angular-6-observables-example-tutorial-from-scratch/" title="Angular 6 Observables Example Tutorial From Scratch">Angular 6 Observables Example Tutorial From Scratch</a>
+						</div>
+																	</div>
+				</div>
+			</div></li>					<li class="post-box horizontal-small horizontal-container no-thumb"><div class="horizontal-container-inner">								<div class="post-data">
+					<div class="post-data-container">
+						<div class="post-title">
+							<a href="https://investmentnovel.com/angular-6-forms-tutorial-example-from-scratch/" title="Angular 6 Forms Tutorial Example From Scratch">Angular 6 Forms Tutorial Example From Scratch</a>
+						</div>
+																	</div>
+				</div>
+			</div></li>		</ul>
+</div><div id="nav_menu-2" class="widget widget_nav_menu toggle-menu"><div class="menu-leftbar-container"><ul id="menu-leftbar" class="menu toggle-menu"><li id="menu-item-4385" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4385"><a href="https://investmentnovel.com/category/c/">C</a></li>
+<li id="menu-item-4383" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-4383"><a href="https://investmentnovel.com/category/angular/">Angular</a></li>
+<li id="menu-item-4389" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4389"><a href="https://investmentnovel.com/category/vue-js/">Vue.js</a></li>
+<li id="menu-item-4384" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4384"><a href="https://investmentnovel.com/category/bootstrap/">Bootstrap</a></li>
+<li id="menu-item-4386" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4386"><a href="https://investmentnovel.com/category/laravel/">Laravel</a></li>
+<li id="menu-item-4388" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4388"><a href="https://investmentnovel.com/category/node-js/">Node.js</a></li>
+<li id="menu-item-4387" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4387"><a href="https://investmentnovel.com/category/mongodb/">MongoDB</a></li>
+</ul></div></div>									</nav>
+	    	</aside>
+	    </div>
+<div id="page" class="single">
+			 		<div class="single-featured-thumbnail" style="background: url(https://investmentnovel.com/wp-content/uploads/2018/09/Angular-6-Events-Example-Tutorial.png); background-repeat: no-repeat; background-size: cover;">
+		 			        <header>
+		            <div class="post-info thecategory">Angular</div>		            <h1 class="title front-view-title">Angular 6 Event Binding Example Tutorial</h1>   
+		            			<div class="post-info">
+                                <span class="thetime updated"><i class="fa fa-clock-o"></i> <span itemprop="datePublished">September 18, 2018</span></span>
+                            <span class="thetime"><i class="fa fa-clock-o"></i> <span>8 min read</span></span>			</div>
+				        </header><!--.headline_area-->
+	       	</div>
+	       	<div class="container fixed-width-page">
+	       		<article class="article" itemscope="" itemtype="http://schema.org/BlogPosting">
+	       		<meta itemprop="datePublished" content="September 18, 2018">
+	    	    		    		<meta itemprop="image" content="https://investmentnovel.com/wp-content/uploads/2018/09/Angular-6-Events-Example-Tutorial.png">
+	    			    <div id="content_box">
+											<div id="post-1715" class="g post post-1715 type-post status-publish format-standard has-post-thumbnail hentry category-angular tag-angular tag-angular-6 has_thumb">
+								<div class="single_post">
+							 		<div class="post-single-content box mark-links entry-content">
+																																	<div class="topad">
+													<script async="" src="./Angular 6 Event Binding Example Tutorial_files/f.txt"></script>
+<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-i4+2+1-58+ar" data-ad-client="ca-pub-4802021850471286" data-ad-slot="7486603044"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>												</div>
+																																									<div class="thecontent" itemprop="articleBody">
+											<p style="text-align: justify;"><span style="font-size: 12pt;"><strong>Angular 6 Event Binding Example Tutorial.&nbsp;</strong>&nbsp;When the user interacts with a web application in the form of keyboard movement, keystrokes, a mouse click, double click, or a mouseover, on the form submits; it will generate an event. Those events need to be handled to perform some action. This is where event binding comes into the picture.&nbsp;It is a <strong>one-way data binding</strong>, in that it sends information&nbsp;<strong>from</strong>&nbsp;the view&nbsp;<strong>to</strong>&nbsp;a component class. It is opposite from&nbsp;<a href="https://coursetro.com/posts/code/58/Angular-4-Property-Binding-Tutorial">property binding</a>, where data is transmitted from the component class to the view.</span></p>
+<div id="ez-toc-container" class="counter-hierarchy counter-decimal ez-toc-grey">
+<div class="ez-toc-title-container">
+<p class="ez-toc-title">Table of Contents</p>
+<span class="ez-toc-title-toggle"><a class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle"><i class="ez-toc-glyphicon ez-toc-icon-toggle"></i></a></span></div>
+<nav><ul class="ez-toc-list"><li><a href="https://investmentnovel.com/angular-6-event-binding-example-tutorial/#Angular_6_Event_Binding_Example_Tutorial" title="Angular 6 Event Binding Example Tutorial">Angular 6 Event Binding Example Tutorial</a></li><li><a href="https://investmentnovel.com/angular-6-event-binding-example-tutorial/#1_Install_Angular" title="#1: Install Angular">#1: Install Angular</a></li><li><a href="https://investmentnovel.com/angular-6-event-binding-example-tutorial/#2_Angular_Event_Binding" title="#2: Angular Event Binding">#2: Angular Event Binding</a></li><li><a href="https://investmentnovel.com/angular-6-event-binding-example-tutorial/#Types_of_Event_Binding" title="#Types of Event Binding">#Types of Event Binding</a></li><li><a href="https://investmentnovel.com/angular-6-event-binding-example-tutorial/#Handling_two_events" title="#Handling two events">#Handling two events</a></li></ul></nav></div>
+<h2><span class="ez-toc-section" id="Angular_6_Event_Binding_Example_Tutorial"><span style="color: #800080;"><strong>Angular 6 Event Binding Example Tutorial</strong></span></span></h2>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Let us take an angular 6 example and see how event binding works.</span></p>
+<h2><span class="ez-toc-section" id="1_Install_Angular"><span style="color: #800080;"><strong>#1: Install Angular</strong></span></span></h2>
+<div class="code-block code-block-1" style="margin: 8px auto; text-align: center; display: block; clear: both;">
+<script async="" src="./Angular 6 Event Binding Example Tutorial_files/f.txt"></script>
+<!-- entrepreneurside1 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4802021850471286" data-ad-slot="7401599297" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p><span style="font-size: 12pt;">Type the following command to create the Angular project.</span></p>
+<pre class="hljs ada"><code class="hljs zsh">ng <span class="hljs-keyword">new</span> events</code></pre>
+<p>&nbsp;</p>
+<p><img class="alignnone size-full wp-image-4291" src="./Angular 6 Event Binding Example Tutorial_files/Angular-6-Event-Binding-Example-Tutorial.png" alt="Angular 6 Event Binding Example Tutorial" width="595" height="427" srcset="https://investmentnovel.com/wp-content/uploads/2018/09/Angular-6-Event-Binding-Example-Tutorial.png 595w, https://investmentnovel.com/wp-content/uploads/2018/09/Angular-6-Event-Binding-Example-Tutorial-300x215.png 300w" sizes="(max-width: 595px) 100vw, 595px"></p>
+<p><span style="font-size: 12pt;">Now, go inside the folder.</span></p><div class="code-block code-block-2" style="margin: 8px auto; text-align: center; display: block; clear: both;">
+<script async="" src="./Angular 6 Event Binding Example Tutorial_files/f.txt"></script>
+<!-- entrepreneurside2 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4802021850471286" data-ad-slot="2094675565" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+
+<pre class="hljs tcl"><code class="hljs zsh"><span class="hljs-keyword">cd</span> events</code></pre>
+<p><span style="font-size: 12pt;">Run the Angular development server using the following command.</span></p>
+<pre class="hljs ada"><code class="hljs zsh">ng serve <span class="hljs-comment">--open</span></code></pre>
+<h2><span class="ez-toc-section" id="2_Angular_Event_Binding"><span style="color: #800080;"><strong>#2: Angular Event Binding</strong></span></span></h2>
+<p style="text-align: justify;"><span style="font-size: 12pt;">The&nbsp;user expects a <b>UI</b> to respond to his actions on the page. All such action will trigger an event on the page, and the page will respond by listening to these events.</span></p>
+<div class="code-block code-block-3" style="margin: 8px auto; text-align: center; display: block; clear: both;">
+<script async="" src="./Angular 6 Event Binding Example Tutorial_files/f.txt"></script>
+<!-- entrepreneurside3 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4802021850471286" data-ad-slot="8503762122" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<p style="text-align: justify;"><span style="font-size: 12pt;">An event binding system provides us the way to append a method defined in a component with an event. Like property binding, event binding is built on top of the events described in the <b>DOM</b> objects.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">You can capture an event from the view; you do so by wrapping the event in question with ( ) parenthesis. Angular provides you with a kind of events from which you can call component logic.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Below example is a simple Angular Event Binding example. It is a button click event. Replace the following code inside the&nbsp;<strong>app.component.html&nbsp;</strong>file.</span></p>
+<pre class="hljs xml"><code class="hljs default"><span class="hljs-comment">&lt;!-- app.component.html --&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">button</span> (<span class="hljs-attr">click</span>) = <span class="hljs-string">"clicked($event)"</span>&gt;</span>
+  Angular Event Binding
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></code></pre>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Here, we have defined the click event, and when a user clicks on the event then we can call the function, and we need to define that function inside the component class. So write the following code inside an&nbsp;<strong>app.component.ts&nbsp;</strong>file.</span></p>
+<pre class="hljs javascript"><code class="hljs js"><span class="hljs-comment">// app.component.ts</span>
+
+<span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+
+@Component({
+  <span class="hljs-attr">selector</span>: <span class="hljs-string">'app-root'</span>,
+  <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">'./app.component.html'</span>,
+  <span class="hljs-attr">styleUrls</span>: [<span class="hljs-string">'./app.component.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppComponent</span> </span>{
+  title = <span class="hljs-string">'app'</span>;
+  clicked(event) {
+    <span class="hljs-built_in">console</span>.log(event);
+  }
+}
+</code></pre>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Now, head over to the browser and click on the button and open the dev tools and in the console panel, you can see the button events are the list there.&nbsp;The&nbsp;<strong><i>$event</i></strong>&nbsp;object is the same as an&nbsp;object that the browser sends when the event is triggered on the HTML element. We can get all the details of the event like the source of the event, target element, type of the event, coordinates on the page and screen where the event triggered, as well as many other details.</span></p>
+<p>&nbsp;</p>
+<p><img class="alignnone size-full wp-image-4290" src="./Angular 6 Event Binding Example Tutorial_files/Angular-Event-Example.png" alt="Angular Event Example" width="631" height="766" srcset="https://investmentnovel.com/wp-content/uploads/2018/09/Angular-Event-Example.png 631w, https://investmentnovel.com/wp-content/uploads/2018/09/Angular-Event-Example-247x300.png 247w" sizes="(max-width: 631px) 100vw, 631px"></p>
+<h2><span class="ez-toc-section" id="Types_of_Event_Binding"><span style="color: #800080;"><strong>#Types of Event Binding</strong></span></span></h2>
+<p style="text-align: justify;"><span style="font-size: 12pt;">There are so many types of events in a browser. I am listing a few of them below.</span></p>
+<pre class="hljs lisp"><code class="hljs js">(<span class="hljs-name">focus</span>)=<span class="hljs-string">"method()"</span>
+(<span class="hljs-name">blur</span>)=<span class="hljs-string">"method()"</span>
+
+(<span class="hljs-name">submit</span>)=<span class="hljs-string">"method()"</span>
+
+(<span class="hljs-name">scroll</span>)=<span class="hljs-string">"method()"</span>
+
+(<span class="hljs-name">cut</span>)=<span class="hljs-string">"method()"</span>
+(<span class="hljs-name">copy</span>)=<span class="hljs-string">"method()"</span>
+(<span class="hljs-name">paste</span>)=<span class="hljs-string">"method()"</span>
+
+(<span class="hljs-name">keydown</span>)=<span class="hljs-string">"method()"</span>
+(<span class="hljs-name">keypress</span>)=<span class="hljs-string">"method()"</span>
+(<span class="hljs-name">keyup</span>)=<span class="hljs-string">"method()"</span>
+
+(<span class="hljs-name">mouseenter</span>)=<span class="hljs-string">"myMethod()"</span>
+(<span class="hljs-name">mousedown</span>)=<span class="hljs-string">"myMethod()"</span>
+(<span class="hljs-name">mouseup</span>)=<span class="hljs-string">"myMethod()"</span>
+
+(<span class="hljs-name">click</span>)=<span class="hljs-string">"myMethod()"</span>
+(<span class="hljs-name">dblclick</span>)=<span class="hljs-string">"myMethod()"</span>
+
+(<span class="hljs-name">drag</span>)=<span class="hljs-string">"myMethod()"</span>
+(<span class="hljs-name">dragover</span>)=<span class="hljs-string">"myMethod()"</span>
+(<span class="hljs-name">drop</span>)=<span class="hljs-string">"myMethod()"</span></code></pre>
+<p><span style="font-size: 12pt;">You can find more events on this <a href="https://developer.mozilla.org/en-US/docs/Web/Events">Mozilla page</a>.</span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">The primary use of event is to run a piece of code based on the action taken by the user. It may include changing values such as few field&nbsp;values in the component, posting data to the REST API, moving from one page to the different page. As the events directly epistolize to the browser’s activities, every event adds an entry to the event loop.</span></p>
+<h2><span class="ez-toc-section" id="Handling_two_events"><span style="color: #993300;"><strong>#Handling two events</strong></span></span></h2>
+<p><span style="font-size: 16px;">In this example, we will see the two events on a single button.</span></p>
+<ol>
+<li><strong><span style="font-size: 12pt;">click</span></strong></li>
+<li><strong><span style="font-size: 12pt;">mousemove</span></strong></li>
+</ol>
+<p><span style="font-size: 12pt;">Replace the following code inside the&nbsp;<strong>app.component.html&nbsp;</strong>file.</span></p>
+<pre class="hljs django"><code class="hljs default"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    </span><span class="hljs-template-variable">{{ text }}</span><span class="xml">
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn"</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">'submit($event)'</span> (<span class="hljs-attr">mousemove</span>)=<span class="hljs-string">"mouseMove($event)"</span>&gt;</span>
+    Submit
+  <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    </span><span class="hljs-template-variable">{{x}}</span><span class="xml"> | </span><span class="hljs-template-variable">{{y}}</span><span class="xml">
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span></code></pre>
+<p><span style="font-size: 12pt;">Now, add the two event listeners inside the&nbsp;<strong>app.component.ts&nbsp;</strong>file.</span></p>
+<pre class="hljs typescript"><code class="hljs js"><span class="hljs-comment">// app.component.ts</span>
+
+<span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+
+<span class="hljs-meta">@Component</span>({
+  selector: <span class="hljs-string">'app-root'</span>,
+  templateUrl: <span class="hljs-string">'./app.component.html'</span>,
+  styleUrls: [<span class="hljs-string">'./app.component.css'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppComponent {
+  <span class="hljs-keyword">public</span> text: <span class="hljs-built_in">String</span> = <span class="hljs-string">'Text Not submitted yet.'</span>;
+  <span class="hljs-keyword">public</span> x: <span class="hljs-built_in">Number</span>;
+  <span class="hljs-keyword">public</span> y: <span class="hljs-built_in">Number</span>;
+
+  submit($event: Event) {
+    <span class="hljs-keyword">this</span>.text = <span class="hljs-string">'Text Submitted successfully!'</span>;
+    <span class="hljs-built_in">console</span>.log($event);
+  }
+
+  mouseMove($event: MouseEvent) {
+    <span class="hljs-keyword">this</span>.x = $event.x;
+    <span class="hljs-keyword">this</span>.y = $event.y;
+  }
+}
+</code></pre>
+<p style="text-align: justify;"><span style="font-size: 12pt;">So, in this example, when the mouse moves on the button, it will display the coordinates of x and y, and when we click the button, the text will change it to <strong>Text Submitted Successfully.</strong></span></p>
+<p style="text-align: justify;"><span style="font-size: 12pt;">Finally,&nbsp;<strong>Angular 6 Event Binding Example Tutorial&nbsp;</strong>is over. Thanks for taking.</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$.post('https://investmentnovel.com/wp-admin/admin-ajax.php', {action: 'wpt_view_count', id: '1715'});
+});
+</script>
+                <script type="text/javascript">
+                jQuery(document).ready(function($) {
+                    $.post('https://investmentnovel.com/wp-admin/admin-ajax.php', {action: 'mts_view_count', id: '1715'});
+                });
+                </script><div class="swp_social_panel swp_horizontal_panel swp_flat_fresh  swp_default_full_color swp_individual_full_color swp_other_full_color scale-100  scale-" data-min-width="1100" data-float-color="#ffffff" data-float="bottom" data-float-mobile="bottom" data-transition="slide"><div class="nc_tweetContainer swp_share_button swp_twitter" data-network="twitter"><a class="nc_tweet swp_share_link" rel="nofollow noreferrer noopener" target="_blank" href="https://twitter.com/intent/tweet?text=Angular+6+Event+Binding+Example+Tutorial&amp;url=https%3A%2F%2Finvestmentnovel.com%2Fangular-6-event-binding-example-tutorial%2F" data-link="https://twitter.com/intent/tweet?text=Angular+6+Event+Binding+Example+Tutorial&amp;url=https%3A%2F%2Finvestmentnovel.com%2Fangular-6-event-binding-example-tutorial%2F"><span class="swp_count swp_hide" style="transition: padding 0.1s linear 0s;"><span class="iconFiller"><span class="spaceManWilly"><i class="sw swp_twitter_icon"></i><span class="swp_share">Tweet</span></span></span></span></a></div><div class="nc_tweetContainer swp_share_button swp_pinterest" data-network="pinterest"><a rel="nofollow noreferrer noopener" class="nc_tweet swp_share_link noPop" onclick="var e=document.createElement(&#39;script&#39;);
+						   e.setAttribute(&#39;type&#39;,&#39;text/javascript&#39;);
+						   e.setAttribute(&#39;charset&#39;,&#39;UTF-8&#39;);
+						   e.setAttribute(&#39;src&#39;,&#39;//assets.pinterest.com/js/pinmarklet.js?r=&#39;+Math.random()*99999999);
+						   document.body.appendChild(e);
+						"><span class="iconFiller"><span class="spaceManWilly"><i class="sw swp_pinterest_icon"></i><span class="swp_share">Pin</span></span></span><span class="swp_count" style="transition: padding 0.1s linear 0s;">2</span></a></div><div class="nc_tweetContainer swp_share_button swp_facebook" data-network="facebook"><a class="nc_tweet swp_share_link" rel="nofollow noreferrer noopener" target="_blank" href="https://www.facebook.com/share.php?u=https%3A%2F%2Finvestmentnovel.com%2Fangular-6-event-binding-example-tutorial%2F" data-link="https://www.facebook.com/share.php?u=https%3A%2F%2Finvestmentnovel.com%2Fangular-6-event-binding-example-tutorial%2F"><span class="iconFiller"><span class="spaceManWilly"><i class="sw swp_facebook_icon"></i><span class="swp_share">Share</span></span></span><span class="swp_count" style="transition: padding 0.1s linear 0s;">2</span></a></div><div class="nc_tweetContainer swp_share_button total_shares total_sharesalt"><span class="swp_count " style="transition: padding 0.1s linear 0s;">4 <span class="swp_label">Shares</span></span></div></div><div class="swp-content-locator"></div>										</div>
+																																											<div class="bottomad">
+													<script async="" src="./Angular 6 Event Binding Example Tutorial_files/f.txt"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-4802021850471286" data-ad-slot="8586441038"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>												</div>
+																					 
+										    		<!-- Start Share Buttons -->
+    		<div class="shareit bottom">
+                                <!-- Twitter -->
+                <span class="share-item twitterbtn">
+                    <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" style="position: static; visibility: visible; width: 60px; height: 20px;" title="Twitter Tweet Button" src="./Angular 6 Event Binding Example Tutorial_files/tweet_button.6a44a9d26983bbb5b04ae399f9e496fe.en.html"></iframe>
+                </span>
+                            <!-- GPlus -->
+                <span class="share-item gplusbtn">
+                    <div id="___plusone_0" style="position: absolute; width: 450px; left: -10000px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none" tabindex="0" vspace="0" width="100%" id="I0_1575884522403" name="I0_1575884522403" src="./Angular 6 Event Binding Example Tutorial_files/fastbutton.html" data-gapiattached="true"></iframe></div><g:plusone size="medium" data-gapiscan="true" data-onload="true" data-gapistub="true"></g:plusone>
+                </span>
+                            <!-- Facebook -->
+                <span class="share-item facebookbtn">
+                    <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div></div>
+                    <div class="fb-like" data-send="false" data-layout="button_count" data-width="150" data-show-faces="false"></div>
+                </span>
+                            <!-- Pinterest -->
+                <span class="share-item pinbtn">
+                    <a href="http://pinterest.com/pin/create/button/?url=https://investmentnovel.com/angular-6-event-binding-example-tutorial/&amp;media=https://investmentnovel.com/wp-content/uploads/2018/09/Angular-6-Events-Example-Tutorial-1024x781.png&amp;description=Angular%206%20Event%20Binding%20Example%20Tutorial" class="pin-it-button" count-layout="horizontal">Pin It</a>
+                </span>
+                		</div>
+    		<!-- end Share Buttons -->
+    										</div><!--.post-single-content-->
+								</div>
+							</div>
+						<div class="tags border-bottom"><a href="https://investmentnovel.com/tag/angular/" rel="tag" itemprop="keywords">Angular</a><a href="https://investmentnovel.com/tag/angular-6/" rel="tag" itemprop="keywords">Angular 6</a></div>	
+    		<!-- Start Related Posts -->
+    		<div class="related-posts"><h4>Related Posts</h4><div class="clear">                    <article class="latestPost excerpt  ">
+                        <a href="https://investmentnovel.com/angular-6-crud-example-tutorial-from-scratch/" title="Angular 6 CRUD Example Tutorial From Scratch" class="post-image post-image-left">
+                            <div class="featured-thumbnail"><img width="56" height="70" src="./Angular 6 Event Binding Example Tutorial_files/Angular-CRUD-App.png" class="attachment-widgetthumb size-widgetthumb wp-post-image" alt="Angular CRUD App" title="" srcset="https://investmentnovel.com/wp-content/uploads/2018/05/Angular-CRUD-App.png 602w, https://investmentnovel.com/wp-content/uploads/2018/05/Angular-CRUD-App-239x300.png 239w" sizes="(max-width: 56px) 100vw, 56px"></div>                        </a>
+                        <header>
+                            <div class="post-info thecategory" itemprop="articleSection">Angular</div>                            <h2 class="title front-view-title" itemprop="headline"><a href="https://investmentnovel.com/angular-6-crud-example-tutorial-from-scratch/" title="Angular 6 CRUD Example Tutorial From Scratch">Angular 6 CRUD Example Tutorial From Scratch</a></h2>
+                            <div class="post-info">
+                                <span class="theauthor"><span itemprop="author"><a href="https://investmentnovel.com/author/kunumj10/" title="Posts by admin" rel="author">admin</a></span></span>
+                            </div>
+                        </header>
+                    </article>  <!--first-article-->
+                                    <article class="latestPost excerpt  last">
+                        <a href="https://investmentnovel.com/angular-6-charts-example-tutorial/" title="Angular 6 Charts Example Tutorial From Scratch" class="post-image post-image-left">
+                            <div class="featured-thumbnail"><img width="70" height="70" src="./Angular 6 Event Binding Example Tutorial_files/Angular-Charts-Example-Tutorial.png" class="attachment-widgetthumb size-widgetthumb wp-post-image" alt="Angular Charts Example Tutorial" title="" srcset="https://investmentnovel.com/wp-content/uploads/2018/07/Angular-Charts-Example-Tutorial.png 1290w, https://investmentnovel.com/wp-content/uploads/2018/07/Angular-Charts-Example-Tutorial-150x150.png 150w, https://investmentnovel.com/wp-content/uploads/2018/07/Angular-Charts-Example-Tutorial-296x300.png 296w, https://investmentnovel.com/wp-content/uploads/2018/07/Angular-Charts-Example-Tutorial-768x779.png 768w, https://investmentnovel.com/wp-content/uploads/2018/07/Angular-Charts-Example-Tutorial-1010x1024.png 1010w" sizes="(max-width: 70px) 100vw, 70px"></div>                        </a>
+                        <header>
+                            <div class="post-info thecategory" itemprop="articleSection">Angular</div>                            <h2 class="title front-view-title" itemprop="headline"><a href="https://investmentnovel.com/angular-6-charts-example-tutorial/" title="Angular 6 Charts Example Tutorial From Scratch">Angular 6 Charts Example Tutorial From Scratch</a></h2>
+                            <div class="post-info">
+                                <span class="theauthor"><span itemprop="author"><a href="https://investmentnovel.com/author/admin/" title="Posts by admin admin" rel="author">admin admin</a></span></span>
+                            </div>
+                        </header>
+                    </article>  <!--first-article-->
+                </div></div>    		<!-- .related-posts -->
+    		<div id="commentsAdd">
+	 	<h4>Post Your Thoughts</h4>
+		<div id="respond" class="box m-t-6">
+							<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title"> <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://investmentnovel.com/angular-6-event-binding-example-tutorial/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://investmentnovel.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<p class="comment-form-comment"><span id="get_avtar"><img src="./Angular 6 Event Binding Example Tutorial_files/00000000000000000000000000000000.png"></span><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Comment Text*"></textarea></p><p class="comment-form-author"><input id="author" name="author" type="text" placeholder="Name*" value="" size="30"></p>
+<p class="comment-form-email"><input id="email" name="email" type="text" placeholder="Email*" value="" size="30"></p>
+<p class="comment-form-url"><input id="url" name="url" type="text" placeholder="Website" value="" size="30"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"><label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Send"> <input type="hidden" name="comment_post_ID" value="1715" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="7e2da4871e"></p><p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1575884522210"></form>
+			</div><!-- #respond -->
+	<p class="akismet_comment_form_privacy_notice">This site uses Akismet to reduce spam. <a href="https://akismet.com/privacy/" target="_blank" rel="nofollow noopener">Learn how your comment data is processed</a>.</p>		</div>
+	</div>
+ <!-- You can start editing here. -->
+<!-- If comments are open, but there are no comments. -->
+			</div>
+		</article>
+				<aside class="sidebar c-4-12" role="complementary" itemscope="" itemtype="http://schema.org/WPSideBar">
+		<div id="sidebars" class="g">
+			<div class="sidebar">
+				<div id="ai_widget-3" class="widget ai_widget"><div class="code-block code-block-2" style="margin: 8px auto; text-align: center; display: block; clear: both;">
+<script async="" src="./Angular 6 Event Binding Example Tutorial_files/f.txt"></script>
+<!-- entrepreneurside2 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4802021850471286" data-ad-slot="2094675565" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</div><div id="ai_widget-2" class="widget ai_widget"><div class="code-block code-block-1" style="margin: 8px auto; text-align: center; display: block; clear: both;">
+<script async="" src="./Angular 6 Event Binding Example Tutorial_files/f.txt"></script>
+<!-- entrepreneurside1 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4802021850471286" data-ad-slot="7401599297" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</div><div id="search-2" class="widget widget_search"><form method="get" id="searchform" class="search-form ajax-search" action="https://investmentnovel.com/" _lpchecked="1">
+	<fieldset>
+		<input type="text" name="s" id="s" value="" placeholder="Search the site" autocomplete="off">
+		<input id="search-image" class="sbutton" type="submit" value="">
+		<i class="fa fa-search"></i>
+	</fieldset>
+<div class="ajax-search-results-container" style="display: none;"></div></form></div><div id="facebook-like-widget-2" class="widget facebook_like"><h3 class="widget-title">Find us on Facebook</h3>			<div class="fb-like-box" data-href="https://www.facebook.com/InvestmentNovel/" data-height="239" data-width="292" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" allowtransparency="true"></div>
+		</div><div id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3>		<ul>
+				<li class="cat-item cat-item-20"><a href="https://investmentnovel.com/category/angular/" title="Learn one way to build applications with Angular and reuse your code and abilities to create apps for any deployment target. For web, mobile web, native mobile, and native desktop. Build features quickly with simple, declarative templates. Extend the template language with your components and use a wide array of existing elements. Get immediate Angular-specific help and feedback with nearly every IDE and editor. All this comes together so you can focus on building amazing apps rather than trying to make the code work.">Angular</a>
+</li>
+	<li class="cat-item cat-item-66"><a href="https://investmentnovel.com/category/bootstrap/" title="Bootstrap Tutorial. We are using Bootstrap 4.">Bootstrap</a>
+</li>
+	<li class="cat-item cat-item-121"><a href="https://investmentnovel.com/category/c/" title="C language programs with an example.">C</a>
+</li>
+	<li class="cat-item cat-item-25"><a href="https://investmentnovel.com/category/laravel/" title="Laravel Tutorials. I will teach you how to use Laravel Standalone and how to use with ReactJS, VueJS, AngularJS, and NodeJS. Laravel is a free, open-source PHP web framework, One of the most popular, powerful, robust application framework you can think of in PHP community. Laravel&#39;s query builder provides a set of classes and methods capable of building queries programmatically. It also allows selectable caching of the results of executed queries. Application logic is an integral part of developed applications, implemented either by using controllers or as part of the route declarations. Learn Laravel in simple and easy steps starting from basic to advanced concepts with examples including Overview, Installation. Laravel Tutorials. I will teach you how to use Laravel Standalone and how to use with ReactJS, VueJS, AngularJS, and NodeJS.">Laravel</a>
+</li>
+	<li class="cat-item cat-item-61"><a href="https://investmentnovel.com/category/mongodb/" title="MongoDB CRUD Tutorial With Example From Scratch is the today’s main topic. CRUD operations refer to the primary Insert(Create), Read, Update and Delete(Destroy) operations. NoSQL Database, as many of you may already know, is a database used to manage huge sets of unstructured data where the data is not stored in tabular relations like relational databases.">MongoDB</a>
+</li>
+	<li class="cat-item cat-item-31"><a href="https://investmentnovel.com/category/node-js/">Node.js</a>
+</li>
+	<li class="cat-item cat-item-46"><a href="https://investmentnovel.com/category/vue-js/" title="Vue is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only and is very easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries. We are creating VueJS tutorials.">Vue.js</a>
+</li>
+		</ul>
+			</div><div id="social-profile-icons-3" class="widget social-profile-icons"><h3 class="widget-title">Follow Us</h3><div class="social-profile-icons"><ul class=""><li class="social-facebook"><a title="Facebook" href="https://www.facebook.com/InvestmentNovel/" target="_blank"><i class="fa fa-facebook"></i></a></li><li class="social-twitter"><a title="Twitter" href="https://twitter.com/InvestmentNovel/" target="_blank"><i class="fa fa-twitter"></i></a></li><li class="social-github"><a title="GitHub" href="https://github.com/InvestmentNovel/" target="_blank"><i class="fa fa-github-alt"></i></a></li><li class="social-reddit"><a title="Reddit" href="https://www.reddit.com/user/Investmentnovel" target="_blank"><i class="fa fa-reddit"></i></a></li></ul></div></div><div id="ai_widget-4" class="widget ai_widget"><div class="code-block code-block-4" style="margin: 8px 0; clear: both;">
+<script async="" src="./Angular 6 Event Binding Example Tutorial_files/f.txt"></script>
+<!-- entrepreneursky1 -->
+<ins class="adsbygoogle" style="display:inline-block;width:300px;height:1050px" data-ad-client="ca-pub-4802021850471286" data-ad-slot="5734537676"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+</div>			</div>
+		</div><!--sidebars-->
+	</aside>
+</div>
+        <footer class="footer clearfix" role="contentinfo" itemscope="" itemtype="http://schema.org/WPFooter">
+            <div class="page_inner">
+                                <div class="copyrights">
+        			<!--start copyrights-->
+<div class="page_inner">       
+    <div class="row" id="copyright-note">
+        <span>Copyright 2019 © &nbsp;<a href="https://investmentnovel.com/" title="Latest Programming Tutorial Blog">InvestmentNovel</a>.&nbsp; All rights reserved</span>
+        <div class="to-tops">&nbsp;</div>
+    </div> 
+<!--end copyrights-->
+</div>
+
+<!--end copyrights-->
+        		</div> 
+        	</div><!--.container-->
+        </footer><!--footer-->
+    </div><!--#page-->
+</div><!--.main-container-->
+        <!--facebook like and share js -->
+        <div id="fb-root"></div>
+		<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+		  	if (d.getElementById(id)) return;
+		  	js = d.createElement(s); js.id = id;
+		  	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+		  	fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+ 	        <script type="text/javascript">
+            window.___gcfg = {
+              lang: 'en-US'
+            };
+            (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+        </script>
+		
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/platform.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+		
+        <script src="./Angular 6 Event Binding Example Tutorial_files/in.js.download" type="text/javascript">lang: en_US</script>
+			<!--pinit js -->
+		<script type="text/javascript" src="https://assets.pinterest.com/js/pinit.js"></script>
+			<!-- twitter JS End -->
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>	
+	             <script>
+                jQuery( document ).scroll(function( $ )
+                {
+                    var y = jQuery(this).scrollTop();
+            
+                    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+                    {    
+                       if(jQuery(window).scrollTop() + jQuery(window).height() >= jQuery(document).height()-100)
+                       {
+                          jQuery('.sfsi_outr_div').css({'z-index':'9996',opacity:1,top:jQuery(window).scrollTop()+"px",position:"absolute"});
+                          jQuery('.sfsi_outr_div').fadeIn(200);
+                          jQuery('.sfsi_FrntInner_chg').fadeIn(200);
+                       }
+                       else{
+                           jQuery('.sfsi_outr_div').fadeOut();
+                           jQuery('.sfsi_FrntInner_chg').fadeOut();
+                       }
+                  }
+                  else
+                  {
+                       if(jQuery(window).scrollTop() + jQuery(window).height() >= jQuery(document).height()-3)
+                       {
+                            jQuery('.sfsi_outr_div').css({'z-index':'9996',opacity:1,top:jQuery(window).scrollTop()+200+"px",position:"absolute"});
+                            jQuery('.sfsi_outr_div').fadeIn(200);
+                            jQuery('.sfsi_FrntInner_chg').fadeIn(200);
+                       }
+                       else
+                       {
+                         jQuery('.sfsi_outr_div').fadeOut();
+                         jQuery('.sfsi_FrntInner_chg').fadeOut();
+                       }
+                  } 
+                });
+             </script>
+                	<script>
+			jQuery(document).ready(function(e) {
+                jQuery("body").addClass("sfsi_2.24")
+            });
+			function sfsi_processfurther(ref) {
+				var feed_id = 'SitkV0h2U1VKdkFjVHQ5TTFxSUpQRElvMENnMzF5K3FmVC9vaFFMN090NGRIckxuSVBWRm1YN1cwUExQU25ad1hZd2M3Rkx0NDNoNmdvaDhtdS9wL1UzT21tV05mRkZLZzhML2RlaFRibVdZdDNyWG1HVEVoSHhYYjA4ei9GY1N8c2QxMGd5YTN3S1VybVVlQUFJdUlja0ZJMC9Na051SUNZM29sWTk3YkZiVT0=';
+				var feedtype = 8;
+				var email = jQuery(ref).find('input[name="data[Widget][email]"]').val();
+				var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+				if ((email != "Enter your email") && (filter.test(email))) {
+					if (feedtype == "8") {
+						var url ="https://www.specificfeeds.com/widgets/subscribeWidget/"+feed_id+"/"+feedtype;
+						window.open('', "popupwindow", "scrollbars=yes,width=1080,height=760");
+						ref.action=url;
+						ref.target="popupwindow";
+						return true;
+					}else{
+						return false
+					}
+				} else {
+					alert("Please enter email address");
+					jQuery(ref).find('input[name="data[Widget][email]"]').focus();
+					return false;
+				}
+			}
+		</script>
+        <style type="text/css" aria-selected="true">
+			.sfsi_subscribe_Popinner
+			{
+								width: 100% !important;
+				height: auto !important;
+												border: 1px solid #b5b5b5 !important;
+								padding: 18px 0px !important;
+				background-color: #ffffff !important;
+			}
+			.sfsi_subscribe_Popinner form
+			{
+				margin: 0 20px !important;
+			}
+			.sfsi_subscribe_Popinner h5
+			{
+				font-family: Helvetica,Arial,sans-serif !important;
+								font-weight: bold !important;
+								color: #000000 !important;
+				font-size: 16px !important;
+				text-align: center !important;
+				margin: 0 0 10px !important;
+    			padding: 0 !important;
+			}
+			.sfsi_subscription_form_field {
+				margin: 5px 0 !important;
+				width: 100% !important;
+				display: inline-flex;
+				display: -webkit-inline-flex;
+			}
+			.sfsi_subscription_form_field input {
+				width: 100% !important;
+				padding: 10px 0px !important;
+			}
+			.sfsi_subscribe_Popinner input[type=email]
+			{
+				font-family: Helvetica,Arial,sans-serif !important;
+								font-style: normal !important;
+								color:  !important;
+				font-size: 14px !important;
+				text-align: center !important;
+			}
+			.sfsi_subscribe_Popinner input[type=email]::-webkit-input-placeholder {
+			   	font-family: Helvetica,Arial,sans-serif !important;
+								font-style: normal !important;
+								color:  !important;
+				font-size: 14px !important;
+				text-align: center !important;
+			}
+			.sfsi_subscribe_Popinner input[type=email]:-moz-placeholder { /* Firefox 18- */
+			    font-family: Helvetica,Arial,sans-serif !important;
+								font-style: normal !important;
+								color:  !important;
+				font-size: 14px !important;
+				text-align: center !important;
+			}
+			.sfsi_subscribe_Popinner input[type=email]::-moz-placeholder {  /* Firefox 19+ */
+			    font-family: Helvetica,Arial,sans-serif !important;
+								font-style: normal !important;
+								color:  !important;
+				font-size: 14px !important;
+				text-align: center !important;
+			}
+			.sfsi_subscribe_Popinner input[type=email]:-ms-input-placeholder {  
+			  	font-family: Helvetica,Arial,sans-serif !important;
+								font-style: normal !important;
+								color:  !important;
+				font-size: 14px !important;
+				text-align: center !important;
+			}
+			.sfsi_subscribe_Popinner input[type=submit]
+			{
+				font-family: Helvetica,Arial,sans-serif !important;
+								font-weight: bold !important;
+								color: #000000 !important;
+				font-size: 16px !important;
+				text-align: center !important;
+				background-color: #dedede !important;
+			}
+		</style>
+	<link rel="stylesheet" id="hljstheme-css" href="./Angular 6 Event Binding Example Tutorial_files/darcula.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"https:\/\/investmentnovel.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/scripts.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var tocplus = {"visibility_show":"show","visibility_hide":"hide","width":"Auto"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/front.min.js.download"></script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/core.min.js.download"></script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/modernizr.custom.min.js.download"></script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/jquery.shuffle.min.js.download"></script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/random-shuffle-min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sfsi_icon_ajax_object = {"ajax_url":"https:\/\/investmentnovel.com\/wp-admin\/admin-ajax.php"};
+var sfsi_icon_ajax_object = {"ajax_url":"https:\/\/investmentnovel.com\/wp-admin\/admin-ajax.php","plugin_url":"https:\/\/investmentnovel.com\/wp-content\/plugins\/ultimate-social-media-icons\/"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/custom.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var socialWarfare = {"addons":[],"post_id":"1715","floatBeforeContent":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/script.min.js.download"></script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/comment-reply.min.js.download"></script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/js.cookie.min.js.download"></script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/underscore.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/wp-util.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpreview = {"ajaxurl":"https:\/\/investmentnovel.com\/wp-admin\/admin-ajax.php","rateAllFeatures":"Please rate all features","verifiedPurchase":"(Verified purchase)"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/main.js.download"></script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/wp-embed.min.js.download"></script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/highlight.all.pack.js.download"></script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/jquery.smooth-scroll.min.js.download"></script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/jquery.sticky-kit.min.js.download"></script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/jquery.waypoints.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var ezTOC = {"smooth_scroll":"1","visibility_hide_by_default":"","width":"auto","scroll_offset":"30"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/front.min.js(1).download"></script>
+<script async="async" type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/form.js.download"></script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/jquery.magnific-popup.min.js.download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var mts_ajax_search = {"url":"https:\/\/investmentnovel.com\/wp-admin\/admin-ajax.php","ajax_search":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Angular 6 Event Binding Example Tutorial_files/ajax.js.download"></script>
+    <style>code.hljs { /*margin: 5px;*/ }</style>
+    <script type="text/javascript">
+    (function($, window) {
+        var init_fn_flag = false;
+        var init_fn = (function() {
+            if (init_fn_flag)
+                return;
+            init_fn_flag = true;
+             hljs.configure({"tabReplace":"    "});
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+            $('pre:not(:has(code))').each(function(i, block){
+                var class_desc = $(block).attr("class") || "";
+                var reg_mat = class_desc.match(/brush\s*:\s*([\w\d]+)/i);
+                if(!reg_mat || reg_mat.length < 2)
+                    return;
+                var code_content = $(block).removeClass("brush:").removeClass("ruler:").removeClass("first-line:").removeClass("highlight:")
+                    .removeClass("brush:" + reg_mat[1] + ";").removeClass(reg_mat[1] + ";").removeClass("true;").removeClass("false;").html();
+                $(block).empty().append($("<code class='hljs'></code>").html(code_content)).addClass(reg_mat[1]);
+                hljs.highlightBlock(block);
+            });
+        $('pre.prettyprint:not(.prettyprinted), code.prettyprint:not(.prettyprinted), xmp.prettyprint:not(.prettyprinted)').each(function(i, block){
+            var jblock = $(block).removeClass("prettyprint");
+            if (jblock.prop("tagName").toLowerCase() == "code" && jblock.parent().prop("tagName").toLowerCase() == "pre") {
+                hljs.highlightBlock(jblock.parent().get(0));
+                return;
+            }
+
+            var class_desc = $(block).attr("class") || "";
+            var reg_mat = class_desc.match(/lang[^-]*-([\w\d]+)/i);
+            var code_content = $("<code class='hljs'></code>");
+            if (reg_mat && reg_mat.length >= 2) {
+                code_content.addClass(reg_mat[1]);
+            }
+            if (jblock.prop("tagName") === "PRE") {
+              jblock.wrapInner(code_content);
+              hljs.highlightBlock(jblock.children().get(0));
+            } else {
+              var code_content = jblock.html();
+              jblock.replaceWith($("<pre></pre>").append(code_content.html(code_content)));
+              hljs.highlightBlock(jblock.get(0));
+            }
+        });
+        $('pre:not(:has(code))').each(function(i, block){
+            var class_desc = $(block).attr("class") || "";
+            var reg_mat = class_desc.match(/lang\s*:\s*([\w\d]+)/i);
+            var code_content = $("<code class='hljs'></code>").html($(block).removeAttr('class').html());
+            if (reg_mat && reg_mat.length >= 2) {
+                code_content.addClass(reg_mat[1]);
+            }
+            $(block).empty().append(code_content);
+            hljs.highlightBlock(block);
+        });
+        });
+        $(document).ready(init_fn);
+        $(window).on("load", init_fn);
+    })(jQuery, window);
+    </script>
+<script type="text/javascript"> var swp_nonce = "0a79194c80";var swpFloatBeforeContent = false;var swpClickTracking = false;</script>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+
+Served from: investmentnovel.com @ 2019-12-09 01:41:53 by W3 Total Cache
+--><iframe name="oauth2relay904868916" id="oauth2relay904868916" src="./Angular 6 Event Binding Example Tutorial_files/postmessageRelay.html" tabindex="-1" aria-hidden="true" style="width: 1px; height: 1px; position: absolute; top: -100px;"></iframe><iframe scrolling="no" frameborder="0" allowtransparency="true" src="./Angular 6 Event Binding Example Tutorial_files/widget_iframe.6a44a9d26983bbb5b04ae399f9e496fe.html" title="Twitter settings iframe" style="display: none;"></iframe><div class="nc_wrapper swp_floating_horizontal_wrapper bottom" style="background-color: rgb(255, 255, 255);"><div class="swp_social_panel swp_horizontal_panel swp_flat_fresh  swp_default_full_color swp_individual_full_color swp_other_full_color scale-100  scale- nc_floater" data-min-width="1100" data-float-color="#ffffff" data-float="bottom" data-float-mobile="bottom" data-transition="slide" style="width: 498px; left: 412.078px;"><div class="nc_tweetContainer swp_share_button swp_twitter" data-network="twitter"><a class="nc_tweet swp_share_link" rel="nofollow noreferrer noopener" target="_blank" href="https://twitter.com/intent/tweet?text=Angular+6+Event+Binding+Example+Tutorial&amp;url=https%3A%2F%2Finvestmentnovel.com%2Fangular-6-event-binding-example-tutorial%2F" data-link="https://twitter.com/intent/tweet?text=Angular+6+Event+Binding+Example+Tutorial&amp;url=https%3A%2F%2Finvestmentnovel.com%2Fangular-6-event-binding-example-tutorial%2F"><span class="swp_count swp_hide" style="transition: padding 0.1s linear 0s;"><span class="iconFiller"><span class="spaceManWilly"><i class="sw swp_twitter_icon"></i><span class="swp_share">Tweet</span></span></span></span></a></div><div class="nc_tweetContainer swp_share_button swp_pinterest" data-network="pinterest"><a rel="nofollow noreferrer noopener" class="nc_tweet swp_share_link noPop" onclick="var e=document.createElement(&#39;script&#39;);
+						   e.setAttribute(&#39;type&#39;,&#39;text/javascript&#39;);
+						   e.setAttribute(&#39;charset&#39;,&#39;UTF-8&#39;);
+						   e.setAttribute(&#39;src&#39;,&#39;//assets.pinterest.com/js/pinmarklet.js?r=&#39;+Math.random()*99999999);
+						   document.body.appendChild(e);
+						"><span class="iconFiller"><span class="spaceManWilly"><i class="sw swp_pinterest_icon"></i><span class="swp_share">Pin</span></span></span><span class="swp_count" style="transition: padding 0.1s linear 0s;">2</span></a></div><div class="nc_tweetContainer swp_share_button swp_facebook" data-network="facebook"><a class="nc_tweet swp_share_link" rel="nofollow noreferrer noopener" target="_blank" href="https://www.facebook.com/share.php?u=https%3A%2F%2Finvestmentnovel.com%2Fangular-6-event-binding-example-tutorial%2F" data-link="https://www.facebook.com/share.php?u=https%3A%2F%2Finvestmentnovel.com%2Fangular-6-event-binding-example-tutorial%2F"><span class="iconFiller"><span class="spaceManWilly"><i class="sw swp_facebook_icon"></i><span class="swp_share">Share</span></span></span><span class="swp_count" style="transition: padding 0.1s linear 0s;">2</span></a></div><div class="nc_tweetContainer swp_share_button total_shares total_sharesalt"><span class="swp_count " style="transition: padding 0.1s linear 0s;">4 <span class="swp_label">Shares</span></span></div></div></div></body></html>
