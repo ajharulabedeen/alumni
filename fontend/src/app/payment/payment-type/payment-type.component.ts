@@ -59,6 +59,7 @@ export class PaymentTypeComponent implements OnInit {
     this.ptsArray = new Array();
     this.ptService.getAllPayments(this.perPage, this.pageNumber);
     this.ptService.pts.subscribe(pt => {
+      this.ptsArray = [];
       for (const key1 in pt) {
         // console.log(key1);
         // console.log(pt[key1]['id']);
