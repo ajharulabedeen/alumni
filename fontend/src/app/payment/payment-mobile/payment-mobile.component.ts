@@ -9,11 +9,14 @@ import { PaymentType } from '../payment-type/payment-type.model';
 })
 export class PaymentMobileComponent implements OnInit {
 
-  private paymentType_id: string;
-  private amount: string;
-  private date: string;
-  private paymentMethod: string;
-  private trxID: string;
+  paymentType_id: string;
+  amount: string;
+  date: string;
+  paymentMethod: string;
+  trxID: string;
+
+  mymodel: string;
+
 
 
   perPage: number;
@@ -36,6 +39,18 @@ export class PaymentMobileComponent implements OnInit {
     this.setTotalPaymentType();
     this.setExistingPayments();
   }
+
+  // start : Test
+  valuechange(newValue) {
+    this.mymodel = newValue;
+    console.log(newValue)
+  }
+
+  onSearchChange(searchValue: string): void {
+    console.log(searchValue);
+  }
+  // end : Test
+
 
 
   public setExistingPayments() {

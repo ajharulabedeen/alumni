@@ -92,7 +92,7 @@
         <div id="my_payments" class="panel-collapse collapse">
           <div class="panel-body">
             <h3>
-              All Payment!
+              My Payments
               <button class="btn btn-xs btn-primary" (click)="refreshTable()">Refresh</button>
             </h3>
             <div class="col-md-2 offset-md-2">
@@ -125,7 +125,7 @@
                   <table class="table table-hover">
                     <tbody>
                       <tr>
-                        <th>Operation</th>
+                        <th>Note</th>
                         <th>Index</th>
                         <!-- clicking on it will show details of the payment -->
                         <th>Name</th>
@@ -135,20 +135,18 @@
                         <th>Amount</th>
                         <th>Status</th>
                         <!-- click : modal about the note -->
-                        <th>Note</th>
                       </tr>
                       <tr *ngFor="let pt of ptsArray; let i=index">
                         <td>
-                          <button class="btn btn-xs btn-primary" href="" data-toggle="modal"
-                            data-target="#modal_education">
-                            Pay
-                          </button>
+                          <button class="btn btn-xs btn-warning" data-toggle="modal"
+                            data-target="#modal_note">Notes</button>
                         </td>
                         <td>{{i+1}}</td>
                         <td>{{pt.name}}</td>
                         <td>{{pt.start_date}}</td>
                         <td>{{pt.last_date}}</td>
                         <td>{{pt.amount}}</td>
+                        <td>{{pt.description}}</td>
                         <td>{{pt.description}}</td>
                       </tr>
                     </tbody>
@@ -162,12 +160,16 @@
         <div class="panel-footer">My Payments</div>
       </div>
       <!-- panel-group -->
-
       <!--End :  My Payments -->
-
-
-
     </div>
+
+
+    <!-- start : Test  -->
+    <input type="text" [ngModel]="mymodel" (ngModelChange)="valuechange($event)" />
+    {{mymodel}}
+
+    <input type="text" class="form-control" (input)="onSearchChange($event.target.value)">
+    <!-- end : Test  -->
 
 
 
@@ -230,8 +232,7 @@
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <textarea class="form-control" rows="3"
-                placeholder="Notes ...">
+              <textarea class="form-control" rows="3" placeholder="Notes ...">
                   I am slow waker but never come back.
           </textarea>
             </div>
