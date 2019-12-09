@@ -14,7 +14,7 @@ class CreatePaymentMobilesTable extends Migration
     public function up()
     {
         Schema::create('payment_mobiles', function (Blueprint $table) {
-            $table->bigIncrements('id');            
+            $table->bigIncrements('id');
             $table->string('user_id',512)->nullable();
             $table->float('amount')->nullable();
             $table->string('type_ID', 512)->nullable();
@@ -23,6 +23,7 @@ class CreatePaymentMobilesTable extends Migration
             $table->string('mobile_number', 512)->nullable();
             $table->string('trx_id', 512)->nullable();
             $table->string('status', 512)->nullable();
+            $table->mediumText('notes')->nullable();
 
             $table->timestamps();
 
