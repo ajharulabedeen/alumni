@@ -68,9 +68,9 @@ export class PaymentMobileComponent implements OnInit {
 
   }//savePayment
 
-  public setPaymentTypeID(id: string) {
+  public setPaymentTypeID(id: string, amount : string) {
     this.paymentType_id = id;
-
+    this.amount = amount;
   }
 
 
