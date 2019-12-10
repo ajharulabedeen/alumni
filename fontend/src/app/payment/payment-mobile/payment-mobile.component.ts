@@ -52,6 +52,11 @@ export class PaymentMobileComponent implements OnInit {
   // end : Test
 
 
+  public savePayment(){
+    console.log("Save Payment!");
+  }//savePayment
+
+
 
   public setExistingPayments() {
     this.ptsArray = [];
