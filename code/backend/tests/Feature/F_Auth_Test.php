@@ -135,7 +135,7 @@ class F_Auth_Test extends TestCase
             '/api/signup',
             [
                 'name' => 'Sally',
-                'email' => 'louiugicar@uttmail.com',
+                'email' => 'louwugicar@uttmail.com',
                 'password' => '123456',
                 'password_confirmation' => '123456'
             ]

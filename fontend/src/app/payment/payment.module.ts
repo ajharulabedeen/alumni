@@ -4,11 +4,12 @@ import { PaymentTypeComponent } from './payment-type/payment-type.component';
 import { LayoutModule } from '../layout/layout.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PaymentMobileComponent } from './payment-mobile/payment-mobile.component';
 
 
 
 @NgModule({
-  declarations: [PaymentTypeComponent],
+  declarations: [PaymentTypeComponent, PaymentMobileComponent],
   imports: [
     CommonModule,
     LayoutModule,
