@@ -48,6 +48,7 @@
                   <table class="table table-hover">
                     <tbody>
                       <tr>
+                        <th>Index</th>
                         <th>Operation</th>
                         <th>ID</th>
                         <th>Name</th>
@@ -57,12 +58,14 @@
                         <th>Description</th>
                       </tr>
                       <tr *ngFor="let pt of ptsArray; let i=index">
+                        <td>{{i+1}}</td>
                         <td>
-                          <button class="btn btn-xs btn-primary" href="" data-toggle="modal" data-target="#do_payment">
+                          <button class="btn btn-xs btn-primary" href="" data-toggle="modal" data-target="#do_payment"
+                            (click)="setPaymentTypeID(pt.id)">
                             Pay
                           </button>
                         </td>
-                        <td>{{i+1}}</td>
+                        <td>{{pt.id}}</td>
                         <td>{{pt.name}}</td>
                         <td>{{pt.start_date}}</td>
                         <td>{{pt.last_date}}</td>
@@ -118,6 +121,7 @@
               </div>
             </div>
 
+            <!-- table : showing all my payments -->
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-body table-responsive no-padding">
@@ -200,20 +204,22 @@
 
             <div class="form-group">
               <label>Amount</label>
-              <input type="number" class="form-control">
+              <input [(ngModel)]="amount" type="number" class="form-control">
             </div>
             <div class="form-group">
               <label>Mobile Number</label>
-              <input type="text" class="form-control"
+              <input [(ngModel)]="mobileNumber" type="text" class="form-control"
                 placeholder="Mobile Number from Which payment has done ...... (Max : 512 Character)">
             </div>
             <div class="form-group">
               <label>Medium</label>
-              <input type="text" class="form-control" placeholder="bKash, Rocket...... (Max : 512 Character)">
+              <input [(ngModel)]="paymentMethod" type="text" class="form-control"
+                placeholder="bKash, Rocket...... (Max : 512 Character)">
             </div>
             <div class="form-group">
               <label>TrX ID</label>
-              <input type="text" class="form-control" placeholder="Transection id...... (Max : 512 Character)">
+              <input [(ngModel)]="trxID" type="text" class="form-control"
+                placeholder="Transection id...... (Max : 512 Character)">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
