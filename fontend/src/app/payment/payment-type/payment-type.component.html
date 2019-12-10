@@ -20,6 +20,7 @@
                 <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
               </div>
             </div>
+
             <div class="col-md-3 offset-md-3">
               <div class="form-group">
                 <label>Start Date</label>
@@ -32,6 +33,7 @@
                 <input [(ngModel)]="start_date" type="date" class="form-control" value="{{start_date}}">
               </div>
             </div>
+
             <div class="col-md-3 offset-md-3">
               <div class="form-group">
                 <label>Last Date</label>
@@ -71,7 +73,6 @@
         <div class="panel-footer">Add Payment</div>
       </div>
 
-
       <!-- all Payments -->
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -89,14 +90,15 @@
             <div class="col-md-2 offset-md-2">
               <div style="text-align: center" class="form-group">
                 <label>Per Page</label>
-                <input style="text-align: center" [(ngModel)]="perPage" type="number" class="form-control" value="{{perPage}}"
-                (ngModelChange)="refreshTable()">
+                <input style="text-align: center" [(ngModel)]="perPage" type="number" class="form-control"
+                  value="{{perPage}}" (ngModelChange)="refreshTable()">
               </div>
             </div>
             <div class="col-md-2 offset-md-2">
               <div style="text-align: center" class="form-group">
                 <label>Total </label>
-                <input style="text-align: center" disabled="true" [(ngModel)]="total" type="number" class="form-control" value="{{total}}">
+                <input style="text-align: center" disabled="true" [(ngModel)]="total" type="number" class="form-control"
+                  value="{{total}}">
               </div>
             </div>
 
@@ -105,7 +107,8 @@
                 <button class="btn btn-primary btn-xs" (click)="previousPage()">Previous</button>
                 <label class="btn btn-danger btn-xs ">Page Number</label>
                 <button class="btn btn-primary btn-xs" (click)="nextPage()">Next</button>
-                <input style="text-align: center" [(ngModel)]="pageNumber" type="number" class="form-control" value="{{pageNumber}}">
+                <input style="text-align: center" [(ngModel)]="pageNumber" type="number" class="form-control"
+                  value="{{pageNumber}}">
               </div>
             </div>
 
@@ -116,6 +119,7 @@
                   <table class="table table-hover">
                     <tbody>
                       <tr>
+                        <th>Index</th>
                         <th>Operation</th>
                         <th>ID</th>
                         <th>Name</th>
@@ -125,6 +129,7 @@
                         <th>Description</th>
                       </tr>
                       <tr *ngFor="let pt of ptsArray; let i=index">
+                        <td>{{i+1}}</td>
                         <td>
                           <button class="btn btn-xs btn-primary" data-toggle="collapse" href="#add_payment"
                             (click)="update(pt)">
@@ -132,7 +137,7 @@
                           </button>
                           <button class="btn btn-xs btn-warning" (click)="delete(pt.id)">Delete</button>
                         </td>
-                        <td>{{i+1}}</td>
+                        <td>{{pt.id}}</td>
                         <td>{{pt.name}}</td>
                         <td>{{pt.start_date}}</td>
                         <td>{{pt.last_date}}</td>
@@ -151,6 +156,10 @@
         </div>
         <div class="panel-footer">All Payment</div>
       </div>
+
+      <!-- Start : Test -->
+
+      <!-- End : Test -->
 
 
       <!-- panel-group -->

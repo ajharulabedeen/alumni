@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PaymentTypeService } from '../payment-type/payment-type.service';
 import { PaymentType } from '../payment-type/payment-type.model';
+import { PaymentMobile } from './payment-mobile.model';
+import { PaymentMobileService } from './payment-mobile.service';
 
 @Component({
   selector: 'app-payment-mobile',
@@ -13,6 +15,7 @@ export class PaymentMobileComponent implements OnInit {
   amount: string;
   date: string;
   paymentMethod: string;
+  mobileNumber: string;
   trxID: string;
 
   mymodel: string;
@@ -29,12 +32,12 @@ export class PaymentMobileComponent implements OnInit {
 
   ptsArray = new Array();
 
-  constructor(private ptService: PaymentTypeService) { }
+  constructor(private ptService: PaymentTypeService, private ptmService : PaymentMobileService) { }
 
   ngOnInit() {
     document.body.className = 'hold-transition skin-blue sidebar-mini';
     this.totalPage = (this.total / this.perPage);
-    this.pageNumber=1;
+    this.pageNumber = 1;
     this.perPage = 10;
     this.setTotalPaymentType();
     this.setExistingPayments();
@@ -50,6 +53,25 @@ export class PaymentMobileComponent implements OnInit {
     console.log(searchValue);
   }
   // end : Test
+
+
+  public savePayment() {
+    console.log("Save Payment!");
+    var mobilePayment = new PaymentMobile();
+    mobilePayment.$paymentType_id = this.paymentType_id;
+    mobilePayment.$amount = this.amount;
+    mobilePayment.$date = this.date;
+    mobilePayment.$paymentMethod = this.paymentMethod;
+    mobilePayment.$trxID = this.trxID;
+    mobilePayment.$mobileNumber = this.mobileNumber;
+    this.ptmService.savePaymetMobile(mobilePayment);
+
+  }//savePayment
+
+  public setPaymentTypeID(id: string, amount : string) {
+    this.paymentType_id = id;
+    this.amount = amount;
+  }
 
 
 

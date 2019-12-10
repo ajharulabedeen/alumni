@@ -4,13 +4,14 @@ export class PaymentMobile {
   private date: string;
   private paymentMethod: string;
   private trxID: string;
+  private mobileNumber: string;
 
   /**
-   * Getter $id
+   * Getter $paymentType_id
    * @return {string}
    */
-  public get $id(): string {
-    return this.id;
+  public get $paymentType_id(): string {
+    return this.paymentType_id;
   }
 
   /**
@@ -46,11 +47,19 @@ export class PaymentMobile {
   }
 
   /**
-   * Setter $id
+   * Getter $mobileNumber
+   * @return {string}
+   */
+  public get $mobileNumber(): string {
+    return this.mobileNumber;
+  }
+
+  /**
+   * Setter $paymentType_id
    * @param {string} value
    */
-  public set $id(value: string) {
-    this.id = value;
+  public set $paymentType_id(value: string) {
+    this.paymentType_id = value;
   }
 
   /**
@@ -84,4 +93,15 @@ export class PaymentMobile {
   public set $trxID(value: string) {
     this.trxID = value;
   }
+
+  /**
+   * Setter $mobileNumber
+   * @param {string} value
+   */
+  public set $mobileNumber(value: string) {
+    this.mobileNumber = value;
+  }
+
+
+
 }
