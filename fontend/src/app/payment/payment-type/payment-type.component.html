@@ -118,6 +118,7 @@
                   <table class="table table-hover">
                     <tbody>
                       <tr>
+                        <th>Index</th>
                         <th>Operation</th>
                         <th>ID</th>
                         <th>Name</th>
@@ -127,6 +128,7 @@
                         <th>Description</th>
                       </tr>
                       <tr *ngFor="let pt of ptsArray; let i=index">
+                        <td>{{i+1}}</td>
                         <td>
                           <button class="btn btn-xs btn-primary" data-toggle="collapse" href="#add_payment"
                             (click)="update(pt)">
@@ -134,7 +136,7 @@
                           </button>
                           <button class="btn btn-xs btn-warning" (click)="delete(pt.id)">Delete</button>
                         </td>
-                        <td>{{i+1}}</td>
+                        <td>{{pt.id}}</td>
                         <td>{{pt.name}}</td>
                         <td>{{pt.start_date}}</td>
                         <td>{{pt.last_date}}</td>
