@@ -21,8 +21,7 @@
               <div style="text-align: center" class="form-group">
                 <label>Per Page</label>
                 <input style="text-align: center" [(ngModel)]="perPage" type="number" class="form-control"
-                  value="{{perPage}}"
-                  (ngModelChange)="refreshTable()">
+                  value="{{perPage}}" (ngModelChange)="refreshTable()">
               </div>
             </div>
             <div class="col-md-2 offset-md-2">
@@ -59,8 +58,7 @@
                       </tr>
                       <tr *ngFor="let pt of ptsArray; let i=index">
                         <td>
-                          <button class="btn btn-xs btn-primary" href="" data-toggle="modal"
-                            data-target="#modal_education">
+                          <button class="btn btn-xs btn-primary" href="" data-toggle="modal" data-target="#do_payment">
                             Pay
                           </button>
                         </td>
@@ -175,7 +173,7 @@
 
 
     <!-- modal : do payment-->
-    <div class="modal fade" id="modal_education" tabindex="-1" role="dialog" aria-labelledby="modal_educationLabel"
+    <div class="modal fade" id="do_payment" tabindex="-1" role="dialog" aria-labelledby="modal_educationLabel"
       aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -186,10 +184,28 @@
             </button>
           </div>
           <div class="modal-body">
-            <div class="form-group">
+
+            <div class="col-md-6 offset-md-6">
+              <div class="form-group">
+                <label>Date</label>
+                <input type="text" class="form-control" placeholder="{{date}}">
+              </div>
+            </div>
+            <div class="col-md-6 offset-md-6">
+              <div class="form-group">
+                <label>Select Date</label>
+                <input  [(ngModel)]="date" type="date" class="form-control">
+              </div>
+            </div>
+
+
+
+            <!-- <div class="form-group">
               <label>Date</label>
               <input type="text" class="form-control" placeholder="Enter Degree Name... (Max : 512 Character)">
-            </div>
+            </div> -->
+
+
             <div class="form-group">
               <label>Amount</label>
               <input type="number" class="form-control">
@@ -219,7 +235,10 @@
     </div>
 
 
+    <!-- start :  test -->
     <button class="btn btn-danger" data-toggle="modal" data-target="#modal_note">Show Notes</button>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#do_payment">Pay IT</button>
+    <!-- end  : test -->
     <!-- modal : Show Notes-->
     <div class="modal fade" id="modal_note" tabindex="-1" role="dialog" aria-labelledby="modal_educationLabel"
       aria-hidden="true">
