@@ -71,7 +71,7 @@ class Events_Repo_Impl implements Events_Repo_I
         return Events::orderBy($sort_on, $order)->paginate($per_page)->all();
     }
 
-    
+
     /**
      *  @return description description of an event will be given. to save data, only description will be back.
      *  @param  event_id   primary key of the event.
