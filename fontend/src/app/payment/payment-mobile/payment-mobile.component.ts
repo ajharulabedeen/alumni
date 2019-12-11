@@ -11,12 +11,13 @@ import { PaymentMobileService } from './payment-mobile.service';
 })
 export class PaymentMobileComponent implements OnInit {
 
-  paymentType_id: string;
   amount: string;
+  type_ID: string;
   date: string;
-  paymentMethod: string;
-  mobileNumber: string;
-  trxID: string;
+  payment_method: string;
+  mobile_number: string;
+  trx_id: string;
+
 
   mymodel: string;
 
@@ -28,11 +29,9 @@ export class PaymentMobileComponent implements OnInit {
   totalPage: number
 
 
-
-
   ptsArray = new Array();
 
-  constructor(private ptService: PaymentTypeService, private ptmService : PaymentMobileService) { }
+  constructor(private ptService: PaymentTypeService, private ptmService: PaymentMobileService) { }
 
   ngOnInit() {
     document.body.className = 'hold-transition skin-blue sidebar-mini';
@@ -58,19 +57,21 @@ export class PaymentMobileComponent implements OnInit {
   public savePayment() {
     console.log("Save Payment!");
     var mobilePayment = new PaymentMobile();
-    mobilePayment.$paymentType_id = this.paymentType_id;
+    mobilePayment.$type_ID = this.type_ID;
     mobilePayment.$amount = this.amount;
     mobilePayment.$date = this.date;
-    mobilePayment.$paymentMethod = this.paymentMethod;
-    mobilePayment.$trxID = this.trxID;
-    mobilePayment.$mobileNumber = this.mobileNumber;
+    mobilePayment.$payment_method = this.payment_method;
+    mobilePayment.$trx_id = this.trx_id;
+    mobilePayment.$mobile_number = this.mobile_number;
     this.ptmService.savePaymetMobile(mobilePayment);
 
   }//savePayment
 
-  public setPaymentTypeID(id: string, amount : string) {
-    this.paymentType_id = id;
+  public setPaymentTypeID(id: string, amount: string) {
+    //payment Type
+    this.type_ID = id;
     this.amount = amount;
+    this.date = this.getTodayDtae();
   }
 
 
@@ -128,6 +129,14 @@ export class PaymentMobileComponent implements OnInit {
     }
   }
 
+  public getTodayDtae() {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    var t =  yyyy + '/' + mm + '/' + dd;
+    return t;
+  }
 
 
 }//class

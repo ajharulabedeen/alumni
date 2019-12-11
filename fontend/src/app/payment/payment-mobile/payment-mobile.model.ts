@@ -1,18 +1,11 @@
 export class PaymentMobile {
-  private paymentType_id: string;
-  private amount: string;
-  private date: string;
-  private paymentMethod: string;
-  private trxID: string;
-  private mobileNumber: string;
 
-  /**
-   * Getter $paymentType_id
-   * @return {string}
-   */
-  public get $paymentType_id(): string {
-    return this.paymentType_id;
-  }
+  private amount: string;
+  private type_ID: string;
+  private date: string;
+  private payment_method: string;
+  private mobile_number: string;
+  private trx_id: string;
 
   /**
    * Getter $amount
@@ -20,6 +13,14 @@ export class PaymentMobile {
    */
   public get $amount(): string {
     return this.amount;
+  }
+
+  /**
+   * Getter $type_ID
+   * @return {string}
+   */
+  public get $type_ID(): string {
+    return this.type_ID;
   }
 
   /**
@@ -31,35 +32,27 @@ export class PaymentMobile {
   }
 
   /**
-   * Getter $paymentMethod
+   * Getter $payment_method
    * @return {string}
    */
-  public get $paymentMethod(): string {
-    return this.paymentMethod;
+  public get $payment_method(): string {
+    return this.payment_method;
   }
 
   /**
-   * Getter $trxID
+   * Getter $mobile_number
    * @return {string}
    */
-  public get $trxID(): string {
-    return this.trxID;
+  public get $mobile_number(): string {
+    return this.mobile_number;
   }
 
   /**
-   * Getter $mobileNumber
+   * Getter $trx_id
    * @return {string}
    */
-  public get $mobileNumber(): string {
-    return this.mobileNumber;
-  }
-
-  /**
-   * Setter $paymentType_id
-   * @param {string} value
-   */
-  public set $paymentType_id(value: string) {
-    this.paymentType_id = value;
+  public get $trx_id(): string {
+    return this.trx_id;
   }
 
   /**
@@ -71,6 +64,14 @@ export class PaymentMobile {
   }
 
   /**
+   * Setter $type_ID
+   * @param {string} value
+   */
+  public set $type_ID(value: string) {
+    this.type_ID = value;
+  }
+
+  /**
    * Setter $date
    * @param {string} value
    */
@@ -79,29 +80,44 @@ export class PaymentMobile {
   }
 
   /**
-   * Setter $paymentMethod
+   * Setter $payment_method
    * @param {string} value
    */
-  public set $paymentMethod(value: string) {
-    this.paymentMethod = value;
+  public set $payment_method(value: string) {
+    this.payment_method = value;
   }
 
   /**
-   * Setter $trxID
+   * Setter $mobile_number
    * @param {string} value
    */
-  public set $trxID(value: string) {
-    this.trxID = value;
+  public set $mobile_number(value: string) {
+    this.mobile_number = value;
   }
 
   /**
-   * Setter $mobileNumber
+   * Setter $trx_id
    * @param {string} value
    */
-  public set $mobileNumber(value: string) {
-    this.mobileNumber = value;
+  public set $trx_id(value: string) {
+    this.trx_id = value;
   }
 
 
 
-}
+
+  // fields in migration.refactor; have to remove in productiion code.
+  // id
+  // user_id
+  // amount
+  // type_ID
+  // date
+  // payment_method
+  // mobile_number
+  // trx_id
+  // status
+  // notes
+  // approved_date
+
+
+}//class
