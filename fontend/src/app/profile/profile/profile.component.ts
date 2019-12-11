@@ -61,8 +61,8 @@ export class ProfileComponent implements OnInit {
     // this.http is the injected HttpClient
     const uploadData = new FormData();
     uploadData.append('photo', this.selectedFile, this.selectedFile.name);
-    // return this.http.post('http://127.0.0.1:8000/api/photo/upload', this.authService.getHeaderFile(), {responseType : 'blob'}) //working, but to set static uName;
-    this.http.post('http://127.0.0.1:8000/api/photo/upload', uploadData, this.authService.getHeaderFile())
+      // return this.http.post('http://127.0.0.1:8000/api/photo/upload', this.authService.getHeaderFile(), {responseType : 'blob'}) //working, but to set static uName;
+      this.http.post('http://127.0.0.1:8000/api/photo/upload', uploadData, this.authService.getHeaderFile())
       .subscribe(event => {
         console.log(event);
       });
