@@ -74,8 +74,6 @@ Route::group(['middleware' => ['role:editor']], function () {
  Route::post('paymentType/delete', 'Payment_Type_Controller@delete');
 
  Route::post('payment/mobile/create', 'Payment_Mobile_Controller@create');
-<<<<<<< HEAD
-=======
  Route::post('payment/mobile/findOne', 'Payment_Mobile_Controller@findOne');
  Route::post('payment/mobile/delete', 'Payment_Mobile_Controller@delete');
  Route::post('payment/mobile/update', 'Payment_Mobile_Controller@update');
@@ -83,7 +81,6 @@ Route::group(['middleware' => ['role:editor']], function () {
  Route::post('payment/mobile/countPaymentMobile', 'Payment_Mobile_Controller@countPaymentMobile');
  Route::post('payment/mobile/countPaymentMobileByAUser', 'Payment_Mobile_Controller@countPaymentMobileByAUser');
 
->>>>>>> 59760841e83a879625219e015007d1bded35657b
 
  Route::post('events/create', 'Events_Controller@create');
  Route::post('events/update', 'Events_Controller@update');
