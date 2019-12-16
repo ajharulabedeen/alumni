@@ -15,12 +15,12 @@ class U_PaymentMobile_Test extends TestCase
     {
 
         // error_log($this->create());//done
-        // $this->getAll(10,"ASC","payment_method", "20");//done
-        // $this->getAll(10,"DESC","amount", "20");//done
-
-        error_log($this->countAll());
+        $this->getAllPaymentMobile(10,"ASC","payment_method");//done
+        $this->getAllPaymentMobile(10,"DESC","amount");//done
+        // error_log($this->countAll());//done
 
         // error_log($this->findOnePaymentType(25)->amount);
+
         // error_log($this->delete(25));
         // error_log($this->update(25,"2500"));
         // error_log($this->findOnePaymentType(25)->amount);//after update to see the result.
@@ -81,7 +81,17 @@ class U_PaymentMobile_Test extends TestCase
         return PaymentMobile::count();
     }
 
-    //done
+    public function getAllPaymentMobile($per_page,$sort_by,$sort_on)
+    {
+        $repo = new Payment_Mobile_Repo_Impl();
+        $data = $repo->getAllPaymentMobile($per_page, $sort_by, $sort_on);
+        error_log("Amount" . "---" . "Payment Method");
+        for ($i = 0; $i < 10; $i++) {
+            error_log($data[$i]->amount  . "---" . $data[$i]->payment_method);
+        }
+    }
+
+    //done, not a repo method; but working
     public function getAll($per_page, $sort_by, $sort_on, $postID)
     {
         error_log(" per_page : " . $per_page);
@@ -92,10 +102,10 @@ class U_PaymentMobile_Test extends TestCase
         } else {
             $order = "DESC";
         }
-        $data = PaymentMobile::orderBy($sort_on,$order)->paginate($per_page)->all();
+        $data = PaymentMobile::orderBy($sort_on, $order)->paginate($per_page)->all();
         // $data = PaymentType::orderBy($sort_on,$order)->sta;
         // print_r($data);
-        error_log( "Amount" . "---" . "Payment Method");
+        error_log("Amount" . "---" . "Payment Method");
         for ($i = 0; $i < 10; $i++) {
             error_log($data[$i]->amount  . "---" . $data[$i]->payment_method);
             // error_log($data[$i]->payment_method);
@@ -116,7 +126,7 @@ class U_PaymentMobile_Test extends TestCase
         $pm->user_id = rand(1, 30);
         $pm->amount = rand(100, 2000);
         $pm->type_ID = rand(1, 30);
-        $pm->date =  rand(1990, 2000) . "-" . "0".rand(1, 9) . "-" . rand(1, 30);
+        $pm->date =  rand(1990, 2000) . "-" . "0" . rand(1, 9) . "-" . rand(1, 30);
         $pm->payment_method = $this->getMethod();
         $pm->mobile_number = $this->getPhoneNumber();
         $pm->trx_id = rand(1000000, 5000000);
