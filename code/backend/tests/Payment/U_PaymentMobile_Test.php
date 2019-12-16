@@ -15,9 +15,11 @@ class U_PaymentMobile_Test extends TestCase
     {
 
         // error_log($this->create());//done
-        $this->getAll(10,"ASC","payment_method", "20");//done
+        // $this->getAll(10,"ASC","payment_method", "20");//done
         // $this->getAll(10,"DESC","amount", "20");//done
-        // error_log($this->countAll());
+
+        error_log($this->countAll());
+
         // error_log($this->findOnePaymentType(25)->amount);
         // error_log($this->delete(25));
         // error_log($this->update(25,"2500"));
@@ -73,11 +75,13 @@ class U_PaymentMobile_Test extends TestCase
         $repo = new Payment_Mobile_Repo_Impl();
         return $repo->findOnePaymentMobile($id);
     }
+
     public function countAll()
     {
-        return PaymentType::count();
+        return PaymentMobile::count();
     }
 
+    //done
     public function getAll($per_page, $sort_by, $sort_on, $postID)
     {
         error_log(" per_page : " . $per_page);
