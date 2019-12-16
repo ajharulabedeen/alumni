@@ -15,11 +15,12 @@ class U_PaymentMobile_Test extends TestCase
     {
 
         // error_log($this->create());//done
-        // $this->getAll(10,"ASC","last_date","10");
+        $this->getAll(10,"ASC","payment_method", "20");//done
+        // $this->getAll(10,"DESC","amount", "20");//done
         // error_log($this->countAll());
-        error_log($this->findOnePaymentType(25)->amount);
+        // error_log($this->findOnePaymentType(25)->amount);
         // error_log($this->delete(25));
-        error_log($this->update(25,"2500"));
+        // error_log($this->update(25,"2500"));
         // error_log($this->findOnePaymentType(25)->amount);//after update to see the result.
         // error_log($this->findOnePaymentType(25)->date);//done
         //----------------------------------
@@ -63,7 +64,7 @@ class U_PaymentMobile_Test extends TestCase
         error_log($status);
         return $status;
     }
-    //d
+
     /**
      *  @return PaymentType return a single payment Type.
      */
@@ -76,6 +77,7 @@ class U_PaymentMobile_Test extends TestCase
     {
         return PaymentType::count();
     }
+
     public function getAll($per_page, $sort_by, $sort_on, $postID)
     {
         error_log(" per_page : " . $per_page);
@@ -86,17 +88,18 @@ class U_PaymentMobile_Test extends TestCase
         } else {
             $order = "DESC";
         }
-        // $data = PaymentType::orderBy($sort_on,$order)->stapaginate($per_page)->all();
+        $data = PaymentMobile::orderBy($sort_on,$order)->paginate($per_page)->all();
         // $data = PaymentType::orderBy($sort_on,$order)->sta;
         // print_r($data);
+        error_log( "Amount" . "---" . "Payment Method");
         for ($i = 0; $i < 10; $i++) {
-            error_log($data[$i]->last_date);
+            error_log($data[$i]->amount  . "---" . $data[$i]->payment_method);
+            // error_log($data[$i]->payment_method);
         }
         // dd($data);
         // return PaymentType::orderBy($sort_on,$order)->paginate($per_page)->all();
     }
 
-    //d
     /**
      * A basic test example.
      *
@@ -139,6 +142,7 @@ class U_PaymentMobile_Test extends TestCase
     }
 
     // -------------- Dummy Data Section -----------------
+    //d
     public function createDummyData()
     {
         $repo = new Payment_Mobile_Repo_Impl();
@@ -162,6 +166,9 @@ class U_PaymentMobile_Test extends TestCase
 
     }
 
+    /**
+     * Payment method.
+     */
     public function getMethod()
     {
         $dept = array("bKash", "Rocket", "uKash", "SureKash");
