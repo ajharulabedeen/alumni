@@ -128,8 +128,8 @@
                   <table class="table table-hover">
                     <tbody>
                       <tr>
-                        <th>Note</th>
                         <th>Index</th>
+                        <th>Note</th>
                         <!-- clicking on it will show details of the payment -->
                         <th>Name</th>
                         <th>Payed Date</th>
@@ -139,18 +139,18 @@
                         <th>Status</th>
                         <!-- click : modal about the note -->
                       </tr>
-                      <tr *ngFor="let pt of ptsArray; let i=index">
+                      <tr *ngFor="let ptm of ptsArray; let i=index">
                         <td>
                           <button class="btn btn-xs btn-warning" data-toggle="modal"
                             data-target="#modal_note">Notes</button>
                         </td>
                         <td>{{i+1}}</td>
-                        <td>{{pt.name}}</td>
-                        <td>{{pt.start_date}}</td>
-                        <td>{{pt.last_date}}</td>
-                        <td>{{pt.amount}}</td>
-                        <td>{{pt.description}}</td>
-                        <td>{{pt.description}}</td>
+                        <td>{{ptm.pay}}</td>
+                        <td>{{ptm.start_date}}</td>
+                        <td>{{ptm.last_date}}</td>
+                        <td>{{ptm.amount}}</td>
+                        <td>{{ptm.description}}</td>
+                        <td>{{ptm.description}}</td>
                       </tr>
                     </tbody>
                   </table>
@@ -173,8 +173,6 @@
 
     <input type="text" class="form-control" (input)="onSearchChange($event.target.value)">
     <!-- end : Test  -->
-
-
 
     <!-- modal : do payment-->
     <div class="modal fade" id="do_payment" tabindex="-1" role="dialog" aria-labelledby="modal_educationLabel"

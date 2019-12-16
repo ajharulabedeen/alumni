@@ -74,8 +74,6 @@ export class PaymentMobileComponent implements OnInit {
     this.date = this.getTodayDtae();
   }
 
-
-
   public setExistingPayments() {
     this.ptsArray = [];
     // this.ptsArray = new Array();
