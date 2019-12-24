@@ -11,6 +11,8 @@ import { JobsComponent } from './jobs/jobs.component';
 import { EducationComponent } from './education/education.component';
 import { NgModel, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProfileRoutingModule,
     LayoutModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CKEditorModule
   ]
 })
 export class ProfileModule {}

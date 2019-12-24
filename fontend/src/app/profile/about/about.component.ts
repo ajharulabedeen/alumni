@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { About } from './about.model';
 import { AboutService } from './about.service';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-about',
@@ -10,6 +11,10 @@ import { AboutService } from './about.service';
 export class AboutComponent implements OnInit {
 
   constructor(private aboutService: AboutService) { }
+
+  public Editor = ClassicEditor;
+
+  public aboutMeHTML = "";
 
   id: string;
   user_id: string;

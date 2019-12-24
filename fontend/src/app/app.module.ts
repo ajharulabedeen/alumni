@@ -21,6 +21,8 @@ import { DataTableComponent } from './data-table/data-table.component';
 import { FileUploaderTestComponent } from './file-uploader-test/file-uploader-test.component';
 import { PaymentModule } from './payment/payment.module';
 import { EventModule } from './event/event.module';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 
 @NgModule({
   declarations: [
@@ -52,7 +54,8 @@ import { EventModule } from './event/event.module';
     MatButtonModule,
     MatInputModule,
     PaymentModule,
-    EventModule
+    EventModule,
+    CKEditorModule
     // NgModel
   ],
   providers: [],
