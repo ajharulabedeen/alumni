@@ -3,6 +3,16 @@ import { About } from './about.model';
 import { AboutService } from './about.service';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
+// import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
+// import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
+import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
+import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
+import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
+
+
+
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -12,7 +22,27 @@ export class AboutComponent implements OnInit {
 
   constructor(private aboutService: AboutService) { }
 
-  public Editor = ClassicEditor;
+  //---------------------- : CK 5 : ------------------------
+  // public Editor = ClassicEditor;
+  // ClassicEditor.builtinPlugins = [ FooPlugin, BarPlugin ];
+
+  // public Editor = ClassicEditor
+    // .create(document.querySelector('#editor'), {
+    //   // plugins: [Strikethrough, Code, Subscript, Superscript],
+    //   plugins: [],
+    //   toolbar: {
+    //     items: []
+    //   }
+    // })
+    // .then(editor => {
+    //   console.log('Editor was initialized', editor);
+    // })
+    // .catch(error => {
+    //   console.error(error.stack);
+    // });
+//---------------------- : CK 5 : ------------------------
+
+
 
   public aboutMeHTML = "";
 

@@ -22,7 +22,16 @@
         <!-- <textarea [(ngModel)]="about_me" [disabled]='!aboutEdit' class="form-control" rows="3" placeholder="Enter ...">
                   I am slow waker but never come back.
           </textarea> -->
-        <ckeditor [editor]="Editor" *ngIf="aboutEdit" [(ngModel)]="about_me" data="about_me"></ckeditor>
+
+
+        <!-- CK 4 -->
+        <ckeditor [(ngModel)]="about_me" *ngIf="aboutEdit" data="<p>Hello, world!</p>"></ckeditor>
+
+
+
+        <!-- CK 5 not working-->
+        <!-- <ckeditor [editor]="Editor" *ngIf="aboutEdit" [(ngModel)]="about_me" data="about_me"></ckeditor> -->
+        <!-- <ckeditor [editor]="Editor"  [(ngModel)]="about_me" data="about_me"></ckeditor> -->
       </div>
 
       <div class="blog-post" innerHtml="{{about_me}}"></div>

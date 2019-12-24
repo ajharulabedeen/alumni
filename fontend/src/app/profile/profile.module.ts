@@ -11,7 +11,9 @@ import { JobsComponent } from './jobs/jobs.component';
 import { EducationComponent } from './education/education.component';
 import { NgModel, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+// import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { CKEditorModule } from 'ckeditor4-angular';
+
 
 
 
