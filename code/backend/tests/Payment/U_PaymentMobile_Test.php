@@ -15,8 +15,9 @@ class U_PaymentMobile_Test extends TestCase
     {
 
         // error_log($this->create());//done
-        $this->getAllPaymentMobile(10,"ASC","payment_method");//done
-        $this->getAllPaymentMobile(10,"DESC","amount");//done
+        // $this->getAllPaymentMobile(10,"ASC","payment_method");//done
+        // $this->getAllPaymentMobile(10,"DESC","amount");//done
+        $this->getMobilePaymentByAUser(4);
         // error_log($this->countAll());//done
 
         // error_log($this->findOnePaymentType(25)->amount);
@@ -81,13 +82,23 @@ class U_PaymentMobile_Test extends TestCase
         return PaymentMobile::count();
     }
 
-    public function getAllPaymentMobile($per_page,$sort_by,$sort_on)
+    public function getAllPaymentMobile($per_page, $sort_by, $sort_on)
     {
         $repo = new Payment_Mobile_Repo_Impl();
         $data = $repo->getAllPaymentMobile($per_page, $sort_by, $sort_on);
         error_log("Amount" . "---" . "Payment Method");
         for ($i = 0; $i < 10; $i++) {
             error_log($data[$i]->amount  . "---" . $data[$i]->payment_method);
+        }
+    }
+
+    public function getMobilePaymentByAUser($user_id)
+    {
+        $repo = new Payment_Mobile_Repo_Impl();
+        $data = $repo->getAllPaymentMobileByAUser($user_id);
+        error_log("Amount" . "---" . "Payment Method");
+        for ($i = 0; $i <30; $i++) {
+            error_log("Index " . ($i+1) . ": " . $data[$i]->amount  . "---" . $data[$i]->payment_method);
         }
     }
 
@@ -106,7 +117,7 @@ class U_PaymentMobile_Test extends TestCase
         // $data = PaymentType::orderBy($sort_on,$order)->sta;
         // print_r($data);
         error_log("Amount" . "---" . "Payment Method");
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 20; $i++) {
             error_log($data[$i]->amount  . "---" . $data[$i]->payment_method);
             // error_log($data[$i]->payment_method);
         }
@@ -154,6 +165,11 @@ class U_PaymentMobile_Test extends TestCase
         $status = $repoPayment->update($pt);
         return $status;
     }
+
+
+
+
+
 
     // -------------- Dummy Data Section -----------------
     //d

@@ -47,6 +47,4 @@ Route::group([
     Route::post('photo/upload', 'Profile_Photo_Controller@upload');
     Route::post('photo/getPhoto', 'Profile_Photo_Controller@getPhoto');
 
-
-    
 });
