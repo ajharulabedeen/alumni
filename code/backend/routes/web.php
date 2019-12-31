@@ -2,6 +2,7 @@
 
 use App\User;
 use Illuminate\Http\Request;
+// use Illuminate\Routing\Route;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 /*
@@ -66,24 +67,24 @@ Route::group(['middleware' => ['role:editor']], function () {
 // Route::post('basic/update', 'Profile_Basic_Controller@update');////moved in api
 
 
- Route::post('paymentType/create', 'Payment_Type_Controller@create');
- Route::post('paymentType/findOnePaymentType', 'Payment_Type_Controller@findOnePaymentType');
- Route::post('paymentType/update', 'Payment_Type_Controller@update');
- Route::post('paymentType/getAllPaymentType', 'Payment_Type_Controller@getAllPaymentType');
- Route::post('paymentType/countPaymentType', 'Payment_Type_Controller@countPaymentType');
- Route::post('paymentType/delete', 'Payment_Type_Controller@delete');
+Route::post('paymentType/create', 'Payment_Type_Controller@create');
+Route::post('paymentType/findOnePaymentType', 'Payment_Type_Controller@findOnePaymentType');
+Route::post('paymentType/update', 'Payment_Type_Controller@update');
+Route::post('paymentType/getAllPaymentType', 'Payment_Type_Controller@getAllPaymentType');
+Route::post('paymentType/countPaymentType', 'Payment_Type_Controller@countPaymentType');
+Route::post('paymentType/delete', 'Payment_Type_Controller@delete');
 
- Route::post('payment/mobile/create', 'Payment_Mobile_Controller@create');
- Route::post('payment/mobile/findOne', 'Payment_Mobile_Controller@findOne');
- Route::post('payment/mobile/delete', 'Payment_Mobile_Controller@delete');
- Route::post('payment/mobile/update', 'Payment_Mobile_Controller@update');
- Route::post('payment/mobile/showAllPaymentMobile', 'Payment_Mobile_Controller@showAllPaymentMobile');
- Route::post('payment/mobile/countPaymentMobile', 'Payment_Mobile_Controller@countPaymentMobile');
- Route::post('payment/mobile/countPaymentMobileByAUser', 'Payment_Mobile_Controller@countPaymentMobileByAUser');
+Route::post('payment/mobile/create', 'Payment_Mobile_Controller@create');
+Route::post('payment/mobile/findOne', 'Payment_Mobile_Controller@findOne');
+Route::post('payment/mobile/delete', 'Payment_Mobile_Controller@delete');
+Route::post('payment/mobile/update', 'Payment_Mobile_Controller@update');
+Route::post('payment/mobile/getAllPaymentMobileByAUser', 'Payment_Mobile_Controller@getAllPaymentMobileByAUser');
+Route::post('payment/mobile/countPaymentMobile', 'Payment_Mobile_Controller@countPaymentMobile');
+Route::post('payment/mobile/countPaymentMobileByAUser', 'Payment_Mobile_Controller@countPaymentMobileByAUser');
 
 
- Route::post('events/create', 'Events_Controller@create');
- Route::post('events/update', 'Events_Controller@update');
- Route::post('events/delete', 'Events_Controller@delete');
- Route::post('events/getDescription', 'Events_Controller@getDescription');
- Route::post('events/getAllEvents', 'Events_Controller@getAllEvents');
+Route::post('events/create', 'Events_Controller@create');
+Route::post('events/update', 'Events_Controller@update');
+Route::post('events/delete', 'Events_Controller@delete');
+Route::post('events/getDescription', 'Events_Controller@getDescription');
+Route::post('events/getAllEvents', 'Events_Controller@getAllEvents');

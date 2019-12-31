@@ -76,14 +76,14 @@ class Payment_Mobile_Controller extends Controller
     }
 
     /**
-     *
+     * Unble to find out the use of this method.
      */
-    public function showAllPaymentMobile(Request $r)
-    {
-        $id = $r->user_id;
-        $user = $this->paymentMobileRepo->showAllPaymentMobile($r->user_id);
-        return $user;
-    }
+    // public function getAllPaymentMobileByAUser(Request $r)
+    // {
+    //     $id = $r->user_id;
+    //     $user = $this->paymentMobileRepo->showAllPaymentMobile($r->user_id);
+    //     return $user;
+    // }
 
     public function countPaymentMobile()
     {

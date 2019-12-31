@@ -1,5 +1,7 @@
 <?php
 
+// use Illuminate\Routing\Route;
+
 Route::group([
 
     'middleware' => 'api',
