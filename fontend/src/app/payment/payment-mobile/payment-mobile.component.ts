@@ -31,6 +31,7 @@ export class PaymentMobileComponent implements OnInit {
 
   ptsArray = new Array();
   myPaymentsArray = new Array();
+  showNote : string;
 
   constructor(private ptService: PaymentTypeService, private ptmService: PaymentMobileService) { }
 
@@ -142,6 +143,10 @@ export class PaymentMobileComponent implements OnInit {
     console.log(this.myPaymentsArray);
   }
 
+  public setNote(note : string){
+    this.showNote = note;
+    // console.log(this.showNote);
+  }
 
   public nextPage() {
     if (this.pageNumber < (this.total / this.perPage)) {

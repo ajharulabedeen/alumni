@@ -145,8 +145,8 @@
                       <tr *ngFor="let ptm of myPaymentsArray; let i=index">
                         <td>{{i+1}}</td>
                         <td>
-                          <button class="btn btn-xs btn-warning" data-toggle="modal"
-                            data-target="#modal_note">Notes</button>
+                          <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#modal_note"
+                            (click)="setNote(ptm.notes)">Notes</button>
                         </td>
                         <td>
                           <button class="btn btn-xs btn-info" data-toggle="modal"
@@ -261,7 +261,7 @@
           <div class="modal-body">
             <div class="form-group">
               <textarea class="form-control" rows="3" placeholder="Notes ...">
-                  I am slow waker but never come back.
+                {{showNote}}
           </textarea>
             </div>
           </div>
@@ -274,8 +274,8 @@
     <!-- modal end : Show Notes-->
 
     <!-- modal : Show payment type, payment details-->
-    <div class="modal fade" id="modal_payment_details" tabindex="-1" role="dialog" aria-labelledby="modal_educationLabel"
-      aria-hidden="true">
+    <div class="modal fade" id="modal_payment_details" tabindex="-1" role="dialog"
+      aria-labelledby="modal_educationLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header center-block">
@@ -287,8 +287,8 @@
           <div class="modal-body">
             <div class="form-group">
               <textarea class="form-control" rows="3" placeholder="Notes ...">
-                  I am slow waker but never come back.
-          </textarea>
+
+              </textarea>
             </div>
           </div>
         </div>
