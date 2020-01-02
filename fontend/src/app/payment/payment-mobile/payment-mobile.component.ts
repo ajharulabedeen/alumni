@@ -30,6 +30,7 @@ export class PaymentMobileComponent implements OnInit {
 
 
   ptsArray = new Array();
+  myPaymentsArray = new Array();
 
   constructor(private ptService: PaymentTypeService, private ptmService: PaymentMobileService) { }
 
@@ -107,9 +108,38 @@ export class PaymentMobileComponent implements OnInit {
     });
   }
 
+  /**
+   * refreshing myPayments Table, means so far payments user has done :
+   */
   public refreshTable() {
-    this.ptsArray = [];
-    this.setExistingPayments();
+    this.myPaymentsArray = [];
+    this.ptmService.getAllMyPayments();
+    this.ptmService.myMobilePayments.subscribe(ptm => {
+      this.myPaymentsArray = [];
+      for (const key1 in ptm) {
+        // console.log(key1);
+        // console.log(pt[key1]['id']);
+        var myPtm = new PaymentMobile();
+        // pt1.$id = pt[key1]["id"];
+        // myPtm.$name = ptm[key1]["name"];
+
+        myPtm.$user_id = ptm[key1]["user_id"];
+        myPtm.$amount = ptm[key1]["amount"];
+        myPtm.$type_ID = ptm[key1]["type_ID"];
+        myPtm.$date = ptm[key1]["date"];
+        myPtm.$payment_method = ptm[key1]["payment_method"];
+        myPtm.$mobile_number = ptm[key1]["mobile_number"];
+        myPtm.$trx_id = ptm[key1]["trx_id"];
+        myPtm.$status = ptm[key1]["status"];
+        myPtm.$created_at = ptm[key1]["created_at"];
+        myPtm.$notes = ptm[key1]["notes"];
+        myPtm.$approved_date = ptm[key1]["approved_date"];
+        this.myPaymentsArray.push(myPtm);
+      }
+      console.log(this.myPaymentsArray);
+
+    });
+    console.log(this.myPaymentsArray);
   }
 
 
@@ -132,7 +162,7 @@ export class PaymentMobileComponent implements OnInit {
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
-    var t =  yyyy + '/' + mm + '/' + dd;
+    var t = yyyy + '/' + mm + '/' + dd;
     return t;
   }
 

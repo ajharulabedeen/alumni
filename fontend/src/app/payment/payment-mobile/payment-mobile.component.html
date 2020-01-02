@@ -84,7 +84,7 @@
       </div>
       <!-- panel-group -->
 
-      <!--Start : My Payments -->
+      <!--Start : My Payments Mobile -->
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
@@ -134,7 +134,7 @@
                         <th>Details</th>
                         <th>Status</th>
                         <th>Payed Date</th>
-                        <th>Last Date</th>
+                        <th>Input Date</th>
                         <th>Approved Date</th>
                         <th>Amount</th>
                         <th>Method</th>
@@ -142,7 +142,7 @@
                         <th>TrxID</th>
                         <!-- click : modal about the note -->
                       </tr>
-                      <tr *ngFor="let ptm of ptsArray; let i=index">
+                      <tr *ngFor="let ptm of myPaymentsArray; let i=index">
                         <td>{{i+1}}</td>
                         <td>
                           <button class="btn btn-xs btn-warning" data-toggle="modal"
@@ -152,12 +152,14 @@
                           <button class="btn btn-xs btn-info" data-toggle="modal"
                             data-target="#modal_payment_details">Details</button>
                         </td>
-                        <td>{{ptm.pay}}</td>
-                        <td>{{ptm.start_date}}</td>
-                        <td>{{ptm.last_date}}</td>
+                        <td>{{ptm.status}}</td>
+                        <td>{{ptm.date}}</td>
+                        <td>{{ptm.created_at}}</td>
+                        <td>{{ptm.approved_date}}</td>
                         <td>{{ptm.amount}}</td>
-                        <td>{{ptm.description}}</td>
-                        <td>{{ptm.description}}</td>
+                        <td>{{ptm.payment_method}}</td>
+                        <td>{{ptm.mobile_number}}</td>
+                        <td>{{ptm.trx_id}}</td>
                       </tr>
                     </tbody>
                   </table>

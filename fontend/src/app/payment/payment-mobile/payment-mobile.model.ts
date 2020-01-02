@@ -1,7 +1,6 @@
 export class PaymentMobile {
 
-
-  private user_id: string; 
+  private user_id: string;
   private amount: string;
   private type_ID : string;
   private date: string;
@@ -189,7 +188,7 @@ export class PaymentMobile {
 	public set $approved_date(value: string) {
 		this.approved_date = value;
 	}
-  
+
 
   // fields in migration.refactor; have to remove in productiion code.
   // id
@@ -204,7 +203,7 @@ export class PaymentMobile {
   // notes
   // approved_date
 
-  
+
 
 
 }//class
