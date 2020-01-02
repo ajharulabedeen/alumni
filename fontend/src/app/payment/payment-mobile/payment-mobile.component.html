@@ -150,7 +150,7 @@
                         </td>
                         <td>
                           <button class="btn btn-xs btn-info" data-toggle="modal"
-                            data-target="#modal_payment_details">Details</button>
+                            data-target="#modal_payment_details" (click)="showPaymentDetails(ptm.type_ID)">Details</button>
                         </td>
                         <!-- <td>{{ptm.status}}</td> -->
                         <td>{{ptm.date}}</td>
@@ -279,14 +279,23 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header center-block">
-            <h3 class="modal-title" id="show_note">Notes</h3>
+            <h3 class="modal-title" id="show_note">Payment Details</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <div class="form-group">
-              <textarea class="form-control" rows="3" placeholder="Notes ...">
+              Name :
+              <br>
+              Start Date :
+              <br>
+              Last Date :
+              <br>
+              Amount :
+              <br>
+              Description :
+              <textarea class="form-control" rows="3" placeholder="Payment Details...!">
 
               </textarea>
             </div>

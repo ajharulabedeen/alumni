@@ -143,6 +143,11 @@ export class PaymentMobileComponent implements OnInit {
     console.log(this.myPaymentsArray);
   }
 
+
+  public showPaymentDetails(type_ID : string){
+      console.log(type_ID);
+  }
+
   public setNote(note : string){
     this.showNote = note;
     // console.log(this.showNote);
