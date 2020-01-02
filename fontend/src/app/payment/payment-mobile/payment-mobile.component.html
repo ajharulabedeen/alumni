@@ -131,7 +131,7 @@
                         <th>Index</th>
                         <th>Note</th>
                         <!-- clicking on it will show details of the payment -->
-                        <th>Name</th>
+                        <th>Details</th>
                         <th>Payed Date</th>
                         <th>Last Date</th>
                         <th>Approved Date</th>
@@ -140,11 +140,15 @@
                         <!-- click : modal about the note -->
                       </tr>
                       <tr *ngFor="let ptm of ptsArray; let i=index">
+                        <td>{{i+1}}</td>
                         <td>
                           <button class="btn btn-xs btn-warning" data-toggle="modal"
                             data-target="#modal_note">Notes</button>
                         </td>
-                        <td>{{i+1}}</td>
+                        <td>
+                          <button class="btn btn-xs btn-info" data-toggle="modal"
+                            data-target="#modal_payment_details">Details</button>
+                        </td>
                         <td>{{ptm.pay}}</td>
                         <td>{{ptm.start_date}}</td>
                         <td>{{ptm.last_date}}</td>
@@ -236,6 +240,8 @@
     <button class="btn btn-danger" data-toggle="modal" data-target="#modal_note">Show Notes</button>
     <button class="btn btn-primary" data-toggle="modal" data-target="#do_payment">Pay IT</button>
     <!-- end  : test -->
+
+
     <!-- modal : Show Notes-->
     <div class="modal fade" id="modal_note" tabindex="-1" role="dialog" aria-labelledby="modal_educationLabel"
       aria-hidden="true">
@@ -260,6 +266,31 @@
       <!-- <app-footernavbar></app-footernavbar> -->
       <!-- <app-settingsnavbar></app-settingsnavbar> -->
     </div>
+    <!-- modal end : Show Notes-->
+
+    <!-- modal : Show payment type, payment details-->
+    <div class="modal fade" id="modal_payment_details" tabindex="-1" role="dialog" aria-labelledby="modal_educationLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header center-block">
+            <h3 class="modal-title" id="show_note">Notes</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <textarea class="form-control" rows="3" placeholder="Notes ...">
+                  I am slow waker but never come back.
+          </textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- modal end : Show payment type, payment details-->
+
 
   </div>
 
