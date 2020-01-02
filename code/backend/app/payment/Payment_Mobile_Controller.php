@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\payment\PaymentMobile;
 use App\payment\Payment_Mobile_Repo_I;
 use App\payment\Payment_Mobile_Repo_Impl;
+use App\Utils\Utils;
 
 class Payment_Mobile_Controller extends Controller
 {
@@ -21,7 +22,8 @@ class Payment_Mobile_Controller extends Controller
     {
         //    $repo = new Payment_Mobile_Repo_Impl();
         $ptmobile = new PaymentMobile();
-        $ptmobile->user_id = $r->user_id;
+        // $ptmobile->user_id = $r->user_id;
+        $ptmobile->user_id = Utils::getUserId();
         $ptmobile->amount = $r->amount;
         $ptmobile->type_ID = $r->type_ID;
         $ptmobile->date = $r->date;
@@ -54,7 +56,7 @@ class Payment_Mobile_Controller extends Controller
     {
         $ptmobile = new PaymentMobile();
         $ptmobile = $this->paymentMobileRepo->findOnePaymentMobile($r->id);
-        $ptmobile->user_id = $r->user_id;
+        $ptmobile->user_id = Utils::getUserId();
         $ptmobile->amount = $r->amount;
         $ptmobile->type_ID = $r->type_ID;
         $ptmobile->date = $r->date;
@@ -93,14 +95,14 @@ class Payment_Mobile_Controller extends Controller
 
     public function countPaymentMobileByAUser()
     {
-        $user_id = "5"; //I will change it later.
+        $user_id = Utils::getUserId();
         $data = $this->paymentMobileRepo->countPaymentMobileByAUser($user_id);
         return $data;
     }
 
     public function getAllPaymentMobileByAUser()
     {
-        $user_id = "4"; //I will change it later.
+        $user_id = Utils::getUserId();
         $data = $this->paymentMobileRepo->getAllPaymentMobileByAUser($user_id);
         return $data;
     }

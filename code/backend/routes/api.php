@@ -49,4 +49,22 @@ Route::group([
     Route::post('photo/upload', 'Profile_Photo_Controller@upload');
     Route::post('photo/getPhoto', 'Profile_Photo_Controller@getPhoto');
 
+
+    //payment type
+    Route::post('paymentType/create', 'Payment_Type_Controller@create');
+    Route::post('paymentType/findOnePaymentType', 'Payment_Type_Controller@findOnePaymentType');
+    Route::post('paymentType/update', 'Payment_Type_Controller@update');
+    Route::post('paymentType/getAllPaymentType', 'Payment_Type_Controller@getAllPaymentType');
+    Route::post('paymentType/countPaymentType', 'Payment_Type_Controller@countPaymentType');
+    Route::post('paymentType/delete', 'Payment_Type_Controller@delete');
+
+
+    // Payment Mobile
+    Route::post('payment/mobile/create', 'Payment_Mobile_Controller@create');
+    Route::post('payment/mobile/findOne', 'Payment_Mobile_Controller@findOne');
+    Route::post('payment/mobile/delete', 'Payment_Mobile_Controller@delete');
+    Route::post('payment/mobile/update', 'Payment_Mobile_Controller@update');
+    Route::post('payment/mobile/getAllPaymentMobileByAUser', 'Payment_Mobile_Controller@getAllPaymentMobileByAUser');
+    Route::post('payment/mobile/countPaymentMobile', 'Payment_Mobile_Controller@countPaymentMobile');
+    Route::post('payment/mobile/countPaymentMobileByAUser', 'Payment_Mobile_Controller@countPaymentMobileByAUser');
 });
