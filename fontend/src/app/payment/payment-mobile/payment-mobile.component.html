@@ -149,8 +149,8 @@
                             (click)="setNote(ptm.notes)">Notes</button>
                         </td>
                         <td>
-                          <button class="btn btn-xs btn-info" data-toggle="modal"
-                            data-target="#modal_payment_details" (click)="showPaymentDetails(ptm.type_ID)">Details</button>
+                          <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details"
+                            (click)="showPaymentDetails(ptm.type_ID)">Details</button>
                         </td>
                         <!-- <td>{{ptm.status}}</td> -->
                         <td>{{ptm.date}}</td>
@@ -286,17 +286,17 @@
           </div>
           <div class="modal-body">
             <div class="form-group">
-              Name :
+              <b>Name :</b> {{onePaymentType.$name}}
               <br>
-              Start Date :
+              <b>Start Date :</b> {{onePaymentType.$start_date}}
               <br>
-              Last Date :
+              <b>Last Date : </b>{{onePaymentType.$last_date}}
               <br>
-              Amount :
+              <b>Amount : </b>{{onePaymentType.$amount}}
               <br>
-              Description :
+              <b>Description :</b>
               <textarea class="form-control" rows="3" placeholder="Payment Details...!">
-
+                {{onePaymentType.$description}}
               </textarea>
             </div>
           </div>

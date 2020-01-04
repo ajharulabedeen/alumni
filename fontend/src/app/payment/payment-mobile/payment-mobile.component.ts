@@ -28,10 +28,12 @@ export class PaymentMobileComponent implements OnInit {
   total: number;
   totalPage: number
 
+  onePaymentType = new PaymentType();
+
 
   ptsArray = new Array();
   myPaymentsArray = new Array();
-  showNote : string;
+  showNote: string;
 
   constructor(private ptService: PaymentTypeService, private ptmService: PaymentMobileService) { }
 
@@ -137,18 +139,36 @@ export class PaymentMobileComponent implements OnInit {
         myPtm.$approved_date = ptm[key1]["approved_date"];
         this.myPaymentsArray.push(myPtm);
       }
-      console.log(this.myPaymentsArray);
+      // console.log(this.myPaymentsArray);
 
     });
-    console.log(this.myPaymentsArray);
+    // console.log(this.myPaymentsArray);
   }
 
 
-  public showPaymentDetails(type_ID : string){
-      console.log(type_ID);
+
+  public showPaymentDetails(type_ID: string) {
+    console.log(type_ID);
+    // console.log("Before : " + this.ptmService.onePaymentType);
+    this.ptmService.getOnePayementType(type_ID);
+    console.log("After : " + this.ptmService.onePaymentType.subscribe());
+    this.ptmService.onePaymentType.subscribe(pt => {
+
+      for (const key1 in pt) {
+        // console.log(key1);
+        // console.log(pt[key1]);
+        this.onePaymentType.$amount = pt[key1]['amount'];
+        this.onePaymentType.$description = pt[key1]['description'];
+        this.onePaymentType.$id = pt[key1]['id'];
+        this.onePaymentType.$last_date = pt[key1]['last_date'];
+        this.onePaymentType.$name = pt[key1]['name'];
+        this.onePaymentType.$start_date = pt[key1]['start_date'];
+      }
+    });
+    console.log("onePaymentType : " + this.onePaymentType.$description);
   }
 
-  public setNote(note : string){
+  public setNote(note: string) {
     this.showNote = note;
     // console.log(this.showNote);
   }
