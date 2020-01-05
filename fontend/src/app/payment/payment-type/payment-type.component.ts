@@ -9,9 +9,6 @@ declare var jQuery: any;
 })
 export class PaymentTypeComponent implements OnInit {
 
-  // jQuery: any;
-
-
   name: string;
   start_date: string;
   last_date: string;
@@ -41,13 +38,16 @@ export class PaymentTypeComponent implements OnInit {
     this.setTotalPaymentType();
     this.setExistingPayments();
 
+    //start : test code
     (function ($) {
       $(document).ready(function () {
         console.log("\n\nHello from jQuery!\n\n");
       });
     })(jQuery);
-
     // this.hello();
+    //end : test code
+
+
 
   }//onInit
 
@@ -56,7 +56,7 @@ export class PaymentTypeComponent implements OnInit {
   }
 
 
-  public openCity(evt, cityName) {
+  public openCity(evt, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -66,12 +66,9 @@ export class PaymentTypeComponent implements OnInit {
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
   }
-
-
-
 
 
   public setTotalPaymentType() {
