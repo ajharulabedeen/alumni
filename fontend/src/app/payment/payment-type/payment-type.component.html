@@ -2,27 +2,168 @@
   <app-topnavbar></app-topnavbar>
   <app-asidenavbar></app-asidenavbar>
   <div class="content-wrapper">
-
-
-    <h2>Tabs</h2>
-    <p>Click on the buttons inside the tabbed menu:</p>
+    <h2>Payment</h2>
 
     <div class="tab">
-      <button class="tablinks" (click)="openCity(event, 'London')">London</button>
-      <button class="tablinks" (click)="openCity(event, 'Paris')">Paris</button>
-      <button class="tablinks" (click)="openCity(event, 'Tokyo')">Tokyo</button>
+      <button class="tablinks" (click)="openCity(event, 'London')">New</button>
+      <button class="tablinks" (click)="openCity(event, 'Paris')">All Types</button>
+      <button class="tablinks" (click)="openCity(event, 'Tokyo')">Mobile Payments</button>
     </div>
 
     <div id="London" class="tabcontent">
-      <h3>London</h3>
-      <p>London is the capital city of England.</p>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#add_payment">Add Payment</a>
+          </h4>
+        </div>
+        <div id="add_payment" class="panel-collapse collapse">
+          <div class="panel-body">
+            <h3>Add Payment!</h3>
+            <div class="col-md-12 offset-md-12">
+              <div class="form-group">
+                <label>Name : </label>
+                <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
+              </div>
+            </div>
+
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group">
+                <label>Start Date</label>
+                <input [(ngModel)]="start_date" type="text" class="form-control" placeholder="{{start_date}}">
+              </div>
+            </div>
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group">
+                <label>Select Date</label>
+                <input [(ngModel)]="start_date" type="date" class="form-control" value="{{start_date}}">
+              </div>
+            </div>
+
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group">
+                <label>Last Date</label>
+                <input [(ngModel)]="last_date" type="text" class="form-control" placeholder="{{last_date}}">
+              </div>
+            </div>
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group">
+                <label>Select Date</label>
+                <input [(ngModel)]="last_date" type="date" class="form-control" value="{{last_date}}">
+              </div>
+            </div>
+            <div class="col-md-12 ">
+              <div class="form-group">
+                <label>Amount</label>
+                <input [(ngModel)]="amount" type="text" class="form-control">
+              </div>
+            </div>
+            <div class="col-md-12 ">
+              <div class="form-group">
+                <label>Dscription</label>
+                <textarea [(ngModel)]="description" class="form-control" rows="3" placeholder="Enter ...">
+                      Enter The Dscription of the Payment!
+                  </textarea>
+              </div>
+            </div>
+            <div class="col-md-3 ">
+              <div class="form-group">
+                <button class="btn btn-primary" data-toggle="collapse" href="#add_payment"
+                  (click)="create()">Save</button>
+                <button class="btn btn-danger" (click)="clearAllFields()">Clear All</button>
+              </div>
+            </div>
+          </div>
+          <!-- end : panel-body -->
+        </div>
+        <div class="panel-footer">Add Payment</div>
+      </div>
     </div>
 
     <div id="Paris" class="tabcontent">
-      <h3>Paris</h3>
-      <p>Paris is the capital of France.</p>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#all_payment">All Payment</a>
+          </h4>
+        </div>
+        <div id="all_payment" class="panel-collapse collapse">
+          <div class="panel-body">
+            <h3>
+              All Payment!
+              <button class="btn btn-xs btn-primary" (click)="refreshTable()">Refresh</button>
+            </h3>
+
+            <div class="col-md-2 offset-md-2">
+              <div style="text-align: center" class="form-group">
+                <label>Per Page</label>
+                <input style="text-align: center" [(ngModel)]="perPage" type="number" class="form-control"
+                  value="{{perPage}}" (ngModelChange)="refreshTable()">
+              </div>
+            </div>
+            <div class="col-md-2 offset-md-2">
+              <div style="text-align: center" class="form-group">
+                <label>Total </label>
+                <input style="text-align: center" disabled="true" [(ngModel)]="total" type="number" class="form-control"
+                  value="{{total}}">
+              </div>
+            </div>
+
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group" style="text-align: center">
+                <button class="btn btn-primary btn-xs" (click)="previousPage()">Previous</button>
+                <label class="btn btn-danger btn-xs ">Page Number</label>
+                <button class="btn btn-primary btn-xs" (click)="nextPage()">Next</button>
+                <input style="text-align: center" [(ngModel)]="pageNumber" type="number" class="form-control"
+                  value="{{pageNumber}}">
+              </div>
+            </div>
+
+
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-body table-responsive no-padding">
+                  <table class="table table-hover">
+                    <tbody>
+                      <tr>
+                        <th>Index</th>
+                        <th>Operation</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Start Date</th>
+                        <th>Last Date</th>
+                        <th>Amount</th>
+                        <th>Description</th>
+                      </tr>
+                      <tr *ngFor="let pt of ptsArray; let i=index">
+                        <td>{{i+1}}</td>
+                        <td>
+                          <button class="btn btn-xs btn-primary" data-toggle="collapse" href="#add_payment"
+                            (click)="update(pt)">
+                            Edit
+                          </button>
+                          <button class="btn btn-xs btn-warning" (click)="delete(pt.id)">Delete</button>
+                        </td>
+                        <td>{{pt.id}}</td>
+                        <td>{{pt.name}}</td>
+                        <td>{{pt.start_date}}</td>
+                        <td>{{pt.last_date}}</td>
+                        <td>{{pt.amount}}</td>
+                        <td>{{pt.description}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="panel-footer">All Payments Types</div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">All Payment</div>
+      </div>
     </div>
 
+    
     <div id="Tokyo" class="tabcontent">
       <h3>Tokyo</h3>
       <p>Tokyo is the capital of Japan.</p>
@@ -30,16 +171,7 @@
     <!-- ------------------------------------------------------------------- -->
 
 
-
-
-
-
-
-
-
-
     <div class="panel-group">
-
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
@@ -191,6 +323,8 @@
         </div>
         <div class="panel-footer">All Payment</div>
       </div>
+
+
 
       <!-- Start : Test -->
 
