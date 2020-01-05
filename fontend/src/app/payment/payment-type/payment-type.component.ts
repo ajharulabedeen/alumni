@@ -127,6 +127,9 @@ export class PaymentTypeComponent implements OnInit {
   }
 
   public update(pt: PaymentType) {
+
+    this.openCity(event, 'new_payment');
+
     this.updatePaymentType = true;
     // this.addNew = false;
     console.log("PT Name : " + pt.$name);
