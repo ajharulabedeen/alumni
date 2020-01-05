@@ -30,7 +30,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'timeline', component: TimelineComponent },
   { path: 'file', component: FileUploaderTestComponent },
-  { path: 'payment', component: PaymentTypeComponent },
+  { path: 'admin/payment', component: PaymentTypeComponent },
   { path: 'paymentmobile', component: PaymentMobileComponent },
   { path: 'event', component: EventManageComponent },
 ];
