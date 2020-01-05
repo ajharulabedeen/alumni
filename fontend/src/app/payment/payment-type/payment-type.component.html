@@ -2,15 +2,15 @@
   <app-topnavbar></app-topnavbar>
   <app-asidenavbar></app-asidenavbar>
   <div class="content-wrapper">
-    <h2>Payment</h2>
+    <h2>Payment Management</h2>
 
     <div class="tab">
-      <button class="tablinks" (click)="openCity(event, 'London')">New</button>
-      <button class="tablinks" (click)="openCity(event, 'Paris')">All Types</button>
+      <button class="tablinks" (click)="openCity(event, 'new_payment')">New</button>
+      <button class="tablinks" (click)="openCity(event, 'all_payments')">All Types</button>
       <button class="tablinks" (click)="openCity(event, 'Tokyo')">Mobile Payments</button>
     </div>
 
-    <div id="London" class="tabcontent">
+    <div id="new_payment" class="tabcontent">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
@@ -80,7 +80,7 @@
       </div>
     </div>
 
-    <div id="Paris" class="tabcontent">
+    <div id="all_payments" class="tabcontent">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
