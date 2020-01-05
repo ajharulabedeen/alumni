@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { PaymentType } from './payment-type.model';
 import { PaymentTypeService } from './payment-type.service';
-
+declare var jQuery: any;
 @Component({
   selector: 'app-payment-type',
   templateUrl: './payment-type.component.html',
   styleUrls: ['./payment-type.component.scss']
 })
 export class PaymentTypeComponent implements OnInit {
+
+  // jQuery: any;
+
 
   name: string;
   start_date: string;
@@ -37,7 +40,22 @@ export class PaymentTypeComponent implements OnInit {
     this.totalPage = (this.total / this.perPage);
     this.setTotalPaymentType();
     this.setExistingPayments();
+
+    (function ($) {
+      $(document).ready(function () {
+        console.log("\n\nHello from jQuery!\n\n");
+      });
+    })(jQuery);
+
+    this.hello();
+
+  }//onInit
+
+  public hello() {
+    alert('Hello!!!');
   }
+
+
 
   public setTotalPaymentType() {
     this.ptService.getTotalCount().subscribe(res => {
