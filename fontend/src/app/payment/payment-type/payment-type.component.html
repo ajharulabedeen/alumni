@@ -179,6 +179,7 @@
           <div id="search" class="panel-collapse collapse">
             <div class="panel-body">
               <h3>Search</h3>
+
               <div class="col-md-12 offset-md-12">
                 <div class="form-group">
                   <label>Name : </label>
@@ -186,9 +187,23 @@
                 </div>
               </div>
 
+              <div class="col-md-12 offset-md-12">
+                <div class="form-group">
+                  <label>TrxID : </label>
+                  <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
+                </div>
+              </div>
+
+              <div class="col-md-12 offset-md-12">
+                <div class="form-group">
+                  <label>Mobile Number : </label>
+                  <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
+                </div>
+              </div>
+
               <div class="col-md-3 offset-md-3">
                 <div class="form-group">
-                  <label>Start Date</label>
+                  <label>Payment Date</label>
                   <input [(ngModel)]="start_date" type="text" class="form-control" placeholder="{{start_date}}">
                 </div>
               </div>
@@ -211,33 +226,11 @@
                   <input [(ngModel)]="last_date" type="date" class="form-control" value="{{last_date}}">
                 </div>
               </div>
-              <div class="col-md-12 ">
-                <div class="form-group">
-                  <label>Amount</label>
-                  <input [(ngModel)]="amount" type="text" class="form-control">
-                </div>
-              </div>
-              <div class="col-md-12 ">
-                <div class="form-group">
-                  <label>Dscription</label>
-                  <textarea [(ngModel)]="description" class="form-control" rows="3" placeholder="Enter ...">
-                        Enter The Dscription of the Payment!
-                    </textarea>
-                </div>
-              </div>
-              <div class="col-md-3 ">
-                <div class="form-group">
-                  <button class="btn btn-primary" data-toggle="collapse" href="#add_payment"
-                    (click)="create()">Save</button>
-                  <button class="btn btn-danger" (click)="clearAllFields()">Clear All</button>
-                </div>
-              </div>
+
             </div>
             <!-- end : panel-body -->
           </div>
           <div class="panel-footer">Search</div>
-
-
 
     </div>
     <!-- ------------------------------------------------------------------- -->
