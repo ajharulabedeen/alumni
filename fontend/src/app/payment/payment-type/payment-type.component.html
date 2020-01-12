@@ -169,73 +169,164 @@
 
 
 
+      <!-- start : search -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#search">Search</a>
+          </h4>
+        </div>
+        <div id="search" class="panel-collapse collapse">
+          <div class="panel-body">
+            <h3>Search</h3>
 
+            <div class="col-md-12 offset-md-12">
+              <div class="form-group">
+                <label>Name : </label>
+                <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
+              </div>
+            </div>
+
+            <div class="col-md-12 offset-md-12">
+              <div class="form-group">
+                <label>TrxID : </label>
+                <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
+              </div>
+            </div>
+
+            <div class="col-md-12 offset-md-12">
+              <div class="form-group">
+                <label>Mobile Number : </label>
+                <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
+              </div>
+            </div>
+
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group">
+                <label>Payment Date</label>
+                <input [(ngModel)]="start_date" type="text" class="form-control" placeholder="{{start_date}}">
+              </div>
+            </div>
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group">
+                <label>Select Date</label>
+                <input [(ngModel)]="start_date" type="date" class="form-control" value="{{start_date}}">
+              </div>
+            </div>
+
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group">
+                <label>Last Date</label>
+                <input [(ngModel)]="last_date" type="text" class="form-control" placeholder="{{last_date}}">
+              </div>
+            </div>
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group">
+                <label>Select Date</label>
+                <input [(ngModel)]="last_date" type="date" class="form-control" value="{{last_date}}">
+              </div>
+            </div>
+
+          </div>
+          <!-- end : panel-body -->
+        </div>
+        <!-- <div class="panel-footer">Search</div> -->
+        <!-- End : Search  -->
+
+
+        <!-- Start : showing all payments mobile-->
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" href="#search">Search</a>
+              <a data-toggle="collapse" href="#all_mobile_payments">All Mobile Payments</a>
             </h4>
           </div>
-          <div id="search" class="panel-collapse collapse">
+          <div id="all_mobile_payments" class="panel-collapse collapse">
             <div class="panel-body">
-              <h3>Search</h3>
-
-              <div class="col-md-12 offset-md-12">
-                <div class="form-group">
-                  <label>Name : </label>
-                  <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
+              <h3>
+                All Mobile Payments
+                <button class="btn btn-xs btn-primary" (click)="refreshTable()">Refresh</button>
+              </h3>
+              <div class="col-md-2 offset-md-2">
+                <div style="text-align: center" class="form-group">
+                  <label>Per Page</label>
+                  <input style="text-align: center" [(ngModel)]="perPage" type="number" class="form-control"
+                    value="{{perPage}}">
                 </div>
               </div>
-
-              <div class="col-md-12 offset-md-12">
-                <div class="form-group">
-                  <label>TrxID : </label>
-                  <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
-                </div>
-              </div>
-
-              <div class="col-md-12 offset-md-12">
-                <div class="form-group">
-                  <label>Mobile Number : </label>
-                  <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
-                </div>
-              </div>
-
-              <div class="col-md-3 offset-md-3">
-                <div class="form-group">
-                  <label>Payment Date</label>
-                  <input [(ngModel)]="start_date" type="text" class="form-control" placeholder="{{start_date}}">
+              <div class="col-md-2 offset-md-2">
+                <div style="text-align: center" class="form-group">
+                  <label>Total </label>
+                  <input style="text-align: center" disabled="true" [(ngModel)]="total" type="number"
+                    class="form-control" value="{{total}}">
                 </div>
               </div>
               <div class="col-md-3 offset-md-3">
-                <div class="form-group">
-                  <label>Select Date</label>
-                  <input [(ngModel)]="start_date" type="date" class="form-control" value="{{start_date}}">
+                <div class="form-group" style="text-align: center">
+                  <button class="btn btn-primary btn-xs" (click)="previousPage()">Previous</button>
+                  <label class="btn btn-danger btn-xs ">Page Number</label>
+                  <button class="btn btn-primary btn-xs" (click)="nextPage()">Next</button>
+                  <input style="text-align: center" [(ngModel)]="pageNumber" type="number" class="form-control"
+                    value="{{pageNumber}}">
                 </div>
               </div>
 
-              <div class="col-md-3 offset-md-3">
-                <div class="form-group">
-                  <label>Last Date</label>
-                  <input [(ngModel)]="last_date" type="text" class="form-control" placeholder="{{last_date}}">
+              <!-- table : showing all mobile payments -->
+              <div class="col-xs-12">
+                <div class="box">
+                  <div class="box-body table-responsive no-padding">
+                    <table class="table table-hover">
+                      <tbody>
+                        <tr>
+                          <th>Index</th>
+                          <th>Note</th>
+                          <!-- clicking on it will show details of the payment -->
+                          <th>Details</th>
+                          <!-- <th>Status</th> -->
+                          <th>Payed Date</th>
+                          <th>Input Date</th>
+                          <th>Approved Date</th>
+                          <th>Amount</th>
+                          <th>Method</th>
+                          <th>Mobile Number</th>
+                          <th>TrxID</th>
+                          <!-- click : modal about the note -->
+                        </tr>
+                        <tr *ngFor="let ptm of myPaymentsArray; let i=index">
+                          <td>{{i+1}}</td>
+                          <td>
+                            <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#modal_note"
+                              (click)="setNote(ptm.notes)">Notes</button>
+                          </td>
+                          <td>
+                            <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details"
+                              (click)="showPaymentDetails(ptm.type_ID)">Details</button>
+                          </td>
+                          <!-- <td>{{ptm.status}}</td> -->
+                          <td>{{ptm.date}}</td>
+                          <td>{{ptm.created_at}}</td>
+                          <td>{{ptm.approved_date}}</td>
+                          <td>{{ptm.amount}}</td>
+                          <td>{{ptm.payment_method}}</td>
+                          <td>{{ptm.mobile_number}}</td>
+                          <td>{{ptm.trx_id}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
+                <div class="panel-footer">My Payments</div>
               </div>
-              <div class="col-md-3 offset-md-3">
-                <div class="form-group">
-                  <label>Select Date</label>
-                  <input [(ngModel)]="last_date" type="date" class="form-control" value="{{last_date}}">
-                </div>
-              </div>
-
             </div>
-            <!-- end : panel-body -->
           </div>
-          <div class="panel-footer">Search</div>
+          <!-- <div class="panel-footer">My Payments</div> -->
+        </div>
+        <!-- End : showing all payments mobile-->
+
+      </div>
+      <!-- ------------------------------------------------------------------- -->
 
     </div>
-    <!-- ------------------------------------------------------------------- -->
-
-  </div>
 
 
 
@@ -261,38 +352,38 @@
 
 
 
-  <!-- ton trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-  </button>
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <h3>Modal Body h3</h3>
-          <br>
-          <br>
-          <h4>Modal Body h4</h4>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+    <!-- ton trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Launch demo modal
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h3>Modal Body h3</h3>
+            <br>
+            <br>
+            <h4>Modal Body h4</h4>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
         </div>
       </div>
+
+      <!-- <app-footernavbar></app-footernavbar> -->
+      <!-- <app-settingsnavbar></app-settingsnavbar> -->
     </div>
-
     <!-- <app-footernavbar></app-footernavbar> -->
-    <!-- <app-settingsnavbar></app-settingsnavbar> -->
+
+
   </div>
-  <!-- <app-footernavbar></app-footernavbar> -->
-
-
-</div>
