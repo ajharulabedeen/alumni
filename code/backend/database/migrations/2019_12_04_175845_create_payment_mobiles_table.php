@@ -25,6 +25,7 @@ class CreatePaymentMobilesTable extends Migration
             $table->string('status', 512)->nullable();
             $table->mediumText('notes')->nullable();
             $table->date('approved_date')->nullable();
+            $table->date('approved_by')->nullable();
 
             $table->timestamps();
 
