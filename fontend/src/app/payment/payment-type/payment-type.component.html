@@ -286,6 +286,7 @@
                           <th>Payed Date</th>
                           <th>Input Date</th>
                           <th>Approved Date</th>
+                          <th>Approved By</th>
                           <th>Amount</th>
                           <th>Method</th>
                           <th>Mobile Number</th>
@@ -306,6 +307,10 @@
                           <td>{{ptm.date}}</td>
                           <td>{{ptm.created_at}}</td>
                           <td>{{ptm.approved_date}}</td>
+                          <td>
+                            <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details"
+                              (click)="showPaymentDetails(ptm.type_ID)">Approved By</button>0
+                          </td>
                           <td>{{ptm.amount}}</td>
                           <td>{{ptm.payment_method}}</td>
                           <td>{{ptm.mobile_number}}</td>
@@ -315,7 +320,7 @@
                     </table>
                   </div>
                 </div>
-                <div class="panel-footer">My Payments</div>
+                <div class="panel-footer">Mobile Payments</div>
               </div>
             </div>
           </div>
