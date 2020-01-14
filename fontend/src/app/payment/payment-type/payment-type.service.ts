@@ -50,7 +50,7 @@ export class PaymentTypeService {
     // });
   }
 
-  public getAllPayments(perPage: number, pageNumber: number) {
+  public getAllPayments(perPage: number, pageNumber: number, sort_on: string ) {
     //pt = paymentType
     this.pts = new BehaviorSubject<any>(null);
     return this.http.post<PaymentType>(
@@ -58,7 +58,7 @@ export class PaymentTypeService {
       {
         'per_page': perPage,
         "sort_by": "ASC",
-        "sort_on": "last_date"
+        "sort_on": sort_on
       },
       this.authService.getHeader(),
     ).subscribe((pt: PaymentType) => {
