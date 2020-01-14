@@ -41,7 +41,7 @@ export class PaymentTypeService {
 
   public getTotalCount() {
     return this.http.post(
-      'http://127.0.0.1:8000/paymentType/countPaymentType ',[], this.authService.getHeader()
+      'http://127.0.0.1:8000/paymentType/countPaymentType ', [], this.authService.getHeader()
     );
     // .subscribe((res: Response) => {
     //   console.log(res);
@@ -66,6 +66,12 @@ export class PaymentTypeService {
       console.log(pt);
       this.pts.next(pt);
     });
+  }
+
+
+  public getAllMobilePayment(perPage: number, pageNumber: number, order: string, sort_on: string) {
+
+
   }
 
 }//

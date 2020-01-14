@@ -25,6 +25,8 @@ export class PaymentTypeComponent implements OnInit {
   pageNumber: number;
   total: number;
   totalPage: number;
+  sort_on : string;
+
 
   constructor(private ptService: PaymentTypeService) { }
 
@@ -88,6 +90,17 @@ export class PaymentTypeComponent implements OnInit {
   }
 
   public setExistingPayments() {
+    console.log("Sort On : "+this.sort_on);
+    switch (this.sort_on) {
+      case "Name":
+        this.sort_on="name";
+        break;
+    
+      default:
+        break;
+    }
+    console.log("Sort On : "+this.sort_on);
+
     this.ptsArray = new Array();
     this.ptService.getAllPayments(this.perPage, this.pageNumber);
     this.ptService.pts.subscribe(pt => {

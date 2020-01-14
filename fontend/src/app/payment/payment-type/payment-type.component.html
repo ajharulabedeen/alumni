@@ -80,6 +80,7 @@
       </div>
     </div>
 
+    <!-- start : all payment types showing! -->
     <div id="all_payments" class="tabcontent">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -119,7 +120,16 @@
               </div>
             </div>
 
+            <select [(ngModel)]="sort_on">
+              <option>ID</option>
+              <option>Name</option>
+              <option>Start Date</option>
+              <option>End Date</option>
+              <option>Amount</option>
+            </select>
 
+
+            <!-- start : table All payment Type -->
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-body table-responsive no-padding">
@@ -157,11 +167,13 @@
               </div>
               <div class="panel-footer">All Payments Types</div>
             </div>
+            <!-- end : table All payment Type -->
           </div>
         </div>
         <div class="panel-footer">All Payment</div>
       </div>
     </div>
+    <!-- end : all payment types showing! -->
 
 
     <div id="mobile_payments" class="tabcontent">
