@@ -50,14 +50,16 @@ export class PaymentTypeService {
     // });
   }
 
-  public getAllPayments(perPage: number, pageNumber: number, sort_on: string ) {
+  public getAllPayments(perPage: number, pageNumber: number, sort_on: string, sort_by: string) {
     //pt = paymentType
+    console.log("sort on : " + sort_on);
+    console.log("sort bys: " + sort_by);
     this.pts = new BehaviorSubject<any>(null);
     return this.http.post<PaymentType>(
       'http://127.0.0.1:8000/paymentType/getAllPaymentType?page=' + pageNumber,
       {
         'per_page': perPage,
-        "sort_by": "ASC",
+        "sort_by": sort_by,
         "sort_on": sort_on
       },
       this.authService.getHeader(),

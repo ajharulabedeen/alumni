@@ -120,13 +120,28 @@
               </div>
             </div>
 
-            <select [(ngModel)]="sort_on">
-              <option>ID</option>
-              <option>Name</option>
-              <option>Start Date</option>
-              <option>End Date</option>
-              <option>Amount</option>
-            </select>
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group" style="text-align: center">
+                <h4>Sort Order</h4>
+                <input type="radio" name="gender" [(ngModel)]="sort_by" value="ASC">Ascending<br>
+                <input type="radio" name="gender" [(ngModel)]="sort_by" value="DESC">Descending<br>
+              </div>
+            </div>
+
+            <div>
+              <h4>Sort By</h4>
+              <select [(ngModel)]="sort_on">
+                <option>ID</option>
+                <option>Name</option>
+                <option>Start Date</option>
+                <option>End Date</option>
+                <option>Amount</option>
+              </select>
+
+            </div>
+
+
+
 
 
             <!-- start : table All payment Type -->

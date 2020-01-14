@@ -25,7 +25,8 @@ export class PaymentTypeComponent implements OnInit {
   pageNumber: number;
   total: number;
   totalPage: number;
-  sort_on: string;
+  sort_on: string;//column name, on which sorting will be done.
+  sort_by: string;//means the order.
 
 
   constructor(private ptService: PaymentTypeService) { }
@@ -90,7 +91,6 @@ export class PaymentTypeComponent implements OnInit {
   }
 
   public setExistingPayments() {
-    console.log("Sort On : " + this.sort_on);
     switch (this.sort_on) {
       case "ID":
         this.sort_on = "id";
@@ -110,10 +110,9 @@ export class PaymentTypeComponent implements OnInit {
       default:
         break;
     }
-    console.log("Sort On : " + this.sort_on);
 
     this.ptsArray = new Array();
-    this.ptService.getAllPayments(this.perPage, this.pageNumber, this.sort_on);
+    this.ptService.getAllPayments(this.perPage, this.pageNumber, this.sort_on, this.sort_by);
     this.ptService.pts.subscribe(pt => {
       this.ptsArray = [];
       for (const key1 in pt) {
