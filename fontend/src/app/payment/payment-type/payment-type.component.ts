@@ -15,6 +15,8 @@ export class PaymentTypeComponent implements OnInit {
   amount: string;
   description: string;
 
+  sort_by_mobile: string;
+  sort_on_moobile: string;
   // ptsArray = new Array(PaymentType);
   ptsArray = new Array();
 

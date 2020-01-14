@@ -120,6 +120,7 @@
               </div>
             </div>
 
+            <!-- sort by ASC or DESC -->
             <div class="col-md-3 offset-md-3">
               <div class="form-group" style="text-align: center">
                 <h4>Sort Order</h4>
@@ -128,6 +129,7 @@
               </div>
             </div>
 
+            <!-- sort by column name -->
             <div>
               <h4>Sort By</h4>
               <select [(ngModel)]="sort_on">
@@ -137,7 +139,6 @@
                 <option>End Date</option>
                 <option>Amount</option>
               </select>
-
             </div>
 
 
@@ -194,10 +195,9 @@
     <div id="mobile_payments" class="tabcontent">
       <!-- <h3>All Mobile Payments done by the User!</h3> -->
 
-
-
-      <!-- start : search -->
+      <!-- start : showing all mobile payments for Approval -->
       <div class="panel panel-default">
+        <!-- start : search -->
         <div class="panel-heading">
           <h4 class="panel-title">
             <a data-toggle="collapse" href="#search">Search</a>
@@ -207,12 +207,13 @@
           <div class="panel-body">
             <h3>Search</h3>
 
-            <div class="col-md-12 offset-md-12">
+            <!-- Name not needed! -->
+            <!-- <div class="col-md-12 offset-md-12">
               <div class="form-group">
                 <label>Name : </label>
                 <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
               </div>
-            </div>
+            </div> -->
 
             <div class="col-md-12 offset-md-12">
               <div class="form-group">
@@ -298,6 +299,28 @@
                 </div>
               </div>
 
+              <!-- sort by ASC or DESC -->
+              <div class="col-md-3 offset-md-3">
+                <div class="form-group" style="text-align: center">
+                  <h4>Sort Order</h4>
+                  <input type="radio" name="m_pay" [(ngModel)]="sort_by_mobile" value="ASC">Ascending<br>
+                  <input type="radio" name="m_pay" [(ngModel)]="sort_by_mobile" value="DESC">Descending<br>
+                </div>
+              </div>
+
+              <!-- sort by column name -->
+              <div>
+                <h4>Sort By</h4>
+                <select [(ngModel)]="sort_on_moobile">
+                  <option value="id" selected>ID</option >
+                  <option value="amount">Amount</option>
+                  <option value="payment_method">Payment Method</option>
+                  <option value="mobile_number">Mobile Number</option>
+                  <option value="mobile_number">Mobile Number</option>
+                  <option value="status">Status</option>
+                </select>
+              </div>
+
               <!-- table : showing all mobile payments -->
               <div class="col-xs-12">
                 <div class="box">
@@ -353,19 +376,13 @@
           </div>
           <!-- <div class="panel-footer">My Payments</div> -->
         </div>
-        <!-- End : showing all payments mobile-->
+        <!-- End : showing all payments mobile for approval-->
 
       </div>
       <!-- Tab End -->
       <!-- ------------------------------------------------------------------- -->
 
     </div>
-
-
-
-
-
-
 
 
     <!-- Star :  Show Who Approved the payment-->
