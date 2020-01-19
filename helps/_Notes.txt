@@ -1,15 +1,31 @@
------------
+------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
+ERROR in src/app/profile/profile/profile.component.ts:46:47 - error TS2345: Argument of type '{ headers: HttpHeaders; responseType: string; param: any[]; }' is not assignable to parameter of type '{ headers?: HttpHeaders | { [header: string]: string | string[]; }; observe?: "body"; params?: HttpParams | { [param: string]: string | string[]; }; reportProgress?: boolean; responseType?: "json"; withCredentials?: boolean; }'. 
+  Types of property 'responseType' are incompatible.
+    Type 'string' is not assignable to type '"json"'.
+
+46     return this.http.post<Blob>(imageUrl, [], this.authService.getHeaderFile());//it shows red mark but code works.
+                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+src/app/profile/profile/profile.component.ts:65:76 - error TS2345: Argument of type '{ headers: HttpHeaders; responseType: string; param: any[]; }' is not assignable to parameter of type '{ headers?: HttpHeaders | { [header: string]: string | string[]; }; observe?: "body"; params?: HttpParams | { [param: string]: string | string[]; }; reportProgress?: boolean; responseType?: "json"; withCredentials?: boolean; }'.
+
+65       this.http.post('http://127.0.0.1:8000/api/photo/upload', uploadData, this.authService.getHeaderFile())
+
+------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
 after adding new URL, have to give : composer update
 Unless error will be shown that no controller found.
------------
+------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
 TS : Getter/Setter
 	Have to make all the fields private.  need extention. 
---------
+------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
 Because a model is a class, to generate it use --type option like this:
 	ng generate class hero --type=model
 will result in:
 	hero.model.ts	
---------
+------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------
 Always have to take pull from the main folder of the repo:
 Means : 
 		Alumni/

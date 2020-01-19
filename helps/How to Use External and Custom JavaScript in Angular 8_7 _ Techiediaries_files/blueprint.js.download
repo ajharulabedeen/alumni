@@ -1,0 +1,194 @@
+window.blueprint = {
+	"width": 250,
+	"height": 250,
+	"images": [
+		"icon.png",
+		"txt_1.png",
+		"txt_2.png",
+		"txt_3.png",
+		"cta_1.png",
+		"ctaHover_1.png",
+		"logo_vimeo.png"
+	],
+	"elements": {
+		"stage": {
+			"parent": "banner",
+			"id": "stage",
+			"retina": false,
+			"left": 0,
+			"top": 0,
+			"safeArea": 0,
+			"lineHeight": 0,
+			"width": 250,
+			"height": 250
+		},
+		"bg": {
+			"parent": "banner",
+			"id": "bg",
+			"retina": false,
+			"left": 0,
+			"top": 0,
+			"safeArea": 0,
+			"lineHeight": 0,
+			"width": 250,
+			"height": 250
+		},
+		"icon": {
+			"parent": "banner",
+			"id": "icon",
+			"retina": true,
+			"left": 179,
+			"top": 152,
+			"safeArea": 0,
+			"lineHeight": 0,
+			"backgroundImage": "icon.png",
+			"width": 30,
+			"height": 22
+		},
+		"txt_1": {
+			"parent": "banner",
+			"id": "txt_1",
+			"retina": true,
+			"left": -7,
+			"top": -7,
+			"safeArea": 28,
+			"lineHeight": 29.700000000000003,
+			"backgroundImage": "txt_1.png",
+			"width": 266,
+			"height": 138
+		},
+		"txt_2": {
+			"parent": "banner",
+			"id": "txt_2",
+			"retina": true,
+			"left": -18,
+			"top": 10.800000000000011,
+			"safeArea": 39,
+			"lineHeight": 37.05,
+			"backgroundImage": "txt_2.png",
+			"width": 257,
+			"height": 148
+		},
+		"txt_3": {
+			"parent": "banner",
+			"id": "txt_3",
+			"retina": true,
+			"left": 5,
+			"top": 115,
+			"safeArea": 20,
+			"lineHeight": 20.8,
+			"backgroundImage": "txt_3.png",
+			"width": 197,
+			"height": 57
+		},
+		"cta": {
+			"parent": "banner",
+			"id": "cta",
+			"retina": true,
+			"left": 122,
+			"top": 200.54999999999998,
+			"safeArea": 0,
+			"lineHeight": 13.52
+		},
+		"cta_1": {
+			"parent": "cta",
+			"id": "cta_1",
+			"retina": true,
+			"backgroundImage": "cta_1.png"
+		},
+		"ctaHover": {
+			"parent": "banner",
+			"id": "ctaHover",
+			"retina": true,
+			"left": 144,
+			"top": 36.550000000000004,
+			"safeArea": 0,
+			"lineHeight": 13.52
+		},
+		"ctaHover_1": {
+			"parent": "ctaHover",
+			"id": "ctaHover_1",
+			"retina": true,
+			"backgroundImage": "ctaHover_1.png"
+		},
+		"logo_vimeo": {
+			"parent": "banner",
+			"id": "logo_vimeo",
+			"retina": true,
+			"left": 20,
+			"top": 200,
+			"safeArea": 0,
+			"lineHeight": 0,
+			"backgroundImage": "logo_vimeo.png",
+			"width": 80,
+			"height": 23
+		},
+		"top": {
+			"parent": "banner",
+			"id": "top",
+			"retina": false,
+			"left": 0,
+			"top": -10,
+			"safeArea": 0,
+			"lineHeight": 0,
+			"width": 250,
+			"height": 10
+		},
+		"bottom": {
+			"parent": "banner",
+			"id": "bottom",
+			"retina": false,
+			"left": 0,
+			"top": 250,
+			"safeArea": 0,
+			"lineHeight": 0,
+			"width": 250,
+			"height": 10
+		},
+		"left": {
+			"parent": "banner",
+			"id": "left",
+			"retina": false,
+			"left": -10,
+			"top": 0,
+			"safeArea": 0,
+			"lineHeight": 0,
+			"width": 10,
+			"height": 250
+		},
+		"right": {
+			"parent": "banner",
+			"id": "right",
+			"retina": false,
+			"left": 250,
+			"top": 0,
+			"safeArea": 0,
+			"lineHeight": 0,
+			"width": 10,
+			"height": 250
+		}
+	},
+	"settings": {
+		"filename": "Q3-2019_EN_mid-funnel_marketer_extensive-storage_1_learn-more_250x250_HTML5",
+		"market": "EN",
+		"campaign": "Q3-2019",
+		"funnel": "mid-funnel",
+		"segment": "marketer",
+		"feature": "extensive-storage",
+		"copyVariation": "1",
+		"size": "250x250",
+		"marketIndex": "1",
+		"id": "marketerextensive-storage1",
+		"copy": {
+			"copy1": "Storage that keeps pace with your brand.",
+			"copy2": "Extensive Storage.",
+			"copy3": "A Vimeo Feature",
+			"copy4": "Learn More",
+			"copy5": ""
+		},
+		"fileType": "jpg",
+		"fallback": true,
+		"HtmlfileType": "html",
+		"backgroundColor": "#8083c4"
+	}
+};
