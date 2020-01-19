@@ -115,7 +115,7 @@ export class PaymentTypeComponent implements OnInit {
    */
   public refreshTable_mobilePaymentApproval() {
     this.paymentsForApporv = [];
-    this.ptService.getAllMobilePayment(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, sort_b);
+    this.ptService.getAllMobilePayment(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv);
     // this.ptmService.myMobilePayments.subscribe(ptm => {
     // this.myPaymentsArray = [];
     // for (const key1 in ptm) {

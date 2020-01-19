@@ -92,12 +92,12 @@ export class PaymentTypeService {
    * @param order
    * @param sort_on
    */
-  public getAllMobilePayment(perPage: number, pageNumber: number, sort_on: string, sort_by : string ) {
+  public getAllMobilePayment(perPage: number, pageNumber: number, sort_on: string, sort_by: string) {
     //for approve
-    this.myMobilePayments= new BehaviorSubject<any>(null);
-
+    this.myMobilePayments = new BehaviorSubject<any>(null);
+    //for approve
     return this.http.post<PaymentMobile>(
-      'http://127.0.0.1:8000/paymentType/getAllPaymentMobile?page=' + pageNumber,
+      'http://127.0.0.1:8000/payment/mobile/getAllPaymentMobile?page=' + pageNumber,
       {
         'per_page': perPage,
         "sort_by": sort_by,
