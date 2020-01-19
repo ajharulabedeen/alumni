@@ -20,7 +20,7 @@ export class PaymentTypeComponent implements OnInit {
   sort_on_moobile: string;
   // ptsArray = new Array(PaymentType);
   ptsArray = new Array();
-  paymentsForApporv=new Array();
+  paymentsForApporv = new Array();
 
   perPage: number;
   idUpdate: string;
@@ -33,9 +33,10 @@ export class PaymentTypeComponent implements OnInit {
   sort_by: string;//means the order.
 
   sort_on_approv: string;
-  perPage_approv:string;
-  total_approv:string;
-  pageNumber_approv:string;
+  perPage_approv: number;
+  total_approv: number;
+  totalPage_approv: number;
+  pageNumber_approv: number;
 
 
 
@@ -50,6 +51,10 @@ export class PaymentTypeComponent implements OnInit {
     this.totalPage = (this.total / this.perPage);
     this.setTotalPaymentType();
     this.setExistingPayments();
+
+    this.perPage_approv = 5;
+    this.pageNumber_approv = 1;
+    this.totalPage_approv = (this.total_approv / this.perPage_approv);
 
     //start : test code
     (function ($) {
@@ -100,7 +105,7 @@ export class PaymentTypeComponent implements OnInit {
   public refreshTable_Approval() {
 
     // console.log("Load Payment mobile for approval!");
-    console.log("Sort On : "+this.sort_on_moobile);
+    console.log("Sort On : " + this.sort_on_moobile);
 
 
     // this.refreshTable_Approval();
