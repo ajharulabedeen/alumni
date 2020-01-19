@@ -88,6 +88,14 @@ export class PaymentTypeComponent implements OnInit {
     this.setTotalPaymentType();
   }
 
+
+  public refreshTable_Approval() {
+    console.log("Load Payment mobile for approval!");
+  }
+
+
+
+
   public refreshTable() {
     this.setExistingPayments();
   }
