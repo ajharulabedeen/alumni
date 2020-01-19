@@ -31,7 +31,12 @@ export class PaymentTypeComponent implements OnInit {
   totalPage: number;
   sort_on: string;//column name, on which sorting will be done.
   sort_by: string;//means the order.
+
   sort_on_approv: string;
+  perPage_approv:string;
+  total_approv:string;
+  pageNumber_approv:string;
+
 
 
   constructor(private ptService: PaymentTypeService) { }
