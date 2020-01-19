@@ -116,31 +116,31 @@ export class PaymentTypeComponent implements OnInit {
   public refreshTable_mobilePaymentApproval() {
     this.paymentsForApporv = [];
     this.ptService.getAllMobilePayment(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv);
-    // this.ptmService.myMobilePayments.subscribe(ptm => {
-    // this.myPaymentsArray = [];
-    // for (const key1 in ptm) {
-    // console.log(key1);
-    // console.log(pt[key1]['id']);
-    // var myPtm = new PaymentMobile();
-    // pt1.$id = pt[key1]["id"];
-    // myPtm.$name = ptm[key1]["name"];
+    this.ptService.myMobilePayments.subscribe(ptm => {
+      this.paymentsForApporv = [];
+      for (const key1 in ptm) {
+      // console.log(key1);
+      // console.log(pt[key1]['id']);
+      var myPtm = new PaymentMobile();
+      // pt1.$id = pt[key1]["id"];
+      // myPtm.$name = ptm[key1]["name"];
 
-    //   myPtm.$user_id = ptm[key1]["user_id"];
-    //   myPtm.$amount = ptm[key1]["amount"];
-    //   myPtm.$type_ID = ptm[key1]["type_ID"];
-    //   myPtm.$date = ptm[key1]["date"];
-    //   myPtm.$payment_method = ptm[key1]["payment_method"];
-    //   myPtm.$mobile_number = ptm[key1]["mobile_number"];
-    //   myPtm.$trx_id = ptm[key1]["trx_id"];
-    //   myPtm.$status = ptm[key1]["status"];
-    //   myPtm.$created_at = ptm[key1]["created_at"];
-    //   myPtm.$notes = ptm[key1]["notes"];
-    //   myPtm.$approved_date = ptm[key1]["approved_date"];
-    //   this.myPaymentsArray.push(myPtm);
-    // }
-    // console.log(this.myPaymentsArray);
+        myPtm.$user_id = ptm[key1]["user_id"];
+        myPtm.$amount = ptm[key1]["amount"];
+        myPtm.$type_ID = ptm[key1]["type_ID"];
+        myPtm.$date = ptm[key1]["date"];
+        myPtm.$payment_method = ptm[key1]["payment_method"];
+        myPtm.$mobile_number = ptm[key1]["mobile_number"];
+        myPtm.$trx_id = ptm[key1]["trx_id"];
+        myPtm.$status = ptm[key1]["status"];
+        myPtm.$created_at = ptm[key1]["created_at"];
+        myPtm.$notes = ptm[key1]["notes"];
+        myPtm.$approved_date = ptm[key1]["approved_date"];
+        this.paymentsForApporv.push(myPtm);
+      }//for
+      // console.log(this.myPaymentsArray);
 
-    // });
+    });
     // console.log(this.myPaymentsArray);
   }//all  mobile payments for approval.
 
