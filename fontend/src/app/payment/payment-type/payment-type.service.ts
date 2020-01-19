@@ -92,7 +92,7 @@ export class PaymentTypeService {
    * @param order
    * @param sort_on
    */
-  public getAllMobilePayment(perPage: number, pageNumber: number, order: string, sort_on: string, sort_by : string ) {
+  public getAllMobilePayment(perPage: number, pageNumber: number, sort_on: string, sort_by : string ) {
     //for approve
     this.myMobilePayments= new BehaviorSubject<any>(null);
 

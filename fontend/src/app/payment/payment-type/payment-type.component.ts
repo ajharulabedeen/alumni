@@ -16,8 +16,6 @@ export class PaymentTypeComponent implements OnInit {
   amount: string;
   description: string;
 
-  sort_by_mobile: string;
-  sort_on_moobile: string;
   // ptsArray = new Array(PaymentType);
   ptsArray = new Array();
   paymentsForApporv = new Array();
@@ -37,6 +35,7 @@ export class PaymentTypeComponent implements OnInit {
   total_approv: number;
   totalPage_approv: number;
   pageNumber_approv: number;
+  sort_by_approv: string;
 
 
 
@@ -105,10 +104,9 @@ export class PaymentTypeComponent implements OnInit {
   public refreshTable_Approval() {
 
     // console.log("Load Payment mobile for approval!");
-    console.log("Sort On : " + this.sort_on_moobile);
+    console.log("Sort On : " + this.sort_on_approv);
 
-
-    // this.refreshTable_Approval();
+    this.refreshTable_mobilePaymentApproval();
 
   }//all mobile payments for approval.
 
@@ -117,7 +115,7 @@ export class PaymentTypeComponent implements OnInit {
    */
   public refreshTable_mobilePaymentApproval() {
     this.paymentsForApporv = [];
-    // this.ptService.getAllMobilePayment();
+    this.ptService.getAllMobilePayment(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, sort_b);
     // this.ptmService.myMobilePayments.subscribe(ptm => {
     // this.myPaymentsArray = [];
     // for (const key1 in ptm) {
