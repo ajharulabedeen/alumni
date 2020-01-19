@@ -98,7 +98,8 @@ export class PaymentMobileComponent implements OnInit {
   public setExistingPayments() {
     this.ptsArray = [];
     // this.ptsArray = new Array();
-    this.ptService.getAllPayments(this.perPage, this.pageNumber);
+    //refactor : have to add param for the method.
+    this.ptService.getAllPayments(this.perPage, this.pageNumber," "," ");
     this.ptService.pts.subscribe(pt => {
       this.ptsArray = [];
       for (const key1 in pt) {
@@ -129,7 +130,7 @@ export class PaymentMobileComponent implements OnInit {
   }
 
   /**
-   * refreshing myPayments Table, means so far payments user has done :
+   * refreshing myPayments moibile Table, means so far payments user has done :
    */
   public refreshTable() {
     this.myPaymentsArray = [];
@@ -160,7 +161,7 @@ export class PaymentMobileComponent implements OnInit {
 
     });
     // console.log(this.myPaymentsArray);
-  }
+  }//all my mobile payments.
 
 
 

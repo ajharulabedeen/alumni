@@ -71,6 +71,14 @@ export class PaymentTypeService {
   }
 
 
+  /**
+   *
+   * @param perPage
+   * @param pageNumber
+   * @param order
+   * @param sort_on
+   * @description all mobile payments for approval.
+   */
   public getAllMobilePayment(perPage: number, pageNumber: number, order: string, sort_on: string) {
 
 

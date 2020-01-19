@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PaymentType } from './payment-type.model';
 import { PaymentTypeService } from './payment-type.service';
+import { PaymentMobile } from '../payment-mobile/payment-mobile.model';
 declare var jQuery: any;
 @Component({
   selector: 'app-payment-type',
@@ -91,9 +92,81 @@ export class PaymentTypeComponent implements OnInit {
 
   public refreshTable_Approval() {
     console.log("Load Payment mobile for approval!");
-  }
+    switch (this.sort_on) {
+      case "ID":
+        this.sort_on = "id";
+        break;
+      case "Name":
+        this.sort_on = "name";
+        break;
+      case "Start Date":
+        this.sort_on = "start_date";
+        break;
+      case "End Date":
+        this.sort_on = "last_date";
+        break;
+      case "Amount":
+        this.sort_on = "amount";
+        break;
+      default:
+        break;
+    }
+
+    this.ptsArray = new Array();
+    this.ptService.getAllPayments(this.perPage, this.pageNumber, this.sort_on, this.sort_by);
+    this.ptService.pts.subscribe(pt => {
+      this.ptsArray = [];
+      for (const key1 in pt) {
+        // console.log(key1);
+        // console.log(pt[key1]['id']);
+        var pt1 = new PaymentType();
+        pt1.$id = pt[key1]["id"];
+        pt1.$name = pt[key1]["name"];
+        pt1.$start_date = pt[key1]["start_date"];
+        pt1.$last_date = pt[key1]["last_date"];
+        pt1.$description = pt[key1]["description"];
+        pt1.$amount = pt[key1]["amount"];
+        this.ptsArray.push(pt1);
+      }
+    });
 
 
+
+  }//all mobile payments for approval.
+
+  /**
+   * refreshing myPayments moibile Table, means so far payments user has done :
+   */
+  public refreshTable_mobilePaymentApproval() {
+    // this.myPaymentsArray = [];
+    // this.ptmService.getAllMyPayments();
+    // this.ptmService.myMobilePayments.subscribe(ptm => {
+      // this.myPaymentsArray = [];
+      // for (const key1 in ptm) {
+        // console.log(key1);
+        // console.log(pt[key1]['id']);
+        // var myPtm = new PaymentMobile();
+        // pt1.$id = pt[key1]["id"];
+        // myPtm.$name = ptm[key1]["name"];
+
+      //   myPtm.$user_id = ptm[key1]["user_id"];
+      //   myPtm.$amount = ptm[key1]["amount"];
+      //   myPtm.$type_ID = ptm[key1]["type_ID"];
+      //   myPtm.$date = ptm[key1]["date"];
+      //   myPtm.$payment_method = ptm[key1]["payment_method"];
+      //   myPtm.$mobile_number = ptm[key1]["mobile_number"];
+      //   myPtm.$trx_id = ptm[key1]["trx_id"];
+      //   myPtm.$status = ptm[key1]["status"];
+      //   myPtm.$created_at = ptm[key1]["created_at"];
+      //   myPtm.$notes = ptm[key1]["notes"];
+      //   myPtm.$approved_date = ptm[key1]["approved_date"];
+      //   this.myPaymentsArray.push(myPtm);
+      // }
+      // console.log(this.myPaymentsArray);
+
+    // });
+    // console.log(this.myPaymentsArray);
+  }//all  mobile payments for approval.
 
 
   public refreshTable() {
@@ -139,6 +212,7 @@ export class PaymentTypeComponent implements OnInit {
       }
     });
     this.setTotalPaymentType();
+
   }//method
 
   public create() {
