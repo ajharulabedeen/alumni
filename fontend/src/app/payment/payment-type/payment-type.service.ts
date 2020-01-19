@@ -4,12 +4,15 @@ import { AuthService } from '../../auth/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { combineAll } from 'rxjs/operators';
+import { PaymentMobile } from '../payment-mobile/payment-mobile.model';
 @Injectable({
   providedIn: 'root'
 })
 export class PaymentTypeService {
 
   pts = new BehaviorSubject<any>(null);
+  myMobilePayments = new BehaviorSubject<any>(null);
+
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
@@ -50,11 +53,21 @@ export class PaymentTypeService {
     // });
   }
 
+  /**
+   *
+   * @param perPage
+   * @param pageNumber
+   * @param sort_on
+   * @param sort_by
+   * @description all payments types.
+   */
   public getAllPayments(perPage: number, pageNumber: number, sort_on: string, sort_by: string) {
     //pt = paymentType
     console.log("sort on : " + sort_on);
     console.log("sort bys: " + sort_by);
+
     this.pts = new BehaviorSubject<any>(null);
+
     return this.http.post<PaymentType>(
       'http://127.0.0.1:8000/paymentType/getAllPaymentType?page=' + pageNumber,
       {
@@ -68,20 +81,37 @@ export class PaymentTypeService {
       console.log(pt);
       this.pts.next(pt);
     });
+
   }
 
 
   /**
-   *
+   * @description all mobile payments for approval.
    * @param perPage
    * @param pageNumber
    * @param order
    * @param sort_on
-   * @description all mobile payments for approval.
    */
-  public getAllMobilePayment(perPage: number, pageNumber: number, order: string, sort_on: string) {
+  public getAllMobilePayment(perPage: number, pageNumber: number, order: string, sort_on: string, sort_by : string ) {
+    //for approve
+    this.myMobilePayments= new BehaviorSubject<any>(null);
 
+    return this.http.post<PaymentMobile>(
+      'http://127.0.0.1:8000/paymentType/getAllPaymentMobile?page=' + pageNumber,
+      {
+        'per_page': perPage,
+        "sort_by": sort_by,
+        "sort_on": sort_on
+      },
+      this.authService.getHeader(),
+    ).subscribe((ptm: PaymentMobile) => {
+      // console.log("One Job : " + pt["0"]["organization_name"]);
+      console.log(ptm);
+      this.myMobilePayments.next(ptm);
+    });
 
   }
+
+
 
 }//

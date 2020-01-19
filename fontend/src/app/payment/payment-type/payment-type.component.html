@@ -272,7 +272,7 @@
           <div id="all_mobile_payments" class="panel-collapse collapse">
             <div class="panel-body">
               <h3>
-                All Mobile Payments
+                All Mobile Payments(Approval)
                 <button class="btn btn-xs btn-primary" (click)="refreshTable_Approval()">Refresh</button>
               </h3>
               <div class="col-md-2 offset-md-2">
@@ -312,11 +312,11 @@
               <div>
                 <h4>Sort By</h4>
                 <select [(ngModel)]="sort_on_moobile">
-                  <option value="id" selected>ID</option >
+                  <option value="id" selected>ID</option>
                   <option value="amount">Amount</option>
                   <option value="payment_method">Payment Method</option>
                   <option value="mobile_number">Mobile Number</option>
-                  <option value="mobile_number">Mobile Number</option>
+                  <option value="date">Date</option>
                   <option value="status">Status</option>
                 </select>
               </div>
