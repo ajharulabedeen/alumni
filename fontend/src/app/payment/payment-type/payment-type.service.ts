@@ -106,7 +106,7 @@ export class PaymentTypeService {
       this.authService.getHeader(),
     ).subscribe((ptm: PaymentMobile) => {
       // console.log("One Job : " + pt["0"]["organization_name"]);
-      // console.log(ptm);
+      console.log(ptm);
       this.myMobilePayments.next(ptm);
     });
 

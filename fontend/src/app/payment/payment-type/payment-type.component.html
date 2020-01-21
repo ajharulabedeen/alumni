@@ -305,7 +305,7 @@
               <div>
                 <h4>Sort By</h4>
                 <select [(ngModel)]="sort_on_approv">
-                  <option value="id" selected>ID</option>
+                  <option value="id" selected >ID</option>
                   <option value="amount">Amount</option>
                   <option value="payment_method">Payment Method</option>
                   <option value="mobile_number">Mobile Number</option>
@@ -344,7 +344,8 @@
                         <tr *ngFor="let ptm of paymentsForApporv; let i=index">
                           <td>{{i+1}}</td>
                           <td>
-                            <button class="btn btn-xs">Approve</button>
+                            <!-- <button class="btn btn-xs" [style.background-color]="ptm.status ? 'lime' : 'red'">{{ptm.status}} : Approve</button> -->
+                            <button class="btn btn-xs" [ngStyle]="changeColor(ptm.status)">{{ptm.status}} : Approve</button>
                           </td>
                           <td>
                             <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#modal_note"

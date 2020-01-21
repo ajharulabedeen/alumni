@@ -119,11 +119,11 @@ export class PaymentTypeComponent implements OnInit {
     this.ptService.myMobilePayments.subscribe(ptm => {
       this.paymentsForApporv = [];
       for (const key1 in ptm) {
-      // console.log(key1);
-      // console.log(pt[key1]['id']);
-      var myPtm = new PaymentMobile();
-      // pt1.$id = pt[key1]["id"];
-      // myPtm.$name = ptm[key1]["name"];
+        // console.log(key1);
+        // console.log(pt[key1]['id']);
+        var myPtm = new PaymentMobile();
+        // pt1.$id = pt[key1]["id"];
+        // myPtm.$name = ptm[key1]["name"];
 
         myPtm.$user_id = ptm[key1]["user_id"];
         myPtm.$amount = ptm[key1]["amount"];
@@ -144,6 +144,26 @@ export class PaymentTypeComponent implements OnInit {
     // console.log(this.myPaymentsArray);
   }//all  mobile payments for approval.
 
+/**
+ * @description this will change the color of the button, based on the status.
+ * @param status
+ */
+  public changeColor(status: string) {
+    var color;
+    if (status == "1") {
+      color = 'lime';
+    } else if (status == "0") {
+      color = 'red';
+    }else{
+      color = 'pink';
+    }
+
+    console.log("color : " + color);
+    let styles = {
+      'background-color': color,
+    };
+    return styles;
+  }
 
   public refreshTable() {
     this.setExistingPayments();
