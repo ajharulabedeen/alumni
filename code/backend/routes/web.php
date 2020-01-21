@@ -82,6 +82,7 @@ Route::post('paymentType/delete', 'Payment_Type_Controller@delete');
 // Route::post('payment/mobile/getAllPaymentMobileByAUser', 'Payment_Mobile_Controller@getAllPaymentMobileByAUser');
 // Route::post('payment/mobile/countPaymentMobile', 'Payment_Mobile_Controller@countPaymentMobile');
 // Route::post('payment/mobile/countPaymentMobileByAUser', 'Payment_Mobile_Controller@countPaymentMobileByAUser');
+Route::post('payment/mobile/getAllPaymentMobile', 'Payment_Mobile_Controller@getAllPaymentMobile');
 
 
 Route::post('events/create', 'Events_Controller@create');
