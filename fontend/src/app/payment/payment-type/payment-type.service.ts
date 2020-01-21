@@ -53,6 +53,17 @@ export class PaymentTypeService {
     // });
   }
 
+  public getTotalMobilePaymentCount(){
+    return this.http.post(
+      'http://127.0.0.1:8000/payment/mobile/countPaymentMobile ', [], this.authService.getHeader()
+    );
+    // .subscribe((res: Response) => {
+    //   console.log(res);
+    //   // return res;
+    //   // return res["status"];
+    // });
+  }
+
   /**
    *
    * @param perPage
@@ -111,7 +122,5 @@ export class PaymentTypeService {
     });
 
   }
-
-
 
 }//

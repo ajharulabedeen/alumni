@@ -37,6 +37,7 @@ export class PaymentTypeComponent implements OnInit {
   pageNumber_approv: number;
   sort_by_approv: string;
 
+  totalMobilePayment : number;
 
 
   constructor(private ptService: PaymentTypeService) { }
@@ -49,6 +50,7 @@ export class PaymentTypeComponent implements OnInit {
     this.pageNumber = 1;
     this.totalPage = (this.total / this.perPage);
     this.setTotalPaymentType();
+    this.setTotalPaymentMobile();
     this.setExistingPayments();
 
     this.perPage_approv = 5;
@@ -85,6 +87,13 @@ export class PaymentTypeComponent implements OnInit {
     }
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
+  }
+
+
+  public setTotalPaymentMobile() {
+    this.ptService.getTotalMobilePaymentCount().subscribe(res => {
+      this.totalMobilePayment = res["status"];
+    });
   }
 
 
