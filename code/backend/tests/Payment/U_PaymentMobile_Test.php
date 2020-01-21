@@ -17,8 +17,8 @@ class U_PaymentMobile_Test extends TestCase
         // error_log($this->create());//done
         // $this->getAllPaymentMobile(10,"ASC","payment_method");//done
         // $this->getAllPaymentMobile(10,"DESC","amount");//done
-        $this->getMobilePaymentByAUser(4);
-        // error_log($this->countAll());//done
+        // $this->getMobilePaymentByAUser(4);
+        error_log($this->countAll());//done
 
         // error_log($this->findOnePaymentType(25)->amount);
 

@@ -90,7 +90,8 @@ class Payment_Mobile_Controller extends Controller
     public function countPaymentMobile()
     {
         $data = $this->paymentMobileRepo->countPaymentMobile();
-        return $data;
+        return ['status' => $data];
+        // return $data;
     }
 
     public function countPaymentMobileByAUser()
