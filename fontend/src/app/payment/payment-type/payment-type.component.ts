@@ -45,6 +45,7 @@ export class PaymentTypeComponent implements OnInit {
   payment_date_search: string;
   last_date_search: string;
 
+  active_search: boolean;
 
   constructor(private ptService: PaymentTypeService) { }
 
@@ -176,7 +177,7 @@ export class PaymentTypeComponent implements OnInit {
       color = 'pink';
     }
 
-    console.log("color : " + color);
+    // console.log("color : " + color);
     let styles = {
       'background-color': color,
     };
@@ -303,6 +304,11 @@ export class PaymentTypeComponent implements OnInit {
     this.amount = "";
     this.description = "";
 
+  }
+
+  public toggle_active_search() {
+    this.active_search = !this.active_search;
+    console.log("ActiveSearch : " + this.active_search);
   }
 
 }//clas

@@ -229,7 +229,8 @@
             <div class="col-md-3 offset-md-3">
               <div class="form-group">
                 <label>Select Date</label>
-                <input [(ngModel)]="payment_date_search" type="date" class="form-control" value="{{payment_date_search}}">
+                <input [(ngModel)]="payment_date_search" type="date" class="form-control"
+                  value="{{payment_date_search}}">
               </div>
             </div>
 
@@ -263,6 +264,8 @@
           </div>
           <div id="all_mobile_payments" class="panel-collapse collapse">
             <div class="panel-body">
+              <label class="checkbox-inline"><input type="checkbox" value="" (click)="toggle_active_search()"> Active
+                Search</label>
               <h3>
                 All Mobile Payments(Approval)
                 <button class="btn btn-xs btn-primary" (click)="refreshTable_Approval()">Refresh</button>
@@ -314,17 +317,6 @@
                   <option value="status">Status</option>
                 </select>
               </div>
-
-              <!--
-              <select [(ngModel)]="sort_on_approv" name="favorites">
-                <option value="American">American flamingo</option>
-                <option value="Greater">Greater flamingo</option>
-                <option value="Lesser">Lesser flamingo</option>
-                <option selected value="Andean">Andean flamingo</option>
-                <option value="Chilean">Chilean flamingo</option>
-                <option value="James's">James's flamingo</option>
-      </select> -->
-
 
               <!-- showing all payments mobile for approval -->
               <!-- table : showing all mobile payments -->
@@ -388,6 +380,7 @@
                 <div class="panel-footer">Mobile Payments</div>
               </div>
             </div>
+
           </div>
           <!-- <div class="panel-footer">My Payments</div> -->
         </div>
