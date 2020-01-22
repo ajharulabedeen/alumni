@@ -201,8 +201,9 @@
         </div>
         <div id="search" class="panel-collapse collapse">
           <div class="panel-body">
-            <h3>Search</h3>
-
+            <h3>
+              <button class="btn btn-info" (click)="search_approv()">Search</button>
+            </h3>
             <div class="col-md-12 offset-md-12">
               <div class="form-group">
                 <label>TrxID : </label>
@@ -213,27 +214,30 @@
             <div class="col-md-12 offset-md-12">
               <div class="form-group">
                 <label>Mobile Number : </label>
-                <input [(ngModel)]="mobile_number_search" type="text" class="form-control" placeholder="Mobile Number...!">
+                <input [(ngModel)]="mobile_number_search" type="text" class="form-control"
+                  placeholder="Mobile Number...!">
               </div>
             </div>
 
             <div class="col-md-3 offset-md-3">
               <div class="form-group">
                 <label>Payment Date</label>
-                <input [(ngModel)]="start_date_search" type="text" class="form-control" placeholder="{{start_date_search}}">
+                <input [(ngModel)]="payment_date_search" type="text" class="form-control"
+                  placeholder="{{payment_date_search}}">
               </div>
             </div>
             <div class="col-md-3 offset-md-3">
               <div class="form-group">
                 <label>Select Date</label>
-                <input [(ngModel)]="start_date_search" type="date" class="form-control" value="{{start_date_search}}">
+                <input [(ngModel)]="payment_date_search" type="date" class="form-control" value="{{payment_date_search}}">
               </div>
             </div>
 
             <div class="col-md-3 offset-md-3">
               <div class="form-group">
                 <label>Last Date</label>
-                <input [(ngModel)]="last_date_search" type="text" class="form-control" placeholder="{{last_date_search}}">
+                <input [(ngModel)]="last_date_search" type="text" class="form-control"
+                  placeholder="{{last_date_search}}">
               </div>
             </div>
             <div class="col-md-3 offset-md-3">
@@ -292,7 +296,8 @@
               <div class="col-md-3 offset-md-3">
                 <div class="form-group" style="text-align: center">
                   <h4>Sort Order</h4>
-                  <input type="radio" name="m_pay" [(ngModel)]="sort_by_approv" value="ASC" checked="checked">Ascending<br>
+                  <input type="radio" name="m_pay" [(ngModel)]="sort_by_approv" value="ASC"
+                    checked="checked">Ascending<br>
                   <input type="radio" name="m_pay" [(ngModel)]="sort_by_approv" value="DESC">Descending<br>
                 </div>
               </div>
@@ -301,7 +306,7 @@
               <div>
                 <h4>Sort By</h4>
                 <select [(ngModel)]="sort_on_approv">
-                  <option value="id" [selected]="true" >ID</option>
+                  <option value="id" [selected]="true">ID</option>
                   <option value="amount">Amount</option>
                   <option value="payment_method">Payment Method</option>
                   <option value="mobile_number">Mobile Number</option>
@@ -310,7 +315,7 @@
                 </select>
               </div>
 
-<!--
+              <!--
               <select [(ngModel)]="sort_on_approv" name="favorites">
                 <option value="American">American flamingo</option>
                 <option value="Greater">Greater flamingo</option>

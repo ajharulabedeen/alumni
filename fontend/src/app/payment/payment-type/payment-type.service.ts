@@ -25,6 +25,7 @@ export class PaymentTypeService {
       console.log(res);
     });
   }
+
   public update(pt: PaymentType) {
     console.log("Update : ");
     console.log(pt);
@@ -34,6 +35,7 @@ export class PaymentTypeService {
       console.log(res);
     });
   }
+
   public delete(id: string) {
     this.http.post(
       'http://127.0.0.1:8000/paymentType/delete ', { "id": id }, this.authService.getHeader()
@@ -53,7 +55,7 @@ export class PaymentTypeService {
     // });
   }
 
-  public getTotalMobilePaymentCount(){
+  public getTotalMobilePaymentCount() {
     return this.http.post(
       'http://127.0.0.1:8000/payment/mobile/countPaymentMobile ', [], this.authService.getHeader()
     );
@@ -95,7 +97,6 @@ export class PaymentTypeService {
 
   }
 
-
   /**
    * @description all mobile payments for approval.
    * @param perPage
@@ -122,5 +123,13 @@ export class PaymentTypeService {
     });
 
   }
+
+  public search_approv(mobile_number_search: string, last_date_search: string, payment_date_search: string, trxid_search: string) {
+    console.log("Start Date : " + payment_date_search);
+    console.log("Last Date : " + last_date_search);
+    console.log("Mobile Number : " + mobile_number_search);
+    console.log("TrxID : " + trxid_search);
+  }
+
 
 }//

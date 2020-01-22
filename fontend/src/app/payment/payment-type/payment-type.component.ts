@@ -42,7 +42,7 @@ export class PaymentTypeComponent implements OnInit {
 
   trxid_search: string;
   mobile_number_search: string;
-  start_date_search: string;
+  payment_date_search: string;
   last_date_search: string;
 
 
@@ -98,7 +98,6 @@ export class PaymentTypeComponent implements OnInit {
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.className += " active";
   }
-
 
   public setTotalPaymentMobile() {
     this.ptService.getTotalMobilePaymentCount().subscribe(res => {
@@ -242,6 +241,14 @@ export class PaymentTypeComponent implements OnInit {
     }
     // this.clearAllFields();
     this.refreshTable();
+
+  }
+
+  public search_approv() {
+    console.log("Start Date : " + this.payment_date_search);
+    console.log("Last Date : " + this.last_date_search);
+    console.log("Mobile Number : " + this.mobile_number_search);
+    console.log("TrxID : " + this.trxid_search);
 
   }
 
