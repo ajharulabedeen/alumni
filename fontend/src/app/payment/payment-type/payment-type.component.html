@@ -141,10 +141,6 @@
               </select>
             </div>
 
-
-
-
-
             <!-- start : table All payment Type -->
             <div class="col-xs-12">
               <div class="box">
@@ -210,40 +206,40 @@
             <div class="col-md-12 offset-md-12">
               <div class="form-group">
                 <label>TrxID : </label>
-                <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
+                <input [(ngModel)]="trxid_search" type="text" class="form-control" placeholder="TrxID for search...">
               </div>
             </div>
 
             <div class="col-md-12 offset-md-12">
               <div class="form-group">
                 <label>Mobile Number : </label>
-                <input [(ngModel)]="name" type="text" class="form-control" placeholder="Mobile Number...!">
+                <input [(ngModel)]="mobile_number_search" type="text" class="form-control" placeholder="Mobile Number...!">
               </div>
             </div>
 
             <div class="col-md-3 offset-md-3">
               <div class="form-group">
                 <label>Payment Date</label>
-                <input [(ngModel)]="start_date" type="text" class="form-control" placeholder="{{start_date}}">
+                <input [(ngModel)]="start_date_search" type="text" class="form-control" placeholder="{{start_date_search}}">
               </div>
             </div>
             <div class="col-md-3 offset-md-3">
               <div class="form-group">
                 <label>Select Date</label>
-                <input [(ngModel)]="start_date" type="date" class="form-control" value="{{start_date}}">
+                <input [(ngModel)]="start_date_search" type="date" class="form-control" value="{{start_date_search}}">
               </div>
             </div>
 
             <div class="col-md-3 offset-md-3">
               <div class="form-group">
                 <label>Last Date</label>
-                <input [(ngModel)]="last_date" type="text" class="form-control" placeholder="{{last_date}}">
+                <input [(ngModel)]="last_date_search" type="text" class="form-control" placeholder="{{last_date_search}}">
               </div>
             </div>
             <div class="col-md-3 offset-md-3">
               <div class="form-group">
                 <label>Select Date</label>
-                <input [(ngModel)]="last_date" type="date" class="form-control" value="{{last_date}}">
+                <input [(ngModel)]="last_date_search" type="date" class="form-control" value="{{last_date_search}}">
               </div>
             </div>
 
@@ -296,7 +292,7 @@
               <div class="col-md-3 offset-md-3">
                 <div class="form-group" style="text-align: center">
                   <h4>Sort Order</h4>
-                  <input type="radio" name="m_pay" [(ngModel)]="sort_by_approv" value="ASC">Ascending<br>
+                  <input type="radio" name="m_pay" [(ngModel)]="sort_by_approv" value="ASC" checked="checked">Ascending<br>
                   <input type="radio" name="m_pay" [(ngModel)]="sort_by_approv" value="DESC">Descending<br>
                 </div>
               </div>
@@ -305,7 +301,7 @@
               <div>
                 <h4>Sort By</h4>
                 <select [(ngModel)]="sort_on_approv">
-                  <option value="id" selected>ID</option>
+                  <option value="id" [selected]="true" >ID</option>
                   <option value="amount">Amount</option>
                   <option value="payment_method">Payment Method</option>
                   <option value="mobile_number">Mobile Number</option>
@@ -313,6 +309,17 @@
                   <option value="status">Status</option>
                 </select>
               </div>
+
+<!--
+              <select [(ngModel)]="sort_on_approv" name="favorites">
+                <option value="American">American flamingo</option>
+                <option value="Greater">Greater flamingo</option>
+                <option value="Lesser">Lesser flamingo</option>
+                <option selected value="Andean">Andean flamingo</option>
+                <option value="Chilean">Chilean flamingo</option>
+                <option value="James's">James's flamingo</option>
+      </select> -->
+
 
               <!-- showing all payments mobile for approval -->
               <!-- table : showing all mobile payments -->

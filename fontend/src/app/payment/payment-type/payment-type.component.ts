@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PaymentType } from './payment-type.model';
 import { PaymentTypeService } from './payment-type.service';
 import { PaymentMobile } from '../payment-mobile/payment-mobile.model';
+import { Serializer } from '@angular/compiler';
 declare var jQuery: any;
 @Component({
   selector: 'app-payment-type',
@@ -37,23 +38,32 @@ export class PaymentTypeComponent implements OnInit {
   pageNumber_approv: number;
   sort_by_approv: string;
 
-  totalMobilePayment : number;
+  totalMobilePayment: number;
+
+  trxid_search: string;
+  mobile_number_search: string;
+  start_date_search: string;
+  last_date_search: string;
 
 
   constructor(private ptService: PaymentTypeService) { }
 
   ngOnInit() {
-    // this.start_date = "2019/01/12";
-    // this.start_date = "19/01/2019";
+    // start : test
+    // this.start_date_search = "01/01/2020";
+    // this.last_date_search = "01/01/2020";
+    this.sort_by_approv = "ASC";
+    // end : test
     document.body.className = 'hold-transition skin-blue sidebar-mini';
-    this.perPage = 5;
+    this.perPage = 10;
     this.pageNumber = 1;
     this.totalPage = (this.total / this.perPage);
     this.setTotalPaymentType();
     this.setTotalPaymentMobile();
     this.setExistingPayments();
+    this.sort_on_approv = 'id';
 
-    this.perPage_approv = 5;
+    this.perPage_approv = 10;
     this.pageNumber_approv = 1;
     this.totalPage_approv = (this.total_approv / this.perPage_approv);
 
@@ -153,17 +163,17 @@ export class PaymentTypeComponent implements OnInit {
     // console.log(this.myPaymentsArray);
   }//all  mobile payments for approval.
 
-/**
- * @description this will change the color of the button, based on the status.
- * @param status
- */
+  /**
+   * @description this will change the color of the button, based on the status.
+   * @param status
+   */
   public changeColor(status: string) {
     var color;
     if (status == "1") {
       color = 'lime';
     } else if (status == "0") {
       color = 'red';
-    }else{
+    } else {
       color = 'pink';
     }
 
