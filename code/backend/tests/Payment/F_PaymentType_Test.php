@@ -19,129 +19,49 @@ class F_PaymentType_Test extends TestCase
         // $this->Loggin();
         // $this->SignUp();
         // -----------------------------------
+        //1
         // $this->creation(); //done
+        //2
         // $this->update();//done
-        // $this->getAllEducations();//done
+        //3
         // $this->delete(8);//done
+        //4
         // $this->findOne(7); //done
+        //5
         // $this->getAll(5, 'ASC', 'last_date', 3); //done
+        //6
         // $this->countAll(); //done
     }
 
-    public function countAll()
-    {
-        $response = $this->json(
-            'POST',
-            'paymentType/countPaymentType',[]
-            // ,
-            // [
-            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
-            // ]
-        );
-
-        $d = $response->baseResponse->original;
-        //exception not catching error, instead haulting program.
-        error_log($d['status']);
-        error_log("Error : ");
-        // dd($response->exception);
-        // dd($d);
-
-    }
-
-    //passed
-    public function getAll($per_page, $sort_by, $sort_on, $pageNumber)
-    {
-        $response = $this->json(
-            'POST',
-            'paymentType/getAllPaymentType?page=' . $pageNumber,
-            [
-                'per_page' => $per_page,
-                'sort_by' => $sort_by,
-                "sort_on" => $sort_on,
-            ]
-            // ,
-            // [
-            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
-            // ]
-        );
-
-        $d = $response->baseResponse->original;
-        for ($i = 0; $i < $per_page; $i++) {
-            error_log($d[$i]->last_date);
-        }
-        //exception not catching error, instead haulting program.
-        // error_log($d);
-        error_log("Error : ");
-        // dd($response->exception);
-
-        // dd($d);
-    }
-
+    //1
     //done
-    public function findOne($id)
+    public function creation()
     {
         $response = $this->json(
             'POST',
-            'paymentType/findOnePaymentType',
+            'paymentType/create',
             [
-                'id' => $id
+                'name' => 'March-19 Fee',
+                'start_date' => '01-01-2019',
+                'last_date' => '31-12-2019',
+                'description' => 'Please pay the FEE!',
+                'amount' => '500',
             ]
             // ,
             // [
-            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+            //     "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u1@umail.com", "123456")
             // ]
         );
         $d = $response->baseResponse->original;
-        //exception not catching error, instead haulting program.
+        // $d = $response->exception;
+        //exception not catching error,instead haulting program.
         // error_log($d);
         error_log("Error : ");
         // dd($response->exception);
-
         dd($d);
     }
 
-    //done
-    public function delete($id)
-    {
-        $response = $this->json(
-            'POST',
-            'paymentType/delete',
-            [
-                'id' => $id
-            ]
-            // ,
-            // [
-            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
-            // ]
-        );
-        $d = $response->baseResponse->original;
-        //exception not catching error, instead haulting program.
-        // error_log($d);
-        error_log("Error : ");
-        // dd($response->exception);
-
-        dd($d);
-    }
-
-    public function getAllEducations()
-    {
-        $response = $this->json(
-            'POST',
-            'api/jobs/getAllJobsByUserId',
-            [],
-            [
-                "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
-            ]
-        );
-        $d = $response->baseResponse->original;
-        //exception not catching error, instead haulting program.
-        // error_log($d);
-        error_log("Error : ");
-        // dd($response->exception);
-
-        dd($d);
-    }
-
+    //2
     //done
     public function update()
     {
@@ -171,47 +91,113 @@ class F_PaymentType_Test extends TestCase
         dd($d);
     }
 
+    //3
     //done
-    public function creation()
+    public function delete($id)
     {
         $response = $this->json(
             'POST',
-            'paymentType/create',
+            'paymentType/delete',
             [
-                'name' => 'March-19 Fee',
-                'start_date' => '01-01-2019',
-                'last_date' => '31-12-2019',
-                'description' => 'Please pay the FEE!',
-                'amount' => '500',
+                'id' => $id
             ]
             // ,
             // [
-            //     "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u1@umail.com", "123456")
+            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
             // ]
         );
         $d = $response->baseResponse->original;
-        // $d = $response->exception;
-        //exception not catching error,instead haulting program.
+        //exception not catching error, instead haulting program.
         // error_log($d);
+        error_log("Error : ");
+        // dd($response->exception);
+
+        dd($d);
+    }
+
+    //4
+    //done
+    public function findOne($id)
+    {
+        $response = $this->json(
+            'POST',
+            'paymentType/findOnePaymentType',
+            [
+                'id' => $id
+            ]
+            // ,
+            // [
+            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+            // ]
+        );
+        $d = $response->baseResponse->original;
+        //exception not catching error, instead haulting program.
+        // error_log($d);
+        error_log("Error : ");
+        // dd($response->exception);
+
+        dd($d);
+    }
+
+    //5
+    //passed
+    public function getAll($per_page, $sort_by, $sort_on, $pageNumber)
+    {
+        $response = $this->json(
+            'POST',
+            'paymentType/getAllPaymentType?page=' . $pageNumber,
+            [
+                'per_page' => $per_page,
+                'sort_by' => $sort_by,
+                "sort_on" => $sort_on,
+            ]
+            // ,
+            // [
+            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+            // ]
+        );
+
+        $d = $response->baseResponse->original;
+        for ($i = 0; $i < $per_page; $i++) {
+            error_log($d[$i]->last_date);
+        }
+        //exception not catching error, instead haulting program.
+        // error_log($d);
+        error_log("Error : ");
+        // dd($response->exception);
+
+        // dd($d);
+    }
+
+    //6
+    /**
+     * total number of payment type will be returned.
+     */
+    public function countAll()
+    {
+        $response = $this->json(
+            'POST',
+            'paymentType/countPaymentType',
+            []
+            // ,
+            // [
+            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+            // ]
+        );
+
+
+
+        $d = $response->baseResponse->original;
+        //exception not catching error, instead haulting program.
+        error_log($d['status']);
         error_log("Error : ");
         // dd($response->exception);
         dd($d);
     }
 
-    public function getToken($mail, $pass)
-    {
-        $response = $this->json(
-            'POST',
-            '/api/login',
-            [
-                'email' => $mail,
-                'password' => $pass
-            ]
-        );
-        $d = $response->baseResponse->original;
-        error_log($d['access_token']);
-    }
 
+
+    // ---------------------------------------------
     // thses method kept to use when feature test with auth will be done.
     public function Loggin()
     {
@@ -278,5 +264,20 @@ class F_PaymentType_Test extends TestCase
         // dd($d);
         // $t = json_decode($d);
         // prettyPrint( $t[0] );
+
+    }
+
+    public function getToken($mail, $pass)
+    {
+        $response = $this->json(
+            'POST',
+            '/api/login',
+            [
+                'email' => $mail,
+                'password' => $pass
+            ]
+        );
+        $d = $response->baseResponse->original;
+        error_log($d['access_token']);
     }
 }//class
