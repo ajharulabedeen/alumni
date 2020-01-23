@@ -204,6 +204,20 @@
             <h3>
               <button class="btn btn-info" (click)="search_approv()">Search</button>
             </h3>
+            <!-- sort by column name -->
+            <div class="col-md-12 offset-md-12">
+              <div class="form-group">
+                <h4>Search By :</h4>
+                <select [(ngModel)]="sort_on_approv">
+                  <option value="id" [selected]="true">ID</option>
+                  <option value="amount">Amount</option>
+                  <option value="payment_method">Payment Method</option>
+                  <option value="mobile_number">Mobile Number</option>
+                  <option value="date">Date</option>
+                  <option value="status">Status</option>
+                </select>
+              </div>
+            </div>
             <div class="col-md-12 offset-md-12">
               <div class="form-group">
                 <label>Value : </label>
