@@ -44,6 +44,8 @@ export class PaymentTypeComponent implements OnInit {
   mobile_number_search: string;
   payment_date_search: string;
   last_date_search: string;
+  value_search: string;
+
 
   active_search: boolean;
 
