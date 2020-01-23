@@ -208,7 +208,7 @@
             <div class="col-md-12 offset-md-12">
               <div class="form-group">
                 <h4>Search By :</h4>
-                <select [(ngModel)]="sort_on_approv">
+                <select [(ngModel)]="search_by">
                   <option value="id" [selected]="true">ID</option>
                   <option value="amount">Amount</option>
                   <option value="payment_method">Payment Method</option>
@@ -221,7 +221,7 @@
             <div class="col-md-12 offset-md-12">
               <div class="form-group">
                 <label>Value : </label>
-                <input [(ngModel)]="value_search" type="text" class="form-control" placeholder="TrxID for search...">
+                <input [(ngModel)]="value_search" type="text" class="form-control" placeholder="search...">
               </div>
             </div>
           </div>

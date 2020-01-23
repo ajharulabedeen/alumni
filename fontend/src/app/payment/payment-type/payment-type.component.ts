@@ -45,6 +45,7 @@ export class PaymentTypeComponent implements OnInit {
   payment_date_search: string;
   last_date_search: string;
   value_search: string;
+  search_by: string;
 
 
   active_search: boolean;
@@ -56,6 +57,7 @@ export class PaymentTypeComponent implements OnInit {
     // this.start_date_search = "01/01/2020";
     // this.last_date_search = "01/01/2020";
     this.sort_by_approv = "ASC";
+    this.search_by = "mobile_number";
     // end : test
     document.body.className = 'hold-transition skin-blue sidebar-mini';
     this.perPage = 10;
