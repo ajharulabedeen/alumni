@@ -30,7 +30,6 @@ export class PaymentMobileComponent implements OnInit {
 
   onePaymentType = new PaymentType();
 
-
   ptsArray = new Array();
   myPaymentsArray = new Array();
   showNote: string;

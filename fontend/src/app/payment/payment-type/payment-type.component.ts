@@ -3,6 +3,7 @@ import { PaymentType } from './payment-type.model';
 import { PaymentTypeService } from './payment-type.service';
 import { PaymentMobile } from '../payment-mobile/payment-mobile.model';
 import { Serializer } from '@angular/compiler';
+import { PaymentMobileService } from '../payment-mobile/payment-mobile.service';
 declare var jQuery: any;
 @Component({
   selector: 'app-payment-type',
@@ -53,7 +54,7 @@ export class PaymentTypeComponent implements OnInit {
 
   active_search: boolean;
 
-  constructor(private ptService: PaymentTypeService) { }
+  constructor(private ptService: PaymentTypeService, private ptmService: PaymentMobileService) { }
 
   ngOnInit() {
     // start : test
@@ -319,6 +320,31 @@ export class PaymentTypeComponent implements OnInit {
   }
 
   // start : payment-approval
+  onePaymentType = new PaymentType();
+
+  //refactor : same method twice.
+  public showPaymentDetails(type_ID: string) {
+    console.log(type_ID);
+    // console.log("Before : " + this.ptmService.onePaymentType);
+    this.ptmService.getOnePayementType(type_ID);
+    console.log("After : " + this.ptmService.onePaymentType.subscribe());
+    this.ptmService.onePaymentType.subscribe(pt => {
+
+      for (const key1 in pt) {
+        // console.log(key1);
+        // console.log(pt[key1]);
+        this.onePaymentType.$amount = pt[key1]['amount'];
+        this.onePaymentType.$description = pt[key1]['description'];
+        this.onePaymentType.$id = pt[key1]['id'];
+        this.onePaymentType.$last_date = pt[key1]['last_date'];
+        this.onePaymentType.$name = pt[key1]['name'];
+        this.onePaymentType.$start_date = pt[key1]['start_date'];
+      }
+    });
+    console.log("onePaymentType : " + this.onePaymentType.$description);
+  }
+
+
   //may be not needed.
   public showNote(note: string) {
     this.payment_note = note;
