@@ -128,48 +128,7 @@ export class PaymentTypeComponent implements OnInit {
   }
 
 
-  public refreshTable_Approval() {
 
-    // console.log("Load Payment mobile for approval!");
-    console.log("Sort On : " + this.sort_on_approv);
-
-    this.refreshTable_mobilePaymentApproval();
-
-  }//all mobile payments for approval.
-
-  /**
-   * refreshing myPayments moibile Table, means so far payments user has done :
-   */
-  public refreshTable_mobilePaymentApproval() {
-    this.paymentsForApporv = [];
-    this.ptService.getAllMobilePayment(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv);
-    this.ptService.myMobilePayments.subscribe(ptm => {
-      this.paymentsForApporv = [];
-      for (const key1 in ptm) {
-        // console.log(key1);
-        // console.log(pt[key1]['id']);
-        var myPtm = new PaymentMobile();
-        // pt1.$id = pt[key1]["id"];
-        // myPtm.$name = ptm[key1]["name"];
-
-        myPtm.$user_id = ptm[key1]["user_id"];
-        myPtm.$amount = ptm[key1]["amount"];
-        myPtm.$type_ID = ptm[key1]["type_ID"];
-        myPtm.$date = ptm[key1]["date"];
-        myPtm.$payment_method = ptm[key1]["payment_method"];
-        myPtm.$mobile_number = ptm[key1]["mobile_number"];
-        myPtm.$trx_id = ptm[key1]["trx_id"];
-        myPtm.$status = ptm[key1]["status"];
-        myPtm.$created_at = ptm[key1]["created_at"];
-        myPtm.$notes = ptm[key1]["notes"];
-        myPtm.$approved_date = ptm[key1]["approved_date"];
-        this.paymentsForApporv.push(myPtm);
-      }//for
-      // console.log(this.myPaymentsArray);
-
-    });
-    // console.log(this.myPaymentsArray);
-  }//all  mobile payments for approval.
 
   /**
    * @description this will change the color of the button, based on the status.
@@ -350,6 +309,50 @@ export class PaymentTypeComponent implements OnInit {
     this.payment_note = note;
     console.log(this.payment_note);
   }
+
+
+
+  public refreshTable_Approval() {
+    // console.log("Load Payment mobile for approval!");
+    console.log("Sort On : " + this.sort_on_approv);
+    this.refreshTable_mobilePaymentApproval();
+  }//all mobile payments for approval.
+
+  /**
+   * refreshing myPayments moibile Table, means so far payments user has done :
+   */
+  public refreshTable_mobilePaymentApproval() {
+    this.paymentsForApporv = [];
+    this.ptService.getAllMobilePayment(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv);
+    this.ptService.myMobilePayments.subscribe(ptm => {
+      this.paymentsForApporv = [];
+      for (const key1 in ptm) {
+        // console.log(key1);
+        // console.log(pt[key1]['id']);
+        var myPtm = new PaymentMobile();
+        // pt1.$id = pt[key1]["id"];
+        // myPtm.$name = ptm[key1]["name"];
+
+        myPtm.$user_id = ptm[key1]["user_id"];
+        myPtm.$amount = ptm[key1]["amount"];
+        myPtm.$type_ID = ptm[key1]["type_ID"];
+        myPtm.$date = ptm[key1]["date"];
+        myPtm.$payment_method = ptm[key1]["payment_method"];
+        myPtm.$mobile_number = ptm[key1]["mobile_number"];
+        myPtm.$trx_id = ptm[key1]["trx_id"];
+        myPtm.$status = ptm[key1]["status"];
+        myPtm.$created_at = ptm[key1]["created_at"];
+        myPtm.$notes = ptm[key1]["notes"];
+        myPtm.$approved_date = ptm[key1]["approved_date"];
+        this.paymentsForApporv.push(myPtm);
+      }//for
+      // console.log(this.myPaymentsArray);
+
+    });
+    // console.log(this.myPaymentsArray);
+  }//all  mobile payments for approval.
+
+
   // end : payment-approval
 
 }//clas
