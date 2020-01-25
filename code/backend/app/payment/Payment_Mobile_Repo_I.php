@@ -1,10 +1,12 @@
 <?php
+
 namespace App\payment;
 
 use App\payment\PaymentMobile;
 
 
-interface Payment_Mobile_Repo_I {
+interface Payment_Mobile_Repo_I
+{
     //1
     public function create(PaymentMobile $paymentMobile);
     //2
@@ -23,4 +25,11 @@ interface Payment_Mobile_Repo_I {
     public function countPaymentMobileByAUser($user_id);
     //9
     public function getAllPaymentMobileByAUser($user_id);
+    //10
+    /**
+     * @param id id of the payment, not the user id or the payment type id.
+     * @param user_id who is approving the payment.
+     * @return response string "ok"/"fail" will be back for success.
+     */
+    public function approve_mobile_payment($user_id, $id);
 }

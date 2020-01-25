@@ -107,4 +107,11 @@ class Payment_Mobile_Controller extends Controller
         $data = $this->paymentMobileRepo->getAllPaymentMobileByAUser($user_id);
         return $data;
     }
+
+    //start :  payment admin
+    public function approve_mobile_payment(Request $r){
+
+    }
+    //end :  payment admin
+
 }//class

@@ -18,9 +18,9 @@ class U_PaymentMobile_Test extends TestCase
         // $this->getAllPaymentMobile(10,"ASC","payment_method");//done
         // $this->getAllPaymentMobile(10,"DESC","amount");//done
         // $this->getMobilePaymentByAUser(4);
-        error_log($this->countAll());//done
-
+        //  error_log($this->countAll());//done
         // error_log($this->findOnePaymentType(25)->amount);
+        error_log($this->approve_payment(4, 1));
 
         // error_log($this->delete(25));
         // error_log($this->update(25,"2500"));
@@ -97,8 +97,8 @@ class U_PaymentMobile_Test extends TestCase
         $repo = new Payment_Mobile_Repo_Impl();
         $data = $repo->getAllPaymentMobileByAUser($user_id);
         error_log("Amount" . "---" . "Payment Method");
-        for ($i = 0; $i <30; $i++) {
-            error_log("Index " . ($i+1) . ": " . $data[$i]->amount  . "---" . $data[$i]->payment_method);
+        for ($i = 0; $i < 30; $i++) {
+            error_log("Index " . ($i + 1) . ": " . $data[$i]->amount  . "---" . $data[$i]->payment_method);
         }
     }
 
@@ -125,6 +125,7 @@ class U_PaymentMobile_Test extends TestCase
         // return PaymentType::orderBy($sort_on,$order)->paginate($per_page)->all();
     }
 
+    //1
     /**
      * A basic test example.
      *
@@ -166,6 +167,15 @@ class U_PaymentMobile_Test extends TestCase
         return $status;
     }
 
+
+    public function approve_payment($user_id, $id)
+    {
+        $repoPayment = new Payment_Mobile_Repo_Impl();
+        $pt = new PaymentMobile();
+        $pt = $this->findOnePaymentType($id);
+        $status = $repoPayment->approve_mobile_payment($user_id, $id);
+        return $status;
+    }
 
 
 
