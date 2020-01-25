@@ -47,8 +47,8 @@ export class PaymentTypeComponent implements OnInit {
   value_search: string;
   search_by: string;
 
-  payment_note:string;
-  noteEdit:boolean;
+  payment_note: string;
+  noteEdit: boolean;
 
 
   active_search: boolean;
@@ -317,5 +317,13 @@ export class PaymentTypeComponent implements OnInit {
     this.active_search = !this.active_search;
     console.log("ActiveSearch : " + this.active_search);
   }
+
+  // start : payment-approval
+  //may be not needed.
+  public showNote(note: string) {
+    this.payment_note = note;
+    console.log(this.payment_note);
+  }
+  // end : payment-approval
 
 }//clas
