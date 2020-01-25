@@ -47,6 +47,9 @@ export class PaymentTypeComponent implements OnInit {
   value_search: string;
   search_by: string;
 
+  payment_note:string;
+  noteEdit:boolean;
+
 
   active_search: boolean;
 
