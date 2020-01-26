@@ -1,2 +1,2 @@
 # alumni
-Inviting people to contribute.
+Inviting people to contribute. For porject details please check the plan.ods file.
