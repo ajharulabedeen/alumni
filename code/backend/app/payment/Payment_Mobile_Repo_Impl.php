@@ -4,6 +4,7 @@ namespace App\payment;
 
 use App\payment\PaymentType;
 use App\payment\PaymentMobile;
+use App\Utils\Utils;
 
 class Payment_Mobile_Repo_Impl implements Payment_Mobile_Repo_I
 {
@@ -78,6 +79,7 @@ class Payment_Mobile_Repo_Impl implements Payment_Mobile_Repo_I
         try{
             $paymentMobileOrgin = PaymentMobile::find($id);
             $paymentMobileOrgin->status = 1;
+            $paymentMobileOrgin->approved_date = date("Y-m-d h:i:s");
             $paymentMobileOrgin->update();
             $status = "ok";
         }catch (Exception $e){
