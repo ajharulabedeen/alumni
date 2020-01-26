@@ -110,7 +110,11 @@ class Payment_Mobile_Controller extends Controller
 
     //start :  payment admin
     public function approve_mobile_payment(Request $r){
-
+        //refactor; later have to replace by Auth.
+        $user_id = "4";
+        $id = $r->id;
+        $data = $this->paymentMobileRepo->approve_mobile_payment($user_id, $id);
+        return $data;
     }
     //end :  payment admin
 

@@ -80,9 +80,12 @@ Route::post('paymentType/delete', 'Payment_Type_Controller@delete');
 // Route::post('payment/mobile/delete', 'Payment_Mobile_Controller@delete');
 // Route::post('payment/mobile/update', 'Payment_Mobile_Controller@update');
 // Route::post('payment/mobile/getAllPaymentMobileByAUser', 'Payment_Mobile_Controller@getAllPaymentMobileByAUser');
-Route::post('payment/mobile/countPaymentMobile', 'Payment_Mobile_Controller@countPaymentMobile');
 // Route::post('payment/mobile/countPaymentMobileByAUser', 'Payment_Mobile_Controller@countPaymentMobileByAUser');
+//not moved
+Route::post('payment/mobile/countPaymentMobile', 'Payment_Mobile_Controller@countPaymentMobile');
 Route::post('payment/mobile/getAllPaymentMobile', 'Payment_Mobile_Controller@getAllPaymentMobile');
+Route::post('payment/mobile/approve_mobile_payment', 'Payment_Mobile_Controller@approve_mobile_payment');
+
 
 
 Route::post('events/create', 'Events_Controller@create');

@@ -325,7 +325,7 @@
                           <td>{{i+1}}</td>
                           <td>
                             <button class="btn btn-xs" data-toggle="modal" data-target="#modal_approve_payment"
-                              [ngStyle]="changeColor(ptm.status)">{{ptm.status}} : Approve</button>
+                              [ngStyle]="changeColor(ptm.status)" (click)="payment_id_approval=ptm.id">{{ptm.status}} : Approve</button>
                           </td>
                           <td>
                             <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#modal_note"
@@ -423,7 +423,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Approve</button>
+            <button type="button" class="btn btn-primary" (click)="approve_payment()" >Approve</button>
           </div>
         </div>
       </div>

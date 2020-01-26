@@ -51,6 +51,7 @@ export class PaymentTypeComponent implements OnInit {
   payment_note: string;
   noteEdit: boolean;
 
+  payment_id_approval:string;
 
   active_search: boolean;
 
@@ -278,8 +279,20 @@ export class PaymentTypeComponent implements OnInit {
     console.log("ActiveSearch : " + this.active_search);
   }
 
-  // start : payment-approval
+  //------------------------ start : payment-approval
+  //------------------------ start : payment-approval
+
+  //------------------------ start : payment-approval
+  //------------------------ start : payment-approval
   onePaymentType = new PaymentType();
+
+  public approve_payment(){
+    this.payment_id_approval;
+    console.log("this.payment_id_approval : "+this.payment_id_approval);
+    this.ptService.approve_mobile_payment(this.payment_id_approval);
+    //refactor
+    this.refreshTable();
+  }
 
   //refactor : same method twice.
   public showPaymentDetails(type_ID: string) {
@@ -333,6 +346,7 @@ export class PaymentTypeComponent implements OnInit {
         // pt1.$id = pt[key1]["id"];
         // myPtm.$name = ptm[key1]["name"];
 
+        myPtm.$id = ptm[key1]["id"];
         myPtm.$user_id = ptm[key1]["user_id"];
         myPtm.$amount = ptm[key1]["amount"];
         myPtm.$type_ID = ptm[key1]["type_ID"];
@@ -351,6 +365,7 @@ export class PaymentTypeComponent implements OnInit {
     });
     // console.log(this.myPaymentsArray);
   }//all  mobile payments for approval.
+
 
 
   // end : payment-approval

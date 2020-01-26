@@ -131,5 +131,18 @@ export class PaymentTypeService {
     console.log("TrxID : " + trxid_search);
   }
 
+public approve_mobile_payment(id : string){
+  return this.http.post<any>(
+      'http://127.0.0.1:8000/payment/mobile/approve_mobile_payment',
+      {
+        'id': id
+      },
+      this.authService.getHeader(),
+  ).subscribe((ptm: any) => {
+    // console.log("One Job : " + pt["0"]["organization_name"]);
+    // console.log(ptm);
+    // this.myMobilePayments.next(ptm);
+  });
+}
 
 }//
