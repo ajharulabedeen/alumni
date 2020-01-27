@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { PaymentType } from './payment-type.model';
-import { PaymentTypeService } from './payment-type.service';
-import { PaymentMobile } from '../payment-mobile/payment-mobile.model';
-import { Serializer } from '@angular/compiler';
-import { PaymentMobileService } from '../payment-mobile/payment-mobile.service';
+import {Component, OnInit} from '@angular/core';
+import {PaymentType} from './payment-type.model';
+import {PaymentTypeService} from './payment-type.service';
+import {PaymentMobile} from '../payment-mobile/payment-mobile.model';
+import {Serializer} from '@angular/compiler';
+import {PaymentMobileService} from '../payment-mobile/payment-mobile.service';
+
 declare var jQuery: any;
+
 @Component({
   selector: 'app-payment-type',
   templateUrl: './payment-type.component.html',
@@ -51,18 +53,19 @@ export class PaymentTypeComponent implements OnInit {
   payment_note: string;
   noteEdit: boolean;
 
-  payment_id_approval:string;
+  payment_id_approval: string;
 
   active_search: boolean;
 
-  constructor(private ptService: PaymentTypeService, private ptmService: PaymentMobileService) { }
+  constructor(private ptService: PaymentTypeService, private ptmService: PaymentMobileService) {
+  }
 
   ngOnInit() {
     // start : test
     // this.start_date_search = "01/01/2020";
     // this.last_date_search = "01/01/2020";
-    this.sort_by_approv = "ASC";
-    this.search_by = "mobile_number";
+    this.sort_by_approv = 'ASC';
+    this.search_by = 'mobile_number';
     // end : test
     document.body.className = 'hold-transition skin-blue sidebar-mini';
     this.perPage = 10;
@@ -78,14 +81,13 @@ export class PaymentTypeComponent implements OnInit {
     this.totalPage_approv = (this.total_approv / this.perPage_approv);
 
     //start : test code
-    (function ($) {
-      $(document).ready(function () {
-        console.log("\n\nHello from jQuery!\n\n");
+    (function($) {
+      $(document).ready(function() {
+        console.log('\n\nHello from jQuery!\n\n');
       });
     })(jQuery);
     // this.hello();
     //end : test code
-
 
 
   }//onInit
@@ -97,28 +99,28 @@ export class PaymentTypeComponent implements OnInit {
 
   public openCity(evt, tabName) {
     var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
+    tabcontent = document.getElementsByClassName('tabcontent');
     for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
+      tabcontent[i].style.display = 'none';
     }
-    tablinks = document.getElementsByClassName("tablinks");
+    tablinks = document.getElementsByClassName('tablinks');
     for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
+      tablinks[i].className = tablinks[i].className.replace(' active', '');
     }
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
+    document.getElementById(tabName).style.display = 'block';
+    evt.currentTarget.className += ' active';
   }
 
   public setTotalPaymentMobile() {
     this.ptService.getTotalMobilePaymentCount().subscribe(res => {
-      this.totalMobilePayment = res["status"];
+      this.totalMobilePayment = res['status'];
     });
   }
 
 
   public setTotalPaymentType() {
     this.ptService.getTotalCount().subscribe(res => {
-      this.total = res["status"];
+      this.total = res['status'];
     });
   }
 
@@ -129,17 +131,15 @@ export class PaymentTypeComponent implements OnInit {
   }
 
 
-
-
   /**
    * @description this will change the color of the button, based on the status.
    * @param status
    */
   public changeColor(status: string) {
     var color;
-    if (status == "1") {
+    if (status == '1') {
       color = 'lime';
-    } else if (status == "0") {
+    } else if (status == '0') {
       color = 'red';
     } else {
       color = 'pink';
@@ -158,20 +158,20 @@ export class PaymentTypeComponent implements OnInit {
 
   public setExistingPayments() {
     switch (this.sort_on) {
-      case "ID":
-        this.sort_on = "id";
+      case 'ID':
+        this.sort_on = 'id';
         break;
-      case "Name":
-        this.sort_on = "name";
+      case 'Name':
+        this.sort_on = 'name';
         break;
-      case "Start Date":
-        this.sort_on = "start_date";
+      case 'Start Date':
+        this.sort_on = 'start_date';
         break;
-      case "End Date":
-        this.sort_on = "last_date";
+      case 'End Date':
+        this.sort_on = 'last_date';
         break;
-      case "Amount":
-        this.sort_on = "amount";
+      case 'Amount':
+        this.sort_on = 'amount';
         break;
       default:
         break;
@@ -185,12 +185,12 @@ export class PaymentTypeComponent implements OnInit {
         // console.log(key1);
         // console.log(pt[key1]['id']);
         var pt1 = new PaymentType();
-        pt1.$id = pt[key1]["id"];
-        pt1.$name = pt[key1]["name"];
-        pt1.$start_date = pt[key1]["start_date"];
-        pt1.$last_date = pt[key1]["last_date"];
-        pt1.$description = pt[key1]["description"];
-        pt1.$amount = pt[key1]["amount"];
+        pt1.$id = pt[key1]['id'];
+        pt1.$name = pt[key1]['name'];
+        pt1.$start_date = pt[key1]['start_date'];
+        pt1.$last_date = pt[key1]['last_date'];
+        pt1.$description = pt[key1]['description'];
+        pt1.$amount = pt[key1]['amount'];
         this.ptsArray.push(pt1);
       }
     });
@@ -214,10 +214,10 @@ export class PaymentTypeComponent implements OnInit {
   }
 
   public search_approv() {
-    console.log("Start Date : " + this.payment_date_search);
-    console.log("Last Date : " + this.last_date_search);
-    console.log("Mobile Number : " + this.mobile_number_search);
-    console.log("TrxID : " + this.trxid_search);
+    console.log('Start Date : ' + this.payment_date_search);
+    console.log('Last Date : ' + this.last_date_search);
+    console.log('Mobile Number : ' + this.mobile_number_search);
+    console.log('TrxID : ' + this.trxid_search);
 
   }
 
@@ -227,7 +227,7 @@ export class PaymentTypeComponent implements OnInit {
 
     this.updatePaymentType = true;
     // this.addNew = false;
-    console.log("PT Name : " + pt.$name);
+    console.log('PT Name : ' + pt.$name);
     this.setPTForUpdate(pt);
     this.idUpdate = pt.$id;
   }
@@ -266,17 +266,17 @@ export class PaymentTypeComponent implements OnInit {
   }
 
   public clearAllFields() {
-    this.name = "";
-    this.start_date = "";
-    this.last_date = "";
-    this.amount = "";
-    this.description = "";
+    this.name = '';
+    this.start_date = '';
+    this.last_date = '';
+    this.amount = '';
+    this.description = '';
 
   }
 
   public toggle_active_search() {
     this.active_search = !this.active_search;
-    console.log("ActiveSearch : " + this.active_search);
+    console.log('ActiveSearch : ' + this.active_search);
   }
 
   //------------------------ start : payment-approval
@@ -286,20 +286,27 @@ export class PaymentTypeComponent implements OnInit {
   //------------------------ start : payment-approval
   onePaymentType = new PaymentType();
 
-  public approve_payment(){
+  public approve_payment() {
+    var local: string;
     this.payment_id_approval;
-    console.log("this.payment_id_approval : "+this.payment_id_approval);
-    this.ptService.approve_mobile_payment(this.payment_id_approval);
-    //refactor
-    this.refreshTable();
+    console.log('this.payment_id_approval : ' + this.payment_id_approval);
+    this.ptService.approve_mobile_payment(this.payment_id_approval).subscribe((data: any) => {
+      local = data['status'];
+      //refactor
+      if (local == 'ok') {
+        this.refreshTable_Approval();
+      }
+    });
+
   }
+
 
   //refactor : same method twice.
   public showPaymentDetails(type_ID: string) {
     console.log(type_ID);
     // console.log("Before : " + this.ptmService.onePaymentType);
     this.ptmService.getOnePayementType(type_ID);
-    console.log("After : " + this.ptmService.onePaymentType.subscribe());
+    console.log('After : ' + this.ptmService.onePaymentType.subscribe());
     this.ptmService.onePaymentType.subscribe(pt => {
 
       for (const key1 in pt) {
@@ -313,9 +320,8 @@ export class PaymentTypeComponent implements OnInit {
         this.onePaymentType.$start_date = pt[key1]['start_date'];
       }
     });
-    console.log("onePaymentType : " + this.onePaymentType.$description);
+    console.log('onePaymentType : ' + this.onePaymentType.$description);
   }
-
 
   //may be not needed.
   public showNote(note: string) {
@@ -324,10 +330,9 @@ export class PaymentTypeComponent implements OnInit {
   }
 
 
-
   public refreshTable_Approval() {
     // console.log("Load Payment mobile for approval!");
-    console.log("Sort On : " + this.sort_on_approv);
+    console.log('Sort On : ' + this.sort_on_approv);
     this.refreshTable_mobilePaymentApproval();
   }//all mobile payments for approval.
 
@@ -346,18 +351,18 @@ export class PaymentTypeComponent implements OnInit {
         // pt1.$id = pt[key1]["id"];
         // myPtm.$name = ptm[key1]["name"];
 
-        myPtm.$id = ptm[key1]["id"];
-        myPtm.$user_id = ptm[key1]["user_id"];
-        myPtm.$amount = ptm[key1]["amount"];
-        myPtm.$type_ID = ptm[key1]["type_ID"];
-        myPtm.$date = ptm[key1]["date"];
-        myPtm.$payment_method = ptm[key1]["payment_method"];
-        myPtm.$mobile_number = ptm[key1]["mobile_number"];
-        myPtm.$trx_id = ptm[key1]["trx_id"];
-        myPtm.$status = ptm[key1]["status"];
-        myPtm.$created_at = ptm[key1]["created_at"];
-        myPtm.$notes = ptm[key1]["notes"];
-        myPtm.$approved_date = ptm[key1]["approved_date"];
+        myPtm.$id = ptm[key1]['id'];
+        myPtm.$user_id = ptm[key1]['user_id'];
+        myPtm.$amount = ptm[key1]['amount'];
+        myPtm.$type_ID = ptm[key1]['type_ID'];
+        myPtm.$date = ptm[key1]['date'];
+        myPtm.$payment_method = ptm[key1]['payment_method'];
+        myPtm.$mobile_number = ptm[key1]['mobile_number'];
+        myPtm.$trx_id = ptm[key1]['trx_id'];
+        myPtm.$status = ptm[key1]['status'];
+        myPtm.$created_at = ptm[key1]['created_at'];
+        myPtm.$notes = ptm[key1]['notes'];
+        myPtm.$approved_date = ptm[key1]['approved_date'];
         this.paymentsForApporv.push(myPtm);
       }//for
       // console.log(this.myPaymentsArray);
@@ -365,7 +370,6 @@ export class PaymentTypeComponent implements OnInit {
     });
     // console.log(this.myPaymentsArray);
   }//all  mobile payments for approval.
-
 
 
   // end : payment-approval
