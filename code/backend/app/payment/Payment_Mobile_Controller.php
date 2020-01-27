@@ -114,7 +114,7 @@ class Payment_Mobile_Controller extends Controller
         $user_id = "4";
         $id = $r->id;
         $data = $this->paymentMobileRepo->approve_mobile_payment($user_id, $id);
-        return $data;
+        return ['status' => $data ];
     }
     //end :  payment admin
 
