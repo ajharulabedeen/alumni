@@ -264,9 +264,9 @@
               <!-- showing all payments mobile for approval -->
               <div class="col-md-3 offset-md-3">
                 <div class="form-group" style="text-align: center">
-                  <button class="btn btn-primary btn-xs" (click)="previousPage()">Previous</button>
+                  <button class="btn btn-primary btn-xs" (click)="previousPage_approval()">Previous</button>
                   <label class="btn btn-danger btn-xs ">Page Number</label>
-                  <button class="btn btn-primary btn-xs" (click)="nextPage()">Next</button>
+                  <button class="btn btn-primary btn-xs" (click)="nextPage_approval()">Next</button>
                   <input style="text-align: center" [(ngModel)]="pageNumber_approv" type="number" class="form-control"
                     value="{{pageNumber_approv}}">
                 </div>
@@ -326,7 +326,7 @@
                           <td>{{i+1}}</td>
                           <td>
                             <button class="btn btn-xs" data-toggle="modal" data-target="#modal_approve_payment"
-                              [ngStyle]="changeColor(ptm.status)" (click)="payment_id_approval=ptm.id">{{ptm.status}} : Approve</button>
+                              [ngStyle]="changeColor(ptm.status)" (click)="payment_id_approval=ptm.id">Approve</button>
                           </td>
                           <td>
                             <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#modal_note"

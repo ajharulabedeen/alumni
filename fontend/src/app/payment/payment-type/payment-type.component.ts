@@ -69,16 +69,20 @@ export class PaymentTypeComponent implements OnInit {
     // end : test
     document.body.className = 'hold-transition skin-blue sidebar-mini';
     this.perPage = 10;
+    this.perPage_approv = 10;
     this.pageNumber = 1;
+    this.pageNumber_approv = 1;
     this.totalPage = (this.total / this.perPage);
+    this.totalPage_approv = (this.totalMobilePayment / this.perPage_approv);
     this.setTotalPaymentType();
     this.setTotalPaymentMobile();
     this.setExistingPayments();
     this.sort_on_approv = 'id';
 
+    //refactor
     this.perPage_approv = 10;
     this.pageNumber_approv = 1;
-    this.totalPage_approv = (this.total_approv / this.perPage_approv);
+    this.totalPage_approv = (this.totalMobilePayment / this.perPage_approv);
 
     //start : test code
     (function($) {
@@ -372,6 +376,24 @@ export class PaymentTypeComponent implements OnInit {
   }//all  mobile payments for approval.
 
 
+  public nextPage_approval() {
+    console.log('Next Page Approval : ');
+    console.log('Total Page : '+this.totalMobilePayment);
+    if (this.pageNumber_approv < (this.totalMobilePayment / this.perPage_approv)) {
+      this.pageNumber_approv += 1;
+      this.refreshTable_Approval();
+    }
+  }
+
+  public previousPage_approval() {
+    console.log('Previous Page Approval : ');
+    if (this.pageNumber_approv > 1) {
+      this.pageNumber_approv -= 1;
+      this.refreshTable_Approval();
+    }
+  }
+
   // end : payment-approval
+
 
 }//clas
