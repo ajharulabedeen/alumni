@@ -102,4 +102,20 @@ class Payment_Mobile_Repo_Impl implements Payment_Mobile_Repo_I
         $data = PaymentMobile::where($column_name,$like,$key )->orderBy($sort_on, $order)->paginate($per_page)->all();
         return $data;
     }
+
+    //12
+    public function search_count($per_page, $sort_by, $sort_on, $column_name, $key)
+    {
+        // TODO: Implement search_count() method.
+        if ($sort_by == "ASC") {
+            $order = "ASC";
+        } else {
+            $order = "DESC";
+        }
+        $like='LIKE';
+//        $key='%' . $key;
+        $key=$key . '%';
+        $data = PaymentMobile::where($column_name,$like,$key )->orderBy($sort_on, $order)->count();
+        return $data;
+    }
 }//class

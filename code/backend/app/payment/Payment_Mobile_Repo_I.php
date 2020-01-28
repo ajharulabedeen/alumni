@@ -36,5 +36,8 @@ interface Payment_Mobile_Repo_I
     //11
     public function search($per_page, $sort_by, $sort_on, $column_name, $key);
 
+    //12
+    public function search_count($per_page, $sort_by, $sort_on, $column_name, $key);
+
 
 }
