@@ -88,4 +88,13 @@ class Payment_Mobile_Repo_Impl implements Payment_Mobile_Repo_I
         return $status;
     }
 
+    //11
+    public function search($column_name, $key)
+    {
+        $like='LIKE';
+        $key='%' . $key;
+        // TODO: Implement search() method.
+        $data = PaymentMobile::where($column_name,$like,$key )->get();
+        return $data;
+    }
 }//class

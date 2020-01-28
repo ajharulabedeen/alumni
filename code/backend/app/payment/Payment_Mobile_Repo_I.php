@@ -32,4 +32,9 @@ interface Payment_Mobile_Repo_I
      * @return response string "ok"/"fail" will be back for success.
      */
     public function approve_mobile_payment($user_id, $id);
+
+    //11
+    public function search($column_name, $key);
+
+
 }
