@@ -218,7 +218,6 @@ export class PaymentTypeComponent implements OnInit {
   }
 
 
-
   public update(pt: PaymentType) {
 
     this.openCity(event, 'new_payment');
@@ -299,11 +298,6 @@ export class PaymentTypeComponent implements OnInit {
 
 
   public search_approv() {
-    // console.log('Start Date : ' + this.payment_date_search);
-    // console.log('Last Date : ' + this.last_date_search);
-    // console.log('Mobile Number : ' + this.mobile_number_search);
-    // console.log('TrxID : ' + this.trxid_search);
-
     this.paymentsForApporv = [];
     this.ptService.searchMobilePayment(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv, this.search_by, this.value_search);
     this.ptService.myMobilePayments.subscribe(ptm => {
@@ -333,7 +327,6 @@ export class PaymentTypeComponent implements OnInit {
 
     });
     // console.log(this.myPaymentsArray);
-
 
 
   }
@@ -377,7 +370,13 @@ export class PaymentTypeComponent implements OnInit {
    */
   public refreshTable_mobilePaymentApproval() {
     this.paymentsForApporv = [];
-    this.ptService.getAllMobilePayment(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv);
+    if (this.active_search) {
+      this.ptService.searchMobilePayment(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv, this.search_by, this.value_search);
+    } else {
+      this.ptService.getAllMobilePayment(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv);
+    }
+
+
     this.ptService.myMobilePayments.subscribe(ptm => {
       this.paymentsForApporv = [];
       for (const key1 in ptm) {
@@ -409,7 +408,7 @@ export class PaymentTypeComponent implements OnInit {
 
   public nextPage_approval() {
     console.log('Next Page Approval : ');
-    console.log('Total Page : '+this.totalMobilePayment);
+    console.log('Total Page : ' + this.totalMobilePayment);
     if (this.pageNumber_approv < (this.totalMobilePayment / this.perPage_approv)) {
       this.pageNumber_approv += 1;
       this.refreshTable_Approval();
