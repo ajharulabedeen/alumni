@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
-import { PaymentType } from './payment-type.model';
-import { AuthService } from '../../auth/auth.service';
-import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
-import { combineAll } from 'rxjs/operators';
-import { PaymentMobile } from '../payment-mobile/payment-mobile.model';
+import {Injectable} from '@angular/core';
+import {PaymentType} from './payment-type.model';
+import {AuthService} from '../../auth/auth.service';
+import {HttpClient} from '@angular/common/http';
+import {BehaviorSubject} from 'rxjs';
+import {combineAll} from 'rxjs/operators';
+import {PaymentMobile} from '../payment-mobile/payment-mobile.model';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,10 +15,11 @@ export class PaymentTypeService {
   myMobilePayments = new BehaviorSubject<any>(null);
 
 
-  constructor(private http: HttpClient, private authService: AuthService) { }
+  constructor(private http: HttpClient, private authService: AuthService) {
+  }
 
   public create(pt: PaymentType) {
-    console.log("Save : ");
+    console.log('Save : ');
     console.log(pt);
     this.http.post(
       'http://127.0.0.1:8000/paymentType/create ', pt, this.authService.getHeader()
@@ -27,7 +29,7 @@ export class PaymentTypeService {
   }
 
   public update(pt: PaymentType) {
-    console.log("Update : ");
+    console.log('Update : ');
     console.log(pt);
     this.http.post(
       'http://127.0.0.1:8000/paymentType/update ', pt, this.authService.getHeader()
@@ -38,7 +40,7 @@ export class PaymentTypeService {
 
   public delete(id: string) {
     this.http.post(
-      'http://127.0.0.1:8000/paymentType/delete ', { "id": id }, this.authService.getHeader()
+      'http://127.0.0.1:8000/paymentType/delete ', {'id': id}, this.authService.getHeader()
     ).subscribe((res: Response) => {
       console.log(res);
     });
@@ -76,8 +78,8 @@ export class PaymentTypeService {
    */
   public getAllPayments(perPage: number, pageNumber: number, sort_on: string, sort_by: string) {
     //pt = paymentType
-    console.log("sort on : " + sort_on);
-    console.log("sort bys: " + sort_by);
+    console.log('sort on : ' + sort_on);
+    console.log('sort bys: ' + sort_by);
 
     this.pts = new BehaviorSubject<any>(null);
 
@@ -85,8 +87,8 @@ export class PaymentTypeService {
       'http://127.0.0.1:8000/paymentType/getAllPaymentType?page=' + pageNumber,
       {
         'per_page': perPage,
-        "sort_by": sort_by,
-        "sort_on": sort_on
+        'sort_by': sort_by,
+        'sort_on': sort_on
       },
       this.authService.getHeader(),
     ).subscribe((pt: PaymentType) => {
@@ -112,8 +114,8 @@ export class PaymentTypeService {
       'http://127.0.0.1:8000/payment/mobile/getAllPaymentMobile?page=' + pageNumber,
       {
         'per_page': perPage,
-        "sort_by": sort_by,
-        "sort_on": sort_on
+        'sort_by': sort_by,
+        'sort_on': sort_on
       },
       this.authService.getHeader(),
     ).subscribe((ptm: PaymentMobile) => {
@@ -124,26 +126,50 @@ export class PaymentTypeService {
 
   }
 
-  public search_approv(mobile_number_search: string, last_date_search: string, payment_date_search: string, trxid_search: string) {
-    console.log("Start Date : " + payment_date_search);
-    console.log("Last Date : " + last_date_search);
-    console.log("Mobile Number : " + mobile_number_search);
-    console.log("TrxID : " + trxid_search);
-  }
+  // public search_approv(mobile_number_search: string, last_date_search: string, payment_date_search: string, trxid_search: string) {
+  // console.log("Start Date : " + payment_date_search);
+  // console.log("Last Date : " + last_date_search);
+  // console.log("Mobile Number : " + mobile_number_search);
+  // console.log("TrxID : " + trxid_search);
+  // }
 
-public approve_mobile_payment(id : string){
-  return this.http.post<any>(
+  public approve_mobile_payment(id: string) {
+    return this.http.post<any>(
       'http://127.0.0.1:8000/payment/mobile/approve_mobile_payment',
       {
         'id': id
       },
       this.authService.getHeader(),
-  );
-  //     .subscribe((ptm: any) => {
-  //   // console.log("One Job : " + pt["0"]["organization_name"]);
-  //   // console.log(ptm);
-  //   // this.myMobilePayments.next(ptm);
-  // });
-}
+    );
+    //     .subscribe((ptm: any) => {
+    //   // console.log("One Job : " + pt["0"]["organization_name"]);
+    //   // console.log(ptm);
+    //   // this.myMobilePayments.next(ptm);
+    // });
+  }
+
+  public searchMobilePayment(perPage_approv: number, pageNumber_approv: number, sort_on_approv: string, sort_by_approv: string, column_name: string, key: string) {
+//     //for approve
+    this.myMobilePayments = new BehaviorSubject<any>(null);
+//     //for approve
+    return this.http.post<PaymentMobile>(
+      'http://127.0.0.1:8000/payment/mobile/search?page=' + pageNumber_approv,
+      {
+        'per_page': perPage_approv,
+        'sort_by': sort_by_approv,
+        'sort_on': sort_on_approv,
+        'column_name': column_name,
+        'key': key,
+      },
+      this.authService.getHeader(),
+    ).subscribe((ptm: PaymentMobile) => {
+      // console.log("One Job : " + pt["0"]["organization_name"]);
+      console.log(ptm);
+      this.myMobilePayments.next(ptm);
+    });
+//
+//
+  }
+
 
 }//

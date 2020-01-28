@@ -217,13 +217,7 @@ export class PaymentTypeComponent implements OnInit {
 
   }
 
-  public search_approv() {
-    console.log('Start Date : ' + this.payment_date_search);
-    console.log('Last Date : ' + this.last_date_search);
-    console.log('Mobile Number : ' + this.mobile_number_search);
-    console.log('TrxID : ' + this.trxid_search);
 
-  }
 
   public update(pt: PaymentType) {
 
@@ -285,7 +279,6 @@ export class PaymentTypeComponent implements OnInit {
 
   //------------------------ start : payment-approval
   //------------------------ start : payment-approval
-
   //------------------------ start : payment-approval
   //------------------------ start : payment-approval
   onePaymentType = new PaymentType();
@@ -304,6 +297,46 @@ export class PaymentTypeComponent implements OnInit {
 
   }
 
+
+  public search_approv() {
+    // console.log('Start Date : ' + this.payment_date_search);
+    // console.log('Last Date : ' + this.last_date_search);
+    // console.log('Mobile Number : ' + this.mobile_number_search);
+    // console.log('TrxID : ' + this.trxid_search);
+
+    this.paymentsForApporv = [];
+    this.ptService.searchMobilePayment(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv, this.search_by, this.value_search);
+    this.ptService.myMobilePayments.subscribe(ptm => {
+      this.paymentsForApporv = [];
+      for (const key1 in ptm) {
+        // console.log(key1);
+        // console.log(pt[key1]['id']);
+        var myPtm = new PaymentMobile();
+        // pt1.$id = pt[key1]["id"];
+        // myPtm.$name = ptm[key1]["name"];
+
+        myPtm.$id = ptm[key1]['id'];
+        myPtm.$user_id = ptm[key1]['user_id'];
+        myPtm.$amount = ptm[key1]['amount'];
+        myPtm.$type_ID = ptm[key1]['type_ID'];
+        myPtm.$date = ptm[key1]['date'];
+        myPtm.$payment_method = ptm[key1]['payment_method'];
+        myPtm.$mobile_number = ptm[key1]['mobile_number'];
+        myPtm.$trx_id = ptm[key1]['trx_id'];
+        myPtm.$status = ptm[key1]['status'];
+        myPtm.$created_at = ptm[key1]['created_at'];
+        myPtm.$notes = ptm[key1]['notes'];
+        myPtm.$approved_date = ptm[key1]['approved_date'];
+        this.paymentsForApporv.push(myPtm);
+      }//for
+      // console.log(this.myPaymentsArray);
+
+    });
+    // console.log(this.myPaymentsArray);
+
+
+
+  }
 
   //refactor : same method twice.
   public showPaymentDetails(type_ID: string) {
@@ -332,7 +365,6 @@ export class PaymentTypeComponent implements OnInit {
     this.payment_note = note;
     console.log(this.payment_note);
   }
-
 
   public refreshTable_Approval() {
     // console.log("Load Payment mobile for approval!");
@@ -375,7 +407,6 @@ export class PaymentTypeComponent implements OnInit {
     // console.log(this.myPaymentsArray);
   }//all  mobile payments for approval.
 
-
   public nextPage_approval() {
     console.log('Next Page Approval : ');
     console.log('Total Page : '+this.totalMobilePayment);
@@ -393,7 +424,10 @@ export class PaymentTypeComponent implements OnInit {
     }
   }
 
-  // end : payment-approval
+  //-------------------------------- end : payment-approval
+  //================================ end : payment-approval
+  //-------------------------------- end : payment-approval
+  //================================ end : payment-approval
 
 
 }//clas
