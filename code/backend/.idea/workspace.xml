@@ -127,8 +127,8 @@
       <file leaf-file-name="F_PaymentMobile_Test.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/payment/F_PaymentMobile_Test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+            <state relative-caret-position="75">
+              <caret line="48" column="12" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding>
                 <element signature="e#291#321#0#PHP" expanded="false" />
                 <element signature="e#1932#2838#0#PHP" expanded="false" />
@@ -435,14 +435,11 @@
       <workItem from="1580211558005" duration="968000" />
       <workItem from="1580240156386" duration="694000" />
       <workItem from="1580241024370" duration="91000" />
-      <workItem from="1580241357746" duration="791000" />
+      <workItem from="1580241357746" duration="927000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="F_PaymentType_Test - 2020.01.28 at 13h 07m 22s.xml">
-      <configuration name="F_PaymentType_Test" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
     <history-entry file="F_PaymentType_Test - 2020.01.28 at 13h 07m 32s.xml">
       <configuration name="F_PaymentType_Test" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
@@ -464,6 +461,9 @@
     <history-entry file="F_PaymentType_Test_testBasicTest - 2020.01.28 at 13h 08m 01s.xml">
       <configuration name="F_PaymentType_Test.testBasicTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
+    <history-entry file="F_PaymentType_Test_testBasicTest - 2020.01.29 at 02h 15m 15s.xml">
+      <configuration name="F_PaymentType_Test.testBasicTest" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
     <history-entry file="U_PaymentMobile_Test_testMain - 2020.01.29 at 01h 47m 44s.xml">
       <configuration name="U_PaymentMobile_Test.testMain" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
@@ -472,7 +472,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20041000" />
+    <option name="totallyTimeSpent" value="20177000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1218,8 +1218,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/payment/F_PaymentMobile_Test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+        <state relative-caret-position="75">
+          <caret line="48" column="12" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
             <element signature="e#291#321#0#PHP" expanded="false" />
             <element signature="e#1932#2838#0#PHP" expanded="false" />
