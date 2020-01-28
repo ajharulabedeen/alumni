@@ -34,7 +34,7 @@ interface Payment_Mobile_Repo_I
     public function approve_mobile_payment($user_id, $id);
 
     //11
-    public function search($column_name, $key);
+    public function search($per_page, $sort_by, $sort_on, $column_name, $key);
 
 
 }

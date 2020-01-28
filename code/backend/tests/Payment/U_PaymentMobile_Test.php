@@ -23,7 +23,7 @@ class U_PaymentMobile_Test extends TestCase
 //        $data=$this->approve_payment(4, 1);//done
 //        $this->assertEquals($data, "ok");//later can be used for assertion.
 
-        $this->search();
+        $this->search(10,"DESC","payment_method","user_id",1);
         // error_log($this->delete(25));
         // error_log($this->update(25,"2500"));
         // error_log($this->findOnePaymentType(25)->amount);//after update to see the result.
@@ -62,14 +62,17 @@ class U_PaymentMobile_Test extends TestCase
         error_log("\nPaymentType : CRUD Test Done!\n");
     }
 
-    public function search(){
+    public function search($per_page, $sort_by, $sort_on, $columnName, $key){
         error_log("\nSearch\n");
         $repo = new Payment_Mobile_Repo_Impl();
-        $data = $repo->search("mobile_number", "01");
+        $data = $repo->search($per_page, $sort_by, $sort_on, $columnName, $key);
+
+
         error_log("Amount" . "---" . "Payment Method");
 //        dd($data);
         for ($i = 0; $i < 10; $i++) {
-            error_log($data[$i]->amount  . "---" . $data[$i]->payment_method);
+//            error_log($data[$i]->amount  . "---" . $data[$i]->payment_method );
+            error_log( $data[$i]->user_id .  "---" .  $data[$i]->id . "---" . $data[$i]->amount  . "---" . $data[$i]->payment_method );
         }
     }
 

@@ -116,6 +116,15 @@ class Payment_Mobile_Controller extends Controller
         $data = $this->paymentMobileRepo->approve_mobile_payment($user_id, $id);
         return ['status' => $data ];
     }
+
+    public function search(Request $r){
+        $per_page = $r->per_page;
+        $sort_by = $r->sort_by;
+        $sort_on = $r->sort_on;
+        $column_name = $r->column_name;
+        $key    = $r->key;
+        return $this->paymentMobileRepo->search($per_page, $sort_by, $sort_on, $column_name, $key);
+    }
     //end :  payment admin
 
 }//class
