@@ -109,21 +109,33 @@ class Payment_Mobile_Controller extends Controller
     }
 
     //start :  payment admin
-    public function approve_mobile_payment(Request $r){
+    public function approve_mobile_payment(Request $r)
+    {
         //refactor; later have to replace by Auth.
         $user_id = "4";
         $id = $r->id;
         $data = $this->paymentMobileRepo->approve_mobile_payment($user_id, $id);
-        return ['status' => $data ];
+        return ['status' => $data];
     }
 
-    public function search(Request $r){
+    public function search(Request $r)
+    {
         $per_page = $r->per_page;
         $sort_by = $r->sort_by;
         $sort_on = $r->sort_on;
         $column_name = $r->column_name;
         $key    = $r->key;
         return $this->paymentMobileRepo->search($per_page, $sort_by, $sort_on, $column_name, $key);
+    }
+
+    public function search_count(Request $r)
+    {
+        $per_page = $r->per_page;
+        $sort_by = $r->sort_by;
+        $sort_on = $r->sort_on;
+        $column_name = $r->column_name;
+        $key    = $r->key;
+        return $this->paymentMobileRepo->search_count($per_page, $sort_by, $sort_on, $column_name, $key);
     }
     //end :  payment admin
 

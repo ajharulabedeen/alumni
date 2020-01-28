@@ -26,11 +26,43 @@ class F_PaymentType_Test extends TestCase
         // $this->findOne(7); //done
         // $this->getAll(5, 'ASC', 'last_date', 3); //done
         // $this->countAll(); //done
-//        $this->approve_payment_mobile(2);
-
+        //        $this->approve_payment_mobile(2);
 //        $this->search(5, 'ASC', 'amount', 3, "mobile_number", "01");//done
 
+//        $this->search(5, 'ASC', 'amount', 3, "mobile_number", "01");//done
+        $this->search_count(5, 'ASC', 'amount', 3, "mobile_number", "02");//done
+
     }
+
+    public  function search_count($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key ){
+        $response = $this->json(
+            'POST',
+            'payment/mobile/search_count?page=' . $pageNumber,
+            [
+                'per_page' => $per_page,
+                'sort_by' => $sort_by,
+                "sort_on" => $sort_on,
+                "column_name"=>$column_name,
+                "key"=>$key,
+            ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
+        );
+
+        $d = $response->baseResponse->original;
+        //        dd($d);
+        for ($i = 0; $i < $per_page; $i++) {
+            error_log($d[$i]);
+        }
+        //exception not catching error, instead haulting program.
+        error_log($d);
+        error_log("Error : ");
+        // dd($response->exception);
+        // dd($d);
+    }
+
     public  function search($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key ){
         $response = $this->json(
             'POST',
@@ -49,17 +81,15 @@ class F_PaymentType_Test extends TestCase
         );
 
         $d = $response->baseResponse->original;
-//        dd($d);
+        //        dd($d);
         for ($i = 0; $i < $per_page; $i++) {
             error_log($d[$i]);
         }
-//exception not catching error, instead haulting program.
- error_log($d);
+        //exception not catching error, instead haulting program.
+        error_log($d);
         error_log("Error : ");
-// dd($response->exception);
-
-// dd($d);
-
+        // dd($response->exception);
+        // dd($d);
     }
 
 
