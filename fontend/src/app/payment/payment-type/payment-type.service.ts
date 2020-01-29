@@ -57,6 +57,7 @@ export class PaymentTypeService {
     // });
   }
 
+
   public getTotalMobilePaymentCount() {
     return this.http.post(
       'http://127.0.0.1:8000/payment/mobile/countPaymentMobile ', [], this.authService.getHeader()
@@ -126,12 +127,6 @@ export class PaymentTypeService {
 
   }
 
-  // public search_approv(mobile_number_search: string, last_date_search: string, payment_date_search: string, trxid_search: string) {
-  // console.log("Start Date : " + payment_date_search);
-  // console.log("Last Date : " + last_date_search);
-  // console.log("Mobile Number : " + mobile_number_search);
-  // console.log("TrxID : " + trxid_search);
-  // }
 
   public approve_mobile_payment(id: string) {
     return this.http.post<any>(
@@ -169,6 +164,25 @@ export class PaymentTypeService {
     });
 //
 //
+  }
+
+  public getTotalCount_search(perPage_approv: number, pageNumber_approv: number, sort_on_approv: string, sort_by_approv: string, column_name: string, key: string) {
+    return this.http.post(
+      'http://127.0.0.1:8000/payment/mobile/search_count',
+      {
+        'per_page': perPage_approv,
+        'sort_by': sort_by_approv,
+        'sort_on': sort_on_approv,
+        'column_name': column_name,
+        'key': key,
+      }, this.authService.getHeader()
+    )
+    .subscribe((res: Response) => {
+      console.log();
+      console.log(res);
+      // return res;
+      // return res["status"];
+    });
   }
 
 

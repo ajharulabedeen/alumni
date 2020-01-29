@@ -281,6 +281,8 @@ export class PaymentTypeComponent implements OnInit {
   //------------------------ start : payment-approval
   //------------------------ start : payment-approval
   onePaymentType = new PaymentType();
+  //it will be used for all.
+  total_count: number;
 
   public approve_payment() {
     var local: string;
@@ -295,6 +297,7 @@ export class PaymentTypeComponent implements OnInit {
     });
 
   }
+
 
 
   public search_approv() {
@@ -369,10 +372,13 @@ export class PaymentTypeComponent implements OnInit {
    * refreshing myPayments moibile Table, means so far payments user has done :
    */
   public refreshTable_mobilePaymentApproval() {
+    //refactor : to update table data, required to call the service code each side. 
     this.paymentsForApporv = [];
     if (this.active_search) {
+      this.ptService.getTotalCount_search(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv, this.search_by, this.value_search);
       this.ptService.searchMobilePayment(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv, this.search_by, this.value_search);
     } else {
+      // this.total_count
       this.ptService.getAllMobilePayment(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv);
     }
 
