@@ -4,6 +4,7 @@ import {PaymentTypeService} from './payment-type.service';
 import {PaymentMobile} from '../payment-mobile/payment-mobile.model';
 import {Serializer} from '@angular/compiler';
 import {PaymentMobileService} from '../payment-mobile/payment-mobile.service';
+import {subscribeTo} from 'rxjs/internal-compatibility';
 
 declare var jQuery: any;
 
@@ -52,9 +53,7 @@ export class PaymentTypeComponent implements OnInit {
 
   payment_note: string;
   noteEdit: boolean;
-
   payment_id_approval: string;
-
   active_search: boolean;
 
   constructor(private ptService: PaymentTypeService, private ptmService: PaymentMobileService) {
@@ -66,8 +65,10 @@ export class PaymentTypeComponent implements OnInit {
     // this.last_date_search = "01/01/2020";
     this.sort_by_approv = 'ASC';
     this.search_by = 'mobile_number';
+    this.value_search = '01';
     // end : test
     document.body.className = 'hold-transition skin-blue sidebar-mini';
+    this.total_count = 0;
     this.perPage = 10;
     this.perPage_approv = 10;
     this.pageNumber = 1;
@@ -117,7 +118,8 @@ export class PaymentTypeComponent implements OnInit {
 
   public setTotalPaymentMobile() {
     this.ptService.getTotalMobilePaymentCount().subscribe(res => {
-      this.totalMobilePayment = res['status'];
+      this.total_count = res['status'];
+      this.totalMobilePayment = this.total_count;
     });
   }
 
@@ -299,10 +301,11 @@ export class PaymentTypeComponent implements OnInit {
   }
 
 
-
   public search_approv() {
     this.paymentsForApporv = [];
     this.ptService.searchMobilePayment(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv, this.search_by, this.value_search);
+    this.setSearchCcount();
+    this.setSearchCcount();
     this.ptService.myMobilePayments.subscribe(ptm => {
       this.paymentsForApporv = [];
       for (const key1 in ptm) {
@@ -372,13 +375,15 @@ export class PaymentTypeComponent implements OnInit {
    * refreshing myPayments moibile Table, means so far payments user has done :
    */
   public refreshTable_mobilePaymentApproval() {
-    //refactor : to update table data, required to call the service code each side. 
+    //refactor : to update table data, required to call the service code each side.
     this.paymentsForApporv = [];
     if (this.active_search) {
-      this.ptService.getTotalCount_search(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv, this.search_by, this.value_search);
+      // this.ptService.getTotalCount_search(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv, this.search_by, this.value_search);
+      this.setSearchCcount();
       this.ptService.searchMobilePayment(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv, this.search_by, this.value_search);
     } else {
       // this.total_count
+      this.setTotalPaymentMobile();
       this.ptService.getAllMobilePayment(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv);
     }
 
@@ -415,7 +420,7 @@ export class PaymentTypeComponent implements OnInit {
   public nextPage_approval() {
     console.log('Next Page Approval : ');
     console.log('Total Page : ' + this.totalMobilePayment);
-    if (this.pageNumber_approv < (this.totalMobilePayment / this.perPage_approv)) {
+    if (this.pageNumber_approv < (this.total_count / this.perPage_approv)) {
       this.pageNumber_approv += 1;
       this.refreshTable_Approval();
     }
@@ -427,6 +432,17 @@ export class PaymentTypeComponent implements OnInit {
       this.pageNumber_approv -= 1;
       this.refreshTable_Approval();
     }
+  }
+
+  /**
+   * @description setting the total number of search found.
+   */
+  public setSearchCcount() {
+    this.ptService.getTotalCount_search(this.perPage_approv, this.pageNumber_approv, this.sort_on_approv, this.sort_by_approv, this.search_by, this.value_search)
+      .subscribe(res => {
+        console.log(res);
+        this.total_count = res['status'];
+      });
   }
 
   //-------------------------------- end : payment-approval

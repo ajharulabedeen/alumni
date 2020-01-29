@@ -176,13 +176,13 @@ export class PaymentTypeService {
         'column_name': column_name,
         'key': key,
       }, this.authService.getHeader()
-    )
-    .subscribe((res: Response) => {
-      console.log();
-      console.log(res);
-      // return res;
-      // return res["status"];
-    });
+    );
+    // .subscribe((res: Response) => {
+    //   console.log();
+    //   console.log(res);
+    //   // return res;
+    //   // return res["status"];
+    // });
   }
 
 
