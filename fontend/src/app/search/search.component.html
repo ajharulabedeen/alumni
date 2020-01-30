@@ -3,131 +3,178 @@
   <app-asidenavbar></app-asidenavbar>
   <div class="content-wrapper">
 
+    <h2>Search</h2>
+
     <div class="panel-group">
 
+      <!-- Start : showing all profiles after search -->
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a data-toggle="collapse" href="#add_event">Add Event</a>
+            <a data-toggle="collapse" href="#all_mobile_payments">Search</a>
           </h4>
         </div>
-        <div id="add_event" class="panel-collapse collapse">
-          <div class="panel-body">
-            <h3>Add Event!</h3>
-            <div class="col-md-12 offset-md-12">
-              <div class="form-group">
-                <label>Name : </label>
-                <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
-              </div>
-            </div>
-            <div class="col-md-3 offset-md-3">
-              <div class="form-group">
-                <label>Start Date</label>
-                <input [(ngModel)]="start_date" type="text" class="form-control" placeholder="{{start_date}}">
-              </div>
-            </div>
-            <div class="col-md-3 offset-md-3">
-              <div class="form-group">
-                <label>Select Date</label>
-                <input [(ngModel)]="start_date" type="date" class="form-control" value="{{start_date}}">
-              </div>
-            </div>
-            <div class="col-md-3 offset-md-3">
-              <div class="form-group">
-                <label>Last Date</label>
-                <input [(ngModel)]="last_date" type="text" class="form-control" placeholder="{{last_date}}">
-              </div>
-            </div>
-            <div class="col-md-3 offset-md-3">
-              <div class="form-group">
-                <label>Select Date</label>
-                <input [(ngModel)]="last_date" type="date" class="form-control" value="{{last_date}}">
-              </div>
-            </div>
+        <div id="all_mobile_payments" class="panel-collapse collapse">
 
-            <div class="col-md-12 ">
-              <div class="form-group">
-                <label>Amount</label>
-                <input [(ngModel)]="cost" type="text" class="form-control">
-              </div>
-            </div>
 
-            <div class="col-md-12 ">
-              <div class="form-group">
-                <label>Vanue</label>
-                <input [(ngModel)]="vanue" type="text" class="form-control">
-              </div>
-            </div>
-
-            <div class="col-md-12 ">
-              <div class="form-group">
-                <label>Dscription</label>
-                <textarea [(ngModel)]="description" class="form-control" rows="3" placeholder="Enter ...">
-                      Enter The Dscription of the Payment!
-                  </textarea>
-              </div>
-            </div>
-            <div class="col-md-3 ">
-              <div class="form-group">
-                <button class="btn btn-primary" data-toggle="collapse" href="#add_payment">Save</button>
-                <button class="btn btn-danger">Clear All</button>
-              </div>
+          <!--            start : search fields-->
+          <h3>
+            <button class="btn btn-info" (click)="search_approv()">Search</button>
+          </h3>
+          <!-- sort by column name -->
+          <div class="col-md-12 offset-md-12">
+            <div class="form-group">
+              <h4>Search By :</h4>
+              <select [(ngModel)]="search_by">
+                <option value="id" [selected]="true">ID</option>
+                <option value="amount">Amount</option>
+                <option value="payment_method">Payment Method</option>
+                <option value="mobile_number">Mobile Number</option>
+                <option value="date">Date</option>
+                <option value="status">Status</option>
+              </select>
             </div>
           </div>
-          <!-- end : panel-body -->
-        </div>
-        <div class="panel-footer">Add Event</div>
-      </div>
+          <div class="col-md-12 offset-md-12">
+            <div class="form-group">
+              <label>Value : </label>
+              <input [(ngModel)]="value_search" type="text" class="form-control" placeholder="search...">
+            </div>
+          </div>
+          <!--            end : search fields-->
 
 
-      <!-- all Events -->
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" href="#all_event">All Evensts</a>
-          </h4>
-        </div>
-        <div id="all_event" class="panel-collapse collapse">
           <div class="panel-body">
+            <label class="checkbox-inline"><input type="checkbox" value="" (click)="toggle_active_search()"> Active
+              Search</label>
             <h3>
-              All Event!
-              <!-- <button class="btn btn-xs btn-primary" (click)="refreshTable()">Refresh</button> -->
+              Search
+              <button class="btn btn-xs btn-primary" (click)="refreshTable_Approval()">Refresh</button>
             </h3>
 
-            <div class="col-md-4 offset-md-4">
-              <div class="form-group">
+
+            <div class="col-md-2 offset-md-2">
+              <div style="text-align: center" class="form-group">
                 <label>Per Page</label>
-                <!-- <input [(ngModel)]="perPage" type="number" class="form-control" value="{{perPage}}"> -->
+                <input style="text-align: center" [(ngModel)]="perPage_approv" type="number" class="form-control"
+                       value="{{perPage_approv}}">
+              </div>
+            </div>
+            <div class="col-md-2 offset-md-2">
+              <div style="text-align: center" class="form-group">
+                <label>Total </label>
+                <input style="text-align: center" disabled="true" [(ngModel)]="total_approv" type="number"
+                       class="form-control" value="{{total_count}}">
               </div>
             </div>
 
-            <div class="col-md-4 offset-md-4">
-              <div class="form-group">
-                <!-- <button class="btn btn-primary btn-xs" (click)="previousPage()">Previous</button> -->
-                <label class="btn btn-danger ">Page Number</label>
-                <!-- <button class="btn btn-primary btn-xs" (click)="nextPage()">Next</button> -->
-                <!-- <input [(ngModel)]="pageNumber" type="number" class="form-control" value="{{pageNumber}}"> -->
+
+            <!-- showing all payments mobile for approval -->
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group" style="text-align: center">
+                <button class="btn btn-primary btn-xs" (click)="previousPage_approval()">Previous</button>
+                <label class="btn btn-danger btn-xs ">Page Number</label>
+                <button class="btn btn-primary btn-xs" (click)="nextPage_approval()">Next</button>
+                <input style="text-align: center" [(ngModel)]="pageNumber_approv" type="number" class="form-control"
+                       value="{{pageNumber_approv}}">
+              </div>
+            </div>
+            <!-- showing all payments mobile for approval -->
+            <!-- sort by ASC or DESC -->
+            <div class="col-md-3 offset-md-3">
+              <div class="form-group" style="text-align: center">
+                <h4>Sort Order</h4>
+                <input type="radio" name="m_pay" [(ngModel)]="sort_by_approv" value="ASC"
+                       checked="checked">Ascending<br>
+                <input type="radio" name="m_pay" [(ngModel)]="sort_by_approv" value="DESC">Descending<br>
               </div>
             </div>
 
+            <!-- sort by column name -->
+            <div>
+              <h4>Sort By</h4>
+              <select [(ngModel)]="sort_on_approv">
+                <option value="id" [selected]="true">ID</option>
+                <option value="amount">Amount</option>
+                <option value="payment_method">Payment Method</option>
+                <option value="mobile_number">Mobile Number</option>
+                <option value="date">Date</option>
+                <option value="status">Status</option>
+              </select>
+            </div>
 
+            <!-- showing all payments mobile for approval -->
+            <!-- table : showing all mobile payments -->
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-body table-responsive no-padding">
                   <table class="table table-hover">
                     <tbody>
-                    <h3>Showing All Events!</h3>
+                    <tr>
+                      <!-- showing all payments mobile for approval -->
+                      <th>Index</th>
+                      <th>Approve</th>
+                      <th>Note</th>
+                      <!-- clicking on it will show details of the payment -->
+                      <th>Details</th>
+                      <!-- <th>Status</th> -->
+                      <th>Payed Date</th>
+                      <th>Input Date</th>
+                      <th>Approved Date</th>
+                      <th>Approved By</th>
+                      <th>Amount</th>
+                      <th>Method</th>
+                      <th>Mobile Number</th>
+                      <th>TrxID</th>
+                      <!-- click : modal about the note -->
+                    </tr>
+
+                    <!-- showing all payments mobile for approval -->
+                    <tr *ngFor="let ptm of paymentsForApporv; let i=index">
+                      <td>{{i + 1}}</td>
+                      <td>
+                        <button class="btn btn-xs" data-toggle="modal" data-target="#modal_approve_payment"
+                                [ngStyle]="changeColor(ptm.status)" (click)="payment_id_approval=ptm.id">Approve
+                        </button>
+                      </td>
+                      <td>
+                        <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#modal_note"
+                                (click)=" payment_note = ptm.notes; ">Notes
+                        </button>
+                      </td>
+
+                      <td>
+                        <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details"
+                                (click)="showPaymentDetails(ptm.type_ID)">Details
+                        </button>
+                      </td>
+                      <!-- <td>{{ptm.status}}</td> -->
+                      <td>{{ptm.date}}</td>
+                      <td>{{ptm.created_at}}</td>
+                      <td>{{ptm.approved_date}}</td>
+                      <td>
+                        <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#approved_by"
+                                (click)="showPaymentDetails(ptm.type_ID)">Approved By
+                        </button>
+                      </td>
+                      <td>{{ptm.amount}}</td>
+                      <td>{{ptm.payment_method}}</td>
+                      <td>{{ptm.mobile_number}}</td>
+                      <td>{{ptm.trx_id}}</td>
+                    </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
+              <div class="panel-footer">Mobile Payments</div>
             </div>
-
-
           </div>
+
         </div>
-        <div class="panel-footer">All Events</div>
+        <!-- <div class="panel-footer">Profiles</div> -->
       </div>
+      <!-- End : showing all profiles after search -->
+
 
       <!-- panel-group -->
     </div>
