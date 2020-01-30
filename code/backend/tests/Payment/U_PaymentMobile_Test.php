@@ -23,8 +23,10 @@ class U_PaymentMobile_Test extends TestCase
 //        $data=$this->approve_payment(4, 1);//done
 //        $this->assertEquals($data, "ok");//later can be used for assertion.
 
+        $this->approved_by_userDeatils(4);
+
 //        $this->search(10,"DESC","payment_method","user_id",1);
-        $this->search_count(10,"DESC","payment_method","mobile_number","018");
+//        $this->search_count(10,"DESC","payment_method","mobile_number","018");//done
         // error_log($this->delete(25));
         // error_log($this->update(25,"2500"));
         // error_log($this->findOnePaymentType(25)->amount);//after update to see the result.
@@ -63,14 +65,27 @@ class U_PaymentMobile_Test extends TestCase
         error_log("\nPaymentType : CRUD Test Done!\n");
     }
 
-    public function search_count($per_page, $sort_by, $sort_on, $columnName, $key){
+    public function approved_by_userDeatils($user_id)
+    {
+        error_log("\nApproved by User Deatils\n");
+        $repo = new Payment_Mobile_Repo_Impl();
+        $data = $repo->approved_by_userDeatils($user_id);
+        error_log('First Name : ' . $data[0]['first_name']);
+        error_log('Last Name : ' . $data[0]['last_name']);
+        error_log('Phone : ' . $data[0]['phone']);
+//        dd($data);
+    }
+
+    public function search_count($per_page, $sort_by, $sort_on, $columnName, $key)
+    {
         error_log("\nSearch count\n");
         $repo = new Payment_Mobile_Repo_Impl();
         $data = $repo->search_count($per_page, $sort_by, $sort_on, $columnName, $key);
         dd($data);
     }
 
-    public function search($per_page, $sort_by, $sort_on, $columnName, $key){
+    public function search($per_page, $sort_by, $sort_on, $columnName, $key)
+    {
         error_log("\nSearch\n");
         $repo = new Payment_Mobile_Repo_Impl();
         $data = $repo->search($per_page, $sort_by, $sort_on, $columnName, $key);
@@ -80,7 +95,7 @@ class U_PaymentMobile_Test extends TestCase
 //        dd($data);
         for ($i = 0; $i < 10; $i++) {
 //            error_log($data[$i]->amount  . "---" . $data[$i]->payment_method );
-            error_log( $data[$i]->user_id .  "---" .  $data[$i]->id . "---" . $data[$i]->amount  . "---" . $data[$i]->payment_method );
+            error_log($data[$i]->user_id . "---" . $data[$i]->id . "---" . $data[$i]->amount . "---" . $data[$i]->payment_method);
         }
     }
 
@@ -93,7 +108,7 @@ class U_PaymentMobile_Test extends TestCase
     }
 
     /**
-     *  @return PaymentType return a single payment Type.
+     * @return PaymentType return a single payment Type.
      */
     public function findOnePaymentType($id)
     {
@@ -112,7 +127,7 @@ class U_PaymentMobile_Test extends TestCase
         $data = $repo->getAllPaymentMobile($per_page, $sort_by, $sort_on);
         error_log("Amount" . "---" . "Payment Method");
         for ($i = 0; $i < 10; $i++) {
-            error_log($data[$i]->amount  . "---" . $data[$i]->payment_method);
+            error_log($data[$i]->amount . "---" . $data[$i]->payment_method);
         }
     }
 
@@ -122,7 +137,7 @@ class U_PaymentMobile_Test extends TestCase
         $data = $repo->getAllPaymentMobileByAUser($user_id);
         error_log("Amount" . "---" . "Payment Method");
         for ($i = 0; $i < 30; $i++) {
-            error_log("Index " . ($i + 1) . ": " . $data[$i]->amount  . "---" . $data[$i]->payment_method);
+            error_log("Index " . ($i + 1) . ": " . $data[$i]->amount . "---" . $data[$i]->payment_method);
         }
     }
 
@@ -142,7 +157,7 @@ class U_PaymentMobile_Test extends TestCase
         // print_r($data);
         error_log("Amount" . "---" . "Payment Method");
         for ($i = 0; $i < 20; $i++) {
-            error_log($data[$i]->amount  . "---" . $data[$i]->payment_method);
+            error_log($data[$i]->amount . "---" . $data[$i]->payment_method);
             // error_log($data[$i]->payment_method);
         }
         // dd($data);
@@ -150,6 +165,7 @@ class U_PaymentMobile_Test extends TestCase
     }
 
     //1
+
     /**
      * A basic test example.
      *
@@ -162,7 +178,7 @@ class U_PaymentMobile_Test extends TestCase
         $pm->user_id = rand(1, 30);
         $pm->amount = rand(100, 2000);
         $pm->type_ID = rand(1, 30);
-        $pm->date =  rand(1990, 2000) . "-" . "0" . rand(1, 9) . "-" . rand(1, 30);
+        $pm->date = rand(1990, 2000) . "-" . "0" . rand(1, 9) . "-" . rand(1, 30);
         $pm->payment_method = $this->getMethod();
         $pm->mobile_number = $this->getPhoneNumber();
         $pm->trx_id = rand(1000000, 5000000);
@@ -217,7 +233,7 @@ class U_PaymentMobile_Test extends TestCase
             $pm->user_id = rand(1, 30);
             $pm->amount = rand(100, 2000);
             $pm->type_ID = rand(1, 30);
-            $pm->date =  rand(1990, 2000) . "-" . rand(1, 12) . "-" . rand(1, 30);
+            $pm->date = rand(1990, 2000) . "-" . rand(1, 12) . "-" . rand(1, 30);
             $pm->payment_method = $this->getMethod();
             $pm->mobile_number = $this->getPhoneNumber();
             $pm->trx_id = rand(1000000, 5000000);

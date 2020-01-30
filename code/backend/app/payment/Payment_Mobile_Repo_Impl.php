@@ -4,6 +4,7 @@ namespace App\payment;
 
 use App\payment\PaymentType;
 use App\payment\PaymentMobile;
+use App\profile\ProfileBasic;
 use App\Utils\Utils;
 
 class Payment_Mobile_Repo_Impl implements Payment_Mobile_Repo_I
@@ -106,7 +107,6 @@ class Payment_Mobile_Repo_Impl implements Payment_Mobile_Repo_I
     //12
     public function search_count($per_page, $sort_by, $sort_on, $column_name, $key)
     {
-        // TODO: Implement search_count() method.
         if ($sort_by == "ASC") {
             $order = "ASC";
         } else {
@@ -117,5 +117,18 @@ class Payment_Mobile_Repo_Impl implements Payment_Mobile_Repo_I
         $key=$key . '%';
         $data = PaymentMobile::where($column_name,$like,$key )->orderBy($sort_on, $order)->count();
         return $data;
+    }
+
+    //13
+
+    /**
+     * @return user_details user's name and phone number will be returned.
+     * @param the $user_id
+     *
+     */
+    public function approved_by_userDeatils($user_id)
+    {
+        $user_details = ProfileBasic::select('first_name', 'last_name', 'phone')->where('user_id', $user_id )->get();
+        return $user_details;
     }
 }//class

@@ -39,5 +39,11 @@ interface Payment_Mobile_Repo_I
     //12
     public function search_count($per_page, $sort_by, $sort_on, $column_name, $key);
 
-
+    //13
+    /**
+     *
+     * @param $user_id the user, who has approved the mobile payment.
+     * @return mixed user name and mobile number will be back.
+     */
+    public function approved_by_userDeatils($user_id);
 }

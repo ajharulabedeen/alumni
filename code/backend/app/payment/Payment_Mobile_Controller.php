@@ -135,7 +135,8 @@ class Payment_Mobile_Controller extends Controller
         $sort_on = $r->sort_on;
         $column_name = $r->column_name;
         $key    = $r->key;
-        return $this->paymentMobileRepo->search_count($per_page, $sort_by, $sort_on, $column_name, $key);
+        $data = $this->paymentMobileRepo->search_count($per_page, $sort_by, $sort_on, $column_name, $key);
+        return ['status' => $data];
     }
     //end :  payment admin
 
