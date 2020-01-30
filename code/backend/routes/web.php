@@ -87,6 +87,7 @@ Route::post('payment/mobile/getAllPaymentMobile', 'Payment_Mobile_Controller@get
 Route::post('payment/mobile/approve_mobile_payment', 'Payment_Mobile_Controller@approve_mobile_payment');
 Route::post('payment/mobile/search', 'Payment_Mobile_Controller@search');
 Route::post('payment/mobile/search_count', 'Payment_Mobile_Controller@search_count');
+Route::post('payment/mobile/getApprovedUserDetails', 'Payment_Mobile_Controller@getApprovedUserDetails');
 
 
 

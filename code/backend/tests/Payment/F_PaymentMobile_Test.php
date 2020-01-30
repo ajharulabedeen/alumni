@@ -30,11 +30,35 @@ class F_PaymentType_Test extends TestCase
 //        $this->search(5, 'ASC', 'amount', 3, "mobile_number", "01");//done
 
 //        $this->search(5, 'ASC', 'amount', 3, "mobile_number", "01");//done
-        $this->search_count(5, 'ASC', 'amount', 3, "mobile_number", "02");//done
-
+//        $this->search_count(5, 'ASC', 'amount', 3, "mobile_number", "02");//done
+          $this->getApprovedUserDetails(4);
     }
 
-    public  function search_count($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key ){
+    public function getApprovedUserDetails($user_id)
+    {
+        $response = $this->json(
+            'POST',
+            'payment/mobile/getApprovedUserDetails',
+            [
+                'user_id' => $user_id,
+            ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
+        );
+
+        $d = $response->baseResponse->original;
+        //        dd($d);
+        //exception not catching error, instead haulting program.
+        error_log('Name : ' . $d['name']);
+        error_log( 'Phone : ' . $d['phone']);
+        // dd($response->exception);
+        // dd($d);
+    }
+
+    public function search_count($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
+    {
         $response = $this->json(
             'POST',
             'payment/mobile/search_count?page=' . $pageNumber,
@@ -42,8 +66,8 @@ class F_PaymentType_Test extends TestCase
                 'per_page' => $per_page,
                 'sort_by' => $sort_by,
                 "sort_on" => $sort_on,
-                "column_name"=>$column_name,
-                "key"=>$key,
+                "column_name" => $column_name,
+                "key" => $key,
             ]
         // ,
         // [
@@ -63,7 +87,8 @@ class F_PaymentType_Test extends TestCase
         // dd($d);
     }
 
-    public  function search($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key ){
+    public function search($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
+    {
         $response = $this->json(
             'POST',
             'payment/mobile/search?page=' . $pageNumber,
@@ -71,8 +96,8 @@ class F_PaymentType_Test extends TestCase
                 'per_page' => $per_page,
                 'sort_by' => $sort_by,
                 "sort_on" => $sort_on,
-                "column_name"=>$column_name,
-                "key"=>$key,
+                "column_name" => $column_name,
+                "key" => $key,
             ]
         // ,
         // [
@@ -91,7 +116,6 @@ class F_PaymentType_Test extends TestCase
         // dd($response->exception);
         // dd($d);
     }
-
 
     public function approve_payment_mobile($id)
     {
@@ -101,10 +125,10 @@ class F_PaymentType_Test extends TestCase
             [
                 'id' => $id
             ]
-            // ,
-            // [
-            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
-            // ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
         );
 
         $d = $response->baseResponse->original;
@@ -122,10 +146,10 @@ class F_PaymentType_Test extends TestCase
             'POST',
             'paymentType/countPaymentType',
             []
-            // ,
-            // [
-            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
-            // ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
         );
 
         $d = $response->baseResponse->original;
@@ -147,10 +171,10 @@ class F_PaymentType_Test extends TestCase
                 'sort_by' => $sort_by,
                 "sort_on" => $sort_on,
             ]
-            // ,
-            // [
-            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
-            // ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
         );
 
         $d = $response->baseResponse->original;
@@ -173,10 +197,10 @@ class F_PaymentType_Test extends TestCase
             [
                 'id' => $id
             ]
-            // ,
-            // [
-            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
-            // ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
         );
         $d = $response->baseResponse->original;
         //exception not catching error, instead haulting program.
@@ -195,10 +219,10 @@ class F_PaymentType_Test extends TestCase
             [
                 'id' => $id
             ]
-            // ,
-            // [
-            //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
-            // ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
         );
         $d = $response->baseResponse->original;
         //exception not catching error, instead haulting program.
@@ -216,7 +240,7 @@ class F_PaymentType_Test extends TestCase
             'api/jobs/getAllJobsByUserId',
             [],
             [
-                "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u1@umail.com", "123456")
             ]
         );
         $d = $response->baseResponse->original;
@@ -241,10 +265,10 @@ class F_PaymentType_Test extends TestCase
                 'description' => ' Update : Please pay the FEE!',
                 'amount' => '500',
             ]
-            // ,
-            // [
-            //     "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u1@umail.com", "123456")
-            // ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u1@umail.com", "123456")
+        // ]
         );
         $d = $response->baseResponse->original;
         // $d = $response->exception;
@@ -268,10 +292,10 @@ class F_PaymentType_Test extends TestCase
                 'description' => 'Please pay the FEE!',
                 'amount' => '500',
             ]
-            // ,
-            // [
-            //     "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u1@umail.com", "123456")
-            // ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u1@umail.com", "123456")
+        // ]
         );
         $d = $response->baseResponse->original;
         // $d = $response->exception;

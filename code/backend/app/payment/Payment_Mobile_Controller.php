@@ -12,6 +12,7 @@ class Payment_Mobile_Controller extends Controller
 {
 
     protected $paymentMobileRepo;
+
     public function __construct(Payment_Mobile_Repo_I $paymentMobileRepo)
     {
         // $this->middleware('auth:api');
@@ -124,7 +125,7 @@ class Payment_Mobile_Controller extends Controller
         $sort_by = $r->sort_by;
         $sort_on = $r->sort_on;
         $column_name = $r->column_name;
-        $key    = $r->key;
+        $key = $r->key;
         return $this->paymentMobileRepo->search($per_page, $sort_by, $sort_on, $column_name, $key);
     }
 
@@ -134,10 +135,19 @@ class Payment_Mobile_Controller extends Controller
         $sort_by = $r->sort_by;
         $sort_on = $r->sort_on;
         $column_name = $r->column_name;
-        $key    = $r->key;
+        $key = $r->key;
         $data = $this->paymentMobileRepo->search_count($per_page, $sort_by, $sort_on, $column_name, $key);
         return ['status' => $data];
     }
+
+    public function getApprovedUserDetails(Request $r)
+    {
+        $user_id = $r->user_id;
+        $data = $this->paymentMobileRepo->approved_by_userDeatils($user_id);
+        $user_details = ['name' => $data[0]['first_name'] . ' ' . $data[0]['last_name'], 'phone' => $data[0]['phone']];
+        return $user_details;
+    }
+
     //end :  payment admin
 
 }//class
