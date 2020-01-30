@@ -69,7 +69,8 @@
             <div class="col-md-3 ">
               <div class="form-group">
                 <button class="btn btn-primary" data-toggle="collapse" href="#add_payment"
-                  (click)="create()">Save</button>
+                        (click)="create()">Save
+                </button>
                 <button class="btn btn-danger" (click)="clearAllFields()">Clear All</button>
               </div>
             </div>
@@ -99,14 +100,14 @@
               <div style="text-align: center" class="form-group">
                 <label>Per Page</label>
                 <input style="text-align: center" [(ngModel)]="perPage" type="number" class="form-control"
-                  value="{{perPage}}" (ngModelChange)="refreshTable()">
+                       value="{{perPage}}" (ngModelChange)="refreshTable()">
               </div>
             </div>
             <div class="col-md-2 offset-md-2">
               <div style="text-align: center" class="form-group">
                 <label>Total </label>
                 <input style="text-align: center" disabled="true" [(ngModel)]="total" type="number" class="form-control"
-                  value="{{total}}">
+                       value="{{total}}">
               </div>
             </div>
 
@@ -116,7 +117,7 @@
                 <label class="btn btn-danger btn-xs ">Page Number</label>
                 <button class="btn btn-primary btn-xs" (click)="nextPage()">Next</button>
                 <input style="text-align: center" [(ngModel)]="pageNumber" type="number" class="form-control"
-                  value="{{pageNumber}}">
+                       value="{{pageNumber}}">
               </div>
             </div>
 
@@ -147,32 +148,32 @@
                 <div class="box-body table-responsive no-padding">
                   <table class="table table-hover">
                     <tbody>
-                      <tr>
-                        <th>Index</th>
-                        <th>Operation</th>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Start Date</th>
-                        <th>Last Date</th>
-                        <th>Amount</th>
-                        <th>Description</th>
-                      </tr>
-                      <tr *ngFor="let pt of ptsArray; let i=index">
-                        <td>{{i+1}}</td>
-                        <td>
-                          <button class="btn btn-xs btn-primary" data-toggle="collapse" href="#add_payment"
-                            (click)="update(pt)">
-                            Edit
-                          </button>
-                          <button class="btn btn-xs btn-warning" (click)="delete(pt.id)">Delete</button>
-                        </td>
-                        <td>{{pt.id}}</td>
-                        <td>{{pt.name}}</td>
-                        <td>{{pt.start_date}}</td>
-                        <td>{{pt.last_date}}</td>
-                        <td>{{pt.amount}}</td>
-                        <td>{{pt.description}}</td>
-                      </tr>
+                    <tr>
+                      <th>Index</th>
+                      <th>Operation</th>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Start Date</th>
+                      <th>Last Date</th>
+                      <th>Amount</th>
+                      <th>Description</th>
+                    </tr>
+                    <tr *ngFor="let pt of ptsArray; let i=index">
+                      <td>{{i + 1}}</td>
+                      <td>
+                        <button class="btn btn-xs btn-primary" data-toggle="collapse" href="#add_payment"
+                                (click)="update(pt)">
+                          Edit
+                        </button>
+                        <button class="btn btn-xs btn-warning" (click)="delete(pt.id)">Delete</button>
+                      </td>
+                      <td>{{pt.id}}</td>
+                      <td>{{pt.name}}</td>
+                      <td>{{pt.start_date}}</td>
+                      <td>{{pt.last_date}}</td>
+                      <td>{{pt.amount}}</td>
+                      <td>{{pt.description}}</td>
+                    </tr>
                     </tbody>
                   </table>
                 </div>
@@ -251,14 +252,14 @@
                 <div style="text-align: center" class="form-group">
                   <label>Per Page</label>
                   <input style="text-align: center" [(ngModel)]="perPage_approv" type="number" class="form-control"
-                    value="{{perPage_approv}}">
+                         value="{{perPage_approv}}">
                 </div>
               </div>
               <div class="col-md-2 offset-md-2">
                 <div style="text-align: center" class="form-group">
                   <label>Total </label>
                   <input style="text-align: center" disabled="true" [(ngModel)]="total_approv" type="number"
-                    class="form-control" value="{{total_count}}">
+                         class="form-control" value="{{total_count}}">
                 </div>
               </div>
               <!-- showing all payments mobile for approval -->
@@ -268,7 +269,7 @@
                   <label class="btn btn-danger btn-xs ">Page Number</label>
                   <button class="btn btn-primary btn-xs" (click)="nextPage_approval()">Next</button>
                   <input style="text-align: center" [(ngModel)]="pageNumber_approv" type="number" class="form-control"
-                    value="{{pageNumber_approv}}">
+                         value="{{pageNumber_approv}}">
                 </div>
               </div>
               <!-- showing all payments mobile for approval -->
@@ -277,7 +278,7 @@
                 <div class="form-group" style="text-align: center">
                   <h4>Sort Order</h4>
                   <input type="radio" name="m_pay" [(ngModel)]="sort_by_approv" value="ASC"
-                    checked="checked">Ascending<br>
+                         checked="checked">Ascending<br>
                   <input type="radio" name="m_pay" [(ngModel)]="sort_by_approv" value="DESC">Descending<br>
                 </div>
               </div>
@@ -302,54 +303,58 @@
                   <div class="box-body table-responsive no-padding">
                     <table class="table table-hover">
                       <tbody>
-                        <tr>
-                          <!-- showing all payments mobile for approval -->
-                          <th>Index</th>
-                          <th>Approve</th>
-                          <th>Note</th>
-                          <!-- clicking on it will show details of the payment -->
-                          <th>Details</th>
-                          <!-- <th>Status</th> -->
-                          <th>Payed Date</th>
-                          <th>Input Date</th>
-                          <th>Approved Date</th>
-                          <th>Approved By</th>
-                          <th>Amount</th>
-                          <th>Method</th>
-                          <th>Mobile Number</th>
-                          <th>TrxID</th>
-                          <!-- click : modal about the note -->
-                        </tr>
-
+                      <tr>
                         <!-- showing all payments mobile for approval -->
-                        <tr *ngFor="let ptm of paymentsForApporv; let i=index">
-                          <td>{{i+1}}</td>
-                          <td>
-                            <button class="btn btn-xs" data-toggle="modal" data-target="#modal_approve_payment"
-                              [ngStyle]="changeColor(ptm.status)" (click)="payment_id_approval=ptm.id">Approve</button>
-                          </td>
-                          <td>
-                            <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#modal_note"
-                              (click)=" payment_note = ptm.notes; ">Notes</button>
-                          </td>
+                        <th>Index</th>
+                        <th>Approve</th>
+                        <th>Note</th>
+                        <!-- clicking on it will show details of the payment -->
+                        <th>Details</th>
+                        <!-- <th>Status</th> -->
+                        <th>Payed Date</th>
+                        <th>Input Date</th>
+                        <th>Approved Date</th>
+                        <th>Approved By</th>
+                        <th>Amount</th>
+                        <th>Method</th>
+                        <th>Mobile Number</th>
+                        <th>TrxID</th>
+                        <!-- click : modal about the note -->
+                      </tr>
 
-                          <td>
-                            <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details"
-                              (click)="showPaymentDetails(ptm.type_ID)">Details</button>
-                          </td>
-                          <!-- <td>{{ptm.status}}</td> -->
-                          <td>{{ptm.date}}</td>
-                          <td>{{ptm.created_at}}</td>
-                          <td>{{ptm.approved_date}}</td>
-                          <td>
-                            <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#approved_by"
-                              (click)="showPaymentDetails(ptm.type_ID)">Approved By</button>
-                          </td>
-                          <td>{{ptm.amount}}</td>
-                          <td>{{ptm.payment_method}}</td>
-                          <td>{{ptm.mobile_number}}</td>
-                          <td>{{ptm.trx_id}}</td>
-                        </tr>
+                      <!-- showing all payments mobile for approval -->
+                      <tr *ngFor="let ptm of paymentsForApporv; let i=index">
+                        <td>{{i + 1}}</td>
+                        <td>
+                          <button class="btn btn-xs" data-toggle="modal" data-target="#modal_approve_payment"
+                                  [ngStyle]="changeColor(ptm.status)" (click)="payment_id_approval=ptm.id">Approve
+                          </button>
+                        </td>
+                        <td>
+                          <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#modal_note"
+                                  (click)=" payment_note = ptm.notes; ">Notes
+                          </button>
+                        </td>
+
+                        <td>
+                          <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details"
+                                  (click)="showPaymentDetails(ptm.type_ID)">Details
+                          </button>
+                        </td>
+                        <!-- <td>{{ptm.status}}</td> -->
+                        <td>{{ptm.date}}</td>
+                        <td>{{ptm.created_at}}</td>
+                        <td>{{ptm.approved_date}}</td>
+                        <td>
+                          <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#approved_by"
+                                  (click)="showPaymentDetails(ptm.type_ID)">Approved By
+                          </button>
+                        </td>
+                        <td>{{ptm.amount}}</td>
+                        <td>{{ptm.payment_method}}</td>
+                        <td>{{ptm.mobile_number}}</td>
+                        <td>{{ptm.trx_id}}</td>
+                      </tr>
                       </tbody>
                     </table>
                   </div>
@@ -376,7 +381,7 @@
     </button>
     <!-- Modal -->
     <div class="modal fade" id="approved_by" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
+         aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content ">
           <div class="modal-header ">
@@ -387,12 +392,16 @@
           </div>
           <div class="modal-body">
             <!-- <h3>Approved By</h3> -->
-            <h4>Name : Alderido!</h4>
-            <p>
-              Photo:
-              <img class="img-responsive" src="./assets/dist/img/avatar2.jpg" alt="User profile picture">
-            </p>
-            <h4> Phone Number: 01713-815267 </h4>
+            <h4>Name : {{approved_by_name}}</h4>
+
+            <!--            Showig photo will be added to the next version. s-->
+            <!--            <p>-->
+            <!--              Photo:-->
+            <!--              <img class="img-responsive" src="./assets/dist/img/avatar2.jpg" alt="User profile picture">-->
+            <!--            </p>-->
+
+
+            <h4> Phone Number: {{approved_by_number}}</h4>
           </div>
           <div class="modal-footer">
             <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
@@ -404,15 +413,14 @@
     <!-- End :  Show Who Approved payment-->
 
 
-
     <!-- Start :  Finalize the Approvment of the payment-->
     <!-- Modal -->
     <div class="modal fade" id="modal_approve_payment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
+         aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content ">
           <div class="modal-header ">
-            <h5 class="modal-title justify-content-center" >Are Sure</h5>
+            <h5 class="modal-title justify-content-center">Are Sure</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -424,7 +432,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" (click)="approve_payment()" >Approve</button>
+            <button type="button" class="btn btn-primary" (click)="approve_payment()">Approve</button>
           </div>
         </div>
       </div>
@@ -435,7 +443,7 @@
     <!-- Start :  Note on  of the mobile  payment-->
     <!-- Modal -->
     <div class="modal fade" id="modal_note" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
+         aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content ">
           <div class="modal-header ">
@@ -447,7 +455,7 @@
           <div class="modal-body">
             <h4>Note</h4>
             <textarea [(ngModel)]="payment_note" [disabled]='!noteEdit' class="form-control" rows="3"
-              placeholder="Note...">
+                      placeholder="Note...">
                 {{payment_note}}
           </textarea>
           </div>
@@ -465,7 +473,7 @@
     <!-- Start :  details of the  mobile  payment-->
     <!-- Modal -->
     <div class="modal fade" id="modal_payment_details" tabindex="-1" role="dialog"
-      aria-labelledby="modal_educationLabel" aria-hidden="true">
+         aria-labelledby="modal_educationLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header center-block">
@@ -496,7 +504,6 @@
     <!-- End :  details of the  mobile  payment-->
 
 
-
     <!-- Start : Test  -->
     <!-- ton trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -504,7 +511,7 @@
     </button>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-      aria-hidden="true">
+         aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">

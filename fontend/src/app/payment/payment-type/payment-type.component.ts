@@ -300,6 +300,8 @@ export class PaymentTypeComponent implements OnInit {
 
   }
 
+  approved_by_name: string;
+  approved_by_number: string;
 
   public search_approv() {
     this.paymentsForApporv = [];
