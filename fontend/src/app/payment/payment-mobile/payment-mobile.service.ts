@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { PaymentMobile } from './payment-mobile.model';
-import { HttpClient } from '@angular/common/http';
-import { AuthService } from '../../auth/auth.service';
-import { BehaviorSubject } from 'rxjs';
-import { PaymentType } from '../payment-type/payment-type.model';
+import {Injectable} from '@angular/core';
+import {PaymentMobile} from './payment-mobile.model';
+import {HttpClient} from '@angular/common/http';
+import {AuthService} from '../../auth/auth.service';
+import {BehaviorSubject} from 'rxjs';
+import {PaymentType} from '../payment-type/payment-type.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,8 @@ export class PaymentMobileService {
   myMobilePayments = new BehaviorSubject<any>(null);
   onePaymentType = new BehaviorSubject<any>(null);
 
-  constructor(private http: HttpClient, private authService: AuthService) { }
+  constructor(private http: HttpClient, private authService: AuthService) {
+  }
 
   public savePaymetMobile(ptm: PaymentMobile) {
     console.log(ptm);
@@ -41,7 +42,7 @@ export class PaymentMobileService {
   public getOnePayementType(id: string) {
     this.onePaymentType = new BehaviorSubject<any>(null);
     return this.http.post<PaymentType>(
-      'http://127.0.0.1:8000/api/paymentType/findOnePaymentType', { 'id': id },
+      'http://127.0.0.1:8000/api/paymentType/findOnePaymentType', {'id': id},
       this.authService.getHeader(),
     ).subscribe((ptm: PaymentType) => {
       // console.log(ptm);
@@ -51,4 +52,14 @@ export class PaymentMobileService {
   }
 
 
+  public getApprovedByUserDetails(user_id: string) {
+    return this.http.post<any>(
+      'http://127.0.0.1:8000/payment/mobile/getApprovedUserDetails', {'user_id': user_id},
+      this.authService.getHeader(),
+    );
+    //   .subscribe((res: any) => {
+    //   console.log(res);
+    //   // this.onePaymentType.next(ptm);
+    // });
+  }
 }//class
