@@ -60,8 +60,6 @@ export class PaymentMobileComponent implements OnInit {
   }
 
 
-
-
   // start : Test
   valuechange(newValue) {
     this.mymodel = newValue;

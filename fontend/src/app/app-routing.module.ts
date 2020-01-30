@@ -13,6 +13,7 @@ import { FileUploaderTestComponent } from './file-uploader-test/file-uploader-te
 import { PaymentTypeComponent } from './payment/payment-type/payment-type.component';
 import { EventManageComponent } from './event/event-manage/event-manage.component';
 import { PaymentMobileComponent } from './payment/payment-mobile/payment-mobile.component';
+import {SearchComponent} from './search/search.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'admin/payment', component: PaymentTypeComponent },
   { path: 'paymentmobile', component: PaymentMobileComponent },
   { path: 'event', component: EventManageComponent },
+  { path: 'search', component: SearchComponent },
 ];
 
 @NgModule({

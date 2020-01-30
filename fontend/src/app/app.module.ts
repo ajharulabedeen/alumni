@@ -22,6 +22,7 @@ import { FileUploaderTestComponent } from './file-uploader-test/file-uploader-te
 import { PaymentModule } from './payment/payment.module';
 import { EventModule } from './event/event.module';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
     HomeComponent,
     AuthComponent,
     DataTableComponent,
-    FileUploaderTestComponent
+    FileUploaderTestComponent,
+    SearchComponent
     // AuthService
   ],
   imports: [
