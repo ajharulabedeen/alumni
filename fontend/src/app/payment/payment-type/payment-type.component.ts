@@ -451,10 +451,7 @@ export class PaymentTypeComponent implements OnInit {
   public showApprovedByUserDetails(user_id: string) {
       console.log("Approved by user : " + user_id);
       this.ptmService.getApprovedByUserDetails(user_id).subscribe( res => {
-        this.approved_by_name = '';
         this.approved_by_name = res['name'];
-        this.approved_by_number = '';
-        console.log("res['phone']" + res['phone']);
         this.approved_by_number = res['phone'];
       });
   }
