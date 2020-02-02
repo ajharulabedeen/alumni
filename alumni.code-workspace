@@ -10,5 +10,7 @@
 			"path":"UI"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
 }
