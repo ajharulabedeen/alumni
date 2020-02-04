@@ -91,6 +91,7 @@ Route::post('payment/mobile/getApprovedUserDetails', 'Payment_Mobile_Controller@
 
 //search
 Route::post('search/basic', 'Search_Controller@search_basic');
+Route::post('search/basic_count', 'Search_Controller@search_basic_count');
 
 //evet
 Route::post('events/create', 'Events_Controller@create');

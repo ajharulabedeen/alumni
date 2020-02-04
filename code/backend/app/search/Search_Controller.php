@@ -30,13 +30,13 @@ class Search_Controller extends Controller
 
     public function search_basic_count(Request $r)
     {
-//        $per_page = $r->per_page;
-//        $sort_by = $r->sort_by;
-//        $sort_on = $r->sort_on;
-//        $column_name = $r->column_name;
-//        $key = $r->key;
-//        $data = $this->paymentMobileRepo->search_count($per_page, $sort_by, $sort_on, $column_name, $key);
-//        return ['status' => $data];
+        $per_page = $r->per_page;
+        $sort_by = $r->sort_by;
+        $sort_on = $r->sort_on;
+        $column_name = $r->column_name;
+        $key = $r->key;
+        $data = $this->search_Repo->search_basic_count($per_page, $sort_by, $sort_on, $column_name, $key);
+        return ['status' => $data];
     }
 
     public function getApprovedUserDetails(Request $r)

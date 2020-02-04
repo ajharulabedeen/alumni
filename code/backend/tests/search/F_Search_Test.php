@@ -15,9 +15,19 @@ class F_PaymentType_Test extends TestCase
      */
     public function testBasicTest()
     {
-        $this->search_basic(10, 'DESC', 'batch', 1, "dept", "C");//done
-//        $this->search_count(5, 'ASC', 'amount', 3, "mobile_number", "02");//done
+        $this->assertTrue(true);
+//        $this->search_basic(10, 'DESC', 'batch', 1, "dept", "C");//done
+//        $this->search_basic_count(10, 'DESC', 'batch', 1, "dept", "C");//done
     }
+
+//    start : assertion
+    public function testSearch_basic(){
+        $this->search_basic(10, 'DESC', 'batch', 1, "dept", "C");//done
+    }
+    public function testSearch_basic_count(){
+        $this->search_basic_count(10, 'DESC', 'batch', 1, "dept", "C");//done
+    }
+//    end : assertion
 
     public function search_basic($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
     {
@@ -39,15 +49,44 @@ class F_PaymentType_Test extends TestCase
 
         $d = $response->baseResponse->original;
 //        dd($d);
+        $this->assertTrue( ($d != null) );
+        $this->assertTrue(true);
         for ($i = 0; $i < $per_page; $i++) {
             error_log($d[$i]);
         }
         //exception not catching error, instead haulting program.
-        error_log($d);
+//        error_log($d);
         error_log("Error : ");
         // dd($response->exception);
         // dd($d);
     }
+
+
+    public function search_basic_count($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
+    {
+        $response = $this->json(
+            'POST',
+            'search/basic_count?page=' . $pageNumber,
+            [
+                'per_page' => $per_page,
+                'sort_by' => $sort_by,
+                "sort_on" => $sort_on,
+                "column_name" => $column_name,
+                "key" => $key,
+            ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
+        );
+
+        $d = $response->baseResponse->original;
+//        dd($d);
+//        error_log("count basic search");
+        error_log( "count basic search : " . $d['status']);
+        $this->assertTrue( ($d['status'] != null) );
+    }
+
 
 
 //start : have to delete; old code; another class
@@ -71,14 +110,7 @@ class F_PaymentType_Test extends TestCase
 
         $d = $response->baseResponse->original;
         //        dd($d);
-        for ($i = 0; $i < $per_page; $i++) {
-            error_log($d[$i]);
-        }
-        //exception not catching error, instead haulting program.
-        error_log($d);
-        error_log("Error : ");
-        // dd($response->exception);
-        // dd($d);
+
     }
 
     public function search($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
