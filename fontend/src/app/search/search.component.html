@@ -26,7 +26,7 @@
           <h4>Search By :</h4>
           <select [(ngModel)]="search_by">
             <option value="batch">Student Batch</option>
-            <option value="student_id" >Student ID</option>
+            <option value="student_id">Student ID</option>
             <option value="name">Name</option>
             <option value="skills">Skills</option>
             <option value="research_interest">Research Interest</option>
@@ -46,6 +46,8 @@
 
 
       <!-- Start : showing all profiles after search -->
+
+      <!--      start : basic search pagination panel-->
       <div class="col-md-3 offset-md-3">
         <div class="form-group" style="text-align: center">
           <button class="btn btn-primary btn-xs" (click)="previousPage_approval()">Previous</button>
@@ -69,11 +71,15 @@
       <div>
         <h4>Sort By</h4>
         <select [(ngModel)]="sort_on_approv">
-          <option value="id" [selected]="true"> Student ID</option>
-          <option value="payment_method">Batch</option>
-          <option value="payment_method">Passing Year</option>
+          <option value="student_id" [selected]="true">Student ID</option>
+          <option value="batch">Batch</option>
+          <option value="passing_year">Passing Year</option>
+          <option value="dept">Dept</option>
+          <option value="gender">Gender</option>
         </select>
       </div>
+      <!--      start : basic search pagination panel-->
+
 
       <!-- satrt :  basic search showing all Profiles-->
       <!-- table : showing all mobile payments -->
