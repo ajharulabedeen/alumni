@@ -5,6 +5,24 @@
 
     <h2>Search</h2>
 
+
+    <div class="tab">
+      <button class="tablinks" (click)="searchTab(event, 'basic')">Basic</button>
+      <button class="tablinks" (click)="searchTab(event, 'organization')">Organization</button>
+      <button class="tablinks" (click)="searchTab(event, 'education')">Education</button>
+    </div>
+
+    <div id="basic" class="tabcontent">
+      <h1>Basic Search</h1>
+    </div>
+    <div id="organization" class="tabcontent">
+      <h1>Organization Search</h1>
+    </div>
+    <div id="education" class="tabcontent">
+      <h1>Education Search</h1>
+    </div>
+
+
     <div class="panel-group">
 
       <!-- Start : showing all profiles after search -->
@@ -14,7 +32,7 @@
             <a data-toggle="collapse" href="#all_mobile_payments">Search</a>
           </h4>
         </div>
-<!--        <div id="all_mobile_payments" class="panel-collapse collapse">-->
+        <!--        <div id="all_mobile_payments" class="panel-collapse collapse">-->
         //refactor, mat to active the avobe class.
         <div id="all_mobile_payments" class="panel-collapse ">
 
@@ -180,5 +198,7 @@
 
       <!-- panel-group -->
     </div>
+
+
   </div>
 

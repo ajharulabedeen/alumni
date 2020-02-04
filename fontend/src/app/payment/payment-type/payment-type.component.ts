@@ -102,6 +102,7 @@ export class PaymentTypeComponent implements OnInit {
   }
 
 
+  // start : for tab in font end.
   public openCity(evt, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName('tabcontent');
@@ -115,6 +116,7 @@ export class PaymentTypeComponent implements OnInit {
     document.getElementById(tabName).style.display = 'block';
     evt.currentTarget.className += ' active';
   }
+  // end : for tab in font end.
 
   public setTotalPaymentMobile() {
     this.ptService.getTotalMobilePaymentCount().subscribe(res => {
@@ -449,11 +451,11 @@ export class PaymentTypeComponent implements OnInit {
 
 
   public showApprovedByUserDetails(user_id: string) {
-      console.log("Approved by user : " + user_id);
-      this.ptmService.getApprovedByUserDetails(user_id).subscribe( res => {
-        this.approved_by_name = res['name'];
-        this.approved_by_number = res['phone'];
-      });
+    console.log('Approved by user : ' + user_id);
+    this.ptmService.getApprovedByUserDetails(user_id).subscribe(res => {
+      this.approved_by_name = res['name'];
+      this.approved_by_number = res['phone'];
+    });
   }
 
   //-------------------------------- end : payment-approval
