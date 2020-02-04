@@ -27,4 +27,19 @@ class Search_Repo_Impl implements Search_Repo_I
         $data = ProfileBasic::where($column_name, $like, $key)->orderBy($sort_on, $order)->paginate($per_page)->all();
         return $data;
     }
+
+    public function search_basic_count(string $per_page, string $sort_by, string $sort_on, string $column_name, string $key)
+    {
+        // TODO: Implement search_basic_count() method.
+        if ($sort_by == "ASC") {
+            $order = "ASC";
+        } else {
+            $order = "DESC";
+        }
+        $like = 'LIKE';
+//        $key='%' . $key;
+        $key = $key . '%';
+        $data = ProfileBasic::where($column_name, $like, $key)->orderBy($sort_on, $order)->count();
+        return $data;
+    }
 }//class
