@@ -81,7 +81,7 @@ Route::post('paymentType/delete', 'Payment_Type_Controller@delete');
 // Route::post('payment/mobile/update', 'Payment_Mobile_Controller@update');
 // Route::post('payment/mobile/getAllPaymentMobileByAUser', 'Payment_Mobile_Controller@getAllPaymentMobileByAUser');
 // Route::post('payment/mobile/countPaymentMobileByAUser', 'Payment_Mobile_Controller@countPaymentMobileByAUser');
-//not moved
+//not moved; have to move to API when authentication will be applied
 Route::post('payment/mobile/countPaymentMobile', 'Payment_Mobile_Controller@countPaymentMobile');
 Route::post('payment/mobile/getAllPaymentMobile', 'Payment_Mobile_Controller@getAllPaymentMobile');
 Route::post('payment/mobile/approve_mobile_payment', 'Payment_Mobile_Controller@approve_mobile_payment');
@@ -89,8 +89,10 @@ Route::post('payment/mobile/search', 'Payment_Mobile_Controller@search');
 Route::post('payment/mobile/search_count', 'Payment_Mobile_Controller@search_count');
 Route::post('payment/mobile/getApprovedUserDetails', 'Payment_Mobile_Controller@getApprovedUserDetails');
 
+//search
+Route::post('search/basic', 'Search_Controller@search_basic');
 
-
+//evet
 Route::post('events/create', 'Events_Controller@create');
 Route::post('events/update', 'Events_Controller@update');
 Route::post('events/delete', 'Events_Controller@delete');

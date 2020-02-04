@@ -12,5 +12,5 @@ use App\payment\PaymentMobile;
 
 interface Search_Repo_I
 {
-    public function search_by_name(string $columnName, string $key);
+    public function search_basic(string $per_page, string $sort_by, string $sort_on, string $column_name, string $key);
 }

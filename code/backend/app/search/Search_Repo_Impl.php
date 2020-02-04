@@ -12,11 +12,19 @@ use App\payment\PaymentMobile;
 use App\profile\ProfileBasic;
 
 
-class Search_Repo_Impl
+class Search_Repo_Impl implements Search_Repo_I
 {
-    public function search_by_name(string $columnName,string $key)
+    public function search_basic(string $per_page, string $sort_by, string $sort_on, string $column_name, string $key)
     {
-        $data = ProfileBasic::where($columnName, 'LIKE' ,$key)->get();
+        if ($sort_by == "ASC") {
+            $order = "ASC";
+        } else {
+            $order = "DESC";
+        }
+        $like = 'LIKE';
+//        $key='%' . $key;
+        $key = $key . '%';
+        $data = ProfileBasic::where($column_name, $like, $key)->orderBy($sort_on, $order)->paginate($per_page)->all();
         return $data;
     }
-}
+}//class

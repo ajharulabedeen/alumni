@@ -16,6 +16,8 @@ use App\profile\Profile_Education_Repo_I;
 use App\profile\Profile_Education_Repo_Impl;
 use App\profile\Profile_Jobs_Repo_I;
 use App\profile\Profile_Jobs_Repo_Impl;
+use App\search\Search_Repo_I;
+use App\search\Search_Repo_Impl;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
@@ -35,6 +37,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(Payment_Type_Repo_I::class, Payment_Type_Repo_Impl::class);
         $this->app->bind(Payment_Mobile_Repo_I::class, Payment_Mobile_Repo_Impl::class);
         $this->app->bind(Events_Repo_I::class, Events_Repo_Impl::class);
+        $this->app->bind(Search_Repo_I::class, Search_Repo_Impl::class);
     }
 
     /**
