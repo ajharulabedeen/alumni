@@ -37,7 +37,7 @@
       <file leaf-file-name="Search_Repo_Impl.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/search/Search_Repo_Impl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
+            <state relative-caret-position="-10">
               <caret line="41" column="89" lean-forward="false" selection-start-line="41" selection-start-column="89" selection-end-line="41" selection-end-column="89" />
               <folding />
             </state>
@@ -47,16 +47,14 @@
       <file leaf-file-name="U_Search.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/search/U_Search.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+            <state relative-caret-position="156">
+              <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
               <folding>
                 <element signature="e#39#71#0#PHP" expanded="true" />
-                <element signature="e#1017#1464#0#PHP" expanded="false" />
-                <element signature="e#1471#1965#0#PHP" expanded="false" />
-                <element signature="e#2018#2297#0#PHP" expanded="false" />
-                <element signature="e#2303#2723#0#PHP" expanded="false" />
-                <element signature="e#2729#3116#0#PHP" expanded="false" />
-                <element signature="e#3122#3314#0#PHP" expanded="false" />
+                <element signature="e#2411#2690#0#PHP" expanded="false" />
+                <element signature="e#2696#3116#0#PHP" expanded="false" />
+                <element signature="e#3122#3509#0#PHP" expanded="false" />
+                <element signature="e#3515#3707#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -73,8 +71,8 @@
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/tests/search/F_Search_Test.php" />
         <option value="$PROJECT_DIR$/app/search/Search_Repo_I.php" />
-        <option value="$PROJECT_DIR$/tests/search/U_Search.php" />
         <option value="$PROJECT_DIR$/app/search/Search_Repo_Impl.php" />
+        <option value="$PROJECT_DIR$/tests/search/U_Search.php" />
       </list>
     </option>
   </component>
@@ -356,26 +354,11 @@
       <workItem from="1580681732551" duration="2329000" />
       <workItem from="1580795409939" duration="6261000" />
       <workItem from="1580852595333" duration="462000" />
-      <workItem from="1580853073202" duration="385000" />
+      <workItem from="1580853073202" duration="1139000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="F_PaymentType_Test - 2020.02.04 at 13h 11m 38s.xml">
-      <configuration name="F_PaymentType_Test" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="F_PaymentType_Test - 2020.02.04 at 13h 28m 41s.xml">
-      <configuration name="F_PaymentType_Test" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="F_PaymentType_Test - 2020.02.04 at 13h 29m 10s.xml">
-      <configuration name="F_PaymentType_Test" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="F_PaymentType_Test - 2020.02.04 at 13h 40m 03s.xml">
-      <configuration name="F_PaymentType_Test" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="F_PaymentType_Test_testBasicTest - 2020.02.04 at 13h 40m 44s.xml">
-      <configuration name="F_PaymentType_Test.testBasicTest" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
     <history-entry file="F_PaymentType_Test_testBasicTest - 2020.02.04 at 13h 43m 33s.xml">
       <configuration name="F_PaymentType_Test.testBasicTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
@@ -391,9 +374,24 @@
     <history-entry file="UTest_ProfileBasicRepo - 2020.02.05 at 03h 57m 36s.xml">
       <configuration name="UTest_ProfileBasicRepo" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
+    <history-entry file="UTest_ProfileBasicRepo - 2020.02.05 at 04h 00m 22s.xml">
+      <configuration name="UTest_ProfileBasicRepo" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="UTest_ProfileBasicRepo - 2020.02.05 at 04h 02m 36s.xml">
+      <configuration name="UTest_ProfileBasicRepo" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="UTest_ProfileBasicRepo - 2020.02.05 at 04h 02m 48s.xml">
+      <configuration name="UTest_ProfileBasicRepo" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="UTest_ProfileBasicRepo - 2020.02.05 at 04h 06m 33s.xml">
+      <configuration name="UTest_ProfileBasicRepo" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="UTest_ProfileBasicRepo - 2020.02.05 at 04h 07m 28s.xml">
+      <configuration name="UTest_ProfileBasicRepo" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12507000" />
+    <option name="totallyTimeSpent" value="13261000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -414,7 +412,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.50660795" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.50660795" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5154185" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -589,12 +587,10 @@
           <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="e#39#71#0#PHP" expanded="true" />
-            <element signature="e#1017#1464#0#PHP" expanded="false" />
-            <element signature="e#1471#1965#0#PHP" expanded="false" />
-            <element signature="e#2018#2297#0#PHP" expanded="false" />
-            <element signature="e#2303#2723#0#PHP" expanded="false" />
-            <element signature="e#2729#3116#0#PHP" expanded="false" />
-            <element signature="e#3122#3314#0#PHP" expanded="false" />
+            <element signature="e#2411#2690#0#PHP" expanded="false" />
+            <element signature="e#2696#3116#0#PHP" expanded="false" />
+            <element signature="e#3122#3509#0#PHP" expanded="false" />
+            <element signature="e#3515#3707#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -648,12 +644,10 @@
           <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
           <folding>
             <element signature="e#39#71#0#PHP" expanded="true" />
-            <element signature="e#1017#1464#0#PHP" expanded="false" />
-            <element signature="e#1471#1965#0#PHP" expanded="false" />
-            <element signature="e#2018#2297#0#PHP" expanded="false" />
-            <element signature="e#2303#2723#0#PHP" expanded="false" />
-            <element signature="e#2729#3116#0#PHP" expanded="false" />
-            <element signature="e#3122#3314#0#PHP" expanded="false" />
+            <element signature="e#2411#2690#0#PHP" expanded="false" />
+            <element signature="e#2696#3116#0#PHP" expanded="false" />
+            <element signature="e#3122#3509#0#PHP" expanded="false" />
+            <element signature="e#3515#3707#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -883,7 +877,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/search/Search_Repo_Impl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
+        <state relative-caret-position="-10">
           <caret line="41" column="89" lean-forward="false" selection-start-line="41" selection-start-column="89" selection-end-line="41" selection-end-column="89" />
           <folding />
         </state>
@@ -891,16 +885,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/search/U_Search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="35" column="5" lean-forward="true" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        <state relative-caret-position="156">
+          <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
           <folding>
             <element signature="e#39#71#0#PHP" expanded="true" />
-            <element signature="e#1017#1464#0#PHP" expanded="false" />
-            <element signature="e#1471#1965#0#PHP" expanded="false" />
-            <element signature="e#2018#2297#0#PHP" expanded="false" />
-            <element signature="e#2303#2723#0#PHP" expanded="false" />
-            <element signature="e#2729#3116#0#PHP" expanded="false" />
-            <element signature="e#3122#3314#0#PHP" expanded="false" />
+            <element signature="e#2411#2690#0#PHP" expanded="false" />
+            <element signature="e#2696#3116#0#PHP" expanded="false" />
+            <element signature="e#3122#3509#0#PHP" expanded="false" />
+            <element signature="e#3515#3707#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

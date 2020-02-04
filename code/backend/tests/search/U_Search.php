@@ -28,11 +28,24 @@ class UTest_ProfileBasicRepo extends TestCase
         $this->search_basic_count(10, "ASC", "batch", "dept", 'EE');
     } //main test
 
+    public function testBasicCount()
+    {
+        $this->search_basic_count(10, "ASC", "batch", "dept", 'EE');
+    }
+
     public function search_basic_count(string $per_page, string $sort_by, string $sort_on, string $columnName, string $key): void
     {
         $repo = new Search_Repo_Impl();
         $data = $repo->search_basic_count($per_page, $sort_by, $sort_on, $columnName, $key);
-        dd($data);
+//        dd($data);
+        error_log($data);
+        $this->assertEquals($data, '1444');
+        $this->assertTrue(($data != null));
+    }
+
+    public function testBasicSearch()
+    {
+        $this->search_basic(10, "ASC", "batch", "dept", 'EE');
     }
 
     //done
@@ -41,6 +54,7 @@ class UTest_ProfileBasicRepo extends TestCase
         $repo = new Search_Repo_Impl();
         $data = $repo->search_basic($per_page, $sort_by, $sort_on, $columnName, $key);
 //        dd($data);
+        $this->assertTrue(($data != null));
         for ($i = 0; $i < 10; $i++) {
             error_log("Name : " . $data[$i]->first_name . $data[$i]->last_name . "--" . "Batch : " . $data[$i]->batch);
         }
