@@ -7,10 +7,16 @@ import {Component, OnInit} from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
+
   constructor() {
   }
 
   ngOnInit() {
+
+    //basic
+    this.basic_search_by = 'student_id';
+    //basic
+
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
   }
@@ -35,4 +41,33 @@ export class SearchComponent implements OnInit {
   // end : for tab in font end.
 
 
-}
+// start : basic search
+
+  //error : suggested to declear as class instance
+  basic_search_by: string;
+  basic_value_search: string;
+  basicSearch_pageNumber : number;
+  basicSearch_sort_by:string;
+  basicSearch_sort_on:string;
+
+  basicSearch_perPage:number;
+  basicSearch_total:number;
+
+  baicSearch_profiles_array = new Array();
+
+  public refreshTable_basicSearch(): void {
+
+  }
+
+  public basicSearch_previousPage() {
+
+  }
+
+  public basicSearch_nextPage() {
+
+  }
+
+// end : basic search
+
+
+}//class
