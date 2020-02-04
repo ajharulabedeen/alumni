@@ -7,13 +7,13 @@
 
 
     <div class="tab">
-      <button class="tablinks" (click)="searchTab(event, 'basic')">Basic</button>
+      <button class="tablinks active" (click)="searchTab(event, 'basic')">Basic</button>
       <button class="tablinks" (click)="searchTab(event, 'organization')">Organization</button>
       <button class="tablinks" (click)="searchTab(event, 'education')">Education</button>
     </div>
 
     <!--    start : basic search -->
-    <div id="basic" class="tabcontent">
+    <div id="basic" class="tabcontent block ">
       <h1>Basic Search</h1>
       <!--start : search fields and search key or search value -->
       <h4>
@@ -25,18 +25,14 @@
         <div class="form-group">
           <h4>Search By :</h4>
           <select [(ngModel)]="search_by">
-            <option value="student_id" [selected]="true">Student ID</option>
             <option value="batch">Student Batch</option>
-            <option value="organization">Organization</option>
-            <option value="role">Role</option>
+            <option value="student_id" >Student ID</option>
             <option value="name">Name</option>
             <option value="skills">Skills</option>
             <option value="research_interest">Research Interest</option>
             <option value="phone">Phone</option>
             <option value="email">email</option>
             <option value="address">Address</option>
-            <option value="school">School</option>
-            <option value="collage">Collage</option>
           </select>
         </div>
       </div>
@@ -50,103 +46,96 @@
 
 
       <!-- Start : showing all profiles after search -->
-        <!-- showing all payments mobile for approval -->
-        <div class="col-md-3 offset-md-3">
-          <div class="form-group" style="text-align: center">
-            <button class="btn btn-primary btn-xs" (click)="previousPage_approval()">Previous</button>
-            <label class="btn btn-danger btn-xs ">Page Number</label>
-            <button class="btn btn-primary btn-xs" (click)="nextPage_approval()">Next</button>
-            <input style="text-align: center" [(ngModel)]="pageNumber_approv" type="number" class="form-control"
-                   value="{{pageNumber_approv}}">
-          </div>
+      <div class="col-md-3 offset-md-3">
+        <div class="form-group" style="text-align: center">
+          <button class="btn btn-primary btn-xs" (click)="previousPage_approval()">Previous</button>
+          <label class="btn btn-danger btn-xs ">Page Number</label>
+          <button class="btn btn-primary btn-xs" (click)="nextPage_approval()">Next</button>
+          <input style="text-align: center" [(ngModel)]="pageNumber_approv" type="number" class="form-control"
+                 value="{{pageNumber_approv}}">
         </div>
-        <!-- showing all payments mobile for approval -->
-        <!-- sort by ASC or DESC -->
-        <div class="col-md-3 offset-md-3">
-          <div class="form-group" style="text-align: center">
-            <h4>Sort Order</h4>
-            <input type="radio" name="m_pay" [(ngModel)]="sort_by_approv" value="ASC"
-                   checked="checked">Ascending<br>
-            <input type="radio" name="m_pay" [(ngModel)]="sort_by_approv" value="DESC">Descending<br>
-          </div>
+      </div>
+      <!-- sort by ASC or DESC -->
+      <div class="col-md-3 offset-md-3">
+        <div class="form-group" style="text-align: center">
+          <h4>Sort Order</h4>
+          <input type="radio" name="m_pay" [(ngModel)]="sort_by_approv" value="ASC"
+                 checked="checked">Ascending<br>
+          <input type="radio" name="m_pay" [(ngModel)]="sort_by_approv" value="DESC">Descending<br>
         </div>
+      </div>
 
-        <!-- sort by column name -->
-        <div>
-          <h4>Sort By</h4>
-          <select [(ngModel)]="sort_on_approv">
-            <option value="id" [selected]="true"> Student ID</option>
-            <option value="payment_method">Batch</option>
-            <option value="payment_method">Passing Year</option>
-          </select>
-        </div>
+      <!-- sort by column name -->
+      <div>
+        <h4>Sort By</h4>
+        <select [(ngModel)]="sort_on_approv">
+          <option value="id" [selected]="true"> Student ID</option>
+          <option value="payment_method">Batch</option>
+          <option value="payment_method">Passing Year</option>
+        </select>
+      </div>
 
-        <!-- showing all payments mobile for approval -->
-        <!-- table : showing all mobile payments -->
-        <div class="col-xs-12">
-          <div class="box">
-            <div class="box-body table-responsive no-padding">
-              <table class="table table-hover">
-                <tbody>
-                <tr>
-                  <!-- showing all payments mobile for approval -->
-                  <th>Index</th>
-                  <th>Name</th>
-                  <th>Batch</th>
-                  <!-- clicking on it will show details of the payment -->
-                  <th>Mobile</th>
-                  <th>Address</th>
-                  <!-- <th>Status</th> -->
-                  <th>Dept</th>
-                  <th>Passing Year</th>
-                  <th>Last Organization</th>
-                  <th>Last Role</th>
-                  <th>Address</th>
-                  <!-- click : modal about the note -->
-                </tr>
-
+      <!-- satrt :  basic search showing all Profiles-->
+      <!-- table : showing all mobile payments -->
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-body table-responsive no-padding">
+            <table class="table table-hover">
+              <tbody>
+              <tr>
                 <!-- showing all payments mobile for approval -->
-                <tr *ngFor="let ptm of paymentsForApporv; let i=index">
-                  <td>{{i + 1}}</td>
-                  <td>
-                    <button class="btn btn-xs" data-toggle="modal" data-target="#modal_approve_payment"
-                            [ngStyle]="changeColor(ptm.status)" (click)="payment_id_approval=ptm.id">Approve
-                    </button>
-                  </td>
-                  <td>
-                    <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#modal_note"
-                            (click)=" payment_note = ptm.notes; ">Notes
-                    </button>
-                  </td>
+                <th>Index</th>
+                <th>Batch</th>
+                <th>ID</th>
+                <th>Dept</th>
+                <th>Name</th>
+                <!-- clicking on it will show details of the payment -->
+                <th>Mobile</th>
+                <th>Address</th>
+                <th>Passing Year</th>
+                <th>Research Interest</th>
+                <th>Social Link</th>
+              </tr>
 
-                  <td>
-                    <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details"
-                            (click)="showPaymentDetails(ptm.type_ID)">Details
-                    </button>
-                  </td>
-                  <!-- <td>{{ptm.status}}</td> -->
-                  <td>{{ptm.date}}</td>
-                  <td>{{ptm.created_at}}</td>
-                  <td>{{ptm.approved_date}}</td>
-                  <td>
-                    <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#approved_by"
-                            (click)="showPaymentDetails(ptm.type_ID)">Approved By
-                    </button>
-                  </td>
-                  <td>{{ptm.amount}}</td>
-                  <td>{{ptm.payment_method}}</td>
-                  <td>{{ptm.mobile_number}}</td>
-                  <td>{{ptm.trx_id}}</td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
+              <!-- showing all payments mobile for approval -->
+              <tr *ngFor="let ptm of paymentsForApporv; let i=index">
+                <td>{{i + 1}}</td>
+                <td>
+                  <button class="btn btn-xs" data-toggle="modal" data-target="#modal_approve_payment"
+                          [ngStyle]="changeColor(ptm.status)" (click)="payment_id_approval=ptm.id">Approve
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#modal_note"
+                          (click)=" payment_note = ptm.notes; ">Notes
+                  </button>
+                </td>
+
+                <td>
+                  <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details"
+                          (click)="showPaymentDetails(ptm.type_ID)">Details
+                  </button>
+                </td>
+                <!-- <td>{{ptm.status}}</td> -->
+                <td>{{ptm.date}}</td>
+                <td>{{ptm.created_at}}</td>
+                <td>{{ptm.approved_date}}</td>
+                <td>
+                  <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#approved_by"
+                          (click)="showPaymentDetails(ptm.type_ID)">Approved By
+                  </button>
+                </td>
+                <td>{{ptm.amount}}</td>
+                <td>{{ptm.payment_method}}</td>
+                <td>{{ptm.mobile_number}}</td>
+                <td>{{ptm.trx_id}}</td>
+              </tr>
+              </tbody>
+            </table>
           </div>
         </div>
-      <!-- <div class="panel-footer">Profiles</div> -->
+      </div>
       <!-- End : showing all profiles after search -->
-
-
     </div>
     <!--    end : basic search -->
 

@@ -20,6 +20,7 @@ export class SearchComponent implements OnInit {
   public searchTab(evt, tabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName('tabcontent');
+    // tabcontent[0].className = 'active';//not working
     for (i = 0; i < tabcontent.length; i++) {
       tabcontent[i].style.display = 'none';
     }
