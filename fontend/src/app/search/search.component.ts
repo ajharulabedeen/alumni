@@ -64,7 +64,7 @@ export class SearchComponent implements OnInit {
   public refreshTable_basicSearch(): void {
     console.log('refreshTable_basicSearch :');
     // tslint:disable-next-line:max-line-length
-    this.setBasicSearchCount();
+    // this.setBasicSearchCount();
     this.searchService.basicSearch(this.basicSearch_perPage, this.basicSearch_pageNumber, this.basicSearch_sort_on, this.basicSearch_sort_by, this.basic_search_by, this.basic_value_search);
     this.searchService.basic.subscribe(b => {
       this.baicSearch_profiles_array = [];
@@ -96,18 +96,28 @@ export class SearchComponent implements OnInit {
   }// refreshTable_basicSearch
 
   public basicSearch_previousPage() {
-
+    console.log('basicSearch_previousPage');
+    if (this.basicSearch_pageNumber > 1) {
+      this.basicSearch_pageNumber -= 1;
+      this.refreshTable_basicSearch();
+    }
   }
 
   public basicSearch_nextPage() {
-
+    console.log('basicSearch_nextPage');
+    if (this.basicSearch_pageNumber < (this.basicSearch_total / this.basicSearch_perPage)) {
+      this.basicSearch_pageNumber += 1;
+      this.refreshTable_basicSearch();
+    }
   }
 
   public setBasicSearchCount() {
+    this.basicSearch_pageNumber=1;
     this.searchService.getBsicSearchCount(this.basicSearch_perPage, this.basicSearch_pageNumber, this.basicSearch_sort_on, this.basicSearch_sort_by, this.basic_search_by, this.basic_value_search)
       .subscribe(res => {
         this.basicSearch_total = res['status'];
       });
+    this.refreshTable_basicSearch();
   }
 
 // end : basic search
