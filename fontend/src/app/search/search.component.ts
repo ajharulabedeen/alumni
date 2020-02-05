@@ -18,6 +18,7 @@ export class SearchComponent implements OnInit {
     this.basic_search_by = 'student_id';
     this.basicSearch_sort_on='dept';
     this.basicSearch_perPage=10;
+    this.basicSearch_sort_by="ASC";
     //basic
 
     window.dispatchEvent(new Event('resize'));

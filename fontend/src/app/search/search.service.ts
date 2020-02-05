@@ -32,7 +32,7 @@ export class SearchService {
         'sort_by': sort_by_basic,
         'sort_on': sort_on_basic,
         'column_name': column_name_basic,
-        'key': key_basic,
+        'key': '%'+key_basic+'%',
       },
       this.authService.getHeader(),
     ).subscribe((basic: Basic) => {
