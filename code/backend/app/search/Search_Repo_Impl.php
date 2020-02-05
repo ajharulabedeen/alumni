@@ -10,6 +10,7 @@ namespace App\search;
 
 use App\payment\PaymentMobile;
 use App\profile\ProfileBasic;
+use Illuminate\Support\Facades\DB;
 
 
 class Search_Repo_Impl implements Search_Repo_I
@@ -22,8 +23,6 @@ class Search_Repo_Impl implements Search_Repo_I
             $order = "DESC";
         }
         $like = 'LIKE';
-//        $key='%' . $key;
-//        $key = $key;
         $data = ProfileBasic::where($column_name, $like, $key)->orderBy($sort_on, $order)->paginate($per_page)->all();
         return $data;
     }
@@ -37,9 +36,42 @@ class Search_Repo_Impl implements Search_Repo_I
             $order = "DESC";
         }
         $like = 'LIKE';
-//        $key='%' . $key;
-//        $key = $key;
         $data = ProfileBasic::where($column_name, $like, $key)->orderBy($sort_on, $order)->count();
         return $data;
     }
+
+
+    public function search_education(string $per_page, string $sort_by, string $sort_on, string $column_name, string $key)
+    {
+        // TODO: Implement search_education() method.
+        if ($sort_by == "ASC") {
+            $order = "ASC";
+        } else {
+            $order = "DESC";
+        }
+
+        $data = DB::table('profile_basics')
+            ->join('profile_education', 'profile_basics.user_id', '=', 'profile_education.user_id')
+            ->select('profile_basics.user_id', 'profile_basics.first_name', 'profile_basics.last_name', 'profile_education.*')
+            ->where( 'profile_education.'.$column_name, 'LIKE', $key)->orderBy($sort_on, $order)->paginate($per_page);
+        return $data;
+    }
+
+    public function search_education_count(string $per_page, string $sort_by, string $sort_on, string $column_name, string $key)
+    {
+        // TODO: Implement search_education_count() method.
+        // TODO: Implement search_education() method.
+        if ($sort_by == "ASC") {
+            $order = "ASC";
+        } else {
+            $order = "DESC";
+        }
+
+        $data = DB::table('profile_basics')
+            ->join('profile_education', 'profile_basics.user_id', '=', 'profile_education.user_id')
+            ->select('profile_basics.user_id', 'profile_basics.first_name', 'profile_basics.last_name', 'profile_education.*')
+            ->where($column_name, 'LIKE', $key)->orderBy($sort_on, $order)->count() ;
+        return $data;
+    }
+
 }//class

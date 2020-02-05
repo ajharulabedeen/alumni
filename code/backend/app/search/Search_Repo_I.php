@@ -14,4 +14,7 @@ interface Search_Repo_I
 {
     public function search_basic(string $per_page, string $sort_by, string $sort_on, string $column_name, string $key);
     public function search_basic_count(string $per_page, string $sort_by, string $sort_on, string $column_name, string $key);
+    public function search_education(string $per_page, string $sort_by, string $sort_on, string $column_name, string $key);
+    public function search_education_count(string $per_page, string $sort_by, string $sort_on, string $column_name, string $key);
+
 }
