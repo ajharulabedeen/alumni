@@ -43,4 +43,22 @@ export class SearchService {
   } // searchMobilePayment
 
 
+  public getBsicSearchCount(perPage_basic: number, pageNumber_basic: number, sort_on_basic: string, sort_by_basic: string, column_name_basic: string, key_basic: string) {
+    return this.http.post(
+      'http://127.0.0.1:8000/search/basic_count',
+      {
+        'per_page': perPage_basic,
+        'sort_by': sort_by_basic,
+        'sort_on': sort_on_basic,
+        'column_name': column_name_basic,
+        'key': '%'+key_basic+'%',
+      }, this.authService.getHeader()
+    );
+    // .subscribe((res: Response) => {
+    //   console.log();
+    //   console.log(res);
+    //   // return res;
+    //   // return res["status"];
+    // });
+  }//getBsicSearchCount
 }//
