@@ -127,7 +127,6 @@ export class PaymentTypeService {
 
   }
 
-
   public approve_mobile_payment(id: string) {
     return this.http.post<any>(
       'http://127.0.0.1:8000/payment/mobile/approve_mobile_payment',
@@ -162,9 +161,7 @@ export class PaymentTypeService {
       console.log(ptm);
       this.myMobilePayments.next(ptm);
     });
-//
-//
-  }
+  } // searchMobilePayment
 
   public getTotalCount_search(perPage_approv: number, pageNumber_approv: number, sort_on_approv: string, sort_by_approv: string, column_name: string, key: string) {
     return this.http.post(

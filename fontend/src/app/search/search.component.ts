@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {SearchService} from './search.service';
 
 @Component({
   selector: 'app-search',
@@ -8,13 +9,15 @@ import {Component, OnInit} from '@angular/core';
 export class SearchComponent implements OnInit {
 
 
-  constructor() {
+  constructor( private searchService: SearchService ) {
   }
 
   ngOnInit() {
 
     //basic
     this.basic_search_by = 'student_id';
+    this.basicSearch_sort_on='dept';
+    this.basicSearch_perPage=10;
     //basic
 
     window.dispatchEvent(new Event('resize'));
@@ -56,7 +59,9 @@ export class SearchComponent implements OnInit {
   baicSearch_profiles_array = new Array();
 
   public refreshTable_basicSearch(): void {
-
+      console.log('refreshTable_basicSearch :');
+    // tslint:disable-next-line:max-line-length
+      this.searchService.basicSearch(this.basicSearch_perPage, this.basicSearch_pageNumber, this.basicSearch_sort_on, this.basicSearch_sort_by, this.basic_search_by, this.basic_value_search);
   }
 
   public basicSearch_previousPage() {
