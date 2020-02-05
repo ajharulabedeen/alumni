@@ -49,8 +49,8 @@
 
       <!-- Start : showing all profiles after search -->
 
-<!--            start : basic search pagination panel-->
-<!--      perPage-->
+      <!--            start : basic search pagination panel-->
+      <!--      perPage-->
       <div class="col-md-2 offset-md-2">
         <div style="text-align: center" class="form-group">
           <label>Per Page</label>
@@ -58,15 +58,16 @@
                  value="{{basicSearch_perPage}}" (ngModelChange)="refreshTable_basicSearch()">
         </div>
       </div>
-<!--      total-->
+      <!--      total-->
       <div class="col-md-2 offset-md-2">
         <div style="text-align: center" class="form-group">
           <label>Total </label>
-          <input style="text-align: center" disabled="true" [(ngModel)]="basicSearch_total" type="number" class="form-control"
+          <input style="text-align: center" disabled="true" [(ngModel)]="basicSearch_total" type="number"
+                 class="form-control"
                  value="{{basicSearch_total}}">
         </div>
       </div>
-<!--      prePage/nextPage-->
+      <!--      prePage/nextPage-->
       <div class="col-md-3 offset-md-3">
         <div class="form-group" style="text-align: center">
           <button class="btn btn-primary btn-xs" (click)="basicSearch_previousPage()">Previous</button>
@@ -76,7 +77,7 @@
                  value="{{basicSearch_pageNumber}}">
         </div>
       </div>
-<!--       sort by ASC or DESC -->
+      <!--       sort by ASC or DESC -->
       <div class="col-md-3 offset-md-3">
         <div class="form-group" style="text-align: center">
           <h4>Sort Order</h4>
@@ -85,7 +86,7 @@
           <input type="radio" name="m_pay" [(ngModel)]="basicSearch_sort_by" value="DESC">Descending<br>
         </div>
       </div>
-<!--       sort by column name -->
+      <!--       sort by column name -->
       <div>
         <h4>Sort By</h4>
         <select [(ngModel)]="basicSearch_sort_on">
@@ -96,7 +97,7 @@
           <option value="gender">Gender</option>
         </select>
       </div>
-<!--            end : basic search pagination panel-->
+      <!--            end : basic search pagination panel-->
 
       <!-- satrt :  basic search showing all Profiles-->
       <!-- table : showing all profiles after basic search -->
@@ -120,37 +121,22 @@
               </tr>
 
               <!-- showing all profiles after basic search  -->
-              <tr *ngFor="let ptm of baicSearch_profiles_array; let i=index">
+              <tr *ngFor="let basic of baicSearch_profiles_array; let i=index">
+                <td>
+                  <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details">
+                    Details
+                  </button>
+                </td>
                 <td>{{i + 1}}</td>
-                <td>
-                  <button class="btn btn-xs" data-toggle="modal" data-target="#modal_approve_payment"
-                          [ngStyle]="changeColor(ptm.status)" (click)="payment_id_approval=ptm.id">Approve
-                  </button>
-                </td>
-                <td>
-                  <button class="btn btn-xs btn-warning" data-toggle="modal" data-target="#modal_note"
-                          (click)=" payment_note = ptm.notes; ">Notes
-                  </button>
-                </td>
-
-                <td>
-                  <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details"
-                          (click)="showPaymentDetails(ptm.type_ID)">Details
-                  </button>
-                </td>
-                <!-- <td>{{ptm.status}}</td> -->
-                <td>{{ptm.date}}</td>
-                <td>{{ptm.created_at}}</td>
-                <td>{{ptm.approved_date}}</td>
-                <td>
-                  <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#approved_by"
-                          (click)="showPaymentDetails(ptm.type_ID)">Approved By
-                  </button>
-                </td>
-                <td>{{ptm.amount}}</td>
-                <td>{{ptm.payment_method}}</td>
-                <td>{{ptm.mobile_number}}</td>
-                <td>{{ptm.trx_id}}</td>
+                <td>{{basic.batch}}</td>
+                <td>{{basic.id}}</td>
+                <td>{{basic.dept}}</td>
+                <td>{{basic.first_name}}{{basic.last_name}} </td>
+                <td>{{basic.phone}}</td>
+                <td>{{basic.address_present}}</td>
+                <td>{{basic.passing_year}}</td>
+                <td>{{basic.research_interest}}</td>
+                <td>{{basic.social_media_link}}</td>
               </tr>
               </tbody>
             </table>

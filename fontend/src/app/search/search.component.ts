@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SearchService} from './search.service';
+import {Basic} from '../profile/basic/basic.model';
 
 @Component({
   selector: 'app-search',
@@ -65,7 +66,34 @@ export class SearchComponent implements OnInit {
     // tslint:disable-next-line:max-line-length
     this.setBasicSearchCount();
     this.searchService.basicSearch(this.basicSearch_perPage, this.basicSearch_pageNumber, this.basicSearch_sort_on, this.basicSearch_sort_by, this.basic_search_by, this.basic_value_search);
-  }
+    this.searchService.basic.subscribe(b => {
+      this.baicSearch_profiles_array = [];
+      for (const key in b) {
+        console.log(b);
+        var basic = new Basic();
+        basic.$user_id = b[key]['user_id'];
+        basic.$dept = b[key]['dept'];
+        basic.batch = b[key]['batch'];
+        basic.$student_id = b[key]['student_id'];
+        basic.$passing_year = b[key]['passing_year'];
+        basic.$first_name = b[key]['first_name'];
+        basic.$last_name = b[key]['last_name'];
+        basic.$birth_date = b[key]['birth_date'];
+        basic.$gender = b[key]['gender'];
+        basic.$blood_group = b[key]['blood_group'];
+        basic.$email = b[key]['email'];
+        basic.$phone = b[key]['phone'];
+        basic.$address_present = b[key]['address_present'];
+        basic.$address_permanent = b[key]['address_permanent'];
+        basic.$research_interest = b[key]['research_interest'];
+        basic.$skills = b[key]['skills'];
+        basic.$image_address = b[key]['image_address'];
+        basic.$religion = b[key]['religion'];
+        basic.$social_media_link = b[key]['social_media_link'];
+        this.baicSearch_profiles_array.push(basic);
+      }// for
+    });
+  }// refreshTable_basicSearch
 
   public basicSearch_previousPage() {
 
@@ -77,7 +105,7 @@ export class SearchComponent implements OnInit {
 
   public setBasicSearchCount() {
     this.searchService.getBsicSearchCount(this.basicSearch_perPage, this.basicSearch_pageNumber, this.basicSearch_sort_on, this.basicSearch_sort_by, this.basic_search_by, this.basic_value_search)
-      .subscribe( res => {
+      .subscribe(res => {
         this.basicSearch_total = res['status'];
       });
   }
