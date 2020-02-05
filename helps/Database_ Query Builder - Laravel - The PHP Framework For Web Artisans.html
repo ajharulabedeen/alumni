@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://laravel.com/docs/5.8/queries#selects -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="stndz-style"></style>
+    
+    <title>Database: Query Builder - Laravel - The PHP Framework For Web Artisans</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://laravel.com/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://laravel.com/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://laravel.com/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="https://laravel.com/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="https://laravel.com/img/favicon/safari-pinned-tab.svg" color="#ff2d20">
+    <link rel="shortcut icon" href="https://laravel.com/img/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ff2d20">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Load fonts -->
+    <link rel="stylesheet" href="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/ins2wgm.css">
+
+    <!-- Load styles -->
+    <link rel="stylesheet" type="text/css" href="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/app.css">
+
+    <!-- Load JS -->
+    <script src="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/ga.js.download"></script><script src="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/jquery.min.js.download"></script>
+
+</head>
+<body class="language-php">
+
+    <div class="sidebar_layout" id="docsScreen">
+
+        <div class="page_contain">
+            <div class="contain">
+                <aside class="sidebar">
+                    <a href="https://laravel.com/" class="logo">
+                        <img class="mark" src="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/logomark.min.svg" alt="Laravel">
+                        <img class="type" src="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/logotype.min.svg" alt="Laravel">
+                    </a>
+                    <nav>
+                        <div class="navigation_contain" style="display: block;">
+                            <div class="docs_sidebar">
+                                <ul>
+<li>
+<h2>Prologue</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.8/releases">Release Notes</a></li>
+<li><a href="https://laravel.com/docs/5.8/upgrade">Upgrade Guide</a></li>
+<li><a href="https://laravel.com/docs/5.8/contributions">Contribution Guide</a></li>
+<li><a href="https://laravel.com/api/5.8">API Documentation</a></li>
+</ul>
+</li>
+<li>
+<h2>Getting Started</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.8/installation">Installation</a></li>
+<li><a href="https://laravel.com/docs/5.8/configuration">Configuration</a></li>
+<li><a href="https://laravel.com/docs/5.8/structure">Directory Structure</a></li>
+<li><a href="https://laravel.com/docs/5.8/homestead">Homestead</a></li>
+<li><a href="https://laravel.com/docs/5.8/valet">Valet</a></li>
+<li><a href="https://laravel.com/docs/5.8/deployment">Deployment</a></li>
+</ul>
+</li>
+<li>
+<h2>Architecture Concepts</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.8/lifecycle">Request Lifecycle</a></li>
+<li><a href="https://laravel.com/docs/5.8/container">Service Container</a></li>
+<li><a href="https://laravel.com/docs/5.8/providers">Service Providers</a></li>
+<li><a href="https://laravel.com/docs/5.8/facades">Facades</a></li>
+<li><a href="https://laravel.com/docs/5.8/contracts">Contracts</a></li>
+</ul>
+</li>
+<li>
+<h2>The Basics</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.8/routing">Routing</a></li>
+<li><a href="https://laravel.com/docs/5.8/middleware">Middleware</a></li>
+<li><a href="https://laravel.com/docs/5.8/csrf">CSRF Protection</a></li>
+<li><a href="https://laravel.com/docs/5.8/controllers">Controllers</a></li>
+<li><a href="https://laravel.com/docs/5.8/requests">Requests</a></li>
+<li><a href="https://laravel.com/docs/5.8/responses">Responses</a></li>
+<li><a href="https://laravel.com/docs/5.8/views">Views</a></li>
+<li><a href="https://laravel.com/docs/5.8/urls">URL Generation</a></li>
+<li><a href="https://laravel.com/docs/5.8/session">Session</a></li>
+<li><a href="https://laravel.com/docs/5.8/validation">Validation</a></li>
+<li><a href="https://laravel.com/docs/5.8/errors">Error Handling</a></li>
+<li><a href="https://laravel.com/docs/5.8/logging">Logging</a></li>
+</ul>
+</li>
+<li>
+<h2>Frontend</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.8/blade">Blade Templates</a></li>
+<li><a href="https://laravel.com/docs/5.8/localization">Localization</a></li>
+<li><a href="https://laravel.com/docs/5.8/frontend">Frontend Scaffolding</a></li>
+<li><a href="https://laravel.com/docs/5.8/mix">Compiling Assets</a></li>
+</ul>
+</li>
+<li>
+<h2>Security</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.8/authentication">Authentication</a></li>
+<li><a href="https://laravel.com/docs/5.8/api-authentication">API Authentication</a></li>
+<li><a href="https://laravel.com/docs/5.8/authorization">Authorization</a></li>
+<li><a href="https://laravel.com/docs/5.8/verification">Email Verification</a></li>
+<li><a href="https://laravel.com/docs/5.8/encryption">Encryption</a></li>
+<li><a href="https://laravel.com/docs/5.8/hashing">Hashing</a></li>
+<li><a href="https://laravel.com/docs/5.8/passwords">Password Reset</a></li>
+</ul>
+</li>
+<li>
+<h2>Digging Deeper</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.8/artisan">Artisan Console</a></li>
+<li><a href="https://laravel.com/docs/5.8/broadcasting">Broadcasting</a></li>
+<li><a href="https://laravel.com/docs/5.8/cache">Cache</a></li>
+<li><a href="https://laravel.com/docs/5.8/collections">Collections</a></li>
+<li><a href="https://laravel.com/docs/5.8/events">Events</a></li>
+<li><a href="https://laravel.com/docs/5.8/filesystem">File Storage</a></li>
+<li><a href="https://laravel.com/docs/5.8/helpers">Helpers</a></li>
+<li><a href="https://laravel.com/docs/5.8/mail">Mail</a></li>
+<li><a href="https://laravel.com/docs/5.8/notifications">Notifications</a></li>
+<li><a href="https://laravel.com/docs/5.8/packages">Package Development</a></li>
+<li><a href="https://laravel.com/docs/5.8/queues">Queues</a></li>
+<li><a href="https://laravel.com/docs/5.8/scheduling">Task Scheduling</a></li>
+</ul>
+</li>
+<li class="sub--on">
+<h2>Database</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.8/database">Getting Started</a></li>
+<li class="active"><a href="https://laravel.com/docs/5.8/queries">Query Builder</a></li>
+<li><a href="https://laravel.com/docs/5.8/pagination">Pagination</a></li>
+<li><a href="https://laravel.com/docs/5.8/migrations">Migrations</a></li>
+<li><a href="https://laravel.com/docs/5.8/seeding">Seeding</a></li>
+<li><a href="https://laravel.com/docs/5.8/redis">Redis</a></li>
+</ul>
+</li>
+<li>
+<h2>Eloquent ORM</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.8/eloquent">Getting Started</a></li>
+<li><a href="https://laravel.com/docs/5.8/eloquent-relationships">Relationships</a></li>
+<li><a href="https://laravel.com/docs/5.8/eloquent-collections">Collections</a></li>
+<li><a href="https://laravel.com/docs/5.8/eloquent-mutators">Mutators</a></li>
+<li><a href="https://laravel.com/docs/5.8/eloquent-resources">API Resources</a></li>
+<li><a href="https://laravel.com/docs/5.8/eloquent-serialization">Serialization</a></li>
+</ul>
+</li>
+<li>
+<h2>Testing</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.8/testing">Getting Started</a></li>
+<li><a href="https://laravel.com/docs/5.8/http-tests">HTTP Tests</a></li>
+<li><a href="https://laravel.com/docs/5.8/console-tests">Console Tests</a></li>
+<li><a href="https://laravel.com/docs/5.8/dusk">Browser Tests</a></li>
+<li><a href="https://laravel.com/docs/5.8/database-testing">Database</a></li>
+<li><a href="https://laravel.com/docs/5.8/mocking">Mocking</a></li>
+</ul>
+</li>
+<li>
+<h2>Official Packages</h2>
+<ul>
+<li><a href="https://laravel.com/docs/5.8/billing">Cashier</a></li>
+<li><a href="https://laravel.com/docs/5.8/dusk">Dusk</a></li>
+<li><a href="https://laravel.com/docs/5.8/envoy">Envoy</a></li>
+<li><a href="https://laravel.com/docs/5.8/horizon">Horizon</a></li>
+<li><a href="https://laravel.com/docs/5.8/passport">Passport</a></li>
+<li><a href="https://laravel.com/docs/5.8/scout">Scout</a></li>
+<li><a href="https://laravel.com/docs/5.8/socialite">Socialite</a></li>
+<li><a href="https://laravel.com/docs/5.8/telescope">Telescope</a></li>
+</ul>
+</li>
+</ul>
+                            </div>
+
+                            <script async="" type="text/javascript" src="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/carbon.js.download" id="_carbonads_js"></script>
+
+
+                        </div>
+                    </nav>
+                    <div class="trigger_contain">
+                        <a href="https://laravel.com/docs/5.8/queries#" class="nav_trigger" aria-label="Menu">
+                            <div class="bar"></div>
+                        </a>
+                    </div>
+                </aside>
+
+                <section class="body_content">
+                    <header class="docs_actions">
+                        <div class="version_drop">
+                            <div class="input_group">
+                                <label>Version</label>
+                                <div class="custom_select">
+                                    <select id="version_switcher" aria-label="Laravel version">
+                                                                                    <option value="https://laravel.com/docs/master/queries">Master</option>
+                                                                                    <option value="https://laravel.com/docs/6.x/queries">6.x</option>
+                                                                                    <option selected="" value="https://laravel.com/docs/5.8/queries">5.8</option>
+                                                                                    <option value="https://laravel.com/docs/5.7/queries">5.7</option>
+                                                                                    <option value="https://laravel.com/docs/5.6/queries">5.6</option>
+                                                                                    <option value="https://laravel.com/docs/5.5/queries">5.5</option>
+                                                                                    <option value="https://laravel.com/docs/5.4/queries">5.4</option>
+                                                                                    <option value="https://laravel.com/docs/5.3/queries">5.3</option>
+                                                                                    <option value="https://laravel.com/docs/5.2/queries">5.2</option>
+                                                                                    <option value="https://laravel.com/docs/5.1/queries">5.1</option>
+                                                                                    <option value="https://laravel.com/docs/5.0/queries">5.0</option>
+                                                                                    <option value="https://laravel.com/docs/4.2/queries">4.2</option>
+                                                                            </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search_contain">
+                            <div class="input_group search icon">
+                                <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;"><input type="text" class="search_input tt-input" id="search-docs-input" placeholder="Search Docs" aria-label="Search in the documentation" autocomplete="off" spellcheck="false" dir="auto" style="position: relative; vertical-align: top;"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: scandia-web, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0.5px; text-indent: 0px; text-rendering: auto; text-transform: none;">dist</pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; z-index: 100; left: 0px; right: auto; display: none;"><div class="tt-dataset-0"></div></span></span>
+                                <input type="submit" class="search_submit icon_display">
+                            </div>
+                        </div>
+                    </header>
+                    <section class="docs_body">
+                        <section class="docs_main" style="opacity: 1;">
+                            <h1>Database: Query Builder</h1>
+<ul>
+<li><a href="https://laravel.com/docs/5.8/queries#introduction">Introduction</a></li>
+<li><a href="https://laravel.com/docs/5.8/queries#retrieving-results">Retrieving Results</a><ul>
+<li><a href="https://laravel.com/docs/5.8/queries#chunking-results">Chunking Results</a></li>
+<li><a href="https://laravel.com/docs/5.8/queries#aggregates">Aggregates</a></li>
+</ul>
+</li>
+<li><a href="https://laravel.com/docs/5.8/queries#selects">Selects</a></li>
+<li><a href="https://laravel.com/docs/5.8/queries#raw-expressions">Raw Expressions</a></li>
+<li><a href="https://laravel.com/docs/5.8/queries#joins">Joins</a></li>
+<li><a href="https://laravel.com/docs/5.8/queries#unions">Unions</a></li>
+<li><a href="https://laravel.com/docs/5.8/queries#where-clauses">Where Clauses</a><ul>
+<li><a href="https://laravel.com/docs/5.8/queries#parameter-grouping">Parameter Grouping</a></li>
+<li><a href="https://laravel.com/docs/5.8/queries#where-exists-clauses">Where Exists Clauses</a></li>
+<li><a href="https://laravel.com/docs/5.8/queries#json-where-clauses">JSON Where Clauses</a></li>
+</ul>
+</li>
+<li><a href="https://laravel.com/docs/5.8/queries#ordering-grouping-limit-and-offset">Ordering, Grouping, Limit, &amp; Offset</a></li>
+<li><a href="https://laravel.com/docs/5.8/queries#conditional-clauses">Conditional Clauses</a></li>
+<li><a href="https://laravel.com/docs/5.8/queries#inserts">Inserts</a></li>
+<li><a href="https://laravel.com/docs/5.8/queries#updates">Updates</a><ul>
+<li><a href="https://laravel.com/docs/5.8/queries#updating-json-columns">Updating JSON Columns</a></li>
+<li><a href="https://laravel.com/docs/5.8/queries#increment-and-decrement">Increment &amp; Decrement</a></li>
+</ul>
+</li>
+<li><a href="https://laravel.com/docs/5.8/queries#deletes">Deletes</a></li>
+<li><a href="https://laravel.com/docs/5.8/queries#pessimistic-locking">Pessimistic Locking</a></li>
+<li><a href="https://laravel.com/docs/5.8/queries#debugging">Debugging</a></li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2><a href="https://laravel.com/docs/5.8/queries#introduction">Introduction</a></h2>
+<p>Laravel's database query builder provides a convenient, fluent interface to creating and running database queries. It can be used to perform most database operations in your application and works on all supported database systems.</p>
+<p>The Laravel query builder uses PDO parameter binding to protect your application against SQL injection attacks. There is no need to clean strings being passed as bindings.</p>
+<blockquote>
+<div class="callout"><div class="icon red"><img src="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/exclamation.min.svg"></div><p class="content"> PDO does not support binding column names. Therefore, you should never allow user input to dictate the column names referenced by your queries, including "order by" columns, etc. If you must allow the user to select certain columns to query against, always validate the column names against a white-list of allowed columns.</p></div>
+</blockquote>
+<p><a name="retrieving-results"></a></p>
+<h2><a href="https://laravel.com/docs/5.8/queries#retrieving-results">Retrieving Results</a></h2>
+<h4>Retrieving All Rows From A Table</h4>
+<p>You may use the <code class=" language-php">table</code> method on the <code class=" language-php"><span class="token constant">DB</span></code> facade to begin a query. The <code class=" language-php">table</code> method returns a fluent query builder instance for the given table, allowing you to chain more constraints onto the query and then finally get the results using the <code class=" language-php">get</code> method:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers</span><span class="token punctuation">;</span>
+
+<span class="token keyword">use</span> <span class="token package">Illuminate<span class="token punctuation">\</span>Support<span class="token punctuation">\</span>Facades<span class="token punctuation">\</span>DB</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">App<span class="token punctuation">\</span>Http<span class="token punctuation">\</span>Controllers<span class="token punctuation">\</span>Controller</span><span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">UserController</span> <span class="token keyword">extends</span> <span class="token class-name">Controller</span>
+<span class="token punctuation">{</span>
+    <span class="token comment">/**
+     * Show a list of all of the application's users.
+     *
+     * @return Response
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token keyword">return</span> <span class="token function">view</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'user.index'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token single-quoted-string string">'users'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$users</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></span></code></pre>
+<p>The <code class=" language-php">get</code> method returns an <code class=" language-php">Illuminate\<span class="token package">Support<span class="token punctuation">\</span>Collection</span></code> containing the results where each result is an instance of the PHP <code class=" language-php">stdClass</code> object. You may access each column's value by accessing the column as a property of the object:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$users</span> <span class="token keyword">as</span> <span class="token variable">$user</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">name</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<h4>Retrieving A Single Row / Column From A Table</h4>
+<p>If you just need to retrieve a single row from the database table, you may use the <code class=" language-php">first</code> method. This method will return a single <code class=" language-php">stdClass</code> object:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$user</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'John'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">echo</span> <span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">name</span><span class="token punctuation">;</span></code></pre>
+<p>If you don't even need an entire row, you may extract a single value from a record using the <code class=" language-php">value</code> method. This method will return the value of the column directly:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$email</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'John'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">value</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'email'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>To retrieve a single row by its <code class=" language-php">id</code> column value, use the <code class=" language-php">find</code> method:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$user</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">find</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4>Retrieving A List Of Column Values</h4>
+<p>If you would like to retrieve a Collection containing the values of a single column, you may use the <code class=" language-php">pluck</code> method. In this example, we'll retrieve a Collection of role titles:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$titles</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'roles'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">pluck</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$titles</span> <span class="token keyword">as</span> <span class="token variable">$title</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token variable">$title</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>You may also specify a custom key column for the returned Collection:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$roles</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'roles'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">pluck</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'title'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$roles</span> <span class="token keyword">as</span> <span class="token variable">$name</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token variable">$title</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> <span class="token variable">$title</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p><a name="chunking-results"></a></p>
+<h3><a href="https://laravel.com/docs/5.8/queries#chunking-results">Chunking Results</a></h3>
+<p>If you need to work with thousands of database records, consider using the <code class=" language-php">chunk</code> method. This method retrieves a small chunk of the results at a time and feeds each chunk into a <code class=" language-php">Closure</code> for processing. This method is very useful for writing <a href="https://laravel.com/docs/5.8/artisan">Artisan commands</a> that process thousands of records. For example, let's work with the entire <code class=" language-php">users</code> table in chunks of 100 records at a time:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">orderBy</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'id'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">chunk</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$users</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$users</span> <span class="token keyword">as</span> <span class="token variable">$user</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>You may stop further chunks from being processed by returning <code class=" language-php"><span class="token boolean constant">false</span></code> from the <code class=" language-php">Closure</code>:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">orderBy</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'id'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">chunk</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$users</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Process the records...</span>
+
+    <span class="token keyword">return</span> <span class="token boolean constant">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>If you are updating database records while chunking results, your chunk results could change in unexpected ways. So, when updating records while chunking, it is always best to use the <code class=" language-php">chunkById</code> method instead. This method will automatically paginate the results based on the record's primary key:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'active'</span><span class="token punctuation">,</span> <span class="token boolean constant">false</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">chunkById</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$users</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">foreach</span> <span class="token punctuation">(</span><span class="token variable">$users</span> <span class="token keyword">as</span> <span class="token variable">$user</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'id'</span><span class="token punctuation">,</span> <span class="token variable">$user</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token property">id</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'active'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean constant">true</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<blockquote>
+<div class="callout"><div class="icon red"><img src="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/exclamation.min.svg"></div><p class="content"> When updating or deleting records inside the chunk callback, any changes to the primary key or foreign keys could affect the chunk query. This could potentially result in records not being included in the chunked results.</p></div>
+</blockquote>
+<p><a name="aggregates"></a></p>
+<h3><a href="https://laravel.com/docs/5.8/queries#aggregates">Aggregates</a></h3>
+<p>The query builder also provides a variety of aggregate methods such as <code class=" language-php">count</code>, <code class=" language-php">max</code>, <code class=" language-php">min</code>, <code class=" language-php">avg</code>, and <code class=" language-php">sum</code>. You may call any of these methods after constructing your query:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$price</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'orders'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">max</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'price'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>You may combine these methods with other clauses:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$price</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'orders'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'finalized'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">avg</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'price'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4>Determining If Records Exist</h4>
+<p>Instead of using the <code class=" language-php">count</code> method to determine if any records exist that match your query's constraints, you may use the <code class=" language-php">exists</code> and <code class=" language-php">doesntExist</code> methods:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token keyword">return</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'orders'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'finalized'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">return</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'orders'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'finalized'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">doesntExist</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="selects"></a></p>
+<h2><a href="https://laravel.com/docs/5.8/queries#selects">Selects</a></h2>
+<h4>Specifying A Select Clause</h4>
+<p>You may not always want to select all columns from a database table. Using the <code class=" language-php">select</code> method, you can specify a custom <code class=" language-php">select</code> clause for the query:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'email as user_email'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The <code class=" language-php">distinct</code> method allows you to force the query to return distinct results:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">distinct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>If you already have a query builder instance and you wish to add a column to its existing select clause, you may use the <code class=" language-php">addSelect</code> method:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$query</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$users</span> <span class="token operator">=</span> <span class="token variable">$query</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">addSelect</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'age'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="raw-expressions"></a></p>
+<h2><a href="https://laravel.com/docs/5.8/queries#raw-expressions">Raw Expressions</a></h2>
+<p>Sometimes you may need to use a raw expression in a query. To create a raw expression, you may use the <code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span>raw</code> method:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                     <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">raw</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'count(*) as user_count, status'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                     <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'status'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'&lt;&gt;'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                     <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">groupBy</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'status'</span><span class="token punctuation">)</span>
+                     <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<blockquote>
+<div class="callout"><div class="icon red"><img src="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/exclamation.min.svg"></div><p class="content"> Raw statements will be injected into the query as strings, so you should be extremely careful to not create SQL injection vulnerabilities.</p></div>
+</blockquote>
+<p><a name="raw-methods"></a></p>
+<h3><a href="https://laravel.com/docs/5.8/queries#raw-methods">Raw Methods</a></h3>
+<p>Instead of using <code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span>raw</code>, you may also use the following methods to insert a raw expression into various parts of your query.</p>
+<h4><code class=" language-php">selectRaw</code></h4>
+<p>The <code class=" language-php">selectRaw</code> method can be used in place of <code class=" language-php"><span class="token function">select</span><span class="token punctuation">(</span><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">raw</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code>. This method accepts an optional array of bindings as its second argument:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$orders</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'orders'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">selectRaw</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'price * ? as price_with_tax'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1.0825</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4><code class=" language-php">whereRaw <span class="token operator">/</span> orWhereRaw</code></h4>
+<p>The <code class=" language-php">whereRaw</code> and <code class=" language-php">orWhereRaw</code> methods can be used to inject a raw <code class=" language-php">where</code> clause into your query. These methods accept an optional array of bindings as their second argument:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$orders</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'orders'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereRaw</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'price &gt; IF(state = "TX", ?, 100)'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">200</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4><code class=" language-php">havingRaw <span class="token operator">/</span> orHavingRaw</code></h4>
+<p>The <code class=" language-php">havingRaw</code> and <code class=" language-php">orHavingRaw</code> methods may be used to set a raw string as the value of the <code class=" language-php">having</code> clause. These methods accept an optional array of bindings as their second argument:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$orders</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'orders'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'department'</span><span class="token punctuation">,</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">raw</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'SUM(price) as total_sales'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">groupBy</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'department'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">havingRaw</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'SUM(price) &gt; ?'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">2500</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4><code class=" language-php">orderByRaw</code></h4>
+<p>The <code class=" language-php">orderByRaw</code> method may be used to set a raw string as the value of the <code class=" language-php">order by</code> clause:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$orders</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'orders'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">orderByRaw</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'updated_at - created_at DESC'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="joins"></a></p>
+<h2><a href="https://laravel.com/docs/5.8/queries#joins">Joins</a></h2>
+<h4>Inner Join Clause</h4>
+<p>The query builder may also be used to write join statements. To perform a basic "inner join", you may use the <code class=" language-php">join</code> method on a query builder instance. The first argument passed to the <code class=" language-php">join</code> method is the name of the table you need to join to, while the remaining arguments specify the column constraints for the join. You can even join to multiple tables in a single query:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'contacts'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'users.id'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'contacts.user_id'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'orders'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'users.id'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'orders.user_id'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users.*'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'contacts.phone'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'orders.price'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4>Left Join / Right Join Clause</h4>
+<p>If you would like to perform a "left join" or "right join" instead of an "inner join", use the <code class=" language-php">leftJoin</code> or <code class=" language-php">rightJoin</code> methods. These methods have the same signature as the <code class=" language-php">join</code> method:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">leftJoin</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'posts'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'users.id'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'posts.user_id'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">rightJoin</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'posts'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'users.id'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'posts.user_id'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4>Cross Join Clause</h4>
+<p>To perform a "cross join" use the <code class=" language-php">crossJoin</code> method with the name of the table you wish to cross join to. Cross joins generate a cartesian product between the first table and the joined table:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'sizes'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">crossJoin</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'colours'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4>Advanced Join Clauses</h4>
+<p>You may also specify more advanced join clauses. To get started, pass a <code class=" language-php">Closure</code> as the second argument into the <code class=" language-php">join</code> method. The <code class=" language-php">Closure</code> will receive a <code class=" language-php">JoinClause</code> object which allows you to specify constraints on the <code class=" language-php">join</code> clause:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+        <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'contacts'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$join</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token variable">$join</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users.id'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'contacts.user_id'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">orOn</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>If you would like to use a "where" style clause on your joins, you may use the <code class=" language-php">where</code> and <code class=" language-php">orWhere</code> methods on a join. Instead of comparing two columns, these methods will compare the column against a value:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+        <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'contacts'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$join</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token variable">$join</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users.id'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'contacts.user_id'</span><span class="token punctuation">)</span>
+                 <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'contacts.user_id'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'&gt;'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4>Sub-Query Joins</h4>
+<p>You may use the <code class=" language-php">joinSub</code>, <code class=" language-php">leftJoinSub</code>, and <code class=" language-php">rightJoinSub</code> methods to join a query to a sub-query. Each of these methods receive three arguments: the sub-query, its table alias, and a Closure that defines the related columns:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$latestPosts</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'posts'</span><span class="token punctuation">)</span>
+                   <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'user_id'</span><span class="token punctuation">,</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">raw</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'MAX(created_at) as last_post_created_at'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                   <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'is_published'</span><span class="token punctuation">,</span> <span class="token boolean constant">true</span><span class="token punctuation">)</span>
+                   <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">groupBy</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'user_id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+        <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">joinSub</span><span class="token punctuation">(</span><span class="token variable">$latestPosts</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'latest_posts'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$join</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token variable">$join</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users.id'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'latest_posts.user_id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="unions"></a></p>
+<h2><a href="https://laravel.com/docs/5.8/queries#unions">Unions</a></h2>
+<p>The query builder also provides a quick way to "union" two queries together. For example, you may create an initial query and use the <code class=" language-php">union</code> method to union it with a second query:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$first</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereNull</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'first_name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereNull</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'last_name'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">union</span><span class="token punctuation">(</span><span class="token variable">$first</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<blockquote>
+<div class="callout"><div class="icon purple"><img src="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/lightbulb.min.svg"></div><p class="content"> The <code class=" language-php">unionAll</code> method is also available and has the same method signature as <code class=" language-php">union</code>.</p></div>
+</blockquote>
+<p><a name="where-clauses"></a></p>
+<h2><a href="https://laravel.com/docs/5.8/queries#where-clauses">Where Clauses</a></h2>
+<h4>Simple Where Clauses</h4>
+<p>You may use the <code class=" language-php">where</code> method on a query builder instance to add <code class=" language-php">where</code> clauses to the query. The most basic call to <code class=" language-php">where</code> requires three arguments. The first argument is the name of the column. The second argument is an operator, which can be any of the database's supported operators. Finally, the third argument is the value to evaluate against the column.</p>
+<p>For example, here is a query that verifies the value of the "votes" column is equal to 100:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>For convenience, if you want to verify that a column is equal to a given value, you may pass the value directly as the second argument to the <code class=" language-php">where</code> method:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>You may use a variety of other operators when writing a <code class=" language-php">where</code> clause:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'&gt;='</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'&lt;&gt;'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'like'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'T%'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>You may also pass an array of conditions to the <code class=" language-php">where</code> function:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token single-quoted-string string">'status'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'1'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token single-quoted-string string">'subscribed'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'&lt;&gt;'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'1'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4>Or Statements</h4>
+<p>You may chain where constraints together as well as add <code class=" language-php"><span class="token keyword">or</span></code> clauses to the query. The <code class=" language-php">orWhere</code> method accepts the same arguments as the <code class=" language-php">where</code> method:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                    <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'&gt;'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+                    <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">orWhere</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'John'</span><span class="token punctuation">)</span>
+                    <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4>Additional Where Clauses</h4>
+<p><strong>whereBetween / orWhereBetween</strong></p>
+<p>The <code class=" language-php">whereBetween</code> method verifies that a column's value is between two values:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                    <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereBetween</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><strong>whereNotBetween / orWhereNotBetween</strong></p>
+<p>The <code class=" language-php">whereNotBetween</code> method verifies that a column's value lies outside of two values:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                    <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereNotBetween</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                    <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><strong>whereIn / whereNotIn / orWhereIn / orWhereNotIn</strong></p>
+<p>The <code class=" language-php">whereIn</code> method verifies that a given column's value is contained within the given array:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                    <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereIn</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'id'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                    <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The <code class=" language-php">whereNotIn</code> method verifies that the given column's value is <strong>not</strong> contained in the given array:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                    <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereNotIn</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'id'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                    <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><strong>whereNull / whereNotNull / orWhereNull / orWhereNotNull</strong></p>
+<p>The <code class=" language-php">whereNull</code> method verifies that the value of the given column is <code class=" language-php"><span class="token constant">NULL</span></code>:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                    <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereNull</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'updated_at'</span><span class="token punctuation">)</span>
+                    <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The <code class=" language-php">whereNotNull</code> method verifies that the column's value is not <code class=" language-php"><span class="token constant">NULL</span></code>:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                    <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereNotNull</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'updated_at'</span><span class="token punctuation">)</span>
+                    <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><strong>whereDate / whereMonth / whereDay / whereYear / whereTime</strong></p>
+<p>The <code class=" language-php">whereDate</code> method may be used to compare a column's value against a date:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereDate</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'created_at'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'2016-12-31'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The <code class=" language-php">whereMonth</code> method may be used to compare a column's value against a specific month of a year:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereMonth</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'created_at'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'12'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The <code class=" language-php">whereDay</code> method may be used to compare a column's value against a specific day of a month:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereDay</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'created_at'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'31'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The <code class=" language-php">whereYear</code> method may be used to compare a column's value against a specific year:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereYear</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'created_at'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'2016'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The <code class=" language-php">whereTime</code> method may be used to compare a column's value against a specific time:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereTime</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'created_at'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'11:20:45'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><strong>whereColumn / orWhereColumn</strong></p>
+<p>The <code class=" language-php">whereColumn</code> method may be used to verify that two columns are equal:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereColumn</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'first_name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'last_name'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>You may also pass a comparison operator to the method:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereColumn</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'updated_at'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'&gt;'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'created_at'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The <code class=" language-php">whereColumn</code> method can also be passed an array of multiple conditions. These conditions will be joined using the <code class=" language-php"><span class="token keyword">and</span></code> operator:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereColumn</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+                    <span class="token punctuation">[</span><span class="token single-quoted-string string">'first_name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'last_name'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">[</span><span class="token single-quoted-string string">'updated_at'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'&gt;'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'created_at'</span><span class="token punctuation">]</span>
+                <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="parameter-grouping"></a></p>
+<h3><a href="https://laravel.com/docs/5.8/queries#parameter-grouping">Parameter Grouping</a></h3>
+<p>Sometimes you may need to create more advanced where clauses such as "where exists" clauses or nested parameter groupings. The Laravel query builder can handle these as well. To get started, let's look at an example of grouping constraints within parenthesis:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'John'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$query</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token variable">$query</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'&gt;'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+                      <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">orWhere</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'title'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'='</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'Admin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>As you can see, passing a <code class=" language-php">Closure</code> into the <code class=" language-php">where</code> method instructs the query builder to begin a constraint group. The <code class=" language-php">Closure</code> will receive a query builder instance which you can use to set the constraints that should be contained within the parenthesis group. The example above will produce the following SQL:</p>
+<pre class=" language-php"><code class=" language-php">select <span class="token operator">*</span> from users where name <span class="token operator">=</span> <span class="token single-quoted-string string">'John'</span> <span class="token keyword">and</span> <span class="token punctuation">(</span>votes <span class="token operator">&gt;</span> <span class="token number">100</span> <span class="token keyword">or</span> title <span class="token operator">=</span> <span class="token single-quoted-string string">'Admin'</span><span class="token punctuation">)</span></code></pre>
+<blockquote>
+<div class="callout"><div class="icon purple"><img src="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/lightbulb.min.svg"></div><p class="content"> You should always group <code class=" language-php">orWhere</code> calls in order to avoid unexpected behavior when global scopes are applied.</p></div>
+</blockquote>
+<p><a name="where-exists-clauses"></a></p>
+<h3><a href="https://laravel.com/docs/5.8/queries#where-exists-clauses">Where Exists Clauses</a></h3>
+<p>The <code class=" language-php">whereExists</code> method allows you to write <code class=" language-php">where exists</code> SQL clauses. The <code class=" language-php">whereExists</code> method accepts a <code class=" language-php">Closure</code> argument, which will receive a query builder instance allowing you to define the query that should be placed inside of the "exists" clause:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereExists</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$query</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token variable">$query</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">raw</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                      <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'orders'</span><span class="token punctuation">)</span>
+                      <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereRaw</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'orders.user_id = users.id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The query above will produce the following SQL:</p>
+<pre class=" language-php"><code class=" language-php">select <span class="token operator">*</span> from users
+where exists <span class="token punctuation">(</span>
+    select <span class="token number">1</span> from orders where orders<span class="token punctuation">.</span>user_id <span class="token operator">=</span> users<span class="token punctuation">.</span>id
+<span class="token punctuation">)</span></code></pre>
+<p><a name="json-where-clauses"></a></p>
+<h3><a href="https://laravel.com/docs/5.8/queries#json-where-clauses">JSON Where Clauses</a></h3>
+<p>Laravel also supports querying JSON column types on databases that provide support for JSON column types. Currently, this includes MySQL 5.7, PostgreSQL, SQL Server 2016, and SQLite 3.9.0 (with the <a href="https://www.sqlite.org/json1.html">JSON1 extension</a>). To query a JSON column, use the <code class=" language-php"><span class="token operator">-</span><span class="token operator">&gt;</span></code> operator:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'options-&gt;language'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'en'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'preferences-&gt;dining-&gt;meal'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'salad'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>You may use <code class=" language-php">whereJsonContains</code> to query JSON arrays (not supported on SQLite):</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereJsonContains</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'options-&gt;languages'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'en'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>MySQL and PostgreSQL support <code class=" language-php">whereJsonContains</code> with multiple values:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereJsonContains</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'options-&gt;languages'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token single-quoted-string string">'en'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'de'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>You may use <code class=" language-php">whereJsonLength</code> to query JSON arrays by their length:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereJsonLength</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'options-&gt;languages'</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">whereJsonLength</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'options-&gt;languages'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'&gt;'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="ordering-grouping-limit-and-offset"></a></p>
+<h2><a href="https://laravel.com/docs/5.8/queries#ordering-grouping-limit-and-offset">Ordering, Grouping, Limit, &amp; Offset</a></h2>
+<h4>orderBy</h4>
+<p>The <code class=" language-php">orderBy</code> method allows you to sort the result of the query by a given column. The first argument to the <code class=" language-php">orderBy</code> method should be the column you wish to sort by, while the second argument controls the direction of the sort and may be either <code class=" language-php">asc</code> or <code class=" language-php">desc</code>:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">orderBy</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'desc'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4>latest / oldest</h4>
+<p>The <code class=" language-php">latest</code> and <code class=" language-php">oldest</code> methods allow you to easily order results by date. By default, result will be ordered by the <code class=" language-php">created_at</code> column. Or, you may pass the column name that you wish to sort by:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$user</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">latest</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4>inRandomOrder</h4>
+<p>The <code class=" language-php">inRandomOrder</code> method may be used to sort the query results randomly. For example, you may use this method to fetch a random user:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$randomUser</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">inRandomOrder</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4>groupBy / having</h4>
+<p>The <code class=" language-php">groupBy</code> and <code class=" language-php">having</code> methods may be used to group the query results. The <code class=" language-php">having</code> method's signature is similar to that of the <code class=" language-php">where</code> method:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">groupBy</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'account_id'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">having</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'account_id'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'&gt;'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>You may pass multiple arguments to the <code class=" language-php">groupBy</code> method to group by multiple columns:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">groupBy</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'first_name'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'status'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">having</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'account_id'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'&gt;'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>For more advanced <code class=" language-php">having</code> statements, see the <a href="https://laravel.com/docs/5.8/queries#raw-methods"><code class=" language-php">havingRaw</code></a> method.</p>
+<h4>skip / take</h4>
+<p>To limit the number of results returned from the query, or to skip a given number of results in the query, you may use the <code class=" language-php">skip</code> and <code class=" language-php">take</code> methods:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">skip</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">take</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Alternatively, you may use the <code class=" language-php">limit</code> and <code class=" language-php">offset</code> methods:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">offset</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">limit</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="conditional-clauses"></a></p>
+<h2><a href="https://laravel.com/docs/5.8/queries#conditional-clauses">Conditional Clauses</a></h2>
+<p>Sometimes you may want clauses to apply to a query only when something else is true. For instance you may only want to apply a <code class=" language-php">where</code> statement if a given input value is present on the incoming request. You may accomplish this using the <code class=" language-php">when</code> method:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$role</span> <span class="token operator">=</span> <span class="token variable">$request</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">input</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'role'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">when</span><span class="token punctuation">(</span><span class="token variable">$role</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$query</span><span class="token punctuation">,</span> <span class="token variable">$role</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token variable">$query</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'role_id'</span><span class="token punctuation">,</span> <span class="token variable">$role</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The <code class=" language-php">when</code> method only executes the given Closure when the first parameter is <code class=" language-php"><span class="token boolean constant">true</span></code>. If the first parameter is <code class=" language-php"><span class="token boolean constant">false</span></code>, the Closure will not be executed.</p>
+<p>You may pass another Closure as the third parameter to the <code class=" language-php">when</code> method. This Closure will execute if the first parameter evaluates as <code class=" language-php"><span class="token boolean constant">false</span></code>. To illustrate how this feature may be used, we will use it to configure the default sorting of a query:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$sortBy</span> <span class="token operator">=</span> <span class="token constant">null</span><span class="token punctuation">;</span>
+
+<span class="token variable">$users</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">when</span><span class="token punctuation">(</span><span class="token variable">$sortBy</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$query</span><span class="token punctuation">,</span> <span class="token variable">$sortBy</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token variable">$query</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">orderBy</span><span class="token punctuation">(</span><span class="token variable">$sortBy</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token variable">$query</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> <span class="token variable">$query</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">orderBy</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="inserts"></a></p>
+<h2><a href="https://laravel.com/docs/5.8/queries#inserts">Inserts</a></h2>
+<p>The query builder also provides an <code class=" language-php">insert</code> method for inserting records into the database table. The <code class=" language-php">insert</code> method accepts an array of column names and values:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">insert</span><span class="token punctuation">(</span>
+    <span class="token punctuation">[</span><span class="token single-quoted-string string">'email'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'john@example.com'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'votes'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>You may even insert several records into the table with a single call to <code class=" language-php">insert</code> by passing an array of arrays. Each array represents a row to be inserted into the table:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">insert</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token single-quoted-string string">'email'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'taylor@example.com'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'votes'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token single-quoted-string string">'email'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'dayle@example.com'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'votes'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>The <code class=" language-php">insertOrIgnore</code> method will ignore duplicate record errors while inserting records into the database:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">insertOrIgnore</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token single-quoted-string string">'id'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'email'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'taylor@example.com'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token single-quoted-string string">'id'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'email'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'dayle@example.com'</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4>Auto-Incrementing IDs</h4>
+<p>If the table has an auto-incrementing id, use the <code class=" language-php">insertGetId</code> method to insert a record and then retrieve the ID:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token variable">$id</span> <span class="token operator">=</span> <span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">insertGetId</span><span class="token punctuation">(</span>
+    <span class="token punctuation">[</span><span class="token single-quoted-string string">'email'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'john@example.com'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'votes'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<blockquote>
+<div class="callout"><div class="icon red"><img src="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/exclamation.min.svg"></div><p class="content"> When using PostgreSQL the <code class=" language-php">insertGetId</code> method expects the auto-incrementing column to be named <code class=" language-php">id</code>. If you would like to retrieve the ID from a different "sequence", you may pass the column name as the second parameter to the <code class=" language-php">insertGetId</code> method.</p></div>
+</blockquote>
+<p><a name="updates"></a></p>
+<h2><a href="https://laravel.com/docs/5.8/queries#updates">Updates</a></h2>
+<p>In addition to inserting records into the database, the query builder can also update existing records using the <code class=" language-php">update</code> method. The <code class=" language-php">update</code> method, like the <code class=" language-php">insert</code> method, accepts an array of column and value pairs containing the columns to be updated. You may constrain the <code class=" language-php">update</code> query using <code class=" language-php">where</code> clauses:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'id'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'votes'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<h4>Update Or Insert</h4>
+<p>Sometimes you may want to update an existing record in the database or create it if no matching record exists. In this scenario, the <code class=" language-php">updateOrInsert</code> method may be used. The <code class=" language-php">updateOrInsert</code> method accepts two arguments: an array of conditions by which to find the record, and an array of column and value pairs containing the columns to be updated.</p>
+<p>The <code class=" language-php">updateOrInsert</code> method will first attempt to locate a matching database record using the first argument's column and value pairs. If the record exists, it will be updated with the values in the second argument. If the record can not be found, a new record will be inserted with the merged attributes of both arguments:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+    <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">updateOrInsert</span><span class="token punctuation">(</span>
+        <span class="token punctuation">[</span><span class="token single-quoted-string string">'email'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'john@example.com'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'John'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">[</span><span class="token single-quoted-string string">'votes'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'2'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="updating-json-columns"></a></p>
+<h3><a href="https://laravel.com/docs/5.8/queries#updating-json-columns">Updating JSON Columns</a></h3>
+<p>When updating a JSON column, you should use <code class=" language-php"><span class="token operator">-</span><span class="token operator">&gt;</span></code> syntax to access the appropriate key in the JSON object. This operation is supported on MySQL 5.7+ and PostgreSQL 9.5+:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'id'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+            <span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token single-quoted-string string">'options-&gt;enabled'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token boolean constant">true</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="increment-and-decrement"></a></p>
+<h3><a href="https://laravel.com/docs/5.8/queries#increment-and-decrement">Increment &amp; Decrement</a></h3>
+<p>The query builder also provides convenient methods for incrementing or decrementing the value of a given column. This is a shortcut, providing a more expressive and terse interface compared to manually writing the <code class=" language-php">update</code> statement.</p>
+<p>Both of these methods accept at least one argument: the column to modify. A second argument may optionally be passed to control the amount by which the column should be incremented or decremented:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">increment</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">increment</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">decrement</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">decrement</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>You may also specify additional columns to update during the operation:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">increment</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token single-quoted-string string">'name'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'John'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="deletes"></a></p>
+<h2><a href="https://laravel.com/docs/5.8/queries#deletes">Deletes</a></h2>
+<p>The query builder may also be used to delete records from the table via the <code class=" language-php">delete</code> method. You may constrain <code class=" language-php">delete</code> statements by adding <code class=" language-php">where</code> clauses before calling the <code class=" language-php">delete</code> method:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'&gt;'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>If you wish to truncate the entire table, which will remove all rows and reset the auto-incrementing ID to zero, you may use the <code class=" language-php">truncate</code> method:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">truncate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="pessimistic-locking"></a></p>
+<h2><a href="https://laravel.com/docs/5.8/queries#pessimistic-locking">Pessimistic Locking</a></h2>
+<p>The query builder also includes a few functions to help you do "pessimistic locking" on your <code class=" language-php">select</code> statements. To run the statement with a "shared lock", you may use the <code class=" language-php">sharedLock</code> method on a query. A shared lock prevents the selected rows from being modified until your transaction commits:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'&gt;'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">sharedLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>Alternatively, you may use the <code class=" language-php">lockForUpdate</code> method. A "for update" lock prevents the rows from being modified or from being selected with another shared lock:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'&gt;'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">lockForUpdate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p><a name="debugging"></a></p>
+<h2><a href="https://laravel.com/docs/5.8/queries#debugging">Debugging</a></h2>
+<p>You may use the <code class=" language-php">dd</code> or <code class=" language-php">dump</code> methods while building a query to dump the query bindings and SQL. The <code class=" language-php">dd</code> method will display the debug information and then stop executing the request. The <code class=" language-php">dump</code> method will display the debug information but allow the request to keep executing:</p>
+<pre class=" language-php"><code class=" language-php"><span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'&gt;'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">dd</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token constant">DB</span><span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token function">table</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'users'</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token single-quoted-string string">'votes'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'&gt;'</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token operator">&gt;</span><span class="token function">dump</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+                        </section>
+                    </section>
+                </section>
+            </div>
+        </div>
+
+    </div>
+
+<footer>
+    <div class="footer_contain" style="padding-top: 0;">
+        <div class="contain">
+            <section class="partner_block">
+                <div class="content">
+                    <h2>Become a Laravel Partner</h2>
+                    <p>Laravel Partners are elite shops providing top-notch Laravel development and consulting. Each of our partners can help you craft a beautiful, well-architected project.</p>
+                </div>
+                                <a href="https://laravel.com/partners" class="btn"><span>Our Partners</span></a>
+                            </section>
+        </div>
+
+        <div class="footer_bg">
+            <div class="contain">
+                <div class="footer_content">
+                    <div class="logotype">
+                        <img src="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/logotype.min.svg" alt="Laravel">
+                    </div>
+                    <div class="search_box">
+
+                    </div>
+                </div>
+                <div class="footer_content">
+                    <div class="footer_nav">
+                        <div class="nav_col">
+                            <span class="footer_nav_trigger">Highlights</span>
+                            <div class="footer_nav_contain">
+                                <ul>
+                                    <li><a href="https://laravel.com/docs/6.x/releases">Release Notes</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/installation">Getting Started</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/routing">Routing</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/blade">Blade Templates</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/authentication">Authentication</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/authorization">Authorization</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/artisan">Artisan Console</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/database">Database</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/eloquent">Eloquent ORM</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/testing">Testing</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="nav_col">
+                            <span class="footer_nav_trigger">Resources</span>
+                            <div class="footer_nav_contain">
+                                <ul>
+                                    <li><a href="https://laracasts.com/">Laracasts</a></li>
+                                    <li><a href="https://laravel-news.com/">Laravel News</a></li>
+                                    <li><a href="https://laracon.us/">Laracon</a></li>
+                                    <li><a href="https://laracon.eu/">Laracon EU</a></li>
+                                    <li><a href="https://laracon.com.au/">Laracon AU</a></li>
+                                    <li><a href="https://larajobs.com/">Jobs</a></li>
+                                    <li><a href="https://certification.laravel.com/">Certification</a></li>
+                                    <li><a href="https://laracasts.com/discuss">Forums</a></li>
+                                    <!-- <li><a href="http://www.laravelpodcast.com/">Podcast</a></li> -->
+                                    <!-- <li><a href="https://course.testdrivenlaravel.com/">Test-driven Laravel</a></li> -->
+                                    <!-- <li><a href="https://statamic.com/">Statamic</a></li> -->
+<!--                                     <li><a href="https://styleci.io/">StyleCI</a></li>
+                                    <li><a href="https://cachethq.io/">Cachet</a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="nav_col">
+                            <span class="footer_nav_trigger">Partners</span>
+                            <div class="footer_nav_contain">
+                                <ul>
+                                    <li><a href="https://vehikl.com/">Vehikl</a></li>
+                                    <li><a href="https://tighten.co/">Tighten Co.</a></li>
+                                    <li><a href="https://kirschbaumdevelopment.com/">Kirschbaum</a></li>
+                                    <li><a href="https://www.byte5.net/">Byte 5</a></li>
+                                    <li><a href="https://64robots.com/">64Robots</a></li>
+                                    <li><a href="https://cubettech.com/">Cubet</a></li>
+                                    <li><a href="https://devsquad.com/">DevSquad</a></li>
+                                    <li><a href="https://www.ideil.com/">Ideil</a></li>
+                                    <li><a href="https://www.cyber-duck.co.uk/how-we-work/technology/laravel?utm_source=Laravel%20Partner&amp;utm_medium=Sponsorship">Cyber-Duck</a></li>
+                                    <li><a href="https://corporate.aboutyou.de/app/uploads/2019/08/INTRO-Pitch-I-AY-Tech.pdf?utm_source=laravelpartnersfindoutmore&amp;utm_medium=socialgroups&amp;utm_campaign=tech">ABOUT YOU</a></li>
+                                    <li><a href="https://www.a2design.biz/">A2 Design</a></li>
+                                    <li><a href="https://romegadigital.com/">Romega Software</a></li>
+                                    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeOTE1G6zxSPbKdmQ59UKkL_Rja_ddAyG6Y6xxGdSGAWlNTFA/viewform">Become A Partner</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="nav_col">
+                            <span class="footer_nav_trigger">Ecosystem</span>
+                            <div class="footer_nav_contain">
+                                <ul>
+                                    <li><a href="https://vapor.laravel.com/">Vapor</a></li>
+                                    <li><a href="https://forge.laravel.com/">Forge</a></li>
+                                    <li><a href="https://envoyer.io/">Envoyer</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/horizon">Horizon</a></li>
+                                    <li><a href="https://lumen.laravel.com/">Lumen</a></li>
+                                    <li><a href="https://nova.laravel.com/">Nova</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/broadcasting">Echo</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/valet">Valet</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/mix">Mix</a></li>
+                                    <li><a href="https://spark.laravel.com/">Spark</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/billing">Cashier</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/homestead">Homestead</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/dusk">Dusk</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/passport">Passport</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/scout">Scout</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/socialite">Socialite</a></li>
+                                    <li><a href="https://laravel.com/docs/6.x/telescope">Telescope</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer_info">
+                        <p class="small">Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in most web projects.</p>
+                        <p class="small copyright">Laravel is a Trademark of Taylor Otwell.<br>Copyright © 2011-2020 Laravel LLC.
+                        </p>
+                        <ul class="social_links">
+                            <li><a href="https://twitter.com/laravelphp"><img src="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/twitter.min.svg" alt="Twitter"></a>
+                            </li>
+                            <li><a href="https://github.com/laravel"><img src="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/github.min.svg" alt="GitHub"></a>
+                            </li>
+                            <li><a href="https://discord.gg/mPZNm7A"><img src="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/discord.min.svg" alt="Discord"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="https://laravel.com/" class="logomark"><img src="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/logomark.min.svg" alt="Laravel"></a>
+    </div>
+</footer>
+
+<script>
+    var algolia_app_id = '8BB87I11DE';
+    var algolia_search_key = '60b61cc4ab41ce7967bd36b002e9ea74';
+    var version = '5.8';
+</script>
+
+<script id="search_suggestion_template" type="text/template">
+	<div class="autocomplete-wrapper">
+		{{#_highlightResult.h1}}
+		<div class="h1">
+			{{{ _highlightResult.h1.value }}}
+		</div>
+		{{/_highlightResult.h1}}
+
+		<div class="sub-section">
+			{{#_highlightResult.h2}}
+			<div class="h2">
+				<span class="hash">#</span> {{{ _highlightResult.h2.value }}}
+			</div>
+			{{/_highlightResult.h2}}
+
+			{{#_highlightResult.h3}}
+			<div class="h3">
+				> {{{ _highlightResult.h3.value }}}
+			</div>
+			{{/_highlightResult.h3}}
+
+			{{#_highlightResult.h4}}
+			<div class="h4">
+				> {{{ _highlightResult.h4.value }}}
+			</div>
+			{{/_highlightResult.h4}}
+		</div>
+
+		{{#_highlightResult.content}}
+		<div class="content">
+			{{{ _highlightResult.content.value }}}
+		</div>
+		{{/_highlightResult.content}}
+	</div>
+</script>
+
+<script id="search_empty_template" type="text/template">
+	<div class="autocomplete-wrapper empty">
+		<div class="h2">We didn't find any result for "{{query}}". Sorry!</div>
+	</div>
+</script>
+
+<script id="search_footer_template" type="text/template">
+	<div class="footer">
+		<a target="_blank" href="https://www.algolia.com/?utm_source=laravel&utm_medium=link&utm_campaign=laravel_documentation_search">
+            <img width="105" src="/img/icons/algolia.min.svg" alt="Algolia">
+			<div style="clear: both"></div>
+		</a>
+	</div>
+</script>
+
+<script src="./Database_ Query Builder - Laravel - The PHP Framework For Web Artisans_files/app.js.download"></script>
+
+<script>
+    var _gaq=[['_setAccount','UA-23865777-1'],['_trackPageview']];
+    (function(d,t){
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)
+    }(document,'script'));
+</script>
+
+
+</body></html>
