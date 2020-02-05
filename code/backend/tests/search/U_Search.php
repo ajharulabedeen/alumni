@@ -25,12 +25,12 @@ class UTest_ProfileBasicRepo extends TestCase
         echo "\n >----------- Test Main : ---------> \n";
         error_log("Search :");
 //        $this->search_basic(10, "ASC", "batch", "dept", 'EE');
-        $this->search_basic_count(10, "ASC", "batch", "dept", 'EE');
+        $this->search_basic_count(10, "ASC", "batch", "dept", '%EE%');
     } //main test
 
     public function testBasicCount()
     {
-        $this->search_basic_count(10, "ASC", "batch", "dept", 'EE');
+        $this->search_basic_count(10, "ASC", "batch", "dept", '%EE%');
     }
 
     public function search_basic_count(string $per_page, string $sort_by, string $sort_on, string $columnName, string $key): void
@@ -45,7 +45,7 @@ class UTest_ProfileBasicRepo extends TestCase
 
     public function testBasicSearch()
     {
-        $this->search_basic(10, "ASC", "batch", "dept", 'EE');
+        $this->search_basic(10, "ASC", "batch", "dept", '%EE%');
     }
 
     //done

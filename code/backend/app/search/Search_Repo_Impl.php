@@ -23,7 +23,7 @@ class Search_Repo_Impl implements Search_Repo_I
         }
         $like = 'LIKE';
 //        $key='%' . $key;
-        $key = $key . '%';
+//        $key = $key;
         $data = ProfileBasic::where($column_name, $like, $key)->orderBy($sort_on, $order)->paginate($per_page)->all();
         return $data;
     }
@@ -38,7 +38,7 @@ class Search_Repo_Impl implements Search_Repo_I
         }
         $like = 'LIKE';
 //        $key='%' . $key;
-        $key = $key . '%';
+//        $key = $key;
         $data = ProfileBasic::where($column_name, $like, $key)->orderBy($sort_on, $order)->count();
         return $data;
     }
