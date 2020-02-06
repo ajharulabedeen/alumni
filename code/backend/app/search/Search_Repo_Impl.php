@@ -53,8 +53,8 @@ class Search_Repo_Impl implements Search_Repo_I
                 , 'b.student_id'
                 , 'b.dept'
                 , 'b.batch'
-                ,'profile_education.*')
-            ->where( 'profile_education.'.$column_name, 'LIKE', $key)->orderBy($sort_on, $order)->paginate($per_page);
+                , 'profile_education.*')
+            ->where('profile_education.' . $column_name, 'LIKE', $key)->orderBy($sort_on, $order)->paginate($per_page);
         return $data;
     }
 
@@ -62,7 +62,39 @@ class Search_Repo_Impl implements Search_Repo_I
     {
         $data = DB::table('profile_basics')
             ->join('profile_education', 'profile_basics.user_id', '=', 'profile_education.user_id')
-            ->where($column_name, 'LIKE', $key)->count() ;
+            ->where('profile_education.' . $column_name, 'LIKE', $key)->count();
+        return $data;
+    }
+
+    public function search_jobs(string $per_page, string $sort_by, string $sort_on, string $column_name, string $key)
+    {
+        // TODO: Implement search_org() method.
+        if ($sort_by == "ASC") {
+            $order = "ASC";
+        } else {
+            $order = "DESC";
+        }
+
+        $data = DB::table('profile_basics as b')
+            ->join('profile_jobs', 'profile_jobs.user_id', '=', 'b.user_id')
+            ->select(
+                'b.user_id'
+                , 'b.first_name'
+                , 'b.last_name'
+                , 'b.student_id'
+                , 'b.dept'
+                , 'b.batch'
+                , 'profile_jobs.*')
+            ->where('profile_jobs.' . $column_name, 'LIKE', $key)->orderBy($sort_on, $order)->paginate($per_page);
+        return $data;
+    }
+
+    public function search_jobs_count(string $per_page, string $sort_by, string $sort_on, string $column_name, string $key)
+    {
+        // TODO: Implement search_org_count() method.
+        $data = DB::table('profile_basics')
+            ->join('profile_jobs', 'profile_basics.user_id', '=', 'profile_jobs.user_id')
+            ->where('profile_jobs.' . $column_name, 'LIKE', $key)->count();
         return $data;
     }
 

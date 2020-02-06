@@ -25,7 +25,7 @@ class UTest_ProfileBasicRepo extends TestCase
         echo "\n >----------- Test Main : ---------> \n";
         error_log("Search :");
 //result : 9999
-                $this->search_basic_count(10, "ASC", "batch", "research_interest", '%Io%');
+//                $this->search_basic_count(10, "ASC", "batch", "research_interest", '%Io%');
 //        $this->search_basic(10, "ASC", "batch", "research_interest", '%Io%');
 //--------------------
 //        $this->search_education_count(10, "ASC", "passing_year", "institue_name", '%School%');
@@ -33,6 +33,14 @@ class UTest_ProfileBasicRepo extends TestCase
 //        $this->search_education(10, "DESC", "batch", "institue_name", '%School%');
 //result : 7
 //        $this->search_education_count(10, "DESC", "batch", "institue_name", '%School%');
+//result : 'wu' -> 1
+//result : 'tiger' -> 4
+//result : type->'pri' -> 9
+        $this->search_jobs(10, "DESC", "batch", "type", '%pub%');
+//result : organization_name->'wu' -> 1
+//result : organization_name->'tiger' -> 4
+//result : type->'pri' -> 9
+//        $this->search_jobs_count(10, "DESC", "batch", "type", '%pri%');
 
 
     } //main test
@@ -56,6 +64,37 @@ class UTest_ProfileBasicRepo extends TestCase
 //        $this->search_basic(10, "ASC", "batch", "dept", '%EE%');
 //    }
 
+    public function search_jobs(string $per_page, string $sort_by, string $sort_on, string $columnName, string $key): void
+    {
+        $repo = new Search_Repo_Impl();
+        $data = $repo->search_jobs($per_page, $sort_by, $sort_on, $columnName, $key);
+//        dd($data);
+        $this->assertTrue(($data != null));
+        for ($i = 0; $i < 10; $i++) {
+
+            if ($data[$i] == null) {
+                break;
+            }
+            error_log(
+                $data[$i]->id
+                . ' batch :' . $data[$i]->batch
+                . ' uID :' . $data[$i]->user_id
+                . " Name : " . $data[$i]->first_name
+                . $data[$i]->last_name
+                . "---institute Name : " . $data[$i]->organization_name
+                . "---Type : " . $data[$i]->type
+                . "---Role: " . $data[$i]->role);
+        }
+    }
+
+    public function search_jobs_count(string $per_page, string $sort_by, string $sort_on, string $columnName, string $key): void
+    {
+        $repo = new Search_Repo_Impl();
+        $data = $repo->search_jobs_count($per_page, $sort_by, $sort_on, $columnName, $key);
+        dd($data);
+
+    }
+
 
     public function search_education_count(string $per_page, string $sort_by, string $sort_on, string $columnName, string $key): void
     {
@@ -74,7 +113,7 @@ class UTest_ProfileBasicRepo extends TestCase
         $this->assertTrue(($data != null));
         for ($i = 0; $i < 10; $i++) {
 
-            if($data[$i] == null ){
+            if ($data[$i] == null) {
                 break;
             }
             error_log(
