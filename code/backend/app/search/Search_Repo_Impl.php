@@ -76,7 +76,6 @@ class Search_Repo_Impl implements Search_Repo_I
 
         $data = DB::table('profile_basics')
             ->join('profile_education', 'profile_basics.user_id', '=', 'profile_education.user_id')
-            ->select('profile_basics.user_id', 'profile_basics.first_name', 'profile_basics.last_name', 'profile_education.*')
             ->where($column_name, 'LIKE', $key)->orderBy($sort_on, $order)->count() ;
         return $data;
     }
