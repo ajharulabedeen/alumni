@@ -5,7 +5,6 @@
 
     <h2>Search</h2>
 
-
     <div class="tab">
       <button class="tablinks active" (click)="searchTab(event, 'basic')">Basic</button>
       <button class="tablinks" (click)="searchTab(event, 'organization')">Organization</button>
@@ -13,7 +12,7 @@
     </div>
 
     <!--    start : basic search -->
-    <div id="basic" class="tabcontent block ">
+    <div id="basic" class="tabcontent ">
       <h1>Basic Search</h1>
       <!--start : search fields and search key or search value -->
       <h4>
@@ -46,9 +45,7 @@
       </div>
       <!-- end : search fields selection and search key or search value-->
 
-
       <!-- Start : showing all profiles after search -->
-
       <!--            start : basic search pagination panel-->
       <!--      perPage-->
       <div class="col-md-2 offset-md-2">
@@ -100,7 +97,7 @@
       <!--            end : basic search pagination panel-->
 
       <!-- satrt :  basic search showing all Profiles-->
-      <!-- table : showing all profiles after basic search -->
+      <!-- start : table -->
       <div class="col-xs-12">
         <div class="box">
           <div class="box-body table-responsive no-padding">
@@ -143,21 +140,147 @@
           </div>
         </div>
       </div>
+      <!-- end : table -->
       <!-- End : showing all profiles after basic search -->
+
+
     </div>
     <!--    end : basic search -->
 
+    <!--........................................................................................-->
     <!--    start : organization search -->
     <div id="organization" class="tabcontent">
       <h1>Organization Search</h1>
     </div>
     <!--    end : organization search -->
 
+    <!--........................................................................................-->
     <!--    start : Education search -->
     <div id="education" class="tabcontent">
       <h1>Education Search</h1>
+      <!--start : search fields and search key or search value -->
+      <h4>
+        <button class="btn btn-info" (click)="setBasicSearchCount()">Search</button>
+        <button class="btn btn-xs btn-primary" (click)="refreshTable_basicSearch()">Refresh</button>
+      </h4>
+      <!-- sort by column name -->
+      <div class="col-md-12 offset-md-12">
+        <div class="form-group">
+          <h4>Search By :</h4>
+          <select [(ngModel)]="basic_search_by">
+            <option value="degree_name">Degree Name</option>
+            <option value="institue_name">Institute Name</option>
+            <option value="passing_year">Passing Year</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-12 offset-md-12">
+        <div class="form-group">
+          <label>Value : </label>
+          <input [(ngModel)]="basic_value_search" type="text" class="form-control" placeholder="search...">
+        </div>
+      </div>
+      <!-- end : search fields selection and search key or search value-->
+
+      <!-- Start : showing all profiles after search -->
+      <!--            start : basic search pagination panel-->
+      <!--      perPage-->
+      <div class="col-md-2 offset-md-2">
+        <div style="text-align: center" class="form-group">
+          <label>Per Page</label>
+          <input style="text-align: center" [(ngModel)]="basicSearch_perPage" type="number" class="form-control"
+                 value="{{basicSearch_perPage}}" (ngModelChange)="refreshTable_basicSearch()">
+        </div>
+      </div>
+      <!--      total-->
+      <div class="col-md-2 offset-md-2">
+        <div style="text-align: center" class="form-group">
+          <label>Total </label>
+          <input style="text-align: center" disabled="true" [(ngModel)]="basicSearch_total" type="number"
+                 class="form-control"
+                 value="{{basicSearch_total}}">
+        </div>
+      </div>
+      <!--      prePage/nextPage-->
+      <div class="col-md-3 offset-md-3">
+        <div class="form-group" style="text-align: center">
+          <button class="btn btn-primary btn-xs" (click)="basicSearch_previousPage()">Previous</button>
+          <label class="btn btn-danger btn-xs ">Page Number</label>
+          <button class="btn btn-primary btn-xs" (click)="basicSearch_nextPage()">Next</button>
+          <input style="text-align: center" [(ngModel)]="basicSearch_pageNumber" type="number" class="form-control"
+                 value="{{basicSearch_pageNumber}}">
+        </div>
+      </div>
+      <!--       sort by ASC or DESC -->
+      <div class="col-md-3 offset-md-3">
+        <div class="form-group" style="text-align: center">
+          <h4>Sort Order</h4>
+          <input type="radio" name="m_pay" [(ngModel)]="basicSearch_sort_by" value="ASC"
+                 checked="checked">Ascending<br>
+          <input type="radio" name="m_pay" [(ngModel)]="basicSearch_sort_by" value="DESC">Descending<br>
+        </div>
+      </div>
+      <!--       sort by column name -->
+      <div>
+        <h4>Sort By</h4>
+        <select [(ngModel)]="basicSearch_sort_on">
+          <option value="student_id" [selected]="true">Student ID</option>
+          <option value="batch">Batch</option>
+          <option value="passing_year">Passing Year</option>
+          <option value="dept">Dept</option>
+          <option value="gender">Gender</option>
+        </select>
+      </div>
+      <!--            end : basic search pagination panel-->
+
+      <!-- satrt :  basic search showing all Profiles-->
+      <!-- start : table -->
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-body table-responsive no-padding">
+            <table class="table table-hover">
+              <tbody>
+              <tr>
+                <th>Details</th>
+                <th>Index</th>
+                <th>Name</th>
+                <th>Student ID</th>
+                <th>Dept</th>
+                <th>Batch</th>
+                <th>Degree</th>
+                <th>Institute</th>
+                <th>Passing Year</th>
+              </tr>
+
+              <!-- showing all profiles after basic search  -->
+              <tr *ngFor="let edu of education_array; let i=index">
+                <td>
+                  <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details">
+                    Details
+                  </button>
+                </td>
+                <td>{{i + 1}}</td>
+                <td>{{edu.batch}}</td>
+                <td>{{edu.id}}</td>
+                <td>{{edu.dept}}</td>
+                <td>{{edu.first_name}} {{edu.last_name}} </td>
+                <td>{{edu.phone}}</td>
+                <td>{{edu.address_present}}</td>
+                <td>{{edu.passing_year}}</td>
+                <td>{{edu.research_interest}}</td>
+                <td>{{edu.social_media_link}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- end : table -->
+      <!-- End : showing all profiles after basic search -->
+
     </div>
     <!--    end : Education search -->
+
 
   </div>
 
