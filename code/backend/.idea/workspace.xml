@@ -27,59 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="F_Search_Test.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/search/F_Search_Test.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="85" column="41" lean-forward="false" selection-start-line="85" selection-start-column="41" selection-end-line="85" selection-end-column="41" />
-              <folding>
-                <element signature="e#173#240#0#PHP" expanded="false" />
-                <element signature="e#988#1200#0#PHP" expanded="false" />
-                <element signature="e#1209#1213#0#PHP" expanded="false" />
-                <element signature="e#2208#2212#0#PHP" expanded="false" />
-                <element signature="e#2629#3293#0#PHP" expanded="false" />
-                <element signature="e#3077#3081#0#PHP" expanded="false" />
-                <element signature="e#3299#4212#0#PHP" expanded="false" />
-                <element signature="e#3412#3868#0#PHP" expanded="false" />
-                <element signature="e#3514#3726#0#PHP" expanded="false" />
-                <element signature="e#3735#3739#0#PHP" expanded="false" />
-                <element signature="e#3953#4030#0#PHP" expanded="false" />
-                <element signature="e#4218#4747#0#PHP" expanded="false" />
-                <element signature="e#4271#4504#0#PHP" expanded="false" />
-                <element signature="e#4371#4375#0#PHP" expanded="false" />
-                <element signature="e#4753#5565#0#PHP" expanded="false" />
-                <element signature="e#4846#5232#0#PHP" expanded="false" />
-                <element signature="e#4956#5090#0#PHP" expanded="false" />
-                <element signature="e#5099#5103#0#PHP" expanded="false" />
-                <element signature="e#5291#5379#0#PHP" expanded="false" />
-                <element signature="e#5571#6086#0#PHP" expanded="false" />
-                <element signature="e#5632#5854#0#PHP" expanded="false" />
-                <element signature="e#5736#5844#0#PHP" expanded="false" />
-                <element signature="e#6215#6540#0#PHP" expanded="false" />
-                <element signature="e#6280#6446#0#PHP" expanded="false" />
-                <element signature="e#6351#6436#0#PHP" expanded="false" />
-                <element signature="e#6546#7083#0#PHP" expanded="false" />
-                <element signature="e#6597#6775#0#PHP" expanded="false" />
-                <element signature="e#6668#6765#0#PHP" expanded="false" />
-                <element signature="e#6887#6896#0#PHP" expanded="false" />
-                <element signature="e#7089#8307#0#PHP" expanded="false" />
-                <element signature="e#7140#7417#0#PHP" expanded="false" />
-                <element signature="e#7212#7407#0#PHP" expanded="false" />
-                <element signature="e#7440#7716#0#PHP" expanded="false" />
-                <element signature="e#7512#7706#0#PHP" expanded="false" />
-                <element signature="e#7738#8013#0#PHP" expanded="false" />
-                <element signature="e#7810#8003#0#PHP" expanded="false" />
-                <element signature="e#8088#8101#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Search_Repo_Impl.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/search/Search_Repo_Impl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="55" column="118" lean-forward="false" selection-start-line="55" selection-start-column="118" selection-end-line="55" selection-end-column="118" />
+            <state relative-caret-position="140">
+              <caret line="53" column="58" lean-forward="false" selection-start-line="53" selection-start-column="58" selection-end-line="53" selection-end-column="58" />
               <folding>
                 <element signature="e#109#139#0#PHP" expanded="true" />
                 <element signature="e#675#1126#0#PHP" expanded="false" />
@@ -88,47 +40,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Payment_Type_Repo_Impl.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/payment/Payment_Type_Repo_Impl.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="45" column="47" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="U_Search.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/search/U_Search.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="72" column="22" lean-forward="false" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
+            <state relative-caret-position="210">
+              <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
               <folding>
                 <element signature="e#39#71#0#PHP" expanded="true" />
-                <element signature="e#3637#4131#0#PHP" expanded="false" />
-                <element signature="e#4184#4463#0#PHP" expanded="false" />
-                <element signature="e#4469#4889#0#PHP" expanded="false" />
-                <element signature="e#4895#5282#0#PHP" expanded="false" />
-                <element signature="e#5288#5480#0#PHP" expanded="false" />
+                <element signature="e#1002#1044#0#PHP" expanded="false" />
+                <element signature="e#1304#1342#0#PHP" expanded="false" />
+                <element signature="e#1433#1472#0#PHP" expanded="false" />
+                <element signature="e#1562#1931#0#PHP" expanded="false" />
+                <element signature="e#2773#3180#0#PHP" expanded="false" />
+                <element signature="e#3786#4280#0#PHP" expanded="false" />
+                <element signature="e#4333#4612#0#PHP" expanded="false" />
+                <element signature="e#4618#5038#0#PHP" expanded="false" />
+                <element signature="e#5044#5431#0#PHP" expanded="false" />
+                <element signature="e#5437#5629#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Search_Controller.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/search/Search_Controller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="875">
-              <caret line="37" column="16" lean-forward="false" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -197,7 +131,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -274,50 +207,15 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="payment" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="backend" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Http" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/Eximius_CodeBase_Professional/eximus-web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
@@ -338,7 +236,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.UTest_ProfileBasicRepo">
+  <component name="RunManager" selected="PHPUnit.UTest_ProfileBasicRepo.testMain">
     <configuration default="false" name="UTest_ProfileBasicRepo.testMain" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Unit\profile\UTest_ProfileBasicRepo" file="$PROJECT_DIR$/tests/search/U_Search.php" method="testMain" scope="Method" />
       <method />
@@ -435,9 +333,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="PHPUnit.UTest_ProfileBasicRepo" />
-        <item index="1" class="java.lang.String" itemvalue="PHPUnit.UTest_ProfileBasicRepo.testEducation" />
-        <item index="2" class="java.lang.String" itemvalue="PHPUnit.UTest_ProfileBasicRepo.testMain" />
+        <item index="0" class="java.lang.String" itemvalue="PHPUnit.UTest_ProfileBasicRepo.testMain" />
+        <item index="1" class="java.lang.String" itemvalue="PHPUnit.UTest_ProfileBasicRepo" />
+        <item index="2" class="java.lang.String" itemvalue="PHPUnit.UTest_ProfileBasicRepo.testEducation" />
         <item index="3" class="java.lang.String" itemvalue="PHPUnit.F_PaymentType_Test" />
         <item index="4" class="java.lang.String" itemvalue="PHPUnit.F_PaymentType_Test.testSearch_basic_count" />
       </list>
@@ -461,34 +359,23 @@
       <workItem from="1580852595333" duration="462000" />
       <workItem from="1580853073202" duration="3611000" />
       <workItem from="1580856704733" duration="3541000" />
-      <workItem from="1580890638799" duration="6098000" />
+      <workItem from="1580890638799" duration="6372000" />
+      <workItem from="1580957609729" duration="3366000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UTest_ProfileBasicRepo - 2020.02.05 at 16h 56m 53s.xml">
+    <history-entry file="UTest_ProfileBasicRepo - 2020.02.06 at 10h 48m 36s.xml">
       <configuration name="UTest_ProfileBasicRepo" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="UTest_ProfileBasicRepo - 2020.02.05 at 16h 58m 58s.xml">
+    <history-entry file="UTest_ProfileBasicRepo - 2020.02.06 at 10h 49m 40s.xml">
       <configuration name="UTest_ProfileBasicRepo" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="UTest_ProfileBasicRepo - 2020.02.05 at 16h 59m 40s.xml">
+    <history-entry file="UTest_ProfileBasicRepo - 2020.02.06 at 10h 50m 23s.xml">
       <configuration name="UTest_ProfileBasicRepo" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="UTest_ProfileBasicRepo - 2020.02.05 at 17h 02m 17s.xml">
+    <history-entry file="UTest_ProfileBasicRepo - 2020.02.06 at 10h 52m 35s.xml">
       <configuration name="UTest_ProfileBasicRepo" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="UTest_ProfileBasicRepo - 2020.02.05 at 17h 03m 05s.xml">
-      <configuration name="UTest_ProfileBasicRepo" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="UTest_ProfileBasicRepo - 2020.02.05 at 17h 09m 17s.xml">
-      <configuration name="UTest_ProfileBasicRepo" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="UTest_ProfileBasicRepo_testEducation - 2020.02.05 at 17h 07m 46s.xml">
-      <configuration name="UTest_ProfileBasicRepo.testEducation" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="UTest_ProfileBasicRepo_testEducation - 2020.02.05 at 17h 08m 03s.xml">
-      <configuration name="UTest_ProfileBasicRepo.testEducation" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
     <history-entry file="UTest_ProfileBasicRepo_testMain - 2020.02.05 at 16h 58m 08s.xml">
       <configuration name="UTest_ProfileBasicRepo.testMain" configurationId="PHPUnitRunConfigurationType" />
@@ -496,9 +383,21 @@
     <history-entry file="UTest_ProfileBasicRepo_testMain - 2020.02.05 at 17h 03m 37s.xml">
       <configuration name="UTest_ProfileBasicRepo.testMain" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
+    <history-entry file="UTest_ProfileBasicRepo_testMain - 2020.02.06 at 10h 45m 02s.xml">
+      <configuration name="UTest_ProfileBasicRepo.testMain" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="UTest_ProfileBasicRepo_testMain - 2020.02.06 at 10h 46m 20s.xml">
+      <configuration name="UTest_ProfileBasicRepo.testMain" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="UTest_ProfileBasicRepo_testMain - 2020.02.06 at 10h 51m 34s.xml">
+      <configuration name="UTest_ProfileBasicRepo.testMain" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="UTest_ProfileBasicRepo_testMain - 2020.02.06 at 10h 53m 12s.xml">
+      <configuration name="UTest_ProfileBasicRepo.testMain" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25372000" />
+    <option name="totallyTimeSpent" value="29012000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -511,23 +410,24 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-2409" y="-9" width="2418" height="1318" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15345268" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19053708" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957503" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44232437" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4483955" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3555941" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16738942" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32957503" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -542,7 +442,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -551,7 +451,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
           <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -588,11 +487,11 @@
           <caret line="56" column="43" lean-forward="false" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
           <folding>
             <element signature="e#39#71#0#PHP" expanded="true" />
-            <element signature="e#3637#4131#0#PHP" expanded="false" />
-            <element signature="e#4184#4463#0#PHP" expanded="false" />
-            <element signature="e#4469#4889#0#PHP" expanded="false" />
-            <element signature="e#4895#5282#0#PHP" expanded="false" />
-            <element signature="e#5288#5480#0#PHP" expanded="false" />
+            <element signature="e#3786#4280#0#PHP" expanded="false" />
+            <element signature="e#4333#4612#0#PHP" expanded="false" />
+            <element signature="e#4618#5038#0#PHP" expanded="false" />
+            <element signature="e#5044#5431#0#PHP" expanded="false" />
+            <element signature="e#5437#5629#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -753,11 +652,11 @@
           <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="e#39#71#0#PHP" expanded="true" />
-            <element signature="e#3637#4131#0#PHP" expanded="false" />
-            <element signature="e#4184#4463#0#PHP" expanded="false" />
-            <element signature="e#4469#4889#0#PHP" expanded="false" />
-            <element signature="e#4895#5282#0#PHP" expanded="false" />
-            <element signature="e#5288#5480#0#PHP" expanded="false" />
+            <element signature="e#3786#4280#0#PHP" expanded="false" />
+            <element signature="e#4333#4612#0#PHP" expanded="false" />
+            <element signature="e#4618#5038#0#PHP" expanded="false" />
+            <element signature="e#5044#5431#0#PHP" expanded="false" />
+            <element signature="e#5437#5629#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -811,11 +710,11 @@
           <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
           <folding>
             <element signature="e#39#71#0#PHP" expanded="true" />
-            <element signature="e#3637#4131#0#PHP" expanded="false" />
-            <element signature="e#4184#4463#0#PHP" expanded="false" />
-            <element signature="e#4469#4889#0#PHP" expanded="false" />
-            <element signature="e#4895#5282#0#PHP" expanded="false" />
-            <element signature="e#5288#5480#0#PHP" expanded="false" />
+            <element signature="e#3786#4280#0#PHP" expanded="false" />
+            <element signature="e#4333#4612#0#PHP" expanded="false" />
+            <element signature="e#4618#5038#0#PHP" expanded="false" />
+            <element signature="e#5044#5431#0#PHP" expanded="false" />
+            <element signature="e#5437#5629#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -966,22 +865,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/search/Search_Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="875">
-          <caret line="37" column="16" lean-forward="false" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/payment/Payment_Type_Repo_Impl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="45" column="47" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
@@ -994,7 +877,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
           <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,6 +884,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="18" column="0" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/search/Search_Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="37" column="16" lean-forward="false" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/payment/Payment_Type_Repo_Impl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="45" column="47" lean-forward="false" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -1054,8 +952,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/search/Search_Repo_Impl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="55" column="118" lean-forward="false" selection-start-line="55" selection-start-column="118" selection-end-line="55" selection-end-column="118" />
+        <state relative-caret-position="140">
+          <caret line="53" column="58" lean-forward="false" selection-start-line="53" selection-start-column="58" selection-end-line="53" selection-end-column="58" />
           <folding>
             <element signature="e#109#139#0#PHP" expanded="true" />
             <element signature="e#675#1126#0#PHP" expanded="false" />
@@ -1065,15 +963,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/search/U_Search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="72" column="22" lean-forward="false" selection-start-line="72" selection-start-column="22" selection-end-line="72" selection-end-column="22" />
+        <state relative-caret-position="210">
+          <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
           <folding>
             <element signature="e#39#71#0#PHP" expanded="true" />
-            <element signature="e#3637#4131#0#PHP" expanded="false" />
-            <element signature="e#4184#4463#0#PHP" expanded="false" />
-            <element signature="e#4469#4889#0#PHP" expanded="false" />
-            <element signature="e#4895#5282#0#PHP" expanded="false" />
-            <element signature="e#5288#5480#0#PHP" expanded="false" />
+            <element signature="e#1002#1044#0#PHP" expanded="false" />
+            <element signature="e#1304#1342#0#PHP" expanded="false" />
+            <element signature="e#1433#1472#0#PHP" expanded="false" />
+            <element signature="e#1562#1931#0#PHP" expanded="false" />
+            <element signature="e#2773#3180#0#PHP" expanded="false" />
+            <element signature="e#3786#4280#0#PHP" expanded="false" />
+            <element signature="e#4333#4612#0#PHP" expanded="false" />
+            <element signature="e#4618#5038#0#PHP" expanded="false" />
+            <element signature="e#5044#5431#0#PHP" expanded="false" />
+            <element signature="e#5437#5629#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -50,9 +50,16 @@ class Search_Repo_Impl implements Search_Repo_I
             $order = "DESC";
         }
 
-        $data = DB::table('profile_basics')
-            ->join('profile_education', 'profile_basics.user_id', '=', 'profile_education.user_id')
-            ->select('profile_basics.user_id', 'profile_basics.first_name', 'profile_basics.last_name', 'profile_education.*')
+        $data = DB::table('profile_basics as b')
+            ->join('profile_education', 'profile_education.user_id', '=', 'b.user_id')
+            ->select(
+                'b.user_id'
+                , 'b.first_name'
+                , 'b.last_name'
+                , 'b.student_id'
+                , 'b.dept'
+                , 'b.batch'
+                ,'profile_education.*')
             ->where( 'profile_education.'.$column_name, 'LIKE', $key)->orderBy($sort_on, $order)->paginate($per_page);
         return $data;
     }

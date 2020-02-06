@@ -26,20 +26,21 @@ class UTest_ProfileBasicRepo extends TestCase
         error_log("Search :");
 //        $this->search_basic_count(10, "ASC", "batch", "research_interest", '%Io%');
 //        $this->search_basic(10, "ASC", "batch", "research_interest", '%Io%');
-        $this->search_education_count(10, "ASC", "passing_year", "institue_name", '%School%');
+//        $this->search_education_count(10, "ASC", "passing_year", "institue_name", '%School%');
 //        $this->search_education(10, "ASC", "id", "institue_name", '%School%');
+        $this->search_education(10, "DESC", "batch", "institue_name", '%School%');
 
 
     } //main test
 
-    public function testEducationCount()
-    {
-        $this->search_education_count(10, "ASC", "passing_year", "institue_name", '%School%');
-    }
-    public function testEducation()
-    {
-        $this->search_education(10, "ASC", "passing_year", "institue_name", '%School%');
-    }
+//    public function testEducationCount()
+//    {
+//        $this->search_education_count(10, "ASC", "passing_year", "institue_name", '%School%');
+//    }
+//    public function testEducation()
+//    {
+//        $this->search_education(10, "ASC", "passing_year", "institue_name", '%School%');
+//    }
 
 //    public function testBasicCount()
 //    {
@@ -74,6 +75,7 @@ class UTest_ProfileBasicRepo extends TestCase
             }
             error_log(
                 $data[$i]->id
+                . ' batch :' . $data[$i]->batch
                 . ' uID :' . $data[$i]->user_id
                 . " Name : " . $data[$i]->first_name
                 . $data[$i]->last_name
