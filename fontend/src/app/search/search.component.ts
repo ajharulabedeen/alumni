@@ -207,4 +207,6 @@ export class SearchComponent implements OnInit {
 
 //  end : education
 
+
+
 }//class
