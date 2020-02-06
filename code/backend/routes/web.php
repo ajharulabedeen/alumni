@@ -94,6 +94,8 @@ Route::post('search/basic', 'Search_Controller@search_basic');
 Route::post('search/basic_count', 'Search_Controller@search_basic_count');
 Route::post('search/education', 'Search_Controller@search_education');
 Route::post('search/education_count', 'Search_Controller@search_education_count');
+Route::post('search/jobs', 'Search_Controller@search_jobs');
+Route::post('search/jobs_count', 'Search_Controller@search_jobs_count');
 
 
 

@@ -27,7 +27,6 @@ class Search_Controller extends Controller
         $key = $r->key;
         return $this->search_Repo->search_basic($per_page, $sort_by, $sort_on, $column_name, $key);
     }
-
     public function search_basic_count(Request $r)
     {
         $per_page = $r->per_page;
@@ -59,6 +58,25 @@ class Search_Controller extends Controller
         return ['status' => $data];
     }
 
+    public function search_jobs(Request $r)
+    {
+        $per_page = $r->per_page;
+        $sort_by = $r->sort_by;
+        $sort_on = $r->sort_on;
+        $column_name = $r->column_name;
+        $key = $r->key;
+        return $this->search_Repo->search_jobs($per_page, $sort_by, $sort_on, $column_name, $key);
+    }
+    public function search_jobs_count(Request $r)
+    {
+        $per_page = $r->per_page;
+        $sort_by = $r->sort_by;
+        $sort_on = $r->sort_on;
+        $column_name = $r->column_name;
+        $key = $r->key;
+        $data = $this->search_Repo->search_jobs_count($per_page, $sort_by, $sort_on, $column_name, $key);
+        return ['status' => $data];
+    }
 
 
     public function getApprovedUserDetails(Request $r)

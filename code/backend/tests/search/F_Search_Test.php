@@ -19,8 +19,15 @@ class F_PaymentType_Test extends TestCase
 //        $this->search_basic(10, 'DESC', 'batch', 1, "dept", "C");//done
 //        $this->search_basic_count(10, 'DESC', 'batch', 1, "dept", "C");//done
 
-//        $this->search_education(10, 'DESC', 'batch', 1, "	institue_name", "%School%");//done
-        $this->search_education_count(10, 'DESC', 'batch', 1, "	institue_name", "%School%");//done
+//        $this->search_education(10, 'DESC', 'batch', 1, "institue_name", "%School%");//done
+//        $this->search_education_count(10, 'DESC', 'batch', 1, "institue_name", "%School%");//done
+
+//result :  "type", "%pub%" -> 2
+//        $this->search_jobs(10, 'DESC', 'batch', 1, "type", "%pub%");//done
+//result :  "type", "%pub%" -> 2
+        $this->search_jobs_count(10, 'DESC', 'batch', 1, "type", "%pri%");//done
+
+
     }
 
 //    start : assertion
@@ -31,6 +38,72 @@ class F_PaymentType_Test extends TestCase
 //        $this->search_basic_count(10, 'DESC', 'batch', 1, "dept", "C");//done
 //    }
 //    end : assertion
+
+
+    public function search_jobs($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
+    {
+        $response = $this->json(
+            'POST',
+            'search/jobs?page=' . $pageNumber,
+            [
+                'per_page' => $per_page,
+                'sort_by' => $sort_by,
+                "sort_on" => $sort_on,
+                "column_name" => $column_name,
+                "key" => $key,
+            ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
+        );
+
+        $d = $response->baseResponse->original;
+//        dd($d);
+        $this->assertTrue(($d != null));
+        $this->assertTrue(true);
+        for ($i = 0; $i < $per_page; $i++) {
+            if ($d[$i] == null) {
+                break;
+            }
+
+            error_log(
+                $d[$i]->id
+                . ' batch :' . $d[$i]->batch
+                . ' uID :' . $d[$i]->user_id
+                . " Name : " . $d[$i]->first_name
+                . $d[$i]->last_name
+                . "---institute Name : " . $d[$i]->organization_name
+                . "---Type : " . $d[$i]->type
+                . "---Role: " . $d[$i]->role);
+
+        }
+    }
+    public function search_jobs_count($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
+    {
+        $response = $this->json(
+            'POST',
+            'search/jobs_count?page=' . $pageNumber,
+            [
+                'per_page' => $per_page,
+                'sort_by' => $sort_by,
+                "sort_on" => $sort_on,
+                "column_name" => $column_name,
+                "key" => $key,
+            ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
+        );
+
+        $d = $response->baseResponse->original;
+//        dd($d);
+        print_r($d);
+//        $this->assertTrue(($d != null));
+//        $this->assertTrue(true);
+    }
+
 
     public function search_education($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
     {
@@ -75,7 +148,6 @@ class F_PaymentType_Test extends TestCase
         // dd($response->exception);
         // dd($d);
     }
-
     public function search_education_count($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
     {
         $response = $this->json(
@@ -133,7 +205,6 @@ class F_PaymentType_Test extends TestCase
         // dd($response->exception);
         // dd($d);
     }
-
     public function search_basic_count($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
     {
         $response = $this->json(
@@ -161,7 +232,8 @@ class F_PaymentType_Test extends TestCase
 
 
 //start : have to delete; old code; another class
-    public function search_count($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
+    public
+    function search_count($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
     {
         $response = $this->json(
             'POST',
@@ -184,7 +256,8 @@ class F_PaymentType_Test extends TestCase
 
     }
 
-    public function search($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
+    public
+    function search($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
     {
         $response = $this->json(
             'POST',
@@ -214,7 +287,8 @@ class F_PaymentType_Test extends TestCase
         // dd($d);
     }
 
-    public function countAll()
+    public
+    function countAll()
     {
         $response = $this->json(
             'POST',
@@ -235,7 +309,8 @@ class F_PaymentType_Test extends TestCase
 
     }
 
-    public function getAll($per_page, $sort_by, $sort_on, $pageNumber)
+    public
+    function getAll($per_page, $sort_by, $sort_on, $pageNumber)
     {
         $response = $this->json(
             'POST',
@@ -263,7 +338,8 @@ class F_PaymentType_Test extends TestCase
         // dd($d);
     }
 
-    public function getAllEducations()
+    public
+    function getAllEducations()
     {
         $response = $this->json(
             'POST',
@@ -281,11 +357,13 @@ class F_PaymentType_Test extends TestCase
 
         dd($d);
     }
+
 //end : have to delete; old code; another class
 
     // thses method kept to use when feature test with auth will be done.
 
-    public function getToken($mail, $pass)
+    public
+    function getToken($mail, $pass)
     {
         $response = $this->json(
             'POST',
@@ -299,7 +377,8 @@ class F_PaymentType_Test extends TestCase
         error_log($d['access_token']);
     }
 
-    public function Loggin()
+    public
+    function Loggin()
     {
         $response = $this->json(
             'POST',
@@ -321,7 +400,8 @@ class F_PaymentType_Test extends TestCase
         // prettyPrint( $t[0] );
     }
 
-    public function SignUp()
+    public
+    function SignUp()
     {
         $response = $this->json(
             'POST',
