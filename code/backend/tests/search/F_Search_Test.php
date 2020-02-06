@@ -18,16 +18,89 @@ class F_PaymentType_Test extends TestCase
         $this->assertTrue(true);
 //        $this->search_basic(10, 'DESC', 'batch', 1, "dept", "C");//done
 //        $this->search_basic_count(10, 'DESC', 'batch', 1, "dept", "C");//done
+
+//        $this->search_education(10, 'DESC', 'batch', 1, "	institue_name", "%School%");//done
+        $this->search_education_count(10, 'DESC', 'batch', 1, "	institue_name", "%School%");//done
     }
 
 //    start : assertion
-    public function testSearch_basic(){
-        $this->search_basic(10, 'DESC', 'batch', 1, "dept", "C");//done
-    }
-    public function testSearch_basic_count(){
-        $this->search_basic_count(10, 'DESC', 'batch', 1, "dept", "C");//done
-    }
+//    public function testSearch_basic(){
+//        $this->search_basic(10, 'DESC', 'batch', 1, "dept", "C");//done
+//    }
+//    public function testSearch_basic_count(){
+//        $this->search_basic_count(10, 'DESC', 'batch', 1, "dept", "C");//done
+//    }
 //    end : assertion
+
+    public function search_education($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
+    {
+        $response = $this->json(
+            'POST',
+            'search/education?page=' . $pageNumber,
+            [
+                'per_page' => $per_page,
+                'sort_by' => $sort_by,
+                "sort_on" => $sort_on,
+                "column_name" => $column_name,
+                "key" => $key,
+            ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
+        );
+
+        $d = $response->baseResponse->original;
+//        dd($d);
+        $this->assertTrue(($d != null));
+        $this->assertTrue(true);
+        for ($i = 0; $i < $per_page; $i++) {
+            if ($d[$i] == null) {
+                break;
+            }
+
+            error_log(
+                $d[$i]->id
+                . ' batch :' . $d[$i]->batch
+                . ' uID :' . $d[$i]->user_id
+                . " Name : " . $d[$i]->first_name
+                . $d[$i]->last_name
+                . "---institute Name : " . $d[$i]->institue_name
+                . "---Passing Year : " . $d[$i]->passing_year);
+
+        }
+        //exception not catching error, instead haulting program.
+//        error_log($d);
+        error_log("Error : ");
+        // dd($response->exception);
+        // dd($d);
+    }
+
+    public function search_education_count($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
+    {
+        $response = $this->json(
+            'POST',
+            'search/education_count?page=' . $pageNumber,
+            [
+                'per_page' => $per_page,
+                'sort_by' => $sort_by,
+                "sort_on" => $sort_on,
+                "column_name" => $column_name,
+                "key" => $key,
+            ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
+        );
+
+        $d = $response->baseResponse->original;
+//        dd($d);
+        print_r($d);
+//        $this->assertTrue(($d != null));
+//        $this->assertTrue(true);
+    }
+
 
     public function search_basic($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
     {
@@ -49,7 +122,7 @@ class F_PaymentType_Test extends TestCase
 
         $d = $response->baseResponse->original;
 //        dd($d);
-        $this->assertTrue( ($d != null) );
+        $this->assertTrue(($d != null));
         $this->assertTrue(true);
         for ($i = 0; $i < $per_page; $i++) {
             error_log($d[$i]);
@@ -60,7 +133,6 @@ class F_PaymentType_Test extends TestCase
         // dd($response->exception);
         // dd($d);
     }
-
 
     public function search_basic_count($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
     {
@@ -83,10 +155,9 @@ class F_PaymentType_Test extends TestCase
         $d = $response->baseResponse->original;
 //        dd($d);
 //        error_log("count basic search");
-        error_log( "count basic search : " . $d['status']);
-        $this->assertTrue( ($d['status'] != null) );
+        error_log("count basic search : " . $d['status']);
+        $this->assertTrue(($d['status'] != null));
     }
-
 
 
 //start : have to delete; old code; another class

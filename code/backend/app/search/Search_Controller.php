@@ -39,6 +39,28 @@ class Search_Controller extends Controller
         return ['status' => $data];
     }
 
+    public function search_education(Request $r)
+    {
+        $per_page = $r->per_page;
+        $sort_by = $r->sort_by;
+        $sort_on = $r->sort_on;
+        $column_name = $r->column_name;
+        $key = $r->key;
+        return $this->search_Repo->search_education($per_page, $sort_by, $sort_on, $column_name, $key);
+    }
+    public function search_education_count(Request $r)
+    {
+        $per_page = $r->per_page;
+        $sort_by = $r->sort_by;
+        $sort_on = $r->sort_on;
+        $column_name = $r->column_name;
+        $key = $r->key;
+        $data = $this->search_Repo->search_education_count($per_page, $sort_by, $sort_on, $column_name, $key);
+        return ['status' => $data];
+    }
+
+
+
     public function getApprovedUserDetails(Request $r)
     {
 //        $user_id = $r->user_id;
