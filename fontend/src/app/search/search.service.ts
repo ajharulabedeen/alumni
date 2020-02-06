@@ -33,7 +33,8 @@ export class SearchService {
 
     this.education = new BehaviorSubject<any>(null);
     return this.http.post<EducationSearch>
-    ('http://127.0.0.1:8000/search/education?page=' + educationSearch_pageNumber,
+    ('http://127.0.0.1:8000/search/education?page='
+      + educationSearch_pageNumber,
       {
         'per_page': educationSearch_perPage,
         'sort_by': educationSearch_sort_by,
@@ -42,11 +43,13 @@ export class SearchService {
         'key': '%' + education_value_search + '%',
       },
       this.authService.getHeader(),
+  // ).subscribe((edu: EducationSearch) => {
   ).subscribe((edu: EducationSearch) => {
       // console.log("One Job : " + pt["0"]["organization_name"]);
-      console.log(edu);
-      this.education.next(edu);
+      console.log(edu['data']);
+      this.education.next(edu['data']);
     });
+    console.log(this.education);
   }
 
 
@@ -58,7 +61,7 @@ export class SearchService {
     column_name_basic: string,
     key_basic: string) {
 //     //for approve
-    this.education = new BehaviorSubject<any>(null);
+    this.basic = new BehaviorSubject<any>(null);
     // console.log('perPage_basic : ' + perPage_basic);
     // console.log('sort_by : ' + sort_by_basic);
     // console.log('sort_on : ' + sort_on_basic);
@@ -67,7 +70,8 @@ export class SearchService {
 
 
     return this.http.post<Basic>(
-      'http://127.0.0.1:8000/search/basic?page=' + pageNumber_basic,
+      'http://127.0.0.1:8000/search/basic?page='
+      + pageNumber_basic,
       {
         'per_page': perPage_basic,
         'sort_by': sort_by_basic,

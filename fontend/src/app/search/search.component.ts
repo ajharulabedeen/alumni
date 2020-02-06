@@ -195,7 +195,7 @@ export class SearchComponent implements OnInit {
       .subscribe(res => {
         this.basicSearch_total = res['status'];
       });
-    this.refreshTable_basicSearch();
+    this.refreshTable_educationSearch();
   }
 
 //  end : education
