@@ -160,8 +160,8 @@
       <h1>Education Search</h1>
       <!--start : search fields and search key or search value -->
       <h4>
-        <button class="btn btn-info" (click)="setBasicSearchCount()">Search</button>
-        <button class="btn btn-xs btn-primary" (click)="refreshTable_basicSearch()">Refresh</button>
+        <button class="btn btn-info" (click)="setEducationSearchCount()">Search</button>
+        <button class="btn btn-xs btn-primary" (click)="refreshTable_educationSearch()">Refresh</button>
       </h4>
       <!-- sort by column name -->
       <div class="col-md-12 offset-md-12">
@@ -215,15 +215,15 @@
       <div class="col-md-3 offset-md-3">
         <div class="form-group" style="text-align: center">
           <h4>Sort Order</h4>
-          <input type="radio" name="m_pay" [(ngModel)]="educationSearch_sort_by" value="ASC"
+          <input type="radio" name="edu_s" [(ngModel)]="educationSearch_sort_by" value="ASC"
                  checked="checked">Ascending<br>
-          <input type="radio" name="m_pay" [(ngModel)]="educationSearch_sort_by" value="DESC">Descending<br>
+          <input type="radio" name="edu_s" [(ngModel)]="educationSearch_sort_by" value="DESC">Descending<br>
         </div>
       </div>
       <!--       sort by column name -->
       <div>
         <h4>Sort By</h4>
-        <select [(ngModel)]="basicSearch_sort_on">
+        <select [(ngModel)]="educationSearch_sort_on">
           <option value="student_id" [selected]="true">Student ID</option>
           <option value="batch">Batch</option>
           <option value="passing_year">Passing Year</option>

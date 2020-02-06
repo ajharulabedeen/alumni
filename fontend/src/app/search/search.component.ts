@@ -137,7 +137,14 @@ export class SearchComponent implements OnInit {
     console.log('refreshTable_educationSearch :');
     // tslint:disable-next-line:max-line-length
     // this.setBasicSearchCount();
-    this.searchService.basicSearch(this.basicSearch_perPage, this.basicSearch_pageNumber, this.basicSearch_sort_on, this.basicSearch_sort_by, this.basic_search_by, this.basic_value_search);
+    this.searchService.educationSearch(
+      this.educationSearch_perPage,
+      this.educationSearch_pageNumber,
+      this.educationSearch_sort_on,
+      this.educationSearch_sort_by,
+      this.education_search_by,
+      this.education_value_search);
+
     this.searchService.basic.subscribe(b => {
       this.baicSearch_profiles_array = [];
       for (const key in b) {
@@ -184,7 +191,7 @@ export class SearchComponent implements OnInit {
   }
 
   public setEducationSearchCount() {
-    this.basicSearch_pageNumber = 1;
+    this.educationSearch_pageNumber = 1;
     this.searchService.getBsicSearchCount(this.basicSearch_perPage, this.basicSearch_pageNumber, this.basicSearch_sort_on, this.basicSearch_sort_by, this.basic_search_by, this.basic_value_search)
       .subscribe(res => {
         this.basicSearch_total = res['status'];
