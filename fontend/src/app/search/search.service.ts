@@ -25,11 +25,11 @@ export class SearchService {
     education_search_by: string,
     education_value_search: string) {
 
-    console.log('perPage_edu : ' + educationSearch_perPage);
-    console.log('sort_by : ' + educationSearch_sort_by);
-    console.log('sort_on : ' + educationSearch_sort_on);
-    console.log('column_name : ' + education_search_by);
-    console.log('key : ' + education_value_search);
+    // console.log('perPage_edu : ' + educationSearch_perPage);
+    // console.log('sort_by : ' + educationSearch_sort_by);
+    // console.log('sort_on : ' + educationSearch_sort_on);
+    // console.log('column_name : ' + education_search_by);
+    // console.log('key : ' + education_value_search);
 
     this.education = new BehaviorSubject<any>(null);
     return this.http.post<EducationSearch>
@@ -43,14 +43,40 @@ export class SearchService {
         'key': '%' + education_value_search + '%',
       },
       this.authService.getHeader(),
-  // ).subscribe((edu: EducationSearch) => {
-  ).subscribe((edu: EducationSearch) => {
+    ).subscribe((edu: EducationSearch) => {
       // console.log("One Job : " + pt["0"]["organization_name"]);
       console.log(edu['data']);
       this.education.next(edu['data']);
     });
     console.log(this.education);
   }
+
+
+  public getEducationSearchCount(
+    educationSearch_perPage: number,
+    educationSearch_pageNumber: number,
+    educationSearch_sort_on: string,
+    educationSearch_sort_by: string,
+    education_search_by: string,
+    education_value_search: string
+  ) {
+    return this.http.post(
+      'http://127.0.0.1:8000/search/education_count',
+      {
+        'per_page': educationSearch_perPage,
+        'sort_by': educationSearch_sort_by,
+        'sort_on': educationSearch_sort_on,
+        'column_name': education_search_by,
+        'key': '%' + education_value_search + '%',
+      }, this.authService.getHeader()
+    );
+    // .subscribe((res: Response) => {
+    //   console.log();
+    //   console.log(res);
+    //   // return res;
+    //   // return res["status"];
+    // });
+  }// getBsicSearchCount
 
 
   public basicSearch(
