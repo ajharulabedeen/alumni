@@ -1,74 +1,141 @@
 export class EducationSearch {
-  private _user_id: string;
-  private _name: string;
-  private _student_id: string;
-  private _dept: string;
-  private _batch: string;
-  private _degree_name: string;
-  private _institue_name: string;
-  private _passing_year: string;
+  private user_id: string;
+  private name: string;
+  private student_id: string;
+  private dept: string;
+  private batch: string;
+  private degree_name: string;
+  private institue_name: string;
+  private passing_year: string;
 
-  get user_id(): string {
-    return this._user_id;
-  }
 
-  set user_id(value: string) {
-    this._user_id = value;
-  }
+    /**
+     * Getter $user_id
+     * @return {string}
+     */
+	public get $user_id(): string {
+		return this.user_id;
+	}
 
-  get name(): string {
-    return this._name;
-  }
+    /**
+     * Getter $name
+     * @return {string}
+     */
+	public get $name(): string {
+		return this.name;
+	}
 
-  set name(value: string) {
-    this._name = value;
-  }
+    /**
+     * Getter $student_id
+     * @return {string}
+     */
+	public get $student_id(): string {
+		return this.student_id;
+	}
 
-  get student_id(): string {
-    return this._student_id;
-  }
+    /**
+     * Getter $dept
+     * @return {string}
+     */
+	public get $dept(): string {
+		return this.dept;
+	}
 
-  set student_id(value: string) {
-    this._student_id = value;
-  }
+    /**
+     * Getter $batch
+     * @return {string}
+     */
+	public get $batch(): string {
+		return this.batch;
+	}
 
-  get dept(): string {
-    return this._dept;
-  }
+    /**
+     * Getter $degree_name
+     * @return {string}
+     */
+	public get $degree_name(): string {
+		return this.degree_name;
+	}
 
-  set dept(value: string) {
-    this._dept = value;
-  }
+    /**
+     * Getter $institue_name
+     * @return {string}
+     */
+	public get $institue_name(): string {
+		return this.institue_name;
+	}
 
-  get batch(): string {
-    return this._batch;
-  }
+    /**
+     * Getter $passing_year
+     * @return {string}
+     */
+	public get $passing_year(): string {
+		return this.passing_year;
+	}
 
-  set batch(value: string) {
-    this._batch = value;
-  }
+    /**
+     * Setter $user_id
+     * @param {string} value
+     */
+	public set $user_id(value: string) {
+		this.user_id = value;
+	}
 
-  get degree_name(): string {
-    return this._degree_name;
-  }
+    /**
+     * Setter $name
+     * @param {string} value
+     */
+	public set $name(value: string) {
+		this.name = value;
+	}
 
-  set degree_name(value: string) {
-    this._degree_name = value;
-  }
+    /**
+     * Setter $student_id
+     * @param {string} value
+     */
+	public set $student_id(value: string) {
+		this.student_id = value;
+	}
 
-  get institue_name(): string {
-    return this._institue_name;
-  }
+    /**
+     * Setter $dept
+     * @param {string} value
+     */
+	public set $dept(value: string) {
+		this.dept = value;
+	}
 
-  set institue_name(value: string) {
-    this._institue_name = value;
-  }
+    /**
+     * Setter $batch
+     * @param {string} value
+     */
+	public set $batch(value: string) {
+		this.batch = value;
+	}
 
-  get passing_year(): string {
-    return this._passing_year;
-  }
+    /**
+     * Setter $degree_name
+     * @param {string} value
+     */
+	public set $degree_name(value: string) {
+		this.degree_name = value;
+	}
 
-  set passing_year(value: string) {
-    this._passing_year = value;
-  }
+    /**
+     * Setter $institue_name
+     * @param {string} value
+     */
+	public set $institue_name(value: string) {
+		this.institue_name = value;
+	}
+
+    /**
+     * Setter $passing_year
+     * @param {string} value
+     */
+	public set $passing_year(value: string) {
+		this.passing_year = value;
+	}
+
+
 }

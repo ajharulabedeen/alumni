@@ -31,7 +31,7 @@ export class SearchService {
     console.log('column_name : ' + education_search_by);
     console.log('key : ' + education_value_search);
 
-    this.basic = new BehaviorSubject<any>(null);
+    this.education = new BehaviorSubject<any>(null);
     return this.http.post<EducationSearch>
     ('http://127.0.0.1:8000/search/education?page=' + educationSearch_pageNumber,
       {
@@ -78,8 +78,8 @@ export class SearchService {
       this.authService.getHeader(),
     ).subscribe((basic: Basic) => {
       // console.log("One Job : " + pt["0"]["organization_name"]);
-      // console.log(basic);
-      this.education.next(basic);
+      console.log(basic);
+      this.basic.next(basic);
     });
   } // searchMobilePayment
 

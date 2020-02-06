@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {SearchService} from './search.service';
 import {Basic} from '../profile/basic/basic.model';
+import {EducationSearch} from './education-search.model';
 
 @Component({
   selector: 'app-search',
@@ -22,6 +23,13 @@ export class SearchComponent implements OnInit {
     this.basicSearch_sort_by = 'ASC';
     this.basicSearch_pageNumber = 1;
     // basic
+    // education
+    this.education_search_by = 'institue_name';
+    this.educationSearch_sort_on = 'batch';
+    this.educationSearch_perPage = 10;
+    this.educationSearch_sort_by = 'ASC';
+    this.educationSearch_pageNumber = 1;
+    // education
 
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
@@ -69,7 +77,7 @@ export class SearchComponent implements OnInit {
     this.searchService.basic.subscribe(b => {
       this.baicSearch_profiles_array = [];
       for (const key in b) {
-        console.log(b);
+        // console.log(b);
         var basic = new Basic();
         basic.$user_id = b[key]['user_id'];
         basic.$dept = b[key]['dept'];
@@ -93,6 +101,7 @@ export class SearchComponent implements OnInit {
         this.baicSearch_profiles_array.push(basic);
       }// for
     });
+    // console.log(this.baicSearch_profiles_array);
   }// refreshTable_basicSearch
   public basicSearch_previousPage() {
     console.log('basicSearch_previousPage');
@@ -145,34 +154,24 @@ export class SearchComponent implements OnInit {
       this.education_search_by,
       this.education_value_search);
 
-    this.searchService.basic.subscribe(b => {
-      this.baicSearch_profiles_array = [];
+    this.searchService.education.subscribe(b => {
+      this.education_array = [];
       for (const key in b) {
-        console.log(b);
-        var basic = new Basic();
-        basic.$user_id = b[key]['user_id'];
-        basic.$dept = b[key]['dept'];
-        basic.$batch = b[key]['batch'];
-        basic.$student_id = b[key]['student_id'];
-        basic.$passing_year = b[key]['passing_year'];
-        basic.$first_name = b[key]['first_name'];
-        basic.$last_name = b[key]['last_name'];
-        basic.$birth_date = b[key]['birth_date'];
-        basic.$gender = b[key]['gender'];
-        basic.$blood_group = b[key]['blood_group'];
-        basic.$email = b[key]['email'];
-        basic.$phone = b[key]['phone'];
-        basic.$address_present = b[key]['address_present'];
-        basic.$address_permanent = b[key]['address_permanent'];
-        basic.$research_interest = b[key]['research_interest'];
-        basic.$skills = b[key]['skills'];
-        basic.$image_address = b[key]['image_address'];
-        basic.$religion = b[key]['religion'];
-        basic.$social_media_link = b[key]['social_media_link'];
-        this.baicSearch_profiles_array.push(basic);
+        // console.log(b);
+        var edu = new EducationSearch();
+        edu.$user_id = b[key]['user_id'];
+        edu.$name = b[key]['first_name'] + ' ' + b[key]['last_name'];
+        edu.$student_id = b[key]['student_id'];
+        edu.$dept = b[key]['dept'];
+        edu.$batch = b[key]['batch'];
+        edu.$degree_name = b[key]['degree_name'];
+        edu.$institue_name = b[key]['institue_name'];
+        edu.$passing_year = b[key]['passing_year'];
+        this.education_array.push(edu);
       }// for
     });
-  }// refreshTable_basicSearch
+    console.log(this.education_array);
+  }// refreshTable_educationSearch
 
   public educationSearch_previousPage() {
     console.log('basicSearch_previousPage');
