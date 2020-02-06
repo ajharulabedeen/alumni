@@ -98,7 +98,7 @@ export class SearchService {
     jobs_search_by: string,
     jobs_value_search: string) {
     return this.http.post(
-      'http://127.0.0.1:8000/search/education_count',
+      'http://127.0.0.1:8000/search/jobs_count',
       {
         'per_page': jobsSearch_perPage,
         'sort_by': jobsSearch_sort_by,

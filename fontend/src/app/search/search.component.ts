@@ -280,16 +280,15 @@ export class SearchComponent implements OnInit {
 
   public setJobsSearchCount() {
     this.educationSearch_pageNumber = 1;
-    this.searchService.getEducationSearchCount(
-      this.educationSearch_perPage,
-      this.educationSearch_pageNumber,
-      this.educationSearch_sort_on,
-      this.educationSearch_sort_by,
-      this.education_search_by,
-      this.education_value_search
-    )
-      .subscribe(res => {
-        this.educationSearch_total = res['status'];
+    this.searchService.getJobsSearchCount(
+      this.jobsSearch_perPage,
+      this.jobsSearch_pageNumber,
+      this.jobsSearch_sort_on,
+      this.jobsSearch_sort_by,
+      this.jobs_search_by,
+      this.jobs_value_search
+    ).subscribe(res => {
+        this.jobsSearch_total = res['status'];
       });
     this.refreshTable_jobsSearch();
   }
