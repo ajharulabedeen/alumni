@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {SearchService} from './search.service';
 import {Basic} from '../profile/basic/basic.model';
 import {EducationSearch} from './education-search.model';
+import {JobsSearch} from './jobs-search.model';
 
 @Component({
   selector: 'app-search',
@@ -30,6 +31,15 @@ export class SearchComponent implements OnInit {
     this.educationSearch_sort_by = 'ASC';
     this.educationSearch_pageNumber = 1;
     // education
+    // jobs
+    this.jobs_search_by = 'type';
+    this.jobsSearch_sort_on = 'batch';
+    this.jobsSearch_perPage = 10;
+    this.jobsSearch_sort_by = 'ASC';
+    this.jobsSearch_pageNumber = 1;
+    // jobs
+
+
 
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
@@ -207,6 +217,84 @@ export class SearchComponent implements OnInit {
 
 //  end : education
 
+
+ //  start : Jobs
+  jobs_search_by: string;
+  jobs_value_search: string;
+  jobsSearch_pageNumber: number;
+  jobsSearch_sort_by: string;
+  jobsSearch_sort_on: string;
+
+  jobsSearch_perPage: number;
+  jobsSearch_total: number;
+
+  jobs_array = new Array();
+
+  public refreshTable_jobsSearch(): void {
+    console.log('refreshTable_educationSearch :');
+    // tslint:disable-next-line:max-line-length
+    // this.setBasicSearchCount();
+    this.searchService.jobsSearch(
+      this.jobsSearch_perPage,
+      this.jobsSearch_pageNumber,
+      this.jobsSearch_sort_on,
+      this.jobsSearch_sort_by,
+      this.jobs_search_by,
+      this.jobs_value_search);
+
+    this.searchService.jobs.subscribe(b => {
+      this.jobs_array = [];
+      for (const key in b) {
+        // console.log(b);
+        var job = new JobsSearch();
+        job.$user_id = b[key]['user_id'];
+        job.$name = b[key]['first_name'] + ' ' + b[key]['last_name'];
+        job.$student_id = b[key]['student_id'];
+        job.$dept = b[key]['dept'];
+        job.$batch = b[key]['batch'];
+        job.$type = b[key]['type'];
+        job.$organization_name = b[key]['organization_name'];
+        job.$role = b[key]['role'];
+        job.$current_status = b[key]['current_status'];
+        this.jobs_array.push(job);
+      }// for
+    });
+    console.log(this.jobs_array);
+  }// refreshTable_educationSearch
+
+  public jobsSearch_previousPage() {
+    console.log('jobsSearch_previousPage');
+    if (this.jobsSearch_pageNumber > 1) {
+      this.jobsSearch_pageNumber -= 1;
+      this.refreshTable_jobsSearch();
+    }
+  }
+
+  public jobsSearch_nextPage() {
+    console.log('jobsSearch_nextPage');
+    if (this.jobsSearch_pageNumber < (this.jobsSearch_total / this.jobsSearch_perPage)) {
+      this.jobsSearch_pageNumber += 1;
+      this.refreshTable_jobsSearch();
+    }
+  }
+
+  public setJobsSearchCount() {
+    this.educationSearch_pageNumber = 1;
+    this.searchService.getEducationSearchCount(
+      this.educationSearch_perPage,
+      this.educationSearch_pageNumber,
+      this.educationSearch_sort_on,
+      this.educationSearch_sort_by,
+      this.education_search_by,
+      this.education_value_search
+    )
+      .subscribe(res => {
+        this.educationSearch_total = res['status'];
+      });
+    this.refreshTable_jobsSearch();
+  }
+
+//  end : jobs
 
 
 }//class

@@ -153,14 +153,14 @@
       <h1>Organization Search</h1>
 
       <h4>
-        <button class="btn btn-info" (click)="setEducationSearchCount()">Search</button>
-        <button class="btn btn-xs btn-primary" (click)="refreshTable_educationSearch()">Refresh</button>
+        <button class="btn btn-info" (click)="setJobsSearchCount()">Search</button>
+        <button class="btn btn-xs btn-primary" (click)="refreshTable_jobsSearch()">Refresh</button>
       </h4>
       <!-- sort by column name -->
       <div class="col-md-12 offset-md-12">
         <div class="form-group">
           <h4>Search By :</h4>
-          <select [(ngModel)]="education_search_by">
+          <select [(ngModel)]="jobs_search_by">
             <option value="organization_name">Organization Name</option>
             <option value="type">Type</option>
             <option value="role">Role</option>
@@ -170,7 +170,7 @@
       <div class="col-md-12 offset-md-12">
         <div class="form-group">
           <label>Value : </label>
-          <input [(ngModel)]="education_value_search" type="text" class="form-control" placeholder="search...">
+          <input [(ngModel)]="jobs_value_search" type="text" class="form-control" placeholder="search...">
         </div>
       </div>
       <!-- end : search fields selection and search key or search value-->
@@ -181,42 +181,42 @@
       <div class="col-md-2 offset-md-2">
         <div style="text-align: center" class="form-group">
           <label>Per Page</label>
-          <input style="text-align: center" [(ngModel)]="educationSearch_perPage" type="number" class="form-control"
-                 value="{{educationSearch_perPage}}" (ngModelChange)="refreshTable_educationSearch()">
+          <input style="text-align: center" [(ngModel)]="jobsSearch_perPage" type="number" class="form-control"
+                 value="{{jobsSearch_perPage}}" (ngModelChange)="refreshTable_jobsSearch()">
         </div>
       </div>
       <!--      total-->
       <div class="col-md-2 offset-md-2">
         <div style="text-align: center" class="form-group">
           <label>Total </label>
-          <input style="text-align: center" disabled="true" [(ngModel)]="educationSearch_total" type="number"
+          <input style="text-align: center" disabled="true" [(ngModel)]="jobsSearch_total" type="number"
                  class="form-control"
-                 value="{{educationSearch_total}}">
+                 value="{{jobsSearch_total}}">
         </div>
       </div>
       <!--      prePage/nextPage-->
       <div class="col-md-3 offset-md-3">
         <div class="form-group" style="text-align: center">
-          <button class="btn btn-primary btn-xs" (click)="educationSearch_previousPage()">Previous</button>
+          <button class="btn btn-primary btn-xs" (click)="jobsSearch_previousPage()">Previous</button>
           <label class="btn btn-danger btn-xs ">Page Number</label>
-          <button class="btn btn-primary btn-xs" (click)="educationSearch_nextPage()">Next</button>
-          <input style="text-align: center" [(ngModel)]="educationSearch_pageNumber" type="number" class="form-control"
-                 value="{{educationSearch_pageNumber}}">
+          <button class="btn btn-primary btn-xs" (click)="jobsSearch_nextPage()">Next</button>
+          <input style="text-align: center" [(ngModel)]="jobsSearch_pageNumber" type="number" class="form-control"
+                 value="{{jobsSearch_pageNumber}}">
         </div>
       </div>
       <!--       sort by ASC or DESC -->
       <div class="col-md-3 offset-md-3">
         <div class="form-group" style="text-align: center">
           <h4>Sort Order</h4>
-          <input type="radio" name="edu_s" [(ngModel)]="educationSearch_sort_by" value="ASC"
+          <input type="radio" name="j_s" [(ngModel)]="jobsSearch_sort_by" value="ASC"
                  checked="checked">Ascending<br>
-          <input type="radio" name="edu_s" [(ngModel)]="educationSearch_sort_by" value="DESC">Descending<br>
+          <input type="radio" name="j_s" [(ngModel)]="jobsSearch_sort_by" value="DESC">Descending<br>
         </div>
       </div>
       <!--       sort by column name -->
       <div>
         <h4>Sort By</h4>
-        <select [(ngModel)]="educationSearch_sort_on">
+        <select [(ngModel)]="jobsSearch_sort_on">
           <option value="student_id" [selected]="true">Student ID</option>
           <option value="batch">Batch</option>
           <option value="passing_year">Passing Year</option>
@@ -243,24 +243,26 @@
                 <th>Batch</th>
                 <th>Organization Name</th>
                 <th>Role</th>
+                <th>Type</th>
                 <th>Current Status</th>
               </tr>
 
               <!-- showing all profiles after basic search  -->
-              <tr *ngFor="let edu of education_array; let i=index">
+              <tr *ngFor="let job of jobs_array; let i=index">
                 <td>
                   <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details">
                     Details
                   </button>
                 </td>
                 <td>{{i + 1}}</td>
-                <td>{{edu.name}} </td>
-                <td>{{edu.student_id}}</td>
-                <td>{{edu.dept}}</td>
-                <td>{{edu.batch}}</td>
-                <td>{{edu.degree_name}}</td>
-                <td>{{edu.institue_name}}</td>
-                <td>{{edu.passing_year}}</td>
+                <td>{{job.name}} </td>
+                <td>{{job.student_id}}</td>
+                <td>{{job.dept}}</td>
+                <td>{{job.batch}}</td>
+                <td>{{job.organization_name}}</td>
+                <td>{{job.role}}</td>
+                <td>{{job.type}}</td>
+                <td>{{job.current_status}}</td>
               </tr>
               </tbody>
             </table>

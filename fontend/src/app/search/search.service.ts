@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {AuthService} from '../auth/auth.service';
 import {Basic} from '../profile/basic/basic.model';
 import {EducationSearch} from './education-search.model';
+import {JobsSearch} from './jobs-search.model';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,8 @@ export class SearchService {
   // refactor : instead of any, might need to give type.
   basic = new BehaviorSubject<any>(null);
   education = new BehaviorSubject<any>(null);
+  jobs = new BehaviorSubject<any>(null);
+
 
   public educationSearch(
     educationSearch_perPage: number,
@@ -50,6 +53,67 @@ export class SearchService {
     });
     console.log(this.education);
   }
+
+
+  public jobsSearch(
+    jobsSearch_perPage: number,
+    jobsSearch_pageNumber: number,
+    jobsSearch_sort_on: string,
+    jobsSearch_sort_by: string,
+    jobs_search_by: string,
+    jobs_value_search: string) {
+
+    // console.log('perPage_edu : ' + educationSearch_perPage);
+    // console.log('sort_by : ' + educationSearch_sort_by);
+    // console.log('sort_on : ' + educationSearch_sort_on);
+    // console.log('column_name : ' + education_search_by);
+    // console.log('key : ' + education_value_search);
+
+    this.jobs = new BehaviorSubject<any>(null);
+    return this.http.post<JobsSearch>
+    ('http://127.0.0.1:8000/search/jobs?page='
+      + jobsSearch_pageNumber,
+      {
+        'per_page': jobsSearch_perPage,
+        'sort_by': jobsSearch_sort_by,
+        'sort_on': jobsSearch_sort_on,
+        'column_name': jobs_search_by,
+        'key': '%' + jobs_value_search + '%',
+      },
+      this.authService.getHeader(),
+    ).subscribe((job: JobsSearch) => {
+      // console.log("One Job : " + pt["0"]["organization_name"]);
+      console.log(job['data']);
+      this.jobs.next(job['data']);
+    });
+    console.log(this.jobs);
+  }
+
+
+  public getJobsSearchCount(
+    jobsSearch_perPage: number,
+    jobsSearch_pageNumber: number,
+    jobsSearch_sort_on: string,
+    jobsSearch_sort_by: string,
+    jobs_search_by: string,
+    jobs_value_search: string) {
+    return this.http.post(
+      'http://127.0.0.1:8000/search/education_count',
+      {
+        'per_page': jobsSearch_perPage,
+        'sort_by': jobsSearch_sort_by,
+        'sort_on': jobsSearch_sort_on,
+        'column_name': jobs_search_by,
+        'key': '%' + jobs_value_search + '%',
+      }, this.authService.getHeader()
+    );
+    // .subscribe((res: Response) => {
+    //   console.log();
+    //   console.log(res);
+    //   // return res;
+    //   // return res["status"];
+    // });
+  }// getBsicSearchCount
 
 
   public getEducationSearchCount(
