@@ -15,13 +15,13 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
 
-    //basic
+    // basic
     this.basic_search_by = 'student_id';
     this.basicSearch_sort_on = 'dept';
     this.basicSearch_perPage = 10;
     this.basicSearch_sort_by = 'ASC';
     this.basicSearch_pageNumber = 1;
-    //basic
+    // basic
 
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
@@ -49,7 +49,7 @@ export class SearchComponent implements OnInit {
 
 // start : basic search
 
-  //error : suggested to declear as class instance
+  // error : suggested to declear as class instance
   basic_search_by: string;
   basic_value_search: string;
   basicSearch_pageNumber: number;
@@ -73,7 +73,7 @@ export class SearchComponent implements OnInit {
         var basic = new Basic();
         basic.$user_id = b[key]['user_id'];
         basic.$dept = b[key]['dept'];
-        basic.batch = b[key]['batch'];
+        basic.$batch = b[key]['batch'];
         basic.$student_id = b[key]['student_id'];
         basic.$passing_year = b[key]['passing_year'];
         basic.$first_name = b[key]['first_name'];
