@@ -30,11 +30,11 @@
       <file leaf-file-name="Search_Repo_Impl.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/search/Search_Repo_Impl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="68" column="16" lean-forward="false" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
+            <state relative-caret-position="148">
+              <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
               <folding>
                 <element signature="e#109#139#0#PHP" expanded="true" />
-                <element signature="e#1133#1955#0#PHP" expanded="false" />
+                <element signature="e#933#1755#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -43,20 +43,20 @@
       <file leaf-file-name="U_Search.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/search/U_Search.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+            <state relative-caret-position="235">
+              <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
               <folding>
                 <element signature="e#39#71#0#PHP" expanded="true" />
-                <element signature="e#1107#1149#0#PHP" expanded="false" />
-                <element signature="e#1409#1447#0#PHP" expanded="false" />
-                <element signature="e#1538#1577#0#PHP" expanded="false" />
-                <element signature="e#1667#2036#0#PHP" expanded="false" />
-                <element signature="e#2878#3285#0#PHP" expanded="false" />
-                <element signature="e#3891#4385#0#PHP" expanded="false" />
-                <element signature="e#4438#4717#0#PHP" expanded="false" />
-                <element signature="e#4723#5143#0#PHP" expanded="false" />
-                <element signature="e#5149#5536#0#PHP" expanded="false" />
-                <element signature="e#5542#5734#0#PHP" expanded="false" />
+                <element signature="e#1153#1195#0#PHP" expanded="false" />
+                <element signature="e#1455#1493#0#PHP" expanded="false" />
+                <element signature="e#1584#1623#0#PHP" expanded="false" />
+                <element signature="e#1713#2082#0#PHP" expanded="false" />
+                <element signature="e#2924#3331#0#PHP" expanded="false" />
+                <element signature="e#3937#4431#0#PHP" expanded="false" />
+                <element signature="e#4484#4763#0#PHP" expanded="false" />
+                <element signature="e#4769#5189#0#PHP" expanded="false" />
+                <element signature="e#5195#5582#0#PHP" expanded="false" />
+                <element signature="e#5588#5780#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -107,10 +107,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
+    <option name="x" value="-2409" />
     <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="width" value="2418" />
+    <option name="height" value="1318" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -370,14 +370,11 @@
       <workItem from="1580853073202" duration="3611000" />
       <workItem from="1580856704733" duration="3541000" />
       <workItem from="1580890638799" duration="6372000" />
-      <workItem from="1580957609729" duration="3960000" />
+      <workItem from="1580957609729" duration="4120000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UTest_ProfileBasicRepo - 2020.02.06 at 10h 50m 23s.xml">
-      <configuration name="UTest_ProfileBasicRepo" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
     <history-entry file="UTest_ProfileBasicRepo - 2020.02.06 at 10h 52m 35s.xml">
       <configuration name="UTest_ProfileBasicRepo" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
@@ -405,9 +402,12 @@
     <history-entry file="UTest_ProfileBasicRepo_testMain - 2020.02.06 at 11h 02m 46s.xml">
       <configuration name="UTest_ProfileBasicRepo.testMain" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
+    <history-entry file="UTest_ProfileBasicRepo_testMain - 2020.02.06 at 11h 05m 26s.xml">
+      <configuration name="UTest_ProfileBasicRepo.testMain" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29606000" />
+    <option name="totallyTimeSpent" value="29766000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -419,18 +419,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="-2409" y="-9" width="2418" height="1318" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23954985" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19053708" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44232437" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33824804" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21857305" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21857305" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -486,7 +486,7 @@
           <caret line="41" column="89" lean-forward="false" selection-start-line="41" selection-start-column="89" selection-end-line="41" selection-end-column="89" />
           <folding>
             <element signature="e#109#139#0#PHP" expanded="true" />
-            <element signature="e#1133#1955#0#PHP" expanded="false" />
+            <element signature="e#933#1755#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -497,11 +497,11 @@
           <caret line="56" column="43" lean-forward="false" selection-start-line="56" selection-start-column="43" selection-end-line="56" selection-end-column="43" />
           <folding>
             <element signature="e#39#71#0#PHP" expanded="true" />
-            <element signature="e#3891#4385#0#PHP" expanded="false" />
-            <element signature="e#4438#4717#0#PHP" expanded="false" />
-            <element signature="e#4723#5143#0#PHP" expanded="false" />
-            <element signature="e#5149#5536#0#PHP" expanded="false" />
-            <element signature="e#5542#5734#0#PHP" expanded="false" />
+            <element signature="e#3937#4431#0#PHP" expanded="false" />
+            <element signature="e#4484#4763#0#PHP" expanded="false" />
+            <element signature="e#4769#5189#0#PHP" expanded="false" />
+            <element signature="e#5195#5582#0#PHP" expanded="false" />
+            <element signature="e#5588#5780#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -662,11 +662,11 @@
           <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="e#39#71#0#PHP" expanded="true" />
-            <element signature="e#3891#4385#0#PHP" expanded="false" />
-            <element signature="e#4438#4717#0#PHP" expanded="false" />
-            <element signature="e#4723#5143#0#PHP" expanded="false" />
-            <element signature="e#5149#5536#0#PHP" expanded="false" />
-            <element signature="e#5542#5734#0#PHP" expanded="false" />
+            <element signature="e#3937#4431#0#PHP" expanded="false" />
+            <element signature="e#4484#4763#0#PHP" expanded="false" />
+            <element signature="e#4769#5189#0#PHP" expanded="false" />
+            <element signature="e#5195#5582#0#PHP" expanded="false" />
+            <element signature="e#5588#5780#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -720,11 +720,11 @@
           <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
           <folding>
             <element signature="e#39#71#0#PHP" expanded="true" />
-            <element signature="e#3891#4385#0#PHP" expanded="false" />
-            <element signature="e#4438#4717#0#PHP" expanded="false" />
-            <element signature="e#4723#5143#0#PHP" expanded="false" />
-            <element signature="e#5149#5536#0#PHP" expanded="false" />
-            <element signature="e#5542#5734#0#PHP" expanded="false" />
+            <element signature="e#3937#4431#0#PHP" expanded="false" />
+            <element signature="e#4484#4763#0#PHP" expanded="false" />
+            <element signature="e#4769#5189#0#PHP" expanded="false" />
+            <element signature="e#5195#5582#0#PHP" expanded="false" />
+            <element signature="e#5588#5780#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -962,31 +962,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/search/U_Search.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="32" column="12" lean-forward="false" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+        <state relative-caret-position="235">
+          <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
           <folding>
             <element signature="e#39#71#0#PHP" expanded="true" />
-            <element signature="e#1107#1149#0#PHP" expanded="false" />
-            <element signature="e#1409#1447#0#PHP" expanded="false" />
-            <element signature="e#1538#1577#0#PHP" expanded="false" />
-            <element signature="e#1667#2036#0#PHP" expanded="false" />
-            <element signature="e#2878#3285#0#PHP" expanded="false" />
-            <element signature="e#3891#4385#0#PHP" expanded="false" />
-            <element signature="e#4438#4717#0#PHP" expanded="false" />
-            <element signature="e#4723#5143#0#PHP" expanded="false" />
-            <element signature="e#5149#5536#0#PHP" expanded="false" />
-            <element signature="e#5542#5734#0#PHP" expanded="false" />
+            <element signature="e#1153#1195#0#PHP" expanded="false" />
+            <element signature="e#1455#1493#0#PHP" expanded="false" />
+            <element signature="e#1584#1623#0#PHP" expanded="false" />
+            <element signature="e#1713#2082#0#PHP" expanded="false" />
+            <element signature="e#2924#3331#0#PHP" expanded="false" />
+            <element signature="e#3937#4431#0#PHP" expanded="false" />
+            <element signature="e#4484#4763#0#PHP" expanded="false" />
+            <element signature="e#4769#5189#0#PHP" expanded="false" />
+            <element signature="e#5195#5582#0#PHP" expanded="false" />
+            <element signature="e#5588#5780#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/search/Search_Repo_Impl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="68" column="16" lean-forward="false" selection-start-line="68" selection-start-column="16" selection-end-line="68" selection-end-column="16" />
+        <state relative-caret-position="148">
+          <caret line="31" column="17" lean-forward="true" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
           <folding>
             <element signature="e#109#139#0#PHP" expanded="true" />
-            <element signature="e#1133#1955#0#PHP" expanded="false" />
+            <element signature="e#933#1755#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
