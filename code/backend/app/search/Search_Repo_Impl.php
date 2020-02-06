@@ -66,17 +66,9 @@ class Search_Repo_Impl implements Search_Repo_I
 
     public function search_education_count(string $per_page, string $sort_by, string $sort_on, string $column_name, string $key)
     {
-        // TODO: Implement search_education_count() method.
-        // TODO: Implement search_education() method.
-        if ($sort_by == "ASC") {
-            $order = "ASC";
-        } else {
-            $order = "DESC";
-        }
-
         $data = DB::table('profile_basics')
             ->join('profile_education', 'profile_basics.user_id', '=', 'profile_education.user_id')
-            ->where($column_name, 'LIKE', $key)->orderBy($sort_on, $order)->count() ;
+            ->where($column_name, 'LIKE', $key)->count() ;
         return $data;
     }
 
