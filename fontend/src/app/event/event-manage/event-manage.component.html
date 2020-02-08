@@ -3,6 +3,15 @@
   <app-asidenavbar></app-asidenavbar>
   <div class="content-wrapper">
 
+    <div class="tab">
+      <button class="tablinks active" (click)="searchTab(event, 'new')">New</button>
+      <button class="tablinks" (click)="searchTab(event, 'all_events')">All Events</button>
+<!--      <button class="tablinks" (click)="searchTab(event, 'education')">Education</button>-->
+    </div>
+
+
+
+
     <div class="panel-group">
 
       <div class="panel panel-default">
@@ -132,6 +141,8 @@
 
       <!-- panel-group -->
     </div>
+
+
   </div>
 
 
