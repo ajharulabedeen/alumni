@@ -61,9 +61,7 @@
       <div class="col-md-12 ">
         <div class="form-group">
           <label>Dscription</label>
-          <textarea [(ngModel)]="description" class="form-control" rows="3" placeholder="Enter ...">
-                      Enter The Dscription of the Payment!
-                  </textarea>
+          <ckeditor [(ngModel)]="description" data="<p>Hello, world!</p>"></ckeditor>
         </div>
       </div>
       <div class="col-md-3 ">
@@ -75,8 +73,6 @@
 
 <!--      Dummy to remove a block looking view from UI-->
       <div><br></div>
-
-
     </div>
     <!--    end : Add new event -->
   </div>
