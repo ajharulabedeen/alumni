@@ -12,7 +12,10 @@ class U_Test_Event extends TestCase
     public function testMain()
     {
 //        error_log($this->create());//passed
-        error_log($this->findOneEvent(3));
+//        error_log($this->findOneEvent(3));//passed
+//        error_log($this->delete(3));//passed
+        error_log($this->update(4, "fee", "560.00"));//passed
+        error_log($this->findOneEvent(4)->fee);
 
 //        not tested; have to check.
 //         $this->getAll(10,"ASC","last_date","10");
@@ -31,16 +34,21 @@ class U_Test_Event extends TestCase
 
     }
 
-    //done
+    public function update($id, $filedName, $data)
+    {
+        $repo = new Events_Repo_Impl();
+        $event = $this->findOneEvent($id);
+        $event->$filedName = $data;
+        $status = $repo->update($event);
+        return $status;
+    }
+
     public function delete($id)
     {
         $repo = new Events_Repo_Impl();
         $status = $repo->delete($id);
-        error_log($status);
         return $status;
     }
-
-    //done
 
     /**
      * @return PaymentType return a single payment Type.
@@ -50,11 +58,6 @@ class U_Test_Event extends TestCase
         $repo = new Events_Repo_Impl();
         return $repo->getOneEvent($id);
     }
-
-
-
-
-    //done
 
     /**
      * A basic test example.
@@ -76,6 +79,7 @@ class U_Test_Event extends TestCase
         $id = $repoEvent->create($e);
         return $id;
     }
+
 
 //    start : dummy event creation
 //    end : dummy event creation
