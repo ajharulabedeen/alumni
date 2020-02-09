@@ -59,6 +59,17 @@
       <label>Dscription</label>
       <ckeditor [(ngModel)]="description" data="<p>Hello, world!</p>"></ckeditor>
 
+      <div class="col-md-12 ">
+        <div class="form-group">
+          <label>Note</label>
+<!--          <input [(ngModel)]="note" type="text" class="form-control">-->
+          <textarea [(ngModel)]="note" type="text" class="form-control">
+
+          </textarea>
+        </div>
+      </div>
+
+
       <div class="col-md-3">
         <div class="form-group">
           <button class="btn btn-primary" data-toggle="collapse" href="#add_payment">Save</button>

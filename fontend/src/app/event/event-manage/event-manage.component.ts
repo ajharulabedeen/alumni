@@ -13,6 +13,8 @@ export class EventManageComponent implements OnInit {
   cost: string;
   vanue: string;
   description: string;
+  note: string;
+
   event_search_by: string;
   event_value_search: string;
   eventSearch_perPage: number;
@@ -26,11 +28,11 @@ export class EventManageComponent implements OnInit {
 
   ngOnInit() {
 
-    this.eventSearch_pageNumber= 1;
-    this.eventSearch_perPage= 10;
-    this.eventSearch_sort_by="ASC";
-    this.event_search_by="title";
-    this.eventSearch_sort_on="end_date";
+    this.eventSearch_pageNumber = 1;
+    this.eventSearch_perPage = 10;
+    this.eventSearch_sort_by = 'ASC';
+    this.event_search_by = 'title';
+    this.eventSearch_sort_on = 'end_date';
 
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
