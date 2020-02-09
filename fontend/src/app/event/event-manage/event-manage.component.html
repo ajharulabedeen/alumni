@@ -18,31 +18,30 @@
           <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
         </div>
       </div>
-      <div class="col-md-3 offset-md-3">
+      <div class="col-md-3  offset-md-3">
         <div class="form-group">
           <label>Start Date</label>
           <input [(ngModel)]="start_date" type="text" class="form-control" placeholder="{{start_date}}">
         </div>
       </div>
-      <div class="col-md-3 offset-md-3">
+      <div class="col-md-3  offset-md-3">
         <div class="form-group">
           <label>Select Date</label>
           <input [(ngModel)]="start_date" type="date" class="form-control" value="{{start_date}}">
         </div>
       </div>
-      <div class="col-md-3 offset-md-3">
+      <div class="col-md-3  offset-md-3">
         <div class="form-group">
           <label>Last Date</label>
           <input [(ngModel)]="last_date" type="text" class="form-control" placeholder="{{last_date}}">
         </div>
       </div>
-      <div class="col-md-3 offset-md-3">
+      <div class="col-md-3  offset-md-3">
         <div class="form-group">
           <label>Select Date</label>
           <input [(ngModel)]="last_date" type="date" class="form-control" value="{{last_date}}">
         </div>
       </div>
-
 
       <div class="col-md-12 ">
         <div class="form-group">
@@ -50,7 +49,6 @@
           <input [(ngModel)]="cost" type="text" class="form-control">
         </div>
       </div>
-
       <div class="col-md-12 ">
         <div class="form-group">
           <label>Vanue</label>
@@ -58,23 +56,26 @@
         </div>
       </div>
 
-      <div class="col-md-12 ">
-        <div class="form-group">
-          <label>Dscription</label>
-          <ckeditor [(ngModel)]="description" data="<p>Hello, world!</p>"></ckeditor>
-        </div>
-      </div>
-      <div class="col-md-3 ">
+      <label>Dscription</label>
+      <ckeditor [(ngModel)]="description" data="<p>Hello, world!</p>"></ckeditor>
+
+
+      <div class="col-md-3  ">
         <div class="form-group">
           <button class="btn btn-primary" data-toggle="collapse" href="#add_payment">Save</button>
           <button class="btn btn-danger">Clear All</button>
         </div>
       </div>
-
-<!--      Dummy to remove a block looking view from UI-->
+      <!--      Dummy to remove a block looking view from UI-->
       <div><br></div>
     </div>
     <!--    end : Add new event -->
+
+    <!--    start : Showing  All events -->
+    <div id="all_events" class="">
+
+    </div>
+
   </div>
 
 
@@ -109,7 +110,7 @@
     <!-- <app-footernavbar></app-footernavbar> -->
     <!-- <app-settingsnavbar></app-settingsnavbar> -->
   </div>
-  <!-- <app-footernavbar></app-footernavbar> -->
+<!--  <app-footernavbar></app-footernavbar>-->
 
 
 </div>
