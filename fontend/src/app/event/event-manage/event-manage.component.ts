@@ -13,6 +13,12 @@ export class EventManageComponent implements OnInit {
   cost: string;
   vanue: string;
   description: string;
+  event_search_by: string;
+  event_value_search: string;
+  eventSearch_perPage: number;
+  eventSearch_total: number;
+  eventSearch_pageNumber: number;
+  eventSearch_sort_by: string;
 
   constructor() {
   }
@@ -42,4 +48,11 @@ export class EventManageComponent implements OnInit {
   // end : for tab in font end.
 
 
+  public eventSearch_previousPage() {
+
+  }
+
+  public eventSearch_nextPage() {
+
+  }
 }// class

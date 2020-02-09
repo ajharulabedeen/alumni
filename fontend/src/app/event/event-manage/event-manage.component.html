@@ -77,7 +77,7 @@
       <div class="col-md-12 offset-md-12">
         <div class="form-group">
           <h4>Search By :</h4>
-          <select [(ngModel)]="basic_search_by">
+          <select [(ngModel)]="event_search_by">
             <option value="batch">Student Batch</option>
             <option value="student_id">Student ID</option>
             <option value="dept">Dept</option>
@@ -94,7 +94,7 @@
       <div class="col-md-12 offset-md-12">
         <div class="form-group">
           <label>Value : </label>
-          <input [(ngModel)]="basic_value_search" type="text" class="form-control" placeholder="search...">
+          <input [(ngModel)]="event_value_search" type="text" class="form-control" placeholder="search...">
         </div>
       </div>
       <!-- end : search fields selection and search key or search value-->
@@ -105,36 +105,36 @@
       <div class="col-md-2 offset-md-2">
         <div style="text-align: center" class="form-group">
           <label>Per Page</label>
-          <input style="text-align: center" [(ngModel)]="basicSearch_perPage" type="number" class="form-control"
-                 value="{{basicSearch_perPage}}" (ngModelChange)="refreshTable_basicSearch()">
+          <input style="text-align: center" [(ngModel)]="eventSearch_perPage" type="number" class="form-control"
+                 value="{{eventSearch_perPage}}" (ngModelChange)="refreshTable_eventSearch()">
         </div>
       </div>
       <!--      total-->
       <div class="col-md-2 offset-md-2">
         <div style="text-align: center" class="form-group">
           <label>Total </label>
-          <input style="text-align: center" disabled="true" [(ngModel)]="basicSearch_total" type="number"
+          <input style="text-align: center" disabled="true" [(ngModel)]="eventSearch_total" type="number"
                  class="form-control"
-                 value="{{basicSearch_total}}">
+                 value="{{eventSearch_total}}">
         </div>
       </div>
       <!--      prePage/nextPage-->
       <div class="col-md-3 offset-md-3">
         <div class="form-group" style="text-align: center">
-          <button class="btn btn-primary btn-xs" (click)="basicSearch_previousPage()">Previous</button>
+          <button class="btn btn-primary btn-xs" (click)="eventSearch_previousPage()">Previous</button>
           <label class="btn btn-danger btn-xs ">Page Number</label>
-          <button class="btn btn-primary btn-xs" (click)="basicSearch_nextPage()">Next</button>
-          <input style="text-align: center" [(ngModel)]="basicSearch_pageNumber" type="number" class="form-control"
-                 value="{{basicSearch_pageNumber}}">
+          <button class="btn btn-primary btn-xs" (click)="eventSearch_nextPage()">Next</button>
+          <input style="text-align: center" [(ngModel)]="eventSearch_pageNumber" type="number" class="form-control"
+                 value="{{eventSearch_pageNumber}}">
         </div>
       </div>
       <!--       sort by ASC or DESC -->
       <div class="col-md-3 offset-md-3">
         <div class="form-group" style="text-align: center">
           <h4>Sort Order</h4>
-          <input type="radio" name="m_pay" [(ngModel)]="basicSearch_sort_by" value="ASC"
+          <input type="radio" name="m_pay" [(ngModel)]="eventSearch_sort_by" value="ASC"
                  checked="checked">Ascending<br>
-          <input type="radio" name="m_pay" [(ngModel)]="basicSearch_sort_by" value="DESC">Descending<br>
+          <input type="radio" name="m_pay" [(ngModel)]="eventSearch_sort_by" value="DESC">Descending<br>
         </div>
       </div>
       <!--       sort by column name -->
@@ -172,22 +172,22 @@
               </tr>
 
               <!-- showing all profiles after basic search  -->
-              <tr *ngFor="let basic of baicSearch_profiles_array; let i=index">
+              <tr *ngFor="let event of event_array; let i=index">
                 <td>
                   <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details">
                     Details
                   </button>
                 </td>
                 <td>{{i + 1}}</td>
-                <td>{{basic.batch}}</td>
-                <td>{{basic.id}}</td>
-                <td>{{basic.dept}}</td>
-                <td>{{basic.first_name}}{{basic.last_name}} </td>
-                <td>{{basic.phone}}</td>
-                <td>{{basic.address_present}}</td>
-                <td>{{basic.passing_year}}</td>
-                <td>{{basic.research_interest}}</td>
-                <td>{{basic.social_media_link}}</td>
+                <td>{{event.batch}}</td>
+                <td>{{event.id}}</td>
+                <td>{{event.dept}}</td>
+                <td>{{event.first_name}}{{event.last_name}} </td>
+                <td>{{event.phone}}</td>
+                <td>{{event.address_present}}</td>
+                <td>{{event.passing_year}}</td>
+                <td>{{event.research_interest}}</td>
+                <td>{{event.social_media_link}}</td>
               </tr>
               </tbody>
             </table>
