@@ -16,17 +16,10 @@ class U_Test_Event extends TestCase
 //        error_log($this->delete(3));//passed
 //        error_log($this->update(4, "fee", "560.00"));//passed.
 //        error_log($this->findOneEvent(4)->fee);//passed.
-        error_log($this->getAllEvents(4, "ASC", "end_date"));//passed.
+//        error_log($this->getAllEvents(4, "ASC", "end_date"));//passed.
+        error_log($this->getDescription(4));//passed.
 
 
-//        not tested; have to check.
-//         $this->getAll(10,"ASC","last_date","10");
-        // error_log($this->countAll());
-        // error_log($this->findOneEvent(1)->title);//done
-        // error_log($this->findOneEvent(2));//done
-        // error_log($this->delete(2));//done
-        // error_log($this->update(25,"---Update PT Name!"));
-        // error_log($this->findOnePaymentType(25)->name);
     }
 
 
@@ -35,6 +28,16 @@ class U_Test_Event extends TestCase
         error_log("\n Event: CRUD Test Done!\n");
 
     }
+
+
+    public function getDescription($id)
+    {
+        $repo = new Events_Repo_Impl();
+        $data = $repo->getDescription($id);
+//        error_log($data);
+        return $data;
+    }
+
 
     public function getAllEvents($per_page, $sort_by, $sort_on)
     {

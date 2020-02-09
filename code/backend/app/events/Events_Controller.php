@@ -12,13 +12,11 @@ class Events_Controller extends Controller
 {
 
     protected $eventsRepo;
-
     public function __construct(Events_Repo_I $eventsRepo)
     {
         // $this->middleware('auth:api');
         $this->eventsRepo = $eventsRepo;
     }
-
     public function create(Request $r)
     {
         $events = new events();
@@ -34,7 +32,6 @@ class Events_Controller extends Controller
         $id = $this->eventsRepo->create($events);
         return $id;
     }
-
     public function update(Request $r)
     {
         $events = new events();
@@ -50,20 +47,16 @@ class Events_Controller extends Controller
       //  $id = $this->eventsRepo->update($events);
         return ['status' => $this->eventsRepo->update($events)];
     }
-
     public function delete(Request $r)
     {
         error_log("Event Delete ID : " . $r->id);
         return ['status' => $this->eventsRepo->delete($r->id)];
     }
-
-
     public function getDescription(Request $r)
     {
         return ['Description' => $this->eventsRepo->getDescription($r->id)];
 
     }
-
     public function getAllEvents(Request $request)
     {
         

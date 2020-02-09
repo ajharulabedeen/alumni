@@ -15,21 +15,34 @@ class F_Event_Test extends TestCase
      */
     public function testBasicTest()
     {
-        $this->assertTrue(true);
+//        $this->assertTrue(true);
 
-        $this->getAllEvents(10, "ASC", "last_date", "1");
-//        $this->search_basic_count(10, 'DESC', 'batch', 1, "dept", "C");//done
+
+
+//        $this->getAllEvents(10, "ASC", "end_date", "1");
 
     }
 
-//    start : assertion
-//    public function testSearch_basic(){
-//        $this->search_basic(10, 'DESC', 'batch', 1, "dept", "C");//done
-//    }
-//    public function testSearch_basic_count(){
-//        $this->search_basic_count(10, 'DESC', 'batch', 1, "dept", "C");//done
-//    }
-//    end : assertion
+    public function create()
+    {
+        $response = $this->json(
+            'POST',
+            'events/create',
+            [
+                'per_page' => $per_page,
+                'sort_by' => $sort_by,
+                "sort_on" => $sort_on,
+            ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
+        );
+
+        $d = $response->baseResponse->original;
+//        dd($d);
+    }
+
 
     public function getAllEvents($per_page, $sort_by, $sort_on, $pageNumber)
     {
@@ -56,20 +69,14 @@ class F_Event_Test extends TestCase
                 if ($d[$i] == null) {
                     break;
                 }
-
                 error_log(
                     $d[$i]->id
-                    . ' batch :' . $d[$i]->batch
-                    . ' uID :' . $d[$i]->user_id
-                    . " Name : " . $d[$i]->first_name
-                    . $d[$i]->last_name
-                    . "---institute Name : " . $d[$i]->organization_name
-                    . "---Type : " . $d[$i]->type
-                    . "---Role: " . $d[$i]->role);
-
+                    . ' Title :' . $d[$i]->title
+                    . ' sDate :' . $d[$i]->start_date
+                    . " eDate : " . $d[$i]->end_date
+                    . " fee : " . $d[$i]->fee);
             }
         }
-
     }
 
 
