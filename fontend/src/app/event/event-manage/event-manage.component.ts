@@ -24,6 +24,11 @@ export class EventManageComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.eventSearch_pageNumber= 1;
+    this.eventSearch_perPage= 10;
+    this.eventSearch_sort_by="ASC";
+
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
   }
@@ -53,6 +58,10 @@ export class EventManageComponent implements OnInit {
   }
 
   public eventSearch_nextPage() {
+
+  }
+
+  public refreshTable_eventSearch() {
 
   }
 }// class
