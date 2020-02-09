@@ -10,7 +10,7 @@
     </div>
 
     <!--    start : Add new event -->
-    <div id="new" class="tabcontent ">
+    <div id="new" class="tabcontent">
       <!--      <h1 class="h1">New Event</h1>-->
       <div class="col-md-12 offset-md-12">
         <div class="form-group">
@@ -59,7 +59,6 @@
       <label>Dscription</label>
       <ckeditor [(ngModel)]="description" data="<p>Hello, world!</p>"></ckeditor>
 
-
       <div class="col-md-3  ">
         <div class="form-group">
           <button class="btn btn-primary" data-toggle="collapse" href="#add_payment">Save</button>
@@ -72,22 +71,17 @@
     <!--    end : Add new event -->
 
     <!--    start : Showing  All events -->
-    <div id="all_events" class="">
+    <div id="all_events" class="tabcontent">
       <!-- sort by column name -->
       <div class="col-md-12 offset-md-12">
         <div class="form-group">
           <h4>Search By :</h4>
           <select [(ngModel)]="event_search_by">
-            <option value="batch">Student Batch</option>
-            <option value="student_id">Student ID</option>
-            <option value="dept">Dept</option>
-            <option value="first_name">First Name</option>
-            <option value="last_name">Last Name</option>
-            <option value="skills">Skills</option>
-            <option value="research_interest">Research Interest</option>
-            <option value="phone">Phone</option>
-            <option value="email">email</option>
-            <option value="address">Address</option>
+            <option value="title">Title</option>
+            <option value="start_date" [selected]="true">Start Date</option>
+            <option value="end_date">End Date</option>
+            <option value="fee">Fee</option>
+            <option value="location">Location</option>
           </select>
         </div>
       </div>
@@ -140,12 +134,11 @@
       <!--       sort by column name -->
       <div>
         <h4>Sort By</h4>
-        <select [(ngModel)]="basicSearch_sort_on">
-          <option value="student_id" [selected]="true">Student ID</option>
-          <option value="batch">Batch</option>
-          <option value="passing_year">Passing Year</option>
-          <option value="dept">Dept</option>
-          <option value="gender">Gender</option>
+        <select [(ngModel)]="eventSearch_sort_on">
+          <option value="start_date" [selected]="true">Start Date</option>
+          <option value="end_date">End Date</option>
+          <option value="fee">Fee</option>
+          <option value="location">Location</option>
         </select>
       </div>
       <!--            end : basic search pagination panel-->
@@ -160,15 +153,11 @@
               <tr>
                 <th>Details</th>
                 <th>Index</th>
-                <th>Batch</th>
-                <th>ID</th>
-                <th>Dept</th>
-                <th>Name</th>
-                <th>Mobile</th>
-                <th>Address</th>
-                <th>Passing Year</th>
-                <th>Research Interest</th>
-                <th>Social Link</th>
+                <th>Title</th>
+                <th>Start</th>
+                <th>End</th>
+                <th>Amount</th>
+                <th>Vanue</th>
               </tr>
 
               <!-- showing all profiles after basic search  -->

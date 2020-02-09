@@ -19,6 +19,7 @@ export class EventManageComponent implements OnInit {
   eventSearch_total: number;
   eventSearch_pageNumber: number;
   eventSearch_sort_by: string;
+  eventSearch_sort_on: string;
 
   constructor() {
   }
@@ -28,6 +29,8 @@ export class EventManageComponent implements OnInit {
     this.eventSearch_pageNumber= 1;
     this.eventSearch_perPage= 10;
     this.eventSearch_sort_by="ASC";
+    this.event_search_by="title";
+    this.eventSearch_sort_on="end_date";
 
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
