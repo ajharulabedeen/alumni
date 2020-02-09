@@ -78,120 +78,86 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="F_Event_Test.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/event/F_Event_Test.php">
+      <file leaf-file-name="U_Test_Event.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/event/U_Test_Event.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="163">
+              <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
               <folding>
-                <element signature="e#167#234#0#PHP" expanded="false" />
-                <element signature="e#819#2047#0#PHP" expanded="false" />
-                <element signature="e#937#1383#0#PHP" expanded="false" />
-                <element signature="e#1029#1241#0#PHP" expanded="false" />
-                <element signature="e#1250#1254#0#PHP" expanded="false" />
-                <element signature="e#1534#2041#0#PHP" expanded="false" />
-                <element signature="e#1583#1641#0#PHP" expanded="false" />
-                <element signature="e#1655#2029#0#PHP" expanded="false" />
-                <element signature="e#2052#2801#0#PHP" expanded="false" />
-                <element signature="e#2176#2628#0#PHP" expanded="false" />
-                <element signature="e#2274#2486#0#PHP" expanded="false" />
-                <element signature="e#2495#2499#0#PHP" expanded="false" />
-                <element signature="e#2807#4190#0#PHP" expanded="false" />
-                <element signature="e#2930#3381#0#PHP" expanded="false" />
-                <element signature="e#3027#3239#0#PHP" expanded="false" />
-                <element signature="e#3248#3252#0#PHP" expanded="false" />
-                <element signature="e#3532#4006#0#PHP" expanded="false" />
-                <element signature="e#3581#3639#0#PHP" expanded="false" />
-                <element signature="e#3653#3994#0#PHP" expanded="false" />
-                <element signature="e#4195#4954#0#PHP" expanded="false" />
-                <element signature="e#4324#4781#0#PHP" expanded="false" />
-                <element signature="e#4427#4639#0#PHP" expanded="false" />
-                <element signature="e#4648#4652#0#PHP" expanded="false" />
-                <element signature="e#4960#5938#0#PHP" expanded="false" />
-                <element signature="e#5079#5526#0#PHP" expanded="false" />
-                <element signature="e#5172#5384#0#PHP" expanded="false" />
-                <element signature="e#5393#5397#0#PHP" expanded="false" />
-                <element signature="e#5677#5754#0#PHP" expanded="false" />
-                <element signature="e#5943#6748#0#PHP" expanded="false" />
-                <element signature="e#6068#6521#0#PHP" expanded="false" />
-                <element signature="e#6167#6379#0#PHP" expanded="false" />
-                <element signature="e#6388#6392#0#PHP" expanded="false" />
-                <element signature="e#6863#7192#0#PHP" expanded="false" />
-                <element signature="e#6932#7098#0#PHP" expanded="false" />
-                <element signature="e#7003#7088#0#PHP" expanded="false" />
-                <element signature="e#7198#7739#0#PHP" expanded="false" />
-                <element signature="e#7253#7431#0#PHP" expanded="false" />
-                <element signature="e#7324#7421#0#PHP" expanded="false" />
-                <element signature="e#7543#7552#0#PHP" expanded="false" />
-                <element signature="e#7745#8967#0#PHP" expanded="false" />
-                <element signature="e#7800#8077#0#PHP" expanded="false" />
-                <element signature="e#7872#8067#0#PHP" expanded="false" />
-                <element signature="e#8100#8376#0#PHP" expanded="false" />
-                <element signature="e#8172#8366#0#PHP" expanded="false" />
-                <element signature="e#8398#8673#0#PHP" expanded="false" />
-                <element signature="e#8470#8663#0#PHP" expanded="false" />
-                <element signature="e#8748#8761#0#PHP" expanded="false" />
+                <element signature="e#665#756#0#PHP" expanded="false" />
+                <element signature="e#773#942#0#PHP" expanded="false" />
+                <element signature="e#960#1028#0#PHP" expanded="false" />
+                <element signature="e#1033#1158#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.env">
+      <file leaf-file-name="CORS.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/CORS.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="477">
-              <caret line="26" column="10" lean-forward="false" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
+            <state relative-caret-position="500">
+              <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AuthController.php">
+      <file leaf-file-name="F_Event_Test.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/event/F_Event_Test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2575">
-              <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChangePasswordController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ChangePasswordController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
-              <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PostController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PostController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResetPasswordController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ResetPasswordController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="25">
+              <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+              <folding>
+                <element signature="e#167#234#0#PHP" expanded="false" />
+                <element signature="e#1110#1114#0#PHP" expanded="false" />
+                <element signature="e#2042#3270#0#PHP" expanded="false" />
+                <element signature="e#2160#2606#0#PHP" expanded="false" />
+                <element signature="e#2252#2464#0#PHP" expanded="false" />
+                <element signature="e#2473#2477#0#PHP" expanded="false" />
+                <element signature="e#2757#3264#0#PHP" expanded="false" />
+                <element signature="e#2806#2864#0#PHP" expanded="false" />
+                <element signature="e#2878#3252#0#PHP" expanded="false" />
+                <element signature="e#3276#4025#0#PHP" expanded="false" />
+                <element signature="e#3400#3852#0#PHP" expanded="false" />
+                <element signature="e#3498#3710#0#PHP" expanded="false" />
+                <element signature="e#3719#3723#0#PHP" expanded="false" />
+                <element signature="e#4031#5414#0#PHP" expanded="false" />
+                <element signature="e#4154#4605#0#PHP" expanded="false" />
+                <element signature="e#4251#4463#0#PHP" expanded="false" />
+                <element signature="e#4472#4476#0#PHP" expanded="false" />
+                <element signature="e#4756#5230#0#PHP" expanded="false" />
+                <element signature="e#4805#4863#0#PHP" expanded="false" />
+                <element signature="e#4877#5218#0#PHP" expanded="false" />
+                <element signature="e#5420#6179#0#PHP" expanded="false" />
+                <element signature="e#5549#6006#0#PHP" expanded="false" />
+                <element signature="e#5652#5864#0#PHP" expanded="false" />
+                <element signature="e#5873#5877#0#PHP" expanded="false" />
+                <element signature="e#6185#7163#0#PHP" expanded="false" />
+                <element signature="e#6304#6751#0#PHP" expanded="false" />
+                <element signature="e#6397#6609#0#PHP" expanded="false" />
+                <element signature="e#6618#6622#0#PHP" expanded="false" />
+                <element signature="e#6902#6979#0#PHP" expanded="false" />
+                <element signature="e#7169#7974#0#PHP" expanded="false" />
+                <element signature="e#7294#7747#0#PHP" expanded="false" />
+                <element signature="e#7393#7605#0#PHP" expanded="false" />
+                <element signature="e#7614#7618#0#PHP" expanded="false" />
+                <element signature="e#8089#8418#0#PHP" expanded="false" />
+                <element signature="e#8158#8324#0#PHP" expanded="false" />
+                <element signature="e#8229#8314#0#PHP" expanded="false" />
+                <element signature="e#8424#8965#0#PHP" expanded="false" />
+                <element signature="e#8479#8657#0#PHP" expanded="false" />
+                <element signature="e#8550#8647#0#PHP" expanded="false" />
+                <element signature="e#8769#8778#0#PHP" expanded="false" />
+                <element signature="e#8971#10193#0#PHP" expanded="false" />
+                <element signature="e#9026#9303#0#PHP" expanded="false" />
+                <element signature="e#9098#9293#0#PHP" expanded="false" />
+                <element signature="e#9326#9602#0#PHP" expanded="false" />
+                <element signature="e#9398#9592#0#PHP" expanded="false" />
+                <element signature="e#9624#9899#0#PHP" expanded="false" />
+                <element signature="e#9696#9889#0#PHP" expanded="false" />
+                <element signature="e#9974#9987#0#PHP" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -199,18 +165,18 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="91" column="8" lean-forward="true" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="8" />
+            <state relative-caret-position="642">
+              <caret line="106" column="32" lean-forward="false" selection-start-line="106" selection-start-column="13" selection-end-line="106" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="U_Test_Event.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/event/U_Test_Event.php">
+      <file leaf-file-name="Events_Repo_Impl.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/events/Events_Repo_Impl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="17" column="58" lean-forward="true" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -237,10 +203,11 @@
         <option value="$PROJECT_DIR$/app/search/Search_Repo_I.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/tests/search/F_Search_Test.php" />
-        <option value="$PROJECT_DIR$/app/Http/Middleware/CORS.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ChangePasswordController.php" />
+        <option value="$PROJECT_DIR$/app/Http/Middleware/CORS.php" />
         <option value="$PROJECT_DIR$/tests/event/F_Event_Test.php" />
+        <option value="$PROJECT_DIR$/tests/event/U_Test_Event.php" />
       </list>
     </option>
   </component>
@@ -351,7 +318,25 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -385,25 +370,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.F_PaymentType_Test.testBasicTest">
+  <component name="RunManager" selected="PHPUnit.U_Test_Event.testMain">
     <configuration default="false" name="UTest_ProfileBasicRepo.testMain" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Unit\profile\UTest_ProfileBasicRepo" file="$PROJECT_DIR$/tests/search/U_Search.php" method="testMain" scope="Method" />
-      <method />
-    </configuration>
-    <configuration default="false" name="UTest_ProfileBasicRepo" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\profile\UTest_ProfileBasicRepo" file="$PROJECT_DIR$/tests/search/U_Search.php" scope="Class" />
       <method />
     </configuration>
     <configuration default="false" name="F_PaymentType_Test" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\F_PaymentType_Test" file="$PROJECT_DIR$/tests/search/F_Search_Test.php" scope="Class" />
       <method />
     </configuration>
-    <configuration default="false" name="UTest_ProfileBasicRepo.testEducation" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\profile\UTest_ProfileBasicRepo" file="$PROJECT_DIR$/tests/search/U_Search.php" method="testEducation" scope="Method" />
-      <method />
-    </configuration>
     <configuration default="false" name="F_PaymentType_Test.testBasicTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\F_PaymentType_Test" file="$PROJECT_DIR$/tests/search/F_Search_Test.php" method="testBasicTest" scope="Method" />
+      <method />
+    </configuration>
+    <configuration default="false" name="F_Event_Test.testBasicTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\F_Event_Test" file="$PROJECT_DIR$/tests/event/F_Event_Test.php" method="testBasicTest" scope="Method" />
+      <method />
+    </configuration>
+    <configuration default="false" name="U_Test_Event.testMain" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\U_Test_Event" file="$PROJECT_DIR$/tests/event/U_Test_Event.php" method="testMain" scope="Method" />
       <method />
     </configuration>
     <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
@@ -475,18 +460,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="PHPUnit.UTest_ProfileBasicRepo.testMain" />
-      <item index="1" class="java.lang.String" itemvalue="PHPUnit.UTest_ProfileBasicRepo" />
-      <item index="2" class="java.lang.String" itemvalue="PHPUnit.F_PaymentType_Test" />
-      <item index="3" class="java.lang.String" itemvalue="PHPUnit.UTest_ProfileBasicRepo.testEducation" />
-      <item index="4" class="java.lang.String" itemvalue="PHPUnit.F_PaymentType_Test.testBasicTest" />
+      <item index="1" class="java.lang.String" itemvalue="PHPUnit.F_PaymentType_Test" />
+      <item index="2" class="java.lang.String" itemvalue="PHPUnit.F_PaymentType_Test.testBasicTest" />
+      <item index="3" class="java.lang.String" itemvalue="PHPUnit.F_Event_Test.testBasicTest" />
+      <item index="4" class="java.lang.String" itemvalue="PHPUnit.U_Test_Event.testMain" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="PHPUnit.F_PaymentType_Test.testBasicTest" />
-        <item index="1" class="java.lang.String" itemvalue="PHPUnit.F_PaymentType_Test" />
-        <item index="2" class="java.lang.String" itemvalue="PHPUnit.UTest_ProfileBasicRepo.testMain" />
-        <item index="3" class="java.lang.String" itemvalue="PHPUnit.UTest_ProfileBasicRepo" />
-        <item index="4" class="java.lang.String" itemvalue="PHPUnit.UTest_ProfileBasicRepo.testEducation" />
+        <item index="0" class="java.lang.String" itemvalue="PHPUnit.U_Test_Event.testMain" />
+        <item index="1" class="java.lang.String" itemvalue="PHPUnit.F_Event_Test.testBasicTest" />
+        <item index="2" class="java.lang.String" itemvalue="PHPUnit.F_PaymentType_Test.testBasicTest" />
+        <item index="3" class="java.lang.String" itemvalue="PHPUnit.F_PaymentType_Test" />
+        <item index="4" class="java.lang.String" itemvalue="PHPUnit.UTest_ProfileBasicRepo.testMain" />
       </list>
     </recent_temporary>
   </component>
@@ -512,16 +497,13 @@
       <workItem from="1580957609729" duration="9420000" />
       <workItem from="1580994794983" duration="9277000" />
       <workItem from="1581113251281" duration="4225000" />
-      <workItem from="1581225068505" duration="477000" />
+      <workItem from="1581225068505" duration="4037000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="F_PaymentType_Test - 2020.02.06 at 22h 20m 49s.xml">
-      <configuration name="F_PaymentType_Test" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="F_PaymentType_Test - 2020.02.06 at 22h 21m 03s.xml">
-      <configuration name="F_PaymentType_Test" configurationId="PHPUnitRunConfigurationType" />
+    <history-entry file="F_Event_Test_testBasicTest - 2020.02.09 at 12h 33m 40s.xml">
+      <configuration name="F_Event_Test.testBasicTest" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
     <history-entry file="F_PaymentType_Test - 2020.02.06 at 22h 21m 32s.xml">
       <configuration name="F_PaymentType_Test" configurationId="PHPUnitRunConfigurationType" />
@@ -547,9 +529,12 @@
     <history-entry file="UTest_ProfileBasicRepo_testMain - 2020.02.06 at 19h 45m 07s.xml">
       <configuration name="UTest_ProfileBasicRepo.testMain" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
+    <history-entry file="U_Test_Event_testMain - 2020.02.09 at 12h 35m 50s.xml">
+      <configuration name="U_Test_Event.testMain" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49045000" />
+    <option name="totallyTimeSpent" value="52605000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -570,9 +555,9 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.54640067" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45533392" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3217693" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3217693" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -599,20 +584,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/Payment/U_PaymentMobile_Test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1513">
-          <caret line="94" column="20" lean-forward="true" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/payment/Payment_Mobile_Repo_Impl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1513">
-          <caret line="92" column="20" lean-forward="false" selection-start-line="92" selection-start-column="20" selection-end-line="92" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/profile/Profile_About_Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -653,7 +624,7 @@
         <state relative-caret-position="595">
           <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
-            <element signature="e#39#71#0#PHP" expanded="true" />
+            <element signature="e#39#71#0#PHP" expanded="false" />
             <element signature="e#1479#1521#0#PHP" expanded="false" />
             <element signature="e#1781#1819#0#PHP" expanded="false" />
             <element signature="e#1910#1949#0#PHP" expanded="false" />
@@ -716,7 +687,7 @@
         <state relative-caret-position="493">
           <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
           <folding>
-            <element signature="e#39#71#0#PHP" expanded="true" />
+            <element signature="e#39#71#0#PHP" expanded="false" />
             <element signature="e#1479#1521#0#PHP" expanded="false" />
             <element signature="e#1781#1819#0#PHP" expanded="false" />
             <element signature="e#1910#1949#0#PHP" expanded="false" />
@@ -754,13 +725,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/profile/Profile_About_Repo_I.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/payment/Payment_Mobile_Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -884,7 +848,7 @@
         <state relative-caret-position="1350">
           <caret line="67" column="5" lean-forward="false" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
           <folding>
-            <element signature="e#39#71#0#PHP" expanded="true" />
+            <element signature="e#39#71#0#PHP" expanded="false" />
             <element signature="e#1479#1521#0#PHP" expanded="false" />
             <element signature="e#1781#1819#0#PHP" expanded="false" />
             <element signature="e#1910#1949#0#PHP" expanded="false" />
@@ -911,14 +875,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1400">
           <caret line="97" column="21" lean-forward="false" selection-start-line="97" selection-start-column="21" selection-end-line="97" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/CORS.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -985,18 +941,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/app/events/Events_Repo_Impl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="91" column="8" lean-forward="true" selection-start-line="91" selection-start-column="8" selection-end-line="91" selection-end-column="8" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/event/U_Test_Event.php">
+    <entry file="file://$PROJECT_DIR$/app/events/Events_Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="17" column="58" lean-forward="true" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+        <state relative-caret-position="392">
+          <caret line="71" column="36" lean-forward="false" selection-start-line="71" selection-start-column="29" selection-end-line="71" selection-end-column="36" />
+          <folding>
+            <element signature="e#255#404#0#PHP" expanded="false" />
+            <element signature="e#410#911#0#PHP" expanded="false" />
+            <element signature="e#917#1522#0#PHP" expanded="false" />
+            <element signature="e#1528#1688#0#PHP" expanded="false" />
+            <element signature="e#1695#1827#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/payment/Payment_Mobile_Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="72" column="51" lean-forward="false" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
+          <folding>
+            <element signature="e#296#474#0#PHP" expanded="false" />
+            <element signature="e#480#1133#0#PHP" expanded="false" />
+            <element signature="e#1139#1310#0#PHP" expanded="false" />
+            <element signature="e#1316#1485#0#PHP" expanded="false" />
+            <element signature="e#1491#2091#0#PHP" expanded="false" />
+            <element signature="e#2097#2347#0#PHP" expanded="false" />
+            <element signature="e#2353#2413#0#PHP" expanded="false" />
+            <element signature="e#2418#2475#0#PHP" expanded="false" />
+            <element signature="e#2634#2807#0#PHP" expanded="false" />
+            <element signature="e#2813#3008#0#PHP" expanded="false" />
+            <element signature="e#3014#3211#0#PHP" expanded="false" />
+            <element signature="e#3246#3522#0#PHP" expanded="false" />
+            <element signature="e#3528#3836#0#PHP" expanded="false" />
+            <element signature="e#3842#4199#0#PHP" expanded="false" />
+            <element signature="e#4205#4526#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/event/F_Event_Test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+          <folding>
+            <element signature="e#167#234#0#PHP" expanded="false" />
+            <element signature="e#1110#1114#0#PHP" expanded="false" />
+            <element signature="e#2042#3270#0#PHP" expanded="false" />
+            <element signature="e#2160#2606#0#PHP" expanded="false" />
+            <element signature="e#2252#2464#0#PHP" expanded="false" />
+            <element signature="e#2473#2477#0#PHP" expanded="false" />
+            <element signature="e#2757#3264#0#PHP" expanded="false" />
+            <element signature="e#2806#2864#0#PHP" expanded="false" />
+            <element signature="e#2878#3252#0#PHP" expanded="false" />
+            <element signature="e#3276#4025#0#PHP" expanded="false" />
+            <element signature="e#3400#3852#0#PHP" expanded="false" />
+            <element signature="e#3498#3710#0#PHP" expanded="false" />
+            <element signature="e#3719#3723#0#PHP" expanded="false" />
+            <element signature="e#4031#5414#0#PHP" expanded="false" />
+            <element signature="e#4154#4605#0#PHP" expanded="false" />
+            <element signature="e#4251#4463#0#PHP" expanded="false" />
+            <element signature="e#4472#4476#0#PHP" expanded="false" />
+            <element signature="e#4756#5230#0#PHP" expanded="false" />
+            <element signature="e#4805#4863#0#PHP" expanded="false" />
+            <element signature="e#4877#5218#0#PHP" expanded="false" />
+            <element signature="e#5420#6179#0#PHP" expanded="false" />
+            <element signature="e#5549#6006#0#PHP" expanded="false" />
+            <element signature="e#5652#5864#0#PHP" expanded="false" />
+            <element signature="e#5873#5877#0#PHP" expanded="false" />
+            <element signature="e#6185#7163#0#PHP" expanded="false" />
+            <element signature="e#6304#6751#0#PHP" expanded="false" />
+            <element signature="e#6397#6609#0#PHP" expanded="false" />
+            <element signature="e#6618#6622#0#PHP" expanded="false" />
+            <element signature="e#6902#6979#0#PHP" expanded="false" />
+            <element signature="e#7169#7974#0#PHP" expanded="false" />
+            <element signature="e#7294#7747#0#PHP" expanded="false" />
+            <element signature="e#7393#7605#0#PHP" expanded="false" />
+            <element signature="e#7614#7618#0#PHP" expanded="false" />
+            <element signature="e#8089#8418#0#PHP" expanded="false" />
+            <element signature="e#8158#8324#0#PHP" expanded="false" />
+            <element signature="e#8229#8314#0#PHP" expanded="false" />
+            <element signature="e#8424#8965#0#PHP" expanded="false" />
+            <element signature="e#8479#8657#0#PHP" expanded="false" />
+            <element signature="e#8550#8647#0#PHP" expanded="false" />
+            <element signature="e#8769#8778#0#PHP" expanded="false" />
+            <element signature="e#8971#10193#0#PHP" expanded="false" />
+            <element signature="e#9026#9303#0#PHP" expanded="false" />
+            <element signature="e#9098#9293#0#PHP" expanded="false" />
+            <element signature="e#9326#9602#0#PHP" expanded="false" />
+            <element signature="e#9398#9592#0#PHP" expanded="false" />
+            <element signature="e#9624#9899#0#PHP" expanded="false" />
+            <element signature="e#9696#9889#0#PHP" expanded="false" />
+            <element signature="e#9974#9987#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="106" column="32" lean-forward="false" selection-start-line="106" selection-start-column="13" selection-end-line="106" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Middleware/CORS.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1050,58 +1109,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/event/F_Event_Test.php">
+    <entry file="file://$PROJECT_DIR$/tests/event/U_Test_Event.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="163">
+          <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
           <folding>
-            <element signature="e#167#234#0#PHP" expanded="false" />
-            <element signature="e#819#2047#0#PHP" expanded="false" />
-            <element signature="e#937#1383#0#PHP" expanded="false" />
-            <element signature="e#1029#1241#0#PHP" expanded="false" />
-            <element signature="e#1250#1254#0#PHP" expanded="false" />
-            <element signature="e#1534#2041#0#PHP" expanded="false" />
-            <element signature="e#1583#1641#0#PHP" expanded="false" />
-            <element signature="e#1655#2029#0#PHP" expanded="false" />
-            <element signature="e#2052#2801#0#PHP" expanded="false" />
-            <element signature="e#2176#2628#0#PHP" expanded="false" />
-            <element signature="e#2274#2486#0#PHP" expanded="false" />
-            <element signature="e#2495#2499#0#PHP" expanded="false" />
-            <element signature="e#2807#4190#0#PHP" expanded="false" />
-            <element signature="e#2930#3381#0#PHP" expanded="false" />
-            <element signature="e#3027#3239#0#PHP" expanded="false" />
-            <element signature="e#3248#3252#0#PHP" expanded="false" />
-            <element signature="e#3532#4006#0#PHP" expanded="false" />
-            <element signature="e#3581#3639#0#PHP" expanded="false" />
-            <element signature="e#3653#3994#0#PHP" expanded="false" />
-            <element signature="e#4195#4954#0#PHP" expanded="false" />
-            <element signature="e#4324#4781#0#PHP" expanded="false" />
-            <element signature="e#4427#4639#0#PHP" expanded="false" />
-            <element signature="e#4648#4652#0#PHP" expanded="false" />
-            <element signature="e#4960#5938#0#PHP" expanded="false" />
-            <element signature="e#5079#5526#0#PHP" expanded="false" />
-            <element signature="e#5172#5384#0#PHP" expanded="false" />
-            <element signature="e#5393#5397#0#PHP" expanded="false" />
-            <element signature="e#5677#5754#0#PHP" expanded="false" />
-            <element signature="e#5943#6748#0#PHP" expanded="false" />
-            <element signature="e#6068#6521#0#PHP" expanded="false" />
-            <element signature="e#6167#6379#0#PHP" expanded="false" />
-            <element signature="e#6388#6392#0#PHP" expanded="false" />
-            <element signature="e#6863#7192#0#PHP" expanded="false" />
-            <element signature="e#6932#7098#0#PHP" expanded="false" />
-            <element signature="e#7003#7088#0#PHP" expanded="false" />
-            <element signature="e#7198#7739#0#PHP" expanded="false" />
-            <element signature="e#7253#7431#0#PHP" expanded="false" />
-            <element signature="e#7324#7421#0#PHP" expanded="false" />
-            <element signature="e#7543#7552#0#PHP" expanded="false" />
-            <element signature="e#7745#8967#0#PHP" expanded="false" />
-            <element signature="e#7800#8077#0#PHP" expanded="false" />
-            <element signature="e#7872#8067#0#PHP" expanded="false" />
-            <element signature="e#8100#8376#0#PHP" expanded="false" />
-            <element signature="e#8172#8366#0#PHP" expanded="false" />
-            <element signature="e#8398#8673#0#PHP" expanded="false" />
-            <element signature="e#8470#8663#0#PHP" expanded="false" />
-            <element signature="e#8748#8761#0#PHP" expanded="false" />
+            <element signature="e#665#756#0#PHP" expanded="false" />
+            <element signature="e#773#942#0#PHP" expanded="false" />
+            <element signature="e#960#1028#0#PHP" expanded="false" />
+            <element signature="e#1033#1158#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -16,7 +16,8 @@ class F_Event_Test extends TestCase
     public function testBasicTest()
     {
         $this->assertTrue(true);
-//        $this->search_basic(10, 'DESC', 'batch', 1, "dept", "C");//done
+
+        $this->getAllEvents(10, "ASC", "last_date", "1");
 //        $this->search_basic_count(10, 'DESC', 'batch', 1, "dept", "C");//done
 
     }
@@ -29,6 +30,47 @@ class F_Event_Test extends TestCase
 //        $this->search_basic_count(10, 'DESC', 'batch', 1, "dept", "C");//done
 //    }
 //    end : assertion
+
+    public function getAllEvents($per_page, $sort_by, $sort_on, $pageNumber)
+    {
+        $response = $this->json(
+            'POST',
+            'events/getAllEvents?page=' . $pageNumber,
+            [
+                'per_page' => $per_page,
+                'sort_by' => $sort_by,
+                "sort_on" => $sort_on,
+            ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
+        );
+
+        $d = $response->baseResponse->original;
+//        dd($d);
+        $this->assertTrue(($d != null));
+        $this->assertTrue(true);
+        if ($d != null) {
+            for ($i = 0; $i < $per_page; $i++) {
+                if ($d[$i] == null) {
+                    break;
+                }
+
+                error_log(
+                    $d[$i]->id
+                    . ' batch :' . $d[$i]->batch
+                    . ' uID :' . $d[$i]->user_id
+                    . " Name : " . $d[$i]->first_name
+                    . $d[$i]->last_name
+                    . "---institute Name : " . $d[$i]->organization_name
+                    . "---Type : " . $d[$i]->type
+                    . "---Role: " . $d[$i]->role);
+
+            }
+        }
+
+    }
 
 
 //start : old code  have to delete
@@ -71,6 +113,7 @@ class F_Event_Test extends TestCase
 
         }
     }
+
     public function search_jobs_count($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
     {
         $response = $this->json(
@@ -139,6 +182,7 @@ class F_Event_Test extends TestCase
         // dd($response->exception);
         // dd($d);
     }
+
     public function search_education_count($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
     {
         $response = $this->json(
@@ -195,6 +239,7 @@ class F_Event_Test extends TestCase
         // dd($response->exception);
         // dd($d);
     }
+
     public function search_basic_count($per_page, $sort_by, $sort_on, $pageNumber, $column_name, $key)
     {
         $response = $this->json(

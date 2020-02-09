@@ -13,7 +13,9 @@ class U_Test_Event extends TestCase
     {
         // error_log($this->create());//done
 
-        // $this->getAll(10,"ASC","last_date","10");
+//         $this->getAll(10,"ASC","last_date","10");
+
+
         // error_log($this->countAll());
         // error_log($this->findOneEvent(1)->title);//done
         // error_log($this->findOneEvent(2));//done
@@ -23,35 +25,10 @@ class U_Test_Event extends TestCase
     }
 
 
-
     public function Event_CRUD()
     {
-        error_log("\nPaymentType : CRUD Test Done!\n");
+        error_log("\n Event: CRUD Test Done!\n");
 
-        // ---Create---
-        error_log("\n\n---Create---");
-        $id = $this->create();
-        $pt = $this->findOnePaymentType($id);
-        $this->assertEquals($id, $pt->id);
-        error_log($pt);
-
-        // ---update---findOne---
-        // error_log("\n\n---update---findOne---");
-        // $text = "PT Name Updated!";
-        // $uStatus = $this->update($id, $text);
-        // $this->assertEquals($uStatus, true);
-        // $updatedText = $this->findOnePaymentType($id)->name;
-        // $this->assertEquals($text, $updatedText);
-        // error_log($this->findOnePaymentType($id));
-
-        // ---delete---
-        // error_log("\n\n---delete---");
-        // $status = $this->delete($id);
-        // $this->assertEquals(1, $status);
-        // $pt = $this->findOnePaymentType($id);
-        // $this->assertEquals($pt, "");
-
-        error_log("\nPaymentType : CRUD Test Done!\n");
     }
 
     //done
@@ -64,8 +41,9 @@ class U_Test_Event extends TestCase
     }
 
     //done
+
     /**
-     *  @return PaymentType return a single payment Type.
+     * @return PaymentType return a single payment Type.
      */
     public function findOneEvent($id)
     {
@@ -73,32 +51,11 @@ class U_Test_Event extends TestCase
         return $repo->getOneEvent($id);
     }
 
-    public function countAll()
-    {
-        return PaymentType::count();
-    }
 
-    public function getAll($per_page, $sort_by, $sort_on, $postID)
-    {
-        error_log(" per_page : " . $per_page);
-        error_log(" sort_by : " . $sort_by);
-        error_log(" sort_on : " . $sort_on);
-        if ($sort_by == "ASC") {
-            $order = "ASC";
-        } else {
-            $order = "DESC";
-        }
-        // $data = PaymentType::orderBy($sort_on,$order)->stapaginate($per_page)->all();
-        // $data = PaymentType::orderBy($sort_on,$order)->sta;
-        // print_r($data);
-        for ($i = 0; $i < 10; $i++) {
-            error_log($data[$i]->last_date);
-        }
-        // dd($data);
-        // return PaymentType::orderBy($sort_on,$order)->paginate($per_page)->all();
-    }
+
 
     //done
+
     /**
      * A basic test example.
      * @return void
@@ -120,23 +77,8 @@ class U_Test_Event extends TestCase
         return $id;
     }
 
+//    start : dummy event creation
+//    end : dummy event creation
 
-    /**
-     *  @* @param String text this text will be assingned to the Name of the PaymentType.
-     *  @* @param String id PaymentType ID that have to update.
-     */
-    public function update($id, $text)
-    {
-        $repoPayment = new Payment_Type_Repo_Impl();
-        $pt = new PaymentType();
-        $pt = $this->findOnePaymentType($id);
 
-        $pt->name = $text;
-        // $p->description = "nice man";
-        // $p->last_date = "27/3/2019";
-        // $p->Start_date = "26/3/2019";
-        // $p->amount = "500";
-        $status = $repoPayment->update($pt);
-        return $status;
-    }
 }//class
