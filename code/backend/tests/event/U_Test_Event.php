@@ -11,11 +11,11 @@ class U_Test_Event extends TestCase
 {
     public function testMain()
     {
-        // error_log($this->create());//done
+//        error_log($this->create());//passed
+        error_log($this->findOneEvent(3));
 
+//        not tested; have to check.
 //         $this->getAll(10,"ASC","last_date","10");
-
-
         // error_log($this->countAll());
         // error_log($this->findOneEvent(1)->title);//done
         // error_log($this->findOneEvent(2));//done
