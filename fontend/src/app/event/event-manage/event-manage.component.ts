@@ -69,4 +69,13 @@ export class EventManageComponent implements OnInit {
   public refreshTable_eventSearch() {
 
   }
+
+  public createEvent() {
+
+  }
+
+  public getEvent() : Events{
+
+  }
+
 }// class
