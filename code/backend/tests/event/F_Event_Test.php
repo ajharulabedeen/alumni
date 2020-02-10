@@ -20,9 +20,30 @@ class F_Event_Test extends TestCase
 
 //        $this->getAllEvents(10, "ASC", "end_date", "1");//passed
 //        $this->create();//passed
-        $this->getDescription(5);
+//        $this->getDescription(5);//passed
+        $this->delete(5);//passed
 
     }
+
+
+    public function delete($id)
+    {
+        $response = $this->json(
+            'POST',
+            'events/delete',
+            [
+                'id' => $id
+            ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
+        );
+
+        $d = $response->baseResponse->original;
+        dd($d);
+    }
+
 
     public function getDescription($id)
     {
