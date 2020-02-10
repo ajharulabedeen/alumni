@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {Events} from './events.model';
+
+// import {Events} from '/src/app/event/event-manage/';
 
 @Component({
   selector: 'app-event-manage',
@@ -71,11 +74,21 @@ export class EventManageComponent implements OnInit {
   }
 
   public createEvent() {
-
+    console.log('this.getEvent()');
+    console.log(this.getEvent());
   }
 
-  public getEvent() : Events{
+  public getEvent(): Events {
+    var event = new Events();
+    event.$title = this.name;
+    event.$description = this.description;
+    event.$start_date = this.start_date;
+    event.$end_date = this.last_date;
+    event.$fee = this.cost;
+    event.$location = this.vanue;
+    event.$notes = this.note;
 
+    return event;
   }
 
 }// class

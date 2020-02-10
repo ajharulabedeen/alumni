@@ -9,6 +9,23 @@ export class Events {
     private description :string;
 
     /**
+     * Getter $notes
+     * @return {string}
+     */
+	public get $notes(): string {
+		return this.notes;
+	}
+
+    /**
+     * Setter $notes
+     * @param {string} value
+     */
+	public set $notes(value: string) {
+		this.notes = value;
+	}
+    private notes :string;
+
+    /**
      * Getter $id
      * @return {string}
      */
