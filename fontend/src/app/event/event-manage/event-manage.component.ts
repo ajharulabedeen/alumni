@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Events} from './events.model';
+import {EventManageService} from './event-manage.service';
 
 // import {Events} from '/src/app/event/event-manage/';
 
@@ -26,7 +27,7 @@ export class EventManageComponent implements OnInit {
   eventSearch_sort_by: string;
   eventSearch_sort_on: string;
 
-  constructor() {
+  constructor( private eService: EventManageService) {
   }
 
   ngOnInit() {
@@ -76,6 +77,7 @@ export class EventManageComponent implements OnInit {
   public createEvent() {
     console.log('this.getEvent()');
     console.log(this.getEvent());
+    this.eService.save(this.getEvent());
   }
 
   public getEvent(): Events {
