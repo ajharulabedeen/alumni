@@ -18,8 +18,8 @@ class F_Event_Test extends TestCase
 //        $this->assertTrue(true);
 
 
-//        $this->getAllEvents(10, "ASC", "end_date", "1");//passed
-        $this->create();
+        $this->getAllEvents(10, "ASC", "end_date", "1");//passed
+//        $this->create();//passed
 
     }
 
