@@ -18,8 +18,8 @@ class F_Event_Test extends TestCase
 //        $this->assertTrue(true);
 
 
-
-//        $this->getAllEvents(10, "ASC", "end_date", "1");
+//        $this->getAllEvents(10, "ASC", "end_date", "1");//passed
+        $this->create();
 
     }
 
@@ -29,18 +29,23 @@ class F_Event_Test extends TestCase
             'POST',
             'events/create',
             [
-                'per_page' => $per_page,
-                'sort_by' => $sort_by,
-                "sort_on" => $sort_on,
+                "title" => "MeetUp 2041",
+                "start_date" => "2019/04/04",
+                "end_date" => "2019/04/05",
+                "fee" => "500",
+                "location" => "Green Garden",
+                "description" => "We all the previous student will meet at this day!",
+                "notes" => "Please Dont Miss it!",
+                "images" => "No Image Available!",
             ]
-        // ,
-        // [
-        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
-        // ]
+            ,
+            [
+                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u2@umail.com", "123456")
+            ]
         );
 
         $d = $response->baseResponse->original;
-//        dd($d);
+        dd($d);
     }
 
 

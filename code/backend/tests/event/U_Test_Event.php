@@ -17,7 +17,7 @@ class U_Test_Event extends TestCase
 //        error_log($this->update(4, "fee", "560.00"));//passed.
 //        error_log($this->findOneEvent(4)->fee);//passed.
 //        error_log($this->getAllEvents(4, "ASC", "end_date"));//passed.
-        error_log($this->getDescription(4));//passed.
+//        error_log($this->getDescription(4));//passed.
 
 
     }
