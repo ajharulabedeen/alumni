@@ -18,9 +18,29 @@ class F_Event_Test extends TestCase
 //        $this->assertTrue(true);
 
 
-        $this->getAllEvents(10, "ASC", "end_date", "1");//passed
+//        $this->getAllEvents(10, "ASC", "end_date", "1");//passed
 //        $this->create();//passed
+        $this->getDescription(5);
 
+    }
+
+    public function getDescription($id)
+    {
+        $response = $this->json(
+            'POST',
+            'events/getDescription',
+            [
+                'id' => $id
+            ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
+        );
+
+        $d = $response->baseResponse->original;
+        error_log($d['Description']);
+//        dd($d);
     }
 
     public function create()
@@ -47,7 +67,6 @@ class F_Event_Test extends TestCase
         $d = $response->baseResponse->original;
         dd($d);
     }
-
 
     public function getAllEvents($per_page, $sort_by, $sort_on, $pageNumber)
     {
