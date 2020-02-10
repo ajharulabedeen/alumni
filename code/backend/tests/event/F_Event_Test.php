@@ -21,10 +21,37 @@ class F_Event_Test extends TestCase
 //        $this->getAllEvents(10, "ASC", "end_date", "1");//passed
 //        $this->create();//passed
 //        $this->getDescription(5);//passed
-        $this->delete(5);//passed
+////        $this->delete(5);//passed
+//        $this->update(8);//passed
 
     }
 
+
+    public function update($id)
+    {
+        $response = $this->json(
+            'POST',
+            'events/update',
+            [
+                "id" => $id,
+                "title" => "MeetUp 2041",
+                "start_date" => "2019/04/04",
+                "end_date" => "2019/04/05",
+                "fee" => "500.55",
+                "location" => "Green Garden",
+                "description" => "We all the previous student will meet at this day!",
+                "notes" => "Please Dont Miss it!",
+                "images" => "No Image Available!",
+            ]
+            ,
+            [
+                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u2@umail.com", "123456")
+            ]
+        );
+
+        $d = $response->baseResponse->original;
+        dd($d);
+    }
 
     public function delete($id)
     {
@@ -43,7 +70,6 @@ class F_Event_Test extends TestCase
         $d = $response->baseResponse->original;
         dd($d);
     }
-
 
     public function getDescription($id)
     {
