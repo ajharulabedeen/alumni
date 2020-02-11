@@ -19,6 +19,9 @@ export class EventManageComponent implements OnInit {
   description: string;
   note: string;
 
+  active_search:boolean;
+
+
   event_search_by: string;
   event_value_search: string;
   eventSearch_perPage: number;
