@@ -86,4 +86,8 @@ class Events_Repo_Impl implements Events_Repo_I
         error_log("Find One Event : ");
         return Events::find($event_id);
     }
+    public function count_all()
+    {
+        return Events::count();
+    }
 }//class

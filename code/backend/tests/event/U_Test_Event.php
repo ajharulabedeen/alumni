@@ -18,8 +18,7 @@ class U_Test_Event extends TestCase
 //        error_log($this->findOneEvent(4)->fee);//passed.
 //        error_log($this->getAllEvents(4, "ASC", "end_date"));//passed.
 //        error_log($this->getDescription(4));//passed.
-
-
+        error_log($this->countEvents());//passed.
     }
 
 
@@ -28,7 +27,12 @@ class U_Test_Event extends TestCase
         error_log("\n Event: CRUD Test Done!\n");
 
     }
-
+    public function countEvents()
+    {
+        $repo = new Events_Repo_Impl();
+        $data =  $repo->count_all();
+        error_log($data);
+    }
 
     public function getDescription($id)
     {
@@ -37,8 +41,6 @@ class U_Test_Event extends TestCase
 //        error_log($data);
         return $data;
     }
-
-
     public function getAllEvents($per_page, $sort_by, $sort_on)
     {
         $repo = new Events_Repo_Impl();
@@ -53,7 +55,6 @@ class U_Test_Event extends TestCase
             return $data;
         }
     }
-
     public function update($id, $filedName, $data)
     {
         $repo = new Events_Repo_Impl();
@@ -62,14 +63,12 @@ class U_Test_Event extends TestCase
         $status = $repo->update($event);
         return $status;
     }
-
     public function delete($id)
     {
         $repo = new Events_Repo_Impl();
         $status = $repo->delete($id);
         return $status;
     }
-
     /**
      * @return PaymentType return a single payment Type.
      */
@@ -78,7 +77,6 @@ class U_Test_Event extends TestCase
         $repo = new Events_Repo_Impl();
         return $repo->getOneEvent($id);
     }
-
     /**
      * A basic test example.
      * @return void
