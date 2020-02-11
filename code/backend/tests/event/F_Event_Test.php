@@ -18,12 +18,12 @@ class F_Event_Test extends TestCase
 //        $this->assertTrue(true);
 
 
-//        $this->getAllEvents(10, "ASC", "end_date", "1");//passed
+        $this->getAllEvents(10, "ASC", "end_date", "1");//passed
 //        $this->create();//passed
 //        $this->getDescription(5);//passed
 ////        $this->delete(5);//passed
 //        $this->update(8);//passed
-        $this->count_all();//passed
+//        $this->count_all();//passed
 
     }
 
@@ -156,12 +156,13 @@ class F_Event_Test extends TestCase
                 if ($d[$i] == null) {
                     break;
                 }
-                error_log(
-                    $d[$i]->id
-                    . ' Title :' . $d[$i]->title
-                    . ' sDate :' . $d[$i]->start_date
-                    . " eDate : " . $d[$i]->end_date
-                    . " fee : " . $d[$i]->fee);
+                error_log($d[$i]);
+//                error_log(
+//                    $d[$i]->id
+//                    . ' Title :' . $d[$i]->title
+//                    . ' sDate :' . $d[$i]->start_date
+//                    . " eDate : " . $d[$i]->end_date
+//                    . " fee : " . $d[$i]->fee);
             }
         }
     }
