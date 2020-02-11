@@ -43,6 +43,8 @@ export class EventManageComponent implements OnInit {
     this.eventSearch_sort_by = 'ASC';
     this.event_search_by = 'title';
     this.eventSearch_sort_on = 'end_date';
+    this.eventSearch_total = 'end_date';
+    this.setTotal();
 
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
@@ -76,12 +78,25 @@ export class EventManageComponent implements OnInit {
 
   }
 
+  public setTotal() {
+    if (this.active_search) {
+
+    } else {
+      this.eService.couunt_all().subscribe(res => {
+        // console.log(res);
+        this.eventSearch_total = res['data'];
+      });
+    }
+
+    // this.eService.couunt_all();
+
+  }
 
   public refreshTable_eventSearch() {
 
     this.event_array = [];
-    this.eService.getAllEvents( this.eventSearch_perPage, this.eventSearch_sort_by, this.eventSearch_sort_on);
-    this.eService.couunt_all();
+    this.eService.getAllEvents(this.eventSearch_perPage, this.eventSearch_sort_by, this.eventSearch_sort_on);
+    this.setTotal();
     // this.ptmService.myMobilePayments.subscribe(ptm => {
     //   this.myPaymentsArray = [];
     //   for (const key1 in ptm) {

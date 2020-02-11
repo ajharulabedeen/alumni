@@ -34,22 +34,22 @@ export class EventManageService {
         'sort_on': sort_on,
       },
       this.authService.getHeader()
-  ).
-    subscribe((res: Response) => {
+    ).subscribe((res: Response) => {
       console.log(res);
       // this.loading = false;
     });
   }
 
-  public couunt_all(){
-    this.http.post(
+  public couunt_all() {
+    return this.http.post(
       'http://127.0.0.1:8000/events/count_all',
       {},
       this.authService.getHeader()
-    ).subscribe((res: Response) => {
-      console.log(res);
-      // this.loading = false;
-    });
+    );
+    //   .subscribe((res: Response) => {
+    //   console.log(res);
+    //   // this.loading = false;
+    // });
   }
 
 }// class
