@@ -81,6 +81,7 @@ export class EventManageComponent implements OnInit {
 
     this.event_array = [];
     this.eService.getAllEvents( this.eventSearch_perPage, this.eventSearch_sort_by, this.eventSearch_sort_on);
+    this.eService.couunt_all();
     // this.ptmService.myMobilePayments.subscribe(ptm => {
     //   this.myPaymentsArray = [];
     //   for (const key1 in ptm) {
