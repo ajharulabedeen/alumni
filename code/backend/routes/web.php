@@ -105,3 +105,4 @@ Route::post('events/update', 'Events_Controller@update');
 Route::post('events/delete', 'Events_Controller@delete');
 Route::post('events/getDescription', 'Events_Controller@getDescription');
 Route::post('events/getAllEvents', 'Events_Controller@getAllEvents');
+Route::post('events/count_all', 'Events_Controller@count_all');

@@ -23,9 +23,25 @@ class F_Event_Test extends TestCase
 //        $this->getDescription(5);//passed
 ////        $this->delete(5);//passed
 //        $this->update(8);//passed
+        $this->count_all();//passed
 
     }
 
+    public function count_all()
+    {
+        $response = $this->json(
+            'POST',
+            'events/count_all',
+            []
+//            ,
+//            [
+//                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u2@umail.com", "123456")
+//            ]
+        );
+
+        $d = $response->baseResponse->original;
+        dd($d);
+    }
 
     public function update($id)
     {
