@@ -62,7 +62,7 @@
       <div class="col-md-12 ">
         <div class="form-group">
           <label>Note</label>
-<!--          <input [(ngModel)]="note" type="text" class="form-control">-->
+          <!--          <input [(ngModel)]="note" type="text" class="form-control">-->
           <textarea [(ngModel)]="note" type="text" class="form-control">
 
           </textarea>
@@ -72,7 +72,8 @@
 
       <div class="col-md-3">
         <div class="form-group">
-          <button class="btn btn-primary" data-toggle="collapse" href="#add_payment" (click)="createEvent()" >Save</button>
+          <button class="btn btn-primary" data-toggle="collapse" href="#add_payment" (click)="createEvent()">Save
+          </button>
           <button class="btn btn-danger">Clear All</button>
         </div>
       </div>
@@ -85,6 +86,15 @@
 
     <!--    start : Showing  All events -->
     <div id="all_events" class="tabcontent">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Active Search
+        </label>
+      </div>
+      <button class="btn btn-primary btn-sm" (click)="refreshTable_eventSearch()">Refresh</button>
+
+
       <!-- sort by column name -->
       <div class="col-md-12 offset-md-12">
         <div class="form-group">
