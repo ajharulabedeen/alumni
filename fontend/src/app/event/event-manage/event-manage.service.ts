@@ -9,7 +9,8 @@ import {BehaviorSubject} from 'rxjs';
 })
 export class EventManageService {
 
-  events = new BehaviorSubject<Events>(null);
+  // events = new BehaviorSubject<Events>(null);
+  events = new BehaviorSubject<any>(null);
 
   constructor(private http: HttpClient,
               private authService: AuthService) {
@@ -35,8 +36,9 @@ export class EventManageService {
       },
       this.authService.getHeader()
     ).subscribe((res: Response) => {
-      console.log(res);
+      // console.log(res);
       // this.loading = false;
+      this.events.next(res);
     });
   }
 
