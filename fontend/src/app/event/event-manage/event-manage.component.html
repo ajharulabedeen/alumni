@@ -186,7 +186,7 @@
               <!-- showing all profiles after basic search  -->
               <tr *ngFor="let event of event_array; let i=index">
                 <td>
-                  <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details">
+                  <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#event_details">
                     Details
                   </button>
                 </td>
@@ -212,28 +212,28 @@
 
 
   <!-- ton trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#event_details">
+    Event Details
   </button>
   <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  <div class="modal fade" id="event_details" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
        aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title">Event Details</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <h3>Modal Body h3</h3>
+          <h3>Event Details</h3>
           <br>
           <br>
-          <h4>Modal Body h4</h4>
+          <h4>Event Details</h4>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
