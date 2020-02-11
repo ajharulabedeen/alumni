@@ -68,7 +68,15 @@ class Events_Repo_Impl implements Events_Repo_I
         } else {
             $order = "DESC";
         }
-        return Events::orderBy($sort_on, $order)->paginate($per_page)->all();
+        return Events::select(
+            'id',
+            'user_id',
+            'title',
+            'start_date',
+            'end_date',
+            'fee',
+            'location'
+        )->orderBy($sort_on, $order)->paginate($per_page)->all();
     }
 
 
