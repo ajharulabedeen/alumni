@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Events} from './events.model';
 import {EventManageService} from './event-manage.service';
+import {PaymentMobile} from '../../payment/payment-mobile/payment-mobile.model';
 
 // import {Events} from '/src/app/event/event-manage/';
 
@@ -18,8 +19,7 @@ export class EventManageComponent implements OnInit {
   vanue: string;
   description: string;
   note: string;
-
-  active_search:boolean;
+  active_search: boolean;
 
 
   event_search_by: string;
@@ -30,7 +30,10 @@ export class EventManageComponent implements OnInit {
   eventSearch_sort_by: string;
   eventSearch_sort_on: string;
 
-  constructor( private eService: EventManageService) {
+  event_array = new Array();
+
+
+  constructor(private eService: EventManageService) {
   }
 
   ngOnInit() {
@@ -74,8 +77,35 @@ export class EventManageComponent implements OnInit {
   }
 
 
-
   public refreshTable_eventSearch() {
+
+    this.event_array = [];
+    this.eService.getAllEvents( this.eventSearch_perPage, this.eventSearch_sort_by, this.eventSearch_sort_on);
+    // this.ptmService.myMobilePayments.subscribe(ptm => {
+    //   this.myPaymentsArray = [];
+    //   for (const key1 in ptm) {
+    //     // console.log(key1);
+    //     // console.log(pt[key1]['id']);
+    //     var myPtm = new PaymentMobile();
+    //     // pt1.$id = pt[key1]["id"];
+    //     // myPtm.$name = ptm[key1]["name"];
+    //
+    //     myPtm.$user_id = ptm[key1]['user_id'];
+    //     myPtm.$amount = ptm[key1]['amount'];
+    //     myPtm.$type_ID = ptm[key1]['type_ID'];
+    //     myPtm.$date = ptm[key1]['date'];
+    //     myPtm.$payment_method = ptm[key1]['payment_method'];
+    //     myPtm.$mobile_number = ptm[key1]['mobile_number'];
+    //     myPtm.$trx_id = ptm[key1]['trx_id'];
+    //     myPtm.$status = ptm[key1]['status'];
+    //     myPtm.$created_at = ptm[key1]['created_at'];
+    //     myPtm.$notes = ptm[key1]['notes'];
+    //     myPtm.$approved_date = ptm[key1]['approved_date'];
+    //     this.myPaymentsArray.push(myPtm);
+    //   }
+    //   // console.log(this.myPaymentsArray);
+    //
+    // });
 
   }
 

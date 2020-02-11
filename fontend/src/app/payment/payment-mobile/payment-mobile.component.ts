@@ -158,7 +158,7 @@ export class PaymentMobileComponent implements OnInit {
 
     });
     // console.log(this.myPaymentsArray);
-  }//all my mobile payments.
+  }// all my mobile payments.
 
 
 
