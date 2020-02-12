@@ -201,7 +201,7 @@
                 </td>
                 <td>
                   <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#event_delete"
-                                              (click)="setDeleteID(event.id)">
+                          (click)="setDeleteID(event.id)">
                     Delete
                   </button>
                 </td>
@@ -284,7 +284,9 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-secondary btn-danger">Delete</button>
+          <button type="button" class="btn btn-secondary btn-danger" (click)="delete()" data-dismiss="modal">
+            Delete
+          </button>
         </div>
       </div>
     </div>

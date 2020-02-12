@@ -150,9 +150,9 @@ export class EventManageComponent implements OnInit {
     console.log('this.deleteID ' + this.deleteID);
   }
 
-  public delete(id: string) {
-    console.log('delete : ' + id);
-    this.eService.delete(id).subscribe(data => {
+  public delete() {
+    // console.log('delete : ' + id);
+    this.eService.delete(this.deleteID).subscribe(data => {
       console.log(data);
       if (data['status'] == '1') {
         this.refreshTable_eventSearch();
