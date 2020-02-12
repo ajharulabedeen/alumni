@@ -187,7 +187,7 @@
               <tr *ngFor="let event of event_array; let i=index">
                 <td>
                   <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#event_details"
-                  (click)="setDescriptionNotes(event.id)">
+                          (click)="setDescriptionNotes(event.id)">
                     Details
                   </button>
                 </td>
@@ -228,10 +228,16 @@
           </button>
         </div>
         <div class="modal-body">
-          <h3>Event Details</h3>
+          <h4>Details</h4>
+          <p innerHtml="{{deatilsDescription}}">
+
+          </p>
           <br>
           <br>
-          <h4>Event Details</h4>
+          <h4>Notes</h4>
+          <P>
+            {{deatilsNotes}}
+          </P>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal">Close</button>

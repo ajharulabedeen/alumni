@@ -32,6 +32,8 @@ export class EventManageComponent implements OnInit {
 
   event_array = new Array();
 
+  deatilsDescription: string;
+  deatilsNotes: string;
 
   constructor(private eService: EventManageService) {
   }
@@ -136,5 +138,9 @@ export class EventManageComponent implements OnInit {
 
   public setDescriptionNotes(id: string) {
     console.log('ID : ' + id);
+    this.eService.getDescriptionNotes(id).subscribe(data => {
+        this.deatilsDescription = data['description'];
+        this.deatilsNotes = data['notes'];
+    });
   }
 }// class

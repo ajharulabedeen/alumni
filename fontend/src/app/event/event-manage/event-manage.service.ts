@@ -54,4 +54,13 @@ export class EventManageService {
     // });
   }
 
+  public getDescriptionNotes(id: string) {
+    return this.http.post(
+      'http://127.0.0.1:8000/events/getDescriptionNotes',
+      {
+        'id' : id
+      },
+      this.authService.getHeader()
+    );
+  }
 }// class
