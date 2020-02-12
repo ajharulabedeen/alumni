@@ -11,13 +11,13 @@ class U_Test_Event extends TestCase
 {
     public function testMain()
     {
-//        error_log($this->create());//passed
+        error_log($this->create());//passed
 //        error_log($this->findOneEvent(3));//passed
 //        error_log($this->delete(3));//passed
 //        error_log($this->update(4, "fee", "560.00"));//passed.
 //        error_log($this->findOneEvent(4)->fee);//passed.
 //        error_log($this->getAllEvents(4, "ASC", "end_date"));//passed.
-        error_log($this->getDescriptionNotes(4));//passed.
+//        error_log($this->getDescriptionNotes(4));//passed.
 //        error_log($this->countEvents());//passed.
     }
 
