@@ -58,7 +58,17 @@ export class EventManageService {
     return this.http.post(
       'http://127.0.0.1:8000/events/getDescriptionNotes',
       {
-        'id' : id
+        'id': id
+      },
+      this.authService.getHeader()
+    );
+  }
+
+  public delete(id: string) {
+    return this.http.post(
+      'http://127.0.0.1:8000/events/delete',
+      {
+        'id': id
       },
       this.authService.getHeader()
     );

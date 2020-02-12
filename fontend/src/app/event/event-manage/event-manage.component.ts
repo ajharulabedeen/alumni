@@ -137,10 +137,21 @@ export class EventManageComponent implements OnInit {
   }
 
   public setDescriptionNotes(id: string) {
-    console.log('ID : ' + id);
+    // console.log('ID : ' + id);
     this.eService.getDescriptionNotes(id).subscribe(data => {
-        this.deatilsDescription = data['description'];
-        this.deatilsNotes = data['notes'];
+      this.deatilsDescription = data['description'];
+      this.deatilsNotes = data['notes'];
     });
   }
+
+  public delete(id: string) {
+    console.log('delete : ' + id);
+    this.eService.delete(id).subscribe(data => {
+      console.log(data);
+      if (data['status'] == '1') {
+        this.refreshTable_eventSearch();
+      }
+    });
+  }
+
 }// class
