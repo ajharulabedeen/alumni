@@ -200,8 +200,8 @@
                   </button>
                 </td>
                 <td>
-                  <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#event_details"
-                          (click)="delete(event.id)">
+                  <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#event_delete">
+                    <!--                          (click)="delete(event.id)">-->
                     Delete
                   </button>
                 </td>
@@ -227,10 +227,14 @@
 
 
   <!-- ton trigger modal -->
+  <!--  start : test -->
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#event_details">
     Event Details
   </button>
-  <!-- Modal -->
+  <!--  end : test -->
+
+
+  <!-- start : event details Modal -->
   <div class="modal fade" id="event_details" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
        aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -259,6 +263,33 @@
         </div>
       </div>
     </div>
+    <!-- end :  Modal -->
+
+
+  </div>
+
+  <!-- start :  Modal -->
+  <div class="modal fade" id="event_delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Event Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h4>Are U sure to delete?</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+    <!-- end :  Modal -->
+
 
     <!-- <app-footernavbar></app-footernavbar> -->
     <!-- <app-settingsnavbar></app-settingsnavbar> -->
@@ -267,3 +298,4 @@
 
 
 </div>
+<!--Warpper Class-->
