@@ -60,7 +60,8 @@ class Events_Controller extends Controller
 
     public function getDescription(Request $r)
     {
-        return ['Description' => $this->eventsRepo->getDescription($r->id)];
+        $data = $this->eventsRepo->getDescriptionNotes($r->id);
+        return ["description" => ];
 
     }
 

@@ -39,8 +39,8 @@ class U_Test_Event extends TestCase
     {
         $repo = new Events_Repo_Impl();
         $data = $repo->getDescriptionNotes($id);
-        error_log("Desc : " . $data[0]['description']);
-        error_log("Notes : " . $data[0]['notes']);
+        error_log("Desc : " . $data['description']);
+        error_log("Notes : " . $data['notes']);
 //        dd($data);
         return $data;
     }

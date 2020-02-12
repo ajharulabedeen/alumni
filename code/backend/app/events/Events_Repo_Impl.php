@@ -90,7 +90,13 @@ class Events_Repo_Impl implements Events_Repo_I
      */
     public function getDescriptionNotes($event_id)
     {
-        return Events::select('description', 'notes')->where('id', $event_id)->get();
+        $details = Events::select('description', 'notes')->where('id', $event_id)->get();
+        if ($details != null) {
+            $data = ['description' => $details[0]['description'], 'notes' => $details[0]['notes']];;
+        } else {
+            $data = ['error' => 'No Data Found!'];
+        }
+        return $data;
     }
 
     public function getOneEvent($event_id)
