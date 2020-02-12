@@ -103,6 +103,6 @@ Route::post('search/jobs_count', 'Search_Controller@search_jobs_count');
 Route::post('events/create', 'Events_Controller@create');
 Route::post('events/update', 'Events_Controller@update');
 Route::post('events/delete', 'Events_Controller@delete');
-Route::post('events/getDescription', 'Events_Controller@getDescription');
+Route::post('events/getDescriptionNotes', 'Events_Controller@getDescriptionNotes');
 Route::post('events/getAllEvents', 'Events_Controller@getAllEvents');
 Route::post('events/count_all', 'Events_Controller@count_all');

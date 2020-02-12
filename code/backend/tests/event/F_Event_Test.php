@@ -18,9 +18,9 @@ class F_Event_Test extends TestCase
 //        $this->assertTrue(true);
 
 
-        $this->getAllEvents(10, "ASC", "end_date", "1");//passed
+//        $this->getAllEvents(10, "ASC", "end_date", "1");//passed
 //        $this->create();//passed
-//        $this->getDescription(5);//passed
+        $this->getDescriptionNotes(4);//passed
 ////        $this->delete(5);//passed
 //        $this->update(8);//passed
 //        $this->count_all();//passed
@@ -87,11 +87,11 @@ class F_Event_Test extends TestCase
         dd($d);
     }
 
-    public function getDescription($id)
+    public function getDescriptionNotes($id)
     {
         $response = $this->json(
             'POST',
-            'events/getDescription',
+            'events/getDescriptionNotes',
             [
                 'id' => $id
             ]
@@ -102,7 +102,8 @@ class F_Event_Test extends TestCase
         );
 
         $d = $response->baseResponse->original;
-        error_log($d['Description']);
+        error_log('Description : ' . $d['description']);
+        error_log('Notes : ' . $d['notes']);
 //        dd($d);
     }
 

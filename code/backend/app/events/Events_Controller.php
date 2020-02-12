@@ -58,11 +58,9 @@ class Events_Controller extends Controller
         return ['status' => $this->eventsRepo->delete($r->id)];
     }
 
-    public function getDescription(Request $r)
+    public function getDescriptionNotes(Request $r)
     {
-        $data = $this->eventsRepo->getDescriptionNotes($r->id);
-        return ["description" => ];
-
+        return $this->eventsRepo->getDescriptionNotes($r->id);
     }
 
     public function getAllEvents(Request $request)
