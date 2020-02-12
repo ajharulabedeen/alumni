@@ -16,8 +16,8 @@ class U_Test_Event extends TestCase
 //        error_log($this->delete(3));//passed
 //        error_log($this->update(4, "fee", "560.00"));//passed.
 //        error_log($this->findOneEvent(4)->fee);//passed.
-        error_log($this->getAllEvents(4, "ASC", "end_date"));//passed.
-//        error_log($this->getDescription(4));//passed.
+//        error_log($this->getAllEvents(4, "ASC", "end_date"));//passed.
+        error_log($this->getDescriptionNotes(4));//passed.
 //        error_log($this->countEvents());//passed.
     }
 
@@ -35,11 +35,13 @@ class U_Test_Event extends TestCase
         error_log($data);
     }
 
-    public function getDescription($id)
+    public function getDescriptionNotes($id)
     {
         $repo = new Events_Repo_Impl();
-        $data = $repo->getDescription($id);
-//        error_log($data);
+        $data = $repo->getDescriptionNotes($id);
+        error_log("Desc : " . $data[0]['description']);
+        error_log("Notes : " . $data[0]['notes']);
+//        dd($data);
         return $data;
     }
 

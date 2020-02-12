@@ -36,7 +36,7 @@ interface Events_Repo_I
      * @return description description of an event will be given. to save data, only description will be back.
      * @param  event_id   primary key of the event.
      */
-    public function getDescription($event_id);
+    public function getDescriptionNotes($event_id);
 
     /**
      *

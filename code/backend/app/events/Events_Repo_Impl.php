@@ -3,12 +3,14 @@
 namespace App\events;
 
 use App\events\Events;
+use Illuminate\Support\Facades\DB;
+
 // use App\events\Exception;
 
 class Events_Repo_Impl implements Events_Repo_I
 {
     /**
-     *  @return id  after successfull event creation, primary key of the event will be retuened.
+     * @return id  after successfull event creation, primary key of the event will be retuened.
      *
      */
     public function create(Events $events)
@@ -25,6 +27,7 @@ class Events_Repo_Impl implements Events_Repo_I
         }
         return $id;
     }
+
     /**
      * @return status boolean; 1 : sucess; 0 : fail.
      */
@@ -40,10 +43,11 @@ class Events_Repo_Impl implements Events_Repo_I
             $updateStatus = true;
         } catch (Exception $e) {
             error_log("Events Update : failed to read existig Education.");
-            return  $updateStatus;
+            return $updateStatus;
         }
-        return  $updateStatus;
+        return $updateStatus;
     }
+
     /**
      * @param   id id of the event not the user ID.
      */
@@ -54,14 +58,14 @@ class Events_Repo_Impl implements Events_Repo_I
         return $status;
     }
     /**
-     *  @param  order vales : Ascending/Desecending.
-     *  @param  perPage how mmany evetns perpage will be loaded.
-     *  @param  start no need for. start, from where the it start to load.
-     *  @return eventsList  List of events will be returned. Just the even title will be retuned. description can be loaded later by the user if needed.
+     * @param  order vales : Ascending/Desecending.
+     * @param  perPage how mmany evetns perpage will be loaded.
+     * @param  start no need for. start, from where the it start to load.
+     * @return eventsList  List of events will be returned. Just the even title will be retuned. description can be loaded later by the user if needed.
      */
 
     //public function getAllEvents($order, $perPage, $start)
-    public function getAllEvents( $per_page, $sort_by, $sort_on)
+    public function getAllEvents($per_page, $sort_by, $sort_on)
     {
         if ($sort_by == "ASC") {
             $order = "ASC";
@@ -81,19 +85,20 @@ class Events_Repo_Impl implements Events_Repo_I
 
 
     /**
-     *  @return description description of an event will be given. to save data, only description will be back.
-     *  @param  event_id   primary key of the event.
+     * @return description description of an event will be given. to save data, only description will be back.
+     * @param  event_id   primary key of the event.
      */
-    public function getDescription($event_id)
+    public function getDescriptionNotes($event_id)
     {
-        return Events::find($event_id)->description;
-
+        return Events::select('description', 'notes')->where('id', $event_id)->get();
     }
+
     public function getOneEvent($event_id)
     {
         error_log("Find One Event : ");
         return Events::find($event_id);
     }
+
     public function count_all()
     {
         return Events::count();
