@@ -34,6 +34,7 @@ export class EventManageComponent implements OnInit {
 
   deatilsDescription: string;
   deatilsNotes: string;
+  deleteID: string;
 
   constructor(private eService: EventManageService) {
   }
@@ -142,6 +143,11 @@ export class EventManageComponent implements OnInit {
       this.deatilsDescription = data['description'];
       this.deatilsNotes = data['notes'];
     });
+  }
+
+  public setDeleteID(id: string) {
+    this.deleteID = id;
+    console.log('this.deleteID ' + this.deleteID);
   }
 
   public delete(id: string) {
