@@ -131,8 +131,10 @@ export class EventManageComponent implements OnInit {
     event.$fee = this.cost;
     event.$location = this.vanue;
     event.$notes = this.note;
-
     return event;
   }
 
+  public setDescriptionNotes(id: string) {
+    console.log('ID : ' + id);
+  }
 }// class
