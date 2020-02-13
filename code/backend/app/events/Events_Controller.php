@@ -86,4 +86,12 @@ class Events_Controller extends Controller
         return $this->eventsRepo->search_event($per_page, $sort_by, $sort_on, $column_name, $key);
     }
 
+    public function search_event_count(Request $request)
+    {
+        $column_name = $request->column_name;
+        $key = $request->key;
+        return ["data" => $this->eventsRepo->search_event_count($column_name, $key)];
+    }
+
+
 }// class
