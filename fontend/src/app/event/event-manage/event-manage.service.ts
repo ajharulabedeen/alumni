@@ -82,6 +82,7 @@ export class EventManageService {
     column_name: string,
     key: string
   ) {
+    key = '%' + key + '%';
     this.http.post(
       'http://127.0.0.1:8000/events/search_event?page=' + pageNumber,
       {
