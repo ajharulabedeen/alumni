@@ -109,4 +109,28 @@ class Events_Repo_Impl implements Events_Repo_I
     {
         return Events::count();
     }
+
+    public function search_event(string $per_page, string $sort_by, string $sort_on, string $column_name, string $key)
+    {
+        if ($sort_by == "ASC") {
+            $order = "ASC";
+        } else {
+            $order = "DESC";
+        }
+        return Events::select(
+            'id',
+            'user_id',
+            'title',
+            'start_date',
+            'end_date',
+            'fee',
+            'location'
+        )->where($column_name, "LIKE", $key)->orderBy($sort_on, $order)->paginate($per_page)->all();
+    }
+
+    public function search_event_count(string $per_page, string $sort_by, string $sort_on, string $column_name, string $key)
+    {
+        // TODO: Implement search_event_count() method.
+    }
+
 }//class

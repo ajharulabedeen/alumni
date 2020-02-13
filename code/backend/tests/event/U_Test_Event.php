@@ -11,7 +11,7 @@ class U_Test_Event extends TestCase
 {
     public function testMain()
     {
-        $this->dummyDataInsert();
+//        $this->dummyDataInsert();//passed
 //        error_log($this->create());//passed
 //        error_log($this->findOneEvent(3));//passed
 //        error_log($this->delete(3));//passed
@@ -20,6 +20,7 @@ class U_Test_Event extends TestCase
 //        error_log($this->getAllEvents(4, "ASC", "end_date"));//passed.
 //        error_log($this->getDescriptionNotes(4));//passed.
 //        error_log($this->countEvents());//passed.
+        $this->search_event(6, "DESC", "id", "location", "%Dhaka%");//passed.
     }
 
 
@@ -27,6 +28,20 @@ class U_Test_Event extends TestCase
     {
         error_log("\n Event: CRUD Test Done!\n");
 
+    }
+
+    public function search_event($per_page, $sort_by, $sort_on, $column_name, $key)
+    {
+        $repo = new Events_Repo_Impl();
+        $data = $repo->search_event($per_page, $sort_by, $sort_on, $column_name, $key);
+        for ($i = 0; $i < 10; $i++) {
+            try {
+                error_log($data[$i]);
+            } catch (\Exception $e) {
+                break;
+            }
+        }
+        return $data;
     }
 
     public function countEvents()
@@ -157,7 +172,6 @@ class U_Test_Event extends TestCase
         return $location[$index];
     }
 
-
     public function getTitle()
     {
         $location = array("WorkShoop in PHP",
@@ -214,7 +228,6 @@ class U_Test_Event extends TestCase
         $index = rand(0, count($location) - 1);
         return $location[$index];
     }
-
 //    end : dummy event creation
 
 
