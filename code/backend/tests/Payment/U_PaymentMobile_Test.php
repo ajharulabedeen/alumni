@@ -218,11 +218,7 @@ class U_PaymentMobile_Test extends TestCase
     }
 
 
-
-
-
     // -------------- Dummy Data Section -----------------
-    //d
     public function createDummyData()
     {
         $repo = new Payment_Mobile_Repo_Impl();

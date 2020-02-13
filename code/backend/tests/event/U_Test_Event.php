@@ -11,7 +11,8 @@ class U_Test_Event extends TestCase
 {
     public function testMain()
     {
-        error_log($this->create());//passed
+        $this->dummyDataInsert();
+//        error_log($this->create());//passed
 //        error_log($this->findOneEvent(3));//passed
 //        error_log($this->delete(3));//passed
 //        error_log($this->update(4, "fee", "560.00"));//passed.
@@ -109,6 +110,111 @@ class U_Test_Event extends TestCase
 
 
 //    start : dummy event creation
+    public function dummyDataInsert()
+    {
+        for ($x = 0; $x < 1000; $x++) {
+            $repoEvent = new Events_Repo_Impl();
+            $e = new Events();
+            $e->user_id = rand(2, 15);
+            $e->title = $this->getTitle();
+            $e->start_date = $this->getDate();
+            $e->end_date = $this->getDate();
+            $e->fee = rand(100, 1000);
+            $e->location = $this->getLocation();
+            $e->description = $this->getDescription();
+            $e->notes = $this->getNotes();
+            $e->images = "No Image Available!";
+            $id = $repoEvent->create($e);
+            error_log("\n" . $id);
+        }
+    }
+
+    public function getDate()
+    {
+        $y = rand(2017, 2025);
+        $m = rand(1, 9);
+        $d = rand(10, 28);
+        $date = $y . "-" . "0" . $m . "-" . $d;
+        return $date;
+    }
+
+    public function getLocation()
+    {
+        $location = array("Dhaka",
+            "Khulna",
+            "GUB",
+            "Green Garden",
+            "Dhaka University Auditoriam",
+            "Basundhara Convention Center",
+            "IUBAT Meeting Center",
+            "Hotel Tiger Garden",
+            "Hotel Seraton",
+            "Gazipur Safari Park",
+            "Padma Resort",
+            "Gonoshatho Kendro",
+            "NSU Center");
+        $index = rand(0, count($location) - 1);
+        return $location[$index];
+    }
+
+
+    public function getTitle()
+    {
+        $location = array("WorkShoop in PHP",
+            "Meet Up 2020",
+            "GUB Meeting",
+            "CSE carnival",
+            "Dhaka Fair",
+            "Annual Picnic",
+            "Workshop in Python",
+            "PHP seminar",
+            "Pubslishing Research Article",
+            "Family Get together",
+            "Winter Carity",
+            "Blood Donation",
+            "NSU Programming Contest");
+        $index = rand(0, count($location) - 1);
+        return $location[$index];
+    }
+
+    public function getDescription()
+    {
+        $location = array("WorkShoop in PHP Description",
+            "Meet Up 2020 Description",
+            "GUB Meeting Description",
+            "CSE carnival Description",
+            "Dhaka Fair Description",
+            "Annual Picnic Description",
+            "Workshop in Python Description",
+            "PHP seminar Description",
+            "Pubslishing Research Article Description",
+            "Description : Family Get together",
+            "Description : Winter Carity",
+            "Description : Blood Donation",
+            "Description : NSU Programming Contest");
+        $index = rand(0, count($location) - 1);
+        return $location[$index];
+    }
+
+    public function getNotes()
+    {
+        $location = array("WorkShoop in PHP Notes",
+            "Notes : Meet Up 2020 Description",
+            "Notes : GUB Meeting Notes",
+            "CSE carnival Notes",
+            "Dhaka Fair Notes",
+            "Annual Picnic Notes",
+            "Workshop in Python Notes",
+            "PHP seminar Notes",
+            "Notes : Research Article Description",
+            "Notes - Family Get together",
+            "Notes - Winter Carity",
+            "Notes : Donation",
+            "Notes : Contest");
+        $index = rand(0, count($location) - 1);
+        return $location[$index];
+    }
+
 //    end : dummy event creation
 
 

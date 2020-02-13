@@ -48,4 +48,6 @@ interface Events_Repo_I
      */
     public function count_all();
 
-}
+
+
+}// class
