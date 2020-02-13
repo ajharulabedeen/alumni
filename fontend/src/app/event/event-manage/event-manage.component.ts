@@ -88,6 +88,10 @@ export class EventManageComponent implements OnInit {
 
   public setTotal() {
     if (this.active_search) {
+      this.eService.count_search(this.event_search_by, this.event_value_search).subscribe(res => {
+        // console.log(res);
+        this.eventSearch_total = res['data'];
+      });
 
     } else {
       this.eService.couunt_all().subscribe(res => {
@@ -105,7 +109,8 @@ export class EventManageComponent implements OnInit {
     this.event_array = [];
 
     if (this.active_search) {
-      console.log("\n Search Active!");
+      // console.log("\n Search Active!");
+      this.setTotal();
       this.eService.eventSearch(
         this.eventSearch_perPage,
         this.eventSearch_sort_by,
@@ -113,6 +118,7 @@ export class EventManageComponent implements OnInit {
         this.eventSearch_pageNumber,
         this.event_search_by,
         this.event_value_search);
+
     } else {
       this.setTotal();
       this.eService.getAllEvents(
@@ -182,5 +188,4 @@ export class EventManageComponent implements OnInit {
       }
     });
   }
-
 }// class

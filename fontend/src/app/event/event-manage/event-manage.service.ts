@@ -100,4 +100,17 @@ export class EventManageService {
     });
 
   }
+
+  count_search(event_search_by: string, event_value_search: string) {
+    event_value_search = '%' + event_value_search + '%';
+    return this.http.post(
+      'http://127.0.0.1:8000/events/search_event_count',
+      {
+        'column_name': event_search_by,
+        'key': event_value_search,
+      },
+      this.authService.getHeader()
+    );
+
+  }
 }// class
