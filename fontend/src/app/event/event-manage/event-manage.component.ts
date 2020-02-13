@@ -73,11 +73,17 @@ export class EventManageComponent implements OnInit {
 
 
   public eventSearch_previousPage() {
-
+    if (this.eventSearch_pageNumber > 1) {
+      this.eventSearch_pageNumber -= 1;
+      this.refreshTable_eventSearch();
+    }
   }
 
   public eventSearch_nextPage() {
-
+    if (this.eventSearch_pageNumber < (this.eventSearch_total / this.eventSearch_perPage)) {
+      this.eventSearch_pageNumber += 1;
+      this.refreshTable_eventSearch();
+    }
   }
 
   public setTotal() {
@@ -97,7 +103,7 @@ export class EventManageComponent implements OnInit {
   public refreshTable_eventSearch() {
 
     this.event_array = [];
-    this.eService.getAllEvents(this.eventSearch_perPage, this.eventSearch_sort_by, this.eventSearch_sort_on);
+    this.eService.getAllEvents(this.eventSearch_perPage, this.eventSearch_sort_by, this.eventSearch_sort_on, this.eventSearch_pageNumber);
     this.setTotal();
     this.eService.events.subscribe(e => {
       this.event_array = [];

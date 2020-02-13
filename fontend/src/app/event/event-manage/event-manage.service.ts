@@ -26,9 +26,9 @@ export class EventManageService {
   }
 
 
-  public getAllEvents(per_page: number, sort_by: string, sort_on: string) {
+  public getAllEvents(per_page: number, sort_by: string, sort_on: string, pageNumber: string) {
     this.http.post(
-      'http://127.0.0.1:8000/events/getAllEvents',
+      'http://127.0.0.1:8000/events/getAllEvents?page=' + pageNumber,
       {
         'per_page': per_page,
         'sort_by': sort_by,
