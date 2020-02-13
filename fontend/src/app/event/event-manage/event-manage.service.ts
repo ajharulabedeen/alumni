@@ -26,7 +26,7 @@ export class EventManageService {
   }
 
 
-  public getAllEvents(per_page: number, sort_by: string, sort_on: string, pageNumber: string) {
+  public getAllEvents(per_page: number, sort_by: string, sort_on: string, pageNumber: number) {
     this.http.post(
       'http://127.0.0.1:8000/events/getAllEvents?page=' + pageNumber,
       {
@@ -72,5 +72,31 @@ export class EventManageService {
       },
       this.authService.getHeader()
     );
+  }
+
+  public eventSearch(
+    per_page: number,
+    sort_by: string,
+    sort_on: string,
+    pageNumber: number,
+    column_name: string,
+    key: string
+  ) {
+    this.http.post(
+      'http://127.0.0.1:8000/events/search_event?page=' + pageNumber,
+      {
+        'per_page': per_page,
+        'sort_by': sort_by,
+        'sort_on': sort_on,
+        'column_name': column_name,
+        'key': key,
+      },
+      this.authService.getHeader()
+    ).subscribe((res: Response) => {
+      // console.log(res);
+      // this.loading = false;
+      this.events.next(res);
+    });
+
   }
 }// class

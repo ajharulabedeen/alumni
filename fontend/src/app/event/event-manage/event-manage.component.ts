@@ -103,8 +103,25 @@ export class EventManageComponent implements OnInit {
   public refreshTable_eventSearch() {
 
     this.event_array = [];
-    this.eService.getAllEvents(this.eventSearch_perPage, this.eventSearch_sort_by, this.eventSearch_sort_on, this.eventSearch_pageNumber);
-    this.setTotal();
+
+    if (this.active_search) {
+      console.log("\n Search Active!");
+      this.eService.eventSearch(
+        this.eventSearch_perPage,
+        this.eventSearch_sort_by,
+        this.eventSearch_sort_on,
+        this.eventSearch_pageNumber,
+        this.event_search_by,
+        this.event_value_search);
+    } else {
+      this.setTotal();
+      this.eService.getAllEvents(
+        this.eventSearch_perPage,
+        this.eventSearch_sort_by,
+        this.eventSearch_sort_on,
+        this.eventSearch_pageNumber);
+    }
+
     this.eService.events.subscribe(e => {
       this.event_array = [];
       for (const key1 in e) {
