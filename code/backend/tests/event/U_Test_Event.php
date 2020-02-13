@@ -20,7 +20,8 @@ class U_Test_Event extends TestCase
 //        error_log($this->getAllEvents(4, "ASC", "end_date"));//passed.
 //        error_log($this->getDescriptionNotes(4));//passed.
 //        error_log($this->countEvents());//passed.
-        $this->search_event(6, "DESC", "id", "location", "%Dhaka%");//passed.
+//        $this->search_event(6, "DESC", "id", "location", "%Dhaka%");//passed.
+        error_log($this->search_event_count("location", "%GUB%"));//passed.
     }
 
 
@@ -28,6 +29,13 @@ class U_Test_Event extends TestCase
     {
         error_log("\n Event: CRUD Test Done!\n");
 
+    }
+
+    public function search_event_count($column_name, $key)
+    {
+        $repo = new Events_Repo_Impl();
+        $data = $repo->search_event_count($column_name, $key);
+        error_log($data);
     }
 
     public function search_event($per_page, $sort_by, $sort_on, $column_name, $key)

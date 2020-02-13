@@ -49,7 +49,8 @@ interface Events_Repo_I
     public function count_all();
 
     public function search_event(string $per_page, string $sort_by, string $sort_on, string $column_name, string $key);
-    public function search_event_count(string $per_page, string $sort_by, string $sort_on, string $column_name, string $key);
+
+    public function search_event_count(string $column_name, string $key);
 
 
 }// class

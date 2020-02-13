@@ -128,9 +128,10 @@ class Events_Repo_Impl implements Events_Repo_I
         )->where($column_name, "LIKE", $key)->orderBy($sort_on, $order)->paginate($per_page)->all();
     }
 
-    public function search_event_count(string $per_page, string $sort_by, string $sort_on, string $column_name, string $key)
+    public function search_event_count(string $column_name, string $key)
     {
         // TODO: Implement search_event_count() method.
+        return Events::where($column_name, "LIKE", $key)->count();
     }
 
 }//class
