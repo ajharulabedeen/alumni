@@ -106,3 +106,4 @@ Route::post('events/delete', 'Events_Controller@delete');
 Route::post('events/getDescriptionNotes', 'Events_Controller@getDescriptionNotes');
 Route::post('events/getAllEvents', 'Events_Controller@getAllEvents');
 Route::post('events/count_all', 'Events_Controller@count_all');
+Route::post('events/search_event', 'Events_Controller@search_event');

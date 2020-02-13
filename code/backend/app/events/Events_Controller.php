@@ -65,7 +65,6 @@ class Events_Controller extends Controller
 
     public function getAllEvents(Request $request)
     {
-
         $per_page = $request->per_page;
         $sort_by = $request->sort_by;
         $sort_on = $request->sort_on;
@@ -77,5 +76,14 @@ class Events_Controller extends Controller
         return ["data" => $this->eventsRepo->count_all()];
     }
 
+    public function search_event(Request $request)
+    {
+        $per_page = $request->per_page;
+        $sort_by = $request->sort_by;
+        $sort_on = $request->sort_on;
+        $column_name = $request->column_name;
+        $key = $request->key;
+        return $this->eventsRepo->search_event($per_page, $sort_by, $sort_on, $column_name, $key);
+    }
 
-}
+}// class
