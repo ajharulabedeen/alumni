@@ -64,6 +64,7 @@
       <label>Dscription</label>
       <ckeditor [(ngModel)]="description" data="<p>Hello, world!</p>"></ckeditor>
 
+      <!--      note-->
       <div class="col-md-12 ">
         <div class="form-group">
           <label>Note</label>
@@ -233,11 +234,6 @@
 
 
   <!-- ton trigger modal -->
-  <!--  start : test -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#event_details">
-    Event Details
-  </button>
-  <!--  end : test -->
 
   <!-- start-Modal : event details  -->
   <div class="modal fade" id="event_details" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -303,6 +299,47 @@
     <!-- <app-settingsnavbar></app-settingsnavbar> -->
   </div>
   <!-- end-Modal :  Delete Confirmation -->
+
+
+  <!--  start : test -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#event_edit_basic">
+    Event Details
+  </button>
+  <!--  end : test -->
+
+  <!-- start-Modal :  Event Edit Basic -->
+  <div class="modal fade" id="event_edit_basic" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Event Basic Information</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!--  start : modal body-->
+        <div class="modal-body">
+
+        </div>
+        <!--  end : modal body-->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal">
+            Update
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- end :  Modal -->
+
+
+    <!-- <app-footernavbar></app-footernavbar> -->
+    <!-- <app-settingsnavbar></app-settingsnavbar> -->
+  </div>
+  <!-- end-Modal :  Event Edit Basic -->
+
+
   <!--  <app-footernavbar></app-footernavbar>-->
 
 
