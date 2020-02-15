@@ -12,12 +12,15 @@
     <!--    start : Add new event -->
     <div id="new" class="tabcontent">
       <!--      <h1 class="h1">New Event</h1>-->
+
+      <!--      Name-->
       <div class="col-md-12 offset-md-12">
         <div class="form-group">
           <label>Name : </label>
           <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
         </div>
       </div>
+      <!--   start date   -->
       <div class="col-md-3  offset-md-3">
         <div class="form-group">
           <label>Start Date</label>
@@ -30,9 +33,10 @@
           <input [(ngModel)]="start_date" type="date" class="form-control" value="{{start_date}}">
         </div>
       </div>
+      <!--      End date -->
       <div class="col-md-3  offset-md-3">
         <div class="form-group">
-          <label>Last Date</label>
+          <label>End Date</label>
           <input [(ngModel)]="last_date" type="text" class="form-control" placeholder="{{last_date}}">
         </div>
       </div>
@@ -42,13 +46,14 @@
           <input [(ngModel)]="last_date" type="date" class="form-control" value="{{last_date}}">
         </div>
       </div>
-
+      <!--      Amount -->
       <div class="col-md-12 ">
         <div class="form-group">
           <label>Amount</label>
           <input [(ngModel)]="cost" type="text" class="form-control">
         </div>
       </div>
+      <!--      vanue-->
       <div class="col-md-12 ">
         <div class="form-group">
           <label>Vanue</label>
@@ -108,6 +113,7 @@
           </select>
         </div>
       </div>
+      <!--      search key input -->
       <div class="col-md-12 offset-md-12">
         <div class="form-group">
           <label>Value : </label>
@@ -219,11 +225,11 @@
       </div>
       <!-- end : table -->
       <!-- End : showing all events search -->
-
     </div>
     <!--    end : Showing  All events -->
 
   </div>
+  <!--  end : content warpper -->
 
 
   <!-- ton trigger modal -->
@@ -232,7 +238,6 @@
     Event Details
   </button>
   <!--  end : test -->
-
 
   <!-- start-Modal : event details  -->
   <div class="modal fade" id="event_details" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
