@@ -24,7 +24,7 @@ class F_Event_Test extends TestCase
 //        $this->update(8);//passed
 //        $this->count_all();//passed
 //        $this->search_event(10, "ASC", "id", "3", "location", "%Dhaka%");//passed
-        $this->search_event_count("location", "%Dhaka%");//passed
+        $this->search_event_count("location", "%Dhaka");//passed
 
 
     }

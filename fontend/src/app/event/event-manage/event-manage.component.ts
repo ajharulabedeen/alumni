@@ -144,8 +144,7 @@ export class EventManageComponent implements OnInit {
         this.event_array.push(event);
       }
     });
-    console.log(this.event_array);
-
+    // console.log(this.event_array);
   }
 
   public createEvent() {
