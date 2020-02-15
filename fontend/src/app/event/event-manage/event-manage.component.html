@@ -325,27 +325,27 @@
           <div class="col-md-12 offset-md-12">
             <div class="form-group">
               <label>Name : </label>
-              <input [(ngModel)]="name" type="text" class="form-control" placeholder="512 Character Max..">
+              <input [(ngModel)]="edit_name" type="text" class="form-control" placeholder="512 Character Max..">
             </div>
           </div>
           <!--   start date   -->
           <div class="col-md-3  offset-md-3">
             <div class="form-group">
               <label>Start Date</label>
-              <input [(ngModel)]="start_date" type="text" class="form-control" placeholder="{{start_date}}">
+              <input [(ngModel)]="edit_start_date" type="text" class="form-control" placeholder="{{start_date}}">
             </div>
           </div>
           <div class="col-md-3  offset-md-3">
             <div class="form-group">
               <label>Select Date</label>
-              <input [(ngModel)]="start_date" type="date" class="form-control" value="{{start_date}}">
+              <input [(ngModel)]="edit_start_date" type="date" class="form-control" value="{{start_date}}">
             </div>
           </div>
           <!--      End date -->
           <div class="col-md-3  offset-md-3">
             <div class="form-group">
               <label>End Date</label>
-              <input [(ngModel)]="last_date" type="text" class="form-control" placeholder="{{last_date}}">
+              <input [(ngModel)]="edit_last_date" type="text" class="form-control" placeholder="{{last_date}}">
             </div>
           </div>
           <div class="col-md-3  offset-md-3">
@@ -358,21 +358,21 @@
           <div class="col-md-12 ">
             <div class="form-group">
               <label>Amount</label>
-              <input [(ngModel)]="cost" type="text" class="form-control">
+              <input [(ngModel)]="edit_cost" type="text" class="form-control">
             </div>
           </div>
           <!--      vanue-->
           <div class="col-md-12 ">
             <div class="form-group">
               <label>Vanue</label>
-              <input [(ngModel)]="vanue" type="text" class="form-control">
+              <input [(ngModel)]="edit_vanue" type="text" class="form-control">
             </div>
           </div>
         </div>
         <!--  end : modal body-->
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal">
+          <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal" (click)="">
             Update
           </button>
         </div>

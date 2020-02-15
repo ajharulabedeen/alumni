@@ -21,6 +21,12 @@ export class EventManageComponent implements OnInit {
   note: string;
   active_search: boolean;
 
+  edit_name: string;
+  edit_start_date: string;
+  edit_last_date: string;
+  edit_cost: string;
+  edit_vanue: string;
+
 
   event_search_by: string;
   event_value_search: string;
