@@ -199,7 +199,12 @@ export class EventManageComponent implements OnInit {
    * basic event information will be set to the modal for update.
    */
   public setBasicEventInfo(eventBasic: Events) {
-    console.log(eventBasic);
+    // console.log(eventBasic);
+    this.edit_name = eventBasic.$title;
+    this.edit_start_date = eventBasic.$start_date;
+    this.edit_last_date = eventBasic.$end_date;
+    this.edit_cost = eventBasic.$fee;
+    this.edit_vanue = eventBasic.$location;
   }
 
   public update_event_basic() {

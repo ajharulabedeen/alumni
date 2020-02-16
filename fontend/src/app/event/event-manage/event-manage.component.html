@@ -198,7 +198,8 @@
                 <!-- Edit -->
                 <td>
                   <button class="btn btn-xs btn-primary" data-toggle="modal"
-                          (click)="setBasicEventInfo(event)">
+                          (click)="setBasicEventInfo(event)"
+                          data-target="#event_edit_basic">
                     Edit
                   </button>
                 </td>
@@ -354,7 +355,7 @@
           <div class="col-md-3  offset-md-3">
             <div class="form-group">
               <label>Select Date</label>
-              <input [(ngModel)]="last_date" type="date" class="form-control" value="{{last_date}}">
+              <input [(ngModel)]="edit_last_date" type="date" class="form-control" value="{{edit_last_date}}">
             </div>
           </div>
           <!--      Amount -->
