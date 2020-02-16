@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\events\EventBasic;
+use App\events\EventDescriptionNotes;
 use Illuminate\Http\Request;
 use App\events\Events_Repo_I;
 use App\events\Events_Repo_Impl;
@@ -35,6 +36,16 @@ class Events_Controller extends Controller
         $events->location = $r->location;
         $id = $this->eventsRepo->create($events);
         return $id;
+    }
+
+
+    public function update_description_notes(Request $r)
+    {
+        $eb = new EventDescriptionNotes();
+        $eb->id = '1';
+        $eb->description = $r->description;
+        $eb->notes = $r->notes;
+        return ['status' => $this->eventsRepo->update_DescriptionNotes($eb)];
     }
 
     public function update_basic(Request $r)
