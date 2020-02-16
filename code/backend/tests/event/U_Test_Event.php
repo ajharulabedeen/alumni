@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use App\events\EventBasic;
+use App\events\EventDescriptionNotes;
 use App\events\Events_Repo_Impl;
 use App\events\Events;
 use App\profile\ProfileBasic;
@@ -25,7 +26,8 @@ class U_Test_Event extends TestCase
 //        $this->search_event(6, "DESC", "id", "location", "%Dhaka%");//passed.
 //        error_log($this->search_event_count("location", "%GUB%"));//passed.
 
-        $this->eventbasicUpdate();
+//        $this->eventbasicUpdate();//passed
+        $this->eventUpdateNotesDescription();//passed
 
     }
 
@@ -34,6 +36,17 @@ class U_Test_Event extends TestCase
     {
         error_log("\n Event: CRUD Test Done!\n");
 
+    }
+
+    public function eventUpdateNotesDescription()
+    {
+        $e = new EventDescriptionNotes();
+        $e->id = "1";
+        $e->description = "F R Siddique will lecture!";
+        $e->notes = "A Formar Nuclear Scientist!";
+        $repo = new Events_Repo_Impl();
+        $repo->update_DescriptionNotes($e);
+        dd($e);
     }
 
     public function eventbasicUpdate()
