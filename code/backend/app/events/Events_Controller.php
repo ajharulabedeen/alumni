@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\events\EventBasic;
 use Illuminate\Http\Request;
 use App\events\Events_Repo_I;
 use App\events\Events_Repo_Impl;
@@ -34,6 +35,18 @@ class Events_Controller extends Controller
         $events->location = $r->location;
         $id = $this->eventsRepo->create($events);
         return $id;
+    }
+
+    public function update_basic(Request $r)
+    {
+        $eb = new EventBasic();
+        $eb->id = '1';
+        $eb->start_date = $r->start_date;
+        $eb->end_date = $r->end_date;
+        $eb->title = $r->title;
+        $eb->fee = $r->fee;
+        $eb->location = $r->location;
+        return ['status' => $this->eventsRepo->update_event_basic($eb)];
     }
 
     public function update(Request $r)
@@ -92,11 +105,5 @@ class Events_Controller extends Controller
         $key = $request->key;
         return ["data" => $this->eventsRepo->search_event_count($column_name, $key)];
     }
-
-    public function update_basic(){
-
-    }
-
-
 
 }// class
