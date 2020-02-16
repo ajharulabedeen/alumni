@@ -138,17 +138,23 @@ class Events_Repo_Impl implements Events_Repo_I
     {
         // TODO: Implement update_event_basic() method.
 //        error_log($eventBasic->start_date);
-        DB::table('events')
-            ->where('id', $eventBasic->id)
-            ->update(
-                [
-                    'title' => $eventBasic->title,
-                    'start_date' => $eventBasic->start_date,
-                    'end_date' => $eventBasic->end_date,
-                    'fee' => $eventBasic->fee,
-                    'location' => $eventBasic->location,
-                ]
-            );
+        $status = "OK";
+        try {
+            DB::table('events')
+                ->where('id', $eventBasic->id)
+                ->update(
+                    [
+                        'title' => $eventBasic->title,
+                        'start_date' => $eventBasic->start_date,
+                        'end_date' => $eventBasic->end_date,
+                        'fee' => $eventBasic->fee,
+                        'location' => $eventBasic->location,
+                    ]
+                );
+        } catch (\Exception $e) {
+            $status = "FAIL";
+        }
+        return ["status" => $status];
     }
 
     public function update_DescriptionNotes(EventDescriptionNotes $eDescriptionNotes)
