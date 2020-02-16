@@ -11,6 +11,7 @@ namespace App\events;
 
 class EventDescriptionNotes
 {
+    public $id;
     public $description;
     public $notes;
 }

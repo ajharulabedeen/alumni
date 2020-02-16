@@ -54,6 +54,6 @@ interface Events_Repo_I
 
     public function update_event_basic( EventBasic $eBasic );
 
-    public function update_DescriptionNotes( EventBasic $eBasic );
+    public function update_DescriptionNotes( EventDescriptionNotes $eDescriptionNotes );
 
 }// class
