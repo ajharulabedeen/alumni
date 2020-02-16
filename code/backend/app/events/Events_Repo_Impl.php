@@ -154,14 +154,20 @@ class Events_Repo_Impl implements Events_Repo_I
     public function update_DescriptionNotes(EventDescriptionNotes $eDescriptionNotes)
     {
         // TODO: Implement update_DescriptionNotes() method.
-        DB::table('events')
-            ->where('id', $eDescriptionNotes->id)
-            ->update(
-                [
-                    'description' => $eDescriptionNotes->description,
-                    'notes' => $eDescriptionNotes->notes,
-                ]
-            );
+        $status = "OK";
+        try {
+            DB::table('events')
+                ->where('id', $eDescriptionNotes->id)
+                ->update(
+                    [
+                        'description' => $eDescriptionNotes->description,
+                        'notes' => $eDescriptionNotes->notes,
+                    ]
+                );
+        } catch (\Exception $e) {
+            $status = "FAIL";
+        }
+        return ["status" => $status];
     }
 
 }//class

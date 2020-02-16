@@ -42,11 +42,11 @@ class U_Test_Event extends TestCase
     {
         $e = new EventDescriptionNotes();
         $e->id = "1";
-        $e->description = "F R Siddique will lecture!";
+        $e->description = "---F R Siddique will lecture!";
         $e->notes = "A Formar Nuclear Scientist!";
         $repo = new Events_Repo_Impl();
-        $repo->update_DescriptionNotes($e);
-        dd($e);
+        $status = $repo->update_DescriptionNotes($e);
+        dd($status);
     }
 
     public function eventbasicUpdate()

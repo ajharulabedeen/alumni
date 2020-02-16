@@ -29,6 +29,29 @@ class F_Event_Test extends TestCase
 
     }
 
+    public function updateBasicInformation()
+    {
+        $response = $this->json(
+            'POST',
+            'events/create',
+            [
+                "id" => "1",
+                "title" => "MeetUp 2041",
+                "start_date" => "2019/04/04",
+                "end_date" => "2019/04/05",
+                "fee" => "500",
+                "location" => "Green Garden",
+            ]
+            ,
+            [
+                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u2@umail.com", "123456")
+            ]
+        );
+
+        $d = $response->baseResponse->original;
+        dd($d);
+    }
+
     public function search_event_count($column_name, $key)
     {
         $response = $this->json(

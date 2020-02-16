@@ -93,5 +93,10 @@ class Events_Controller extends Controller
         return ["data" => $this->eventsRepo->search_event_count($column_name, $key)];
     }
 
+    public function update_basic(){
+
+    }
+
+
 
 }// class
