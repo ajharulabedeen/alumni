@@ -134,4 +134,9 @@ class Events_Repo_Impl implements Events_Repo_I
         return Events::where($column_name, "LIKE", $key)->count();
     }
 
+    public function update_event_basic()
+    {
+        // TODO: Implement update_event_basic() method.
+    }
+
 }//class

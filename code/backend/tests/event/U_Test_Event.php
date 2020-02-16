@@ -2,8 +2,10 @@
 
 namespace Tests\Unit;
 
+use App\events\EventBasic;
 use App\events\Events_Repo_Impl;
 use App\events\Events;
+use App\profile\ProfileBasic;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -21,7 +23,10 @@ class U_Test_Event extends TestCase
 //        error_log($this->getDescriptionNotes(4));//passed.
 //        error_log($this->countEvents());//passed.
 //        $this->search_event(6, "DESC", "id", "location", "%Dhaka%");//passed.
-        error_log($this->search_event_count("location", "%GUB%"));//passed.
+//        error_log($this->search_event_count("location", "%GUB%"));//passed.
+
+        $this->eventbasic();
+
     }
 
 
@@ -29,6 +34,13 @@ class U_Test_Event extends TestCase
     {
         error_log("\n Event: CRUD Test Done!\n");
 
+    }
+
+    public function eventbasic()
+    {
+        $e = new EventBasic();
+        $e->title = "Name of the Event!";
+        dd($e);
     }
 
     public function search_event_count($column_name, $key)
