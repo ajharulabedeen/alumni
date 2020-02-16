@@ -21,6 +21,7 @@ export class EventManageComponent implements OnInit {
   note: string;
   active_search: boolean;
 
+  edit_id: string;
   edit_name: string;
   edit_start_date: string;
   edit_last_date: string;
@@ -192,5 +193,16 @@ export class EventManageComponent implements OnInit {
         this.refreshTable_eventSearch();
       }
     });
+  }
+
+  /**
+   * basic event information will be set to the modal for update.
+   */
+  public setBasicEventInfo(eventBasic: Events) {
+    console.log(eventBasic);
+  }
+
+  public update_event_basic() {
+
   }
 }// class
