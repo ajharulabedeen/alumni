@@ -25,7 +25,7 @@ class U_Test_Event extends TestCase
 //        $this->search_event(6, "DESC", "id", "location", "%Dhaka%");//passed.
 //        error_log($this->search_event_count("location", "%GUB%"));//passed.
 
-        $this->eventbasic();
+        $this->eventbasicUpdate();
 
     }
 
@@ -36,10 +36,17 @@ class U_Test_Event extends TestCase
 
     }
 
-    public function eventbasic()
+    public function eventbasicUpdate()
     {
         $e = new EventBasic();
+        $e->id = "1";
         $e->title = "Name of the Event!";
+        $e->start_date = "2019-12-04";
+        $e->end_date = "2019-12-05";
+        $e->location = "DD";
+        $e->fee = "500";
+        $repo = new Events_Repo_Impl();
+        $repo->update_event_basic($e);
         dd($e);
     }
 
