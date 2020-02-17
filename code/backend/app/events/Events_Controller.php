@@ -57,7 +57,7 @@ class Events_Controller extends Controller
         $eb->title = $r->title;
         $eb->fee = $r->fee;
         $eb->location = $r->location;
-        return ['status' => $this->eventsRepo->update_event_basic($eb)];
+        return [$this->eventsRepo->update_event_basic($eb)];
     }
 
     public function update(Request $r)

@@ -44,6 +44,9 @@ export class EventManageComponent implements OnInit {
   deleteID: string;
 
   editDescriptionNotes: boolean;
+  private editEventID: string;
+
+  eventEdit: Events;
 
   constructor(private eService: EventManageService) {
   }
@@ -203,6 +206,7 @@ export class EventManageComponent implements OnInit {
    */
   public setBasicEventInfo(eventBasic: Events) {
     // console.log(eventBasic);
+    this.editEventID = eventBasic.$id;
     this.edit_name = eventBasic.$title;
     this.edit_start_date = eventBasic.$start_date;
     this.edit_last_date = eventBasic.$end_date;
@@ -211,6 +215,16 @@ export class EventManageComponent implements OnInit {
   }
 
   public update_event_basic() {
+    var eventEdit = new Events();
+    eventEdit.$id = this.editEventID;
+    eventEdit.$title = this.edit_name;
+    eventEdit.$start_date = this.edit_start_date;
+    eventEdit.$end_date = this.edit_last_date;
+    eventEdit.$fee = this.edit_cost;
+    eventEdit.$location = this.edit_vanue;
+    this.eService.updateBasic(eventEdit).subscribe(data => {
+      console.log(data);
+    });
 
   }
 }// class

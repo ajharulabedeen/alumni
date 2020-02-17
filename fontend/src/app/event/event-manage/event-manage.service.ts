@@ -113,4 +113,15 @@ export class EventManageService {
   }
 
 
+  public updateBasic(eventEdit: Events) {
+    // console.log(eventEdit);
+    return this.http.post(
+      'http://127.0.0.1:8000/events/update_basic', eventEdit, this.authService.getHeader()
+    );
+    //   .subscribe((res: Response) => {
+    //   console.log(res);
+    //   // this.loading = false;
+    // });
+
+  }
 }// class

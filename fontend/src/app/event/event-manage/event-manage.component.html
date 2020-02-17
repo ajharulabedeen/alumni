@@ -102,11 +102,12 @@
       <button class="btn btn-primary btn-sm" (click)="refreshTable_eventSearch()">Refresh</button>
 
 
-      <!-- sort by column name -->
+      <!-- search by column name -->
       <div class="col-md-12 offset-md-12">
         <div class="form-group">
           <h4>Search By :</h4>
           <select [(ngModel)]="event_search_by">
+            <option value="id">Id</option>
             <option value="title">Title</option>
             <option value="start_date">Start Date</option>
             <option value="end_date">End Date</option>
@@ -166,6 +167,7 @@
       <div>
         <h4>Sort By</h4>
         <select [(ngModel)]="eventSearch_sort_on">
+          <option value="id">Id</option>
           <option value="start_date" [selected]="true">Start Date</option>
           <option value="end_date">End Date</option>
           <option value="fee">Fee</option>
