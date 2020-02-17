@@ -43,6 +43,8 @@ export class EventManageComponent implements OnInit {
   deatilsNotes: string;
   deleteID: string;
 
+  editDescriptionNotes: boolean;
+
   constructor(private eService: EventManageService) {
   }
 
@@ -54,6 +56,7 @@ export class EventManageComponent implements OnInit {
     this.event_search_by = 'title';
     this.eventSearch_sort_on = 'end_date';
     this.setTotal();
+    this.editDescriptionNotes = true;
 
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';

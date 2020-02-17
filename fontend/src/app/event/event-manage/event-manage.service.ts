@@ -98,7 +98,6 @@ export class EventManageService {
       // this.loading = false;
       this.events.next(res);
     });
-
   }
 
   count_search(event_search_by: string, event_value_search: string) {
@@ -111,6 +110,7 @@ export class EventManageService {
       },
       this.authService.getHeader()
     );
-
   }
+
+
 }// class

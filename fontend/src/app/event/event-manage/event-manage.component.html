@@ -253,19 +253,26 @@
         </div>
         <div class="modal-body">
           <h4>Details</h4>
-          <p innerHtml="{{deatilsDescription}}">
+          <p *ngIf="editDescriptionNotes" innerHtml="{{deatilsDescription}}"></p>
 
-          </p>
+          <ckeditor [(ngModel)]="deatilsDescription" *ngIf="!editDescriptionNotes"
+                    data="<p>Hello, world!</p>"></ckeditor>
+
           <br>
           <br>
           <h4>Notes</h4>
-          <P>
-            {{deatilsNotes}}
-          </P>
+          <P *ngIf="editDescriptionNotes">{{deatilsNotes}}</P>
+          <textarea *ngIf="!editDescriptionNotes">{{deatilsNotes}}</textarea>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-primary"
+                  (click)=" editDescriptionNotes = !editDescriptionNotes"
+                  *ngIf="editDescriptionNotes"
+          >
+            Edit
+          </button>
+          <button type="button" class="btn btn-primary" *ngIf="!editDescriptionNotes">Update</button>
         </div>
       </div>
     </div>
