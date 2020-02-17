@@ -223,7 +223,10 @@ export class EventManageComponent implements OnInit {
     eventEdit.$fee = this.edit_cost;
     eventEdit.$location = this.edit_vanue;
     this.eService.updateBasic(eventEdit).subscribe(data => {
-      console.log(data);
+      // console.log(data);
+      if (data[0]['status'] == 'OK') {
+        this.refreshTable_eventSearch();
+      }
     });
 
   }
