@@ -274,7 +274,9 @@
           >
             Edit
           </button>
-          <button type="button" class="btn btn-primary" *ngIf="!editDescriptionNotes">Update</button>
+          <button type="button" class="btn btn-primary" *ngIf="!editDescriptionNotes"
+                  (click)="updateDescriptionNotes()">Update
+          </button>
         </div>
       </div>
     </div>

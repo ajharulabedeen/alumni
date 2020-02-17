@@ -124,4 +124,16 @@ export class EventManageService {
     // });
 
   }
+
+  public updateDescriptionNotes(edit_id: string, deatilsDescription: string, deatilsNotes: string) {
+    return this.http.post(
+      'http://127.0.0.1:8000/events/update_description_notes',
+      {
+        'id': edit_id,
+        'description': deatilsDescription,
+        'notes': deatilsNotes,
+      },
+      this.authService.getHeader()
+    );
+  }
 }// class

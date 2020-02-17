@@ -180,6 +180,7 @@ export class EventManageComponent implements OnInit {
 
   public setDescriptionNotes(id: string) {
     // console.log('ID : ' + id);
+    this.edit_id = id;
     this.eService.getDescriptionNotes(id).subscribe(data => {
       this.deatilsDescription = data['description'];
       this.deatilsNotes = data['notes'];
@@ -229,5 +230,15 @@ export class EventManageComponent implements OnInit {
       }
     });
 
+  }
+
+  public updateDescriptionNotes() {
+    this.eService.updateDescriptionNotes(this.edit_id, this.deatilsDescription, this.deatilsNotes).subscribe(data => {
+      // console.log(data);
+      if (data[0]['status'] == 'OK') {
+        // this.refreshTable_eventSearch();
+        this.editDescriptionNotes = !this.editDescriptionNotes;
+      }
+    });
   }
 }// class
