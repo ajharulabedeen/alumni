@@ -45,7 +45,7 @@ class Events_Controller extends Controller
         $eb->id = '1';
         $eb->description = $r->description;
         $eb->notes = $r->notes;
-        return ['status' => $this->eventsRepo->update_DescriptionNotes($eb)];
+        return [$this->eventsRepo->update_DescriptionNotes($eb)];
     }
 
     public function update_basic(Request $r)
