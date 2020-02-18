@@ -219,6 +219,12 @@
                     Details
                   </button>
                 </td>
+                <td>
+                  <button class="btn btn-warning btn-sm">
+                    <a target="_blank" [routerLink]="['/event_details', event.id]">New component</a>
+                  </button>
+                </td>
+
                 <td>{{i + 1}}</td>
                 <td>{{event.title}}</td>
                 <td>{{event.start_date}}</td>

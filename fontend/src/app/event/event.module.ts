@@ -5,6 +5,7 @@ import { LayoutModule } from '../layout/layout.module';
 import { FormsModule } from '@angular/forms';
 import { CKEditorModule } from 'ckeditor4-angular';
 import { EventDetailsComponent } from './event-details/event-details.component';
+import {RouterModule} from '@angular/router';
 
 
 
@@ -14,7 +15,8 @@ import { EventDetailsComponent } from './event-details/event-details.component';
     CommonModule,
     LayoutModule,
     FormsModule,
-    CKEditorModule
+    CKEditorModule,
+    RouterModule
   ]
 })
 export class EventModule { }
