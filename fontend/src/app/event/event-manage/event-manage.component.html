@@ -216,15 +216,14 @@
                 <td>
                   <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#event_details"
                           (click)="setDescriptionNotes(event.id)">
-                    Details
+                    Description
                   </button>
                 </td>
                 <td>
-                  <button class="btn btn-warning btn-sm">
-                    <a target="_blank" [routerLink]="['/event_details', event.id]">New component</a>
+                  <button class="btn btn-primary btn-sm">
+                    <a target="_blank" [routerLink]="['/event_details', event.id]">Event Details</a>
                   </button>
                 </td>
-
                 <td>{{i + 1}}</td>
                 <td>{{event.title}}</td>
                 <td>{{event.start_date}}</td>

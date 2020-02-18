@@ -15,6 +15,7 @@ export class EventDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.activeRoute.snapshot.params['id'];
+    document.body.className = 'hold-transition skin-blue sidebar-mini';
     console.log(' ID : ' + this.id);
   }
 
