@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Basic} from '../../profile/basic/basic.model';
+import {EventDetailsService} from './event-details.service';
 
 @Component({
   selector: 'app-event-details',
@@ -23,7 +24,7 @@ export class EventDetailsComponent implements OnInit {
   baicSearch_profiles_array = new Array();
 
 
-  constructor(private activeRoute: ActivatedRoute) {
+  constructor(private activeRoute: ActivatedRoute, private searchService : EventDetailsService) {
   }
 
   ngOnInit() {
