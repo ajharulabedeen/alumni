@@ -3,6 +3,7 @@ import {BehaviorSubject} from 'rxjs';
 import {Basic} from '../../profile/basic/basic.model';
 import {HttpClient} from '@angular/common/http';
 import {AuthService} from '../../auth/auth.service';
+import {Events} from '../event-manage/events.model';
 
 @Injectable({
   providedIn: 'root'
@@ -74,4 +75,18 @@ export class EventDetailsService {
     // });
   }// getBsicSearchCount
 
+  public getEvent(id: string) {
+    return  this.http.post<Events>(
+      'http://127.0.0.1:8000/events/find_one',
+      {
+        'id': id,
+      },
+      this.authService.getHeader(),
+    );
+    //   .subscribe((e : Events) => {
+    //   // console.log("One Job : " + pt["0"]["organization_name"]);
+    //   console.log(e);
+    //   // this.basic.next(basic);
+    // });
+  }
 }// class

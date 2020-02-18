@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Basic} from '../../profile/basic/basic.model';
 import {EventDetailsService} from './event-details.service';
+import {Events} from '../event-manage/events.model';
 
 @Component({
   selector: 'app-event-details',
@@ -23,8 +24,9 @@ export class EventDetailsComponent implements OnInit {
 
   baicSearch_profiles_array = new Array();
 
+  event = new Events();
 
-  constructor(private activeRoute: ActivatedRoute, private searchService : EventDetailsService) {
+  constructor(private activeRoute: ActivatedRoute, private searchService: EventDetailsService) {
   }
 
   ngOnInit() {
@@ -38,6 +40,13 @@ export class EventDetailsComponent implements OnInit {
     this.id = this.activeRoute.snapshot.params['id'];
     document.body.className = 'hold-transition skin-blue sidebar-mini';
     console.log(' ID : ' + this.id);
+    this.searchService.getEvent(this.id).subscribe((e: Events) => {
+      // console.log("One Job : " + pt["0"]["organization_name"]);
+      console.log(e);
+      this.event = e;
+      // this.basic.next(basic);
+    });
+
   }
 
   printId() {
