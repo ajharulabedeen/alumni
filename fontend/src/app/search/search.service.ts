@@ -202,4 +202,5 @@ export class SearchService {
     //   // return res["status"];
     // });
   }// getBsicSearchCount
+
 }//
