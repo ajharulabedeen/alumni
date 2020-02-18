@@ -26,8 +26,28 @@ class F_Event_Test extends TestCase
 //        $this->search_event(10, "ASC", "id", "3", "location", "%Dhaka%");//passed
 //        $this->search_event_count("location", "%Dhaka");//passed
 //        $this->updateBasicInformation();
-        $this->updateDescriptionNotes();
+//        $this->updateDescriptionNotes();
+        $this->findOne();
 
+    }
+
+    public function findOne()
+    {
+        $response = $this->json(
+            'POST',
+            'events/find_one',
+            [
+                "id" => "1",
+            ]
+            ,
+            [
+                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u2@umail.com", "123456")
+            ]
+        );
+
+        $d = $response->baseResponse->original;
+        error_log($d['description']);
+        dd($d);
     }
 
     public function updateDescriptionNotes()
@@ -274,9 +294,7 @@ class F_Event_Test extends TestCase
     }
 
     // thses method kept to use when feature test with auth will be done.
-
-    public
-    function getToken($mail, $pass)
+    public function getToken($mail, $pass)
     {
         $response = $this->json(
             'POST',
@@ -290,8 +308,7 @@ class F_Event_Test extends TestCase
         error_log($d['access_token']);
     }
 
-    public
-    function Loggin()
+    public function Loggin()
     {
         $response = $this->json(
             'POST',

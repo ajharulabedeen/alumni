@@ -38,6 +38,11 @@ class Events_Controller extends Controller
         return $id;
     }
 
+    public function findOne(Request $r)
+    {
+        $id = $r->id;
+        return $this->eventsRepo->getOneEvent($id);
+    }
 
     public function update_description_notes(Request $r)
     {
@@ -51,7 +56,9 @@ class Events_Controller extends Controller
     public function update_basic(Request $r)
     {
         $eb = new EventBasic();
-        $eb->id = '1';
+        //refactor
+//        $eb->id = '1';
+        $eb->id = $r->id;
         $eb->start_date = $r->start_date;
         $eb->end_date = $r->end_date;
         $eb->title = $r->title;
