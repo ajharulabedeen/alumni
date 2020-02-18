@@ -43,10 +43,14 @@ export class EventDetailsComponent implements OnInit {
     this.searchService.getEvent(this.id).subscribe((e: Events) => {
       // console.log("One Job : " + pt["0"]["organization_name"]);
       console.log(e);
-      this.event = e;
-      // this.basic.next(basic);
+      this.event.$title = e['title'];
+      this.event.$start_date = e['start_date'];
+      this.event.$end_date = e['end_date'];
+      this.event.$location = e['location'];
+      this.event.$fee = e['fee'];
+      this.event.$description = e['description'];
+      this.event.$notes = e['notes'];
     });
-
   }
 
   printId() {
