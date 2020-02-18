@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-event-details',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventDetailsComponent implements OnInit {
 
-  constructor() { }
+  id: string;
 
-  ngOnInit() {
+  constructor(private activeRoute: ActivatedRoute) {
   }
 
+  ngOnInit() {
+    this.id = this.activeRoute.snapshot.params['id'];
+    console.log(' ID : ' + this.id);
+  }
+
+  printId() {
+    console.log(' ID : ' + this.id);
+  }
 }
