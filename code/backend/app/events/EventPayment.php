@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\events;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EventRegistration extends Model
+class EventPayment extends Model
 {
     //
 }
