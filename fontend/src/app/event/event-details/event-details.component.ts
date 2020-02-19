@@ -26,6 +26,8 @@ export class EventDetailsComponent implements OnInit {
 
   event = new Events();
 
+  addNote: boolean;
+
   constructor(private activeRoute: ActivatedRoute, private searchService: EventDetailsService) {
   }
 

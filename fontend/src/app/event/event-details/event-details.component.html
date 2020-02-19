@@ -224,14 +224,27 @@
             bKashbKashbKashbKashbKashbKashbKashbKashbKashbKashbKashbKashbKashbKash
           </p>
 
-          <!--   start date   -->
-          <!--      End date -->
-          <!--      Amount -->
-          <!--      vanue-->
+          <div *ngIf="!addNote">
+            <h4>Notes : </h4>
+            <p>
+              Noets Notes
+            </p>
+          </div>
+
+
+          <div *ngIf="addNote">
+            <label for="note">Note</label>
+            <br>
+            <textarea id="note" cols="75" rows="10">
+
+            </textarea>
+            <button class="btn btn-facebook">Save</button>
+          </div>
+
         </div>
         <!--  end : modal body-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-info" data-dismiss="modal">Add Note</button>
+          <button type="button" class="btn btn-info" (click)="addNote =!addNote">Add Note</button>
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal"
                   (click)="update_event_basic()">
