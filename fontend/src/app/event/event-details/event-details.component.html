@@ -16,27 +16,34 @@
 
         <div id="all_payment" class="panel-collapse collapse">
           <div class="panel-body">
-            <h4>Title : </h4>
-            <p>{{event.$title}}</p>
-
-            <h4>Start : </h4>
-            <p>{{event.$start_date}}</p>
-
-            <h4>Last : </h4>
-            <p>{{event.$end_date}}</p>
-
-            <h4>Fee : </h4>
-            <p>{{event.$fee}}</p>
-
-            <h4>Location : </h4>
-            <p>{{event.$location}}</p>
+            <table>
+              <tr>
+                <td><h4>Title : </h4></td>
+                <td align="center">{{event.$title}}</td>
+              </tr>
+              <tr>
+                <td align="center"><h4>Start : </h4></td>
+                <td>{{event.$start_date}}</td>
+              </tr>
+              <tr>
+                <td align="center"><h4>Last : </h4></td>
+                <td>{{event.$end_date}}</td>
+              </tr>
+              <tr>
+                <td align="center"><h4>Fee : </h4></td>
+                <td>{{event.$fee}}</td>
+              </tr>
+              <tr>
+                <td align="center"><h4>Location : </h4></td>
+                <td>{{event.$location}}</td>
+              </tr>
+            </table>
 
             <h4 style="background-color: pink">Description : </h4>
             <p [innerHTML]="event.$description"></p>
 
             <h4>Notes : </h4>
             <p>{{event.$notes}}</p>
-
 
           </div>
           <!-- end : panel body-->
