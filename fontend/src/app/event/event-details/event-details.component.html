@@ -4,6 +4,14 @@
   <div class="content-wrapper">
     <button class="btn btn-info" (click)="printId()">PrintID</button>
 
+
+    <!--  start : test -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#event_edit_basic">
+      Event Details
+    </button>
+    <!--  end : test -->
+
+
     <div class="panel-group">
       <!-- all Payments -->
       <div class="panel panel-default">
@@ -132,7 +140,7 @@
     </div>
     <!--            end : basic search pagination panel-->
 
-    <!-- satrt :  basic search showing all Profiles-->
+    <!-- satrt :  basic information who regiestered -->
     <!-- start : table -->
     <div class="col-xs-12">
       <div class="box">
@@ -179,9 +187,97 @@
     </div>
     <!-- end : table -->
     <!-- End : showing all profiles after basic search -->
-    <!--    end : event registered-->
-
+    <!--    end : basic information who regiestered-->
 
   </div>
+  <!--  content warper-->
+
+
+  <!--  start : test -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#event_edit_basic">
+    Event Details
+  </button>
+  <!--  end : test -->
+
+  <!-- start-Modal :  Event Edit Basic -->
+  <div class="modal fade" id="event_edit_basic" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Event Basic Information</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!--  start : modal body-->
+        <div class="modal-body">
+          <!--      Name-->
+          <div class="col-md-12 offset-md-12">
+            <div class="form-group">
+              <label>Name : </label>
+              <input [(ngModel)]="edit_name" type="text" class="form-control" placeholder="512 Character Max..">
+            </div>
+          </div>
+          <!--   start date   -->
+          <div class="col-md-3  offset-md-3">
+            <div class="form-group">
+              <label>Start Date</label>
+              <input [(ngModel)]="edit_start_date" type="text" class="form-control" placeholder="{{start_date}}">
+            </div>
+          </div>
+          <div class="col-md-3  offset-md-3">
+            <div class="form-group">
+              <label>Select Date</label>
+              <input [(ngModel)]="edit_start_date" type="date" class="form-control" value="{{start_date}}">
+            </div>
+          </div>
+          <!--      End date -->
+          <div class="col-md-3  offset-md-3">
+            <div class="form-group">
+              <label>End Date</label>
+              <input [(ngModel)]="edit_last_date" type="text" class="form-control" placeholder="{{last_date}}">
+            </div>
+          </div>
+          <div class="col-md-3  offset-md-3">
+            <div class="form-group">
+              <label>Select Date</label>
+              <input [(ngModel)]="edit_last_date" type="date" class="form-control" value="{{edit_last_date}}">
+            </div>
+          </div>
+          <!--      Amount -->
+          <div class="col-md-12 ">
+            <div class="form-group">
+              <label>Amount</label>
+              <input [(ngModel)]="edit_cost" type="text" class="form-control">
+            </div>
+          </div>
+          <!--      vanue-->
+          <div class="col-md-12 ">
+            <div class="form-group">
+              <label>Vanue</label>
+              <input [(ngModel)]="edit_vanue" type="text" class="form-control">
+            </div>
+          </div>
+        </div>
+        <!--  end : modal body-->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal"
+                  (click)="update_event_basic()">
+            Update
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- end :  Modal -->
+
+
+    <!-- <app-footernavbar></app-footernavbar> -->
+    <!-- <app-settingsnavbar></app-settingsnavbar> -->
+  </div>
+  <!-- end-Modal :  Event Edit Basic -->
+
+
 </div>
 <!--Warpper Class-->
