@@ -3,6 +3,119 @@
   <app-asidenavbar></app-asidenavbar>
   <div class="content-wrapper">
 
+    <button class="btn btn-info">Register</button>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#do_payment">Pay</button>
+    <div class="panel-group">
+      <!-- all Payments -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" href="#all_payment">Event Details</a>
+          </h4>
+        </div>
+
+        <div id="all_payment" class="panel-collapse collapse">
+          <div class="panel-body">
+            <table>
+              <tr>
+                <td><h4>Title : </h4></td>
+                <td align="center">{{event.$title}}</td>
+              </tr>
+              <tr>
+                <td align="center"><h4>Start : </h4></td>
+                <td>{{event.$start_date}}</td>
+              </tr>
+              <tr>
+                <td align="center"><h4>Last : </h4></td>
+                <td>{{event.$end_date}}</td>
+              </tr>
+              <tr>
+                <td align="center"><h4>Fee : </h4></td>
+                <td>{{event.$fee}}</td>
+              </tr>
+              <tr>
+                <td align="center"><h4>Location : </h4></td>
+                <td>{{event.$location}}</td>
+              </tr>
+            </table>
+
+            <h4 style="background-color: pink">Description : </h4>
+            <p [innerHTML]="event.$description"></p>
+
+            <h4>Notes : </h4>
+            <p>{{event.$notes}}</p>
+
+          </div>
+          <!-- end : panel body-->
+        </div>
+
+        <div class="panel-footer">Event Details</div>
+      </div>
+      <!-- panel-group -->
+      <!--End :  My Payments -->
+    </div>
+
+
+    <!-- modal-start : do payment-->
+    <div class="modal fade" id="do_payment" tabindex="-1" role="dialog" aria-labelledby="modal_educationLabel"
+         aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal_educationLabel">Pay IT</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <div class="col-md-6 offset-md-6">
+              <div class="form-group">
+                <label>Date</label>
+                <input type="text" class="form-control" placeholder="{{date}}">
+              </div>
+            </div>
+            <div class="col-md-6 offset-md-6">
+              <div class="form-group">
+                <label>Select Date</label>
+                <input [(ngModel)]="date" type="date" class="form-control">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Amount</label>
+              <input [(ngModel)]="amount" type="number" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Mobile Number</label>
+              <input [(ngModel)]="mobile_number" type="text" class="form-control"
+                     placeholder="Mobile Number from Which payment has done ...... (Max : 512 Character)">
+            </div>
+            <div class="form-group">
+              <label>Medium</label>
+              <input [(ngModel)]="payment_method" type="text" class="form-control"
+                     placeholder="bKash, Rocket...... (Max : 512 Character)">
+            </div>
+            <div class="form-group">
+              <label>TrX ID</label>
+              <input [(ngModel)]="trx_id" type="text" class="form-control"
+                     placeholder="Transection id...... (Max : 512 Character)">
+            </div>
+
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="savePayment()">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <app-footernavbar></app-footernavbar> -->
+      <!-- <app-settingsnavbar></app-settingsnavbar> -->
+    </div>
+    <!-- modal-end : do payment-->
+
 
   </div>
 </div>
