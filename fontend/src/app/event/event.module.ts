@@ -6,11 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { CKEditorModule } from 'ckeditor4-angular';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import {RouterModule} from '@angular/router';
+import { EventDetailsUserComponent } from './event-details-user/event-details-user.component';
 
 
 
 @NgModule({
-  declarations: [EventManageComponent, EventDetailsComponent],
+  declarations: [EventManageComponent, EventDetailsComponent, EventDetailsUserComponent],
   imports: [
     CommonModule,
     LayoutModule,

@@ -1,46 +1,49 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './public/about/about.component';
-import { NewsComponent } from './public/news/news.component';
-import { EventsComponent } from './public/events/events.component';
-import { RegisterComponent } from './public/register/register.component';
-import { LoginComponent } from './login/login/login.component';
-import { AuthComponent } from './auth/auth.component';
-import { ProfileComponent } from './profile/profile/profile.component';
-import { TimelineComponent } from './profile/timeline/timeline.component';
-import { FileUploaderTestComponent } from './file-uploader-test/file-uploader-test.component';
-import { PaymentTypeComponent } from './payment/payment-type/payment-type.component';
-import { EventManageComponent } from './event/event-manage/event-manage.component';
-import { PaymentMobileComponent } from './payment/payment-mobile/payment-mobile.component';
-import { SearchComponent} from './search/search.component';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {HomeComponent} from './home/home.component';
+import {AboutComponent} from './public/about/about.component';
+import {NewsComponent} from './public/news/news.component';
+import {EventsComponent} from './public/events/events.component';
+import {RegisterComponent} from './public/register/register.component';
+import {LoginComponent} from './login/login/login.component';
+import {AuthComponent} from './auth/auth.component';
+import {ProfileComponent} from './profile/profile/profile.component';
+import {TimelineComponent} from './profile/timeline/timeline.component';
+import {FileUploaderTestComponent} from './file-uploader-test/file-uploader-test.component';
+import {PaymentTypeComponent} from './payment/payment-type/payment-type.component';
+import {EventManageComponent} from './event/event-manage/event-manage.component';
+import {PaymentMobileComponent} from './payment/payment-mobile/payment-mobile.component';
+import {SearchComponent} from './search/search.component';
 import {EventDetailsComponent} from './event/event-details/event-details.component';
+import {EventDetailsUserComponent} from './event/event-details-user/event-details-user.component';
 
 
 const routes: Routes = [
   // {path: '', redirectTo: 'login', pathMatch: 'full'}
   // {path: '', redirectTo: 'dashboard', pathMatch: 'full'}//working
   // {path: 'about', redirectTo: 'about', pathMatch: 'full'},//not working
-  { path: 'about', component: AboutComponent },
-  { path: 'news', component: NewsComponent },
-  { path: 'events', component: EventsComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'admin_login', component: LoginComponent },
-  { path: 'admin', component: AuthComponent },
+  {path: 'about', component: AboutComponent},
+  {path: 'news', component: NewsComponent},
+  {path: 'events', component: EventsComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'admin_login', component: LoginComponent},
+  {path: 'admin', component: AuthComponent},
   // { path: '', component: HomeComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'timeline', component: TimelineComponent },
-  { path: 'file', component: FileUploaderTestComponent },
-  { path: 'admin/payment', component: PaymentTypeComponent },
-  { path: 'paymentmobile', component: PaymentMobileComponent },
-  { path: 'event', component: EventManageComponent },
-  { path: 'event_details/:id', component: EventDetailsComponent },
-  { path: 'search', component: SearchComponent },
+  {path: 'home', component: HomeComponent},
+  {path: 'profile', component: ProfileComponent},
+  {path: 'timeline', component: TimelineComponent},
+  {path: 'file', component: FileUploaderTestComponent},
+  {path: 'admin/payment', component: PaymentTypeComponent},
+  {path: 'paymentmobile', component: PaymentMobileComponent},
+  {path: 'event', component: EventManageComponent},
+  {path: 'event_details/:id', component: EventDetailsComponent},
+  {path: 'event_details_user/:id', component: EventDetailsUserComponent},
+  {path: 'search', component: SearchComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
