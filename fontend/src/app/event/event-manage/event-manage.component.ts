@@ -261,7 +261,7 @@ export class EventManageComponent implements OnInit {
           this.payment.$last_date = p[key1]['last_date'];
           this.payment.$amount = p[key1]['amount'];
           this.payment.$description = p[key1]['description'];
-          this.paymentFound = !this.paymentFound;
+          this.paymentFound = true;
         }
       } catch (e) {
         this.paymentFound = false;
