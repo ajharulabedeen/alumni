@@ -12,61 +12,6 @@
     <!--    start : Add new event -->
     <div id="new" class="tabcontent">
 
-
-      <!--      start : payments; for assinging -->
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" href="#all_payment">Payment Type</a>
-          </h4>
-        </div>
-        <div id="all_payment" class="panel-collapse collapse">
-          <div class="panel-body">
-
-            <div class="col-md-12">
-              <div class="form-group">
-                <button class="btn btn-primary" (click)="searchPaymentType()">Search</button>
-                <label>Payment Type ID</label>
-                <input [(ngModel)]="paymentID" type="text" class="form-control">
-              </div>
-            </div>
-            <!-- start : payment found-->
-            <div *ngIf="paymentFound">
-              <button class="btn btn-primary">Assign</button>
-              <h3>
-                Payment!
-              </h3>
-
-              <label for="name"><b>Name:</b></label>
-              <p id="name">{{payment.$name}}</p>
-              <label for="s_date"><b>Start Date:</b></label>
-              <p id="s_date">{{payment.$start_date}}</p>
-              <label for="e_date"><b>End Date:</b></label>
-              <p id="e_date">{{payment.$last_date}}</p>
-              <label for="amount"><b>Amount:</b></label>
-              <p id="amount">{{payment.$amount}}</p>
-              <label><b>Description:</b></label>
-              <p id="descripti">{{payment.$description}}</p>
-
-            </div>
-
-            <div *ngIf="!paymentFound">
-              Sorry No Payment not Found!
-              <br>
-              Please search by right ID or Add new from Payment Section!
-            </div>
-
-            <!-- end : payment found-->
-
-
-          </div>
-          <!-- panel body-->
-        </div>
-        <div class="panel-footer">All Payment</div>
-      </div>
-      <!--      end : payments; for assinging -->
-
-
       <!--      Name-->
       <div class="col-md-12 offset-md-12">
         <div class="form-group">
@@ -283,7 +228,7 @@
                 </td>
                 <!-- payment -->
                 <td>
-                  <button class="btn btn-primary btn-sm">
+                  <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#payment">
                     Payment
                   </button>
                 </td>
@@ -469,6 +414,88 @@
     <!-- <app-settingsnavbar></app-settingsnavbar> -->
   </div>
   <!-- end-Modal :  Event Edit Basic -->
+
+  <!-- start-Modal :  payment -->
+  <div class="modal fade" id="payment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+       aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Event Basic Information</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <!--  start : modal body-->
+        <div class="modal-body">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4 class="panel-title">
+                <a data-toggle="collapse" href="#all_payment">Payment Type</a>
+              </h4>
+            </div>
+            <div id="all_payment" class="panel-collapse collapse">
+              <div class="panel-body">
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <button class="btn btn-primary" (click)="searchPaymentType()">Search</button>
+                    <label>Payment Type ID</label>
+                    <input [(ngModel)]="paymentID" type="text" class="form-control">
+                  </div>
+                </div>
+                <!-- start : payment found-->
+                <div *ngIf="paymentFound">
+                  <button class="btn btn-primary">Assign</button>
+                  <h3>
+                    Payment!
+                  </h3>
+
+                  <label for="name"><b>Name:</b></label>
+                  <p id="name">{{payment.$name}}</p>
+                  <label for="s_date"><b>Start Date:</b></label>
+                  <p id="s_date">{{payment.$start_date}}</p>
+                  <label for="e_date"><b>End Date:</b></label>
+                  <p id="e_date">{{payment.$last_date}}</p>
+                  <label for="amount"><b>Amount:</b></label>
+                  <p id="amount">{{payment.$amount}}</p>
+                  <label><b>Description:</b></label>
+                  <p id="descripti">{{payment.$description}}</p>
+
+                </div>
+
+                <div *ngIf="!paymentFound">
+                  Sorry No Payment not Found!
+                  <br>
+                  Please search by right ID or Add new from Payment Section!
+                </div>
+
+                <!-- end : payment found-->
+
+
+              </div>
+              <!-- panel body-->
+            </div>
+            <div class="panel-footer">All Payment</div>
+          </div>
+        </div>
+        <!--  end : modal body-->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal"
+                  (click)="update_event_basic()">
+            Update
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- end :  Modal -->
+
+
+    <!-- <app-footernavbar></app-footernavbar> -->
+    <!-- <app-settingsnavbar></app-settingsnavbar> -->
+  </div>
+  <!-- end-Modal :  payment -->
 
 
   <!--  <app-footernavbar></app-footernavbar>-->
