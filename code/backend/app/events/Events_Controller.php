@@ -21,6 +21,18 @@ class Events_Controller extends Controller
         $this->eventsRepo = $eventsRepo;
     }
 
+//    start : EventPayment Assingment
+    public function assingment_payment_event(Request $r)
+    {
+        $ep = new EventPayment();
+        $ep->event_id = "1";
+        $ep->payment_type_id = "9";
+        $data = $this->eventsRepo->assing_payment_to_event($ep);
+        return $data;
+    }
+
+//    end : EventPayment Assingment
+
     public function create(Request $r)
     {
         $events = new events();

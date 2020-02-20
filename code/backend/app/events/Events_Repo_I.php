@@ -57,6 +57,6 @@ interface Events_Repo_I
     public function update_DescriptionNotes(EventDescriptionNotes $eDescriptionNotes);
 
 //    start : EventPaymentAssingment
-    public function assing_payment_to_event(EventPayment $eventPayment);
+    public function assingment_payment_event(EventPayment $eventPayment);
 //    end : EventPaymentAssingment
 }// class

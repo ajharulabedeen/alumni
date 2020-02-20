@@ -177,7 +177,7 @@ class Events_Repo_Impl implements Events_Repo_I
     }
 
 //    start : EventPaymentAssingment
-    public function assing_payment_to_event(EventPayment $eventPayment)
+    public function assingment_payment_event(EventPayment $eventPayment)
     {
         // TODO: Implement assing_payment_to_event() method.
         error_log("event create : ");

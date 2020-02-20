@@ -29,7 +29,7 @@ class U_Test_Event extends TestCase
 //        $this->eventUpdateNotesDescription();//passed
 //        $this->eventbasicUpdate();//passed
 
-        $this->assing_payment_to_event();
+        $this->assingment_payment_event();
     }
 
 
@@ -40,13 +40,13 @@ class U_Test_Event extends TestCase
     }
 
 // start : eventPayment
-    public function assing_payment_to_event()
+    public function assingment_payment_event()
     {
         $repo = new Events_Repo_Impl();
         $ep = new EventPayment();
         $ep->event_id = "1";
-        $ep->payment_type_id = "9";
-        $d = $repo->assing_payment_to_event($ep);
+        $ep->payment_type_id = "15";
+        $d = $repo->assingment_payment_event($ep);
         dd($d);
     }
 
