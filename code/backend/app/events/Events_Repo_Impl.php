@@ -198,6 +198,16 @@ class Events_Repo_Impl implements Events_Repo_I
         }
         return $id;
     }
+
+    public function checkPaymentAssingment(string $eventID)
+    {
+        // TODO: Implement getPaymentConfirmation() method.
+        $data = EventPayment::where("event_id", $eventID)->first();
+        if ($data == null) {
+            $data = -1;
+        }
+        return $data;
+    }
 //    end : EventPaymentAssingment
 
 

@@ -52,7 +52,7 @@ interface Events_Repo_I
 
     public function search_event_count(string $column_name, string $key);
 
-    public function update_event_basic( EventBasic $eBasic );
+    public function update_event_basic(EventBasic $eBasic);
 
     public function update_DescriptionNotes(EventDescriptionNotes $eDescriptionNotes);
 
@@ -60,6 +60,13 @@ interface Events_Repo_I
 
 //    start : EventPaymentAssingment
     public function assingment_payment_event(EventPayment $eventPayment);
+
+    /**
+     * @description does a event has an assigned payment or not.
+     * @return string payment id if assigned or a negetive value(-1).
+     */
+    public function checkPaymentAssingment(string $eventID);
+
 //    end : EventPaymentAssingment
 
 }// class

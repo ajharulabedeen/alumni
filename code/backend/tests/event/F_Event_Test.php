@@ -19,16 +19,16 @@ class F_Event_Test extends TestCase
 
 //        $this->getAllEvents(10, "ASC", "end_date", "1");//passed
 //        $this->create();//passed
-//        $this->getDescriptionNotes(4);//passed
-////        $this->delete(5);//passed
+//        $this->getDescriptionNotes(1);//passed
+//        $this->delete(5);//passed
 //        $this->update(8);//passed
 //        $this->count_all();//passed
 //        $this->search_event(10, "ASC", "id", "3", "location", "%Dhaka%");//passed
 //        $this->search_event_count("location", "%Dhaka");//passed
 //        $this->updateBasicInformation();
 //        $this->updateDescriptionNotes();
-        $this->findOne();
-//        $this->assingment_payment_event();
+//        $this->findOne();
+        $this->assingment_payment_event();
 
     }
 
@@ -46,6 +46,7 @@ class F_Event_Test extends TestCase
                 "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u2@umail.com", "123456")
             ]
         );
+
 
         $d = $response->baseResponse->original;
 //        error_log($d['description']);

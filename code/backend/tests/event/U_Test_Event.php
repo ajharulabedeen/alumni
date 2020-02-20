@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\events\EventBasic;
 use App\events\EventDescriptionNotes;
+use App\events\EventPayment;
 use App\events\Events_Repo_Impl;
 use App\events\Events;
 use App\profile\ProfileBasic;
@@ -29,11 +30,11 @@ class U_Test_Event extends TestCase
 //        $this->eventUpdateNotesDescription();//passed
 
 
-//        error_log($this->findOneEvent(1)->description);//passed.
+//        error_log($this->fiendOneEvent(1)->description);//passed.
 
-//        error_log($this->assignemnt_event_payment());
+//        error_log($this->assingment_payment_event());//passed
+        error_log($this->checkPaymentAssingment());//passed
 
-//        $this->assingment_payment_event();
     }
 
 
@@ -52,6 +53,13 @@ class U_Test_Event extends TestCase
         $ep->payment_type_id = "15";
         $d = $repo->assingment_payment_event($ep);
         dd($d);
+    }
+
+    public function checkPaymentAssingment()
+    {
+        $repo = new Events_Repo_Impl();
+        $d = $repo->checkPaymentAssingment(10);
+        error_log($d);
     }
 
 // end  : eventPayment
