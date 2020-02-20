@@ -152,7 +152,7 @@ export class EventManageComponent implements OnInit {
         //     // console.log(key1);
         //     // console.log(pt[key1]['id']);
         var event = new Events();
-        event.$id = e[key1]['event_id'];
+        event.$id = e[key1]['id'];
         event.$user_id = e[key1]['user_id'];
         event.$title = e[key1]['title'];
         event.$start_date = e[key1]['start_date'];
@@ -188,6 +188,7 @@ export class EventManageComponent implements OnInit {
     this.edit_id = id;
     this.editDescriptionNotes = false;
     this.eService.getDescriptionNotes(id).subscribe(data => {
+      console.log("Data : " + data);
       this.deatilsDescription = data['description'];
       this.deatilsNotes = data['notes'];
     });
