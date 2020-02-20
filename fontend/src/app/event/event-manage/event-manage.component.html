@@ -36,6 +36,18 @@
               <h3>
                 Payment!
               </h3>
+
+              <label for="name"><b>Name:</b></label>
+              <p id="name">{{payment.$name}}</p>
+              <label for="s_date"><b>Start Date:</b></label>
+              <p id="s_date">{{payment.$start_date}}</p>
+              <label for="e_date"><b>End Date:</b></label>
+              <p id="e_date">{{payment.$last_date}}</p>
+              <label for="amount"><b>Amount:</b></label>
+              <p id="amount">{{payment.$amount}}</p>
+              <label><b>Description:</b></label>
+              <p id="descripti>{{payment.$description}}</p>
+
             </div>
 
             <div *ngIf="!paymentFound">
