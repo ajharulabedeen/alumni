@@ -19,7 +19,7 @@ class Events_Repo_Impl implements Events_Repo_I
         $id = -1;
         try {
             $events->save();
-            $id = $events->id;
+            $id = $events->event_id;
         } catch (Exception $e) {
             $saveStatus = false;
             error_log("Saveing Events About Failed.");
@@ -36,7 +36,7 @@ class Events_Repo_Impl implements Events_Repo_I
         error_log("event update : ");
         $updateStatus = false;
         try {
-            $events_id = $eventsUpdate->id;
+            $events_id = $eventsUpdate->event_id;
             $eventsOrgin = Events::find($events_id);
             $eventsOrgin = $eventsUpdate;
             $eventsOrgin->update();
@@ -54,7 +54,7 @@ class Events_Repo_Impl implements Events_Repo_I
     public function delete($event_id)
     {
         error_log("Event Delete : ");
-        $status = Events::where('id', $event_id)->delete();
+        $status = Events::where('event_id', $event_id)->delete();
         return $status;
     }
     /**
@@ -73,7 +73,7 @@ class Events_Repo_Impl implements Events_Repo_I
             $order = "DESC";
         }
         return Events::select(
-            'id',
+            'event_id',
             'user_id',
             'title',
             'start_date',
@@ -90,7 +90,7 @@ class Events_Repo_Impl implements Events_Repo_I
      */
     public function getDescriptionNotes($event_id)
     {
-        $details = Events::select('description', 'notes')->where('id', $event_id)->get();
+        $details = Events::select('description', 'notes')->where('event_id', $event_id)->get();
         if ($details != null) {
             $data = ['description' => $details[0]['description'], 'notes' => $details[0]['notes']];;
         } else {
@@ -101,8 +101,8 @@ class Events_Repo_Impl implements Events_Repo_I
 
     public function getOneEvent($event_id)
     {
-        error_log("Find One Event : ");
-        return Events::find($event_id);
+        error_log("Find One Event : " . $event_id);
+        return Events::where('event_id',$event_id)->get();
     }
 
     public function count_all()
@@ -118,7 +118,7 @@ class Events_Repo_Impl implements Events_Repo_I
             $order = "DESC";
         }
         return Events::select(
-            'id',
+            'event_id',
             'user_id',
             'title',
             'start_date',
@@ -141,7 +141,7 @@ class Events_Repo_Impl implements Events_Repo_I
         $status = "OK";
         try {
             DB::table('events')
-                ->where('id', $eventBasic->id)
+                ->where('event_id', $eventBasic->id)
                 ->update(
                     [
                         'title' => $eventBasic->title,
@@ -163,7 +163,7 @@ class Events_Repo_Impl implements Events_Repo_I
         $status = "OK";
         try {
             DB::table('events')
-                ->where('id', $eDescriptionNotes->id)
+                ->where('event_id', $eDescriptionNotes->id)
                 ->update(
                     [
                         'description' => $eDescriptionNotes->description,
@@ -176,18 +176,34 @@ class Events_Repo_Impl implements Events_Repo_I
         return ["status" => $status];
     }
 
+<<<<<<< HEAD
     public function assignemnt_event_payment(EventPayment $eventPayment)
     {
+=======
+//    start : EventPaymentAssingment
+    public function assingment_payment_event(EventPayment $eventPayment)
+    {
+        // TODO: Implement assing_payment_to_event() method.
+        error_log("event create : ");
+>>>>>>> 48a83e90bccadea8e767d7125d31e66ca07cd489
         $id = -1;
         try {
             $eventPayment->save();
             $id = $eventPayment->id;
         } catch (Exception $e) {
             $saveStatus = false;
+<<<<<<< HEAD
             error_log("Saveing Event Payment About Failed.");
+=======
+            error_log("Saveing Events About Failed.");
+>>>>>>> 48a83e90bccadea8e767d7125d31e66ca07cd489
             // error_log("Saveing Post Failed. : " . $e);
         }
         return $id;
     }
+<<<<<<< HEAD
+=======
+//    end : EventPaymentAssingment
+>>>>>>> 48a83e90bccadea8e767d7125d31e66ca07cd489
 
 }//class

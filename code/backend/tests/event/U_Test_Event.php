@@ -17,7 +17,7 @@ class U_Test_Event extends TestCase
     {
 //        $this->dummyDataInsert();//passed
 //        error_log($this->create());//passed
-//        error_log($this->findOneEvent(3));//passed
+        error_log($this->findOneEvent(1));//passed
 //        error_log($this->delete(3));//passed
 //        error_log($this->update(4, "fee", "560.00"));//passed.
 //        error_log($this->findOneEvent(4)->fee);//passed.
@@ -26,11 +26,19 @@ class U_Test_Event extends TestCase
 //        error_log($this->countEvents());//passed.
 //        $this->search_event(6, "DESC", "id", "location", "%Dhaka%");//passed.
 //        error_log($this->search_event_count("location", "%GUB%"));//passed.
+<<<<<<< HEAD
 //        $this->eventbasicUpdate();//passed
+=======
+>>>>>>> 48a83e90bccadea8e767d7125d31e66ca07cd489
 //        $this->eventUpdateNotesDescription();//passed
+//        $this->eventbasicUpdate();//passed
 
+<<<<<<< HEAD
         error_log($this->assignemnt_event_payment());
 
+=======
+//        $this->assingment_payment_event();
+>>>>>>> 48a83e90bccadea8e767d7125d31e66ca07cd489
     }
 
 
@@ -39,6 +47,20 @@ class U_Test_Event extends TestCase
         error_log("\n Event: CRUD Test Done!\n");
 
     }
+
+// start : eventPayment
+    public function assingment_payment_event()
+    {
+        $repo = new Events_Repo_Impl();
+        $ep = new EventPayment();
+        $ep->event_id = "1";
+        $ep->payment_type_id = "15";
+        $d = $repo->assingment_payment_event($ep);
+        dd($d);
+    }
+
+// end  : eventPayment
+
 
     public function eventUpdateNotesDescription()
     {
@@ -141,6 +163,7 @@ class U_Test_Event extends TestCase
     public function findOneEvent($id)
     {
         $repo = new Events_Repo_Impl();
+        dd($repo->getOneEvent($id));
         return $repo->getOneEvent($id);
     }
 
@@ -165,6 +188,7 @@ class U_Test_Event extends TestCase
         return $id;
     }
 
+<<<<<<< HEAD
     /**
      * A basic test example.
      * @return void
@@ -180,6 +204,8 @@ class U_Test_Event extends TestCase
     }
 
 
+=======
+>>>>>>> 48a83e90bccadea8e767d7125d31e66ca07cd489
 //    start : dummy event creation
     public function dummyDataInsert()
     {

@@ -28,7 +28,7 @@ export class EventDetailsComponent implements OnInit {
 
   addNote: boolean;
 
-  constructor(private activeRoute: ActivatedRoute, private searchService: EventDetailsService) {
+  constructor(private activeRoute: ActivatedRoute, private eventDeatailsService: EventDetailsService) {
   }
 
   ngOnInit() {
@@ -42,9 +42,12 @@ export class EventDetailsComponent implements OnInit {
     this.id = this.activeRoute.snapshot.params['id'];
     document.body.className = 'hold-transition skin-blue sidebar-mini';
     console.log(' ID : ' + this.id);
-    this.searchService.getEvent(this.id).subscribe((e: Events) => {
+    this.eventDeatailsService.getEvent(this.id).subscribe((e: Events) => {
       // console.log("One Job : " + pt["0"]["organization_name"]);
-      console.log(e);
+      // console.log(e);
+      // console.log(e[0]);
+      // refactor : have to fix the back end Code.
+      e = e[0];
       this.event.$title = e['title'];
       this.event.$start_date = e['start_date'];
       this.event.$end_date = e['end_date'];
@@ -64,8 +67,8 @@ export class EventDetailsComponent implements OnInit {
     console.log('refreshTable_basicSearch :');
     // tslint:disable-next-line:max-line-length
     // this.setBasicSearchCount();
-    this.searchService.basicSearch(this.basicSearch_perPage, this.basicSearch_pageNumber, this.basicSearch_sort_on, this.basicSearch_sort_by, this.basic_search_by, this.basic_value_search);
-    this.searchService.basic.subscribe(b => {
+    this.eventDeatailsService.basicSearch(this.basicSearch_perPage, this.basicSearch_pageNumber, this.basicSearch_sort_on, this.basicSearch_sort_by, this.basic_search_by, this.basic_value_search);
+    this.eventDeatailsService.basic.subscribe(b => {
       this.baicSearch_profiles_array = [];
       for (const key in b) {
         // console.log(b);
@@ -112,7 +115,7 @@ export class EventDetailsComponent implements OnInit {
 
   public setBasicSearchCount() {
     this.basicSearch_pageNumber = 1;
-    this.searchService.getBsicSearchCount(this.basicSearch_perPage, this.basicSearch_pageNumber, this.basicSearch_sort_on, this.basicSearch_sort_by, this.basic_search_by, this.basic_value_search)
+    this.eventDeatailsService.getBsicSearchCount(this.basicSearch_perPage, this.basicSearch_pageNumber, this.basicSearch_sort_on, this.basicSearch_sort_by, this.basic_search_by, this.basic_value_search)
       .subscribe(res => {
         this.basicSearch_total = res['status'];
       });

@@ -12,7 +12,7 @@ class Payment_Type_Repo_Impl implements Payment_Type_Repo_I
     public function create(PaymentType $paymentType)
     {
         $paymentType->save();
-        $id = $paymentType->id;
+        $id = $paymentType->payment_type_id;
         return $id;
     }
 
@@ -38,7 +38,7 @@ class Payment_Type_Repo_Impl implements Payment_Type_Repo_I
     public function findOnePaymentType($id)
     {
         error_log(" findOnePaymentType : ");
-        $data = PaymentType::where('id', $id)->first();
+        $data = PaymentType::where('payment_type_id', $id)->first();
         return $data;
     }
 
@@ -60,7 +60,7 @@ class Payment_Type_Repo_Impl implements Payment_Type_Repo_I
     public function delete($id)
     {
         error_log("paymentType :  Delete");
-        $status = PaymentType::where('id', $id)->delete();
+        $status = PaymentType::where('payment_type_id', $id)->delete();
         return $status;
     }
 }
