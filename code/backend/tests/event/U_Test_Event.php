@@ -33,7 +33,8 @@ class U_Test_Event extends TestCase
 //        error_log($this->fiendOneEvent(1)->description);//passed.
 
 //        error_log($this->assingment_payment_event());//passed
-        error_log($this->checkPaymentAssingment());//passed
+//        error_log($this->checkPaymentAssingment());//passed
+        error_log($this->removePaymentAssingment());//passed
 
     }
 
@@ -61,6 +62,13 @@ class U_Test_Event extends TestCase
         $d = $repo->checkPaymentAssingment(10);
 //        error_log($d["payment_type_id"]);
         error_log($d);
+    }
+
+    public function removePaymentAssingment()
+    {
+        $repo = new Events_Repo_Impl();
+        $status = $repo->removePaymentAssingment("241", "11");
+        return $status;
     }
 
 // end  : eventPayment
@@ -193,21 +201,6 @@ class U_Test_Event extends TestCase
         return $id;
     }
 
-    /**
-     * A basic test example.
-     * @return void
-     */
-    public function assignemnt_event_payment()
-    {
-        $repoEvent = new Events_Repo_Impl();
-        $e = new EventPayment();
-        $e->payment_type_id = "1";
-        $e->event_id = "9";
-        $id = $repoEvent->assignemnt_event_payment($e);
-        return $id;
-    }
-
-
 //    start : dummy event creation
     public function dummyDataInsert()
     {
@@ -312,6 +305,7 @@ class U_Test_Event extends TestCase
         $index = rand(0, count($location) - 1);
         return $location[$index];
     }
+
 //    end : dummy event creation
 
 

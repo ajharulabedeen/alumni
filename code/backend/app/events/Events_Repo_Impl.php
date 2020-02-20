@@ -211,6 +211,15 @@ class Events_Repo_Impl implements Events_Repo_I
         }
         return $payment_type_id;
     }
+
+    public function removePaymentAssingment(string $event_id, string $payment_type_id)
+    {
+        // TODO: Implement removePaymentAssingment() method.
+        $status = EventPayment::where('event_id', $event_id)
+            ->where('payment_type_id', $payment_type_id)
+            ->delete();
+        return $status;
+    }
 //    end : EventPaymentAssingment
 
 

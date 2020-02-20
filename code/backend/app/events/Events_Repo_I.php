@@ -67,6 +67,9 @@ interface Events_Repo_I
      */
     public function checkPaymentAssingment(string $eventID);
 
+    public function removePaymentAssingment(string $event_id, string $payment_type_id);
+
+
 //    end : EventPaymentAssingment
 
 }// class
