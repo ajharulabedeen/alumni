@@ -45,7 +45,7 @@ class U_Test_Event extends TestCase
         $repo = new Events_Repo_Impl();
         $ep = new EventPayment();
         $ep->event_id = "1";
-        $ep->payment_id = "9";
+        $ep->payment_type_id = "9";
         $d = $repo->assing_payment_to_event($ep);
         dd($d);
     }
