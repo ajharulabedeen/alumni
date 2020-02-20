@@ -186,6 +186,7 @@ export class EventManageComponent implements OnInit {
   public setDescriptionNotes(id: string) {
     // console.log('ID : ' + id);
     this.edit_id = id;
+    this.editDescriptionNotes = false;
     this.eService.getDescriptionNotes(id).subscribe(data => {
       this.deatilsDescription = data['description'];
       this.deatilsNotes = data['notes'];

@@ -268,16 +268,23 @@
                     Delete
                   </button>
                 </td>
-                <!-- Details -->
+                <!-- Description -->
                 <td>
                   <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#event_details"
                           (click)="setDescriptionNotes(event.id)">
                     Description
                   </button>
                 </td>
+                <!-- Details -->
                 <td>
                   <button class="btn btn-primary btn-sm">
                     <a target="_blank" [routerLink]="['/event_details', event.id]">Event Details</a>
+                  </button>
+                </td>
+                <!-- payment -->
+                <td>
+                  <button class="btn btn-primary btn-sm">
+                    Payment
                   </button>
                 </td>
                 <td>{{i + 1}}</td>
@@ -316,16 +323,16 @@
         </div>
         <div class="modal-body">
           <h4>Details</h4>
-          <p *ngIf="editDescriptionNotes" innerHtml="{{deatilsDescription}}"></p>
+          <p *ngIf="!editDescriptionNotes" innerHtml="{{deatilsDescription}}"></p>
 
-          <ckeditor [(ngModel)]="deatilsDescription" *ngIf="!editDescriptionNotes"
+          <ckeditor [(ngModel)]="deatilsDescription" *ngIf="editDescriptionNotes"
                     data="<p>Hello, world!</p>"></ckeditor>
 
           <br>
           <br>
           <h4>Notes</h4>
-          <P *ngIf="editDescriptionNotes">{{deatilsNotes}}</P>
-          <textarea *ngIf="!editDescriptionNotes">{{deatilsNotes}}</textarea>
+          <P *ngIf="!editDescriptionNotes">{{deatilsNotes}}</P>
+          <textarea *ngIf="editDescriptionNotes">{{deatilsNotes}}</textarea>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal">Close</button>
@@ -333,7 +340,7 @@
                   (click)=" editDescriptionNotes = !editDescriptionNotes"
                   *ngIf="editDescriptionNotes"
           >
-            Edit
+            Save Update
           </button>
           <button type="button" class="btn btn-primary" *ngIf="!editDescriptionNotes"
                   (click)="updateDescriptionNotes()">Update
