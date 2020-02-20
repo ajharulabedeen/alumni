@@ -17,18 +17,19 @@ class Payment_Type_Controller extends Controller
         // $this->middleware('auth:api');
         $this->paymentTypeRepo = $paymentTypeRepo;
     }
+
     /**
      * conpleted. afterinsertion id will be backed.
      */
 
-     public function create(Request $r)
+    public function create(Request $r)
     {
         $paymentType = new PaymentType();
-        $paymentType->name     = $r->name;
-        $paymentType->start_date     = $r->start_date;
-        $paymentType->last_date     = $r->last_date;
-        $paymentType->description     = $r->description;
-        $paymentType->amount     = $r->amount;
+        $paymentType->name = $r->name;
+        $paymentType->start_date = $r->start_date;
+        $paymentType->last_date = $r->last_date;
+        $paymentType->description = $r->description;
+        $paymentType->amount = $r->amount;
         $id = $this->paymentTypeRepo->create($paymentType);
         return $id;
     }
@@ -38,11 +39,11 @@ class Payment_Type_Controller extends Controller
     {
         $paymentType = new paymentType();
         $paymentType = $this->paymentTypeRepo->findOnePaymentType($r->id);
-        $paymentType->name     = $r->name;
-        $paymentType->start_date     = $r->start_date;
-        $paymentType->last_date     = $r->last_date;
-        $paymentType->description     = $r->description;
-        $paymentType->amount     = $r->amount;
+        $paymentType->name = $r->name;
+        $paymentType->start_date = $r->start_date;
+        $paymentType->last_date = $r->last_date;
+        $paymentType->description = $r->description;
+        $paymentType->amount = $r->amount;
         return ['status' => $this->paymentTypeRepo->update($paymentType)];
     }
 
@@ -50,7 +51,7 @@ class Payment_Type_Controller extends Controller
     {
         error_log("PaymentType find ID : " . $r->id);
 
-        return ['status' => $this->paymentTypeRepo->findOnePaymentType($r->id)];
+        return [$this->paymentTypeRepo->findOnePaymentType($r->id)];
     }
 
     public function getAllPaymentType(Request $request)
@@ -61,7 +62,8 @@ class Payment_Type_Controller extends Controller
         return $this->paymentTypeRepo->getAllPaymentType($per_page, $sort_by, $sort_on);
     }
 
-    public function countPaymentType(){
+    public function countPaymentType()
+    {
         return ['status' => $this->paymentTypeRepo->countAll()];
     }
 
