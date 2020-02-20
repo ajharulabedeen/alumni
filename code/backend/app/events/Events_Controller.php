@@ -32,6 +32,11 @@ class Events_Controller extends Controller
         return $data;
     }
 
+    public function checkPaymentAssingment(Request $r)
+    {
+        return $this->eventsRepo->checkPaymentAssingment($r->event_id);
+    }
+
 //    end : EventPayment Assingment
 
     public function create(Request $r)

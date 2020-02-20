@@ -112,3 +112,4 @@ Route::post('events/search_event_count', 'Events_Controller@search_event_count')
 Route::post('events/update_basic', 'Events_Controller@update_basic');
 Route::post('events/update_description_notes', 'Events_Controller@update_description_notes');
 Route::post('events/assingment_payment_event', 'Events_Controller@assingment_payment_event');
+Route::post('events/checkPaymentAssingment', 'Events_Controller@checkPaymentAssingment');

@@ -28,8 +28,29 @@ class F_Event_Test extends TestCase
 //        $this->updateBasicInformation();
 //        $this->updateDescriptionNotes();
 //        $this->findOne();
-        $this->assingment_payment_event();
+//        $this->assingment_payment_event();
+        $this->checkPaymentAssingment();
 
+    }
+
+    public function checkPaymentAssingment()
+    {
+        $response = $this->json(
+            'POST',
+            'events/checkPaymentAssingment',
+            [
+                "event_id" => "241",
+            ]
+            ,
+            [
+                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u2@umail.com", "123456")
+            ]
+        );
+
+
+        $d = $response->baseResponse->original;
+        error_log($d);
+//        dd($d);
     }
 
     public function assingment_payment_event()
