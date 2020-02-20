@@ -3,6 +3,7 @@ import {Events} from './events.model';
 import {EventManageService} from './event-manage.service';
 import {PaymentMobile} from '../../payment/payment-mobile/payment-mobile.model';
 import {PaymentType} from '../../payment/payment-type/payment-type.model';
+import {tryCatch} from 'rxjs/internal-compatibility';
 
 // import {Events} from '/src/app/event/event-manage/';
 
@@ -248,7 +249,24 @@ export class EventManageComponent implements OnInit {
 
   public searchPaymentType() {
     this.eService.searchPaymentType(this.paymentID).subscribe(p => {
-      console.log(p);
+      // console.log(p);
+      try {
+        for (const key1 in p) {
+          //     // console.log(key1);
+          //     // console.log(pt[key1]['id']);
+          this.payment = new PaymentType();
+          this.payment.$id = p[key1]['id'];
+          this.payment.$name = p[key1]['name'];
+          this.payment.$start_date = p[key1]['start_date'];
+          this.payment.$last_date = p[key1]['last_date'];
+          this.payment.$amount = p[key1]['amount'];
+          this.payment.$description = p[key1]['description'];
+          this.paymentFound = !this.paymentFound;
+        }
+      } catch (e) {
+        this.paymentFound = false;
+      }
+
     });
   }
 }// class
