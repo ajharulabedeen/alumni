@@ -114,8 +114,8 @@
       <file leaf-file-name="U_Test_Event.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/event/U_Test_Event.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="31" column="52" lean-forward="false" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
+            <state relative-caret-position="275">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
                 <element signature="e#357#400#0#PHP" expanded="false" />
                 <element signature="e#1184#1275#0#PHP" expanded="false" />
@@ -431,7 +431,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHPUnit.U_Test_Event">
+  <component name="RunManager" selected="PHPUnit.U_Test_Event.testMain">
     <configuration default="false" name="F_PaymentType_Test.testBasicTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\F_PaymentType_Test" file="$PROJECT_DIR$/tests/search/F_Search_Test.php" method="testBasicTest" scope="Method" />
       <method />
@@ -528,8 +528,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="PHPUnit.U_Test_Event" />
-        <item index="1" class="java.lang.String" itemvalue="PHPUnit.U_Test_Event.testMain" />
+        <item index="0" class="java.lang.String" itemvalue="PHPUnit.U_Test_Event.testMain" />
+        <item index="1" class="java.lang.String" itemvalue="PHPUnit.U_Test_Event" />
         <item index="2" class="java.lang.String" itemvalue="PHPUnit.F_Event_Test" />
         <item index="3" class="java.lang.String" itemvalue="PHPUnit.F_Event_Test.testBasicTest" />
         <item index="4" class="java.lang.String" itemvalue="PHPUnit.F_PaymentType_Test.testBasicTest" />
@@ -578,9 +578,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="F_Event_Test - 2020.02.19 at 02h 39m 40s.xml">
-      <configuration name="F_Event_Test" configurationId="PHPUnitRunConfigurationType" />
-    </history-entry>
     <history-entry file="U_Test_Event - 2020.02.16 at 17h 42m 50s.xml">
       <configuration name="U_Test_Event" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
@@ -608,9 +605,12 @@
     <history-entry file="U_Test_Event_testMain - 2020.02.20 at 15h 50m 02s.xml">
       <configuration name="U_Test_Event.testMain" configurationId="PHPUnitRunConfigurationType" />
     </history-entry>
+    <history-entry file="U_Test_Event_testMain - 2020.02.20 at 15h 50m 59s.xml">
+      <configuration name="U_Test_Event.testMain" configurationId="PHPUnitRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126524000" />
+    <option name="totallyTimeSpent" value="126657000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -623,7 +623,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30921757" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -631,9 +630,9 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4733862" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4733862" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34541336" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34541336" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1151,8 +1150,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/event/U_Test_Event.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="31" column="52" lean-forward="false" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
+        <state relative-caret-position="275">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
             <element signature="e#357#400#0#PHP" expanded="false" />
             <element signature="e#1184#1275#0#PHP" expanded="false" />
