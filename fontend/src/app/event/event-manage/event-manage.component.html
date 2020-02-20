@@ -11,220 +11,33 @@
 
     <!--    start : Add new event -->
     <div id="new" class="tabcontent">
-      <!--      start : all payments; for assinging -->
+
+
+      <!--      start : payments; for assinging -->
       <div class="panel panel-default">
         <div class="panel-heading">
           <h4 class="panel-title">
-            <a data-toggle="collapse" href="#all_payment">All Payment</a>
+            <a data-toggle="collapse" href="#all_payment">Payment Type</a>
           </h4>
         </div>
         <div id="all_payment" class="panel-collapse collapse">
           <div class="panel-body">
-            <h3>
-              All Payment!
-              <button class="btn btn-xs btn-primary" (click)="refreshTable()">Refresh</button>
-            </h3>
 
-            <div class="col-md-2 offset-md-2">
-              <div style="text-align: center" class="form-group">
-                <label>Per Page</label>
-                <input style="text-align: center" [(ngModel)]="perPage" type="number" class="form-control"
-                       value="{{perPage}}" (ngModelChange)="refreshTable()">
-              </div>
-            </div>
-            <div class="col-md-2 offset-md-2">
-              <div style="text-align: center" class="form-group">
-                <label>Total </label>
-                <input style="text-align: center" disabled="true" [(ngModel)]="total" type="number" class="form-control"
-                       value="{{total}}">
+            <div class="col-md-3  offset-md-3">
+              <div class="form-group">
+                <button class="btn btn-primary">Search</button>
+                <label>Payment Type ID</label>
+                <input [(ngModel)]="start_date" type="text" class="form-control" placeholder="{{start_date}}">
               </div>
             </div>
 
-            <div class="col-md-3 offset-md-3">
-              <div class="form-group" style="text-align: center">
-                <button class="btn btn-primary btn-xs" (click)="previousPage()">Previous</button>
-                <label class="btn btn-danger btn-xs ">Page Number</label>
-                <button class="btn btn-primary btn-xs" (click)="nextPage()">Next</button>
-                <input style="text-align: center" [(ngModel)]="pageNumber" type="number" class="form-control"
-                       value="{{pageNumber}}">
-              </div>
-            </div>
 
-            <!-- sort by ASC or DESC -->
-            <div class="col-md-3 offset-md-3">
-              <div class="form-group" style="text-align: center">
-                <h4>Sort Order</h4>
-                <input type="radio" name="gender" [(ngModel)]="sort_by" value="ASC">Ascending<br>
-                <input type="radio" name="gender" [(ngModel)]="sort_by" value="DESC">Descending<br>
-              </div>
-            </div>
-
-            <!-- sort by column name -->
-            <div>
-              <h4>Sort By</h4>
-              <select [(ngModel)]="sort_on">
-                <option>ID</option>
-                <option>Name</option>
-                <option>Start Date</option>
-                <option>End Date</option>
-                <option>Amount</option>
-              </select>
-            </div>
-
-            <!-- start : table All payment Type -->
-            <div class="col-xs-12">
-              <div class="box">
-                <div class="box-body table-responsive no-padding">
-                  <table class="table table-hover">
-                    <tbody>
-                    <tr>
-                      <th>Index</th>
-                      <th>Operation</th>
-                      <th>ID</th>
-                      <th>Name</th>
-                      <th>Start Date</th>
-                      <th>Last Date</th>
-                      <th>Amount</th>
-                      <th>Description</th>
-                    </tr>
-                    <tr *ngFor="let pt of ptsArray; let i=index">
-                      <td>{{i + 1}}</td>
-                      <td>
-                        <button class="btn btn-xs btn-primary" data-toggle="collapse" href="#add_payment"
-                                (click)="update(pt)">
-                          Edit
-                        </button>
-                        <button class="btn btn-xs btn-warning" (click)="delete(pt.id)">Delete</button>
-                      </td>
-                      <td>{{pt.id}}</td>
-                      <td>{{pt.name}}</td>
-                      <td>{{pt.start_date}}</td>
-                      <td>{{pt.last_date}}</td>
-                      <td>{{pt.amount}}</td>
-                      <td>{{pt.description}}</td>
-                    </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div class="panel-footer">All Payments Types</div>
-            </div>
-            <!-- end : table All payment Type -->
           </div>
+          <!-- panel body-->
         </div>
-        <div class="panel-footer">All Payment</div>
+        <!--        <div class="panel-footer">All Payment</div>-->
       </div>
-      <!--      end : all payments; for assinging -->
-
-      <!-- start : all payment types showing! -->
-      <div id="all_payments" class="tabcontent">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" href="#all_payment">All Payment</a>
-            </h4>
-          </div>
-          <div id="all_payment" class="panel-collapse collapse">
-            <div class="panel-body">
-              <h3>
-                All Payment!
-                <button class="btn btn-xs btn-primary" (click)="refreshTable()">Refresh</button>
-              </h3>
-
-              <div class="col-md-2 offset-md-2">
-                <div style="text-align: center" class="form-group">
-                  <label>Per Page</label>
-                  <input style="text-align: center" [(ngModel)]="perPage" type="number" class="form-control"
-                         value="{{perPage}}" (ngModelChange)="refreshTable()">
-                </div>
-              </div>
-              <div class="col-md-2 offset-md-2">
-                <div style="text-align: center" class="form-group">
-                  <label>Total </label>
-                  <input style="text-align: center" disabled="true" [(ngModel)]="total" type="number" class="form-control"
-                         value="{{total}}">
-                </div>
-              </div>
-
-              <div class="col-md-3 offset-md-3">
-                <div class="form-group" style="text-align: center">
-                  <button class="btn btn-primary btn-xs" (click)="previousPage()">Previous</button>
-                  <label class="btn btn-danger btn-xs ">Page Number</label>
-                  <button class="btn btn-primary btn-xs" (click)="nextPage()">Next</button>
-                  <input style="text-align: center" [(ngModel)]="pageNumber" type="number" class="form-control"
-                         value="{{pageNumber}}">
-                </div>
-              </div>
-
-              <!-- sort by ASC or DESC -->
-              <div class="col-md-3 offset-md-3">
-                <div class="form-group" style="text-align: center">
-                  <h4>Sort Order</h4>
-                  <input type="radio" name="gender" [(ngModel)]="sort_by" value="ASC">Ascending<br>
-                  <input type="radio" name="gender" [(ngModel)]="sort_by" value="DESC">Descending<br>
-                </div>
-              </div>
-
-              <!-- sort by column name -->
-              <div>
-                <h4>Sort By</h4>
-                <select [(ngModel)]="sort_on">
-                  <option>ID</option>
-                  <option>Name</option>
-                  <option>Start Date</option>
-                  <option>End Date</option>
-                  <option>Amount</option>
-                </select>
-              </div>
-
-              <!-- start : table All payment Type -->
-              <div class="col-xs-12">
-                <div class="box">
-                  <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
-                      <tbody>
-                      <tr>
-                        <th>Index</th>
-                        <th>Operation</th>
-                        <th>ID</th>
-                        <th>Name</th>
-                        <th>Start Date</th>
-                        <th>Last Date</th>
-                        <th>Amount</th>
-                        <th>Description</th>
-                      </tr>
-                      <tr *ngFor="let pt of ptsArray; let i=index">
-                        <td>{{i + 1}}</td>
-                        <td>
-                          <button class="btn btn-xs btn-primary" data-toggle="collapse" href="#add_payment"
-                                  (click)="update(pt)">
-                            Edit
-                          </button>
-                          <button class="btn btn-xs btn-warning" (click)="delete(pt.id)">Delete</button>
-                        </td>
-                        <td>{{pt.id}}</td>
-                        <td>{{pt.name}}</td>
-                        <td>{{pt.start_date}}</td>
-                        <td>{{pt.last_date}}</td>
-                        <td>{{pt.amount}}</td>
-                        <td>{{pt.description}}</td>
-                      </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <div class="panel-footer">All Payments Types</div>
-              </div>
-              <!-- end : table All payment Type -->
-            </div>
-          </div>
-          <div class="panel-footer">All Payment</div>
-        </div>
-      </div>
-      <!-- end : all payment types showing! -->
-
-
-
+      <!--      end : payments; for assinging -->
 
 
       <!--      Name-->
