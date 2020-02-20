@@ -25,19 +25,13 @@ class U_Test_Event extends TestCase
 //        error_log($this->countEvents());//passed.
 //        $this->search_event(6, "DESC", "id", "location", "%Dhaka%");//passed.
 //        error_log($this->search_event_count("location", "%GUB%"));//passed.
-<<<<<<< HEAD
 //        $this->eventbasicUpdate();//passed
-=======
->>>>>>> 48a83e90bccadea8e767d7125d31e66ca07cd489
 //        $this->eventUpdateNotesDescription();//passed
 //        $this->eventbasicUpdate();//passed
 
-<<<<<<< HEAD
-        error_log($this->assignemnt_event_payment());
+//        error_log($this->assignemnt_event_payment());
 
-=======
 //        $this->assingment_payment_event();
->>>>>>> 48a83e90bccadea8e767d7125d31e66ca07cd489
     }
 
 
@@ -162,7 +156,7 @@ class U_Test_Event extends TestCase
     public function findOneEvent($id)
     {
         $repo = new Events_Repo_Impl();
-        dd($repo->getOneEvent($id));
+//        dd($repo->getOneEvent($id));
         return $repo->getOneEvent($id);
     }
 
@@ -187,8 +181,6 @@ class U_Test_Event extends TestCase
         return $id;
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     /**
      * A basic test example.
      * @return void
@@ -202,12 +194,8 @@ class U_Test_Event extends TestCase
         $id = $repoEvent->assignemnt_event_payment($e);
         return $id;
     }
-=======
->>>>>>> parent of c5d4100a... event-repo: Event-Payment Assingment Repot created not Tested!!
 
 
-=======
->>>>>>> 48a83e90bccadea8e767d7125d31e66ca07cd489
 //    start : dummy event creation
     public function dummyDataInsert()
     {

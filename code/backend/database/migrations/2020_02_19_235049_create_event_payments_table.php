@@ -15,13 +15,10 @@ class CreateEventPaymentsTable extends Migration
     {
         Schema::create('event_payments', function (Blueprint $table) {
             $table->bigIncrements('id');
-<<<<<<< HEAD
             $table->string('payment_type_id',512)->nullable();
             $table->string('event_id',512)->nullable();
-=======
             $table->string('event_id', 512)->nullable();
             $table->string('payment_id', 512)->nullable();
->>>>>>> 48a83e90bccadea8e767d7125d31e66ca07cd489
             $table->timestamps();
         });
     }

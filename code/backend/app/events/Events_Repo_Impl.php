@@ -102,7 +102,7 @@ class Events_Repo_Impl implements Events_Repo_I
     public function getOneEvent($event_id)
     {
         error_log("Find One Event : " . $event_id);
-        return Events::where('event_id',$event_id)->get();
+        return Events::find($event_id);
     }
 
     public function count_all()
@@ -176,37 +176,29 @@ class Events_Repo_Impl implements Events_Repo_I
         return ["status" => $status];
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     public function assignemnt_event_payment(EventPayment $eventPayment)
     {
-=======
+        // TODO: Implement assignemnt_event_payment() method.
+    }
+
 //    start : EventPaymentAssingment
     public function assingment_payment_event(EventPayment $eventPayment)
     {
         // TODO: Implement assing_payment_to_event() method.
         error_log("event create : ");
->>>>>>> 48a83e90bccadea8e767d7125d31e66ca07cd489
         $id = -1;
         try {
             $eventPayment->save();
             $id = $eventPayment->id;
         } catch (Exception $e) {
             $saveStatus = false;
-<<<<<<< HEAD
             error_log("Saveing Event Payment About Failed.");
-=======
             error_log("Saveing Events About Failed.");
->>>>>>> 48a83e90bccadea8e767d7125d31e66ca07cd489
             // error_log("Saveing Post Failed. : " . $e);
         }
         return $id;
     }
-<<<<<<< HEAD
-=======
 //    end : EventPaymentAssingment
->>>>>>> 48a83e90bccadea8e767d7125d31e66ca07cd489
 
-=======
->>>>>>> parent of c5d4100a... event-repo: Event-Payment Assingment Repot created not Tested!!
+
 }//class
