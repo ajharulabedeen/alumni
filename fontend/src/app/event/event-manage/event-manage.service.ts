@@ -167,4 +167,15 @@ export class EventManageService {
       this.authService.getHeader()
     );
   }
+
+  public removePaymentAssingment(editEventID: string, paymentID: string) {
+    return this.http.post(
+      'http://127.0.0.1:8000/events/removePaymentAssingment',
+      {
+        'event_id': editEventID,
+        'payment_type_id': paymentID,
+      },
+      this.authService.getHeader()
+    );
+  }
 }// class

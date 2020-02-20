@@ -457,8 +457,6 @@
                   <h3>
                     Payment!
                   </h3>
-
-
                   <label for="name"><b>Name:</b></label>
                   <p id="name">{{payment.$name}}</p>
                   <label for="s_date"><b>Start Date:</b></label>
@@ -469,7 +467,14 @@
                   <p id="amount">{{payment.$amount}}</p>
                   <label><b>Description:</b></label>
                   <p id="descripti">{{payment.$description}}</p>
-
+                  <button type="button" class="btn btn-danger"
+                          (click)="removePaymentFromEvent(payment.$id)">
+                    Remove
+                  </button>
+                  <button type="button" class="btn btn-secondary btn-primary" data-dismiss="modal"
+                          (click)="update_event_basic()">
+                    Update
+                  </button>
                 </div>
 
                 <div *ngIf="!paymentFound">
@@ -484,7 +489,9 @@
               </div>
               <!-- panel body-->
             </div>
-            <div class="panel-footer">Payment</div>
+            <div class="panel-footer">
+              Payment
+            </div>
           </div>
         </div>
         <!--  end : modal body-->

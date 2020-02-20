@@ -258,7 +258,7 @@ export class EventManageComponent implements OnInit {
           //     // console.log(key1);
           //     // console.log(pt[key1]['id']);
           this.payment = new PaymentType();
-          this.payment.$id = p[key1]['payment_type_id'];
+          this.payment.$id = p[key1]['id'];
           this.payment.$name = p[key1]['name'];
           this.payment.$start_date = p[key1]['start_date'];
           this.payment.$last_date = p[key1]['last_date'];
@@ -293,6 +293,15 @@ export class EventManageComponent implements OnInit {
         this.paymentFound = true;
         this.searchPaymentType();
       }
+    });
+  }
+
+  public removePaymentFromEvent(paymentID: string) {
+    console.log('Remove Payment From Event');
+    console.log('editEventID  : ' + this.editEventID);
+    console.log('paymentID  : ' + paymentID);
+    this.eService.removePaymentAssingment(this.editEventID, paymentID).subscribe(data => {
+      console.log(data);
     });
   }
 }// class
