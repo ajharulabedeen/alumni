@@ -52,8 +52,10 @@ interface Events_Repo_I
 
     public function search_event_count(string $column_name, string $key);
 
-    public function update_event_basic( EventBasic $eBasic );
+    public function update_event_basic(EventBasic $eBasic);
 
-    public function update_DescriptionNotes( EventDescriptionNotes $eDescriptionNotes );
+    public function update_DescriptionNotes(EventDescriptionNotes $eDescriptionNotes);
+
+    public function assignemnt_event_payment(EventPayment $eventPayment);
 
 }// class

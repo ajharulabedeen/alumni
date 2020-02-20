@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\events\EventBasic;
 use App\events\EventDescriptionNotes;
+use App\events\EventPayment;
 use App\events\Events_Repo_Impl;
 use App\events\Events;
 use App\profile\ProfileBasic;
@@ -25,9 +26,10 @@ class U_Test_Event extends TestCase
 //        error_log($this->countEvents());//passed.
 //        $this->search_event(6, "DESC", "id", "location", "%Dhaka%");//passed.
 //        error_log($this->search_event_count("location", "%GUB%"));//passed.
-
-        $this->eventbasicUpdate();//passed
+//        $this->eventbasicUpdate();//passed
 //        $this->eventUpdateNotesDescription();//passed
+
+        error_log($this->assignemnt_event_payment());
 
     }
 
@@ -160,6 +162,20 @@ class U_Test_Event extends TestCase
         $e->notes = "Please Dont Miss it!";
         $e->images = "No Image Available!";
         $id = $repoEvent->create($e);
+        return $id;
+    }
+
+    /**
+     * A basic test example.
+     * @return void
+     */
+    public function assignemnt_event_payment()
+    {
+        $repoEvent = new Events_Repo_Impl();
+        $e = new EventPayment();
+        $e->payment_type_id = "1";
+        $e->event_id = "9";
+        $id = $repoEvent->assignemnt_event_payment($e);
         return $id;
     }
 
