@@ -4,7 +4,6 @@ namespace Tests\Unit;
 
 use App\events\EventBasic;
 use App\events\EventDescriptionNotes;
-use App\events\EventPayment;
 use App\events\Events_Repo_Impl;
 use App\events\Events;
 use App\profile\ProfileBasic;
@@ -189,6 +188,7 @@ class U_Test_Event extends TestCase
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     /**
      * A basic test example.
      * @return void
@@ -202,6 +202,8 @@ class U_Test_Event extends TestCase
         $id = $repoEvent->assignemnt_event_payment($e);
         return $id;
     }
+=======
+>>>>>>> parent of c5d4100a... event-repo: Event-Payment Assingment Repot created not Tested!!
 
 
 =======

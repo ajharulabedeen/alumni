@@ -177,6 +177,7 @@ class Events_Repo_Impl implements Events_Repo_I
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function assignemnt_event_payment(EventPayment $eventPayment)
     {
 =======
@@ -206,4 +207,6 @@ class Events_Repo_Impl implements Events_Repo_I
 //    end : EventPaymentAssingment
 >>>>>>> 48a83e90bccadea8e767d7125d31e66ca07cd489
 
+=======
+>>>>>>> parent of c5d4100a... event-repo: Event-Payment Assingment Repot created not Tested!!
 }//class

@@ -52,8 +52,9 @@ interface Events_Repo_I
 
     public function search_event_count(string $column_name, string $key);
 
-    public function update_event_basic(EventBasic $eBasic);
+    public function update_event_basic( EventBasic $eBasic );
 
+<<<<<<< HEAD
     public function update_DescriptionNotes(EventDescriptionNotes $eDescriptionNotes);
 <<<<<<< HEAD
 
@@ -64,4 +65,8 @@ interface Events_Repo_I
 //    start : EventPaymentAssingment
     public function assingment_payment_event(EventPayment $eventPayment);
 //    end : EventPaymentAssingment
+=======
+    public function update_DescriptionNotes( EventDescriptionNotes $eDescriptionNotes );
+
+>>>>>>> parent of c5d4100a... event-repo: Event-Payment Assingment Repot created not Tested!!
 }// class
