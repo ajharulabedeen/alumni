@@ -26,10 +26,10 @@ class U_Test_Event extends TestCase
 //        error_log($this->countEvents());//passed.
 //        $this->search_event(6, "DESC", "id", "location", "%Dhaka%");//passed.
 //        error_log($this->search_event_count("location", "%GUB%"));//passed.
-
-        $this->eventbasicUpdate();//passed
 //        $this->eventUpdateNotesDescription();//passed
+//        $this->eventbasicUpdate();//passed
 
+        $this->assing_payment_to_event();
     }
 
 
@@ -38,6 +38,20 @@ class U_Test_Event extends TestCase
         error_log("\n Event: CRUD Test Done!\n");
 
     }
+
+// start : eventPayment
+    public function assing_payment_to_event()
+    {
+        $repo = new Events_Repo_Impl();
+        $ep = new EventPayment();
+        $ep->event_id = "1";
+        $ep->payment_id = "9";
+        $d = $repo->assing_payment_to_event($ep);
+        dd($d);
+    }
+
+// end  : eventPayment
+
 
     public function eventUpdateNotesDescription()
     {
@@ -163,15 +177,6 @@ class U_Test_Event extends TestCase
         $id = $repoEvent->create($e);
         return $id;
     }
-
-// start : eventPayment
-    public function assing_payment_to_event()
-    {
-        $repo = new Events_Repo_Impl();
-        $ep = new EventPayment();
-        $ep->
-    }
-// end  : eventPayment
 
 //    start : dummy event creation
     public function dummyDataInsert()
