@@ -19,7 +19,7 @@ class Events_Repo_Impl implements Events_Repo_I
         $id = -1;
         try {
             $events->save();
-            $id = $events->event_id;
+            $id = $events->id;
         } catch (Exception $e) {
             $saveStatus = false;
             error_log("Saveing Events About Failed.");

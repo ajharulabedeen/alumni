@@ -15,19 +15,21 @@ class U_Test_Event extends TestCase
     public function testMain()
     {
 //        $this->dummyDataInsert();//passed
+
 //        error_log($this->create());//passed
-        error_log($this->findOneEvent(1));//passed
-//        error_log($this->delete(3));//passed
-//        error_log($this->update(4, "fee", "560.00"));//passed.
-//        error_log($this->findOneEvent(4)->fee);//passed.
+//        error_log($this->findOneEvent(1)->fee);//passed
+//        error_log($this->delete(1017));//passed
+//        error_log($this->update(1, "fee", "600.00"));//passed.
 //        error_log($this->getAllEvents(4, "ASC", "end_date"));//passed.
-//        error_log($this->getDescriptionNotes(4));//passed.
+//        error_log($this->getDescriptionNotes(1));//passed.
 //        error_log($this->countEvents());//passed.
 //        $this->search_event(6, "DESC", "id", "location", "%Dhaka%");//passed.
 //        error_log($this->search_event_count("location", "%GUB%"));//passed.
 //        $this->eventbasicUpdate();//passed
 //        $this->eventUpdateNotesDescription();//passed
-//        $this->eventbasicUpdate();//passed
+
+
+//        error_log($this->findOneEvent(1)->description);//passed.
 
 //        error_log($this->assignemnt_event_payment());
 
@@ -59,7 +61,7 @@ class U_Test_Event extends TestCase
     {
         $e = new EventDescriptionNotes();
         $e->id = "1";
-        $e->description = "---F R Siddique will lecture!";
+        $e->description = "F R Siddique will lecture!";
         $e->notes = "A Formar Nuclear Scientist!";
         $repo = new Events_Repo_Impl();
         $status = $repo->update_DescriptionNotes($e);
@@ -74,7 +76,7 @@ class U_Test_Event extends TestCase
         $e->start_date = "2019-12-04";
         $e->end_date = "2019-12-05";
         $e->location = "DD";
-        $e->fee = "500";
+        $e->fee = "900";
         $repo = new Events_Repo_Impl();
         $status = $repo->update_event_basic($e);
         dd($status);
@@ -178,6 +180,7 @@ class U_Test_Event extends TestCase
         $e->notes = "Please Dont Miss it!";
         $e->images = "No Image Available!";
         $id = $repoEvent->create($e);
+//        dd($id);
         return $id;
     }
 
