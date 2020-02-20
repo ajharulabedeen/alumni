@@ -37,6 +37,13 @@ class Events_Controller extends Controller
         return $this->eventsRepo->checkPaymentAssingment($r->event_id);
     }
 
+    public function removePaymentAssingment(Request $r)
+    {
+        $event_id = $r->event_id;
+        $payment_type_id = $r->payment_type_id;
+        return $this->eventsRepo->removePaymentAssingment($event_id, $payment_type_id);
+    }
+
 //    end : EventPayment Assingment
 
     public function create(Request $r)

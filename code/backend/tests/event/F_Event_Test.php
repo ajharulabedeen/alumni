@@ -29,9 +29,29 @@ class F_Event_Test extends TestCase
 //        $this->updateDescriptionNotes();
 //        $this->findOne();
 //        $this->assingment_payment_event();
-        $this->checkPaymentAssingment();
-
+//        $this->checkPaymentAssingment();
+        $this->removePaymentAssingment();
     }
+
+    public function removePaymentAssingment()
+    {
+        $response = $this->json(
+            'POST',
+            'events/removePaymentAssingment',
+            [
+                "event_id" => "818",
+                "payment_type_id" => "20",
+            ]
+            ,
+            [
+                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u2@umail.com", "123456")
+            ]
+        );
+        $d = $response->baseResponse->original;
+        error_log($d);
+//        dd($d);
+    }
+
 
     public function checkPaymentAssingment()
     {
@@ -46,8 +66,6 @@ class F_Event_Test extends TestCase
                 "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u2@umail.com", "123456")
             ]
         );
-
-
         $d = $response->baseResponse->original;
         error_log($d);
 //        dd($d);
