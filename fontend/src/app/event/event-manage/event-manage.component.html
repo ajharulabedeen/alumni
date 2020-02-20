@@ -468,7 +468,7 @@
                   <label><b>Description:</b></label>
                   <p id="descripti">{{payment.$description}}</p>
                   <button type="button" class="btn btn-danger"
-                          (click)="removePaymentFromEvent(payment.$id)">
+                          (click)=" removeConfirmAsk=true">
                     Remove
                   </button>
                   <button type="button" class="btn btn-secondary btn-primary" data-dismiss="modal"
@@ -482,9 +482,15 @@
                   <br>
                   Please search by right ID or Add new from Payment Section!
                 </div>
-
                 <!-- end : payment found-->
 
+                <!--start : remove confirm-->
+                <div *ngIf="removeConfirmAsk">
+                  <h2>Are You sure to Remvoe?</h2>
+                  <button class="btn btn-sm btn-warning" (click)="removePaymentFromEvent(payment.$id)">Yes</button>
+                  <button class="btn btn-sm btn-primary" (click)="this.removeConfirmAsk=fale">No</button>
+                </div>
+                <!--end : remove confirm-->
 
               </div>
               <!-- panel body-->

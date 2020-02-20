@@ -53,6 +53,7 @@ export class EventManageComponent implements OnInit {
   // for search
   paymentID: string;
   private assingSuccess: boolean;
+  removeConfirmAsk: boolean;
 
   constructor(private eService: EventManageService) {
   }
@@ -302,6 +303,9 @@ export class EventManageComponent implements OnInit {
     console.log('paymentID  : ' + paymentID);
     this.eService.removePaymentAssingment(this.editEventID, paymentID).subscribe(data => {
       console.log(data);
+      if (data == '1') {
+        this.removeConfirmAsk = false;
+      }
     });
   }
 }// class
