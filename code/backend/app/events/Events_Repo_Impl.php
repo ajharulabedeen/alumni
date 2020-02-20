@@ -54,7 +54,7 @@ class Events_Repo_Impl implements Events_Repo_I
     public function delete($event_id)
     {
         error_log("Event Delete : ");
-        $status = Events::where('event_id', $event_id)->delete();
+        $status = Events::where('id', $event_id)->delete();
         return $status;
     }
     /**
@@ -73,7 +73,7 @@ class Events_Repo_Impl implements Events_Repo_I
             $order = "DESC";
         }
         return Events::select(
-            'event_id',
+            'id',
             'user_id',
             'title',
             'start_date',
@@ -90,7 +90,7 @@ class Events_Repo_Impl implements Events_Repo_I
      */
     public function getDescriptionNotes($event_id)
     {
-        $details = Events::select('description', 'notes')->where('event_id', $event_id)->get();
+        $details = Events::select('description', 'notes')->where('id', $event_id)->get();
         if ($details != null) {
             $data = ['description' => $details[0]['description'], 'notes' => $details[0]['notes']];;
         } else {
@@ -118,7 +118,7 @@ class Events_Repo_Impl implements Events_Repo_I
             $order = "DESC";
         }
         return Events::select(
-            'event_id',
+            'id',
             'user_id',
             'title',
             'start_date',
@@ -141,7 +141,7 @@ class Events_Repo_Impl implements Events_Repo_I
         $status = "OK";
         try {
             DB::table('events')
-                ->where('event_id', $eventBasic->id)
+                ->where('id', $eventBasic->id)
                 ->update(
                     [
                         'title' => $eventBasic->title,
@@ -163,7 +163,7 @@ class Events_Repo_Impl implements Events_Repo_I
         $status = "OK";
         try {
             DB::table('events')
-                ->where('event_id', $eDescriptionNotes->id)
+                ->where('id', $eDescriptionNotes->id)
                 ->update(
                     [
                         'description' => $eDescriptionNotes->description,
