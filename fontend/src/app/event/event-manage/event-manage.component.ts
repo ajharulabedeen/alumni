@@ -47,12 +47,13 @@ export class EventManageComponent implements OnInit {
   private editEventID: string;
 
   eventEdit: Events;
+  paymentFound: boolean;
 
   constructor(private eService: EventManageService) {
   }
 
   ngOnInit() {
-
+    this.paymentFound = false;
     this.eventSearch_pageNumber = 1;
     this.eventSearch_perPage = 10;
     this.eventSearch_sort_by = 'ASC';

@@ -23,19 +23,34 @@
         <div id="all_payment" class="panel-collapse collapse">
           <div class="panel-body">
 
-            <div class="col-md-3  offset-md-3">
+            <div class="col-md-12">
               <div class="form-group">
                 <button class="btn btn-primary">Search</button>
                 <label>Payment Type ID</label>
                 <input [(ngModel)]="start_date" type="text" class="form-control" placeholder="{{start_date}}">
               </div>
             </div>
+            <!-- start : payment found-->
+            <div>
+              <button class="btn btn-primary">Assign</button>
+              <h3>
+                Payment!
+              </h3>
+            </div>
+
+            <div *ngIf="!paymentFound">
+              Sorry No Payemtn Fond!
+              <br>
+              Please search by right ID or Add new from Payment Section!
+            </div>
+
+            <!-- end : payment found-->
 
 
           </div>
           <!-- panel body-->
         </div>
-        <!--        <div class="panel-footer">All Payment</div>-->
+        <div class="panel-footer">All Payment</div>
       </div>
       <!--      end : payments; for assinging -->
 
