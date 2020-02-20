@@ -152,7 +152,7 @@ export class EventManageComponent implements OnInit {
         //     // console.log(key1);
         //     // console.log(pt[key1]['id']);
         var event = new Events();
-        event.$id = e[key1]['id'];
+        event.$id = e[key1]['event_id'];
         event.$user_id = e[key1]['user_id'];
         event.$title = e[key1]['title'];
         event.$start_date = e[key1]['start_date'];
@@ -256,7 +256,7 @@ export class EventManageComponent implements OnInit {
           //     // console.log(key1);
           //     // console.log(pt[key1]['id']);
           this.payment = new PaymentType();
-          this.payment.$id = p[key1]['id'];
+          this.payment.$id = p[key1]['payment_type_id'];
           this.payment.$name = p[key1]['name'];
           this.payment.$start_date = p[key1]['start_date'];
           this.payment.$last_date = p[key1]['last_date'];
