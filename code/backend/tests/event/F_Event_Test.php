@@ -27,8 +27,29 @@ class F_Event_Test extends TestCase
 //        $this->search_event_count("location", "%Dhaka");//passed
 //        $this->updateBasicInformation();
 //        $this->updateDescriptionNotes();
-        $this->findOne();
+//        $this->findOne();
+        $this->assingment_payment_event();
 
+    }
+
+    public function assingment_payment_event()
+    {
+        $response = $this->json(
+            'POST',
+            'events/assingment_payment_event',
+            [
+                "event_id" => "7",
+                "payment_type_id" => "20",
+            ]
+            ,
+            [
+                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u2@umail.com", "123456")
+            ]
+        );
+
+        $d = $response->baseResponse->original;
+//        error_log($d['description']);
+        dd($d);
     }
 
     public function findOne()

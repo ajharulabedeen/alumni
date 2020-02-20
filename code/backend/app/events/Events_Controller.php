@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\events\EventBasic;
 use App\events\EventDescriptionNotes;
+use App\events\EventPayment;
 use Illuminate\Http\Request;
 use App\events\Events_Repo_I;
 use App\events\Events_Repo_Impl;
@@ -27,7 +28,7 @@ class Events_Controller extends Controller
         $ep = new EventPayment();
         $ep->event_id = "1";
         $ep->payment_type_id = "9";
-        $data = $this->eventsRepo->assing_payment_to_event($ep);
+        $data = $this->eventsRepo->assingment_payment_event($ep);
         return $data;
     }
 

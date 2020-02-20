@@ -99,7 +99,7 @@ Route::post('search/jobs_count', 'Search_Controller@search_jobs_count');
 
 
 
-//evet
+//event
 Route::post('events/create', 'Events_Controller@create');
 Route::post('events/update', 'Events_Controller@update');
 Route::post('events/delete', 'Events_Controller@delete');
@@ -111,3 +111,4 @@ Route::post('events/search_event', 'Events_Controller@search_event');
 Route::post('events/search_event_count', 'Events_Controller@search_event_count');
 Route::post('events/update_basic', 'Events_Controller@update_basic');
 Route::post('events/update_description_notes', 'Events_Controller@update_description_notes');
+Route::post('events/assingment_payment_event', 'Events_Controller@assingment_payment_event');
