@@ -17,7 +17,7 @@ class U_Test_Event extends TestCase
     {
 //        $this->dummyDataInsert();//passed
 //        error_log($this->create());//passed
-//        error_log($this->findOneEvent(3));//passed
+        error_log($this->findOneEvent(1));//passed
 //        error_log($this->delete(3));//passed
 //        error_log($this->update(4, "fee", "560.00"));//passed.
 //        error_log($this->findOneEvent(4)->fee);//passed.
@@ -29,7 +29,7 @@ class U_Test_Event extends TestCase
 //        $this->eventUpdateNotesDescription();//passed
 //        $this->eventbasicUpdate();//passed
 
-        $this->assingment_payment_event();
+//        $this->assingment_payment_event();
     }
 
 
@@ -154,6 +154,7 @@ class U_Test_Event extends TestCase
     public function findOneEvent($id)
     {
         $repo = new Events_Repo_Impl();
+        dd($repo->getOneEvent($id));
         return $repo->getOneEvent($id);
     }
 
