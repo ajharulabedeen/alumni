@@ -278,11 +278,21 @@ export class EventManageComponent implements OnInit {
     console.log('paymentID  : ' + paymentID);
     this.eService.assingPayment(paymentID, this.editEventID).subscribe(data => {
       console.log(data);
-      if(data > 0){
+      if (data > 0) {
         this.assingSuccess = true;
       }
     });
+  }
 
-
+  public checkPaymentAssingment() {
+    console.log(this.editEventID);
+    this.eService.checkPaymentAssingment(this.editEventID).subscribe(data => {
+      console.log(data);
+      if (data > 0) {
+        this.paymentID = data.toString();
+        this.paymentFound = true;
+        this.searchPaymentType();
+      }
+    });
   }
 }// class

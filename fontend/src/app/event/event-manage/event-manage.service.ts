@@ -157,4 +157,14 @@ export class EventManageService {
       this.authService.getHeader()
     );
   }
+
+  public checkPaymentAssingment(editEventID: string) {
+    return this.http.post(
+      'http://127.0.0.1:8000/events/checkPaymentAssingment',
+      {
+        'event_id': editEventID,
+      },
+      this.authService.getHeader()
+    );
+  }
 }// class
