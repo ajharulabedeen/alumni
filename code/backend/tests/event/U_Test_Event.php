@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\events\EventBasic;
 use App\events\EventDescriptionNotes;
+use App\events\EventPayment;
 use App\events\Events_Repo_Impl;
 use App\events\Events;
 use App\profile\ProfileBasic;
@@ -163,6 +164,14 @@ class U_Test_Event extends TestCase
         return $id;
     }
 
+// start : eventPayment
+    public function assing_payment_to_event()
+    {
+        $repo = new Events_Repo_Impl();
+        $ep = new EventPayment();
+        $ep->
+    }
+// end  : eventPayment
 
 //    start : dummy event creation
     public function dummyDataInsert()

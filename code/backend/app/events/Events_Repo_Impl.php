@@ -176,4 +176,22 @@ class Events_Repo_Impl implements Events_Repo_I
         return ["status" => $status];
     }
 
+//    start : EventPaymentAssingment
+    public function assing_payment_to_event(EventPayment $eventPayment)
+    {
+        // TODO: Implement assing_payment_to_event() method.
+        error_log("event create : ");
+        $id = -1;
+        try {
+            $eventPayment->save();
+            $id = $eventPayment->id;
+        } catch (Exception $e) {
+            $saveStatus = false;
+            error_log("Saveing Events About Failed.");
+            // error_log("Saveing Post Failed. : " . $e);
+        }
+        return $id;
+    }
+//    end : EventPaymentAssingment
+
 }//class
