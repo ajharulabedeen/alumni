@@ -52,6 +52,7 @@ export class EventManageComponent implements OnInit {
   paymentFound: boolean;
   // for search
   paymentID: string;
+  private assingSuccess: boolean;
 
   constructor(private eService: EventManageService) {
   }
@@ -188,7 +189,7 @@ export class EventManageComponent implements OnInit {
     this.edit_id = id;
     this.editDescriptionNotes = false;
     this.eService.getDescriptionNotes(id).subscribe(data => {
-      console.log("Data : " + data);
+      console.log('Data : ' + data);
       this.deatilsDescription = data['description'];
       this.deatilsNotes = data['notes'];
     });
@@ -270,5 +271,18 @@ export class EventManageComponent implements OnInit {
       }
 
     });
+  }
+
+  public assingPayment(paymentID: string) {
+    console.log('editEventID  : ' + this.editEventID);
+    console.log('paymentID  : ' + paymentID);
+    this.eService.assingPayment(paymentID, this.editEventID).subscribe(data => {
+      console.log(data);
+      if(data > 0){
+        this.assingSuccess = true;
+      }
+    });
+
+
   }
 }// class

@@ -229,7 +229,8 @@
                 </td>
                 <!-- payment -->
                 <td>
-                  <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#payment">
+                  <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#payment"
+                          (click)=" this.editEventID = event.id; this.assingSuccess=false; this.paymentFound=false ">
                     Payment
                   </button>
                 </td>
@@ -448,10 +449,14 @@
                 </div>
                 <!-- start : payment found-->
                 <div *ngIf="paymentFound">
-                  <button class="btn btn-primary">Assign</button>
+                  <!--                  <button class="btn btn-primary" (click)="assingPayment(payment.$id)">Assign</button>-->
+                  <button class="btn btn-primary" (click)="assingPayment(paymentID)">Assign</button>
+                  <br>
+                  <button class="btn btn-success btn-lg" *ngIf="assingSuccess">Success Fully Assingned</button>
                   <h3>
                     Payment!
                   </h3>
+
 
                   <label for="name"><b>Name:</b></label>
                   <p id="name">{{payment.$name}}</p>
@@ -484,10 +489,10 @@
         <!--  end : modal body-->
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-<!--          <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal"-->
-<!--                  (click)="update_event_basic()">-->
-<!--            Update-->
-<!--          </button>-->
+          <!--          <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal"-->
+          <!--                  (click)="update_event_basic()">-->
+          <!--            Update-->
+          <!--          </button>-->
         </div>
       </div>
     </div>

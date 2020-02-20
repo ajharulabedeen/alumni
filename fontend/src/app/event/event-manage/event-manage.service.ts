@@ -146,4 +146,15 @@ export class EventManageService {
       this.authService.getHeader()
     );
   }
+
+  public assingPayment(payment_type_id: string, event_id: string) {
+    return this.http.post(
+      'http://127.0.0.1:8000/events/assingment_payment_event',
+      {
+        'event_id': event_id,
+        'payment_type_id': payment_type_id,
+      },
+      this.authService.getHeader()
+    );
+  }
 }// class
