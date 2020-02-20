@@ -204,9 +204,12 @@ class Events_Repo_Impl implements Events_Repo_I
         // TODO: Implement getPaymentConfirmation() method.
         $data = EventPayment::where("event_id", $eventID)->first();
         if ($data == null) {
-            $data = -1;
+            $payment_type_id = -1;
+        } else {
+            $payment_type_id = $data["payment_type_id"];
+
         }
-        return $data;
+        return $payment_type_id;
     }
 //    end : EventPaymentAssingment
 

@@ -59,6 +59,7 @@ class U_Test_Event extends TestCase
     {
         $repo = new Events_Repo_Impl();
         $d = $repo->checkPaymentAssingment(10);
+//        error_log($d["payment_type_id"]);
         error_log($d);
     }
 
