@@ -25,13 +25,13 @@
 
             <div class="col-md-12">
               <div class="form-group">
-                <button class="btn btn-primary">Search</button>
+                <button class="btn btn-primary" (click)="searchPaymentType()">Search</button>
                 <label>Payment Type ID</label>
-                <input [(ngModel)]="start_date" type="text" class="form-control" placeholder="{{start_date}}">
+                <input [(ngModel)]="paymentID" type="text" class="form-control">
               </div>
             </div>
             <!-- start : payment found-->
-            <div>
+            <div *ngIf="paymentFound">
               <button class="btn btn-primary">Assign</button>
               <h3>
                 Payment!
@@ -39,7 +39,7 @@
             </div>
 
             <div *ngIf="!paymentFound">
-              Sorry No Payemtn Fond!
+              Sorry No Payment not Found!
               <br>
               Please search by right ID or Add new from Payment Section!
             </div>

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Events} from './events.model';
 import {EventManageService} from './event-manage.service';
 import {PaymentMobile} from '../../payment/payment-mobile/payment-mobile.model';
+import {PaymentType} from '../../payment/payment-type/payment-type.model';
 
 // import {Events} from '/src/app/event/event-manage/';
 
@@ -28,7 +29,6 @@ export class EventManageComponent implements OnInit {
   edit_cost: string;
   edit_vanue: string;
 
-
   event_search_by: string;
   event_value_search: string;
   eventSearch_perPage: number;
@@ -47,7 +47,10 @@ export class EventManageComponent implements OnInit {
   private editEventID: string;
 
   eventEdit: Events;
+  payment: PaymentType;
   paymentFound: boolean;
+  // for search
+  paymentID: string;
 
   constructor(private eService: EventManageService) {
   }
@@ -240,6 +243,12 @@ export class EventManageComponent implements OnInit {
         // this.refreshTable_eventSearch();
         this.editDescriptionNotes = !this.editDescriptionNotes;
       }
+    });
+  }
+
+  public searchPaymentType() {
+    this.eService.searchPaymentType(this.paymentID).subscribe(p => {
+      console.log(p);
     });
   }
 }// class
