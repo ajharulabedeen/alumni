@@ -42,12 +42,14 @@ export class EventDetailsComponent implements OnInit {
     this.id = this.activeRoute.snapshot.params['id'];
     document.body.className = 'hold-transition skin-blue sidebar-mini';
     console.log(' ID : ' + this.id);
+
     this.eventDeatailsService.getEvent(this.id).subscribe((e: Events) => {
       // console.log("One Job : " + pt["0"]["organization_name"]);
       console.log(e);
       // console.log(e[0]);
       // refactor : have to fix the back end Code.
       // e = e[0];
+      this.event.$title = e['id'];
       this.event.$title = e['title'];
       this.event.$start_date = e['start_date'];
       this.event.$end_date = e['end_date'];
@@ -56,7 +58,8 @@ export class EventDetailsComponent implements OnInit {
       this.event.$description = e['description'];
       this.event.$notes = e['notes'];
     });
-  }
+
+  }// init
 
   printId() {
     console.log(' ID : ' + this.id);

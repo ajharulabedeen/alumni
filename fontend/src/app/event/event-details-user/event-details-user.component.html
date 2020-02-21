@@ -6,50 +6,37 @@
     <button class="btn btn-info">Register</button>
     <button class="btn btn-primary" data-toggle="modal" data-target="#do_payment">Pay</button>
     <div class="panel-group">
-      <!-- all Payments -->
       <div class="panel panel-default">
-        <div class="panel-heading">
-          <h4 class="panel-title">
-            <a data-toggle="collapse" href="#all_payment">Event Details</a>
-          </h4>
+        <!--start : event Description-->
+        <div>
+          <table>
+            <tr>
+              <td><h4>Title : </h4></td>
+              <td align="center">{{event.$title}}</td>
+            </tr>
+            <tr>
+              <td align="center"><h4>Start : </h4></td>
+              <td>{{event.$start_date}}</td>
+            </tr>
+            <tr>
+              <td align="center"><h4>End : </h4></td>
+              <td>{{event.$end_date}}</td>
+            </tr>
+            <tr>
+              <td align="center"><h4>Fee : </h4></td>
+              <td>{{event.$fee}}</td>
+            </tr>
+            <tr>
+              <td align="center"><h4>Location : </h4></td>
+              <td>{{event.$location}}</td>
+            </tr>
+          </table>
+          <h4 style="background-color: pink">Description : </h4>
+          <p [innerHTML]="event.$description"></p>
+          <h4>Notes : </h4>
+          <p>{{event.$notes}}</p>
         </div>
-
-        <div id="all_payment" class="panel-collapse collapse">
-          <div class="panel-body">
-            <table>
-              <tr>
-                <td><h4>Title : </h4></td>
-                <td align="center">{{event.$title}}</td>
-              </tr>
-              <tr>
-                <td align="center"><h4>Start : </h4></td>
-                <td>{{event.$start_date}}</td>
-              </tr>
-              <tr>
-                <td align="center"><h4>Last : </h4></td>
-                <td>{{event.$end_date}}</td>
-              </tr>
-              <tr>
-                <td align="center"><h4>Fee : </h4></td>
-                <td>{{event.$fee}}</td>
-              </tr>
-              <tr>
-                <td align="center"><h4>Location : </h4></td>
-                <td>{{event.$location}}</td>
-              </tr>
-            </table>
-
-            <h4 style="background-color: pink">Description : </h4>
-            <p [innerHTML]="event.$description"></p>
-
-            <h4>Notes : </h4>
-            <p>{{event.$notes}}</p>
-
-          </div>
-          <!-- end : panel body-->
-        </div>
-
-        <div class="panel-footer">Event Details</div>
+        <!--end : event Description-->
       </div>
       <!-- panel-group -->
       <!--End :  My Payments -->
@@ -110,12 +97,12 @@
           </div>
         </div>
       </div>
-
-      <!-- <app-footernavbar></app-footernavbar> -->
-      <!-- <app-settingsnavbar></app-settingsnavbar> -->
     </div>
     <!-- modal-end : do payment-->
 
-
   </div>
+  <!--  content-warper-->
+  <!--  <app-settingsnavbar></app-settingsnavbar>-->
+  <app-footernavbar></app-footernavbar>
 </div>
+<!--  warpper-->
