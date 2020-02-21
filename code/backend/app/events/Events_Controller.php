@@ -162,7 +162,11 @@ class Events_Controller extends Controller
 
     public function checkEventRegistration(Request $r)
     {
-        return $this->eventsRepo->checkEventRegistration($r->event_id, $r->user_id);
+        error_log("Check Register:");
+        error_log($r->event_id);
+//        error_log($r->user_id);
+        //refactor
+        return $this->eventsRepo->checkEventRegistration($r->event_id, "7");
     }
 
 }// class
