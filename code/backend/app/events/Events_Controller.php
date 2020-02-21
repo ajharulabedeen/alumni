@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\events\EventBasic;
 use App\events\EventDescriptionNotes;
 use App\events\EventPayment;
+use App\events\EventRegistration;
 use Illuminate\Http\Request;
 use App\events\Events_Repo_I;
 use App\events\Events_Repo_Impl;
@@ -20,6 +21,16 @@ class Events_Controller extends Controller
     {
         // $this->middleware('auth:api');
         $this->eventsRepo = $eventsRepo;
+    }
+
+    public function eventRegistration(Request $r)
+    {
+        $er = new EventRegistration();
+        //refactor : take current logged user.
+        $er->user_id = "7";
+        $er->event_id = $r->event_id;
+        $er->date = date("Y-m-d h:i:s");
+        return $this->eventsRepo->eventRegistration($er);
     }
 
 //    start : EventPayment Assingment

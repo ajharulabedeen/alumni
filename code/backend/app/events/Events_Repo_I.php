@@ -74,4 +74,5 @@ interface Events_Repo_I
     public function eventRegistration(EventRegistration $eventRegistration);
 
 
+
 }// class

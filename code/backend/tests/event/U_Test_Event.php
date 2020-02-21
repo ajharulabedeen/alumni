@@ -17,6 +17,7 @@ class U_Test_Event extends TestCase
     public function testMain()
     {
 //        $this->dummyDataInsert();//passed
+//        $this->dummyEventRegistraion();//passed
 
 //        error_log($this->create());//passed
 //        error_log($this->findOneEvent(1)->fee);//passed
@@ -36,7 +37,7 @@ class U_Test_Event extends TestCase
 //        error_log($this->assingment_payment_event());//passed
 //        error_log($this->checkPaymentAssingment());//passed
 //        error_log($this->removePaymentAssingment());//passed
-        error_log($this->eventRegistration());//passed
+        error_log($this->eventRegistration("6", "241"));//passed
 
     }
 
@@ -47,12 +48,13 @@ class U_Test_Event extends TestCase
 
     }
 
-    public function eventRegistration()
+    public function eventRegistration(string $event_id, string $user_id)
     {
         $repo = new Events_Repo_Impl();
         $ep = new EventRegistration();
         $ep->user_id = "5";
         $ep->event_id = "110";
+        $ep->date = date("Y-m-d h:i:s");
         $d = $repo->eventRegistration($ep);
         return $d;
 //        dd($d);
@@ -215,6 +217,19 @@ class U_Test_Event extends TestCase
     }
 
 //    start : dummy event creation
+
+    public function dummyEventRegistraion()
+    {
+        for ($x = 0; $x < 10; $x++) {
+            $repo = new Events_Repo_Impl();
+            $ep = new EventRegistration();
+            $ep->user_id = rand(1, 9);
+            $ep->event_id = "110";
+            $d = $repo->eventRegistration($ep);
+            error_log($d);
+        }
+    }
+
     public function dummyDataInsert()
     {
         for ($x = 0; $x < 1000; $x++) {

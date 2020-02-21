@@ -30,7 +30,25 @@ class F_Event_Test extends TestCase
 //        $this->findOne();
 //        $this->assingment_payment_event();
 //        $this->checkPaymentAssingment();
-        $this->removePaymentAssingment();
+//        $this->removePaymentAssingment();
+        $this->eventRegistration("818");
+    }
+
+    public function eventRegistration(string $event_id)
+    {
+        $response = $this->json(
+            'POST',
+            'events/eventRegistration',
+            [
+                "event_id" => $event_id,
+            ]
+            ,
+            [
+                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u2@umail.com", "123456")
+            ]
+        );
+        $d = $response->baseResponse->original;
+        error_log($d);
     }
 
     public function removePaymentAssingment()

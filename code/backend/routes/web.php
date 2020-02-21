@@ -114,3 +114,4 @@ Route::post('events/update_description_notes', 'Events_Controller@update_descrip
 Route::post('events/assingment_payment_event', 'Events_Controller@assingment_payment_event');
 Route::post('events/checkPaymentAssingment', 'Events_Controller@checkPaymentAssingment');
 Route::post('events/removePaymentAssingment', 'Events_Controller@removePaymentAssingment');
+Route::post('events/eventRegistration', 'Events_Controller@eventRegistration');
