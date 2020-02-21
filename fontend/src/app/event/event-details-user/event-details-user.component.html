@@ -112,10 +112,14 @@
               <p>{{this.paymentMobile['mobile_number']}}</p>
               <h4>TrxID:</h4>
               <p>{{this.paymentMobile["trx_id"]}}</p>
-              <h4>Status:</h4>
-              <p *ngIf="0">{{this.paymentMobile["status"]}}</p>
-              <h4>Approve Date:</h4>
-              <p>{{this.paymentMobile["approved_date"]}}</p>
+              <h4>Approvel Status:</h4>
+              <button *ngIf="this.approvalStatus" class="btn btn-primary">
+                Approved
+                <h4>Approve Date:</h4>
+                <p>{{this.paymentMobile["approved_date"]}}</p>
+              </button>
+              <button *ngIf="!this.approvalStatus" class="btn btn-warning">Pending</button>
+
             </div>
             <!-- end : Payment Mobile Description-->
 

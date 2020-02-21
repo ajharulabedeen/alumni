@@ -24,6 +24,7 @@ export class EventDetailsUserComponent implements OnInit {
 
   registered: boolean;
   paymentCheck: boolean;
+  approvalStatus: boolean;
   paymentMobile: PaymentMobile;
 
   constructor(
@@ -92,7 +93,13 @@ export class EventDetailsUserComponent implements OnInit {
         this.paymentMobile = data['data'];
         console.log(this.paymentMobile);
         console.log(this.paymentMobile['mobile_number']);
-        console.log(this.paymentMobile['date']);
+        if (this.paymentMobile['status'] == '0') {
+          console.log(this.approvalStatus);
+          this.approvalStatus = false;
+          console.log(this.approvalStatus);
+        } else {
+          this.approvalStatus = true;
+        }
         // console.log(data['data']['status']);
       } else {
         this.paymentCheck = false;
