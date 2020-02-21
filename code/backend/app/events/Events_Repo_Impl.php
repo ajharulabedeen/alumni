@@ -3,6 +3,7 @@
 namespace App\events;
 
 use App\events\Events;
+use App\events\EventRegistration;
 use Illuminate\Support\Facades\DB;
 
 // use App\events\Exception;
@@ -220,7 +221,25 @@ class Events_Repo_Impl implements Events_Repo_I
             ->delete();
         return $status;
     }
+
 //    end : EventPaymentAssingment
+
+    public function eventRegistration(EventRegistration $eventRegistration)
+    {
+        // TODO: Implement eventRegistration() method.
+        error_log("Event  registration: ");
+        $id = -1;
+        try {
+            $eventRegistration->save();
+            $id = $eventRegistration->id;
+        } catch (Exception $e) {
+            $saveStatus = false;
+            $e->getTrace();
+            error_log("Event Registration Failed.");
+            // error_log("Saveing Post Failed. : " . $e);
+        }
+        return $id;
+    }
 
 
 }//class

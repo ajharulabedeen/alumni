@@ -5,6 +5,7 @@ namespace Tests\Unit;
 use App\events\EventBasic;
 use App\events\EventDescriptionNotes;
 use App\events\EventPayment;
+use App\events\EventRegistration;
 use App\events\Events_Repo_Impl;
 use App\events\Events;
 use App\profile\ProfileBasic;
@@ -34,7 +35,8 @@ class U_Test_Event extends TestCase
 
 //        error_log($this->assingment_payment_event());//passed
 //        error_log($this->checkPaymentAssingment());//passed
-        error_log($this->removePaymentAssingment());//passed
+//        error_log($this->removePaymentAssingment());//passed
+        error_log($this->eventRegistration());//passed
 
     }
 
@@ -43,6 +45,17 @@ class U_Test_Event extends TestCase
     {
         error_log("\n Event: CRUD Test Done!\n");
 
+    }
+
+    public function eventRegistration()
+    {
+        $repo = new Events_Repo_Impl();
+        $ep = new EventRegistration();
+        $ep->user_id = "5";
+        $ep->event_id = "110";
+        $d = $repo->eventRegistration($ep);
+        return $d;
+//        dd($d);
     }
 
 // start : eventPayment

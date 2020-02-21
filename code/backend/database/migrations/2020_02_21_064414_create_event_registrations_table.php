@@ -15,9 +15,9 @@ class CreateEventRegistrationsTable extends Migration
     {
         Schema::create('event_registrations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('user_id',512)->nullable();
-            $table->string('event_id',512)->nullable();
-            $table->date('date',512)->nullable();
+            $table->string('user_id', 512)->nullable();
+            $table->string('event_id', 512)->nullable();
+            $table->date('date', 512)->nullable();
             $table->timestamps();
         });
     }
