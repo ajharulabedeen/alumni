@@ -37,10 +37,9 @@ class U_Test_Event extends TestCase
 //        error_log($this->assingment_payment_event());//passed
 //        error_log($this->checkPaymentAssingment());//passed
 //        error_log($this->removePaymentAssingment());//passed
-        error_log($this->eventRegistration("6", "241"));//passed
-
+//        error_log($this->eventRegistration("6", "241"));//passed
+        error_log($this->checkEventRegistration("110", "6"));//passed
     }
-
 
     public function Event_CRUD()
     {
@@ -48,12 +47,24 @@ class U_Test_Event extends TestCase
 
     }
 
+    public function checkEventRegistration(string $event_id, string $user_id)
+    {
+        $repo = new Events_Repo_Impl();
+        $ep = new EventRegistration();
+        $ep->user_id = $user_id;
+        $ep->event_id = $event_id;
+        $d = $repo->checkEventRegistration($event_id, $user_id);
+//        error_log($d['status']);
+        return $d['status'];
+//        dd($d);
+    }
+
     public function eventRegistration(string $event_id, string $user_id)
     {
         $repo = new Events_Repo_Impl();
         $ep = new EventRegistration();
-        $ep->user_id = "5";
-        $ep->event_id = "110";
+        $ep->user_id = $user_id;
+        $ep->event_id = $event_id;
         $ep->date = date("Y-m-d h:i:s");
         $d = $repo->eventRegistration($ep);
         return $d;

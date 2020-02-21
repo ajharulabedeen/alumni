@@ -73,6 +73,7 @@ interface Events_Repo_I
 
     public function eventRegistration(EventRegistration $eventRegistration);
 
+    public function checkEventRegistration(string $event_id, string $user_id);
 
 
 }// class

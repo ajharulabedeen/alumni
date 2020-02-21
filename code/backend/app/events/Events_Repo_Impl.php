@@ -208,7 +208,6 @@ class Events_Repo_Impl implements Events_Repo_I
             $payment_type_id = -1;
         } else {
             $payment_type_id = $data["payment_type_id"];
-
         }
         return $payment_type_id;
     }
@@ -239,6 +238,21 @@ class Events_Repo_Impl implements Events_Repo_I
             // error_log("Saveing Post Failed. : " . $e);
         }
         return $id;
+    }
+
+    public function checkEventRegistration(string $event_id, string $user_id)
+    {
+        // TODO: Implement checkEventRegistration() method.
+        $registered = false;
+        $data = EventRegistration::where("event_id", $event_id)->where("user_id", $user_id)->first();
+//        error_log($data);
+        if ($data == null) {
+            $registered = "0";
+//            error_log("NULL");
+        } else {
+            $registered = true;
+        }
+        return ["status" => $registered];
     }
 
 
