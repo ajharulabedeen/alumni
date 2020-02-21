@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {AuthService} from '../../auth/auth.service';
+import {PaymentMobile} from '../../payment/payment-mobile/payment-mobile.model';
 
 @Injectable({
   providedIn: 'root'
@@ -42,5 +43,16 @@ export class EventDetailsUserService {
       },
       this.authService.getHeader()
     );
+  }
+
+  public savePaymetMobile(mobilePayment: PaymentMobile) {
+    console.log(mobilePayment);
+    return this.http.post(
+      'http://127.0.0.1:8000/api/payment/mobile/create', mobilePayment, this.authService.getHeader()
+    );
+    //   .subscribe((res: Response) => {
+    //   console.log(res);
+    // });
+
   }
 }// class

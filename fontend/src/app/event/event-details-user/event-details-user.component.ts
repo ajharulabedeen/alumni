@@ -89,7 +89,7 @@ export class EventDetailsUserComponent implements OnInit {
 
   public paymentChecking() {
     this.userService.checkPayment(this.event.$id).subscribe(data => {
-      // console.log(data);
+      console.log(data);
       if (data['status'] == 1) {
         this.paymentCheck = true;
         this.paymentMobile = data['data'];
@@ -119,7 +119,13 @@ export class EventDetailsUserComponent implements OnInit {
     mobilePayment.$payment_method = this.payIt_payment_method;
     mobilePayment.$trx_id = this.payIt_trx_id;
     mobilePayment.$mobile_number = this.payIt_mobile_number;
-    this.ptmService.savePaymetMobile(mobilePayment);
+    this.userService.savePaymetMobile(mobilePayment).subscribe(data => {
+      if (data > 0) {
+        this.paymentCheck = true;
+        //asdskkk
+        this.paymentChecking();
+      }
+    });
 
   }//savePayment
 
