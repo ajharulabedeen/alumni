@@ -45,8 +45,9 @@ export class EventManageComponent implements OnInit {
   deleteID: string;
 
   editDescriptionNotes: boolean;
-  private editEventID: string;
+  assingMessage: string;
 
+  private editEventID: string;
   eventEdit: Events;
   payment: PaymentType;
   paymentFound: boolean;
@@ -55,8 +56,12 @@ export class EventManageComponent implements OnInit {
   private assingSuccess: boolean;
   removeConfirmAsk: boolean;
 
+
+  paymentAlreadyAssingned: boolean;
+
   constructor(private eService: EventManageService) {
   }
+
 
   ngOnInit() {
     this.paymentFound = false;
@@ -71,7 +76,6 @@ export class EventManageComponent implements OnInit {
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
   }
-
 
   // start : for tab in font end.
   public searchTab(evt, tabName) {
@@ -89,8 +93,8 @@ export class EventManageComponent implements OnInit {
     evt.currentTarget.className += ' active';
   }
 
-  // end : for tab in font end.
 
+  // end : for tab in font end.
 
   public eventSearch_previousPage() {
     if (this.eventSearch_pageNumber > 1) {
@@ -281,9 +285,11 @@ export class EventManageComponent implements OnInit {
       console.log(data);
       if (data > 0) {
         this.assingSuccess = true;
+        this.paymentAlreadyAssingned = true;
       }
     });
   }
+
 
   public checkPaymentAssingment() {
     console.log(this.editEventID);
@@ -292,6 +298,7 @@ export class EventManageComponent implements OnInit {
       if (data > 0) {
         this.paymentID = data.toString();
         this.paymentFound = true;
+        this.paymentAlreadyAssingned = true;
         this.searchPaymentType();
       }
     });
@@ -305,6 +312,8 @@ export class EventManageComponent implements OnInit {
       console.log(data);
       if (data == '1') {
         this.removeConfirmAsk = false;
+        this.paymentAlreadyAssingned = false;
+        this.assingSuccess = false;
       }
     });
   }
