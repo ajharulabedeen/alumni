@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { AuthService } from '../../auth/auth.service';
-import { Observable } from 'rxjs';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {AuthService} from '../../auth/auth.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-profile',
@@ -9,7 +9,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  constructor(private http: HttpClient, private authService: AuthService) { }
+  constructor(private http: HttpClient, private authService: AuthService) {
+  }
 
   photoEdit = false;
   selectedFile: File;
@@ -48,7 +49,7 @@ export class ProfileComponent implements OnInit {
 
   createImageFromBlob(image: Blob) {
     let reader = new FileReader();
-    reader.addEventListener("load", () => {
+    reader.addEventListener('load', () => {
       this.imageToShow = reader.result;
     }, false);
 
@@ -61,8 +62,8 @@ export class ProfileComponent implements OnInit {
     // this.http is the injected HttpClient
     const uploadData = new FormData();
     uploadData.append('photo', this.selectedFile, this.selectedFile.name);
-      return this.http.post('http://127.0.0.1:8000/api/photo/upload', this.authService.getHeaderFile(), {responseType : 'blob'}) //working, but to set static uName;
-      // this.http.post('http://127.0.0.1:8000/api/photo/upload', uploadData, this.authService.getHeaderFile())
+    return this.http.post('http://127.0.0.1:8000/api/photo/upload', this.authService.getHeaderFile(), {responseType: 'blob'}) //working, but to set static uName;
+    // this.http.post('http://127.0.0.1:8000/api/photo/upload', uploadData, this.authService.getHeaderFile())
       .subscribe(event => {
         console.log(event);
       });

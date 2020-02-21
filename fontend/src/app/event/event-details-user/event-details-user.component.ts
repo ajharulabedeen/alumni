@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Events} from '../event-manage/events.model';
 import {EventDetailsService} from '../event-details/event-details.service';
 import {ActivatedRoute} from '@angular/router';
+import {HttpClient} from '@angular/common/http';
+import {AuthService} from '../../auth/auth.service';
 
 @Component({
   selector: 'app-event-details-user',
@@ -18,7 +20,11 @@ export class EventDetailsUserComponent implements OnInit {
   event = new Events();
   id: string;
 
-  constructor(private eventDeatailsService: EventDetailsService, private activeRoute: ActivatedRoute) {
+  constructor(
+    private eventDeatailsService: EventDetailsService,
+    private activeRoute: ActivatedRoute,
+    private http: HttpClient,
+    private authService: AuthService) {
   }
 
 
@@ -33,7 +39,7 @@ export class EventDetailsUserComponent implements OnInit {
       // console.log(e[0]);
       // refactor : have to fix the back end Code.
       // e = e[0];
-      this.event.$title = e['id'];
+      this.event.$id = e['id'];
       this.event.$title = e['title'];
       this.event.$start_date = e['start_date'];
       this.event.$end_date = e['end_date'];
@@ -42,7 +48,23 @@ export class EventDetailsUserComponent implements OnInit {
       this.event.$description = e['description'];
       this.event.$notes = e['notes'];
     });
-
   }
 
-}
+  /**
+   * here only method will contact with server, for that service not created.
+   */
+  public register_to_event() {
+    console.log('register_to_event :');
+    this.http.post(
+      'http://127.0.0.1:8000/events/eventRegistration',
+      {
+        'event_id': this.event.$id,
+      },
+      this.authService.getHeader()
+    ).subscribe(data => {
+      console.log(data);
+    });
+  }
+
+
+}// class
