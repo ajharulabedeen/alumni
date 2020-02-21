@@ -4,6 +4,7 @@ import {EventDetailsService} from '../event-details/event-details.service';
 import {ActivatedRoute} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {AuthService} from '../../auth/auth.service';
+import {EventDetailsUserService} from './event-details-user.service';
 
 @Component({
   selector: 'app-event-details-user',
@@ -23,8 +24,7 @@ export class EventDetailsUserComponent implements OnInit {
   constructor(
     private eventDeatailsService: EventDetailsService,
     private activeRoute: ActivatedRoute,
-    private http: HttpClient,
-    private authService: AuthService) {
+    private  userService: EventDetailsUserService) {
   }
 
 
@@ -54,19 +54,10 @@ export class EventDetailsUserComponent implements OnInit {
    * here only method will contact with server, for that service not created.
    */
   public register_to_event() {
-    console.log('register_to_event :');
-    this.http.post(
-      'http://127.0.0.1:8000/events/eventRegistration',
-      {
-        'event_id': this.event.$id,
-      },
-      this.authService.getHeader()
-    ).subscribe(data => {
+    this.userService.register_to_event(this.event.$id).subscribe(data => {
       console.log(data);
     });
   }
-
-
 
 
 }// class
