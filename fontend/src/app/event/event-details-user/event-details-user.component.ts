@@ -22,6 +22,7 @@ export class EventDetailsUserComponent implements OnInit {
   id: string;
 
   registered: boolean;
+  paymentCheck: boolean;
 
   constructor(
     private eventDeatailsService: EventDetailsService,
@@ -50,6 +51,7 @@ export class EventDetailsUserComponent implements OnInit {
       this.event.$description = e['description'];
       this.event.$notes = e['notes'];
       this.checkRegister();
+      this.paymentChecking();
     });
   }
 
@@ -70,11 +72,22 @@ export class EventDetailsUserComponent implements OnInit {
   public checkRegister() {
     console.log('checkRegister  : ' + this.event.$id);
     this.userService.checkRegister(this.event.$id).subscribe(data => {
-      console.log(data);
+      // console.log(data);
       if (data['status'] == 1) {
         this.registered = true;
       } else {
         this.registered = false;
+      }
+    });
+  }
+
+  public paymentChecking() {
+    this.userService.checkPayment(this.event.$id).subscribe(data => {
+      // console.log(data);
+      if (data['status'] == 1) {
+        this.paymentCheck = true;
+      } else {
+        this.paymentCheck = false;
       }
     });
   }

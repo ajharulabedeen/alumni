@@ -23,9 +23,20 @@ export class EventDetailsUserService {
   }
 
   checkRegister(id: string) {
-    console.log("eID  :" + id);
+    console.log('eID  :' + id);
     return this.http.post(
       'http://127.0.0.1:8000/events/checkEventRegistration',
+      {
+        'event_id': id,
+      },
+      this.authService.getHeader()
+    );
+  }
+
+  checkPayment(id: string) {
+    console.log('checkPayment eID  :' + id);
+    return this.http.post(
+      'http://127.0.0.1:8000/events/checkPayment',
       {
         'event_id': id,
       },
