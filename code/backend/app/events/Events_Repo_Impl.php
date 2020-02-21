@@ -227,17 +227,23 @@ class Events_Repo_Impl implements Events_Repo_I
     {
         // TODO: Implement eventRegistration() method.
         error_log("Event  registration: ");
-        $id = -1;
+        $status = "";
         try {
-            $eventRegistration->save();
-            $id = $eventRegistration->id;
-        } catch (Exception $e) {
+            $check = $this->checkEventRegistration($eventRegistration->event_id, $eventRegistration->user_id);
+            if ($check['status'] == "0") {
+                $eventRegistration->save();
+                $id = $eventRegistration->id;
+                $status = ["status" => $id];
+            } else if ($check['status'] == "1") {
+                $status = ["status" => "registered"];
+            }
+        } catch (\Exception $e) {
             $saveStatus = false;
             $e->getTrace();
             error_log("Event Registration Failed.");
             // error_log("Saveing Post Failed. : " . $e);
         }
-        return $id;
+        return $status;
     }
 
     public function checkEventRegistration(string $event_id, string $user_id)
@@ -248,9 +254,8 @@ class Events_Repo_Impl implements Events_Repo_I
 //        error_log($data);
         if ($data == null) {
             $registered = "0";
-//            error_log("NULL");
         } else {
-            $registered = true;
+            $registered = "1";
         }
         return ["status" => $registered];
     }
