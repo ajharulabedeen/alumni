@@ -21,6 +21,8 @@ export class EventDetailsUserComponent implements OnInit {
   event = new Events();
   id: string;
 
+  registered: boolean;
+
   constructor(
     private eventDeatailsService: EventDetailsService,
     private activeRoute: ActivatedRoute,
@@ -47,6 +49,7 @@ export class EventDetailsUserComponent implements OnInit {
       this.event.$fee = e['fee'];
       this.event.$description = e['description'];
       this.event.$notes = e['notes'];
+      this.checkRegister();
     });
   }
 
@@ -56,6 +59,18 @@ export class EventDetailsUserComponent implements OnInit {
   public register_to_event() {
     this.userService.register_to_event(this.event.$id).subscribe(data => {
       console.log(data);
+    });
+  }
+
+  public checkRegister() {
+    console.log('checkRegister  : ' + this.event.$id);
+    this.userService.checkRegister(this.event.$id).subscribe(data => {
+      console.log(data);
+      if (data['status'] == 1) {
+        this.registered = true;
+      } else {
+        this.registered = false;
+      }
     });
   }
 
