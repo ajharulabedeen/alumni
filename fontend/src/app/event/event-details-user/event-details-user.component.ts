@@ -6,6 +6,7 @@ import {HttpClient} from '@angular/common/http';
 import {AuthService} from '../../auth/auth.service';
 import {EventDetailsUserService} from './event-details-user.service';
 import {PaymentMobile} from '../../payment/payment-mobile/payment-mobile.model';
+import {PaymentMobileService} from '../../payment/payment-mobile/payment-mobile.service';
 
 @Component({
   selector: 'app-event-details-user',
@@ -18,6 +19,7 @@ export class EventDetailsUserComponent implements OnInit {
   payIt_mobile_number: string;
   payIt_payment_method: string;
   payIt_trx_id: string;
+  private type_ID: string;
 
   event = new Events();
   id: string;
@@ -30,7 +32,8 @@ export class EventDetailsUserComponent implements OnInit {
   constructor(
     private eventDeatailsService: EventDetailsService,
     private activeRoute: ActivatedRoute,
-    private  userService: EventDetailsUserService) {
+    private  userService: EventDetailsUserService,
+    private ptmService: PaymentMobileService) {
   }
 
 
@@ -84,15 +87,14 @@ export class EventDetailsUserComponent implements OnInit {
     });
   }
 
-
   public paymentChecking() {
     this.userService.checkPayment(this.event.$id).subscribe(data => {
       // console.log(data);
       if (data['status'] == 1) {
         this.paymentCheck = true;
         this.paymentMobile = data['data'];
-        console.log(this.paymentMobile);
-        console.log(this.paymentMobile['mobile_number']);
+        // console.log(this.paymentMobile);
+        // console.log(this.paymentMobile['mobile_number']);
         if (this.paymentMobile['status'] == '0') {
           console.log(this.approvalStatus);
           this.approvalStatus = false;
@@ -103,9 +105,22 @@ export class EventDetailsUserComponent implements OnInit {
         // console.log(data['data']['status']);
       } else {
         this.paymentCheck = false;
+        this.type_ID = data['type_id'];
       }
     });
   }
 
+  public savePayment() {
+    console.log('Save Payment!');
+    var mobilePayment = new PaymentMobile();
+    mobilePayment.$type_ID = this.type_ID;
+    mobilePayment.$amount = this.payIt_amount;
+    mobilePayment.$date = this.payIt_date;
+    mobilePayment.$payment_method = this.payIt_payment_method;
+    mobilePayment.$trx_id = this.payIt_trx_id;
+    mobilePayment.$mobile_number = this.payIt_mobile_number;
+    this.ptmService.savePaymetMobile(mobilePayment);
+
+  }//savePayment
 
 }// class
