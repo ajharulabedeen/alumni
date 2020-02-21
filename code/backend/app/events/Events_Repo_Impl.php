@@ -272,20 +272,21 @@ class Events_Repo_Impl implements Events_Repo_I
     public function checkPayment(string $event_id, string $user_id)
     {
         //refactor : join column can be used, instead of distinct selection.
-        $paid = false;
+        $data = false;
         $type_id = EventPayment::select("payment_type_id")->where("event_id", $event_id)->first()['payment_type_id'];
 
-        //        error_log("TypeID : " . $type_id);
-        //        error_log("uID: " . $user_id);
+//                error_log("TypeID : " . $type_id);
+//                error_log("uID: " . $user_id);
 
-        $data = PaymentMobile::where("type_ID", $type_id)->where("user_id", $user_id)->first();
+        $pm = PaymentMobile::where("type_ID", $type_id)->where("user_id", $user_id)->first();
 //        error_log($data);
-        if ($data == null) {
-            $paid = "0";
+        if ($pm == null) {
+            $data = ["status" => "0", "data" => $pm];
         } else {
-            $paid = "1";
+//            $paid = "1";
+            $data = ["status" => "1", "data" => $pm];
         }
-        return ["status" => $paid];
+        return $data;
     }
 //end : event registration
 
