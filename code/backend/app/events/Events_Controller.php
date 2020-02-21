@@ -169,4 +169,10 @@ class Events_Controller extends Controller
         return $this->eventsRepo->checkEventRegistration($r->event_id, "7");
     }
 
+    public function checkPayment(Request $r)
+    {
+//        (string $event_id, string $user_id
+        return $this->eventsRepo->checkPayment($r->event_id, $r->user_id);
+    }
+
 }// class

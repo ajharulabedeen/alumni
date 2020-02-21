@@ -115,4 +115,5 @@ Route::post('events/assingment_payment_event', 'Events_Controller@assingment_pay
 Route::post('events/checkPaymentAssingment', 'Events_Controller@checkPaymentAssingment');
 Route::post('events/removePaymentAssingment', 'Events_Controller@removePaymentAssingment');
 Route::post('events/eventRegistration', 'Events_Controller@eventRegistration');
-Route::post('events/checkEventRegistration', 'Events_Controller@checkEventRegistration');
+Route::post('events/eventRegistration', 'Events_Controller@eventRegistration');
+Route::post('events/checkPayment', 'Events_Controller@checkPayment');
