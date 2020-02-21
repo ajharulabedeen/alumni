@@ -67,4 +67,6 @@ export class EventDetailsUserComponent implements OnInit {
   }
 
 
+
+
 }// class
