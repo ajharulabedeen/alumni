@@ -31,13 +31,11 @@ class U_Test_Event extends TestCase
 //        $this->eventbasicUpdate();//passed
 //        $this->eventUpdateNotesDescription();//passed
 
-
 //        error_log($this->fiendOneEvent(1)->description);//passed.
-
 //        error_log($this->assingment_payment_event());//passed
 //        error_log($this->checkPaymentAssingment());//passed
 //        error_log($this->removePaymentAssingment());//passed
-        error_log($this->eventRegistration("6", "818"));//passed
+        error_log($this->eventRegistration("818", "6"));//passed
 //        error_log($this->checkEventRegistration("110", "6"));//passed
     }
 

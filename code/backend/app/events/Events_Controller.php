@@ -160,4 +160,9 @@ class Events_Controller extends Controller
         return ["data" => $this->eventsRepo->search_event_count($column_name, $key)];
     }
 
+    public function checkEventRegistration(Request $r)
+    {
+        return $this->eventsRepo->checkEventRegistration($r->event_id, $r->user_id);
+    }
+
 }// class

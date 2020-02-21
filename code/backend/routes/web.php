@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 // use Illuminate\Routing\Route;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -98,7 +99,6 @@ Route::post('search/jobs', 'Search_Controller@search_jobs');
 Route::post('search/jobs_count', 'Search_Controller@search_jobs_count');
 
 
-
 //event
 Route::post('events/create', 'Events_Controller@create');
 Route::post('events/update', 'Events_Controller@update');
@@ -115,3 +115,4 @@ Route::post('events/assingment_payment_event', 'Events_Controller@assingment_pay
 Route::post('events/checkPaymentAssingment', 'Events_Controller@checkPaymentAssingment');
 Route::post('events/removePaymentAssingment', 'Events_Controller@removePaymentAssingment');
 Route::post('events/eventRegistration', 'Events_Controller@eventRegistration');
+Route::post('events/checkEventRegistration', 'Events_Controller@checkEventRegistration');

@@ -31,7 +31,26 @@ class F_Event_Test extends TestCase
 //        $this->assingment_payment_event();
 //        $this->checkPaymentAssingment();
 //        $this->removePaymentAssingment();
-        $this->eventRegistration("818");
+//        $this->eventRegistration("818");
+        $this->checkEventRegistration("818", "6");
+    }
+
+    public function checkEventRegistration($event_id, $user_id)
+    {
+        $response = $this->json(
+            'POST',
+            'events/checkEventRegistration',
+            [
+                "event_id" => $event_id,
+                "user_id" => $user_id,
+            ]
+            ,
+            [
+                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u2@umail.com", "123456")
+            ]
+        );
+        $d = $response->baseResponse->original;
+        error_log($d["status"]);
     }
 
     public function eventRegistration(string $event_id)
@@ -409,8 +428,7 @@ class F_Event_Test extends TestCase
         // prettyPrint( $t[0] );
     }
 
-    public
-    function SignUp()
+    public function SignUp()
     {
         $response = $this->json(
             'POST',
