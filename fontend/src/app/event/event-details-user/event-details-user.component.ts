@@ -59,6 +59,11 @@ export class EventDetailsUserComponent implements OnInit {
   public register_to_event() {
     this.userService.register_to_event(this.event.$id).subscribe(data => {
       console.log(data);
+      if (data['status'] > 0) {
+        this.registered = true;
+      } else if (data['status'] == 'registered') {
+        this.registered = false;
+      }
     });
   }
 
