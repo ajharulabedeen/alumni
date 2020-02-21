@@ -172,7 +172,8 @@ class Events_Controller extends Controller
     public function checkPayment(Request $r)
     {
 //        (string $event_id, string $user_id
-        return $this->eventsRepo->checkPayment($r->event_id, $r->user_id);
+//        refactor : current logged user id have to put.
+        return $this->eventsRepo->checkPayment($r->event_id, "7");
     }
 
 }// class
