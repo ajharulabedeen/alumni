@@ -27,7 +27,7 @@ class Events_Controller extends Controller
     {
         $er = new EventRegistration();
         //refactor : take current logged user.
-        $er->user_id = "7";
+        $er->user_id = Utils::getUserId();
         $er->event_id = $r->event_id;
         $er->date = date("Y-m-d h:i:s");
         return $this->eventsRepo->eventRegistration($er);
@@ -166,14 +166,14 @@ class Events_Controller extends Controller
         error_log($r->event_id);
 //        error_log($r->user_id);
         //refactor
-        return $this->eventsRepo->checkEventRegistration($r->event_id, "7");
+        return $this->eventsRepo->checkEventRegistration($r->event_id, Utils::getUserId());
     }
 
     public function checkPayment(Request $r)
     {
 //        (string $event_id, string $user_id
 //        refactor : current logged user id have to put.
-        return $this->eventsRepo->checkPayment($r->event_id, "7");
+        return $this->eventsRepo->checkPayment($r->event_id, Utils::getUserId());
     }
 
 }// class
