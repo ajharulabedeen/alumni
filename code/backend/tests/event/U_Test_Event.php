@@ -50,11 +50,12 @@ class U_Test_Event extends TestCase
     {
         $repo = new Events_Repo_Impl();
 //        $d = $repo->checkEventRegistration($event_id, $user_id);
-        $d = $repo->checkPayment("241", "7");
+        $d = $repo->checkPayment("503", "7");
         error_log($d['status']);
         error_log($d['data']);
-        return $d['status'];
 //        dd($d);
+        error_log($d['type_id']);
+        return $d['status'];
     }
 
     public function checkEventRegistration(string $event_id, string $user_id)

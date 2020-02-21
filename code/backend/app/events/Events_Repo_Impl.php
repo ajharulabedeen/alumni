@@ -275,16 +275,17 @@ class Events_Repo_Impl implements Events_Repo_I
         $data = false;
         $type_id = EventPayment::select("payment_type_id")->where("event_id", $event_id)->first()['payment_type_id'];
 
-//                error_log("TypeID : " . $type_id);
+//        error_log("TypeID : " . $type_id);
 //                error_log("uID: " . $user_id);
 
         $pm = PaymentMobile::where("type_ID", $type_id)->where("user_id", $user_id)->first();
 //        error_log($data);
         if ($pm == null) {
-            $data = ["status" => "0", "data" => $pm];
+            $data = ["status" => "0", "data" => $pm, "type_id" => $type_id];
+//            $data = ["status" => "0", "type_id" => $type_id];
         } else {
 //            $paid = "1";
-            $data = ["status" => "1", "data" => $pm];
+            $data = ["status" => "1", "data" => $pm, "type_id" => $type_id];
         }
         return $data;
     }
