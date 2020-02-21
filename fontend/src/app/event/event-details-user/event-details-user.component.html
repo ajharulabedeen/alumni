@@ -9,7 +9,8 @@
     <button class="btn btn-primary" data-toggle="modal"
             data-target="#do_payment" *ngIf="!paymentCheck">Pay
     </button>
-    <button class="btn btn-danger" *ngIf="paymentCheck">Pay
+    <button class="btn btn-danger" data-toggle="modal"
+            data-target="#do_payment" *ngIf="paymentCheck">Pay
     </button>
     <div class="panel-group">
       <div class="panel panel-default">
@@ -62,44 +63,69 @@
           </div>
           <div class="modal-body">
 
-            <div class="col-md-6 offset-md-6">
+            <!-- start : payment Form-->
+            <div *ngIf="!paymentCheck">
+              <div class="col-md-6 offset-md-6">
+                <div class="form-group">
+                  <label>Date</label>
+                  <input type="text" class="form-control" placeholder="{{payIt_date}}">
+                </div>
+              </div>
+              <div class="col-md-6 offset-md-6">
+                <div class="form-group">
+                  <label>Select Date</label>
+                  <input [(ngModel)]="payIt_date" type="date" class="form-control">
+                </div>
+              </div>
+
               <div class="form-group">
-                <label>Date</label>
-                <input type="text" class="form-control" placeholder="{{payIt_date}}">
+                <label>Amount</label>
+                <input [(ngModel)]="payIt_amount" type="number" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>Mobile Number</label>
+                <input [(ngModel)]="payIt_mobile_number" type="text" class="form-control"
+                       placeholder="Mobile Number from Which payment has done ...... (Max : 512 Character)">
+              </div>
+              <div class="form-group">
+                <label>Medium</label>
+                <input [(ngModel)]="payIt_payment_method" type="text" class="form-control"
+                       placeholder="bKash, Rocket...... (Max : 512 Character)">
+              </div>
+              <div class="form-group">
+                <label>TrX ID</label>
+                <input [(ngModel)]="payIt_trx_id" type="text" class="form-control"
+                       placeholder="Transection id...... (Max : 512 Character)">
               </div>
             </div>
-            <div class="col-md-6 offset-md-6">
-              <div class="form-group">
-                <label>Select Date</label>
-                <input [(ngModel)]="payIt_date" type="date" class="form-control">
-              </div>
-            </div>
 
-            <div class="form-group">
-              <label>Amount</label>
-              <input [(ngModel)]="payIt_amount" type="number" class="form-control">
-            </div>
-            <div class="form-group">
-              <label>Mobile Number</label>
-              <input [(ngModel)]="payIt_mobile_number" type="text" class="form-control"
-                     placeholder="Mobile Number from Which payment has done ...... (Max : 512 Character)">
-            </div>
-            <div class="form-group">
-              <label>Medium</label>
-              <input [(ngModel)]="payIt_payment_method" type="text" class="form-control"
-                     placeholder="bKash, Rocket...... (Max : 512 Character)">
-            </div>
-            <div class="form-group">
-              <label>TrX ID</label>
-              <input [(ngModel)]="payIt_trx_id" type="text" class="form-control"
-                     placeholder="Transection id...... (Max : 512 Character)">
-            </div>
+            <!-- end : payment Form-->
 
-
-            <div class="modal-footer">
-              <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="savePayment()">Save</button>
+            <!-- start : Payment Mobile Description-->
+            <div *ngIf="paymentCheck">
+              <label for="date">Payment Date:</label>
+              <p id="date">{{this.paymentMobile["date"]}}</p>
+              <h4>Payment Method:</h4>
+              <p>{{this.paymentMobile["payment_method"]}}</p>
+              <h4>Mobile Number:</h4>
+              <p>{{this.paymentMobile.$mobile_number}}</p>
+              <p>{{this.paymentMobile['mobile_number']}}</p>
+              <h4>TrxID:</h4>
+              <p>{{this.paymentMobile["trx_id"]}}</p>
+              <h4>Status:</h4>
+              <p *ngIf="0">{{this.paymentMobile["status"]}}</p>
+              <h4>Approve Date:</h4>
+              <p>{{this.paymentMobile["approved_date"]}}</p>
             </div>
+            <!-- end : Payment Mobile Description-->
+
+          </div>
+          <div class="modal-footer ">
+            <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal"
+                    *ngIf="!paymentCheck" (click)="savePayment()">
+              Save
+            </button>
           </div>
         </div>
       </div>

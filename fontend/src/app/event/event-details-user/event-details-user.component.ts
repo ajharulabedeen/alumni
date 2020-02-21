@@ -5,6 +5,7 @@ import {ActivatedRoute} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {AuthService} from '../../auth/auth.service';
 import {EventDetailsUserService} from './event-details-user.service';
+import {PaymentMobile} from '../../payment/payment-mobile/payment-mobile.model';
 
 @Component({
   selector: 'app-event-details-user',
@@ -23,6 +24,7 @@ export class EventDetailsUserComponent implements OnInit {
 
   registered: boolean;
   paymentCheck: boolean;
+  paymentMobile: PaymentMobile;
 
   constructor(
     private eventDeatailsService: EventDetailsService,
@@ -81,11 +83,17 @@ export class EventDetailsUserComponent implements OnInit {
     });
   }
 
+
   public paymentChecking() {
     this.userService.checkPayment(this.event.$id).subscribe(data => {
       // console.log(data);
       if (data['status'] == 1) {
         this.paymentCheck = true;
+        this.paymentMobile = data['data'];
+        console.log(this.paymentMobile);
+        console.log(this.paymentMobile['mobile_number']);
+        console.log(this.paymentMobile['date']);
+        // console.log(data['data']['status']);
       } else {
         this.paymentCheck = false;
       }
