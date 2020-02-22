@@ -176,4 +176,21 @@ class Events_Controller extends Controller
         return $this->eventsRepo->checkPayment($r->event_id, Utils::getUserId());
     }
 
+    public function getAllRegisteredUser(Request $r)
+    {
+        $per_page = $r->per_page;
+        $sort_by = $r->sort_by;
+        $sort_on = $r->sort_on;
+        $column_name = $r->column_name;
+        $key = $r->key;
+        $event_id = $r->event_id;
+        return $this->eventsRepo->getAllRegisteredUser(
+            $per_page,
+            $sort_by,
+            $sort_on,
+            $column_name,
+            $key,
+            $event_id);
+
+    }
 }// class

@@ -316,12 +316,11 @@ class Events_Repo_Impl implements Events_Repo_I
             ->where('b.' . $column_name, 'LIKE', $key)
             ->where("event_registrations.event_id", "=", $event_id)
             ->orderBy($sort_on, $order)
-//            ->groupBy('profile_basics.user_id')
+//            ->groupBy('profile_basics.user_id')//not working
             ->paginate($per_page);
 
         return $data;
     }
-
 
 
 }//class

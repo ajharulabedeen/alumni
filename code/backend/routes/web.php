@@ -118,3 +118,4 @@ Route::post('events/eventRegistration', 'Events_Controller@eventRegistration');
 Route::post('events/eventRegistration', 'Events_Controller@eventRegistration');
 Route::post('events/checkEventRegistration', 'Events_Controller@checkEventRegistration');
 Route::post('events/checkPayment', 'Events_Controller@checkPayment');
+Route::post('events/getAllRegisteredUser', 'Events_Controller@getAllRegisteredUser');

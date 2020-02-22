@@ -33,7 +33,43 @@ class F_Event_Test extends TestCase
 //        $this->removePaymentAssingment();
 //        $this->eventRegistration("818");
 //        $this->checkEventRegistration("818", "6");
-        $this->checkPayment("110", "7");
+//        $this->checkPayment("110", "7");
+        $this->getAllRegisteredUser(10,
+            "DESC", "batch",
+            "dept", '%%', "110");
+
+    }
+
+    public function getAllRegisteredUser(string $per_page,
+                                         string $sort_by,
+                                         string $sort_on,
+                                         string $column_name,
+                                         string $key,
+                                         string $event_id)
+    {
+        $response = $this->json(
+            'POST',
+            'events/getAllRegisteredUser',
+            [
+                "per_page" => $per_page,
+                "sort_by" => $sort_by,
+                "sort_on" => $sort_on,
+                "column_name" => $column_name,
+                "key" => $key,
+                "event_id" => $event_id,
+            ]
+            ,
+            [
+                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u2@umail.com", "123456")
+            ]
+        );
+        $d = $response->baseResponse->original;
+//        error_log($d);
+        foreach ($d as $p) {
+            error_log($p->user_id);
+            print_r($p);
+        }
+//        dd($d);
     }
 
     public function checkPayment($event_id, $user_id)
