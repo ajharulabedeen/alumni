@@ -312,7 +312,16 @@ class Events_Repo_Impl implements Events_Repo_I
                 'event_registrations.user_id',
                 '=',
                 'b.user_id')
-            ->select('b.*')
+            ->select(
+                'b.dept'
+                , 'b.batch'
+                , 'b.student_id'
+                , 'b.first_name'
+                , 'b.last_name'
+                , 'b.gender'
+                , 'b.email'
+                , 'b.phone'
+                , 'b.user_id')
             ->where('b.' . $column_name, 'LIKE', $key)
             ->where("event_registrations.event_id", "=", $event_id)
             ->orderBy($sort_on, $order)
