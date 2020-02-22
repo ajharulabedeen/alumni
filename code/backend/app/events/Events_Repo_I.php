@@ -77,7 +77,16 @@ interface Events_Repo_I
     public function checkEventRegistration(string $event_id, string $user_id);
 
     public function checkPayment(string $event_id, string $user_id);
+
 //end : event registration
+
+
+    public function getAllRegisteredUser(string $per_page,
+                                         string $sort_by,
+                                         string $sort_on,
+                                         string $column_name,
+                                         string $key,
+                                         string $event_id);
 
 
 }// class

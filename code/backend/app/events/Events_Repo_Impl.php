@@ -289,6 +289,39 @@ class Events_Repo_Impl implements Events_Repo_I
         }
         return $data;
     }
+
 //end : event registration
+
+    public function getAllRegisteredUser(
+        string $per_page,
+        string $sort_by,
+        string $sort_on,
+        string $column_name,
+        string $key,
+        string $event_id)
+    {
+        // TODO: Implement getAllRegisteredUser() method.
+        if ($sort_by == "ASC") {
+            $order = "ASC";
+        } else {
+            $order = "DESC";
+        }
+
+        $data = DB::table('profile_basics as b')
+            ->join('event_registrations',
+                'event_registrations.user_id',
+                '=',
+                'b.user_id')
+            ->select('b.*')
+            ->where('b.' . $column_name, 'LIKE', $key)
+            ->where("event_registrations.event_id", "=", $event_id)
+            ->orderBy($sort_on, $order)
+//            ->groupBy('profile_basics.user_id')
+            ->paginate($per_page);
+
+        return $data;
+    }
+
+
 
 }//class

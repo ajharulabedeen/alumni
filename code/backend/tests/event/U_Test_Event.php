@@ -37,13 +37,54 @@ class U_Test_Event extends TestCase
 //        error_log($this->removePaymentAssingment());//passed
 //        error_log($this->eventRegistration("818", "6"));//passed
 //        error_log($this->checkEventRegistration("110", "6"));//passed
-        $this->checkPayment();
+//        $this->checkPayment();
+
+        $this->getAllRegisteredUser(100,
+            "DESC", "batch",
+            "dept", '%%', "110");
+
     }
 
     public function Event_CRUD()
     {
         error_log("\n Event: CRUD Test Done!\n");
 
+    }
+
+    public function getAllRegisteredUser(
+        string $per_page,
+        string $sort_by,
+        string $sort_on,
+        string $column_name,
+        string $key,
+        string $event_id)
+    {
+        $repo = new Events_Repo_Impl();
+        $data = $repo->getAllRegisteredUser($per_page,
+            $sort_by,
+            $sort_on,
+            $column_name,
+            $key,
+            $event_id);
+//        dd($data);
+//        print_r($data);
+        $this->assertTrue(($data != null));
+        for ($i = 0; $i < 100; $i++) {
+
+            if ($data[$i] == null) {
+                break;
+            }
+            error_log(
+//                $data[$i]->user_id
+                ' batch :' . $data[$i]->batch
+                . ' uID :' . $data[$i]->user_id
+                . " Name : " . $data[$i]->first_name
+                . $data[$i]->last_name
+//                . "---institute Name : " . $data[$i]->organization_name
+//                . "---Type : " . $data[$i]->type
+//                . "---Role: " . $data[$i]->role);
+            );
+        }
     }
 
     public function checkPayment()

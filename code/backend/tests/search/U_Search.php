@@ -64,7 +64,12 @@ class UTest_ProfileBasicRepo extends TestCase
 //        $this->search_basic(10, "ASC", "batch", "dept", '%EE%');
 //    }
 
-    public function search_jobs(string $per_page, string $sort_by, string $sort_on, string $columnName, string $key): void
+    public function search_jobs(
+        string $per_page,
+        string $sort_by,
+        string $sort_on,
+        string $columnName,
+        string $key): void
     {
         $repo = new Search_Repo_Impl();
         $data = $repo->search_jobs($per_page, $sort_by, $sort_on, $columnName, $key);
