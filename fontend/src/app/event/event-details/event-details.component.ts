@@ -161,20 +161,8 @@ export class EventDetailsComponent implements OnInit {
       this.registered_user = new Array();
       var usersRegistered = res['data'];
       for (const key in usersRegistered) {
-        // console.log(key);
-        // console.log(usersRegistered[key]['email']);
         var basic = new RegisteredUser();
         basic = usersRegistered[key];
-        // no need; code working well.
-        // basic.$batch = usersRegistered[key]['batch'];
-        // basic.$dept = usersRegistered[key]['dept'];
-        // basic.$email = usersRegistered[key]['email'];
-        // basic.$first_name = usersRegistered[key]['first_name'];
-        // basic.$last_name = usersRegistered[key]['last_name'];
-        // basic.$gender = usersRegistered[key]['gender'];
-        // basic.$phone = usersRegistered[key]['phone'];
-        // basic.$student_id = usersRegistered[key]['student_id'];
-        // basic.$ = usersRegistered[key]['student_id'];
         this.registered_user.push(basic);
       }// for
       // console.log("-----------------");
