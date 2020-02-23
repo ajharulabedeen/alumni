@@ -40,6 +40,7 @@ export class EventDetailsComponent implements OnInit {
     this.basicSearch_perPage = 10;
     this.basicSearch_sort_by = 'ASC';
     this.basicSearch_pageNumber = 1;
+    this.basic_value_search = '';
 
     this.id = this.activeRoute.snapshot.params['id'];
     document.body.className = 'hold-transition skin-blue sidebar-mini';
@@ -139,7 +140,7 @@ export class EventDetailsComponent implements OnInit {
       this.basicSearch_sort_on,
       this.basic_search_by,
       // this.basic_value_search,
-      '',
+      this.basic_value_search,
       this.event.$id);
 
     if (!this.active_search) {
@@ -154,8 +155,9 @@ export class EventDetailsComponent implements OnInit {
       this.basic_value_search,
       this.event.$id
     ).subscribe(res => {
-      console.log(res);
+      // console.log(res);
       // console.log(res['data'][0]);
+      this.registered_user = new Array();
       var usersRegistered = res['data'];
       for (const key in usersRegistered) {
         // console.log(key);
