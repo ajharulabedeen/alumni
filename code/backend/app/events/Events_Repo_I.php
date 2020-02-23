@@ -88,5 +88,9 @@ interface Events_Repo_I
                                          string $key,
                                          string $event_id);
 
+    public function countSearchRegisteredUser(
+        string $column_name,
+        string $key,
+        string $event_id);
 
 }// class

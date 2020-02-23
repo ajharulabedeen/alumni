@@ -34,10 +34,36 @@ class F_Event_Test extends TestCase
 //        $this->eventRegistration("818");
 //        $this->checkEventRegistration("818", "6");
 //        $this->checkPayment("110", "7");
-        $this->getAllRegisteredUser(10,
-            "DESC", "batch",
-            "dept", '%%', "110");
+//        $this->getAllRegisteredUser(10,
+//            "DESC", "batch",
+//            "dept", '%%', "110");
 
+        $this->countSearchRegisteredUser("dept", '%bb%', "110");
+
+    }
+
+
+
+    public function countSearchRegisteredUser(
+        string $column_name,
+        string $key,
+        string $event_id)
+    {
+        $response = $this->json(
+            'POST',
+            'events/countSearchRegisteredUser',
+            [
+                "column_name" => $column_name,
+                "key" => $key,
+                "event_id" => $event_id,
+            ]
+            ,
+            [
+//                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u2@umail.com", "123456")
+            ]
+        );
+        $d = $response->baseResponse->original;
+        error_log($d['count']);
     }
 
     public function getAllRegisteredUser(string $per_page,

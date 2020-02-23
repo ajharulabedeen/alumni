@@ -349,7 +349,7 @@ class Events_Repo_Impl implements Events_Repo_I
             ->where('profile_basics.' . $column_name, 'LIKE', $key)
 //            ->groupBy('profile_basics.user_id', 'event_registrations.user_id')
             ->count();
-        return $data;
+        return ["count" => $data];
     }
 
 

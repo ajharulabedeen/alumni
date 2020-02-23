@@ -203,4 +203,13 @@ class Events_Controller extends Controller
             $event_id);
 
     }
+
+    public function countSearchRegisteredUser(Request $r)
+    {
+        $column_name = $r->column_name;
+        $key = $r->key;
+        $event_id = $r->event_id;
+        return $this->eventsRepo->countSearchRegisteredUser($column_name, $key, $event_id);
+    }
+
 }// class

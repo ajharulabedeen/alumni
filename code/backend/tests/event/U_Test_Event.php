@@ -17,7 +17,7 @@ class U_Test_Event extends TestCase
     public function testMain()
     {
 //        $this->dummyDataInsert();//passed
-        $this->dummyEventRegistraion();//passed
+//        $this->dummyEventRegistraion();//passed
 
 //        error_log($this->create());//passed
 //        error_log($this->findOneEvent(1)->fee);//passed
@@ -42,7 +42,7 @@ class U_Test_Event extends TestCase
 //        $this->getAllRegisteredUser(10,
 //            "ASC", "user_id",
 //            "dept", '%%', "110");
-//        $this->countSearchRegisteredUser("dept", '%%', "110");
+        $this->countSearchRegisteredUser("dept", '%bb%', "110");
     }
 
     public function Event_CRUD()
@@ -56,7 +56,7 @@ class U_Test_Event extends TestCase
                                               string $event_id)
     {
         $repo = new Events_Repo_Impl();
-        error_log($repo->countSearchRegisteredUser($column_name, $key, $event_id));
+        error_log($repo->countSearchRegisteredUser($column_name, $key, $event_id)['count']);
     }
 
     public function getAllRegisteredUser(
