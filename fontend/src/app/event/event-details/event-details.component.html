@@ -57,7 +57,7 @@
 
     <!--    start : event registered-->
     <h1>Registered</h1>
-    <input type="checkbox"  [(ngModel)]="active_search" id="vehicle1" name="vehicle1">
+    <input type="checkbox" [(ngModel)]="active_search" id="vehicle1" name="vehicle1">
     <label for="vehicle1"> Active Search</label><br>
     <!--start : search fields and search key or search value -->
     <h4>
@@ -159,10 +159,18 @@
               <th>Name</th>
               <th>Email</th>
               <th>Mobile</th>
+              <th>Gender</th>
             </tr>
 
             <!-- showing all profiles after basic search  -->
-            <tr *ngFor="let basic of baicSearch_profiles_array; let i=index">
+            <tr *ngFor="let basic of registered_user; let i=index">
+              <!--Payment-->
+              <td>
+                <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details">
+                  Payment
+                </button>
+              </td>
+              <!--sdetails-->
               <td>
                 <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details">
                   Details
@@ -170,14 +178,12 @@
               </td>
               <td>{{i + 1}}</td>
               <td>{{basic.batch}}</td>
-              <td>{{basic.id}}</td>
+              <td>{{basic.student_id}}</td>
               <td>{{basic.dept}}</td>
               <td>{{basic.first_name}}{{basic.last_name}} </td>
+              <td>{{basic.email}}</td>
               <td>{{basic.phone}}</td>
-              <td>{{basic.address_present}}</td>
-              <td>{{basic.passing_year}}</td>
-              <td>{{basic.research_interest}}</td>
-              <td>{{basic.social_media_link}}</td>
+              <td>{{basic.gender}}</td>
             </tr>
             </tbody>
           </table>

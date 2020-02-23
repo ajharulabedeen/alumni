@@ -7,6 +7,7 @@ export class RegisteredUser {
   private gender : string;
   private email : string;
   private phone : string;
+  private user_id : string;
 
     /**
      * Getter $dept
@@ -151,6 +152,6 @@ export class RegisteredUser {
 	public set $user_id(value: string) {
 		this.user_id = value;
 	}
-  private user_id : string;
+
 
 }
