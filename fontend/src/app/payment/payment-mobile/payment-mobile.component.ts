@@ -211,5 +211,4 @@ export class PaymentMobileComponent implements OnInit {
     return t;
   }
 
-
 }//class
