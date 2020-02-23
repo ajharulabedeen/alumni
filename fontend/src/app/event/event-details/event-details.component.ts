@@ -125,5 +125,30 @@ export class EventDetailsComponent implements OnInit {
     this.refreshTable_basicSearch();
   }
 
+  public refreshTable() {
+    console.log(this.basicSearch_perPage,
+      this.basicSearch_sort_by,// ASC-DESC
+      this.basicSearch_sort_on,
+      this.basic_search_by,
+      // this.basic_value_search,
+      "",
+      // this.event.$id);
+      '110');
+    this.eventDeatailsService.getRegisteredUser(
+      this.basicSearch_perPage,
+      this.basicSearch_sort_by,// ASC-DESC
+      this.basicSearch_sort_on,
+      this.basic_search_by,
+      // this.basic_value_search,
+      "",
+      "110"
+    ).subscribe(res => {
+      console.log(res["data"]);
+    });
+  }
+
+  public getAllRegisteredUser() {
+
+  }
 
 }// class

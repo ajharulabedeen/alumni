@@ -76,7 +76,7 @@ export class EventDetailsService {
   }// getBsicSearchCount
 
   public getEvent(id: string) {
-    return  this.http.post<Events>(
+    return this.http.post<Events>(
       'http://127.0.0.1:8000/events/find_one',
       {
         'id': id,
@@ -88,5 +88,27 @@ export class EventDetailsService {
     //   console.log(e);
     //   // this.basic.next(basic);
     // });
+  }
+
+  getRegisteredUser(per_page: number,
+                    sort_by: string,
+                    sort_on: string,
+                    column_name: string,
+                    key: string,
+                    event_id: string) {
+    return this.http.post(
+      // this.http.post(
+      'http://127.0.0.1:8000/events/getAllRegisteredUser',
+      {
+        'per_page': per_page,
+        'sort_by': sort_by,
+        'sort_on': sort_on,
+        'column_name': sort_on,
+        'key': '%' + key + '%',
+        'event_id': event_id,
+      },
+      this.authService.getHeader(),
+    );
+    // return obe;
   }
 }// class
