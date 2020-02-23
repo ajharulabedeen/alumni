@@ -39,7 +39,7 @@ class U_Test_Event extends TestCase
 //        error_log($this->checkEventRegistration("110", "6"));//passed
 //        $this->checkPayment();
 
-        $this->getAllRegisteredUser(100,
+        $this->getAllRegisteredUser(5,
             "DESC", "batch",
             "dept", '%%', "110");
 
@@ -68,22 +68,29 @@ class U_Test_Event extends TestCase
             $event_id);
 //        dd($data);
 //        print_r($data);
+//        error_log($data['data']);
+//        error_log($data['data']);
         $this->assertTrue(($data != null));
         for ($i = 0; $i < 100; $i++) {
 
-            if ($data[$i] == null) {
+            if ($data == null) {
                 break;
             }
-            error_log(
+            try {
+                error_log(
 //                $data[$i]->user_id
-                ' batch :' . $data[$i]->batch
-                . ' uID :' . $data[$i]->user_id
-                . " Name : " . $data[$i]->first_name
-                . $data[$i]->last_name
+                    ' batch :' . $data[$i]->batch
+                    . ' uID :' . $data[$i]->user_id
+                    . " Name : " . $data[$i]->first_name
+                    . $data[$i]->last_name
 //                . "---institute Name : " . $data[$i]->organization_name
 //                . "---Type : " . $data[$i]->type
 //                . "---Role: " . $data[$i]->role);
-            );
+                );
+
+            } catch (\Exception $e) {
+                error_log("Error in Printing!");
+            }
         }
     }
 

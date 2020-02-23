@@ -184,6 +184,16 @@ class Events_Controller extends Controller
         $column_name = $r->column_name;
         $key = $r->key;
         $event_id = $r->event_id;
+
+//        error_log("getAllRegisteredUser");
+        error_log('$per_page : ' . $per_page);
+        error_log('sort_by : ' . $sort_by);
+        error_log('sort_on : ' . $sort_on);
+        error_log('column_name : ' . $column_name);
+//        error_log('key : ' . $key);
+//        error_log('event_id : ' . $event_id);
+
+
         return $this->eventsRepo->getAllRegisteredUser(
             $per_page,
             $sort_by,

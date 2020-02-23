@@ -328,6 +328,8 @@ class Events_Repo_Impl implements Events_Repo_I
 //            ->groupBy('profile_basics.user_id')//not working
             ->paginate($per_page);
 
+//        return $data->toJson(JSON_PRETTY_PRINT);//working but tought not printing friendly.
+//        return $data->toJson();//working but tought not printing friendly.
         return $data;
     }
 
