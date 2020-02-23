@@ -120,18 +120,19 @@ export class EventDetailsComponent implements OnInit {
   }
 
   public setBasicSearchCount() {
-    this.basicSearch_pageNumber = 1;
-    this.eventDeatailsService.getBsicSearchCount(
-      this.basicSearch_perPage,
-      this.basicSearch_pageNumber,
-      this.basicSearch_sort_on,
-      this.basicSearch_sort_by,
-      this.basic_search_by,
-      this.basic_value_search)
-      .subscribe(res => {
-        this.basicSearch_total = res['status'];
-      });
-    this.refreshTable_basicSearch();
+    // this.basicSearch_pageNumber = 1;
+    // this.eventDeatailsService.getBsicSearchCount(
+    //   this.basicSearch_perPage,
+    //   this.basicSearch_pageNumber,
+    //   this.basicSearch_sort_on,
+    //   this.basicSearch_sort_by,
+    //   this.basic_search_by,
+    //   this.basic_value_search)
+    //   .subscribe(res => {
+    //     this.basicSearch_total = res['status'];
+    //   });
+    // this.refreshTable_basicSearch();
+    this.refreshTable();
   }
 
   public refreshTable() {
@@ -146,10 +147,10 @@ export class EventDetailsComponent implements OnInit {
     if (!this.active_search) {
       this.basic_value_search = '';
     }
-
+    this.countSearchRegisteredUser();
     this.eventDeatailsService.getRegisteredUser(
       this.basicSearch_perPage,
-      this.basicSearch_sort_by,// ASC-DESC
+      this.basicSearch_sort_by, // ASC-DESC
       this.basicSearch_sort_on,
       this.basic_search_by,
       this.basic_value_search,
@@ -164,7 +165,7 @@ export class EventDetailsComponent implements OnInit {
         // console.log(usersRegistered[key]['email']);
         var basic = new RegisteredUser();
         basic = usersRegistered[key];
-        //no need; code working well.
+        // no need; code working well.
         // basic.$batch = usersRegistered[key]['batch'];
         // basic.$dept = usersRegistered[key]['dept'];
         // basic.$email = usersRegistered[key]['email'];
@@ -181,8 +182,22 @@ export class EventDetailsComponent implements OnInit {
     });
   }
 
-  public getAllRegisteredUser() {
+  public countSearchRegisteredUser() {
+    var column_name = this.basic_search_by;
+    var key = this.basic_value_search;
+    if (!this.active_search) {
+      this.basic_value_search = '';
+    }
 
-  }
+    this.eventDeatailsService.countSearchRegisteredUser(column_name, key, this.event.$id).subscribe(res => {
+      console.log(res);
+      this.basicSearch_total = res['count'];
+      });
+    }
+
+
+  // public getAllRegisteredUser() {
+  //
+  // }
 
 }// class

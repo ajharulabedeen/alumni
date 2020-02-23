@@ -113,4 +113,16 @@ export class EventDetailsService {
     );
     // return obe;
   }
+
+  countSearchRegisteredUser(column_name: string, key: string, event_id: string) {
+    return this.http.post(
+      'http://127.0.0.1:8000/events/countSearchRegisteredUser',
+      {
+        'column_name': column_name,
+        'key': '%' + key + '%',
+        'event_id': event_id,
+      },
+      this.authService.getHeader(),
+    );
+  }
 }// class
