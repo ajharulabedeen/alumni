@@ -103,7 +103,7 @@ export class EventDetailsService {
         'per_page': per_page,
         'sort_by': sort_by,
         'sort_on': sort_on,
-        'column_name': sort_on,
+        'column_name': column_name,
         'key': '%' + key + '%',
         'event_id': event_id,
       },

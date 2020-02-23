@@ -27,6 +27,7 @@ export class EventDetailsComponent implements OnInit {
   event = new Events();
 
   addNote: boolean;
+  active_search: boolean;
 
   constructor(private activeRoute: ActivatedRoute, private eventDeatailsService: EventDetailsService) {
   }
@@ -140,13 +141,16 @@ export class EventDetailsComponent implements OnInit {
       '',
       this.event.$id);
 
+    if (!this.active_search) {
+      this.basic_value_search = "";
+    }
+
     this.eventDeatailsService.getRegisteredUser(
       this.basicSearch_perPage,
       this.basicSearch_sort_by,// ASC-DESC
       this.basicSearch_sort_on,
       this.basic_search_by,
-      // this.basic_value_search,
-      '',
+      this.basic_value_search,
       this.event.$id
     ).subscribe(res => {
       console.log(res['data']);
