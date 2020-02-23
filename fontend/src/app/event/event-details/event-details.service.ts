@@ -4,6 +4,7 @@ import {Basic} from '../../profile/basic/basic.model';
 import {HttpClient} from '@angular/common/http';
 import {AuthService} from '../../auth/auth.service';
 import {Events} from '../event-manage/events.model';
+import {RegisteredUser} from './registered-user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -96,6 +97,7 @@ export class EventDetailsService {
                     column_name: string,
                     key: string,
                     event_id: string) {
+    // return this.http.post<RegisteredUser>(//without it code working means data is being set registered user.
     return this.http.post(
       // this.http.post(
       'http://127.0.0.1:8000/events/getAllRegisteredUser',

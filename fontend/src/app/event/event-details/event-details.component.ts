@@ -3,6 +3,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Basic} from '../../profile/basic/basic.model';
 import {EventDetailsService} from './event-details.service';
 import {Events} from '../event-manage/events.model';
+import {RegisteredUser} from './registered-user.model';
 
 @Component({
   selector: 'app-event-details',
@@ -22,10 +23,10 @@ export class EventDetailsComponent implements OnInit {
   basicSearch_perPage: number;
   basicSearch_total: number;
 
-  baicSearch_profiles_array = new Array();
+  registered_user = new Array();
 
   event = new Events();
-
+  registered_user = new Array();
   addNote: boolean;
   active_search: boolean;
 
@@ -73,7 +74,7 @@ export class EventDetailsComponent implements OnInit {
     // this.setBasicSearchCount();
     this.eventDeatailsService.basicSearch(this.basicSearch_perPage, this.basicSearch_pageNumber, this.basicSearch_sort_on, this.basicSearch_sort_by, this.basic_search_by, this.basic_value_search);
     this.eventDeatailsService.basic.subscribe(b => {
-      this.baicSearch_profiles_array = [];
+      this.registered_user = [];
       for (const key in b) {
         // console.log(b);
         var basic = new Basic();
@@ -96,10 +97,10 @@ export class EventDetailsComponent implements OnInit {
         basic.$image_address = b[key]['image_address'];
         basic.$religion = b[key]['religion'];
         basic.$social_media_link = b[key]['social_media_link'];
-        this.baicSearch_profiles_array.push(basic);
+        this.registered_user.push(basic);
       }// for
     });
-    // console.log(this.baicSearch_profiles_array);
+    // console.log(this.registered_user);
   }// refreshTable_basicSearch
   public basicSearch_previousPage() {
     console.log('basicSearch_previousPage');
@@ -142,7 +143,7 @@ export class EventDetailsComponent implements OnInit {
       this.event.$id);
 
     if (!this.active_search) {
-      this.basic_value_search = "";
+      this.basic_value_search = '';
     }
 
     this.eventDeatailsService.getRegisteredUser(
@@ -153,7 +154,28 @@ export class EventDetailsComponent implements OnInit {
       this.basic_value_search,
       this.event.$id
     ).subscribe(res => {
-      console.log(res['data']);
+      console.log(res);
+      // console.log(res['data'][0]);
+      var usersRegistered = res['data'];
+      for (const key in usersRegistered) {
+        // console.log(key);
+        // console.log(usersRegistered[key]['email']);
+        var basic = new RegisteredUser();
+        basic = usersRegistered[key];
+        //no need; code working well.
+        // basic.$batch = usersRegistered[key]['batch'];
+        // basic.$dept = usersRegistered[key]['dept'];
+        // basic.$email = usersRegistered[key]['email'];
+        // basic.$first_name = usersRegistered[key]['first_name'];
+        // basic.$last_name = usersRegistered[key]['last_name'];
+        // basic.$gender = usersRegistered[key]['gender'];
+        // basic.$phone = usersRegistered[key]['phone'];
+        // basic.$student_id = usersRegistered[key]['student_id'];
+        // basic.$ = usersRegistered[key]['student_id'];
+        this.registered_user.push(basic);
+      }// for
+      // console.log("-----------------");
+      // console.log(this.registered_user);
     });
   }
 
