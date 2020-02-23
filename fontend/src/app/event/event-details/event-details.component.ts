@@ -49,7 +49,7 @@ export class EventDetailsComponent implements OnInit {
       // console.log(e[0]);
       // refactor : have to fix the back end Code.
       // e = e[0];
-      this.event.$title = e['id'];
+      this.event.$id = e['id'];
       this.event.$title = e['title'];
       this.event.$start_date = e['start_date'];
       this.event.$end_date = e['end_date'];
@@ -118,7 +118,13 @@ export class EventDetailsComponent implements OnInit {
 
   public setBasicSearchCount() {
     this.basicSearch_pageNumber = 1;
-    this.eventDeatailsService.getBsicSearchCount(this.basicSearch_perPage, this.basicSearch_pageNumber, this.basicSearch_sort_on, this.basicSearch_sort_by, this.basic_search_by, this.basic_value_search)
+    this.eventDeatailsService.getBsicSearchCount(
+      this.basicSearch_perPage,
+      this.basicSearch_pageNumber,
+      this.basicSearch_sort_on,
+      this.basicSearch_sort_by,
+      this.basic_search_by,
+      this.basic_value_search)
       .subscribe(res => {
         this.basicSearch_total = res['status'];
       });
@@ -131,19 +137,19 @@ export class EventDetailsComponent implements OnInit {
       this.basicSearch_sort_on,
       this.basic_search_by,
       // this.basic_value_search,
-      "",
-      // this.event.$id);
-      '110');
+      '',
+      this.event.$id);
+
     this.eventDeatailsService.getRegisteredUser(
       this.basicSearch_perPage,
       this.basicSearch_sort_by,// ASC-DESC
       this.basicSearch_sort_on,
       this.basic_search_by,
       // this.basic_value_search,
-      "",
-      "110"
+      '',
+      this.event.$id
     ).subscribe(res => {
-      console.log(res["data"]);
+      console.log(res['data']);
     });
   }
 
