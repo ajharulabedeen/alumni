@@ -17,7 +17,7 @@ class U_Test_Event extends TestCase
     public function testMain()
     {
 //        $this->dummyDataInsert();//passed
-//        $this->dummyEventRegistraion();//passed
+        $this->dummyEventRegistraion();//passed
 
 //        error_log($this->create());//passed
 //        error_log($this->findOneEvent(1)->fee);//passed
@@ -39,16 +39,24 @@ class U_Test_Event extends TestCase
 //        error_log($this->checkEventRegistration("110", "6"));//passed
 //        $this->checkPayment();
 
-        $this->getAllRegisteredUser(5,
-            "DESC", "batch",
-            "dept", '%%', "110");
-
+//        $this->getAllRegisteredUser(10,
+//            "ASC", "user_id",
+//            "dept", '%%', "110");
+//        $this->countSearchRegisteredUser("dept", '%%', "110");
     }
 
     public function Event_CRUD()
     {
         error_log("\n Event: CRUD Test Done!\n");
 
+    }
+
+    public function countSearchRegisteredUser(string $column_name,
+                                              string $key,
+                                              string $event_id)
+    {
+        $repo = new Events_Repo_Impl();
+        error_log($repo->countSearchRegisteredUser($column_name, $key, $event_id));
     }
 
     public function getAllRegisteredUser(
@@ -287,13 +295,15 @@ class U_Test_Event extends TestCase
 
     public function dummyEventRegistraion()
     {
-        for ($x = 0; $x < 10; $x++) {
+        for ($x = 20; $x < 30; $x++) {
             $repo = new Events_Repo_Impl();
             $ep = new EventRegistration();
-            $ep->user_id = rand(1, 9);
+//            $ep->user_id = rand(1, 9);
+            $ep->user_id = $x;
             $ep->event_id = "110";
             $d = $repo->eventRegistration($ep);
-            error_log($d);
+            error_log($d['status']);
+//            dd($d);
         }
     }
 
