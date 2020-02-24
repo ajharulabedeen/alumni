@@ -156,7 +156,7 @@ export class EventDetailsComponent implements OnInit {
       this.basic_value_search,
       this.event.$id
     ).subscribe(res => {
-      // console.log(res);
+      console.log(res['data']);
       // console.log(res['data'][0]);
       this.registered_user = new Array();
       var usersRegistered = res['data'];

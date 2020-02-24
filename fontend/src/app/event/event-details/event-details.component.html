@@ -166,8 +166,14 @@
             <tr *ngFor="let basic of registered_user; let i=index">
               <!--Payment-->
               <td>
-                <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#payment_details">
-                  Payment
+<!--                //refactor : have to add class, have to reduce html code.-->
+                <button [ngClass]="
+                {
+                'btn btn-xs btn-danger':basic.payment_status ==='nan',
+                'btn btn-xs btn-info':basic.payment_status ==='0',
+                'btn btn-xs btn-primary':basic.payment_status ==='1',
+                'btn btn-xs btn-warning':basic.payment_status > 1
+                }" data-toggle="modal" data-target="#payment_details">Payment
                 </button>
               </td>
               <!--sdetails-->

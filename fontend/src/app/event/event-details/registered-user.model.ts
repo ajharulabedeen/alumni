@@ -8,6 +8,40 @@ export class RegisteredUser {
   private email : string;
   private phone : string;
   private user_id : string;
+  private payment_id : string;
+  private payment_status : string;
+
+    /**
+     * Getter $payment_id
+     * @return {string}
+     */
+	public get $payment_id(): string {
+		return this.payment_id;
+	}
+
+    /**
+     * Getter $payment_status
+     * @return {string}
+     */
+	public get $payment_status(): string {
+		return this.payment_status;
+	}
+
+    /**
+     * Setter $payment_id
+     * @param {string} value
+     */
+	public set $payment_id(value: string) {
+		this.payment_id = value;
+	}
+
+    /**
+     * Setter $payment_status
+     * @param {string} value
+     */
+	public set $payment_status(value: string) {
+		this.payment_status = value;
+	}
 
     /**
      * Getter $dept
