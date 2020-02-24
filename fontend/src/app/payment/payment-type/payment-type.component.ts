@@ -299,7 +299,6 @@ export class PaymentTypeComponent implements OnInit {
         this.refreshTable_Approval();
       }
     });
-
   }
 
   approved_by_name: string;

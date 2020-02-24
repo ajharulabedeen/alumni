@@ -5,6 +5,8 @@ import {EventDetailsService} from './event-details.service';
 import {Events} from '../event-manage/events.model';
 import {RegisteredUser} from './registered-user.model';
 import {PaymentMobile} from '../../payment/payment-mobile/payment-mobile.model';
+import {PaymentMobileService} from '../../payment/payment-mobile/payment-mobile.service';
+import {PaymentTypeService} from '../../payment/payment-type/payment-type.service';
 
 @Component({
   selector: 'app-event-details',
@@ -34,9 +36,11 @@ export class EventDetailsComponent implements OnInit {
   approved: boolean;
   mobilePayment: PaymentMobile;
   paymentFound: boolean;
+  payment_id_approval: string;
 
-
-  constructor(private activeRoute: ActivatedRoute, private eventDeatailsService: EventDetailsService) {
+  constructor(private activeRoute: ActivatedRoute,
+              private eventDeatailsService: EventDetailsService,
+              private ptService: PaymentTypeService) {
   }
 
   ngOnInit() {
@@ -194,6 +198,7 @@ export class EventDetailsComponent implements OnInit {
     console.log('payment_id : ' + payment_mobile_id);
     this.approved = false;
     this.paymentFound = false;
+    this.payment_id_approval = payment_mobile_id;
     if (payment_status == '1') {
       this.approved = true;
     }
@@ -221,6 +226,19 @@ export class EventDetailsComponent implements OnInit {
         this.mobilePayment.$trx_id = res['trx_id'];
         // console.log(this.mobilePayment);
         // console.log(this.mobilePayment.$trx_id);
+      }
+    });
+  }
+
+  public approve_payment() {
+    var local: string;
+    this.payment_id_approval;
+    console.log('this.payment_id_approval : ' + this.payment_id_approval);
+    this.ptService.approve_mobile_payment(this.payment_id_approval).subscribe((data: any) => {
+      local = data['status'];
+      // //refactor
+      if (local == 'ok') {
+        this.refreshTable();
       }
     });
   }
