@@ -14,6 +14,25 @@ export class PaymentMobile {
   private created_at: string;
   private notes: string;
   private approved_date: string;
+  private event_id: string;
+
+    /**
+     * Getter $event_id
+     * @return {string}
+     */
+	public get $event_id(): string {
+		return this.event_id;
+	}
+
+    /**
+     * Setter $event_id
+     * @param {string} value
+     */
+	public set $event_id(value: string) {
+		this.event_id = value;
+	}
+
+
 
 
   /**

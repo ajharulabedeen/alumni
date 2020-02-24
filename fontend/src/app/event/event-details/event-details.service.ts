@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {AuthService} from '../../auth/auth.service';
 import {Events} from '../event-manage/events.model';
 import {RegisteredUser} from './registered-user.model';
+import {PaymentMobile} from '../../payment/payment-mobile/payment-mobile.model';
 
 @Injectable({
   providedIn: 'root'
@@ -127,7 +128,7 @@ export class EventDetailsService {
   }
 
   getOneMobilePayment(payment_mobile_id: string) {
-    return this.http.post(
+    return this.http.post<PaymentMobile>(
       'http://127.0.0.1:8000/payment/mobile/findOne',
       {
         'id': payment_mobile_id,

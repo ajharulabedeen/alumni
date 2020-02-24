@@ -31,6 +31,10 @@ export class EventDetailsComponent implements OnInit {
   addNote: boolean;
   active_search: boolean;
 
+  approved: boolean;
+  mobilePayment: PaymentMobile;
+
+
   constructor(private activeRoute: ActivatedRoute, private eventDeatailsService: EventDetailsService) {
   }
 
@@ -185,10 +189,6 @@ export class EventDetailsComponent implements OnInit {
   }
 
 
-  approved: boolean;
-  mobilePayment: PaymentMobile;
-
-
   showPaymentDetails(payment_mobile_id: string, payment_status: string) {
     console.log('payment_id : ' + payment_mobile_id);
     this.approved = false;
@@ -196,7 +196,24 @@ export class EventDetailsComponent implements OnInit {
       this.approved = true;
     }
     this.eventDeatailsService.getOneMobilePayment(payment_mobile_id).subscribe(res => {
-      console.log(res);
+      console.log(res['date']);
+      this.mobilePayment = res;
+      this.mobilePayment.$id = res['id'];
+      this.mobilePayment.$user_id = res['user_id'];
+      this.mobilePayment.$amount = res['amount'];
+      this.mobilePayment.$type_ID = res['type_ID'];
+      this.mobilePayment.$event_id = res['event_id'];
+      this.mobilePayment.$date = res['date'];
+      this.mobilePayment.$payment_method = res['payment_method'];
+      this.mobilePayment.$mobile_number = res['mobile_number'];
+      this.mobilePayment.$trx_id = res['trx_id'];
+      this.mobilePayment.$status = res['status'];
+      this.mobilePayment.$notes = res['notes'];
+      this.mobilePayment.$approved_date = res['approved_date'];
+      this.mobilePayment.$approved_date = res['approved_by'];
+      this.mobilePayment.$trx_id = res['trx_id'];
+      console.log(this.mobilePayment);
+      console.log(this.mobilePayment.$trx_id);
     });
   }
 }// class

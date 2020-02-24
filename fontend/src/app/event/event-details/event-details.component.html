@@ -230,31 +230,32 @@
           <table>
             <tr>
               <td><h4>Payment Method :</h4></td>
-              <td align="right">bKash</td>
+              <td align="left">
+                {{mobilePayment.$payment_method}}
+              </td>
             </tr>
             <tr>
               <td align="right"><h4>Mobile Number :</h4></td>
-              <td>bKash</td>
+              <td>{{mobilePayment.$mobile_number}}</td>
             </tr>
             <tr>
               <td align="right"><h4>Paid Date :</h4></td>
-              <td>bKash</td>
+              <td>{{mobilePayment.$date}}</td>
             </tr>
             <tr>
               <td align="right"><h4>Amount :</h4></td>
-              <td>bKash</td>
+              <td>{{mobilePayment.$amount}}</td>
+            </tr>
+            <tr>
+              <td align="right"><h4>TrxID : :</h4></td>
+              <td>{{mobilePayment.$trx_id}}</td>
             </tr>
           </table>
-          <h4>TrxID : </h4>
-          <p>
-            bKashbKashbKashbKashbKashbKashbKashbKashbKashbKashbKashbKashbKashbKash
-            bKashbKashbKashbKashbKashbKashbKashbKashbKashbKashbKashbKashbKashbKash
-          </p>
 
           <div *ngIf="!addNote">
             <h4>Notes : </h4>
             <p>
-              Noets Notes
+              <!--              {{mobilePayment.$notes}}-->
             </p>
           </div>
 
