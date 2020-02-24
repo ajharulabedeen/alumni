@@ -226,47 +226,52 @@
         </div>
         <!--  start : modal body-->
         <div class="modal-body">
-          <!--      Name-->
-          <table>
-            <tr>
-              <td><h4>Payment Method :</h4></td>
-              <td align="left">
-                {{mobilePayment.$payment_method}}
-              </td>
-            </tr>
-            <tr>
-              <td align="right"><h4>Mobile Number :</h4></td>
-              <td>{{mobilePayment.$mobile_number}}</td>
-            </tr>
-            <tr>
-              <td align="right"><h4>Paid Date :</h4></td>
-              <td>{{mobilePayment.$date}}</td>
-            </tr>
-            <tr>
-              <td align="right"><h4>Amount :</h4></td>
-              <td>{{mobilePayment.$amount}}</td>
-            </tr>
-            <tr>
-              <td align="right"><h4>TrxID : :</h4></td>
-              <td>{{mobilePayment.$trx_id}}</td>
-            </tr>
-          </table>
-
-          <div *ngIf="!addNote">
-            <h4>Notes : </h4>
-            <p>
-              <!--              {{mobilePayment.$notes}}-->
-            </p>
-          </div>
-
-
-          <div *ngIf="addNote">
-            <label for="note">Note</label>
-            <br>
-            <textarea id="note" cols="75" rows="10">
+          <!--start : Showing Mobile Payment-->
+          <div *ngIf="paymentFound" >
+            <table>
+              <tr>
+                <td><h4>Payment Method :</h4></td>
+                <td align="left">
+                  {{mobilePayment.$payment_method}}
+                </td>
+              </tr>
+              <tr>
+                <td align="right"><h4>Mobile Number :</h4></td>
+                <td>{{mobilePayment.$mobile_number}}</td>
+              </tr>
+              <tr>
+                <td align="right"><h4>Paid Date :</h4></td>
+                <td>{{mobilePayment.$date}}</td>
+              </tr>
+              <tr>
+                <td align="right"><h4>Amount :</h4></td>
+                <td>{{mobilePayment.$amount}}</td>
+              </tr>
+              <tr>
+                <td align="right"><h4>TrxID : :</h4></td>
+                <td>{{mobilePayment.$trx_id}}</td>
+              </tr>
+            </table>
+            <div *ngIf="!addNote">
+              <h4>Notes : </h4>
+              <p>
+                <!--              {{mobilePayment.$notes}}-->
+              </p>
+            </div>
+            <div *ngIf="addNote">
+              <label for="note">Note</label>
+              <br>
+              <textarea id="note" cols="75" rows="10">
 
             </textarea>
-            <button class="btn btn-facebook">Save</button>
+              <button class="btn btn-facebook">Save</button>
+            </div>
+          </div>
+          <!--end : Showing Mobile Payment-->
+
+          <!--Showing Mobile Payment Not Found-->
+          <div *ngIf="!paymentFound">
+            <h2>Mobile Payment Not found!</h2>
           </div>
 
         </div>
