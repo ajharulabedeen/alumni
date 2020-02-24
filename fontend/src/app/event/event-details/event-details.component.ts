@@ -4,6 +4,7 @@ import {Basic} from '../../profile/basic/basic.model';
 import {EventDetailsService} from './event-details.service';
 import {Events} from '../event-manage/events.model';
 import {RegisteredUser} from './registered-user.model';
+import {PaymentMobile} from '../../payment/payment-mobile/payment-mobile.model';
 
 @Component({
   selector: 'app-event-details',
@@ -185,12 +186,17 @@ export class EventDetailsComponent implements OnInit {
 
 
   approved: boolean;
+  mobilePayment: PaymentMobile;
 
-  showPaymentDetails(payment_id: string, payment_status: string) {
-    console.log('payment_id : ' + payment_id);
+
+  showPaymentDetails(payment_mobile_id: string, payment_status: string) {
+    console.log('payment_id : ' + payment_mobile_id);
     this.approved = false;
     if (payment_status == '1') {
       this.approved = true;
     }
+    this.eventDeatailsService.getOneMobilePayment(payment_mobile_id).subscribe(res => {
+      console.log(res);
+    });
   }
 }// class

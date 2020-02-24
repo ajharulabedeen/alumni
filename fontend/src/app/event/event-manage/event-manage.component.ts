@@ -93,7 +93,6 @@ export class EventManageComponent implements OnInit {
     evt.currentTarget.className += ' active';
   }
 
-
   // end : for tab in font end.
 
   public eventSearch_previousPage() {
@@ -289,7 +288,6 @@ export class EventManageComponent implements OnInit {
       }
     });
   }
-
 
   public checkPaymentAssingment() {
     console.log(this.editEventID);

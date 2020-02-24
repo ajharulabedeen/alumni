@@ -125,4 +125,14 @@ export class EventDetailsService {
       this.authService.getHeader(),
     );
   }
+
+  getOneMobilePayment(payment_mobile_id: string) {
+    return this.http.post(
+      'http://127.0.0.1:8000/payment/mobile/findOne',
+      {
+        'id': payment_mobile_id,
+      },
+      this.authService.getHeader(),
+    );
+  }
 }// class
