@@ -97,11 +97,12 @@ export class EventDetailsService {
                     sort_on: string,
                     column_name: string,
                     key: string,
-                    event_id: string) {
+                    event_id: string,
+                    basicSearch_pageNumber : number) {
     // return this.http.post<RegisteredUser>(//without it code working means data is being set registered user.
     return this.http.post(
       // this.http.post(
-      'http://127.0.0.1:8000/events/getAllRegisteredUser',
+      'http://127.0.0.1:8000/events/getAllRegisteredUser?page=' + basicSearch_pageNumber,
       {
         'per_page': per_page,
         'sort_by': sort_by,

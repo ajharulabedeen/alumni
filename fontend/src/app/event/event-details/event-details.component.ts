@@ -79,45 +79,46 @@ export class EventDetailsComponent implements OnInit {
   }
 
 
-  public refreshTable_basicSearch(): void {
-    console.log('refreshTable_basicSearch :');
-    // tslint:disable-next-line:max-line-length
-    // this.setBasicSearchCount();
-    this.eventDeatailsService.basicSearch(this.basicSearch_perPage, this.basicSearch_pageNumber, this.basicSearch_sort_on, this.basicSearch_sort_by, this.basic_search_by, this.basic_value_search);
-    this.eventDeatailsService.basic.subscribe(b => {
-      this.registered_user = [];
-      for (const key in b) {
-        // console.log(b);
-        var basic = new Basic();
-        basic.$user_id = b[key]['user_id'];
-        basic.$dept = b[key]['dept'];
-        basic.$batch = b[key]['batch'];
-        basic.$student_id = b[key]['student_id'];
-        basic.$passing_year = b[key]['passing_year'];
-        basic.$first_name = b[key]['first_name'];
-        basic.$last_name = b[key]['last_name'];
-        basic.$birth_date = b[key]['birth_date'];
-        basic.$gender = b[key]['gender'];
-        basic.$blood_group = b[key]['blood_group'];
-        basic.$email = b[key]['email'];
-        basic.$phone = b[key]['phone'];
-        basic.$address_present = b[key]['address_present'];
-        basic.$address_permanent = b[key]['address_permanent'];
-        basic.$research_interest = b[key]['research_interest'];
-        basic.$skills = b[key]['skills'];
-        basic.$image_address = b[key]['image_address'];
-        basic.$religion = b[key]['religion'];
-        basic.$social_media_link = b[key]['social_media_link'];
-        this.registered_user.push(basic);
-      }// for
-    });
-    // console.log(this.registered_user);
-  }// refreshTable_basicSearch
+  // public refreshTable_basicSearch(): void {
+  //   console.log('refreshTable_basicSearch :');
+  //   // tslint:disable-next-line:max-line-length
+  //   // this.setBasicSearchCount();
+  //   this.eventDeatailsService.basicSearch(this.basicSearch_perPage, this.basicSearch_pageNumber, this.basicSearch_sort_on, this.basicSearch_sort_by, this.basic_search_by, this.basic_value_search);
+  //   this.eventDeatailsService.basic.subscribe(b => {
+  //     this.registered_user = [];
+  //     for (const key in b) {
+  //       // console.log(b);
+  //       var basic = new Basic();
+  //       basic.$user_id = b[key]['user_id'];
+  //       basic.$dept = b[key]['dept'];
+  //       basic.$batch = b[key]['batch'];
+  //       basic.$student_id = b[key]['student_id'];
+  //       basic.$passing_year = b[key]['passing_year'];
+  //       basic.$first_name = b[key]['first_name'];
+  //       basic.$last_name = b[key]['last_name'];
+  //       basic.$birth_date = b[key]['birth_date'];
+  //       basic.$gender = b[key]['gender'];
+  //       basic.$blood_group = b[key]['blood_group'];
+  //       basic.$email = b[key]['email'];
+  //       basic.$phone = b[key]['phone'];
+  //       basic.$address_present = b[key]['address_present'];
+  //       basic.$address_permanent = b[key]['address_permanent'];
+  //       basic.$research_interest = b[key]['research_interest'];
+  //       basic.$skills = b[key]['skills'];
+  //       basic.$image_address = b[key]['image_address'];
+  //       basic.$religion = b[key]['religion'];
+  //       basic.$social_media_link = b[key]['social_media_link'];
+  //       this.registered_user.push(basic);
+  //     }// for
+  //   });
+  //   // console.log(this.registered_user);
+  // }// refreshTable_basicSearch
+
   public basicSearch_previousPage() {
     console.log('basicSearch_previousPage');
     if (this.basicSearch_pageNumber > 1) {
       this.basicSearch_pageNumber -= 1;
-      this.refreshTable_basicSearch();
+      this.refreshTable();
     }
   }
 
@@ -125,7 +126,7 @@ export class EventDetailsComponent implements OnInit {
     console.log('basicSearch_nextPage');
     if (this.basicSearch_pageNumber < (this.basicSearch_total / this.basicSearch_perPage)) {
       this.basicSearch_pageNumber += 1;
-      this.refreshTable_basicSearch();
+      this.refreshTable();
     }
   }
 
@@ -164,9 +165,10 @@ export class EventDetailsComponent implements OnInit {
       this.basicSearch_sort_on,
       this.basic_search_by,
       this.basic_value_search,
-      this.event.$id
+      this.event.$id,
+      this.basicSearch_pageNumber
     ).subscribe(res => {
-      console.log(res['data']);
+      // console.log(res['data']);
       // console.log(res['data'][0]);
       this.registered_user = new Array();
       var usersRegistered = res['data'];
