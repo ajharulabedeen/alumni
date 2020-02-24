@@ -227,7 +227,7 @@
         <!--  start : modal body-->
         <div class="modal-body">
           <!--start : Showing Mobile Payment-->
-          <div *ngIf="paymentFound" >
+          <div *ngIf="paymentFound">
             <table>
               <tr>
                 <td><h4>Payment Method :</h4></td>
@@ -266,23 +266,27 @@
             </textarea>
               <button class="btn btn-facebook">Save</button>
             </div>
+
+            <button type="button" class="btn btn-info" (click)="addNote =!addNote">Add Note</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            <button *ngIf="!approved" type="button" class="btn btn-secondary btn-danger" data-dismiss="modal"
+                    (click)="update_event_basic()">
+              Approve
+            </button>
+
           </div>
           <!--end : Showing Mobile Payment-->
 
           <!--Showing Mobile Payment Not Found-->
           <div *ngIf="!paymentFound">
             <h2>Mobile Payment Not found!</h2>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
           </div>
 
         </div>
         <!--  end : modal body-->
         <div class="modal-footer">
-          <button type="button" class="btn btn-info" (click)="addNote =!addNote">Add Note</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          <button *ngIf="!approved" type="button" class="btn btn-secondary btn-danger" data-dismiss="modal"
-                  (click)="update_event_basic()">
-            Approve
-          </button>
+
         </div>
       </div>
     </div>
