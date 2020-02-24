@@ -206,7 +206,7 @@ export class EventDetailsComponent implements OnInit {
     }
     this.mobilePayment = new PaymentMobile();
     this.eventDeatailsService.getOneMobilePayment(payment_mobile_id).subscribe(res => {
-      console.log(res['date']);
+      // console.log(res['date']);
       if (res == null) {
         this.paymentFound = false;
       } else {
