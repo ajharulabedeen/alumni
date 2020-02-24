@@ -180,12 +180,17 @@ export class EventDetailsComponent implements OnInit {
     this.eventDeatailsService.countSearchRegisteredUser(column_name, key, this.event.$id).subscribe(res => {
       console.log(res);
       this.basicSearch_total = res['count'];
-      });
+    });
+  }
+
+
+  approved: boolean;
+
+  showPaymentDetails(payment_id: string, payment_status: string) {
+    console.log('payment_id : ' + payment_id);
+    this.approved = false;
+    if (payment_status == '1') {
+      this.approved = true;
     }
-
-
-  // public getAllRegisteredUser() {
-  //
-  // }
-
+  }
 }// class
