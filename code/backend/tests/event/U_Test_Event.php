@@ -9,6 +9,7 @@ use App\events\EventRegistration;
 use App\events\Events_Repo_Impl;
 use App\events\Events;
 use App\profile\ProfileBasic;
+use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -30,7 +31,6 @@ class U_Test_Event extends TestCase
 //        error_log($this->search_event_count("location", "%GUB%"));//passed.
 //        $this->eventbasicUpdate();//passed
 //        $this->eventUpdateNotesDescription();//passed
-
 //        error_log($this->fiendOneEvent(1)->description);//passed.
 //        error_log($this->assingment_payment_event());//passed
 //        error_log($this->checkPaymentAssingment());//passed
@@ -39,16 +39,20 @@ class U_Test_Event extends TestCase
 //        error_log($this->checkEventRegistration("110", "6"));//passed
 //        $this->checkPayment();
 
-        $this->getAllRegisteredUser(10,
+        $this->getAllRegisteredUser(100,
             "ASC", "user_id",
             "dept", '%%', "110");
+
 //        $this->countSearchRegisteredUser("dept", '%bb%', "110");
+
     }
 
     public function Event_CRUD()
     {
         error_log("\n Event: CRUD Test Done!\n");
     }
+
+//    public function
 
     public function countSearchRegisteredUser(string $column_name,
                                               string $key,
@@ -80,19 +84,19 @@ class U_Test_Event extends TestCase
         $this->assertTrue(($data != null));
 
         $i = 0;
-        foreach ($data as $x=>$k) {
+        foreach ($data as $x => $k) {
             error_log(
-//                $data[$i]->user_id
-                ' batch :' . $data[$i]->batch
-                . ' uID :' . $data[$i]->user_id
-                . " Name : " . $data[$i]->first_name
-                . $data[$i]->last_name
-//                . "---institute Name : " . $data[$i]->organization_name
-//                . "---Type : " . $data[$i]->type
-//                . "---Role: " . $data[$i]->role);
+                $data[$x]->user_id
+                . ' batch :' . $data[$x]->batch
+                . ' uID:' . $data[$x]->user_id
+                . " Name: " . $data[$x]->first_name
+                . ' ' . $data[$x]->last_name
+                . ' paymentID:' . $data[$x]->payment_id
+                . ' s:' . $data[$x]->payment_status
             );
-
         }
+
+
     }
 
     public function checkPayment()

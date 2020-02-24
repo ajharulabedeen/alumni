@@ -6,6 +6,7 @@ use App\events\Events;
 use App\events\EventRegistration;
 use App\payment\PaymentMobile;
 use Illuminate\Support\Facades\DB;
+use Mockery\Exception;
 
 // use App\events\Exception;
 
@@ -300,6 +301,7 @@ class Events_Repo_Impl implements Events_Repo_I
         string $key,
         string $event_id)
     {
+        //refactor
         // TODO: Implement getAllRegisteredUser() method.
         if ($sort_by == "ASC") {
             $order = "ASC";
@@ -328,8 +330,39 @@ class Events_Repo_Impl implements Events_Repo_I
 //            ->groupBy('profile_basics.user_id')//not working
             ->paginate($per_page);
 
-//        return $data->toJson(JSON_PRETTY_PRINT);//working but tought not printing friendly.
-//        return $data->toJson();//working but tought not printing friendly.
+        $type_id = $email = DB::table('event_payments')
+            ->where('event_id', $event_id)
+            ->value('payment_type_id');
+
+        error_log("Count Data :" . count($data));
+
+        foreach ($data as $x => $k) {
+            $user_id = $data[$x]->user_id;
+            $paymentStatus = DB::table('payment_mobiles')
+                ->select('id', 'status')
+                ->where('event_id', '=', $event_id)
+                ->where('user_id', '=', $user_id)
+                ->where('type_ID', '=', $type_id)
+                ->get();
+            if (count($paymentStatus) == 0) {
+                $data[$x]->payment_id = 'not_paid';
+                $data[$x]->payment_status = 'nan';
+            } else {
+                try {
+                    $data[$x]->payment_id = $paymentStatus[0]->id;
+                    $data[$x]->payment_status = $paymentStatus[0]->status;
+                    foreach ($paymentStatus as $m => $n) {
+                        error_log($paymentStatus[$m]->id);
+                        error_log($paymentStatus[$m]->status);
+                    }
+                } catch (\Exception $e) {
+                    var_dump($paymentStatus);
+                }
+
+
+            }
+        }
+
         return $data;
     }
 
