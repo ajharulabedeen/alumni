@@ -39,16 +39,15 @@ class U_Test_Event extends TestCase
 //        error_log($this->checkEventRegistration("110", "6"));//passed
 //        $this->checkPayment();
 
-//        $this->getAllRegisteredUser(10,
-//            "ASC", "user_id",
-//            "dept", '%%', "110");
-        $this->countSearchRegisteredUser("dept", '%bb%', "110");
+        $this->getAllRegisteredUser(10,
+            "ASC", "user_id",
+            "dept", '%%', "110");
+//        $this->countSearchRegisteredUser("dept", '%bb%', "110");
     }
 
     public function Event_CRUD()
     {
         error_log("\n Event: CRUD Test Done!\n");
-
     }
 
     public function countSearchRegisteredUser(string $column_name,
@@ -79,26 +78,20 @@ class U_Test_Event extends TestCase
 //        error_log($data['data']);
 //        error_log($data['data']);
         $this->assertTrue(($data != null));
-        for ($i = 0; $i < 100; $i++) {
 
-            if ($data == null) {
-                break;
-            }
-            try {
-                error_log(
+        $i = 0;
+        foreach ($data as $x=>$k) {
+            error_log(
 //                $data[$i]->user_id
-                    ' batch :' . $data[$i]->batch
-                    . ' uID :' . $data[$i]->user_id
-                    . " Name : " . $data[$i]->first_name
-                    . $data[$i]->last_name
+                ' batch :' . $data[$i]->batch
+                . ' uID :' . $data[$i]->user_id
+                . " Name : " . $data[$i]->first_name
+                . $data[$i]->last_name
 //                . "---institute Name : " . $data[$i]->organization_name
 //                . "---Type : " . $data[$i]->type
 //                . "---Role: " . $data[$i]->role);
-                );
+            );
 
-            } catch (\Exception $e) {
-                error_log("Error in Printing!");
-            }
         }
     }
 

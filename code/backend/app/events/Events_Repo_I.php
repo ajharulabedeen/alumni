@@ -76,6 +76,15 @@ interface Events_Repo_I
 
     public function checkEventRegistration(string $event_id, string $user_id);
 
+    /**
+     * @description it will check, if a payment of a event, is done by the user or not.
+     * if payment is done, PaymentMobile Object will be returned.
+     * @param string $event_id
+     * @param string $user_id
+     * @return jSON ["status" => "1" (means : found or not) ,
+     * "data" => $pm(PaymentMbile),
+     * "type_id" => $type_id(payment type id)];
+     */
     public function checkPayment(string $event_id, string $user_id);
 
 //end : event registration
