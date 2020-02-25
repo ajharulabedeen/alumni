@@ -29,7 +29,7 @@ export class EventDetailsComponent implements OnInit {
   registered_user = new Array();
 
   event = new Events();
-  registered_user = new Array();
+  // registered_user = new Array();
   addNote: boolean;
   active_search: boolean;
 
