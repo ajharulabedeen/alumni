@@ -120,3 +120,6 @@ Route::post('events/checkEventRegistration', 'Events_Controller@checkEventRegist
 Route::post('events/checkPayment', 'Events_Controller@checkPayment');
 Route::post('events/getAllRegisteredUser', 'Events_Controller@getAllRegisteredUser');
 Route::post('events/countSearchRegisteredUser', 'Events_Controller@countSearchRegisteredUser');
+
+//mail test
+Route::get('send', 'mailController@send');
