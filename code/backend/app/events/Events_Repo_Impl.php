@@ -351,10 +351,10 @@ class Events_Repo_Impl implements Events_Repo_I
                 try {
                     $data[$x]->payment_id = $paymentStatus[0]->id;
                     $data[$x]->payment_status = $paymentStatus[0]->status;
-                    foreach ($paymentStatus as $m => $n) {
-                        error_log($paymentStatus[$m]->id);
-                        error_log($paymentStatus[$m]->status);
-                    }
+//                    foreach ($paymentStatus as $m => $n) {
+//                        error_log($paymentStatus[$m]->id);
+//                        error_log($paymentStatus[$m]->status);
+//                    }
                 } catch (\Exception $e) {
                     var_dump($paymentStatus);
                 }
