@@ -37,11 +37,17 @@ class Mail_Repo
      */
     public function saveVerificationCode(string $sentRandomCode)
     {
+        //refactor
+        /**
+         * duplicate chck will be added later; cause at this it is not needed.
+         * from fontend, once verfied mail, button will be disabled.
+         */
         $mailVerification = new MailVerification();
         $mailVerification->user_email = Utils::getLoggerEmailId();
         $mailVerification->user_id = Utils::getUserId();
         $mailVerification->sent_code = $sentRandomCode;
         $mailVerification->sent_date = date("Y-m-d h:i:s");
+        $mailVerification->status = "0";
         try {
             $id = $mailVerification->save();
         } catch (\Exception $e) {
@@ -73,4 +79,19 @@ class Mail_Repo
         return $verification;
     }
 
+    public function checkEmailVerification()
+    {
+        $user_id = Utils::getUserId();
+        $user_mail = Utils::getLoggerEmailId();
+        $mv = MailVerification::where('user_id', $user_id)->where('user_email', $user_mail)->get()[0];
+
+        $msg = "";
+        error_log($msg);
+        if ($mv->status == "1") {
+            $msg = "1";
+        } else {
+            $msg = "0";
+        }
+        return $msg;
+    }
 }// class
