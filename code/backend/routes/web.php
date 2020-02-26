@@ -122,4 +122,4 @@ Route::post('events/getAllRegisteredUser', 'Events_Controller@getAllRegisteredUs
 Route::post('events/countSearchRegisteredUser', 'Events_Controller@countSearchRegisteredUser');
 
 //mail test
-Route::get('send', 'mailController@send');
+Route::get('send', 'MailController@send');
