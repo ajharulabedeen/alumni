@@ -29,4 +29,10 @@ class Mail_Repo
     {
         return Utils::getLoggerEmailId();
     }
+
+    public function saveVerificationCode(string $randomCode)
+    {
+
+    }
+
 }
