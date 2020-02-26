@@ -79,6 +79,10 @@ class Mail_Repo
         return $verification;
     }
 
+    /**
+     * @description To check, wheather the email address has verified or not. Mail and user id will be taken from auth.
+     * @return string
+     */
     public function checkEmailVerification()
     {
         $user_id = Utils::getUserId();
