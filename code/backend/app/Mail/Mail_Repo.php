@@ -31,23 +31,46 @@ class Mail_Repo
         return Utils::getLoggerEmailId();
     }
 
+    /**
+     * @param string $sentRandomCode the code, that will be sent to the user by mail.
+     * @return bool|string
+     */
     public function saveVerificationCode(string $sentRandomCode)
     {
         $mailVerification = new MailVerification();
         $mailVerification->user_email = Utils::getLoggerEmailId();
         $mailVerification->user_id = Utils::getUserId();
         $mailVerification->sent_code = $sentRandomCode;
-        $mailVerification->sent_date = date("Y-m-d h:i:s");;
-        $id = '';
+        $mailVerification->sent_date = date("Y-m-d h:i:s");
         try {
             $id = $mailVerification->save();
         } catch (\Exception $e) {
             $id = "fail";
-            dd($e);
             error_log("Error in Saving, sent verification Code!");
         }
         return $id;
     }
 
+    /**
+     * @param string $sentRandomCode this code will be inputed by the user, that he will receive in mail.
+     */
+    public function verification(string $receivedCode)
+    {
+        $user_id = Utils::getUserId();
+        $user_mail = Utils::getLoggerEmailId();
+        $mv = MailVerification::where('user_id', $user_id)->where('user_email', $user_mail)->get()[0];
+        $sent_code = $mv->sent_code;
+        $verification = "true";
+        if ($sent_code == $receivedCode) {
+            error_log('code match!');
+            $mv->status = "1";
+            $mv->received_code = date("Y-m-d h:i:s");
+            $verification = $mv->update();
+        } else {
+            error_log('verification failed!');
+            $verification = "0";
+        }
+        return $verification;
+    }
 
 }// class
