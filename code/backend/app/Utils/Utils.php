@@ -14,6 +14,7 @@ class Utils
      */
     public static function getUserId()
     {
+        //refactor
 //        // $currentLoggedMail = "gub.cse.+files@gmail.com";
 //        error_log("Auth User : " . auth()->user());
 //        $currentLoggedMail = auth()->user()->email;
@@ -31,7 +32,10 @@ class Utils
     /**
      * @return email logged user email will be returned!
      */
-    public static function getLoggerEmailId(){
-
+    public static function getLoggerEmailId(): string
+    {
+        //refactor
+//        $currentLoggedMail = auth()->user()->email;
+        return "cse1301096@gmail.com";
     }
 }//class

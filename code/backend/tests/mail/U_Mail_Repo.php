@@ -20,9 +20,15 @@ class U_Mail_Repo extends TestCase
     public function testMain()
     {
         echo "\n >----------- Test Main : ---------> \n";
-        error_log("Search :");
-        $this->getRandomNumber();
+//        $this->getRandomNumber();
+//        $this->getLoggedUserMail();
     } //main test
+
+    public function getLoggedUserMail()
+    {
+        $mailRepo = new Mail_Repo();
+        error_log($mailRepo->getLoggedUserMail());
+    }
 
     public function getRandomNumber()
     {
