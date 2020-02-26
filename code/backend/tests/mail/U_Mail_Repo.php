@@ -22,7 +22,17 @@ class U_Mail_Repo extends TestCase
         echo "\n >----------- Test Main : ---------> \n";
 //        $this->getRandomNumber();
 //        $this->getLoggedUserMail();
+        $this->saveVerificationCode();
+
     } //main test
+
+    public function saveVerificationCode()
+    {
+        $mailRepo = new Mail_Repo();
+        $rand = $this->getRandomNumber();
+        $id = $mailRepo->saveVerificationCode($rand);
+        error_log($id);
+    }
 
     public function getLoggedUserMail()
     {
@@ -33,6 +43,9 @@ class U_Mail_Repo extends TestCase
     public function getRandomNumber()
     {
         $mailRepo = new Mail_Repo();
-        error_log($mailRepo->getRandomNumber());
+        $rand = $mailRepo->getRandomNumber();
+//        error_log($rand);
+        return $rand;
     }
+
 }//class

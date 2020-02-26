@@ -3,6 +3,7 @@
 namespace App\Mail;
 
 use App\Utils\Utils;
+use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 
 /**
  * Created by PhpStorm.
@@ -30,9 +31,23 @@ class Mail_Repo
         return Utils::getLoggerEmailId();
     }
 
-    public function saveVerificationCode(string $randomCode)
+    public function saveVerificationCode(string $sentRandomCode)
     {
-
+        $mailVerification = new MailVerification();
+        $mailVerification->user_email = Utils::getLoggerEmailId();
+        $mailVerification->user_id = Utils::getUserId();
+        $mailVerification->sent_code = $sentRandomCode;
+        $mailVerification->sent_date = date("Y-m-d h:i:s");;
+        $id = '';
+        try {
+            $id = $mailVerification->save();
+        } catch (\Exception $e) {
+            $id = "fail";
+            dd($e);
+            error_log("Error in Saving, sent verification Code!");
+        }
+        return $id;
     }
 
-}
+
+}// class
