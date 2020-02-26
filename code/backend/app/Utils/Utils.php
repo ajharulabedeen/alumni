@@ -27,4 +27,11 @@ class Utils
 //        return $userID;
         return "8";
     }
+
+    /**
+     * @return email logged user email will be returned!
+     */
+    public static function getLoggerEmailId(){
+
+    }
 }//class
