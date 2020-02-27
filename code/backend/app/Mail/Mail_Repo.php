@@ -42,17 +42,24 @@ class Mail_Repo
          * duplicate chck will be added later; cause at this it is not needed.
          * from fontend, once verfied mail, button will be disabled.
          */
-        $mailVerification = new MailVerification();
-        $mailVerification->user_email = Utils::getLoggerEmailId();
-        $mailVerification->user_id = Utils::getUserId();
-        $mailVerification->sent_code = $sentRandomCode;
-        $mailVerification->sent_date = date("Y-m-d h:i:s");
-        $mailVerification->status = "0";
-        try {
-            $id = $mailVerification->save();
-        } catch (\Exception $e) {
-            $id = "fail";
-            error_log("Error in Saving, sent verification Code!");
+        $check = $this->checkEmailVerification();
+        error_log("$check : " . $check);
+        $id = '';
+        if ($check == 0) {
+            $mailVerification = new MailVerification();
+            $mailVerification->user_email = Utils::getLoggerEmailId();
+            $mailVerification->user_id = Utils::getUserId();
+            $mailVerification->sent_code = $sentRandomCode;
+            $mailVerification->sent_date = date("Y-m-d h:i:s");
+            $mailVerification->status = "0";
+            try {
+                $id = $mailVerification->save();
+            } catch (\Exception $e) {
+                $id = "fail";
+                error_log("Error in Saving, sent verification Code!");
+            }
+        } else {
+            $id = 'code_sent';
         }
         return $id;
     }
@@ -66,7 +73,8 @@ class Mail_Repo
         $user_mail = Utils::getLoggerEmailId();
         $mv = MailVerification::where('user_id', $user_id)->where('user_email', $user_mail)->get()[0];
         $sent_code = $mv->sent_code;
-        $verification = "true";
+        $verification = "1";
+
         if ($sent_code == $receivedCode) {
             error_log('code match!');
             $mv->status = "1";
@@ -85,17 +93,41 @@ class Mail_Repo
      */
     public function checkEmailVerification()
     {
-        $user_id = Utils::getUserId();
-        $user_mail = Utils::getLoggerEmailId();
-        $mv = MailVerification::where('user_id', $user_id)->where('user_email', $user_mail)->get()[0];
-
         $msg = "";
-        error_log($msg);
-        if ($mv->status == "1") {
-            $msg = "1";
-        } else {
-            $msg = "0";
+        // refactor : reduntdent code with, code send.
+        try {
+            $user_id = Utils::getUserId();
+            $user_mail = Utils::getLoggerEmailId();
+            $mv = MailVerification::where('user_id', $user_id)->where('user_email', $user_mail)->get()[0];
+            if ($mv->status == "1") {
+                $msg = "1";
+            } else {
+                $msg = "0";
+            }
+        } catch (\Exception $e) {
+            error_log("Error in Reding verification status!");
         }
         return $msg;
     }
+
+
+    // refactor : this method may not needed, can be merged with checkVerification
+
+    /**
+     * to chek taht this user, has sent code or not.
+     */
+    public function checkSendCode()
+    {
+        $codeSent = "0";
+        try {
+            $user_id = Utils::getUserId();
+            $user_mail = Utils::getLoggerEmailId();
+            $mv = MailVerification::where('user_id', $user_id)->where('user_email', $user_mail)->get()[0];
+            $codeSent = "1";
+        } catch (\Exception $e) {
+            $codeSent = "0";
+        }
+        return $codeSent;
+    }
+
 }// class
