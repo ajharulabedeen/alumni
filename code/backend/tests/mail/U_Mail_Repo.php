@@ -24,8 +24,15 @@ class U_Mail_Repo extends TestCase
 //        $this->getLoggedUserMail();
 //        $this->saveVerificationCode();
 //        $this->verification();
-        $this->checkEmailVerification();
+//        $this->checkEmailVerification();
+        $this->checkSendCode();
     } //main test
+
+    public function checkSendCode()
+    {
+        $mailRepo = new Mail_Repo();
+        error_log($mailRepo->checkSendCode());
+    }
 
     public function checkEmailVerification()
     {
