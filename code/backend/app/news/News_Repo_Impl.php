@@ -9,6 +9,8 @@
 namespace App\news;
 
 
+use function GuzzleHttp\Psr7\_parse_request_uri;
+
 class News_Repo_Impl implements News_Repo_I
 {
     public function save(News $news)
@@ -27,8 +29,12 @@ class News_Repo_Impl implements News_Repo_I
     {
         try {
             $old_news = News::find($news->id);
+            $old_news = $news;
+            $old_news->update();
+            return "ok";
         } catch (\Exception $e) {
-
+            error_log("Update Failed!");
+            return "fail";
         }
     }
 

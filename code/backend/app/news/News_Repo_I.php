@@ -12,4 +12,6 @@ namespace App\news;
 interface News_Repo_I
 {
     public function save(News $news);
+
+    public function findOne(string $id);
 }
