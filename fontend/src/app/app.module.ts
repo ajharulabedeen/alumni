@@ -32,8 +32,7 @@ import { SearchComponent } from './search/search.component';
     AuthComponent,
     DataTableComponent,
     FileUploaderTestComponent,
-    SearchComponent,
-    NewsComponent
+    SearchComponent
     // AuthService
   ],
   imports: [
