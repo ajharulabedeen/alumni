@@ -23,7 +23,6 @@ import { PaymentModule } from './payment/payment.module';
 import { EventModule } from './event/event.module';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { SearchComponent } from './search/search.component';
-import { NewsComponent } from './news/news.component';
 
 
 @NgModule({

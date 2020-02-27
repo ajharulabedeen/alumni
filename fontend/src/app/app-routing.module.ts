@@ -39,6 +39,7 @@ const routes: Routes = [
   {path: 'event_details/:id', component: EventDetailsComponent},
   {path: 'event_details_user/:id', component: EventDetailsUserComponent},
   {path: 'search', component: SearchComponent},
+  {path: 'news', component: NewsComponent},
 ];
 
 @NgModule({
