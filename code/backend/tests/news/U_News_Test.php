@@ -26,7 +26,14 @@ class U_News_Test extends TestCase
 
 //        error_log($this->save());
 //        error_log($this->findOne("1"));
-        error_log($this->update());
+//        error_log($this->update());
+        error_log($this->delete("3"));
+    }
+
+    public function delete(string $id)
+    {
+        $repo = new News_Repo_Impl();
+        return $repo->delete($id);
     }
 
     public function update()
@@ -61,13 +68,6 @@ class U_News_Test extends TestCase
     }
 
 //   start :  old code
-    public function delete($id)
-    {
-        $repo = new Payment_Type_Repo_Impl();
-        $status = $repo->delete($id);
-        error_log($status);
-        return $status;
-    }
 
     /**
      * @return PaymentType return a single payment Type.
@@ -122,23 +122,5 @@ class U_News_Test extends TestCase
         return $id;
     }
 
-    /**
-     *  @* @param String text this text will be assingned to the Name of the PaymentType.
-     *  @* @param String id PaymentType ID that have to update.
-     */
-//    public function update($id, $text)
-//    {
-//        $repoPayment = new Payment_Type_Repo_Impl();
-//        $pt = new PaymentType();
-//        $pt = $this->findOnePaymentType($id);
-//
-//        $pt->name = $text;
-//        // $p->description = "nice man";
-//        // $p->last_date = "27/3/2019";
-//        // $p->Start_date = "26/3/2019";
-//        // $p->amount = "500";
-//        $status = $repoPayment->update($pt);
-//        return $status;
-//    }
 //   end :  old code
 }//class

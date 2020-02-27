@@ -14,4 +14,6 @@ interface News_Repo_I
     public function save(News $news);
 
     public function findOne(string $id);
+
+    public function update(News $news);
 }

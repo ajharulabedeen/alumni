@@ -10,6 +10,7 @@ namespace App\news;
 
 
 use function GuzzleHttp\Psr7\_parse_request_uri;
+use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 
 class News_Repo_Impl implements News_Repo_I
 {
@@ -30,8 +31,8 @@ class News_Repo_Impl implements News_Repo_I
         try {
             $old_news = News::find($news->id);
             $old_news = $news;
-            $old_news->update();
-            return "ok";
+            return $old_news->update();
+//             "ok";
         } catch (\Exception $e) {
             error_log("Update Failed!");
             return "fail";
@@ -42,6 +43,16 @@ class News_Repo_Impl implements News_Repo_I
     {
         try {
             return News::find($id);
+        } catch (\Exception $e) {
+            error_log("Error in reading one news!");
+            return "read_fail";
+        }
+    }
+
+    public function delete(string $id)
+    {
+        try {
+            return News::find($id)->delete();
         } catch (\Exception $e) {
             error_log("Error in reading one news!");
             return "read_fail";
