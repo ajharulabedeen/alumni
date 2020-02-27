@@ -42,7 +42,7 @@ class Mail_Repo
          * duplicate chck will be added later; cause at this it is not needed.
          * from fontend, once verfied mail, button will be disabled.
          */
-        $check = $this->checkEmailVerification();
+        $check = $this->checkSendCode();
         error_log("$check : " . $check);
         $id = '';
         if ($check == 0) {
