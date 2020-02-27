@@ -22,7 +22,7 @@ class U_Mail_Repo extends TestCase
         echo "\n >----------- Test Main : ---------> \n";
 //        $this->getRandomNumber();
 //        $this->getLoggedUserMail();
-        $this->saveVerificationCode();
+//        $this->saveVerificationCode();
 //        $this->verification();
 //        $this->checkEmailVerification();
 //        $this->checkSendCode();

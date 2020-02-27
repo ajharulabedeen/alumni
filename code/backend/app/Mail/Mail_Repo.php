@@ -13,7 +13,6 @@ use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
  */
 class Mail_Repo
 {
-
     /**
      * @return string 6 digit random number, will be send for mail verification.
      */
@@ -109,7 +108,6 @@ class Mail_Repo
         }
         return $msg;
     }
-
 
     // refactor : this method may not needed, can be merged with checkVerification
 
