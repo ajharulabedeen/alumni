@@ -22,4 +22,23 @@ class News_Repo_Impl implements News_Repo_I
             return "fail";
         }
     }
+
+    public function update(News $news)
+    {
+        try {
+            $old_news = News::find($news->id);
+        } catch (\Exception $e) {
+
+        }
+    }
+
+    public function findOne(string $id)
+    {
+        try {
+            return News::find($id);
+        } catch (\Exception $e) {
+            error_log("Error in reading one news!");
+            return "read_fail";
+        }
+    }
 }

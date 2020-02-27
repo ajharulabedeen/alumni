@@ -22,8 +22,18 @@ class U_News_Test extends TestCase
         // error_log($this->update(25,"---Update PT Name!")); //done
         // error_log($this->findOnePaymentType(25)->name);//done
 
-        error_log($this->save());
+//        --------------- OLD ------------
 
+//        error_log($this->save());
+//        error_log($this->findOne("1"));
+
+    }
+
+    public function findOne(string $id)
+    {
+        $repo = new News_Repo_Impl();
+        $news = $repo->findOne($id);
+        return $news;
     }
 
     public function save()
