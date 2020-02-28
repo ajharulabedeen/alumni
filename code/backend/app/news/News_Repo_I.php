@@ -25,4 +25,6 @@ interface News_Repo_I
 
     public function search($per_page, $sort_by, $sort_on, $column_name, $key);
 
+    public function search_count($column_name, $key);
+
 }

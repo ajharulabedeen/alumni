@@ -88,4 +88,13 @@ class News_Repo_Impl implements News_Repo_I
         return $data;
     }
 
+    public function search_count($column_name, $key)
+    {
+        $like = 'LIKE';
+        $key = $key . '%';
+        $data = News::where($column_name, $like, $key)->count();
+        return $data;
+    }
+
+
 }

@@ -32,7 +32,15 @@ class U_News_Test extends TestCase
 //        error_log($this->delete("3"));
 //        error_log($this->countAll());
 //        $this->getAllNews("10", "DESC", "post_date");
-        $this->search("10", "DESC", "post_date", "title", "PHP");
+//        $this->search("10", "DESC", "post_date", "title", "PHP");
+        $this->search_count("title", "PHP");
+    }
+
+    public function search_count($column_name, $key)
+    {
+        $repo = new News_Repo_Impl();
+        $data = $repo->search_count($column_name, $key);
+        error_log($data);
     }
 
     public function search($per_page, $sort_by, $sort_on, $column_name, $key)
