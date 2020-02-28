@@ -24,12 +24,19 @@ class U_News_Test extends TestCase
 
 //        --------------- OLD ------------
 
-        $this->dummyDataInsertion();
+//        $this->dummyDataInsertion();
 
 //        error_log($this->save());
 //        error_log($this->findOne("1"));
 //        error_log($this->update());
 //        error_log($this->delete("3"));
+        error_log($this->countAll());
+    }
+
+    public function countAll()
+    {
+        $repo = new News_Repo_Impl();
+        return $repo->countAll();
     }
 
     public function delete(string $id)
@@ -78,11 +85,6 @@ class U_News_Test extends TestCase
     {
         $repo = new Payment_Type_Repo_Impl();
         return $repo->findOnePaymentType($id);
-    }
-
-    public function countAll()
-    {
-        return PaymentType::count();
     }
 
     public function getAll($per_page, $sort_by, $sort_on, $postID)

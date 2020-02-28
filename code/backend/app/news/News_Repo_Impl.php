@@ -68,4 +68,9 @@ class News_Repo_Impl implements News_Repo_I
         }
         return News::orderBy($sort_on, $order)->paginate($per_page)->all();
     }
+
+    public function countAll()
+    {
+        return News::count();
+    }
 }

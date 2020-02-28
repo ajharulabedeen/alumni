@@ -358,8 +358,6 @@ class Events_Repo_Impl implements Events_Repo_I
                 } catch (\Exception $e) {
                     var_dump($paymentStatus);
                 }
-
-
             }
         }
 
