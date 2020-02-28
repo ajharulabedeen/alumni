@@ -74,9 +74,18 @@ class News_Repo_Impl implements News_Repo_I
         return News::count();
     }
 
-    public function searchNews()
+    public function search($per_page, $sort_by, $sort_on, $column_name, $key)
     {
-
+        if ($sort_by == "ASC") {
+            $order = "ASC";
+        } else {
+            $order = "DESC";
+        }
+        $like = 'LIKE';
+//        $key='%' . $key;
+        $key = $key . '%';
+        $data = News::where($column_name, $like, $key)->orderBy($sort_on, $order)->paginate($per_page)->all();
+        return $data;
     }
 
 }

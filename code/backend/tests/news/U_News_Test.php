@@ -31,7 +31,17 @@ class U_News_Test extends TestCase
 //        error_log($this->update());
 //        error_log($this->delete("3"));
 //        error_log($this->countAll());
-        $this->getAllNews("10", "DESC", "post_date");
+//        $this->getAllNews("10", "DESC", "post_date");
+        $this->search("10", "DESC", "post_date", "title", "PHP");
+    }
+
+    public function search($per_page, $sort_by, $sort_on, $column_name, $key)
+    {
+        $repo = new News_Repo_Impl();
+        $data = $repo->search($per_page, $sort_by, $sort_on, $column_name, $key);
+        foreach ($data as $x => $k) {
+            error_log($k);
+        }
     }
 
     public function getAllNews($per_page, $sort_by, $sort_on)
@@ -114,7 +124,6 @@ class U_News_Test extends TestCase
         // dd($data);
         // return PaymentType::orderBy($sort_on,$order)->paginate($per_page)->all();
     }
-
     //   end :  old code
 
 //    start : dummy data insertion
