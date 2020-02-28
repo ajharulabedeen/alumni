@@ -33,6 +33,12 @@ class News_Controller extends Controller
         return $this->newsRepo->save($news);
     } //
 
+    public function delete(Request $r)
+    {
+        error_log($r->id);
+        return ['status' => $this->newsRepo->delete($r->id)];
+    }
+
 
     //refactor : from font end have to send all the data else not given data will be saved as.
     public function update(Request $r)

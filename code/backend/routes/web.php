@@ -123,6 +123,7 @@ Route::post('events/countSearchRegisteredUser', 'Events_Controller@countSearchRe
 
 
 Route::post('news/save', 'News_Controller@save');
+Route::post('news/delete', 'News_Controller@delete');
 
 
 

@@ -16,10 +16,10 @@ class F_News_Test extends TestCase
     public function testBasicTest()
     {
 //        $this->assertTrue(true);
-        $this->save();//passed
+//        $this->save();//passed
+        $this->delete(306);//passed
 //---------------------
 
-//        $this->delete(5);//passed
 //        $this->update(8);//passed
 //        $this->count_all();//passed
 //        $this->search_event(10, "ASC", "id", "3", "location", "%Dhaka%");//passed
@@ -30,6 +30,23 @@ class F_News_Test extends TestCase
 
     }
 
+    public function delete($id)
+    {
+        $response = $this->json(
+            'POST',
+            'news/delete',
+            [
+                'id' => $id
+            ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
+        );
+
+        $d = $response->baseResponse->original;
+        dd($d);
+    }
 
     public function save()
     {
@@ -208,23 +225,7 @@ class F_News_Test extends TestCase
         dd($d);
     }
 
-    public function delete($id)
-    {
-        $response = $this->json(
-            'POST',
-            'events/delete',
-            [
-                'id' => $id
-            ]
-        // ,
-        // [
-        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
-        // ]
-        );
 
-        $d = $response->baseResponse->original;
-        dd($d);
-    }
 
 
     public function getAllEvents($per_page, $sort_by, $sort_on, $pageNumber)
