@@ -5,6 +5,7 @@ import { EventsComponent } from './events/events.component';
 import { NewsComponent } from './news/news.component';
 import { RegisterComponent } from './register/register.component';
 import { LayoutModule } from '../layout/layout.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +13,8 @@ import { LayoutModule } from '../layout/layout.module';
   declarations: [AboutComponent, EventsComponent, NewsComponent, RegisterComponent],
   imports: [
     CommonModule,
-    LayoutModule
+    LayoutModule,
+    FormsModule
   ]
 })
 export class PublicModule { }
