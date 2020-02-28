@@ -22,15 +22,30 @@
       <div id="news" class="panel-collapse collapse">
         <div class="panel-body">
 
-          <div class="col-md-12">
+          <!--      Title-->
+          <div class="col-md-12 offset-md-12">
             <div class="form-group">
-              <button class="btn btn-primary" (click)="searchPaymentType()">Search</button>
-              <label>Payment Type ID</label>
-              <input [(ngModel)]="paymentID" type="text" class="form-control">
+              <label>Title : </label>
+              <input [(ngModel)]="edit_name" type="text" class="form-control" placeholder="1024 Character Max..">
             </div>
           </div>
-          <!-- start : payment found-->
-          <!-- paymentFound= payment found.  -->
+
+          <div class="col-md-12 offset-md-12">
+            <div class="form-group">
+              <label>Description : </label>
+              <ckeditor [(ngModel)]="description" data="<p>Hello, world!</p>"></ckeditor>
+            </div>
+          </div>
+
+          <div class="col-md-12 offset-md-12">
+            <div class="form-group">
+              <label>Notes : </label>
+              <input [(ngModel)]="edit_name" type="text" class="form-control" placeholder="1024 Character Max..">
+            </div>
+          </div>
+
+
+
           <div *ngIf="paymentFound">
             <!--                  <button class="btn btn-primary" (click)="assingPayment(payment.$id)">Assign</button>-->
             <button class="btn btn-primary" *ngIf="!paymentAlreadyAssingned" (click)="assingPayment(paymentID)">
@@ -41,26 +56,6 @@
             <h3>
               Payment!
             </h3>
-            <label for="name"><b>Name:</b></label>
-            <p id="name">{{payment.$name}}</p>
-            <label for="s_date"><b>Start Date:</b></label>
-            <p id="s_date">{{payment.$start_date}}</p>
-            <label for="e_date"><b>End Date:</b></label>
-            <p id="e_date">{{payment.$last_date}}</p>
-            <label for="amount"><b>Amount:</b></label>
-            <p id="amount">{{payment.$amount}}</p>
-            <label><b>Description:</b></label>
-            <p id="descripti">{{payment.$description}}</p>
-            <button type="button" class="btn btn-danger" *ngIf="paymentAlreadyAssingned"
-              (click)=" removeConfirmAsk=true">
-              Remove
-            </button>
-          </div>
-
-          <div *ngIf="!paymentFound">
-            Sorry No Payment not Found!
-            <br>
-            Please search by right ID or Add new from Payment Section!
           </div>
           <!-- end : payment found-->
 
@@ -88,7 +83,7 @@
 
 
 
-
+  <!-- Not is use kept for test purpose. -->
   <!-- start-Modal :  news -->
   <div class="modal fade" id="new_news" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
@@ -103,27 +98,6 @@
         <!--  start : modal body-->
         <div class="modal-body">
 
-          <!--      Title-->
-          <div class="col-md-12 offset-md-12">
-            <div class="form-group">
-              <label>Title : </label>
-              <input [(ngModel)]="edit_name" type="text" class="form-control" placeholder="1024 Character Max..">
-            </div>
-          </div>
-
-          <div class="col-md-12 offset-md-12">
-            <div class="form-group">
-              <label>Description : </label>
-              <ckeditor [(ngModel)]="description" data="<p>Hello, world!</p>"></ckeditor>
-            </div>
-          </div>
-
-          <div class="col-md-12 offset-md-12">
-            <div class="form-group">
-              <label>Notes : </label>
-              <input [(ngModel)]="edit_name" type="text" class="form-control" placeholder="1024 Character Max..">
-            </div>
-          </div>
 
         </div>
         <!--  end : modal body-->
