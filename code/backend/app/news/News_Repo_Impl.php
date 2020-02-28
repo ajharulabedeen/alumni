@@ -51,14 +51,23 @@ class News_Repo_Impl implements News_Repo_I
 
     public function delete(string $id)
     {
-        error_log($id);
+//        error_log($id);
+        $res = '';
         try {
-            $res =  News::find($id)->delete();
-            return $res;
+            $news = News::find($id);
+            if ($news != null) {
+                $res = $news->delete();
+            }else{
+                $res = "fail";
+            }
+
+
         } catch (\Exception $e) {
             error_log("Error in reading one news!");
-            return "read_fail";
+            $res = "read_fail";
         }
+
+        return $res;
     }
 
     public function getAllNews($per_page, $sort_by, $sort_on)

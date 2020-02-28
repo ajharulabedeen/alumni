@@ -17,7 +17,7 @@ class F_News_Test extends TestCase
     {
 //        $this->assertTrue(true);
 //        $this->save();//passed
-        $this->delete(306);//passed
+        $this->delete(307);//passed
 //---------------------
 
 //        $this->update(8);//passed

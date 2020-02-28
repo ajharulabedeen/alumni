@@ -29,11 +29,11 @@ class U_News_Test extends TestCase
 //        error_log($this->save());
 //        error_log($this->findOne("1"));
 //        error_log($this->update());
-//        error_log($this->delete("3"));
+        error_log($this->delete("307"));
 //        error_log($this->countAll());
 //        $this->getAllNews("10", "DESC", "post_date");
 //        $this->search("10", "DESC", "post_date", "title", "PHP");
-        $this->search_count("title", "PHP");
+//        $this->search_count("title", "PHP");
     }
 
     public function search_count($column_name, $key)
