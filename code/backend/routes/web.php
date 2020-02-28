@@ -121,5 +121,12 @@ Route::post('events/checkPayment', 'Events_Controller@checkPayment');
 Route::post('events/getAllRegisteredUser', 'Events_Controller@getAllRegisteredUser');
 Route::post('events/countSearchRegisteredUser', 'Events_Controller@countSearchRegisteredUser');
 
+
+Route::post('news/save', 'News_Controller@save');
+
+
+
+
+
 //mail test
 Route::get('send', 'MailController@send');

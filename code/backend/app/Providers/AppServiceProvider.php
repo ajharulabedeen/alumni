@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\events\Events_Repo_I;
 use App\events\Events_Repo_Impl;
+use App\news\News_Repo_I;
+use App\news\News_Repo_Impl;
 use App\payment\Payment_Type_Repo_I;
 use App\payment\Payment_Type_Repo_Impl;
 use App\payment\Payment_Mobile_Repo_I;
@@ -38,6 +40,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(Payment_Mobile_Repo_I::class, Payment_Mobile_Repo_Impl::class);
         $this->app->bind(Events_Repo_I::class, Events_Repo_Impl::class);
         $this->app->bind(Search_Repo_I::class, Search_Repo_Impl::class);
+        $this->app->bind(News_Repo_I::class, News_Repo_Impl::class);
     }
 
     /**
