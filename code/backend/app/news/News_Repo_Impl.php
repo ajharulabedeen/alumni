@@ -58,4 +58,14 @@ class News_Repo_Impl implements News_Repo_I
             return "read_fail";
         }
     }
+
+    public function getAllNews($per_page, $sort_by, $sort_on)
+    {
+        if ($sort_by == "ASC") {
+            $order = "ASC";
+        } else {
+            $order = "DESC";
+        }
+        return News::orderBy($sort_on, $order)->paginate($per_page)->all();
+    }
 }

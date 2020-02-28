@@ -24,10 +24,12 @@ class U_News_Test extends TestCase
 
 //        --------------- OLD ------------
 
+        $this->dummyDataInsertion();
+
 //        error_log($this->save());
 //        error_log($this->findOne("1"));
 //        error_log($this->update());
-        error_log($this->delete("3"));
+//        error_log($this->delete("3"));
     }
 
     public function delete(string $id)
@@ -103,24 +105,42 @@ class U_News_Test extends TestCase
         // return PaymentType::orderBy($sort_on,$order)->paginate($per_page)->all();
     }
 
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function create()
-    {
-        $repoPayment = new Payment_Type_Repo_Impl();
-        $p = new PaymentType();
-        $p->name = "MeetUp 22";
-        $p->description = "Picnic";
-        $p->start_date = "2022-06-01";
-        $p->last_date = "2022-06-07";
-        $p->amount = "700";
+    //   end :  old code
 
-        $id = $repoPayment->create($p);
-        return $id;
+//    start : dummy data insertion
+    public function dummyDataInsertion()
+    {
+        for ($x = 0; $x < 100; $x++) {
+            $repo = new News_Repo_Impl();
+            $news = new News();
+            $news->user_id = rand(1, 10);
+            $news->title = $this->getTitle();
+            $news->description = $this->getTitle() . "Description!";
+            $news->notes = "Test Notes!";
+            $news->post_date = date("Y-m-d h:i:s");
+            error_log($repo->save($news));
+        }
     }
 
-//   end :  old code
+    public function getTitle()
+    {
+        $title = array("WorkShoop in PHP",
+            "Meet Up 2020 completed!",
+            "GUB Meeting about STI",
+            "CSE carnival finished successfully",
+            "Dhaka IT Job Fair in Green University",
+            "Annual Picnic with cultural events",
+            "Workshop in Python for Arduno",
+            "PHP seminar for Wordpress",
+            "How to Pubslishing Research Article in high IF",
+            "Family Get together of Alumnies",
+            "Winter Carity in the of the country",
+            "Regular Blood Donation ",
+            "Training : NSU Programming Contest");
+        $index = rand(0, count($title) - 1);
+        return $title[$index];
+    }
+
+
+//    end : dummy data insertion
 }//class

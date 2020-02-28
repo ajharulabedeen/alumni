@@ -16,4 +16,6 @@ interface News_Repo_I
     public function findOne(string $id);
 
     public function update(News $news);
+
+    public function delete(string $id);
 }

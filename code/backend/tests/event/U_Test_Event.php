@@ -353,7 +353,7 @@ class U_Test_Event extends TestCase
 
     public function getTitle()
     {
-        $location = array("WorkShoop in PHP",
+        $title = array("WorkShoop in PHP",
             "Meet Up 2020",
             "GUB Meeting",
             "CSE carnival",
@@ -366,8 +366,8 @@ class U_Test_Event extends TestCase
             "Winter Carity",
             "Blood Donation",
             "NSU Programming Contest");
-        $index = rand(0, count($location) - 1);
-        return $location[$index];
+        $index = rand(0, count($title) - 1);
+        return $title[$index];
     }
 
     public function getDescription()
