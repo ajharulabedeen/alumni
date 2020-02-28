@@ -12,7 +12,80 @@
       data-target="#new_news">
       New
     </button>
+    <!-- start : panel new News -->
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" href="#news">New News</a>
+        </h4>
+      </div>
+      <div id="news" class="panel-collapse collapse">
+        <div class="panel-body">
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <button class="btn btn-primary" (click)="searchPaymentType()">Search</button>
+              <label>Payment Type ID</label>
+              <input [(ngModel)]="paymentID" type="text" class="form-control">
+            </div>
+          </div>
+          <!-- start : payment found-->
+          <!-- paymentFound= payment found.  -->
+          <div *ngIf="paymentFound">
+            <!--                  <button class="btn btn-primary" (click)="assingPayment(payment.$id)">Assign</button>-->
+            <button class="btn btn-primary" *ngIf="!paymentAlreadyAssingned" (click)="assingPayment(paymentID)">
+              Assign
+            </button>
+            <br>
+            <button class="btn btn-success btn-lg" *ngIf="assingSuccess">Success Fully Assingned</button>
+            <h3>
+              Payment!
+            </h3>
+            <label for="name"><b>Name:</b></label>
+            <p id="name">{{payment.$name}}</p>
+            <label for="s_date"><b>Start Date:</b></label>
+            <p id="s_date">{{payment.$start_date}}</p>
+            <label for="e_date"><b>End Date:</b></label>
+            <p id="e_date">{{payment.$last_date}}</p>
+            <label for="amount"><b>Amount:</b></label>
+            <p id="amount">{{payment.$amount}}</p>
+            <label><b>Description:</b></label>
+            <p id="descripti">{{payment.$description}}</p>
+            <button type="button" class="btn btn-danger" *ngIf="paymentAlreadyAssingned"
+              (click)=" removeConfirmAsk=true">
+              Remove
+            </button>
+          </div>
+
+          <div *ngIf="!paymentFound">
+            Sorry No Payment not Found!
+            <br>
+            Please search by right ID or Add new from Payment Section!
+          </div>
+          <!-- end : payment found-->
+
+          <!--start : remove confirm-->
+          <div *ngIf="removeConfirmAsk">
+            <h2>Are You sure to Remvoe?</h2>
+            <button class="btn btn-sm btn-warning" (click)="removePaymentFromEvent(payment.$id)">Yes</button>
+            <button class="btn btn-sm btn-primary" (click)="this.removeConfirmAsk=false">No</button>
+          </div>
+          <!--end : remove confirm-->
+
+        </div>
+        <!-- panel body-->
+      </div>
+      <div class="panel-footer">
+        News
+      </div>
+    </div>
+    <!-- end : panel new News -->
+
+
+
   </div>
+  <!-- content warpper -->
+
 
 
 
@@ -29,53 +102,29 @@
         </div>
         <!--  start : modal body-->
         <div class="modal-body">
-          <!--      Name-->
+
+          <!--      Title-->
           <div class="col-md-12 offset-md-12">
             <div class="form-group">
-              <label>Name : </label>
-              <input [(ngModel)]="edit_name" type="text" class="form-control" placeholder="512 Character Max..">
+              <label>Title : </label>
+              <input [(ngModel)]="edit_name" type="text" class="form-control" placeholder="1024 Character Max..">
             </div>
           </div>
-          <!--   start date   -->
-          <div class="col-md-3  offset-md-3">
+
+          <div class="col-md-12 offset-md-12">
             <div class="form-group">
-              <label>Start Date</label>
-              <input [(ngModel)]="edit_start_date" type="text" class="form-control" placeholder="{{start_date}}">
+              <label>Description : </label>
+              <ckeditor [(ngModel)]="description" data="<p>Hello, world!</p>"></ckeditor>
             </div>
           </div>
-          <div class="col-md-3  offset-md-3">
+
+          <div class="col-md-12 offset-md-12">
             <div class="form-group">
-              <label>Select Date</label>
-              <input [(ngModel)]="edit_start_date" type="date" class="form-control" value="{{start_date}}">
+              <label>Notes : </label>
+              <input [(ngModel)]="edit_name" type="text" class="form-control" placeholder="1024 Character Max..">
             </div>
           </div>
-          <!--      End date -->
-          <div class="col-md-3  offset-md-3">
-            <div class="form-group">
-              <label>End Date</label>
-              <input [(ngModel)]="edit_last_date" type="text" class="form-control" placeholder="{{last_date}}">
-            </div>
-          </div>
-          <div class="col-md-3  offset-md-3">
-            <div class="form-group">
-              <label>Select Date</label>
-              <input [(ngModel)]="edit_last_date" type="date" class="form-control" value="{{edit_last_date}}">
-            </div>
-          </div>
-          <!--      Amount -->
-          <div class="col-md-12 ">
-            <div class="form-group">
-              <label>Amount</label>
-              <input [(ngModel)]="edit_cost" type="text" class="form-control">
-            </div>
-          </div>
-          <!--      vanue-->
-          <div class="col-md-12 ">
-            <div class="form-group">
-              <label>Vanue</label>
-              <input [(ngModel)]="edit_vanue" type="text" class="form-control">
-            </div>
-          </div>
+
         </div>
         <!--  end : modal body-->
         <div class="modal-footer">

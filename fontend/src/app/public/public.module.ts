@@ -6,6 +6,7 @@ import { NewsComponent } from './news/news.component';
 import { RegisterComponent } from './register/register.component';
 import { LayoutModule } from '../layout/layout.module';
 import { FormsModule } from '@angular/forms';
+import { CKEditorModule } from 'ckeditor4-angular';
 
 
 
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     LayoutModule,
-    FormsModule
+    FormsModule,
+    CKEditorModule
   ]
 })
 export class PublicModule { }
