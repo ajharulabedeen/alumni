@@ -24,7 +24,7 @@ class U_News_Test extends TestCase
 
 //        --------------- OLD ------------
 
-        $this->dummyDataInsertion();
+//        $this->dummyDataInsertion();
 
 //        error_log($this->save());
 //        error_log($this->findOne("1"));
@@ -37,6 +37,11 @@ class U_News_Test extends TestCase
     public function getAllNews($per_page, $sort_by, $sort_on)
     {
         $repo = new News_Repo_Impl();
+        $data = $repo->getAllNews($per_page, $sort_by, $sort_on);
+        foreach ($data as $x => $k) {
+            error_log($k);
+        }
+        //        dd($data);
         return $repo->countAll();
     }
 
