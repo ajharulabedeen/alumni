@@ -8,10 +8,7 @@
       </section>
     </section>
 
-    <button class="btn btn-xl btn-primary" data-toggle="modal" (click)="setBasicEventInfo(event)"
-      data-target="#new_news">
-      New
-    </button>
+
     <!-- start : panel new News -->
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -26,10 +23,11 @@
           <div class="col-md-12 offset-md-12">
             <div class="form-group">
               <label>Title : </label>
-              <input [(ngModel)]="edit_name" type="text" class="form-control" placeholder="1024 Character Max..">
+              <input [(ngModel)]="title" type="text" class="form-control" placeholder="1024 Character Max..">
             </div>
           </div>
 
+          <!-- description -->
           <div class="col-md-12 offset-md-12">
             <div class="form-group">
               <label>Description : </label>
@@ -37,35 +35,15 @@
             </div>
           </div>
 
+          <!-- notes -->
           <div class="col-md-12 offset-md-12">
             <div class="form-group">
               <label>Notes : </label>
-              <input [(ngModel)]="edit_name" type="text" class="form-control" placeholder="1024 Character Max..">
+              <input [(ngModel)]="notes" type="text" class="form-control" placeholder="1024 Character Max..">
             </div>
           </div>
 
-
-
-          <div *ngIf="paymentFound">
-            <!--                  <button class="btn btn-primary" (click)="assingPayment(payment.$id)">Assign</button>-->
-            <button class="btn btn-primary" *ngIf="!paymentAlreadyAssingned" (click)="assingPayment(paymentID)">
-              Assign
-            </button>
-            <br>
-            <button class="btn btn-success btn-lg" *ngIf="assingSuccess">Success Fully Assingned</button>
-            <h3>
-              Payment!
-            </h3>
-          </div>
-          <!-- end : payment found-->
-
-          <!--start : remove confirm-->
-          <div *ngIf="removeConfirmAsk">
-            <h2>Are You sure to Remvoe?</h2>
-            <button class="btn btn-sm btn-warning" (click)="removePaymentFromEvent(payment.$id)">Yes</button>
-            <button class="btn btn-sm btn-primary" (click)="this.removeConfirmAsk=false">No</button>
-          </div>
-          <!--end : remove confirm-->
+          <button class="btn btn-primary">Save</button>
 
         </div>
         <!-- panel body-->
