@@ -24,13 +24,20 @@ class U_News_Test extends TestCase
 
 //        --------------- OLD ------------
 
-//        $this->dummyDataInsertion();
+        $this->dummyDataInsertion();
 
 //        error_log($this->save());
 //        error_log($this->findOne("1"));
 //        error_log($this->update());
 //        error_log($this->delete("3"));
-        error_log($this->countAll());
+//        error_log($this->countAll());
+        $this->getAllNews("10", "DESC", "post_date");
+    }
+
+    public function getAllNews($per_page, $sort_by, $sort_on)
+    {
+        $repo = new News_Repo_Impl();
+        return $repo->countAll();
     }
 
     public function countAll()
@@ -71,10 +78,6 @@ class U_News_Test extends TestCase
         return $repo->save($news);
     }
 
-    public function PT_CRUD()
-    {
-
-    }
 
 //   start :  old code
 
@@ -119,7 +122,7 @@ class U_News_Test extends TestCase
             $news->title = $this->getTitle();
             $news->description = $this->getTitle() . "Description!";
             $news->notes = "Test Notes!";
-            $news->post_date = date("Y-m-d h:i:s");
+            $news->post_date = $this->getDate();
             error_log($repo->save($news));
         }
     }
@@ -143,6 +146,14 @@ class U_News_Test extends TestCase
         return $title[$index];
     }
 
+    public function getDate()
+    {
+        $y = rand(2017, 2025);
+        $m = rand(1, 9);
+        $d = rand(10, 28);
+        $date = $y . "-" . "0" . $m . "-" . $d;
+        return $date;
+    }
 
 //    end : dummy data insertion
 }//class

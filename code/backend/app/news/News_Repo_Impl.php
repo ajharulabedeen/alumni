@@ -73,4 +73,10 @@ class News_Repo_Impl implements News_Repo_I
     {
         return News::count();
     }
+
+    public function searchNews()
+    {
+
+    }
+
 }

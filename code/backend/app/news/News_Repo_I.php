@@ -18,4 +18,6 @@ interface News_Repo_I
     public function update(News $news);
 
     public function delete(string $id);
+
+    public function countAll();
 }
