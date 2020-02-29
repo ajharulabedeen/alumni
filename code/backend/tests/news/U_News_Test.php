@@ -13,23 +13,11 @@ class U_News_Test extends TestCase
 {
     public function testMain()
     {
-
-        // $this->create();//done
-        // $this->getAll(10,"ASC","last_date","10");
-        // error_log($this->countAll());//done
-        // error_log($this->findOnePaymentType(25)->name);//done
-        // error_log($this->delete(25));//done
-        // error_log($this->update(25,"---Update PT Name!")); //done
-        // error_log($this->findOnePaymentType(25)->name);//done
-
-//        --------------- OLD ------------
-
 //        $this->dummyDataInsertion();
-
 //        error_log($this->save());
 //        error_log($this->findOne("1"));
-//        error_log($this->update());
-        error_log($this->delete("307"));
+        error_log($this->update());
+//        error_log($this->delete("307"));
 //        error_log($this->countAll());
 //        $this->getAllNews("10", "DESC", "post_date");
 //        $this->search("10", "DESC", "post_date", "title", "PHP");
@@ -78,7 +66,7 @@ class U_News_Test extends TestCase
     public function update()
     {
         $repo = new News_Repo_Impl();
-        $news = $this->findOne(2);
+        $news = $this->findOne(303);
         $news->title = "Test Update!";
         return $repo->update($news);
     }
@@ -94,6 +82,7 @@ class U_News_Test extends TestCase
     {
         $repo = new News_Repo_Impl();
         $news = new News();
+        $news->user_id = "10";
         $news->title = "Alumni Ready!";
         $news->description = "Test News! Alumni Project is Ready!";
         $news->notes = "Test News!";

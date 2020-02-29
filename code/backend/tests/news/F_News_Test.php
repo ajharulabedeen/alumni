@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\news\News;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestUtil;
@@ -17,16 +18,52 @@ class F_News_Test extends TestCase
     {
 //        $this->assertTrue(true);
 //        $this->save();//passed
-        $this->delete(307);//passed
-//---------------------
+//        $this->delete(298);// this id no more valid.
+        $this->update(298);//passed
 
+//---------------------strat : old
 //        $this->update(8);//passed
 //        $this->count_all();//passed
 //        $this->search_event(10, "ASC", "id", "3", "location", "%Dhaka%");//passed
 //        $this->search_event_count("location", "%Dhaka");//passed
 //        $this->findOne();
-
 //        $this->countSearchRegisteredUser("dept", '%bb%', "110");
+//---------------------end : old
+    }
+
+    public function update()
+    {
+        $response = $this->json(
+            'POST',
+            'news/update',
+            [
+                "id" => "303",
+                "title" => "MeetUp 2041 completion!",
+                "description" => "We all the previous student will meet at this day!",
+                "notes" => "Please Dont Miss it!",
+                "images" => "No Image Available!",
+            ]
+            ,
+            [
+                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u2@umail.com", "123456")
+            ]
+        );
+
+        $d = $response->baseResponse->original;
+        dd($d);
+
+//        [
+//            "title" => "MeetUp 2041 completion!",
+//            "description" => "We all the previous student will meet at this day!",
+//            "notes" => "Please Dont Miss it!",
+//            "images" => "No Image Available!",
+//        ]
+//        $news = new News();
+//        $news->user_id = "10";
+//        $news->title = "Alumni Ready!";
+//        $news->description = "Test News! Alumni Project is Ready!";
+//        $news->notes = "Test News!";
+//        $news->post_date = date("Y-m-d h:i:s");
 
     }
 
@@ -38,10 +75,10 @@ class F_News_Test extends TestCase
             [
                 'id' => $id
             ]
-        // ,
-        // [
-        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
-        // ]
+            ,
+            [
+                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u1@umail.com", "123456")
+            ]
         );
 
         $d = $response->baseResponse->original;
@@ -54,6 +91,7 @@ class F_News_Test extends TestCase
             'POST',
             'news/save',
             [
+                "user_id" => "10",
                 "title" => "MeetUp 2041 completion!",
                 "description" => "We all the previous student will meet at this day!",
                 "notes" => "Please Dont Miss it!",
@@ -198,35 +236,6 @@ class F_News_Test extends TestCase
         $d = $response->baseResponse->original;
         dd($d);
     }
-
-    public function update($id)
-    {
-        $response = $this->json(
-            'POST',
-            'events/update',
-            [
-                "id" => $id,
-                "title" => "MeetUp 2041",
-                "start_date" => "2019/04/04",
-                "end_date" => "2019/04/05",
-                "fee" => "500.55",
-                "location" => "Green Garden",
-                "description" => "We all the previous student will meet at this day!",
-                "notes" => "Please Dont Miss it!",
-                "images" => "No Image Available!",
-            ]
-            ,
-            [
-                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u2@umail.com", "123456")
-            ]
-        );
-
-        $d = $response->baseResponse->original;
-        dd($d);
-    }
-
-
-
 
     public function getAllEvents($per_page, $sort_by, $sort_on, $pageNumber)
     {

@@ -28,10 +28,16 @@ class News_Repo_Impl implements News_Repo_I
 
     public function update(News $news)
     {
+
         try {
             $old_news = News::find($news->id);
+            error_log($old_news);
             $old_news = $news;
-            return $old_news->update();
+            error_log("Update");
+            $id = $old_news->update();
+            error_log($id);
+            return (string) $id;
+//            return $old_news->update();
 //             "ok";
         } catch (\Exception $e) {
             error_log("Update Failed!");
@@ -57,7 +63,7 @@ class News_Repo_Impl implements News_Repo_I
             $news = News::find($id);
             if ($news != null) {
                 $res = $news->delete();
-            }else{
+            } else {
                 $res = "fail";
             }
 
