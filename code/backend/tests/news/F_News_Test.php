@@ -22,7 +22,7 @@ class F_News_Test extends TestCase
 //        $this->update(298);//passed
 //        $this->findOne(303);//passed
 //        $this->getAllNews("10", "ASC", "id", "10");
-
+        $this->countAll();
 //---------------------strat : old
 //        $this->update(8);//passed
 //        $this->count_all();//passed
@@ -31,6 +31,22 @@ class F_News_Test extends TestCase
 //        $this->findOne();
 //        $this->countSearchRegisteredUser("dept", '%bb%', "110");
 //---------------------end : old
+    }
+
+    public function countAll()
+    {
+        $response = $this->json(
+            'POST',
+            'news/countAll',
+            []
+            ,
+            [
+//                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u1@umail.com", "123456")
+            ]
+        );
+
+        $d = $response->baseResponse->original;
+        dd($d);
     }
 
     public function getAllNews($per_page, $sort_by, $sort_on, $pageNumber)

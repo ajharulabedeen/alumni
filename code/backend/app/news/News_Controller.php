@@ -67,6 +67,11 @@ class News_Controller extends Controller
         return $this->newsRepo->getAllNews($per_page, $sort_by, $sort_on);
     }
 
+    public function countAll()
+    {
+        return $this->newsRepo->countAll();
+    }
+
 //    ---------Not In USE
     public
     function getAboutByUserId()
