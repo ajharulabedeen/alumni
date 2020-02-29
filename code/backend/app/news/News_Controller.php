@@ -72,6 +72,16 @@ class News_Controller extends Controller
         return $this->newsRepo->countAll();
     }
 
+    public function search(Request $r)
+    {
+        $per_page = $r->per_page;
+        $sort_by = $r->sort_by;
+        $sort_on = $r->sort_on;
+        $column_name = $r->column_name;
+        $key = $r->key;
+        return $this->newsRepo->search($per_page, $sort_by, $sort_on, $column_name, $key);
+    }
+
 //    ---------Not In USE
     public
     function getAboutByUserId()
