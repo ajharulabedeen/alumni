@@ -82,6 +82,13 @@ class News_Controller extends Controller
         return $this->newsRepo->search($per_page, $sort_by, $sort_on, $column_name, $key);
     }
 
+    public function search_count(Request $r)
+    {
+        $column_name = $r->column_name;
+        $key = $r->key;
+        return $this->newsRepo->search_count($column_name, $key);
+    }
+
 //    ---------Not In USE
     public
     function getAboutByUserId()

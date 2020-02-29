@@ -129,6 +129,7 @@ Route::post('news/findOne', 'News_Controller@findOne');
 Route::post('news/getAllNews', 'News_Controller@getAllNews');
 Route::post('news/countAll', 'News_Controller@countAll');
 Route::post('news/search', 'News_Controller@search');
+Route::post('news/search_count', 'News_Controller@search_count');
 
 
 
