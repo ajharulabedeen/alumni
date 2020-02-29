@@ -37,8 +37,6 @@ class News_Repo_Impl implements News_Repo_I
             $id = $old_news->update();
             error_log($id);
             return (string) $id;
-//            return $old_news->update();
-//             "ok";
         } catch (\Exception $e) {
             error_log("Update Failed!");
             return "fail";
@@ -66,8 +64,6 @@ class News_Repo_Impl implements News_Repo_I
             } else {
                 $res = "fail";
             }
-
-
         } catch (\Exception $e) {
             error_log("Error in reading one news!");
             $res = "read_fail";

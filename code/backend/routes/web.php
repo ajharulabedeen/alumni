@@ -126,6 +126,7 @@ Route::post('news/save', 'News_Controller@save');
 Route::post('news/delete', 'News_Controller@delete');
 Route::post('news/update', 'News_Controller@update');
 Route::post('news/findOne', 'News_Controller@findOne');
+Route::post('news/getAllNews', 'News_Controller@getAllNews');
 
 
 

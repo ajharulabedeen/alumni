@@ -59,8 +59,17 @@ class News_Controller extends Controller
         return $this->newsRepo->findOne($r->id);
     }
 
+    public function getAllNews(Request $r)
+    {
+        $per_page = $r->per_page;
+        $sort_by = $r->sort_by;
+        $sort_on = $r->sort_on;
+        return $this->newsRepo->getAllNews($per_page, $sort_by, $sort_on);
+    }
 
-    public function getAboutByUserId()
+//    ---------Not In USE
+    public
+    function getAboutByUserId()
     {
 //        $user_id = Utils::getUserId();
 //        return $this->aboutRepo->findAboutByUser($user_id);
