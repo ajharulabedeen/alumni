@@ -19,7 +19,8 @@ class F_News_Test extends TestCase
 //        $this->assertTrue(true);
 //        $this->save();//passed
 //        $this->delete(298);// this id no more valid.
-        $this->update(298);//passed
+//        $this->update(298);//passed
+        $this->findOne(303);//passed
 
 //---------------------strat : old
 //        $this->update(8);//passed
@@ -29,6 +30,26 @@ class F_News_Test extends TestCase
 //        $this->findOne();
 //        $this->countSearchRegisteredUser("dept", '%bb%', "110");
 //---------------------end : old
+    }
+
+    public function findOne(string $id)
+    {
+
+        $response = $this->json(
+            'POST',
+            'news/findOne',
+            [
+                'id' => $id
+            ]
+            ,
+            [
+                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u1@umail.com", "123456")
+            ]
+        );
+
+        $d = $response->baseResponse->original;
+        error_log($d);
+//        dd($d);
     }
 
     public function update()

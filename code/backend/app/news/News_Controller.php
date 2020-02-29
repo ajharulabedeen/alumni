@@ -51,8 +51,12 @@ class News_Controller extends Controller
         $news->description = $r->description;
         $news->notes = $r->title;
         $news->post_date = date("Y-m-d h:i:s");
-//        return ["status" => $this->newsRepo->update($news)];
         return $this->newsRepo->update($news);
+    }
+
+    public function findOne(Request $r)
+    {
+        return $this->newsRepo->findOne($r->id);
     }
 
 
