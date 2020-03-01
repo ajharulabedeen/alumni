@@ -45,7 +45,7 @@
           </div>
 
           <button class="btn btn-primary">Save</button>
-          <button class="btn btn-danger" data-toggle="modal" data-target="#do_payment">Preview</button>
+          <button class="btn btn-danger" data-toggle="modal" data-target="#news_preview">Preview</button>
         </div>
         <!-- panel body-->
       </div>
@@ -186,60 +186,26 @@
 
   </div>
   <!-- content warpper -->
-
-
-  <app-footernavbar></app-footernavbar>
   <app-settingsnavbar></app-settingsnavbar>
+  <app-footernavbar></app-footernavbar>
 
-  <!--start : test-->
-  <div class="modal fade" id="do_payment" tabindex="-1" role="dialog" aria-labelledby="modal_educationLabel"
+  <!--start : news preview -->
+  <div class="modal fade" id="news_preview" tabindex="-1" role="dialog" aria-labelledby="modal_educationLabel"
        aria-hidden="true">
     <div class="modal-dialog" style="width:1250px;" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="modal_educationLabel">Pay IT</h5>
+          <h5 class="modal-title" id="modal_educationLabel">New Preview</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
 
-          <div class="col-md-6 offset-md-6">
-            <div class="form-group">
-              <label>Date</label>
-              <input type="text" class="form-control" placeholder="{{date}}">
-            </div>
-          </div>
-          <div class="col-md-6 offset-md-6">
-            <div class="form-group">
-              <label>Select Date</label>
-              <input [(ngModel)]="date" type="date" class="form-control">
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label>Amount</label>
-            <input [(ngModel)]="amount" type="number" class="form-control">
-          </div>
-          <div class="form-group">
-            <label>Mobile Number</label>
-            <input [(ngModel)]="mobile_number" type="text" class="form-control"
-                   placeholder="Mobile Number from Which payment has done ...... (Max : 512 Character)">
-          </div>
-          <div class="form-group">
-            <label>Medium</label>
-            <input [(ngModel)]="payment_method" type="text" class="form-control"
-                   placeholder="bKash, Rocket...... (Max : 512 Character)">
-          </div>
-          <div class="form-group">
-            <label>TrX ID</label>
-            <input [(ngModel)]="trx_id" type="text" class="form-control"
-                   placeholder="Transection id...... (Max : 512 Character)">
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="savePayment()">Save</button>
-          </div>
+          <h5>Title :</h5>
+          <h3>This is news title!</h3>
+          <h5>Details: </h5>
+          <p>This news details Modal! Description!</p>
         </div>
       </div>
     </div>
@@ -247,6 +213,6 @@
     <!-- <app-footernavbar></app-footernavbar> -->
     <!-- <app-settingsnavbar></app-settingsnavbar> -->
   </div>
-  <!--start : test-->
+  <!--end : news preview -->
 
 </div>
