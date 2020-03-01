@@ -23,16 +23,8 @@ class F_News_Test extends TestCase
 //        $this->findOne(303);//passed
 //        $this->getAllNews("10", "ASC", "id", "10");
 //        $this->countAll();
-//        $this->search("10", "ASC", "user_id", "title", "PHP", "1");
-        $this->search_count("title", "PHP");
-//---------------------strat : old
-//        $this->update(8);//passed
-//        $this->count_all();//passed
-//        $this->search_event(10, "ASC", "id", "3", "location", "%Dhaka%");//passed
-//        $this->search_event_count("location", "%Dhaka");//passed
-//        $this->findOne();
-//        $this->countSearchRegisteredUser("dept", '%bb%', "110");
-//---------------------end : old
+        $this->search("10", "ASC", "user_id", "title", "PHP", "1");
+//        $this->search_count("title", "PHP");
     }
 
     public function search_count($column_name, $key)

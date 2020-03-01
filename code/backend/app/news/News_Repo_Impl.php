@@ -98,7 +98,8 @@ class News_Repo_Impl implements News_Repo_I
         $like = 'LIKE';
 //        $key='%' . $key;
         $key = $key . '%';
-        $data = News::where($column_name, $like, $key)->orderBy($sort_on, $order)->paginate($per_page)->all();
+        $data = News::select('id', 'user_id', 'title', 'post_date')
+            ->where($column_name, $like, $key)->orderBy($sort_on, $order)->paginate($per_page)->all();
         return $data;
     }
 
