@@ -3,13 +3,6 @@
   <app-asidenavbar></app-asidenavbar>
   <div class="content-wrapper">
 
-    <!--<section class="content-header">-->
-    <!--<section class="content ">-->
-    <!--<h1>Welcome to GUB : News</h1>-->
-    <!--</section>-->
-    <!--</section>-->
-
-
     <!-- start : panel new News -->
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -56,9 +49,7 @@
     <!-- end : panel new News -->
 
     <!--start : showing all news-->
-
-    <!--    start : basic search -->
-    <div id="basic" class="tabcontent ">
+    <div id="all_news" class="tabcontent ">
       <h1>All News</h1>
       <!--start : search fields and search key or search value -->
       <h4>
@@ -84,8 +75,8 @@
       <!-- end : search fields selection and search key or search value-->
 
       <!-- Start : showing all profiles after search -->
-      <!--            start : basic search pagination panel-->
-      <!--      perPage-->
+      <!-- start : All news pagination panel-->
+      <!-- perPage-->
       <div class="col-md-2 offset-md-2">
         <div style="text-align: center" class="form-group">
           <label>Per Page</label>
@@ -93,7 +84,7 @@
                  value="{{basicSearch_perPage}}" (ngModelChange)="refreshTable_basicSearch()">
         </div>
       </div>
-      <!--      total-->
+      <!-- total-->
       <div class="col-md-2 offset-md-2">
         <div style="text-align: center" class="form-group">
           <label>Total </label>
@@ -102,7 +93,7 @@
                  value="{{basicSearch_total}}">
         </div>
       </div>
-      <!--      prePage/nextPage-->
+      <!-- prePage/nextPage-->
       <div class="col-md-3 offset-md-3">
         <div class="form-group" style="text-align: center">
           <button class="btn btn-primary btn-xs" (click)="basicSearch_previousPage()">Previous</button>
@@ -112,7 +103,7 @@
                  value="{{basicSearch_pageNumber}}">
         </div>
       </div>
-      <!--       sort by ASC or DESC -->
+      <!-- sort by ASC or DESC -->
       <div class="col-md-3 offset-md-3">
         <div class="form-group" style="text-align: center">
           <h4>Sort Order</h4>
@@ -121,7 +112,7 @@
           <input type="radio" name="m_pay" [(ngModel)]="basicSearch_sort_by" value="DESC">Descending<br>
         </div>
       </div>
-      <!--       sort by column name -->
+      <!--  sort by column name -->
       <div>
         <h4>Sort By</h4>
         <select [(ngModel)]="basicSearch_sort_on">
@@ -132,27 +123,20 @@
           <option value="gender">Gender</option>
         </select>
       </div>
-      <!--            end : basic search pagination panel-->
+      <!--end : All news pagination panel-->
 
-      <!-- satrt :  basic search showing all Profiles-->
-      <!-- start : table -->
+      <!-- start : table News-->
       <div class="col-xs-12">
         <div class="box">
           <div class="box-body table-responsive no-padding">
             <table class="table table-hover">
               <tbody>
               <tr>
+                <th>Delete</th>
                 <th>Details</th>
-                <th>Index</th>
-                <th>Batch</th>
-                <th>ID</th>
-                <th>Dept</th>
-                <th>Name</th>
-                <th>Mobile</th>
-                <th>Address</th>
-                <th>Passing Year</th>
-                <th>Research Interest</th>
-                <th>Social Link</th>
+                <th>Edit</th>
+                <th>Title</th>
+                <th>Post Date</th>
               </tr>
 
               <!-- showing all profiles after basic search  -->
@@ -178,10 +162,8 @@
           </div>
         </div>
       </div>
-      <!-- end : table -->
-      <!-- End : showing all profiles after basic search -->
+      <!-- end : table News-->
     </div>
-    <!--    end : basic search -->
     <!--end : showing all news-->
 
   </div>
@@ -201,7 +183,6 @@
           </button>
         </div>
         <div class="modal-body">
-
           <h5>Title :</h5>
           <h3>This is news title!</h3>
           <h5>Details: </h5>
