@@ -36,7 +36,7 @@ class News_Repo_Impl implements News_Repo_I
             error_log("Update");
             $id = $old_news->update();
             error_log($id);
-            return (string) $id;
+            return (string)$id;
         } catch (\Exception $e) {
             error_log("Update Failed!");
             return "fail";
@@ -79,7 +79,8 @@ class News_Repo_Impl implements News_Repo_I
         } else {
             $order = "DESC";
         }
-        return News::orderBy($sort_on, $order)->paginate($per_page)->all();
+
+        return News::select('id', 'user_id', 'title', 'post_date')->orderBy($sort_on, $order)->paginate($per_page)->all();
     }
 
     public function countAll()

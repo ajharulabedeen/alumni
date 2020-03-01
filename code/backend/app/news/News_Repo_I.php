@@ -21,6 +21,13 @@ interface News_Repo_I
 
     public function countAll();
 
+    /**
+     * @description all news, not details.
+     * @param $per_page
+     * @param $sort_by
+     * @param $sort_on
+     * @return mixed
+     */
     public function getAllNews($per_page, $sort_by, $sort_on);
 
     public function search($per_page, $sort_by, $sort_on, $column_name, $key);
