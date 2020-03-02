@@ -19,13 +19,19 @@ export class NewsComponent implements OnInit {
   dataSaveSucess: boolean;
   news_search_by: string;
   news_value_search: string;
-  newsSearch_perPage: string;
-  newsSearch_total: string;
-  newsSearch_pageNumber: string;
+  newsSearch_perPage: number;
+  newsSearch_total: number;
+  newsSearch_pageNumber: number;
   newsSearch_sort_by: string;
   newsSearch_sort_on: string;
 
   ngOnInit() {
+    this.newsSearch_perPage = 10;
+    this.newsSearch_pageNumber = 1;
+    this.newsSearch_sort_on = "post_date";
+    this.newsSearch_sort_by = "ASC";
+    this.news_search_by = 'title';
+
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
   }

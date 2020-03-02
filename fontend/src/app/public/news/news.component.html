@@ -66,7 +66,7 @@
           <h4>Search By :</h4>
           <select [(ngModel)]="news_search_by">
             <option value="post_date">Post Date</option>
-            <option value="title">Student ID</option>
+            <option value="title">Title</option>
           </select>
         </div>
       </div>
@@ -85,7 +85,7 @@
         <div style="text-align: center" class="form-group">
           <label>Per Page</label>
           <input style="text-align: center" [(ngModel)]="newsSearch_perPage" type="number" class="form-control"
-                 value="{{newsSearch_perPage}}" (ngModelChange)="refreshTable_basicSearch()">
+                 value="{{newsSearch_perPage}}" (ngModelChange)="refreshTable_news()">
         </div>
       </div>
       <!-- total-->
