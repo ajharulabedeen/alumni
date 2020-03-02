@@ -190,19 +190,18 @@
         </div>
         <div class="modal-body">
           <!--previw-->
-          <div *ngIf="!edit">
-            <h5>Title :</h5>
-            <h3>{{title}}</h3>
-            <h5>Details: </h5>
-            <p innerHtml="{{description}}"></p>
-            <h5>Notes: </h5>
-            <P>{{notes}}</P>
-          </div>
+          <h5 style="background-color: cyan">Title :</h5>
+          <h3>{{title}}</h3>
+          <h5 style="background-color: pink">Details: </h5>
+          <p innerHtml="{{description}}"></p>
+          <h5>Notes: </h5>
+          <P>{{notes}}</P>
         </div>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-warning" data-dismiss="modal" aria-label="Close">Close</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Update</button>
+          <!--no need, test purpose.-->
+          <!--<button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Update</button>-->
         </div>
       </div>
     </div>
