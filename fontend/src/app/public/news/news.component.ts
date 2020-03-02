@@ -16,6 +16,8 @@ export class NewsComponent implements OnInit {
   description: string;
   notes: string;
 
+  dataSaveSucess: boolean;
+
   ngOnInit() {
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
@@ -27,8 +29,15 @@ export class NewsComponent implements OnInit {
     news.$description = this.description;
     news.$notes = this.description;
     this.newsService.saveNews(news).subscribe(res => {
-      console.log(res);
+      if (res > 0) {
+        console.log("Data Save Success!");
+        this.dataSaveSucess = true;
+      }
     });
   }
 
+  toggleSuccess() {
+    console.log("Toggle Success!");
+    this.dataSaveSucess = false;
+  }
 }// class

@@ -13,7 +13,7 @@ export class NewsService {
   }
 
   public saveNews(news: News) {
-    console.log(news);
+    // console.log(news);
     return this.http.post(
       'http://127.0.0.1:8000/news/save', news, this.authService.getHeader()
     );
