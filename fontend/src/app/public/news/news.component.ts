@@ -16,6 +16,8 @@ export class NewsComponent implements OnInit {
   title: string;
   description: string;
   notes: string;
+  delete_id: string;
+  edit_id: string;
 
   dataSaveSucess: boolean;
   news_search_by: string;
@@ -91,4 +93,10 @@ export class NewsComponent implements OnInit {
   public newsSearch_nextPage() {
 
   }
+
+  public delete() {
+    console.log("ID : " + this.delete_id);
+  }
+
+
 }// class
