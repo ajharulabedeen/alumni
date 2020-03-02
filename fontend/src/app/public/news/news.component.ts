@@ -32,6 +32,7 @@ export class NewsComponent implements OnInit {
     this.newsSearch_sort_on = "post_date";
     this.newsSearch_sort_by = "ASC";
     this.news_search_by = 'title';
+    this.news_value_search = '';
 
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
@@ -60,7 +61,19 @@ export class NewsComponent implements OnInit {
   }
 
   public refreshTable_news() {
-
+    if (this.active_search) {
+      this.news_value_search = '';
+    }
+    var per_page = this.newsSearch_perPage;
+    var sort_by = this.newsSearch_sort_by;//>ASC/DESC
+    var sort_on = this.newsSearch_sort_on;
+    var column_name = this.news_search_by;//column name
+    var key = this.news_value_search;
+    var pageNumber = this.newsSearch_pageNumber;
+    // $per_page, $sort_by, $sort_on, $column_name, $key
+    this.newsService.getAllNews(per_page, sort_by, sort_on, column_name, key, pageNumber).subscribe(res => {
+      console.log(res);
+    });
   }
 
   public newsSearch_previousPage() {
