@@ -64,4 +64,18 @@ export class NewsService {
     );
   }
 
+  public count(column_name: string, key: string) {
+    key = '%' + key + '%';
+    // return this.http.post<NewsNodetails>(
+    return this.http.post(
+      'http://127.0.0.1:8000/news/search_count',
+      {
+        'column_name': column_name,
+        'key': key,
+      },
+      this.authService.getHeader()
+    );
+  }
+
+
 }// class
