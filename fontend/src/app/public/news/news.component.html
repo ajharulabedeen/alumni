@@ -149,18 +149,19 @@
               <!-- showing all profiles after basic search  -->
               <tr *ngFor="let news of news_array; let i=index">
                 <td>
-                  <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details">
+                  <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#modal_payment_details">
                     Delete
                   </button>
                 </td>
                 <td>
-                  <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details">
-                    Details
+                  <button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#modal_payment_details">
+                    Edit
                   </button>
                 </td>
+
                 <td>
                   <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details">
-                    Edit
+                    Details
                   </button>
                 </td>
                 <td>{{i + 1}}</td>
