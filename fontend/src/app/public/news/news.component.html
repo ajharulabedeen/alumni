@@ -160,9 +160,10 @@
                     Edit
                   </button>
                 </td>
-
                 <td>
-                  <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#news_preview">
+                  <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#news_preview"
+                  (click)="newsDetails(news.id)"
+                  >
                     Details
                   </button>
                 </td>

@@ -61,10 +61,6 @@ export class NewsComponent implements OnInit {
     this.dataSaveSucess = false;
   }
 
-  public setNewsCount() {
-
-  }
-
   public refreshTable_news() {
     if (this.active_search) {
       this.news_value_search = '';
@@ -136,6 +132,14 @@ export class NewsComponent implements OnInit {
     //     this.eventSearch_total = res['data'];
     //   });
     // }
+  }
+
+  public newsDetails(id: string) {
+    console.log("Id : " + id);
+    this.newsService.newsDetails(id).subscribe(res => {
+        this.title = res['title'];
+        this.description = res['title'];
+    });
   }
 
 }// class

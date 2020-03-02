@@ -78,4 +78,13 @@ export class NewsService {
   }
 
 
+  public newsDetails(id: string) {
+    return this.http.post(
+      'http://127.0.0.1:8000/news/findOne',
+      {
+        'id': id
+      },
+      this.authService.getHeader()
+    );
+  }
 }// class
