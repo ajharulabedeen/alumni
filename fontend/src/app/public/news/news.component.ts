@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NewsService} from "./news.service";
+import {News} from "./news.model";
 
 @Component({
   selector: 'app-news',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private newsService: NewsService) {
+  }
 
   title: string;
   description: string;
@@ -18,5 +21,14 @@ export class NewsComponent implements OnInit {
     document.body.className = 'hold-transition skin-blue sidebar-mini';
   }
 
+  public save_news() {
+    var news = new News();
+    news.$title = this.title;
+    news.$description = this.description;
+    news.$notes = this.description;
+    this.newsService.saveNews(news).subscribe(res => {
+      console.log(res);
+    });
+  }
 
 }// class
