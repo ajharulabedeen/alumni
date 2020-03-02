@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NewsService} from "./news.service";
 import {News} from "./news.model";
 import {Events} from "../../event/event-manage/events.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-news',
@@ -10,8 +11,10 @@ import {Events} from "../../event/event-manage/events.model";
 })
 export class NewsComponent implements OnInit {
 
-  constructor(private newsService: NewsService) {
+  constructor(private newsService: NewsService, private router: Router) {
   }
+
+  public isCollapsed = false;
 
   title: string;
   description: string;
@@ -30,6 +33,8 @@ export class NewsComponent implements OnInit {
   active_search: boolean;
 
   news_array = new Array();
+
+  edit: boolean;
 
   ngOnInit() {
     this.newsSearch_perPage = 10;
@@ -136,10 +141,16 @@ export class NewsComponent implements OnInit {
 
   public newsDetails(id: string) {
     console.log("Id : " + id);
+    this.edit = false;
     this.newsService.newsDetails(id).subscribe(res => {
-        this.title = res['title'];
-        this.description = res['title'];
+      this.title = res['title'];
+      this.description = res['title'];
     });
   }
 
+
+  public editClick(id: string) {
+    this.newsDetails(id);
+    this.edit = true;
+  }
 }// class
