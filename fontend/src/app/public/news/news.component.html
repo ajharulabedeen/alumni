@@ -147,9 +147,7 @@
                   </button>
                 </td>
                 <td>
-                  <button button class="btn btn-xs btn-primary" data-toggle="modal" data-target="#news_preview"
-                          (click)="editClick(news.id)"
-                  >
+                  <button button class="btn btn-xs btn-primary" (click)="editClick(news.id)">
                     Edit
                   </button>
                 </td>
@@ -200,51 +198,11 @@
             <h5>Notes: </h5>
             <P>{{notes}}</P>
           </div>
-
-          <!--Edit-->
-          <div *ngIf="edit">
-            <!--      Title-->
-            <div class="col-md-12 offset-md-12">
-              <div class="form-group">
-                <label>Title : </label>
-                <input [(ngModel)]="title" type="text" class="form-control" placeholder="1024 Character Max..">
-              </div>
-            </div>
-
-            <!-- description -->
-            <div class="col-md-12 offset-md-12">
-              <div class="form-group">
-                <label>Description : </label>
-                <ckeditor [(ngModel)]="description" data="<p>Hello, world!</p>"></ckeditor>
-              </div>
-            </div>
-
-            <!-- notes -->
-            <div class="col-md-12 offset-md-12">
-              <div class="form-group">
-                <label>Notes : </label>
-                <input [(ngModel)]="notes" type="text" class="form-control" placeholder="1024 Character Max..">
-              </div>
-            </div>
-
-            <button class="btn btn-primary" (click)="save_news()">Save</button>
-            <!--refactor : later will be activated-->
-            <!--<button class="btn btn-danger" data-toggle="modal" data-target="#news_preview">Preview</button>-->
-            <br>
-            <button *ngIf="dataSaveSucess" class="btn btn-info">
-              Data Save Success!
-            </button>
-          </div>
-
         </div>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-warning" data-dismiss="modal" aria-label="Close">Close</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close"
-                  *ngIf="edit"
-          >
-            Update
-          </button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" aria-label="Close">Update</button>
         </div>
       </div>
     </div>
