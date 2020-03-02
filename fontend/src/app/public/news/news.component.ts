@@ -78,12 +78,13 @@ export class NewsComponent implements OnInit {
     // $per_page, $sort_by, $sort_on, $column_name, $key
     this.newsService.getAllNews(per_page, sort_by, sort_on, column_name, key, pageNumber).subscribe(res => {
       // console.log(res[0]);
+      this.news_array = new Array();
       for (const key1 in res) {
         var news = res[key1];
         this.news_array.push(news);
       }
     });
-    console.log(this.news_array);
+    // console.log(this.news_array);
   }
 
   public newsSearch_previousPage() {
@@ -95,7 +96,13 @@ export class NewsComponent implements OnInit {
   }
 
   public delete() {
-    console.log("ID : " + this.delete_id);
+    // console.log("ID : " + this.delete_id);
+    this.newsService.delete(this.delete_id).subscribe(data => {
+      console.log(data);
+      if (data['status'] == '1') {
+        this.refreshTable_news();
+      }
+    });
   }
 
 

@@ -54,4 +54,14 @@ export class NewsService {
     // });
   }
 
+  public delete(id: string) {
+    return this.http.post(
+      'http://127.0.0.1:8000/news/delete',
+      {
+        'id': id
+      },
+      this.authService.getHeader()
+    );
+  }
+
 }// class
