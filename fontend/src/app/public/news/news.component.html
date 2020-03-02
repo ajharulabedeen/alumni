@@ -54,6 +54,12 @@
 
     <!--start : showing all news-->
     <div id="all_news" class="tabcontent ">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" [(ngModel)]="active_search" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Active Search
+        </label>
+      </div>
       <h1>All News</h1>
       <!--start : search fields and search key or search value -->
       <h4>

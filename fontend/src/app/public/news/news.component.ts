@@ -24,6 +24,7 @@ export class NewsComponent implements OnInit {
   newsSearch_pageNumber: number;
   newsSearch_sort_by: string;
   newsSearch_sort_on: string;
+  active_search: boolean;
 
   ngOnInit() {
     this.newsSearch_perPage = 10;
@@ -49,24 +50,24 @@ export class NewsComponent implements OnInit {
     });
   }
 
-  toggleSuccess() {
+  public toggleSuccess() {
     console.log("Toggle Success!");
     this.dataSaveSucess = false;
   }
 
-  setNewsCount() {
+  public setNewsCount() {
 
   }
 
-  refreshTable_news() {
+  public refreshTable_news() {
 
   }
 
-  newsSearch_previousPage() {
+  public newsSearch_previousPage() {
 
   }
 
-  newsSearch_nextPage() {
+  public newsSearch_nextPage() {
 
   }
 }// class
