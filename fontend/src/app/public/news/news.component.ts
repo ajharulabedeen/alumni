@@ -17,6 +17,13 @@ export class NewsComponent implements OnInit {
   notes: string;
 
   dataSaveSucess: boolean;
+  news_search_by: string;
+  news_value_search: string;
+  newsSearch_perPage: string;
+  newsSearch_total: string;
+  newsSearch_pageNumber: string;
+  newsSearch_sort_by: string;
+  newsSearch_sort_on: string;
 
   ngOnInit() {
     window.dispatchEvent(new Event('resize'));
@@ -39,5 +46,21 @@ export class NewsComponent implements OnInit {
   toggleSuccess() {
     console.log("Toggle Success!");
     this.dataSaveSucess = false;
+  }
+
+  setNewsCount() {
+
+  }
+
+  refreshTable_news() {
+
+  }
+
+  newsSearch_previousPage() {
+
+  }
+
+  newsSearch_nextPage() {
+
   }
 }// class
