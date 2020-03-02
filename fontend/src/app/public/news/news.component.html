@@ -194,10 +194,16 @@
         </div>
         <div class="modal-body">
           <h5>Title :</h5>
-          <h3>This is news title!</h3>
+          <h3>{{title}}</h3>
           <h5>Details: </h5>
-          <p>This news details Modal! Description!</p>
+          <p innerHtml="{{description}}"></p>
+          <!--<div class="blog-post" innerHtml="{{about_me}}"></div>-->
+          <h5>Notes: </h5>
+          <P>{{notes}}</P>
         </div>
+        <button type="button" class="btn btn-warning" data-dismiss="modal" aria-label="Close">
+          Close
+        </button>
       </div>
     </div>
 
