@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NewsService} from "./news.service";
 import {News} from "./news.model";
+import {Events} from "../../event/event-manage/events.model";
 
 @Component({
   selector: 'app-news',
@@ -25,6 +26,8 @@ export class NewsComponent implements OnInit {
   newsSearch_sort_by: string;
   newsSearch_sort_on: string;
   active_search: boolean;
+
+  news_array = new Array();
 
   ngOnInit() {
     this.newsSearch_perPage = 10;
@@ -72,8 +75,13 @@ export class NewsComponent implements OnInit {
     var pageNumber = this.newsSearch_pageNumber;
     // $per_page, $sort_by, $sort_on, $column_name, $key
     this.newsService.getAllNews(per_page, sort_by, sort_on, column_name, key, pageNumber).subscribe(res => {
-      console.log(res);
+      // console.log(res[0]);
+      for (const key1 in res) {
+        var news = res[key1];
+        this.news_array.push(news);
+      }
     });
+    console.log(this.news_array);
   }
 
   public newsSearch_previousPage() {

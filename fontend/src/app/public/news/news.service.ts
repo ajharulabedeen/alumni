@@ -3,6 +3,7 @@ import {PaymentMobile} from "../../payment/payment-mobile/payment-mobile.model";
 import {News} from "./news.model";
 import {AuthService} from "../../auth/auth.service";
 import {HttpClient} from "@angular/common/http";
+import {NewsNodetails} from "./news-nodetails.model";
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,7 @@ export class NewsService {
    */
   public getAllNews(per_page: number, sort_by: string, sort_on: string, column_name: string, key: string, pageNumber: number) {
     key = '%' + key + '%';
+    // return this.http.post<NewsNodetails>(
     return this.http.post(
       'http://127.0.0.1:8000/news/search?page=' + pageNumber,
       {

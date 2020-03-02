@@ -141,12 +141,13 @@
                 <th>Delete</th>
                 <th>Details</th>
                 <th>Edit</th>
+                <th>Index</th>
                 <th>Title</th>
                 <th>Post Date</th>
               </tr>
 
               <!-- showing all profiles after basic search  -->
-              <tr *ngFor="let basic of baicSearch_profiles_array; let i=index">
+              <tr *ngFor="let news of news_array; let i=index">
                 <td>
                   <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details">
                     Delete
@@ -163,15 +164,8 @@
                   </button>
                 </td>
                 <td>{{i + 1}}</td>
-                <td>{{basic.batch}}</td>
-                <td>{{basic.id}}</td>
-                <td>{{basic.dept}}</td>
-                <td>{{basic.first_name}}{{basic.last_name}}</td>
-                <td>{{basic.phone}}</td>
-                <td>{{basic.address_present}}</td>
-                <td>{{basic.passing_year}}</td>
-                <td>{{basic.research_interest}}</td>
-                <td>{{basic.social_media_link}}</td>
+                <td>{{news.title}}</td>
+                <td>{{news.post_date}}</td>
               </tr>
               </tbody>
             </table>
