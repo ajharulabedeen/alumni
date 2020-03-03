@@ -16,6 +16,7 @@ import {PaymentMobileComponent} from './payment/payment-mobile/payment-mobile.co
 import {SearchComponent} from './search/search.component';
 import {EventDetailsComponent} from './event/event-details/event-details.component';
 import {EventDetailsUserComponent} from './event/event-details-user/event-details-user.component';
+import {NewsPublicComponent} from "./public/news-public/news-public.component";
 
 
 const routes: Routes = [
@@ -40,6 +41,7 @@ const routes: Routes = [
   {path: 'event_details_user/:id', component: EventDetailsUserComponent},
   {path: 'search', component: SearchComponent},
   {path: 'news', component: NewsComponent},
+  {path: 'news_public', component: NewsPublicComponent},
 ];
 
 @NgModule({

@@ -7,11 +7,12 @@ import { RegisterComponent } from './register/register.component';
 import { LayoutModule } from '../layout/layout.module';
 import { FormsModule } from '@angular/forms';
 import { CKEditorModule } from 'ckeditor4-angular';
+import { NewsPublicComponent } from './news-public/news-public.component';
 
 
 
 @NgModule({
-  declarations: [AboutComponent, EventsComponent, NewsComponent, RegisterComponent],
+  declarations: [AboutComponent, EventsComponent, NewsComponent, RegisterComponent, NewsPublicComponent],
   imports: [
     CommonModule,
     LayoutModule,
