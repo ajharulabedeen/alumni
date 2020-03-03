@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NewsService} from "./news.service";
 import {News} from "./news.model";
-import {Events} from "../../event/event-manage/events.model";
+import {Events} from "../event/event-manage/events.model";
 import {Router} from "@angular/router";
 
 @Component({

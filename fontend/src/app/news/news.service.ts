@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {PaymentMobile} from "../../payment/payment-mobile/payment-mobile.model";
+import {PaymentMobile} from "../payment/payment-mobile/payment-mobile.model";
 import {News} from "./news.model";
-import {AuthService} from "../../auth/auth.service";
+import {AuthService} from "../auth/auth.service";
 import {HttpClient} from "@angular/common/http";
 import {NewsNodetails} from "./news-nodetails.model";
 
