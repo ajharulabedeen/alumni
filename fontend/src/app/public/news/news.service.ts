@@ -77,7 +77,6 @@ export class NewsService {
     );
   }
 
-
   public newsDetails(id: string) {
     return this.http.post(
       'http://127.0.0.1:8000/news/findOne',
@@ -85,6 +84,20 @@ export class NewsService {
         'id': id
       },
       this.authService.getHeader()
+    );
+  }
+
+  updateNews(news: News) {
+    console.log("News In Update Service : " + news.$id);
+    console.log("News In Update Service : " + news.$title);
+    return this.http.post(
+      'http://127.0.0.1:8000/news/update',
+      {
+        'id': news.$id,
+        'title': news.$title,
+        'description': news.$description,
+        'notes': news.$notes,
+      }, this.authService.getHeader()
     );
   }
 }// class

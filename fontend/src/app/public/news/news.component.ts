@@ -24,6 +24,7 @@ export class NewsComponent implements OnInit {
   details_description: string;
   details_notes: string;
 
+  message: string;
 
   delete_id: string;
   edit_id: string;
@@ -69,6 +70,7 @@ export class NewsComponent implements OnInit {
     this.newsService.saveNews(news).subscribe(res => {
       if (res > 0) {
         console.log("Data Save Success!");
+        this.message = "Data Save Success!";
         this.dataSaveSucess = true;
       }
     });
@@ -127,7 +129,7 @@ export class NewsComponent implements OnInit {
   }
 
   public setTotal() {
-    if (this.active_search) {
+    if (this.active_search == false) {
       this.news_value_search = '';
     }
     var column_name = this.news_search_by;//column name
@@ -161,13 +163,29 @@ export class NewsComponent implements OnInit {
     });
   }
 
-
   public editClick(id: string) {
     // this.newsDetails(id);
+    this.edit_id = id;
     this.newsService.newsDetails(id).subscribe(res => {
       this.title = res['title'];
       this.description = res['description'];
     });
     this.edit = true;
+  }
+
+  public update() {
+    var news = new News();
+    news.$id = this.edit_id;
+    news.$title = this.title;
+    news.$description = this.description;
+    news.$notes = this.title;
+    this.newsService.updateNews(news).subscribe(res => {
+      if (res > 0) {
+        console.log("Data Update Success!");
+        this.message = "Data Update Success!";
+        this.dataSaveSucess = true;
+        this.refreshTable_news();
+      }
+    });
   }
 }// class

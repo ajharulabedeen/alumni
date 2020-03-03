@@ -37,13 +37,13 @@
 
         <button *ngIf="!edit" class="btn btn-primary" (click)="save_news()">Save</button>
 
-        <button *ngIf="edit" class="btn btn-info" (click)="save_news()">Update</button>
+        <button *ngIf="edit" class="btn btn-info" (click)="update()">Update</button>
         <button *ngIf="edit" class="btn btn-primary" (click)="edit=false; divData =!divData;">Cancel</button>
 
         <button class="btn btn-danger" data-toggle="modal" data-target="#news_preview">Preview</button>
         <br>
         <button *ngIf="dataSaveSucess" class="btn btn-info">
-          Data Save Success!
+          {{message}}
         </button>
       </div>
       <!--end : add news-->
@@ -124,7 +124,8 @@
       <div>
         <h4>Sort By</h4>
         <select [(ngModel)]="newsSearch_sort_on">
-          <option value="post_date" [selected]="true">Post Date</option>
+          <option value="id">Id</option>
+          <option value="post_date">Post Date</option>
         </select>
       </div>
       <!--end : All news pagination panel-->
@@ -141,6 +142,7 @@
                 <th>Details</th>
                 <th>Edit</th>
                 <th>Index</th>
+                <th>Id</th>
                 <th>Title</th>
                 <th>Post Date</th>
               </tr>
@@ -168,6 +170,7 @@
                   </button>
                 </td>
                 <td>{{i + 1}}</td>
+                <td>{{news.id}}</td>
                 <td>{{news.title}}</td>
                 <td>{{news.post_date}}</td>
               </tr>
@@ -182,7 +185,7 @@
 
   </div>
   <!-- content warpper -->
-  <app-settingsnavbar></app-settingsnavbar>
+  <!--<app-settingsnavbar></app-settingsnavbar>-->
   <app-footernavbar></app-footernavbar>
 
 
