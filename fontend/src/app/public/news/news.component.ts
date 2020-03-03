@@ -19,8 +19,15 @@ export class NewsComponent implements OnInit {
   title: string;
   description: string;
   notes: string;
+
+  details_title: string;
+  details_description: string;
+  details_notes: string;
+
+
   delete_id: string;
   edit_id: string;
+  edit: boolean;
 
   dataSaveSucess: boolean;
   news_search_by: string;
@@ -35,6 +42,12 @@ export class NewsComponent implements OnInit {
   news_array = new Array();
 
   edit: boolean;
+  /**
+   * to controll the div from, where.
+   */
+  divData: boolean;
+
+  heading: string;
 
   ngOnInit() {
     this.newsSearch_perPage = 10;
@@ -143,14 +156,18 @@ export class NewsComponent implements OnInit {
     console.log("Id : " + id);
     this.edit = false;
     this.newsService.newsDetails(id).subscribe(res => {
-      this.title = res['title'];
-      this.description = res['title'];
+      this.details_title = res['title'];
+      this.details_description = res['description'];
     });
   }
 
 
   public editClick(id: string) {
-    this.newsDetails(id);
+    // this.newsDetails(id);
+    this.newsService.newsDetails(id).subscribe(res => {
+      this.title = res['title'];
+      this.description = res['description'];
+    });
     this.edit = true;
   }
 }// class
