@@ -1,2 +1,6 @@
-<h1>{{id}}</h1>
-<p>news-details works!</p>
+<div class="wrapper">
+  <div class="col-xs-12" align="center">
+    <h1>{{news_title}}</h1>
+  </div>
+  <p [innerHTML]="news_details"></p>
+</div>
