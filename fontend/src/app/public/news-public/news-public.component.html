@@ -60,31 +60,18 @@
       </div>
       <!--end : All news pagination panel-->
 
-      <!-- start : table News-->
-      <!-- also used for to show news details, Edit News. -->
-      <div class="col-xs-12">
-        <div class="box">
-          <div class="box-body table-responsive no-padding">
-            <table class="table table-hover">
-              <tbody>
-              <tr>
-                <th>Index</th>
-                <th>Title</th>
-                <th>Post Date</th>
-              </tr>
-
-              <!-- showing all profiles after basic search  -->
-              <tr *ngFor="let news of news_array; let i=index">
-                <td>{{i + 1}}</td>
-                <td>{{news.title}}</td>
-                <td>{{news.post_date}}</td>
-              </tr>
-              </tbody>
-            </table>
+      <table class="table table-responsive col-xs-12">
+        <div *ngFor="let news of news_array; let i=index">
+          <div class="breadcrumb">
+            <h1>{{news.title}}</h1>
+            <span class="badge badge-pill badge-primary">{{news.post_date}}</span>
+            <p class="lead">
+              <a class="btn btn-primary btn-md" href="#!" role="button">Details</a>
+            </p>
           </div>
         </div>
-      </div>
-      <!-- end : table News-->
+        <!---->
+      </table>
     </div>
     <!--end : showing all news-->
 

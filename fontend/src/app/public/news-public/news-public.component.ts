@@ -14,10 +14,10 @@ export class NewsPublicComponent implements OnInit {
   }
 
   ngOnInit() {
-    for (var x = 1; x < 10; x++) {
+    for (var x = 1; x < 11; x++) {
       var n = new NewsNodetails();
       n.$id = x.toString();
-      n.$title = "Title : " + x;
+      n.$title = "TitleTitleTitleTitleTitleTitle : " + x;
       n.$post_date = "Date  " + x;
       this.news_array.push(n);
     }
