@@ -132,6 +132,7 @@ Route::post('news/search', 'News_Controller@search');
 Route::post('news/search_count', 'News_Controller@search_count');
 
 Route::post('administrator/save', 'Administrator_Controller@save');
+Route::post('administrator/findOne', 'Administrator_Controller@findOne');
 
 
 //mail test

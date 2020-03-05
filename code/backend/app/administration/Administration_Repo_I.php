@@ -11,5 +11,13 @@ namespace App\administration;
 
 interface Administration_Repo_I
 {
+    public function save(Administration $administration);
 
+    public function findOne(string $id);
+
+    public function delete(string $id);
+
+    public function update(Administration $administrationUpdate);
+
+    public function getAll();
 }

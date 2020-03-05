@@ -12,10 +12,12 @@ class Administrator_Controller extends Controller
 
     public function __construct(Administration_Repo_I $administrationRepo)
     {
-        error_log(__CLASS__);
-        error_log("Administrator_Controller");
-        // $this->middleware('auth:api');
         $this->administrationRepo = $administrationRepo;
+    }
+
+    public function findOne(Request $r)
+    {
+        return $this->administrationRepo->findOne($r->id);
     }
 
     public function save(Request $r)

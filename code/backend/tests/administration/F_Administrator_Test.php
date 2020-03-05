@@ -19,10 +19,32 @@ class F_Administrator_Test extends TestCase
         // $this->Loggin();
         // $this->SignUp();
         // -----------------------------------
-        $this->save();
-        // $this->findOneByUserID();
+//        $this->save();
+        $this->findOne();
         // $this->update();
 
+    }
+
+    public function findOne()
+    {
+        $response = $this->json(
+            'POST',
+            'administrator/findOne',
+            [
+                'id' => "1",
+            ],
+            [
+                // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+//                "HTTP_AUTHORIZATION" => "bearer" . TestUtil::getToken("u1@umail.com", "123456")
+            ]
+        );
+        $d = $response->baseResponse->original;
+        //exception not catching error, instead haulting program.
+         error_log($d);
+        error_log("Error : ");
+        // dd($response->exception);
+
+//        dd($d);
     }
 
     public function save()
@@ -113,7 +135,6 @@ class F_Administrator_Test extends TestCase
         // $this->assertEquals($dept, $response->original['dept']);
     }
 
-
     //test done.
     public function creation()
     {
@@ -138,7 +159,6 @@ class F_Administrator_Test extends TestCase
         dd($d);
     }
 
-
     public function getToken($mail, $pass)
     {
         $response = $this->json(
@@ -152,7 +172,6 @@ class F_Administrator_Test extends TestCase
         $d = $response->baseResponse->original;
         error_log($d['access_token']);
     }
-
 
     // thses method kept to use when feature test with auth will be done.
     public function Loggin()
