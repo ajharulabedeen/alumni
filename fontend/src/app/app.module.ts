@@ -23,6 +23,7 @@ import { PaymentModule } from './payment/payment.module';
 import { EventModule } from './event/event.module';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { SearchComponent } from './search/search.component';
+import {TestModuleModule} from "./test-module/test-module.module";
 
 
 @NgModule({
@@ -57,8 +58,8 @@ import { SearchComponent } from './search/search.component';
     MatInputModule,
     PaymentModule,
     EventModule,
-    CKEditorModule
-    // NgModel
+    CKEditorModule,
+    TestModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

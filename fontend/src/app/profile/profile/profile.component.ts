@@ -31,7 +31,6 @@ export class ProfileComponent implements OnInit {
   public onFileChanged(event) {
     this.selectedFile = event.target.files[0];
     console.log(this.selectedFile);
-
   }
 
   public getPhoto() {

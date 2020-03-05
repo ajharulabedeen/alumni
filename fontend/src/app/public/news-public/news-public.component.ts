@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-news-public',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsPublicComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() {
   }
 
-}
+  ngOnInit() {
+    window.dispatchEvent(new Event('resize'));
+    document.body.className = 'hold-transition skin-blue sidebar-mini';
+  }
+
+}// class

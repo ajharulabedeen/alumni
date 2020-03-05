@@ -17,6 +17,8 @@ import {SearchComponent} from './search/search.component';
 import {EventDetailsComponent} from './event/event-details/event-details.component';
 import {EventDetailsUserComponent} from './event/event-details-user/event-details-user.component';
 import {NewsPublicComponent} from "./public/news-public/news-public.component";
+import {AComponent} from "./test-module/a/a.component";
+import {BComponent} from "./test-module/b/b.component";
 
 
 const routes: Routes = [
@@ -42,6 +44,8 @@ const routes: Routes = [
   {path: 'search', component: SearchComponent},
   {path: 'news', component: NewsComponent},
   {path: 'news_public', component: NewsPublicComponent},
+  {path: 'a', component: AComponent},
+  {path: 'b', component: BComponent},
 ];
 
 @NgModule({

@@ -42,7 +42,7 @@ export class NewsComponent implements OnInit {
 
   news_array = new Array();
 
-  edit: boolean;
+  // edit: boolean;
   /**
    * to controll the div from, where.
    */

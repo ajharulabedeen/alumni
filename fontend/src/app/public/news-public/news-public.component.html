@@ -1,1 +1,143 @@
-<p>news-public works!</p>
+<div class="wrapper">
+  <app-topnavbar></app-topnavbar>
+  <app-asidenavbar></app-asidenavbar>
+  <div class="content-wrapper">
+
+    <!--start : showing all news-->
+    <div id="all_news" class="tabcontent ">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" [(ngModel)]="active_search" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Active Search
+        </label>
+      </div>
+      <h1>All News</h1>
+      <!--start : search fields and search key or search value -->
+      <h4>
+        <button class="btn btn-info" (click)="setNewsCount()">Search</button>
+        <button class="btn btn-xs btn-primary" (click)="refreshTable_news()">Refresh</button>
+      </h4>
+      <!-- sort by column name -->
+      <div class="col-md-12 offset-md-12">
+        <div class="form-group">
+          <h4>Search By :</h4>
+          <select [(ngModel)]="news_search_by">
+            <option value="post_date">Post Date</option>
+            <option value="title">Title</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-12 offset-md-12">
+        <div class="form-group">
+          <label>Value : </label>
+          <input [(ngModel)]="news_value_search" type="text" class="form-control" placeholder="search...">
+        </div>
+      </div>
+      <!-- end : search fields selection and search key or search value-->
+
+      <!-- Start : showing all profiles after search -->
+      <!-- start : All news pagination panel-->
+      <!-- perPage-->
+      <div class="col-md-2 offset-md-2">
+        <div style="text-align: center" class="form-group">
+          <label>Per Page</label>
+          <input style="text-align: center" [(ngModel)]="newsSearch_perPage" type="number" class="form-control"
+                 value="{{newsSearch_perPage}}" (ngModelChange)="refreshTable_news()">
+        </div>
+      </div>
+      <!-- total-->
+      <div class="col-md-2 offset-md-2">
+        <div style="text-align: center" class="form-group">
+          <label>Total </label>
+          <input style="text-align: center" disabled="true" [(ngModel)]="newsSearch_total" type="number"
+                 class="form-control"
+                 value="{{newsSearch_total}}">
+        </div>
+      </div>
+      <!-- prePage/nextPage-->
+      <div class="col-md-3 offset-md-3">
+        <div class="form-group" style="text-align: center">
+          <button class="btn btn-primary btn-xs" (click)="newsSearch_previousPage()">Previous</button>
+          <label class="btn btn-danger btn-xs ">Page Number</label>
+          <button class="btn btn-primary btn-xs" (click)="newsSearch_nextPage()">Next</button>
+          <input style="text-align: center" [(ngModel)]="newsSearch_pageNumber" type="number" class="form-control"
+                 value="{{newsSearch_pageNumber}}">
+        </div>
+      </div>
+      <!-- sort by ASC or DESC -->
+      <div class="col-md-3 offset-md-3">
+        <div class="form-group" style="text-align: center">
+          <h4>Sort Order</h4>
+          <input type="radio" name="m_pay" [(ngModel)]="newsSearch_sort_by" value="ASC"
+                 checked="checked">Ascending<br>
+          <input type="radio" name="m_pay" [(ngModel)]="newsSearch_sort_by" value="DESC">Descending<br>
+        </div>
+      </div>
+      <!--  sort by column name -->
+      <div>
+        <h4>Sort By</h4>
+        <select [(ngModel)]="newsSearch_sort_on">
+          <option value="id">Id</option>
+          <option value="post_date">Post Date</option>
+        </select>
+      </div>
+      <!--end : All news pagination panel-->
+
+      <!-- start : table News-->
+      <!-- also used for to show news details, Edit News. -->
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-body table-responsive no-padding">
+            <table class="table table-hover">
+              <tbody>
+              <tr>
+                <th>Delete</th>
+                <th>Details</th>
+                <th>Edit</th>
+                <th>Index</th>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Post Date</th>
+              </tr>
+
+              <!-- showing all profiles after basic search  -->
+              <tr *ngFor="let news of news_array; let i=index">
+                <td>
+                  <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#delete_confirmation"
+                          (click)="delete_id = news.id"
+                  >
+                    Delete
+                  </button>
+                </td>
+                <td>
+                  <button button class="btn btn-xs btn-primary"
+                          (click)=" heading='Update'; edit=true; divData =!divData;  editClick(news.id)">
+                    Edit
+                  </button>
+                </td>
+                <td>
+                  <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#news_details"
+                          (click)="newsDetails(news.id)"
+                  >
+                    Details
+                  </button>
+                </td>
+                <td>{{i + 1}}</td>
+                <td>{{news.id}}</td>
+                <td>{{news.title}}</td>
+                <td>{{news.post_date}}</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- end : table News-->
+    </div>
+    <!--end : showing all news-->
+
+  </div>
+  <!-- content warpper -->
+  <!--<app-settingsnavbar></app-settingsnavbar>-->
+  <app-footernavbar></app-footernavbar>
+</div>
