@@ -19,6 +19,7 @@ import {EventDetailsUserComponent} from './event/event-details-user/event-detail
 import {NewsPublicComponent} from "./public/news-public/news-public.component";
 import {AComponent} from "./test-module/a/a.component";
 import {BComponent} from "./test-module/b/b.component";
+import {NewsDetailsComponent} from "./public/news-details/news-details.component";
 
 
 const routes: Routes = [
@@ -44,6 +45,9 @@ const routes: Routes = [
   {path: 'search', component: SearchComponent},
   {path: 'news', component: NewsComponent},
   {path: 'news_public', component: NewsPublicComponent},
+  {path: 'news_details/:news_id', component: NewsDetailsComponent},
+
+
   {path: 'a', component: AComponent},
   {path: 'b', component: BComponent},
 ];
