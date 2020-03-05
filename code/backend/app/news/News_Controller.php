@@ -49,7 +49,7 @@ class News_Controller extends Controller
         $news->user_id = Utils::getUserId();
         $news->title = $r->title;
         $news->description = $r->description;
-        $news->notes = $r->title;
+        $news->notes = $r->notes;
         $news->post_date = date("Y-m-d h:i:s");
         return $this->newsRepo->update($news);
     }
