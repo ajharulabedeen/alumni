@@ -5,28 +5,13 @@
 
     <!--start : showing all news-->
     <div id="all_news" class="tabcontent ">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" [(ngModel)]="active_search" value="" id="defaultCheck1">
-        <label class="form-check-label" for="defaultCheck1">
-          Active Search
-        </label>
-      </div>
       <h1>All News</h1>
       <!--start : search fields and search key or search value -->
       <h4>
         <button class="btn btn-info" (click)="setNewsCount()">Search</button>
         <button class="btn btn-xs btn-primary" (click)="refreshTable_news()">Refresh</button>
       </h4>
-      <!-- sort by column name -->
-      <div class="col-md-12 offset-md-12">
-        <div class="form-group">
-          <h4>Search By :</h4>
-          <select [(ngModel)]="news_search_by">
-            <option value="post_date">Post Date</option>
-            <option value="title">Title</option>
-          </select>
-        </div>
-      </div>
+
       <div class="col-md-12 offset-md-12">
         <div class="form-group">
           <label>Value : </label>
