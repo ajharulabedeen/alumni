@@ -40,10 +40,25 @@ class Administration_Repo_Impl implements Administration_Repo_I
             $status = Administration::where('id', $id)->delete();
         } catch (\Exception $e) {
             error_log("Administration delete fail!");
-            $status="fail";
+            $status = "fail";
         }
         return $status;
     }
 
+    public function update(Administration $administrationUpdate)
+    {
+        $updateStatus = false;
+        try {
+            $administration_id = $administrationUpdate->id;
+            $administrationOrgin = Administration::find($administration_id);
+            $administrationOrgin = $administrationUpdate;
+            $administrationOrgin->update();
+            $updateStatus = true;
+        } catch (Exception $e) {
+            error_log("Administration Update : failed to!");
+            return $updateStatus;
+        }
+        return $updateStatus;
+    }
 
 }

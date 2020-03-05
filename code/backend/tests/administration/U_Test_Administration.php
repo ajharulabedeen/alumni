@@ -16,8 +16,8 @@ class U_Test_Administration extends TestCase
 
 //        error_log($this->create());//passed
 //        error_log($this->findOne(1));//passed
-        error_log($this->delete(2));
-//        error_log($this->update(1, "fee", "600.00"));
+//        error_log($this->delete(2));
+        error_log($this->update(3, "title", "Accotant"));
     }
 
     /**
@@ -44,6 +44,15 @@ class U_Test_Administration extends TestCase
     {
         $repo = new Administration_Repo_Impl();
         return $repo->delete($id);
+    }
+
+    public function update($id, $filedName, $data)
+    {
+        $repo = new Administration_Repo_Impl();
+        $ad = $this->findOne($id);
+        $ad->$filedName = $data;
+        $status = $repo->update($ad);
+        return $status;
     }
 
 }//class
