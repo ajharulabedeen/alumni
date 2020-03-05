@@ -33,5 +33,17 @@ class Administration_Repo_Impl implements Administration_Repo_I
         return Administration::find($id);
     }
 
+    public function delete(string $id)
+    {
+        $status = "";
+        try {
+            $status = Administration::where('id', $id)->delete();
+        } catch (\Exception $e) {
+            error_log("Administration delete fail!");
+            $status="fail";
+        }
+        return $status;
+    }
+
 
 }
