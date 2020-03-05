@@ -55,6 +55,7 @@ export class NewsPublicComponent implements OnInit {
     var sort_on = this.newsSearch_sort_on;
     var column_name = this.news_search_by;//column name
     var key = this.news_value_search;
+    console.log("news_value_search : " + key);
     var pageNumber = this.newsSearch_pageNumber;
     // $per_page, $sort_by, $sort_on, $column_name, $key
     this.setTotal();
