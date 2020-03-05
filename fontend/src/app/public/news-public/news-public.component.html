@@ -14,7 +14,7 @@
 
       <div class="col-md-12 offset-md-12">
         <div class="form-group">
-          <label>Value : </label>
+          <label>Value (Search By Title) : </label>
           <input [(ngModel)]="news_value_search" type="text" class="form-control" placeholder="search...">
         </div>
       </div>
@@ -52,19 +52,11 @@
       <!-- sort by ASC or DESC -->
       <div class="col-md-3 offset-md-3">
         <div class="form-group" style="text-align: center">
-          <h4>Sort Order</h4>
+          <h4>Sort Order (Sort by Post date)</h4>
           <input type="radio" name="m_pay" [(ngModel)]="newsSearch_sort_by" value="ASC"
                  checked="checked">Ascending<br>
           <input type="radio" name="m_pay" [(ngModel)]="newsSearch_sort_by" value="DESC">Descending<br>
         </div>
-      </div>
-      <!--  sort by column name -->
-      <div>
-        <h4>Sort By</h4>
-        <select [(ngModel)]="newsSearch_sort_on">
-          <option value="id">Id</option>
-          <option value="post_date">Post Date</option>
-        </select>
       </div>
       <!--end : All news pagination panel-->
 
