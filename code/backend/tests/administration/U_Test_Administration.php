@@ -58,7 +58,7 @@ class U_Test_Administration extends TestCase
     {
         $repo = new Administration_Repo_Impl();
         $data = $repo->getAll();
-        foreach ($data as $x => $k) {
+        foreach ($data as $k) {
             error_log($k);
         }
     }

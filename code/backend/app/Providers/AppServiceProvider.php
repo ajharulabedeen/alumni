@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\administration\Administration_Repo_I;
+use App\administration\Administration_Repo_Impl;
 use App\events\Events_Repo_I;
 use App\events\Events_Repo_Impl;
 use App\news\News_Repo_I;
@@ -41,6 +43,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(Events_Repo_I::class, Events_Repo_Impl::class);
         $this->app->bind(Search_Repo_I::class, Search_Repo_Impl::class);
         $this->app->bind(News_Repo_I::class, News_Repo_Impl::class);
+            $this->app->bind(Administration_Repo_I::class, Administration_Repo_Impl::class);
     }
 
     /**

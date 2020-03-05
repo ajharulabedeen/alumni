@@ -77,7 +77,7 @@ Route::post('paymentType/delete', 'Payment_Type_Controller@delete');
 
 //moved to API, Kept for Testing Purpose.
 // Route::post('payment/mobile/create', 'Payment_Mobile_Controller@create');
- Route::post('payment/mobile/findOne', 'Payment_Mobile_Controller@findOne');
+Route::post('payment/mobile/findOne', 'Payment_Mobile_Controller@findOne');
 // Route::post('payment/mobile/delete', 'Payment_Mobile_Controller@delete');
 // Route::post('payment/mobile/update', 'Payment_Mobile_Controller@update');
 // Route::post('payment/mobile/getAllPaymentMobileByAUser', 'Payment_Mobile_Controller@getAllPaymentMobileByAUser');
@@ -131,8 +131,7 @@ Route::post('news/countAll', 'News_Controller@countAll');
 Route::post('news/search', 'News_Controller@search');
 Route::post('news/search_count', 'News_Controller@search_count');
 
-
-
+Route::post('administrator/save', 'Administrator_Controller@save');
 
 
 //mail test
