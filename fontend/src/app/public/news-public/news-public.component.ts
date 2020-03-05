@@ -26,29 +26,16 @@ export class NewsPublicComponent implements OnInit {
     this.newsSearch_perPage = 10;
     this.newsSearch_pageNumber = 1;
     this.newsSearch_sort_on = "post_date";
-    this.newsSearch_sort_by = "ASC";
+    this.newsSearch_sort_by = "DESC";
     this.news_search_by = 'title';
     this.news_value_search = '';
 
-
-    //dummy
-    for (var x = 1; x < 11; x++) {
-      var n = new NewsNodetails();
-      n.$id = x.toString();
-      n.$title = "TitleTitleTitleTitleTitleTitle : " + x;
-      n.$post_date = "Date  " + x;
-      this.news_array.push(n);
-    }
-
-
+    this.refreshTable_news();
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
   }
 
   public refreshTable_news() {
-    // if (this.active_search) {
-    //   this.news_value_search = '';
-    // }
 
     var per_page = this.newsSearch_perPage;
     var sort_by = this.newsSearch_sort_by;//>ASC/DESC
@@ -85,9 +72,6 @@ export class NewsPublicComponent implements OnInit {
   }
 
   public setTotal() {
-    // if (this.active_search == false) {
-    //   this.news_value_search = '';
-    // }
     var column_name = this.news_search_by;//column name
     var key = this.news_value_search;
     var pageNumber = this.newsSearch_pageNumber;
@@ -95,19 +79,6 @@ export class NewsPublicComponent implements OnInit {
       console.log(res);
       this.newsSearch_total = res['data'];
     });
-
-    // if (this.active_search) {
-    //   this.newsService.count_search(this.event_search_by, this.event_value_search).subscribe(res => {
-    //     // console.log(res);
-    //     this.eventSearch_total = res['data'];
-    //   });
-    //
-    // } else {
-    //   this.eService.couunt_all().subscribe(res => {
-    //     // console.log(res);
-    //     this.eventSearch_total = res['data'];
-    //   });
-    // }
   }
 
 
