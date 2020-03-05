@@ -11,13 +11,12 @@ class U_Test_Administration extends TestCase
 {
     public function testMain()
     {
-//        $this->dummyDataInsert();//passed
-//        $this->dummyEventRegistraion();//passed
 
 //        error_log($this->create());//passed
 //        error_log($this->findOne(1));//passed
 //        error_log($this->delete(2));
-        error_log($this->update(3, "title", "Accotant"));
+//        error_log($this->update(3, "title", "Accotant"));
+        error_log($this->getAll());
     }
 
     /**
@@ -53,6 +52,15 @@ class U_Test_Administration extends TestCase
         $ad->$filedName = $data;
         $status = $repo->update($ad);
         return $status;
+    }
+
+    public function getAll()
+    {
+        $repo = new Administration_Repo_Impl();
+        $data = $repo->getAll();
+        foreach ($data as $x => $k) {
+            error_log($k);
+        }
     }
 
 }//class

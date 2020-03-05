@@ -61,4 +61,8 @@ class Administration_Repo_Impl implements Administration_Repo_I
         return $updateStatus;
     }
 
+    public function getAll()
+    {
+        return Administration::all();
+    }
 }
