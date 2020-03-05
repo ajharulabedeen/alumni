@@ -68,39 +68,14 @@
             <table class="table table-hover">
               <tbody>
               <tr>
-                <th>Delete</th>
-                <th>Details</th>
-                <th>Edit</th>
                 <th>Index</th>
-                <th>Id</th>
                 <th>Title</th>
                 <th>Post Date</th>
               </tr>
 
               <!-- showing all profiles after basic search  -->
               <tr *ngFor="let news of news_array; let i=index">
-                <td>
-                  <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#delete_confirmation"
-                          (click)="delete_id = news.id"
-                  >
-                    Delete
-                  </button>
-                </td>
-                <td>
-                  <button button class="btn btn-xs btn-primary"
-                          (click)=" heading='Update'; edit=true; divData =!divData;  editClick(news.id)">
-                    Edit
-                  </button>
-                </td>
-                <td>
-                  <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#news_details"
-                          (click)="newsDetails(news.id)"
-                  >
-                    Details
-                  </button>
-                </td>
                 <td>{{i + 1}}</td>
-                <td>{{news.id}}</td>
                 <td>{{news.title}}</td>
                 <td>{{news.post_date}}</td>
               </tr>
