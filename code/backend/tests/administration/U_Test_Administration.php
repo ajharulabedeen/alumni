@@ -14,10 +14,10 @@ class U_Test_Administration extends TestCase
 //        $this->dummyDataInsert();//passed
 //        $this->dummyEventRegistraion();//passed
 
-        error_log($this->create());//passed
-//        error_log($this->findOneEvent(1)->fee);//passed
-//        error_log($this->delete(1017));//passed
-//        error_log($this->update(1, "fee", "600.00"));//passed.
+//        error_log($this->create());//passed
+//        error_log($this->findOne(1));//passed
+//        error_log($this->delete(1017));
+//        error_log($this->update(1, "fee", "600.00"));
     }
 
     /**
@@ -34,4 +34,9 @@ class U_Test_Administration extends TestCase
         return $id;
     }
 
+    public function findOne($id)
+    {
+        $repo = new Administration_Repo_Impl();
+        return $repo->findOne($id);
+    }
 }//class

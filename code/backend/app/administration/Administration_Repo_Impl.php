@@ -28,5 +28,10 @@ class Administration_Repo_Impl implements Administration_Repo_I
         return $id;
     }
 
+    public function findOne(string $id)
+    {
+        return Administration::find($id);
+    }
+
 
 }
