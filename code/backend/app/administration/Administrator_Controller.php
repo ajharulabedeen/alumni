@@ -15,6 +15,21 @@ class Administrator_Controller extends Controller
         $this->administrationRepo = $administrationRepo;
     }
 
+    public function update(Request $r)
+    {
+        $ad = new Administration();
+        $ad->id = $r->id;
+        $ad->title = $r->title;
+        $ad->description = $r->description;
+        $id = $this->administrationRepo->update($ad);
+        return $id;
+    }
+
+    public function getAll(Request $r)
+    {
+        return $this->administrationRepo->getAll();
+    }
+
     public function findOne(Request $r)
     {
         return $this->administrationRepo->findOne($r->id);

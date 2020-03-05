@@ -47,18 +47,20 @@ class Administration_Repo_Impl implements Administration_Repo_I
 
     public function update(Administration $administrationUpdate)
     {
+        error_log(" " . $administrationUpdate);
         $updateStatus = false;
         try {
             $administration_id = $administrationUpdate->id;
             $administrationOrgin = Administration::find($administration_id);
-            $administrationOrgin = $administrationUpdate;
+            $administrationOrgin->title = $administrationUpdate->title;
+            $administrationOrgin->description = $administrationUpdate->description;
             $administrationOrgin->update();
             $updateStatus = true;
         } catch (Exception $e) {
             error_log("Administration Update : failed to!");
             return $updateStatus;
         }
-        return $updateStatus;
+        return ['status' => $updateStatus];
     }
 
     public function getAll()

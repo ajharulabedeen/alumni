@@ -20,9 +20,57 @@ class F_Administrator_Test extends TestCase
         // $this->SignUp();
         // -----------------------------------
 //        $this->save();
-        $this->findOne();
-        // $this->update();
+//        $this->findOne();
+//        $this->getAll();
+        $this->update();
 
+
+    }
+
+    public function update()
+    {
+        $response = $this->json(
+            'POST',
+            'administrator/update',
+            [
+                'id' => '4',
+                'title' => "AGS",
+                'description' => "Head of All activity, valid for 2 years!",
+            ],
+            [
+                // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+//                "HTTP_AUTHORIZATION" => "bearer" . TestUtil::getToken("u1@umail.com", "123456")
+            ]
+        );
+        $d = $response->baseResponse->original;
+        //exception not catching error, instead haulting program.
+        // error_log($d);
+        error_log("Error : ");
+        // dd($response->exception);
+
+        dd($d);
+    }
+
+
+    public function getAll()
+    {
+        $response = $this->json(
+            'POST',
+            'administrator/getAll',
+            [],
+            [
+                // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+//                "HTTP_AUTHORIZATION" => "bearer" . TestUtil::getToken("u1@umail.com", "123456")
+            ]
+        );
+        $d = $response->baseResponse->original;
+        //exception not catching error, instead haulting program.
+        error_log($d);
+        print_r($d);
+        error_log("Error : ");
+        // dd($response->exception);
+
+//        dd($d);
     }
 
     public function findOne()
@@ -40,7 +88,7 @@ class F_Administrator_Test extends TestCase
         );
         $d = $response->baseResponse->original;
         //exception not catching error, instead haulting program.
-         error_log($d);
+        error_log($d);
         error_log("Error : ");
         // dd($response->exception);
 
@@ -97,42 +145,6 @@ class F_Administrator_Test extends TestCase
         // $this->assertEquals('2', $response->original['user_id']);
         // dd($response->baseResponse);
         dd($d);
-    }
-
-    //done
-    public function update()
-    {
-        $response = $this->json(
-            'POST',
-            'api/about/update',
-            [
-                // 'user_id' => '2',
-                'about_me' => 'CSE---: update.',
-            ],
-            [
-                "HTTP_AUTHORIZATION" => "bearer" . $this->getToken("u1@umail.com", "123456")
-            ]
-        );
-        $d = $response->baseResponse->original;
-        //exception not catching error, instead haulting program.
-        // error_log($d);
-        error_log("Error : ");
-        // dd($response->exception);
-
-        dd($d);
-
-
-        // --------confirm Update----------
-        // $response = $this->json(
-        //     'POST',
-        //     '/basic/findOneById',
-        //     [
-        //         'user_id' => '2',
-        //     ]
-        // );
-        // $d = $response->baseResponse->original;
-        // error_log("After : " . $response->original['dept']);
-        // $this->assertEquals($dept, $response->original['dept']);
     }
 
     //test done.

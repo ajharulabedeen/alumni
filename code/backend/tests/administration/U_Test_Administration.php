@@ -15,8 +15,8 @@ class U_Test_Administration extends TestCase
 //        error_log($this->create());//passed
 //        error_log($this->findOne(1));//passed
 //        error_log($this->delete(2));
-//        error_log($this->update(3, "title", "Accotant"));
-        error_log($this->getAll());
+        error_log($this->update(3, "title", "Acc"));
+//        error_log($this->getAll());
     }
 
     /**
