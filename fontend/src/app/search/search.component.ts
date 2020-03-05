@@ -39,8 +39,6 @@ export class SearchComponent implements OnInit {
     this.jobsSearch_pageNumber = 1;
     // jobs
 
-
-
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
   }

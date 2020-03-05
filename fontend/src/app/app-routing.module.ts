@@ -20,6 +20,7 @@ import {NewsPublicComponent} from "./public/news-public/news-public.component";
 import {AComponent} from "./test-module/a/a.component";
 import {BComponent} from "./test-module/b/b.component";
 import {NewsDetailsComponent} from "./public/news-details/news-details.component";
+import {AdminComponent} from "./admin/admin/admin.component";
 
 
 const routes: Routes = [
@@ -46,6 +47,7 @@ const routes: Routes = [
   {path: 'news', component: NewsComponent},
   {path: 'news_public', component: NewsPublicComponent},
   {path: 'news_details/:news_id', component: NewsDetailsComponent},
+  {path: 'super_admin', component: AdminComponent},
 
 
   {path: 'a', component: AComponent},
