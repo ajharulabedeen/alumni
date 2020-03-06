@@ -42,7 +42,7 @@ class Administration_Repo_Impl implements Administration_Repo_I
             error_log("Administration delete fail!");
             $status = "fail";
         }
-        return $status;
+        return ['status' => $status];
     }
 
     public function update(Administration $administrationUpdate)

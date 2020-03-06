@@ -22,9 +22,32 @@ class F_Administrator_Test extends TestCase
 //        $this->save();
 //        $this->findOne();
 //        $this->getAll();
-        $this->update();
+//        $this->update();
+        $this->delete();
 
 
+    }
+
+
+    public function delete()
+    {
+        $response = $this->json(
+            'POST',
+            'administrator/delete',
+            [
+                'id' => "6",
+            ],
+            [
+                // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+//                "HTTP_AUTHORIZATION" => "bearer" . TestUtil::getToken("u1@umail.com", "123456")
+            ]
+        );
+        $d = $response->baseResponse->original;
+        //exception not catching error, instead haulting program.
+        error_log($d['status']);
+        error_log("Error : ");
+        // dd($response->exception);
+//        dd($d);
     }
 
     public function update()
@@ -91,7 +114,6 @@ class F_Administrator_Test extends TestCase
         error_log($d);
         error_log("Error : ");
         // dd($response->exception);
-
 //        dd($d);
     }
 

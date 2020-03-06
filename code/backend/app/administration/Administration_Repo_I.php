@@ -15,6 +15,9 @@ interface Administration_Repo_I
 
     public function findOne(string $id);
 
+    /*
+     * @return ['status' => $status] jSON data format will be retunned.
+     */
     public function delete(string $id);
 
     public function update(Administration $administrationUpdate);

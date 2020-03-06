@@ -25,6 +25,7 @@ class Administrator_Controller extends Controller
         return $id;
     }
 
+
     public function getAll(Request $r)
     {
         return $this->administrationRepo->getAll();
@@ -33,6 +34,11 @@ class Administrator_Controller extends Controller
     public function findOne(Request $r)
     {
         return $this->administrationRepo->findOne($r->id);
+    }
+
+    public function delete(Request $r)
+    {
+        return $this->administrationRepo->delete($r->id);
     }
 
     public function save(Request $r)
