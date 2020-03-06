@@ -35,11 +35,19 @@ export class AdministrationService {
     // }
   }
 
-  getAll() {
+  public getAll() {
     return this.http.post(
       'http://127.0.0.1:8000/administrator/getAll',
       {},
       this.authService.getHeader()
     )
+  }
+
+  public delete(id: string) {
+    return this.http.post(
+      'http://127.0.0.1:8000/administrator/delete', {
+        'id': id,
+      }, this.authService.getHeader()
+    );
   }
 }// class

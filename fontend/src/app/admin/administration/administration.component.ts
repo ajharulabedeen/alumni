@@ -68,7 +68,20 @@ export class AdministrationComponent implements OnInit {
     console.log("Role Save :");
     this.adminisService.save(ad).subscribe(res => {
       console.log(res);
+      if (res > 0) {
+        this.refresh_table();
+      }
     });
   }
+
+  public delete(id: string) {
+    this.adminisService.delete(id).subscribe(res => {
+      console.log(res);
+      if (res['status'] == 1) {
+        this.refresh_table();
+      }
+    });
+  }
+
 
 }// class
