@@ -6,18 +6,14 @@
   <div class="content-wrapper">
 
     <div class="tab">
-      <button class="tablinks active" (click)="searchTab(event, 'new')">New</button>
-      <button class="tablinks" (click)="searchTab(event, 'all_events')">All Events</button>
+      <button class="tablinks active" (click)="searchTab(event, 'new')">Administrate Role</button>
+      <button class="tablinks" (click)="searchTab(event, 'all_events')">Administrative People</button>
       <!--      <button class="tablinks" (click)="searchTab(event, 'education')">Education</button>-->
     </div>
 
     <!--    start : Administrative role management-->
     <div id="new" class="tabcontent">
-      <h1>Administrate Role Management!</h1>
       <div class="container-fluid">
-        <h1>Two Unequal Responsive Columns</h1>
-        <p>Resize the browser window to see the effect.</p>
-        <p>The columns will automatically stack on top of each other when the screen is less than 576px wide.</p>
         <div class="row">
           <div class="col-sm-4" style="background-color:pink;">.col-sm-4</div>
           <div class="col-sm-8" style="background-color:lavenderblush;">.col-sm-8</div>
@@ -28,13 +24,12 @@
 
     <!--    start : Administrative people management -->
     <div id="all_events" class="tabcontent">
-      <h2>People Role Management!</h2>
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-4" style="background-color:pink;">
             One of three columns
           </div>
-          <div class="col-sm-8">
+          <div class="col-sm-8" style="background-color:cyan;">
             One of three columns
           </div>
         </div>
