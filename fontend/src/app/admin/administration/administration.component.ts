@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AdministrationService} from "./administration.service";
 import {Administration} from "./administration.model";
+import {Events} from "../../event/event-manage/events.model";
 
 @Component({
   selector: 'app-administration',
@@ -21,9 +22,7 @@ export class AdministrationComponent implements OnInit {
   ngOnInit() {
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
-    for (var x = 0; x < 10; x++) {
-      this.roles.push("Role Role Role Role Role Role Role Role Role : " + x.toString());
-    }
+    this.refresh_table();
   }
 
   // start : for tab in font end.
@@ -49,6 +48,13 @@ export class AdministrationComponent implements OnInit {
     this.roles = new Array();
     this.adminisService.getAll().subscribe(res => {
       console.log(res);
+      for (const key1 in res) {
+        var ad = new Administration();
+        ad.$id = res[key1]['id'];
+        ad.$title = res[key1]["title"];
+        ad.$description = res[key1]["description"];
+        this.roles.push(ad);
+      }
     });
   }
 
@@ -61,6 +67,5 @@ export class AdministrationComponent implements OnInit {
       console.log(res);
     });
   }
-
 
 }// class
