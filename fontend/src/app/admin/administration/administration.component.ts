@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {AdministrationService} from "./administration.service";
+import {Administration} from "./administration.model";
 
 @Component({
   selector: 'app-administration',
@@ -7,7 +9,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AdministrationComponent implements OnInit {
 
-  constructor() {
+  constructor(private adminisService: AdministrationService) {
   }
 
   add_new: boolean;
@@ -41,6 +43,15 @@ export class AdministrationComponent implements OnInit {
   }
 
   // end : for tab in font end.
+
+
+  public save() {
+    var ad = new Administration();
+    ad.$title = this.role_title;
+    ad.$description = this.role_details;
+    console.log("Role Save :");
+    this.adminisService.save(ad);
+  }
 
 
 }// class
