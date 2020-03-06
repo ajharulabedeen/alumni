@@ -50,18 +50,21 @@
                     <th>Role</th>
                   </tr>
                   <tr *ngFor="let r of roles; let i=index">
+                    <!--delete-->
                     <td>
-                      <button class="btn btn-xs btn-danger" href="" data-toggle="modal" data-target="#do_payment"
+                      <button class="btn btn-xs btn-danger" href="" data-toggle="modal" data-target="#role_delete"
                               (click)="setPaymentTypeID(pt.id,pt.amount)">
                         Delete
                       </button>
                     </td>
+                    <!--edit-->
                     <td>
                       <button class="btn btn-xs btn-primary" href="" data-toggle="modal" data-target="#do_payment"
                               (click)="setPaymentTypeID(pt.id,pt.amount)">
                         Edit
                       </button>
                     </td>
+                    <!--details-->
                     <td>
                       <button class="btn btn-xs btn-info" href=""
                               (click)="role_details=r.description">
@@ -70,6 +73,35 @@
                     </td>
                     <td>{{i+1}}</td>
                     <td>{{r.title}}</td>
+
+                    <!--refacotor : Have to make util component delete, by @input value will send, by @output click value will be got-->
+                    <!-- start-Modal :  Delete Confirmation -->
+                    <div class="modal fade" id="role_delete" tabindex="-1" role="dialog"
+                         aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title">Role Delete</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <h4>Are U sure to delete?</h4>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-secondary btn-danger" (click)="delete(r.id)"
+                                    data-dismiss="modal">
+                              Delete
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end-Modal :  Delete Confirmation -->
+
                   </tr>
                   </tbody>
                 </table>
@@ -152,36 +184,6 @@
 
   </div>
   <!-- end-Modal : event details Modal -->
-
-  <!-- start-Modal :  Delete Confirmation -->
-  <div class="modal fade" id="event_delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-       aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Event Details</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <h4>Are U sure to delete?</h4>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-secondary btn-danger" (click)="delete()" data-dismiss="modal">
-            Delete
-          </button>
-        </div>
-      </div>
-    </div>
-    <!-- end :  Modal -->
-
-
-    <!-- <app-footernavbar></app-footernavbar> -->
-    <!-- <app-settingsnavbar></app-settingsnavbar> -->
-  </div>
-  <!-- end-Modal :  Delete Confirmation -->
 
 
   <!--  start : test -->
