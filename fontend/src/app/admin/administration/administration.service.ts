@@ -16,16 +16,30 @@ export class AdministrationService {
 
   public save(adminis: Administration) {
     console.log("Service Save!");
-    try {
-      this.http.post(
-        'http://127.0.0.1:8000/administrator/save', adminis, this.authService.getHeader()
-      ).subscribe((res: Response) => {
-        console.log(res);
-        // this.loading = false;
-      });
-    } catch (e) {
-      console.log("Error Save!");
-    }
+    return this.http.post(
+      'http://127.0.0.1:8000/administrator/save', adminis, this.authService.getHeader()
+    );
+    //   .subscribe((res: Response) => {
+    //   console.log(res);
+    //   // this.loading = false;
+    // });
+    // try {
+    //   this.http.post(
+    //     'http://127.0.0.1:8000/administrator/save', adminis, this.authService.getHeader()
+    //   ).subscribe((res: Response) => {
+    //     console.log(res);
+    //     // this.loading = false;
+    //   });
+    // } catch (e) {
+    //   console.log("Error Save!");
+    // }
   }
 
+  getAll() {
+    return this.http.post(
+      'http://127.0.0.1:8000/administrator/getAll',
+      {},
+      this.authService.getHeader()
+    )
+  }
 }// class

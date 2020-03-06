@@ -45,12 +45,21 @@ export class AdministrationComponent implements OnInit {
   // end : for tab in font end.
 
 
+  public refresh_table() {
+    this.roles = new Array();
+    this.adminisService.getAll().subscribe(res => {
+      console.log(res);
+    });
+  }
+
   public save() {
     var ad = new Administration();
     ad.$title = this.role_title;
     ad.$description = this.role_details;
     console.log("Role Save :");
-    this.adminisService.save(ad);
+    this.adminisService.save(ad).subscribe(res => {
+      console.log(res);
+    });
   }
 
 
