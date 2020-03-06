@@ -13,6 +13,8 @@ export class AdministrationComponent implements OnInit {
   add_new: boolean;
 
   roles = new Array();
+  role_details: string;
+  role_title: string;
 
   ngOnInit() {
     window.dispatchEvent(new Event('resize'));
