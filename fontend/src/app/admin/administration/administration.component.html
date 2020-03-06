@@ -15,14 +15,28 @@
     <div id="new" class="tabcontent">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-4">
+          <div class="col-sm-6">
             <h4 style="background-color:pink;" align="center">Roles</h4>
             <button class="btn btn-info" (click)="add_new=!add_new">Add New</button>
+            <!--start : new Role-->
             <div *ngIf="add_new">
               <h5>New Role</h5>
+              <div class="col-md-12 offset-md-12">
+                <div class="form-group">
+                  <label>Name : </label>
+                  <input [(ngModel)]="edit_name" type="text" class="form-control" placeholder="512 Character Max..">
+                </div>
+              </div>
+              <div class="col-md-12 offset-md-12">
+                <div class="form-group">
+                  <label>Details: </label>
+                  <textarea class="col-md-12 offset-md-12" rows="10"></textarea>
+                </div>
+              </div>
             </div>
+            <!--end : new Role-->
           </div>
-          <div class="col-sm-8" style="background-color:lavenderblush;">
+          <div class="col-sm-6" style="background-color:lavenderblush;">
             <h4 align="center">Roles Detilas</h4>
           </div>
         </div>
