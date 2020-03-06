@@ -10,6 +10,8 @@ export class AdministrationComponent implements OnInit {
   constructor() {
   }
 
+  add_new : boolean;
+
   ngOnInit() {
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';

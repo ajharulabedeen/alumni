@@ -15,8 +15,16 @@
     <div id="new" class="tabcontent">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-sm-4" style="background-color:pink;">.col-sm-4</div>
-          <div class="col-sm-8" style="background-color:lavenderblush;">.col-sm-8</div>
+          <div class="col-sm-4">
+            <h4 style="background-color:pink;" align="center">Roles</h4>
+            <button class="btn btn-info" (click)="add_new=!add_new">Add New</button>
+            <div *ngIf="add_new">
+              <h5>New Role</h5>
+            </div>
+          </div>
+          <div class="col-sm-8" style="background-color:lavenderblush;">
+            <h4 align="center">Roles Detilas</h4>
+          </div>
         </div>
       </div>
     </div>
