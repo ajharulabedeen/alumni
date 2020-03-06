@@ -10,11 +10,16 @@ export class AdministrationComponent implements OnInit {
   constructor() {
   }
 
-  add_new : boolean;
+  add_new: boolean;
+
+  roles = new Array();
 
   ngOnInit() {
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
+    for (var x = 0; x < 10; x++) {
+      this.roles.push("Role Role Role Role Role Role Role Role Role : " + x.toString());
+    }
   }
 
   // start : for tab in font end.

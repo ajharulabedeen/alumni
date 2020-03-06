@@ -19,7 +19,7 @@
             <h4 style="background-color:pink;" align="center">Roles</h4>
             <button class="btn btn-info" (click)="add_new=!add_new">Add New</button>
             <!--start : new Role-->
-            <div *ngIf="add_new">
+            <div *ngIf="add_new" class="box box-body box-info">
               <h5>New Role</h5>
               <div class="col-md-12 offset-md-12">
                 <div class="form-group">
@@ -48,22 +48,27 @@
                     <th>Index</th>
                     <th>Role</th>
                   </tr>
-                  <tr *ngFor="let pt of ptsArray; let i=index">
-                    <td>{{i+1}}</td>
+                  <tr *ngFor="let r of roles; let i=index">
                     <td>
-                      <button class="btn btn-xs btn-primary" href="" data-toggle="modal" data-target="#do_payment"
+                      <button class="btn btn-xs btn-danger" href="" data-toggle="modal" data-target="#do_payment"
                               (click)="setPaymentTypeID(pt.id,pt.amount)">
                         Delete
                       </button>
+                    </td>
+                    <td>
                       <button class="btn btn-xs btn-primary" href="" data-toggle="modal" data-target="#do_payment"
                               (click)="setPaymentTypeID(pt.id,pt.amount)">
                         Edit
                       </button>
-                      <button class="btn btn-xs btn-primary" href="" data-toggle="modal" data-target="#do_payment"
+                    </td>
+                    <td>
+                      <button class="btn btn-xs btn-info" href="" data-toggle="modal" data-target="#do_payment"
                               (click)="setPaymentTypeID(pt.id,pt.amount)">
                         Details
                       </button>
                     </td>
+                    <td>{{i+1}}</td>
+                    <td>{{r}}</td>
                   </tr>
                   </tbody>
                 </table>
@@ -73,7 +78,9 @@
           <!--end : roles-->
           <div class="col-sm-4" style="background-color:lavenderblush;">
             <h4 align="center">Roles Detilas</h4>
-
+            <div class="box">
+              <h1>hhhhh</h1>
+            </div>
           </div>
         </div>
       </div>
