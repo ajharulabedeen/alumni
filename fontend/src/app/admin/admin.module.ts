@@ -6,6 +6,7 @@ import { AdminComponent } from './admin/admin.component';
 import {LayoutModule} from "../layout/layout.module";
 import {FormsModule} from "@angular/forms";
 import { AdministrationComponent } from './administration/administration.component';
+import {CKEditorModule} from "ckeditor4-angular";
 
 
 @NgModule({
@@ -14,7 +15,9 @@ import { AdministrationComponent } from './administration/administration.compone
     CommonModule,
     AdminRoutingModule,
     LayoutModule,
-    FormsModule
+    FormsModule,
+    CKEditorModule
+
   ]
 })
 export class AdminModule { }

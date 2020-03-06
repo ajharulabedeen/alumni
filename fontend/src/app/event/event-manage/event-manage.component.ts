@@ -92,7 +92,6 @@ export class EventManageComponent implements OnInit {
     document.getElementById(tabName).style.display = 'block';
     evt.currentTarget.className += ' active';
   }
-
   // end : for tab in font end.
 
   public eventSearch_previousPage() {
