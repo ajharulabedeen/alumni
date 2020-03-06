@@ -24,13 +24,13 @@
               <div class="col-md-12 offset-md-12">
                 <div class="form-group">
                   <label>Name : </label>
-                  <input [(ngModel)]="edit_name" type="text" class="form-control" placeholder="512 Character Max..">
+                  <input [(ngModel)]="role_title" type="text" class="form-control" placeholder="512 Character Max..">
                 </div>
               </div>
               <div class="col-md-12 offset-md-12">
                 <div class="form-group">
                   <label>Details: </label>
-                  <textarea class="col-md-12 offset-md-12" rows="10"></textarea>
+                  <textarea [(ngModel)]="role_details" class="col-md-12 offset-md-12 text-primary" rows="10"></textarea>
                 </div>
               </div>
               <button class="btn btn-md btn-primary">Save</button>
