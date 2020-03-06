@@ -67,7 +67,7 @@
                     <!--details-->
                     <td>
                       <button class="btn btn-xs btn-info" href=""
-                              (click)="role_details=r.description">
+                              (click)=" role_show_title=r.title;role_show_detils=r.description">
                         Details
                       </button>
                     </td>
@@ -112,7 +112,10 @@
           <div class="col-sm-4" style="background-color:lavenderblush;">
             <h4 align="center">Roles Detilas</h4>
             <div class="box box-primary">
-              <h4>{{role_details}}</h4>
+              <div class="box-header">
+                <h4 class="text-aqua">{{role_show_title}}</h4>
+              </div>
+              <h4>{{role_show_detils}}</h4>
             </div>
           </div>
         </div>

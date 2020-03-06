@@ -19,6 +19,9 @@ export class AdministrationComponent implements OnInit {
   role_details: string;
   role_title: string;
 
+  role_show_title: string;
+  role_show_detils: string;
+
   ngOnInit() {
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
