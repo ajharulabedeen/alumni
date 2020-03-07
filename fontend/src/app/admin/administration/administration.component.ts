@@ -32,6 +32,7 @@ export class AdministrationComponent implements OnInit {
     this.basicSearch_perPage = 10;
     this.basicSearch_sort_by = 'ASC';
     this.basicSearch_pageNumber = 1;
+    this.basic_value_search = "";
     // basic
 
     window.dispatchEvent(new Event('resize'));
@@ -111,8 +112,13 @@ export class AdministrationComponent implements OnInit {
   public refreshTable_basicSearch(): void {
     console.log('refreshTable_basicSearch :');
     // tslint:disable-next-line:max-line-length
-    // this.setBasicSearchCount();
-    this.searchService.basicSearch(this.basicSearch_perPage, this.basicSearch_pageNumber, this.basicSearch_sort_on, this.basicSearch_sort_by, this.basic_search_by, this.basic_value_search);
+    this.setBasicSearchCount();
+    this.searchService.basicSearch(this.basicSearch_perPage,
+      this.basicSearch_pageNumber,
+      this.basicSearch_sort_on,
+      this.basicSearch_sort_by,
+      this.basic_search_by,
+      this.basic_value_search);
     this.searchService.basic.subscribe(b => {
       this.baicSearch_profiles_array = [];
       for (const key in b) {
@@ -142,6 +148,7 @@ export class AdministrationComponent implements OnInit {
     });
     // console.log(this.baicSearch_profiles_array);
   }// refreshTable_basicSearch
+
   public basicSearch_previousPage() {
     console.log('basicSearch_previousPage');
     if (this.basicSearch_pageNumber > 1) {
@@ -160,11 +167,17 @@ export class AdministrationComponent implements OnInit {
 
   public setBasicSearchCount() {
     this.basicSearch_pageNumber = 1;
-    this.searchService.getBsicSearchCount(this.basicSearch_perPage, this.basicSearch_pageNumber, this.basicSearch_sort_on, this.basicSearch_sort_by, this.basic_search_by, this.basic_value_search)
+    this.searchService.getBsicSearchCount(
+      this.basicSearch_perPage,
+      this.basicSearch_pageNumber,
+      this.basicSearch_sort_on,
+      this.basicSearch_sort_by,
+      this.basic_search_by,
+      this.basic_value_search)
       .subscribe(res => {
         this.basicSearch_total = res['status'];
       });
-    this.refreshTable_basicSearch();
+    // this.refreshTable_basicSearch();
   }
 
 // end : basic search

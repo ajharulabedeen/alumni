@@ -156,7 +156,7 @@ export class SearchService {
     // console.log('sort_by : ' + sort_by_basic);
     // console.log('sort_on : ' + sort_on_basic);
     // console.log('column_name : ' + column_name_basic);
-    // console.log('key : ' + key_basic);
+    console.log('key : ' + key_basic);
 
 
     return this.http.post<Basic>(
