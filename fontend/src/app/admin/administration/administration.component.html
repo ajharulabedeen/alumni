@@ -128,16 +128,21 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-4" style="background-color:pink;">
-            <h4 align="center">Roles</h4>
+            <h4 class="box box-header box-primary" align="center">Roles</h4>
+
             <div>
               <div class="box-body table-responsive no-padding">
-                <table class="table table-hover">
+                <table class="table table-hover table-primary">
                   <tbody>
                   <tr>
+                    <th>Select</th>
                     <th>Index</th>
                     <th>Role</th>
                   </tr>
                   <tr *ngFor="let r of roles; let i=index">
+                    <td>
+                      <input class="text-aqua" type="radio" id="{{i+1}}" name="gender" value="{{r.title}}">
+                    </td>
                     <td>{{i+1}}</td>
                     <td>{{r.title}}</td>
                   </tr>
@@ -146,8 +151,28 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-8" style="background-color:cyan;">
-            <h4 align="center">Associated People</h4>
+          <div class="col-sm-8">
+            <div class="box box-header box-primary" >
+              <h4 align="center">Associated People</h4>
+            </div>
+            <table class="table table-hover">
+              <tbody>
+              <tr>
+                <th>Action</th>
+                <th>Index</th>
+                <th>Name</th>
+                <th>Mail</th>
+                <th>Phone</th>
+              </tr>
+              <tr *ngFor="let r of roles; let i=index">
+                <!--<td>-->
+                <!--<input class="text-aqua" type="radio" id="{{i+1}}" name="gender" value="{{r.title}}">-->
+                <!--</td>-->
+                <!--<td>{{i+1}}</td>-->
+                <!--<td>{{r.title}}</td>-->
+              </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
