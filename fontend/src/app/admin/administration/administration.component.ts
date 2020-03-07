@@ -26,6 +26,7 @@ export class AdministrationComponent implements OnInit {
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
     this.refresh_table();
+    this.searchTab(event, 'all_events');
   }
 
   // start : for tab in font end.
