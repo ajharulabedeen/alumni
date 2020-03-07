@@ -46,7 +46,6 @@ export class AdministrationComponent implements OnInit {
 
   // end : for tab in font end.
 
-
   public refresh_table() {
     this.roles = new Array();
     this.adminisService.getAll().subscribe(res => {

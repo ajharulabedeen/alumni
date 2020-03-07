@@ -30,7 +30,8 @@
               <div class="col-md-12 offset-md-12">
                 <div class="form-group">
                   <label>Details: </label>
-                  <textarea [(ngModel)]="role_details" class="col-md-12 offset-md-12 text-primary" rows="10"></textarea>
+                  <!--<textarea [(ngModel)]="role_details" class="col-md-12 offset-md-12 text-primary" rows="10"></textarea>-->
+                  <ckeditor [(ngModel)]="role_details" data="<p>Hello, world!</p>"></ckeditor>
                 </div>
               </div>
               <button class="btn btn-md btn-primary" (click)="save()">Save</button>
@@ -115,7 +116,7 @@
               <div class="box-header">
                 <h4 class="text-aqua">{{role_show_title}}</h4>
               </div>
-              <h4>{{role_show_detils}}</h4>
+              <h4 innerHtml="{{role_show_detils}}"></h4>
             </div>
           </div>
         </div>
