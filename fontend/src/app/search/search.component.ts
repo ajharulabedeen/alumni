@@ -64,7 +64,6 @@ export class SearchComponent implements OnInit {
 
 
 // start : basic search
-
   // error : suggested to declear as class instance
   basic_search_by: string;
   basic_value_search: string;
@@ -137,6 +136,8 @@ export class SearchComponent implements OnInit {
   }
 
 // end : basic search
+
+
 
 //  start : education
   education_search_by: string;
