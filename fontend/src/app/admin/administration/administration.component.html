@@ -156,27 +156,31 @@
             <div class="box box-header box-primary">
               <h4 align="center">Assigned People</h4>
             </div>
-            <table class="table table-hover">
-              <tbody>
-              <tr>
-                <th>Action</th>
-                <th>Index</th>
-                <th>Name</th>
-                <th>Mail</th>
-                <th>Phone</th>
-              </tr>
-              <tr *ngFor="let ap of assigned_people_array; let i=index">
-                <td>
-                  <!--<input class="text-aqua" type="radio" id="{{i+1}}" name="gender" value="{{r.title}}">-->
-                  <button class="btn btn-xs btn-danger">Remove</button>
-                </td>
-                <td>{{i+1}}</td>
-                <td>{{ap.name}}</td>
-                <td>{{ap.email}}</td>
-                <td>{{ap.phone}}</td>
-              </tr>
-              </tbody>
-            </table>
+            <div class="box-body table-responsive no-padding">
+              <table class=" box table table-hover">
+                <tbody>
+                <tr>
+                  <th>Action</th>
+                  <th>Index</th>
+                  <th>Name</th>
+                  <th>Mail</th>
+                  <th>Phone</th>
+                  <th>Assinged Date</th>
+                </tr>
+                <tr *ngFor="let ap of assigned_people_array; let i=index">
+                  <td>
+                    <!--<input class="text-aqua" type="radio" id="{{i+1}}" name="gender" value="{{r.title}}">-->
+                    <button class="btn btn-xs btn-danger">Remove</button>
+                  </td>
+                  <td>{{i+1}}</td>
+                  <td>{{ap.name}}</td>
+                  <td>{{ap.email}}</td>
+                  <td>{{ap.phone}}</td>
+                  <td>{{ap.created_at}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
