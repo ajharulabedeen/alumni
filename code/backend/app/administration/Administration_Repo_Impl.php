@@ -110,6 +110,7 @@ class Administration_Repo_Impl implements Administration_Repo_I
                 , 'b.phone'
                 , 'b.user_id'
                 , 'administration_people.id'
+                , 'administration_people.created_at'
             )
             ->where("administration_people.role_id", "=", $role_id)->get();
         return $data;
