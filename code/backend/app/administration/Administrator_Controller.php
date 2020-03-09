@@ -65,4 +65,11 @@ class Administrator_Controller extends Controller
         return $data;
     }
 
+    public function get_assigned_people(Request $r)
+    {
+        $data = $this->administrationRepo->get_all_assingned_people($r->role_id);
+        return $data;
+    }
+
+
 }//class

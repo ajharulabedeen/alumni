@@ -25,9 +25,34 @@ class F_Administrator_Test extends TestCase
 //        $this->update();
 //        $this->delete();
 //        $this->assign_people("4","22");
-        $this->remove_people("6");
+//        $this->remove_people("6");
+        $this->get_assigned_people("22");
 
 
+    }
+
+    public function get_assigned_people(string $id)
+    {
+        $response = $this->json(
+            'POST',
+            'administrator/get_assigned_people',
+            [
+                'role_id' => $id,
+            ],
+            [
+                // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+//                "HTTP_AUTHORIZATION" => "bearer" . TestUtil::getToken("u1@umail.com", "123456")
+            ]
+        );
+        $d = $response->baseResponse->original;
+        //exception not catching error, instead haulting program.
+        error_log($d);
+        foreach ($d as $x => $k) {
+            error_log($k->first_name . " " . $k->last_name . " > " . $k->email . " > " . $k->phone);
+        }
+//        error_log("Error : ");
+        // dd($response->exception);
+//        dd($d);
     }
 
     public function remove_people(string $id)
@@ -45,10 +70,10 @@ class F_Administrator_Test extends TestCase
         );
         $d = $response->baseResponse->original;
         //exception not catching error, instead haulting program.
-        // error_log($d);
-        error_log("Error : ");
+//         error_log($d);
+//        error_log("Error : ");
         // dd($response->exception);
-        dd($d);
+//        dd($d);
     }
 
 

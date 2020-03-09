@@ -27,4 +27,6 @@ interface Administration_Repo_I
     public function assign_people(AdministrationPeople $administrationPeople);
 
     public function remove_people(string $id);
+
+    public function get_all_assingned_people(string $role_id);
 }

@@ -138,6 +138,7 @@ Route::post('administrator/update', 'Administrator_Controller@update');
 Route::post('administrator/delete', 'Administrator_Controller@delete');
 Route::post('administrator/assign_people', 'Administrator_Controller@assign_people');
 Route::post('administrator/remove_people', 'Administrator_Controller@remove_people');
+Route::post('administrator/get_assigned_people', 'Administrator_Controller@get_assigned_people');
 
 
 //mail test
