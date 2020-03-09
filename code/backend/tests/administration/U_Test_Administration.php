@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use App\administration\Administration_Repo_Impl;
 use App\administration\Administration;
+use App\administration\AdministrationPeople;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -15,8 +16,20 @@ class U_Test_Administration extends TestCase
 //        error_log($this->create());//passed
 //        error_log($this->findOne(1));//passed
 //        error_log($this->delete(2));
-        error_log($this->update(3, "title", "Acc"));
+//        error_log($this->update(3, "title", "Acc"));
 //        error_log($this->getAll());
+        error_log($this->assign_people("3","22"));
+
+    }
+
+    public function assign_people(string $user_id, string $role_id)
+    {
+        $repo = new Administration_Repo_Impl();
+        $adPeople = new AdministrationPeople();
+        $adPeople->user_id = $user_id;
+        $adPeople->role_id = $role_id;
+        $id = $repo->assign_people($adPeople);
+        return $id;
     }
 
     /**

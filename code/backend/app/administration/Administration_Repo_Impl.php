@@ -67,4 +67,19 @@ class Administration_Repo_Impl implements Administration_Repo_I
     {
         return Administration::all();
     }
+
+    public function assign_people(AdministrationPeople $administrationPeople)
+    {
+        error_log("Administration People Adding: ");
+        $id = -1;
+        try {
+            $administrationPeople->save();
+            $id = $administrationPeople->id;
+        } catch (Exception $e) {
+            $saveStatus = false;
+            error_log("Saveing Adding people to Admin role Failed!");
+            // error_log("Saveing Post Failed. : " . $e);
+        }
+        return $id;
+    }
 }
