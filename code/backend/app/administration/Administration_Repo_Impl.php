@@ -108,11 +108,11 @@ class Administration_Repo_Impl implements Administration_Repo_I
                 , 'b.last_name'
                 , 'b.email'
                 , 'b.phone'
-                , 'b.user_id')
+                , 'b.user_id'
+                , 'administration_people.id'
+            )
             ->where("administration_people.role_id", "=", $role_id)->get();
-
         return $data;
     }
-
 
 }

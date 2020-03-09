@@ -27,7 +27,7 @@ class U_Test_Administration extends TestCase
     {
         $repo = new Administration_Repo_Impl();
         $data = $repo->get_all_assingned_people($role_id);
-//        dd($data);
+        dd($data);
         foreach ($data as $x ) {
             error_log($data[0]->email);
         }
