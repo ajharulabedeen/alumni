@@ -141,7 +141,8 @@
                   </tr>
                   <tr *ngFor="let r of roles; let i=index">
                     <td>
-                      <input class="text-aqua" type="radio" id="{{i+1}}" (click)="checkBoxSelection(r.id)" name="gender"
+                      <input class="text-aqua" type="radio" id="{{i+1}}" (click)="checkBoxSelection(r.id, r.title)"
+                             name="gender"
                              value="{{r.title}}">
                     </td>
                     <td>{{i+1}}</td>
@@ -155,6 +156,7 @@
           <div class="col-sm-8">
             <div class="box box-header box-primary">
               <h4 align="center">Assigned People</h4>
+              <h4 align="center">{{selected_role_name}}</h4>
             </div>
             <div class="box-body table-responsive no-padding">
               <table class=" box table table-hover">
