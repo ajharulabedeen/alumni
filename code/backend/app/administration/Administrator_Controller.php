@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\administration\Administration;
 use App\administration\Administration_Repo_I;
+use App\administration\AdministrationPeople;
 use Illuminate\Http\Request;
 
 class Administrator_Controller extends Controller
@@ -24,7 +25,6 @@ class Administrator_Controller extends Controller
         $id = $this->administrationRepo->update($ad);
         return $id;
     }
-
 
     public function getAll(Request $r)
     {
@@ -50,4 +50,12 @@ class Administrator_Controller extends Controller
         return $id;
     }
 
+    public function assign_people(Request $r)
+    {
+        $adPeople = new AdministrationPeople();
+        $adPeople->user_id = $r->user_id;
+        $adPeople->role_id = $r->role_id;
+        $id = $this->administrationRepo->assign_people($adPeople);
+        return $id;
+    }
 }//class
