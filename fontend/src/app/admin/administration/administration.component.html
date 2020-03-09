@@ -172,7 +172,7 @@
                 <tr *ngFor="let ap of assigned_people_array; let i=index">
                   <td>
                     <!--<input class="text-aqua" type="radio" id="{{i+1}}" name="gender" value="{{r.title}}">-->
-                    <button class="btn btn-xs btn-danger">Remove</button>
+                    <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#remove_people_confirmation">Remove</button>
                   </td>
                   <td>{{i+1}}</td>
                   <td>{{ap.name}}</td>
@@ -380,8 +380,8 @@
   <!--</button>-->
   <!--  end : test -->
 
-  <!-- start-Modal :  Event Edit Basic -->
-  <div class="modal fade" id="event_edit_basic" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  <!-- start-Modal :  remove people from role -->
+  <div class="modal fade" id="remove_people_confirmation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
        aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
