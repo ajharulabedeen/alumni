@@ -26,6 +26,7 @@ export class AdministrationComponent implements OnInit {
   role_show_title: string;
   role_show_detils: string;
 
+  selected_user_id: string;
   selected_role_id: string;
   selected_role_name: string;
   remove_id: string;
@@ -224,4 +225,13 @@ export class AdministrationComponent implements OnInit {
     });
   }
 
+  public add_people_to_role() {
+    // console.log(this.selected_role_id);
+    this.adminisService.assign_people(this.selected_user_id, this.selected_role_id,).subscribe(res => {
+      console.log(res);
+      if (res > 1) {
+        this.show_assigned_people();
+      }
+    });
+  }
 }// class

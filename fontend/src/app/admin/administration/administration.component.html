@@ -189,6 +189,8 @@
           </div>
         </div>
       </div>
+
+
       <!--    start : basic search -->
       <div>
         <h1>Basic Search</h1>
@@ -298,7 +300,8 @@
                 <!-- showing all profiles after basic search  -->
                 <tr *ngFor="let basic of baicSearch_profiles_array; let i=index">
                   <td>
-                    <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#modal_payment_details">
+                    <button class="btn btn-xs btn-info" data-toggle="modal" data-target="#add_people_to_role"
+                            (click)="selected_user_id = basic.user_id;">
                       Add
                     </button>
                   </td>
@@ -410,113 +413,42 @@
       </div>
     </div>
     <!-- end :  Modal -->
-
-
     <!-- <app-footernavbar></app-footernavbar> -->
     <!-- <app-settingsnavbar></app-settingsnavbar> -->
   </div>
   <!-- end-Modal :  Event Edit Basic -->
 
-  <!-- start-Modal :  payment -->
-  <div class="modal fade" id="payment" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+
+  <!-- start-Modal :  add people to role confirmation-->
+  <div class="modal fade" id="add_people_to_role" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
        aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Edit Event Basic Information</h5>
+          <h5 class="modal-title">Add People to role confirmation</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <!--  start : modal body-->
         <div class="modal-body">
-
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">
-                <a data-toggle="collapse" href="#all_payment">Payment Type</a>
-              </h4>
-            </div>
-            <div id="all_payment" class="panel-collapse collapse">
-              <div class="panel-body">
-
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <button class="btn btn-primary" (click)="searchPaymentType()">Search</button>
-                    <label>Payment Type ID</label>
-                    <input [(ngModel)]="paymentID" type="text" class="form-control">
-                  </div>
-                </div>
-                <!-- start : payment found-->
-                <!-- paymentFound= payment found.  -->
-                <div *ngIf="paymentFound">
-                  <!--                  <button class="btn btn-primary" (click)="assingPayment(payment.$id)">Assign</button>-->
-                  <button class="btn btn-primary" *ngIf="!paymentAlreadyAssingned" (click)="assingPayment(paymentID)">
-                    Assign
-                  </button>
-                  <br>
-                  <button class="btn btn-success btn-lg" *ngIf="assingSuccess">Success Fully Assingned</button>
-                  <h3>
-                    Payment!
-                  </h3>
-                  <label for="name"><b>Name:</b></label>
-                  <p id="name">{{payment.$name}}</p>
-                  <label for="s_date"><b>Start Date:</b></label>
-                  <p id="s_date">{{payment.$start_date}}</p>
-                  <label for="e_date"><b>End Date:</b></label>
-                  <p id="e_date">{{payment.$last_date}}</p>
-                  <label for="amount"><b>Amount:</b></label>
-                  <p id="amount">{{payment.$amount}}</p>
-                  <label><b>Description:</b></label>
-                  <p id="descripti">{{payment.$description}}</p>
-                  <button type="button" class="btn btn-danger"
-                          *ngIf="paymentAlreadyAssingned"
-                          (click)=" removeConfirmAsk=true">
-                    Remove
-                  </button>
-                </div>
-
-                <div *ngIf="!paymentFound">
-                  Sorry No Payment not Found!
-                  <br>
-                  Please search by right ID or Add new from Payment Section!
-                </div>
-                <!-- end : payment found-->
-
-                <!--start : remove confirm-->
-                <div *ngIf="removeConfirmAsk">
-                  <h2>Are You sure to Remvoe?</h2>
-                  <button class="btn btn-sm btn-warning" (click)="removePaymentFromEvent(payment.$id)">Yes</button>
-                  <button class="btn btn-sm btn-primary" (click)="this.removeConfirmAsk=false">No</button>
-                </div>
-                <!--end : remove confirm-->
-
-              </div>
-              <!-- panel body-->
-            </div>
-            <div class="panel-footer">
-              Payment
-            </div>
-          </div>
-
+          <h3>Are U Sure to add the user to Role {{selected_role_name}}</h3>
         </div>
         <!--  end : modal body-->
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-          <!--          <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal"-->
-          <!--                  (click)="update_event_basic()">-->
-          <!--            Update-->
-          <!--          </button>-->
+          <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal"
+                  (click)="add_people_to_role()">
+            Add
+          </button>
         </div>
       </div>
     </div>
     <!-- end :  Modal -->
-
-
     <!-- <app-footernavbar></app-footernavbar> -->
     <!-- <app-settingsnavbar></app-settingsnavbar> -->
   </div>
-  <!-- end-Modal :  payment -->
+  <!-- end-Modal :  add people to role confirmation-->
 
   <!--  <app-footernavbar></app-footernavbar>-->
 
