@@ -165,12 +165,15 @@
                 <th>Mail</th>
                 <th>Phone</th>
               </tr>
-              <tr *ngFor="let r of roles; let i=index">
-                <!--<td>-->
-                <!--<input class="text-aqua" type="radio" id="{{i+1}}" name="gender" value="{{r.title}}">-->
-                <!--</td>-->
-                <!--<td>{{i+1}}</td>-->
-                <!--<td>{{r.title}}</td>-->
+              <tr *ngFor="let ap of assigned_people_array; let i=index">
+                <td>
+                  <!--<input class="text-aqua" type="radio" id="{{i+1}}" name="gender" value="{{r.title}}">-->
+                  <button class="btn btn-xs btn-danger">Remove</button>
+                </td>
+                <td>{{i+1}}</td>
+                <td>{{ap.name}}</td>
+                <td>{{ap.email}}</td>
+                <td>{{ap.phone}}</td>
               </tr>
               </tbody>
             </table>

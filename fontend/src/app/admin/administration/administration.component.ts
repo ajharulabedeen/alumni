@@ -4,6 +4,7 @@ import {Administration} from "./administration.model";
 import {Events} from "../../event/event-manage/events.model";
 import {SearchService} from "../../search/search.service";
 import {Basic} from "../../profile/basic/basic.model";
+import {AssignedPeopleToRole} from "./assigned-people-to-role.model";
 
 @Component({
   selector: 'app-administration',
@@ -110,6 +111,7 @@ export class AdministrationComponent implements OnInit {
   basicSearch_total: number;
 
   baicSearch_profiles_array = new Array();
+  assigned_people_array = new Array();
 
   public refreshTable_basicSearch(): void {
     console.log('refreshTable_basicSearch :');
@@ -193,6 +195,16 @@ export class AdministrationComponent implements OnInit {
   public show_assigned_people() {
     this.adminisService.getAssignedPeople(this.selected_role_id).subscribe(res => {
       console.log(res);
+      this.assigned_people_array = new Array();
+      for (const key1 in res) {
+        var adPeople = new AssignedPeopleToRole();
+        adPeople.$id = res[key1]['id'];
+        adPeople.$created_at = res[key1]["created_at"];
+        adPeople.$email = res[key1]["email"];
+        adPeople.$phone = res[key1]["phone"];
+        adPeople.$name = res[key1]["first_name"] + " " + res[key1]["last_name"];
+        this.assigned_people_array.push(adPeople);
+      }
     });
   }
 
