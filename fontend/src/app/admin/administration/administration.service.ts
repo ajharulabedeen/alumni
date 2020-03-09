@@ -50,4 +50,12 @@ export class AdministrationService {
       }, this.authService.getHeader()
     );
   }
+
+  public getAssignedPeople(selected_role_id: string) {
+    return this.http.post(
+      'http://127.0.0.1:8000/administrator/get_assigned_people', {
+        'role_id': selected_role_id,
+      }, this.authService.getHeader()
+    );
+  }
 }// class

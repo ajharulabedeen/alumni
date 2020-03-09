@@ -24,6 +24,8 @@ export class AdministrationComponent implements OnInit {
   role_show_title: string;
   role_show_detils: string;
 
+  selected_role_id: string;
+
   ngOnInit() {
 
     // basic
@@ -182,5 +184,16 @@ export class AdministrationComponent implements OnInit {
 
 // end : basic search
 
+
+  public checkBoxSelection(id: string) {
+    console.log("Role Selected : " + id);
+    this.selected_role_id = id;
+  }
+
+  public show_assigned_people() {
+    this.adminisService.getAssignedPeople(this.selected_role_id).subscribe(res => {
+      console.log(res);
+    });
+  }
 
 }// class
