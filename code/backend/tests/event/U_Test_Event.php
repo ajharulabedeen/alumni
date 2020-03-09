@@ -11,6 +11,7 @@ use App\events\Events;
 use App\profile\ProfileBasic;
 use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
+
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class U_Test_Event extends TestCase

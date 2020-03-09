@@ -18,8 +18,19 @@ class U_Test_Administration extends TestCase
 //        error_log($this->delete(2));
 //        error_log($this->update(3, "title", "Acc"));
 //        error_log($this->getAll());
-        error_log($this->assign_people("3", "22"));
+//        error_log($this->assign_people("3", "22"));
 //        error_log($this->remove_people("3")['status']);
+        $this->get_all_assingned_people("22");
+    }
+
+    public function get_all_assingned_people(string $role_id)
+    {
+        $repo = new Administration_Repo_Impl();
+        $data = $repo->get_all_assingned_people($role_id);
+//        dd($data);
+        foreach ($data as $x ) {
+            error_log($data[0]->email);
+        }
 
     }
 

@@ -10,6 +10,7 @@ namespace App\administration;
 
 
 use App\administration\Administration;
+use Illuminate\Support\Facades\DB;
 
 class Administration_Repo_Impl implements Administration_Repo_I
 {
@@ -94,5 +95,24 @@ class Administration_Repo_Impl implements Administration_Repo_I
         }
         return ['status' => $status];
     }
+
+    public function get_all_assingned_people(string $role_id)
+    {
+        $data = DB::table('profile_basics as b')
+            ->join('administration_people',
+                'administration_people.user_id',
+                '=',
+                'b.user_id')
+            ->select(
+                'b.first_name'
+                , 'b.last_name'
+                , 'b.email'
+                , 'b.phone'
+                , 'b.user_id')
+            ->where("administration_people.role_id", "=", $role_id)->get();
+
+        return $data;
+    }
+
 
 }
