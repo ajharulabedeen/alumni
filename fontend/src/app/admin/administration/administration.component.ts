@@ -5,6 +5,7 @@ import {Events} from "../../event/event-manage/events.model";
 import {SearchService} from "../../search/search.service";
 import {Basic} from "../../profile/basic/basic.model";
 import {AssignedPeopleToRole} from "./assigned-people-to-role.model";
+import {getMatIconFailedToSanitizeLiteralError} from "@angular/material";
 
 @Component({
   selector: 'app-administration',
@@ -27,6 +28,7 @@ export class AdministrationComponent implements OnInit {
 
   selected_role_id: string;
   selected_role_name: string;
+  remove_id: string;
 
   ngOnInit() {
 
@@ -208,6 +210,16 @@ export class AdministrationComponent implements OnInit {
         adPeople.$phone = res[key1]["phone"];
         adPeople.$name = res[key1]["first_name"] + " " + res[key1]["last_name"];
         this.assigned_people_array.push(adPeople);
+      }
+    });
+  }
+
+  public remove_people() {
+    console.log(this.remove_id);
+    this.adminisService.remove_people(this.remove_id).subscribe(res => {
+      console.log(res);
+      if (res['status'] == 1) {
+        this.show_assigned_people();
       }
     });
   }

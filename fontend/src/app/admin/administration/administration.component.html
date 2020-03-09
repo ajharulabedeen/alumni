@@ -172,7 +172,8 @@
                 <tr *ngFor="let ap of assigned_people_array; let i=index">
                   <td>
                     <!--<input class="text-aqua" type="radio" id="{{i+1}}" name="gender" value="{{r.title}}">-->
-                    <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#remove_people_confirmation">
+                    <button class="btn btn-xs btn-danger" data-toggle="modal" data-target="#remove_people_confirmation"
+                            (click)="remove_id=ap.id">
                       Remove
                     </button>
                   </td>
@@ -389,7 +390,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">Edit Event Basic Information</h5>
+          <h5 class="modal-title">Remove Confirmartion</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -402,7 +403,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
           <button type="button" class="btn btn-secondary btn-danger" data-dismiss="modal"
-                  (click)="update_event_basic()">
+                  (click)="remove_people()">
             Remove
           </button>
         </div>
