@@ -25,9 +25,32 @@ class F_Administrator_Test extends TestCase
 //        $this->update();
 //        $this->delete();
 //        $this->assign_people("4","22");
+        $this->remove_people("6");
 
 
     }
+
+    public function remove_people(string $id)
+    {
+        $response = $this->json(
+            'POST',
+            'administrator/remove_people',
+            [
+                'id' => $id,
+            ],
+            [
+                // "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+//                "HTTP_AUTHORIZATION" => "bearer" . TestUtil::getToken("u1@umail.com", "123456")
+            ]
+        );
+        $d = $response->baseResponse->original;
+        //exception not catching error, instead haulting program.
+        // error_log($d);
+        error_log("Error : ");
+        // dd($response->exception);
+        dd($d);
+    }
+
 
     public function assign_people(string $user_id, string $role_id)
     {

@@ -55,10 +55,14 @@ class Administrator_Controller extends Controller
         $adPeople = new AdministrationPeople();
         $adPeople->user_id = $r->user_id;
         $adPeople->role_id = $r->role_id;
-        $id = $this->administrationRepo->assign_people($adPeople);
-        return $id;
+        $data = $this->administrationRepo->assign_people($adPeople);
+        return $data;
     }
 
-
+    public function remove_people(Request $r)
+    {
+        $data = $this->administrationRepo->remove_people($r->id);
+        return $data;
+    }
 
 }//class
