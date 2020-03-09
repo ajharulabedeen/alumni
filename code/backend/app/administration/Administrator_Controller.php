@@ -58,4 +58,6 @@ class Administrator_Controller extends Controller
         $id = $this->administrationRepo->assign_people($adPeople);
         return $id;
     }
+
+
 }//class

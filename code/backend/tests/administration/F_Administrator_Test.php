@@ -24,7 +24,7 @@ class F_Administrator_Test extends TestCase
 //        $this->getAll();
 //        $this->update();
 //        $this->delete();
-        $this->assign_people("4","22");
+//        $this->assign_people("4","22");
 
 
     }

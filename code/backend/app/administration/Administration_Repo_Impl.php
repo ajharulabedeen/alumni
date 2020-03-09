@@ -82,4 +82,17 @@ class Administration_Repo_Impl implements Administration_Repo_I
         }
         return $id;
     }
+
+    public function remove_people(string $id)
+    {
+        $status = "";
+        try {
+            $status = AdministrationPeople::where('id', $id)->delete();
+        } catch (\Exception $e) {
+            error_log("Remove Admin people failed!");
+            $status = "fail";
+        }
+        return ['status' => $status];
+    }
+
 }
