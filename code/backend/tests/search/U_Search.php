@@ -25,7 +25,7 @@ class UTest_ProfileBasicRepo extends TestCase
         echo "\n >----------- Test Main : ---------> \n";
         error_log("Search :");
 //result : 9999
-//                $this->search_basic_count(10, "ASC", "batch", "research_interest", '%Io%');
+                $this->search_basic_count(10, "ASC", "batch", "research_interest", '%Io%');
 //        $this->search_basic(10, "ASC", "batch", "research_interest", '%Io%');
 //--------------------
 //        $this->search_education_count(10, "ASC", "passing_year", "institue_name", '%School%');
@@ -36,7 +36,7 @@ class UTest_ProfileBasicRepo extends TestCase
 //result : 'wu' -> 1
 //result : 'tiger' -> 4
 //result : type->'pri' -> 9
-        $this->search_jobs(10, "DESC", "batch", "type", '%pub%');
+//        $this->search_jobs(10, "DESC", "batch", "type", '%pub%');
 //result : organization_name->'wu' -> 1
 //result : organization_name->'tiger' -> 4
 //result : type->'pri' -> 9

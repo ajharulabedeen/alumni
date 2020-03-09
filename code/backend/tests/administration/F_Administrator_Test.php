@@ -23,7 +23,7 @@ class F_Administrator_Test extends TestCase
 //        $this->findOne();
 //        $this->getAll();
 //        $this->update();
-        $this->delete();
+//        $this->delete();
 
 
     }
