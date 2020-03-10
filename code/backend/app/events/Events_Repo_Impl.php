@@ -383,5 +383,4 @@ class Events_Repo_Impl implements Events_Repo_I
         return ["count" => $data];
     }
 
-
 }//class

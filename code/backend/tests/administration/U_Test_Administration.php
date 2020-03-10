@@ -18,10 +18,10 @@ class U_Test_Administration extends TestCase
 //        error_log($this->delete(2));
 //        error_log($this->update(3, "title", "Acc"));
 //        error_log($this->getAll());
-//        error_log($this->assign_people("3", "22"));
+        error_log($this->assign_people("3", "22"));
 //        error_log($this->remove_people("3")['status']);
 //        $this->get_all_assingned_people("22");
-        $this->check_assign("4", "22");
+//        $this->check_assign("4", "22");
     }
 
     public function check_assign(string $user_id, string $role_id)
@@ -31,8 +31,7 @@ class U_Test_Administration extends TestCase
         dd($data);
     }
 
-    public
-    function get_all_assingned_people(string $role_id)
+    public function get_all_assingned_people(string $role_id)
     {
         $repo = new Administration_Repo_Impl();
         $data = $repo->get_all_assingned_people($role_id);

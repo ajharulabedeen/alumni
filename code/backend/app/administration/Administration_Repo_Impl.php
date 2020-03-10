@@ -73,14 +73,21 @@ class Administration_Repo_Impl implements Administration_Repo_I
     {
         error_log("Administration People Adding: ");
         $id = -1;
-        try {
-            $administrationPeople->save();
-            $id = $administrationPeople->id;
-        } catch (Exception $e) {
-            $saveStatus = false;
-            error_log("Saveing Adding people to Admin role Failed!");
-            // error_log("Saveing Post Failed. : " . $e);
+        $user_id = $administrationPeople->user_id;
+        $role_id = $administrationPeople->role_id;
+        $check = $this->check_assign($user_id, $role_id);
+        if ($check['status'] == "0") {
+            error_log("Check:");
+            try {
+                $administrationPeople->save();
+                $id = $administrationPeople->id;
+            } catch (Exception $e) {
+                $saveStatus = false;
+                error_log("Saveing Adding people to Admin role Failed!");
+                // error_log("Saveing Post Failed. : " . $e);
+            }
         }
+
         return $id;
     }
 
