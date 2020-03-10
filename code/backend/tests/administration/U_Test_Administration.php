@@ -20,28 +20,39 @@ class U_Test_Administration extends TestCase
 //        error_log($this->getAll());
 //        error_log($this->assign_people("3", "22"));
 //        error_log($this->remove_people("3")['status']);
-        $this->get_all_assingned_people("22");
+//        $this->get_all_assingned_people("22");
+        $this->check_assign("4", "22");
     }
 
-    public function get_all_assingned_people(string $role_id)
+    public function check_assign(string $user_id, string $role_id)
+    {
+        $repo = new Administration_Repo_Impl();
+        $data = $repo->check_assign($user_id, $role_id);
+        dd($data);
+    }
+
+    public
+    function get_all_assingned_people(string $role_id)
     {
         $repo = new Administration_Repo_Impl();
         $data = $repo->get_all_assingned_people($role_id);
         dd($data);
-        foreach ($data as $x ) {
+        foreach ($data as $x) {
             error_log($data[0]->email);
         }
 
     }
 
-    public function remove_people(string $id)
+    public
+    function remove_people(string $id)
     {
         $repo = new Administration_Repo_Impl();
         $id = $repo->remove_people($id);
         return $id;
     }
 
-    public function assign_people(string $user_id, string $role_id)
+    public
+    function assign_people(string $user_id, string $role_id)
     {
         $repo = new Administration_Repo_Impl();
         $adPeople = new AdministrationPeople();
@@ -55,7 +66,8 @@ class U_Test_Administration extends TestCase
      * A basic test example.
      * @return void
      */
-    public function create()
+    public
+    function create()
     {
         $repo = new Administration_Repo_Impl();
         $ad = new Administration();
@@ -65,19 +77,22 @@ class U_Test_Administration extends TestCase
         return $id;
     }
 
-    public function findOne($id)
+    public
+    function findOne($id)
     {
         $repo = new Administration_Repo_Impl();
         return $repo->findOne($id);
     }
 
-    public function delete($id)
+    public
+    function delete($id)
     {
         $repo = new Administration_Repo_Impl();
         return $repo->delete($id);
     }
 
-    public function update($id, $filedName, $data)
+    public
+    function update($id, $filedName, $data)
     {
         $repo = new Administration_Repo_Impl();
         $ad = $this->findOne($id);
@@ -86,7 +101,8 @@ class U_Test_Administration extends TestCase
         return $status;
     }
 
-    public function getAll()
+    public
+    function getAll()
     {
         $repo = new Administration_Repo_Impl();
         $data = $repo->getAll();

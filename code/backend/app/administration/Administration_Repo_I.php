@@ -26,7 +26,18 @@ interface Administration_Repo_I
 
     public function assign_people(AdministrationPeople $administrationPeople);
 
+    /**
+     * @param string $id
+     * @return mixed return ['status' => $status];
+     */
     public function remove_people(string $id);
 
     public function get_all_assingned_people(string $role_id);
+
+    /**
+     * @param string $user_id
+     * @param string $role_id
+     * @return mixed return ["status" => $registered];
+     */
+    public function check_assign(string $user_id, string $role_id);
 }

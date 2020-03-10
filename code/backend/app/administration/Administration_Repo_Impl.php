@@ -116,4 +116,18 @@ class Administration_Repo_Impl implements Administration_Repo_I
         return $data;
     }
 
+    public function check_assign(string $user_id, string $role_id)
+    {
+        $registered = false;
+        $data = AdministrationPeople::where("user_id", "=", $user_id)
+            ->where("role_id", "=", $role_id)
+            ->first();
+//        error_log($data);
+        if ($data == null) {
+            $registered = "0";
+        } else {
+            $registered = "1";
+        }
+        return ["status" => $registered];
+    }
 }
