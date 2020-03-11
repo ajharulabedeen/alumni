@@ -22,6 +22,8 @@ import {BComponent} from "./test-module/b/b.component";
 import {NewsDetailsComponent} from "./public/news-details/news-details.component";
 import {AdminComponent} from "./admin/admin/admin.component";
 import {AdministrationComponent} from "./admin/administration/administration.component";
+import {SuperAdminComponent} from "./super-admin/super-admin/super-admin.component";
+import {SuperLogginComponent} from "./super-admin/super-loggin/super-loggin.component";
 
 
 const routes: Routes = [
@@ -48,8 +50,10 @@ const routes: Routes = [
   {path: 'news', component: NewsComponent},
   {path: 'news_public', component: NewsPublicComponent},
   {path: 'news_details/:news_id', component: NewsDetailsComponent},
-  {path: 'super_admin', component: AdminComponent},
+  // {path: 'super_admin', component: AdminComponent},
   {path: 'administration', component: AdministrationComponent},
+  {path: 'super_loggin', component: SuperLogginComponent},
+  {path: 'super_admin', component: SuperAdminComponent},
 
 
   {path: 'a', component: AComponent},

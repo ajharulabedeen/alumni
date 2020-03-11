@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { AdminRoutingModule } from './admin-routing.module';
-import { AdminComponent } from './admin/admin.component';
+import {AdminRoutingModule} from './admin-routing.module';
+import {AdminComponent} from './admin/admin.component';
 import {LayoutModule} from "../layout/layout.module";
 import {FormsModule} from "@angular/forms";
-import { AdministrationComponent } from './administration/administration.component';
+import {AdministrationComponent} from './administration/administration.component';
 import {CKEditorModule} from "ckeditor4-angular";
 
 
@@ -17,7 +17,7 @@ import {CKEditorModule} from "ckeditor4-angular";
     LayoutModule,
     FormsModule,
     CKEditorModule
-
   ]
 })
-export class AdminModule { }
+export class AdminModule {
+}

@@ -25,6 +25,8 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { SearchComponent } from './search/search.component';
 import {TestModuleModule} from "./test-module/test-module.module";
 import {AdminModule} from "./admin/admin.module";
+import {SuperAdminComponent} from "./super-admin/super-admin/super-admin.component";
+import {SuperAdminModule} from "./super-admin/super-admin.module";
 
 
 @NgModule({
@@ -61,7 +63,8 @@ import {AdminModule} from "./admin/admin.module";
     EventModule,
     CKEditorModule,
     TestModuleModule,
-    AdminModule
+    AdminModule,
+    SuperAdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
