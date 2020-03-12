@@ -70,10 +70,8 @@
 
   <h1 align="center" class="text-aqua text-bold">All Administration Users</h1>
 
-  <!--    start : basic search -->
+  <!--    start : administrative people search -->
   <div>
-    <h1>Basic Search</h1>
-    <!--start : search fields and search key or search value -->
     <h4>
       <button class="btn btn-info" (click)="setBasicSearchCount()">Search</button>
       <button class="btn btn-xs btn-primary" (click)="refreshTable_basicSearch()">Refresh</button>
@@ -83,16 +81,16 @@
       <div class="form-group">
         <h4>Search By :</h4>
         <select [(ngModel)]="basic_search_by">
-          <option value="batch">Student Batch</option>
-          <option value="student_id">Student ID</option>
-          <option value="dept">Dept</option>
+          <!--<option value="batch">Student Batch</option>-->
+          <!--<option value="student_id">Student ID</option>-->
+          <!--<option value="dept">Dept</option>-->
           <option value="first_name">First Name</option>
           <option value="last_name">Last Name</option>
-          <option value="skills">Skills</option>
-          <option value="research_interest">Research Interest</option>
+          <!--<option value="skills">Skills</option>-->
+          <!--<option value="research_interest">Research Interest</option>-->
           <option value="phone">Phone</option>
           <option value="email">email</option>
-          <option value="address">Address</option>
+          <!--<option value="address">Address</option>-->
         </select>
       </div>
     </div>
@@ -203,7 +201,7 @@
     <!-- end : table -->
     <!-- End : showing all profiles after basic search -->
   </div>
-  <!--    end : basic search -->
+  <!--    end : administrative people search -->
 
 
 </div>
