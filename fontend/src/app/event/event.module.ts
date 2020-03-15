@@ -8,11 +8,12 @@ import { EventDetailsComponent } from './event-details/event-details.component';
 import {RouterModule} from '@angular/router';
 import { EventDetailsUserComponent } from './event-details-user/event-details-user.component';
 import { EventsPublicComponent } from './events-public/events-public.component';
+import { EventsUserComponent } from './events-user/events-user.component';
 
 
 
 @NgModule({
-  declarations: [EventManageComponent, EventDetailsComponent, EventDetailsUserComponent, EventsPublicComponent],
+  declarations: [EventManageComponent, EventDetailsComponent, EventDetailsUserComponent, EventsPublicComponent, EventsUserComponent],
   imports: [
     CommonModule,
     LayoutModule,
