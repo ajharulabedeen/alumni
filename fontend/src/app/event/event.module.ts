@@ -7,11 +7,12 @@ import { CKEditorModule } from 'ckeditor4-angular';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import {RouterModule} from '@angular/router';
 import { EventDetailsUserComponent } from './event-details-user/event-details-user.component';
+import { EventsPublicComponent } from './events-public/events-public.component';
 
 
 
 @NgModule({
-  declarations: [EventManageComponent, EventDetailsComponent, EventDetailsUserComponent],
+  declarations: [EventManageComponent, EventDetailsComponent, EventDetailsUserComponent, EventsPublicComponent],
   imports: [
     CommonModule,
     LayoutModule,
