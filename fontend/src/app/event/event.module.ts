@@ -1,19 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { EventManageComponent } from './event-manage/event-manage.component';
-import { LayoutModule } from '../layout/layout.module';
-import { FormsModule } from '@angular/forms';
-import { CKEditorModule } from 'ckeditor4-angular';
-import { EventDetailsComponent } from './event-details/event-details.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {EventManageComponent} from './event-manage/event-manage.component';
+import {LayoutModule} from '../layout/layout.module';
+import {FormsModule} from '@angular/forms';
+import {CKEditorModule} from 'ckeditor4-angular';
+import {EventDetailsComponent} from './event-details/event-details.component';
 import {RouterModule} from '@angular/router';
-import { EventDetailsUserComponent } from './event-details-user/event-details-user.component';
-import { EventsPublicComponent } from './events-public/events-public.component';
-import { EventsUserComponent } from './events-user/events-user.component';
-
+import {EventDetailsUserComponent} from './event-details-user/event-details-user.component';
+import {EventsUserComponent} from './events-user/events-user.component';
 
 
 @NgModule({
-  declarations: [EventManageComponent, EventDetailsComponent, EventDetailsUserComponent, EventsPublicComponent, EventsUserComponent],
+  declarations: [EventManageComponent, EventDetailsComponent, EventDetailsUserComponent, EventsUserComponent],
   imports: [
     CommonModule,
     LayoutModule,
@@ -22,4 +20,5 @@ import { EventsUserComponent } from './events-user/events-user.component';
     RouterModule
   ]
 })
-export class EventModule { }
+export class EventModule {
+}
