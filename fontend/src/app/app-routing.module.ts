@@ -24,6 +24,7 @@ import {AdminComponent} from "./admin/admin/admin.component";
 import {AdministrationComponent} from "./admin/administration/administration.component";
 import {SuperAdminComponent} from "./super-admin/super-admin/super-admin.component";
 import {SuperLogginComponent} from "./super-admin/super-loggin/super-loggin.component";
+import {EventsUserComponent} from "./event/events-user/events-user.component";
 
 
 const routes: Routes = [
@@ -54,6 +55,7 @@ const routes: Routes = [
   {path: 'administration', component: AdministrationComponent},
   {path: 'super_loggin', component: SuperLogginComponent},
   {path: 'super_admin', component: SuperAdminComponent},
+  {path: 'event_user', component: EventsUserComponent},
 
 
   {path: 'a', component: AComponent},
