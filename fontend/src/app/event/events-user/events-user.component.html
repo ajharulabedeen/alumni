@@ -3,7 +3,7 @@
   <app-asidenavbar></app-asidenavbar>
   <div class="content-wrapper">
 
-    <!--start : showing all news-->
+    <!--start : showing all event-->
     <div id="all_events" class="tabcontent ">
       <h1>All Events</h1>
 
@@ -82,17 +82,25 @@
       <!--            end : basic search pagination panel-->
 
     </div>
-    <!--end : showing all news-->
+    <!--end : showing all event-->
 
 
     <table class="table table-responsive col-xs-12">
-      <div *ngFor="let news of event_array; let i=index">
+      <div *ngFor="let event of event_array; let i=index">
         <div class="breadcrumb">
-          <h1>{{news.title}}</h1>
-          <span class="badge badge-pill badge-primary">{{news.post_date}}</span>
+          <h1>{{event.title}}</h1>
+          <button type="button" class="btn btn-xs btn-info">Start Date <span class="badge">{{event.start_date}}</span>
+          </button>
+          <button type="button" class="btn btn-xs btn-danger">End Date <span class="badge">{{event.end_date}}</span>
+          </button>
+          <button type="button" class="btn btn-xs btn-primary">Fee BDT  <span class="badge">{{event.fee}}</span>
+          </button>
+          <button type="button" class="btn btn-xs btn-warning">Location <span class="badge">{{event.location}}</span>
+          </button>
+
           <p class="lead">
             <a target="_blank" class="btn btn-primary btn-md" role="button"
-               [routerLink]="['/news_details', news.id]">Details</a>
+               [routerLink]="['/event_details', event.id]">Details</a>
             <!--<a target="_blank" [routerLink]="['/event_details', event.id]">Event Details</a>-->
           </p>
         </div>

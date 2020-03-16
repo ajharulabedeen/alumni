@@ -35,6 +35,8 @@ export class EventsUserComponent implements OnInit {
 
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
+
+    this.refreshTable_event();
   }
 
   // public
