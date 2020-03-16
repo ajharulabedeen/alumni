@@ -30,6 +30,7 @@ export class EventsUserComponent implements OnInit {
     this.eventSearch_sort_by = 'ASC';
     this.event_search_by = 'title';
     this.eventSearch_sort_on = 'end_date';
+    this.event_value_search = '';
     this.setTotal();
 
     window.dispatchEvent(new Event('resize'));
@@ -42,7 +43,14 @@ export class EventsUserComponent implements OnInit {
     this.event_array = [];
     // console.log("\n Search Active!");
     this.setTotal();
-    this.eService.getAllEvents(this.eventSearch_perPage, this.eventSearch_sort_by, this.eventSearch_sort_on, this.eventSearch_pageNumber, this.event_search_by, this.event_value_search).subscribe(e => {
+    this.eService.eventSearch(
+      this.eventSearch_perPage,
+      this.eventSearch_sort_by,
+      this.eventSearch_sort_on,
+      this.eventSearch_pageNumber,
+      this.event_search_by,
+      this.event_value_search).subscribe(e => {
+      console.log(e);
       this.event_array = [];
       for (const key1 in e) {
         //     // console.log(key1);
@@ -58,28 +66,13 @@ export class EventsUserComponent implements OnInit {
         this.event_array.push(event);
       }
     });
-    console.log(this.event_array);
+    // console.log(this.event_array);
   }
 
   public setTotal() {
-
     this.eService.count_search(this.event_search_by, this.event_value_search).subscribe(res => {
       // console.log(res);
       this.eventSearch_total = res['data'];
     });
-
-    // if (this.active_search) {
-    //   this.eService.count_search(this.event_search_by, this.event_value_search).subscribe(res => {
-    //     // console.log(res);
-    //     this.eventSearch_total = res['data'];
-    //   });
-    //
-    // } else {
-    //   this.eService.couunt_all().subscribe(res => {
-    //     // console.log(res);
-    //     this.eventSearch_total = res['data'];
-    //   });
-    // }
-
   }
 } // class
