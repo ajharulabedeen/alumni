@@ -7,6 +7,28 @@
     <div id="all_events" class="tabcontent ">
       <h1>All Events</h1>
 
+      <!-- search by column name -->
+      <div class="col-md-12 offset-md-12">
+        <div class="form-group">
+          <h4>Search By :</h4>
+          <select [(ngModel)]="event_search_by">
+            <option value="id">Id</option>
+            <option value="title">Title</option>
+            <option value="start_date">Start Date</option>
+            <option value="end_date">End Date</option>
+            <option value="fee">Fee</option>
+            <option value="location">Location</option>
+          </select>
+        </div>
+      </div>
+      <!--      search key input -->
+      <div class="col-md-12 offset-md-12">
+        <div class="form-group">
+          <label>Value : </label>
+          <input [(ngModel)]="event_value_search" type="text" class="form-control" placeholder="search...">
+        </div>
+      </div>
+
       <!--            start : basic search pagination panel-->
       <!--      perPage-->
       <div class="col-md-2 offset-md-2">
