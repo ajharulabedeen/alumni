@@ -77,4 +77,20 @@ export class EventsUserComponent implements OnInit {
       this.eventSearch_total = res['data'];
     });
   }
+
+  public eventSearch_previousPage() {
+    if (this.eventSearch_pageNumber > 1) {
+      this.eventSearch_pageNumber -= 1;
+      this.refreshTable_event();
+    }
+  }
+
+  public eventSearch_nextPage() {
+    if (this.eventSearch_pageNumber < (this.eventSearch_total / this.eventSearch_perPage)) {
+      this.eventSearch_pageNumber += 1;
+      this.refreshTable_event();
+    }
+  }
+
+
 } // class
