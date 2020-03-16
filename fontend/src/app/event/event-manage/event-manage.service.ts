@@ -42,6 +42,7 @@ export class EventManageService {
     });
   }
 
+
   public couunt_all() {
     return this.http.post(
       'http://127.0.0.1:8000/events/count_all',

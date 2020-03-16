@@ -127,9 +127,7 @@ export class EventManageComponent implements OnInit {
   }
 
   public refreshTable_eventSearch() {
-
     this.event_array = [];
-
     if (this.active_search) {
       // console.log("\n Search Active!");
       this.setTotal();
@@ -149,7 +147,6 @@ export class EventManageComponent implements OnInit {
         this.eventSearch_sort_on,
         this.eventSearch_pageNumber);
     }
-
     this.eService.events.subscribe(e => {
       this.event_array = [];
       for (const key1 in e) {
