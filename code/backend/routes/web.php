@@ -113,7 +113,7 @@ Route::post('events/getAllRegisteredUser', 'Events_Controller@getAllRegisteredUs
 
 Route::post('events/find_one', 'Events_Controller@findOne');
 Route::post('events/getDescriptionNotes', 'Events_Controller@getDescriptionNotes');
-Route::post('events/getAllEvents', 'Events_Controller@getAllEvents');
+Route::post('events/getAllEvents', 'Events_Controller@getAllEvents');//no description.
 Route::post('events/count_all', 'Events_Controller@count_all');
 Route::post('events/search_event', 'Events_Controller@search_event');
 Route::post('events/search_event_count', 'Events_Controller@search_event_count');
