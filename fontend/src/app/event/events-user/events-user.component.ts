@@ -25,6 +25,13 @@ export class EventsUserComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.eventSearch_pageNumber = 1;
+    this.eventSearch_perPage = 10;
+    this.eventSearch_sort_by = 'ASC';
+    this.event_search_by = 'title';
+    this.eventSearch_sort_on = 'end_date';
+    this.setTotal();
+
     window.dispatchEvent(new Event('resize'));
     document.body.className = 'hold-transition skin-blue sidebar-mini';
   }
@@ -33,25 +40,9 @@ export class EventsUserComponent implements OnInit {
 
   public refreshTable_event() {
     this.event_array = [];
-    if (this.active_search) {
-      // console.log("\n Search Active!");
-      this.setTotal();
-      this.eService.eventSearch(
-        this.eventSearch_perPage,
-        this.eventSearch_sort_by,
-        this.eventSearch_sort_on,
-        this.eventSearch_pageNumber,
-        this.event_search_by,
-        this.event_value_search);
-    } else {
-      this.setTotal();
-      this.eService.getAllEvents(
-        this.eventSearch_perPage,
-        this.eventSearch_sort_by,
-        this.eventSearch_sort_on,
-        this.eventSearch_pageNumber);
-    }
-    this.eService.events.subscribe(e => {
+    // console.log("\n Search Active!");
+    this.setTotal();
+    this.eService.getAllEvents(this.eventSearch_perPage, this.eventSearch_sort_by, this.eventSearch_sort_on, this.eventSearch_pageNumber, this.event_search_by, this.event_value_search).subscribe(e => {
       this.event_array = [];
       for (const key1 in e) {
         //     // console.log(key1);
@@ -71,22 +62,24 @@ export class EventsUserComponent implements OnInit {
   }
 
   public setTotal() {
-    if (this.active_search) {
-      this.eService.count_search(this.event_search_by, this.event_value_search).subscribe(res => {
-        // console.log(res);
-        this.eventSearch_total = res['data'];
-      });
 
-    } else {
-      this.eService.couunt_all().subscribe(res => {
-        // console.log(res);
-        this.eventSearch_total = res['data'];
-      });
-    }
+    this.eService.count_search(this.event_search_by, this.event_value_search).subscribe(res => {
+      // console.log(res);
+      this.eventSearch_total = res['data'];
+    });
 
-    // this.eService.couunt_all();
+    // if (this.active_search) {
+    //   this.eService.count_search(this.event_search_by, this.event_value_search).subscribe(res => {
+    //     // console.log(res);
+    //     this.eventSearch_total = res['data'];
+    //   });
+    //
+    // } else {
+    //   this.eService.couunt_all().subscribe(res => {
+    //     // console.log(res);
+    //     this.eventSearch_total = res['data'];
+    //   });
+    // }
 
   }
-
-
 } // class
