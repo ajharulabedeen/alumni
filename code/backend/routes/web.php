@@ -82,7 +82,9 @@ Route::post('payment/mobile/findOne', 'Payment_Mobile_Controller@findOne');
 // Route::post('payment/mobile/update', 'Payment_Mobile_Controller@update');
 // Route::post('payment/mobile/getAllPaymentMobileByAUser', 'Payment_Mobile_Controller@getAllPaymentMobileByAUser');
 // Route::post('payment/mobile/countPaymentMobileByAUser', 'Payment_Mobile_Controller@countPaymentMobileByAUser');
+
 //not moved; have to move to API when authentication will be applied
+//role : account
 Route::post('payment/mobile/countPaymentMobile', 'Payment_Mobile_Controller@countPaymentMobile');
 Route::post('payment/mobile/getAllPaymentMobile', 'Payment_Mobile_Controller@getAllPaymentMobile');
 Route::post('payment/mobile/approve_mobile_payment', 'Payment_Mobile_Controller@approve_mobile_payment');
@@ -91,7 +93,7 @@ Route::post('payment/mobile/search_count', 'Payment_Mobile_Controller@search_cou
 Route::post('payment/mobile/getApprovedUserDetails', 'Payment_Mobile_Controller@getApprovedUserDetails');
 
 
-//search : api
+//search : api/user
 Route::post('search/basic', 'Search_Controller@search_basic');
 Route::post('search/basic_count', 'Search_Controller@search_basic_count');
 Route::post('search/education', 'Search_Controller@search_education');
@@ -100,7 +102,7 @@ Route::post('search/jobs', 'Search_Controller@search_jobs');
 Route::post('search/jobs_count', 'Search_Controller@search_jobs_count');
 
 
-//event
+//event - role : organiser
 Route::post('events/create', 'Events_Controller@create');
 Route::post('events/update', 'Events_Controller@update');
 Route::post('events/delete', 'Events_Controller@delete');
@@ -109,25 +111,27 @@ Route::post('events/update_description_notes', 'Events_Controller@update_descrip
 Route::post('events/removePaymentAssingment', 'Events_Controller@removePaymentAssingment');
 Route::post('events/assingment_payment_event', 'Events_Controller@assingment_payment_event');
 Route::post('events/getAllRegisteredUser', 'Events_Controller@getAllRegisteredUser');
-
-
-Route::post('events/find_one', 'Events_Controller@findOne');
 Route::post('events/getDescriptionNotes', 'Events_Controller@getDescriptionNotes');
+Route::post('events/checkPaymentAssingment', 'Events_Controller@checkPaymentAssingment');
+
+//event : api/user
 Route::post('events/getAllEvents', 'Events_Controller@getAllEvents');//no description.
+Route::post('events/find_one', 'Events_Controller@findOne');
 Route::post('events/count_all', 'Events_Controller@count_all');
 Route::post('events/search_event', 'Events_Controller@search_event');
 Route::post('events/search_event_count', 'Events_Controller@search_event_count');
-Route::post('events/checkPaymentAssingment', 'Events_Controller@checkPaymentAssingment');
+
 Route::post('events/eventRegistration', 'Events_Controller@eventRegistration');
 Route::post('events/checkEventRegistration', 'Events_Controller@checkEventRegistration');
 Route::post('events/checkPayment', 'Events_Controller@checkPayment');
 Route::post('events/countSearchRegisteredUser', 'Events_Controller@countSearchRegisteredUser');
 
-//-----
+//news : publication
 Route::post('news/save', 'News_Controller@save');
 Route::post('news/delete', 'News_Controller@delete');
 Route::post('news/update', 'News_Controller@update');
-//-----public
+
+//news : public
 Route::post('news/getAllNews', 'News_Controller@getAllNews');
 Route::post('news/countAll', 'News_Controller@countAll');
 Route::post('news/search', 'News_Controller@search');
