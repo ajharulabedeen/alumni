@@ -76,12 +76,13 @@ Route::post('paymentType/countPaymentType', 'Payment_Type_Controller@countPaymen
 Route::post('paymentType/delete', 'Payment_Type_Controller@delete');
 
 //moved to API, Kept for Testing Purpose.
-// Route::post('payment/mobile/create', 'Payment_Mobile_Controller@create');
-Route::post('payment/mobile/findOne', 'Payment_Mobile_Controller@findOne');
-// Route::post('payment/mobile/delete', 'Payment_Mobile_Controller@delete');
-// Route::post('payment/mobile/update', 'Payment_Mobile_Controller@update');
-// Route::post('payment/mobile/getAllPaymentMobileByAUser', 'Payment_Mobile_Controller@getAllPaymentMobileByAUser');
-// Route::post('payment/mobile/countPaymentMobileByAUser', 'Payment_Mobile_Controller@countPaymentMobileByAUser');
+// role : account
+//Route::post('payment/mobile/create', 'Payment_Mobile_Controller@create');
+//Route::post('payment/mobile/findOne', 'Payment_Mobile_Controller@findOne');
+//Route::post('payment/mobile/delete', 'Payment_Mobile_Controller@delete');
+//Route::post('payment/mobile/update', 'Payment_Mobile_Controller@update');
+//Route::post('payment/mobile/getAllPaymentMobileByAUser', 'Payment_Mobile_Controller@getAllPaymentMobileByAUser');
+//Route::post('payment/mobile/countPaymentMobileByAUser', 'Payment_Mobile_Controller@countPaymentMobileByAUser');
 
 //not moved; have to move to API when authentication will be applied
 //role : account
@@ -121,6 +122,7 @@ Route::post('events/count_all', 'Events_Controller@count_all');
 Route::post('events/search_event', 'Events_Controller@search_event');
 Route::post('events/search_event_count', 'Events_Controller@search_event_count');
 
+//event : api/user
 Route::post('events/eventRegistration', 'Events_Controller@eventRegistration');
 Route::post('events/checkEventRegistration', 'Events_Controller@checkEventRegistration');
 Route::post('events/checkPayment', 'Events_Controller@checkPayment');
@@ -138,6 +140,7 @@ Route::post('news/search', 'News_Controller@search');
 Route::post('news/search_count', 'News_Controller@search_count');
 Route::post('news/findOne', 'News_Controller@findOne');
 
+
 Route::post('administrator/save', 'Administrator_Controller@save');
 Route::post('administrator/findOne', 'Administrator_Controller@findOne');
 Route::post('administrator/getAll', 'Administrator_Controller@getAll');
@@ -148,5 +151,5 @@ Route::post('administrator/remove_people', 'Administrator_Controller@remove_peop
 Route::post('administrator/get_assigned_people', 'Administrator_Controller@get_assigned_people');
 
 
-//mail test
+//mail : api
 Route::get('send', 'MailController@send');
