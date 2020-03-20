@@ -17,13 +17,13 @@ class U_PaymentMobile_Test extends TestCase
         // error_log($this->create());//done
         // $this->getAllPaymentMobile(10,"ASC","payment_method");//done
         // $this->getAllPaymentMobile(10,"DESC","amount");//done
-        // $this->getMobilePaymentByAUser(4);
+         $this->getMobilePaymentByAUser(4);
         //  error_log($this->countAll());//done
         // error_log($this->findOnePaymentType(25)->amount);//done
 //        $data=$this->approve_payment(4, 1);//done
 //        $this->assertEquals($data, "ok");//later can be used for assertion.
 
-        $this->approved_by_userDeatils(4);
+//        $this->approved_by_userDeatils(4);
 
 //        $this->search(10,"DESC","payment_method","user_id",1);
 //        $this->search_count(10,"DESC","payment_method","mobile_number","018");//done
