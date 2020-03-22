@@ -1,2 +1,10 @@
 <h1>Home</h1>
+<div class="tab">
+  <button class="tablinks" (click)="openCity(event, 'news')">New</button>
+  <button class="tablinks" (click)="openCity(event, 'all_payments')">Events</button>
+  <button class="tablinks" (click)="openCity(event, 'mobile_payments')">Administration</button>
+</div>
 
+<div id="news" class="tabcontent">
+  <app-news-public></app-news-public>
+</div>

@@ -1,84 +1,70 @@
-<div class="wrapper">
-  <app-topnavbar></app-topnavbar>
-  <app-asidenavbar></app-asidenavbar>
-  <div class="content-wrapper">
+<h1>All News</h1>
+<!--start : search fields and search key or search value -->
+<h4>
+  <button class="btn btn-info" (click)="setNewsCount()">Search</button>
+  <button class="btn btn-xs btn-primary" (click)="refreshTable_news()">Refresh</button>
+</h4>
 
-    <!--start : showing all news-->
-    <div id="all_news" class="tabcontent ">
-      <h1>All News</h1>
-      <!--start : search fields and search key or search value -->
-      <h4>
-        <button class="btn btn-info" (click)="setNewsCount()">Search</button>
-        <button class="btn btn-xs btn-primary" (click)="refreshTable_news()">Refresh</button>
-      </h4>
-
-      <div class="col-md-12 offset-md-12">
-        <div class="form-group">
-          <label>Value (Search By Title) : </label>
-          <input [(ngModel)]="news_value_search" type="text" class="form-control" placeholder="search...">
-        </div>
-      </div>
-      <!-- end : search fields selection and search key or search value-->
-
-      <!-- Start : showing all profiles after search -->
-      <!-- start : All news pagination panel-->
-      <!-- perPage-->
-      <div class="col-md-2 offset-md-2">
-        <div style="text-align: center" class="form-group">
-          <label>Per Page</label>
-          <input style="text-align: center" [(ngModel)]="newsSearch_perPage" type="number" class="form-control"
-                 value="{{newsSearch_perPage}}" (ngModelChange)="refreshTable_news()">
-        </div>
-      </div>
-      <!-- total-->
-      <div class="col-md-2 offset-md-2">
-        <div style="text-align: center" class="form-group">
-          <label>Total </label>
-          <input style="text-align: center" disabled="true" [(ngModel)]="newsSearch_total" type="number"
-                 class="form-control"
-                 value="{{newsSearch_total}}">
-        </div>
-      </div>
-      <!-- prePage/nextPage-->
-      <div class="col-md-3 offset-md-3">
-        <div class="form-group" style="text-align: center">
-          <button class="btn btn-primary btn-xs" (click)="newsSearch_previousPage()">Previous</button>
-          <label class="btn btn-danger btn-xs ">Page Number</label>
-          <button class="btn btn-primary btn-xs" (click)="newsSearch_nextPage()">Next</button>
-          <input style="text-align: center" [(ngModel)]="newsSearch_pageNumber" type="number" class="form-control"
-                 value="{{newsSearch_pageNumber}}">
-        </div>
-      </div>
-      <!-- sort by ASC or DESC -->
-      <div class="col-md-3 offset-md-3">
-        <div class="form-group" style="text-align: center">
-          <h4>Sort Order (Sort by Post date)</h4>
-          <input type="radio" name="m_pay" [(ngModel)]="newsSearch_sort_by" value="ASC"
-                 checked="checked">Ascending<br>
-          <input type="radio" name="m_pay" [(ngModel)]="newsSearch_sort_by" value="DESC">Descending<br>
-        </div>
-      </div>
-      <!--end : All news pagination panel-->
-
-      <table class="table table-responsive col-xs-12">
-        <div *ngFor="let news of news_array; let i=index">
-          <div class="breadcrumb">
-            <h1>{{news.title}}</h1>
-            <span class="badge badge-pill badge-primary">{{news.post_date}}</span>
-            <p class="lead">
-              <a target="_blank" class="btn btn-primary btn-md" role="button"
-                 [routerLink]="['/news_details', news.id]">Details</a>
-              <!--<a target="_blank" [routerLink]="['/event_details', event.id]">Event Details</a>-->
-            </p>
-          </div>
-        </div>
-        <!---->
-      </table>
-    </div>
-    <!--end : showing all news-->
-
+<div class="col-md-12 offset-md-12">
+  <div class="form-group">
+    <label>Value (Search By Title) : </label>
+    <input [(ngModel)]="news_value_search" type="text" class="form-control" placeholder="search...">
   </div>
-  <!-- content warpper -->
-  <!--<app-settingsnavbar></app-settingsnavbar>-->
-  <app-footernavbar></app-footernavbar>
 </div>
+<!-- end : search fields selection and search key or search value-->
+
+<!-- Start : showing all profiles after search -->
+<!-- start : All news pagination panel-->
+<!-- perPage-->
+<div class="col-md-2 offset-md-2">
+  <div style="text-align: center" class="form-group">
+    <label>Per Page</label>
+    <input style="text-align: center" [(ngModel)]="newsSearch_perPage" type="number" class="form-control"
+           value="{{newsSearch_perPage}}" (ngModelChange)="refreshTable_news()">
+  </div>
+</div>
+<!-- total-->
+<div class="col-md-2 offset-md-2">
+  <div style="text-align: center" class="form-group">
+    <label>Total </label>
+    <input style="text-align: center" disabled="true" [(ngModel)]="newsSearch_total" type="number"
+           class="form-control"
+           value="{{newsSearch_total}}">
+  </div>
+</div>
+<!-- prePage/nextPage-->
+<div class="col-md-3 offset-md-3">
+  <div class="form-group" style="text-align: center">
+    <button class="btn btn-primary btn-xs" (click)="newsSearch_previousPage()">Previous</button>
+    <label class="btn btn-danger btn-xs ">Page Number</label>
+    <button class="btn btn-primary btn-xs" (click)="newsSearch_nextPage()">Next</button>
+    <input style="text-align: center" [(ngModel)]="newsSearch_pageNumber" type="number" class="form-control"
+           value="{{newsSearch_pageNumber}}">
+  </div>
+</div>
+<!-- sort by ASC or DESC -->
+<div class="col-md-3 offset-md-3">
+  <div class="form-group" style="text-align: center">
+    <h4>Sort Order (Sort by Post date)</h4>
+    <input type="radio" name="m_pay" [(ngModel)]="newsSearch_sort_by" value="ASC"
+           checked="checked">Ascending<br>
+    <input type="radio" name="m_pay" [(ngModel)]="newsSearch_sort_by" value="DESC">Descending<br>
+  </div>
+</div>
+<!--end : All news pagination panel-->
+
+<table class="table table-responsive col-xs-12">
+  <div *ngFor="let news of news_array; let i=index">
+    <div class="breadcrumb">
+      <h1>{{news.title}}</h1>
+      <span class="badge badge-pill badge-primary">{{news.post_date}}</span>
+      <p class="lead">
+        <a target="_blank" class="btn btn-primary btn-md" role="button"
+           [routerLink]="['/news_details', news.id]">Details</a>
+        <!--<a target="_blank" [routerLink]="['/event_details', event.id]">Event Details</a>-->
+      </p>
+    </div>
+  </div>
+  <!---->
+</table>
+

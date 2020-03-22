@@ -10,6 +10,11 @@ import { CKEditorModule } from 'ckeditor4-angular';
 import { NewsPublicComponent } from './news-public/news-public.component';
 import { NewsDetailsComponent } from './news-details/news-details.component';
 import {RouterModule} from "@angular/router";
+import {SettingsnavbarComponent} from "../layout/settingsnavbar/settingsnavbar.component";
+import {AsidenavbarComponent} from "../layout/asidenavbar/asidenavbar.component";
+import {TopnavbarComponent} from "../layout/topnavbar/topnavbar.component";
+import {FooternavbarComponent} from "../layout/footernavbar/footernavbar.component";
+import {LoadingSpinnerComponent} from "../layout/loading-spinner/loading-spinner.component";
 
 
 
@@ -21,6 +26,9 @@ import {RouterModule} from "@angular/router";
     FormsModule,
     CKEditorModule,
     RouterModule
+  ],
+  exports: [
+    NewsPublicComponent
   ]
 })
 export class PublicModule { }

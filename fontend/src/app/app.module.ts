@@ -27,6 +27,8 @@ import {TestModuleModule} from "./test-module/test-module.module";
 import {AdminModule} from "./admin/admin.module";
 import {SuperAdminComponent} from "./super-admin/super-admin/super-admin.component";
 import {SuperAdminModule} from "./super-admin/super-admin.module";
+import {News} from "./news/news.model";
+import {NewsPublicComponent} from "./public/news-public/news-public.component";
 
 
 @NgModule({
@@ -36,7 +38,7 @@ import {SuperAdminModule} from "./super-admin/super-admin.module";
     AuthComponent,
     DataTableComponent,
     FileUploaderTestComponent,
-    SearchComponent
+    SearchComponent,
     // AuthService
   ],
   imports: [
@@ -64,7 +66,7 @@ import {SuperAdminModule} from "./super-admin/super-admin.module";
     CKEditorModule,
     TestModuleModule,
     AdminModule,
-    SuperAdminModule
+    SuperAdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
