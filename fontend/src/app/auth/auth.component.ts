@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {NgForm} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {Router} from '@angular/router';
 
-import { AuthService, AuthResponseData } from './auth.service';
+import {AuthService, AuthResponseData} from './auth.service';
 
 
 @Component({
@@ -14,9 +14,11 @@ export class AuthComponent implements OnInit {
   isLoginMode = true;
   isLoading = false;
   error: string = null;
+  forgotPass = false;
+  // forgotPass;
 
-
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) {
+  }
 
   ngOnInit() {
     window.dispatchEvent(new Event('resize'));
