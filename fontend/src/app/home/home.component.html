@@ -1,10 +1,11 @@
-<h1>Home</h1>
-<div class="tab">
+<h1 align="center">Home</h1>
+<div align="center" class="tab">
   <button class="tablinks" (click)="openCity(event, 'news')">New</button>
   <button class="tablinks" (click)="openCity(event, 'all_payments')">Events</button>
   <button class="tablinks" (click)="openCity(event, 'mobile_payments')">Administration</button>
+  <button class="tablinks" (click)="openCity(event, 'mobile_payments')">Login</button>
 </div>
 
-<div id="news" class="tabcontent">
+<div align="center" id="news" class="tabcontent">
   <app-news-public></app-news-public>
 </div>

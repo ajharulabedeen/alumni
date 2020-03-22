@@ -7,6 +7,8 @@ body {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
+  align-content: center;
+  justify-content: center;
 }
 
 /* Style the buttons inside the tab */
@@ -37,4 +39,6 @@ body {
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+  align: center;
+  justify-content: center;
 }
