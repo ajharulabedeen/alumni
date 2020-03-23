@@ -6,12 +6,17 @@
 </h1>
 
 <div align="center" class="tab">
-  <button class="tablinks" (click)="openCity(event, 'news')">New</button>
-  <button class="tablinks" (click)="openCity(event, 'all_payments')">Events</button>
+  <button class="tablinks" (click)="openCity(event, 'about')">About</button>
+  <button class="tablinks" (click)="openCity(event, 'news')">News</button>
   <button class="tablinks" (click)="openCity(event, 'mobile_payments')">Administration</button>
   <button class="tablinks" (click)="openCity(event, 'loggin')">Loggin</button>
 </div>
 
+<div align="center" id="about" class="tabcontent">
+  <h1>About Us</h1>
+  <h5>Groon University Alomni Association!</h5>
+  <!--<app-news-public></app-news-public>-->
+</div>
 <div align="center" id="news" class="tabcontent">
   <app-news-public></app-news-public>
 </div>
