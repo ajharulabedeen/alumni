@@ -16,6 +16,7 @@ export class AuthComponent implements OnInit {
   error: string = null;
   forgotPass = false;
   resetPass: string;
+
   // forgotPass;
 
   constructor(private authService: AuthService, private router: Router) {
@@ -70,7 +71,10 @@ export class AuthComponent implements OnInit {
 
 
   public resetPassword() {
-      console.log("resetPass : " + this.resetPass);
+    console.log("resetPass : " + this.resetPass);
+    this.authService.resetPass(this.resetPass).subscribe(res => {
+
+    });
   }
 
 }//class

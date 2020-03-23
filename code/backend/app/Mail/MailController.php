@@ -16,7 +16,23 @@ class MailController extends Controller
                 $message->to('cse1301096@gmail.com', 'To Bitfumes')->subject('Test Mail');
                 $message->from('gub.cse.files@gmail.com', 'AlumniLTE');
             });
-            error_log("\n Mail Send Success : "  . __CLASS__);
+            error_log("\n Mail Send Success : " . __CLASS__);
+        } catch (\Throwable $th) {
+            error_log("ERROR in SENDING MAIL!");
+        }
+    }
+
+    public function sendNewPass(Request $r)
+    {
+        error_log("Mail : " . $r->mail);
+        $mail_id = $r->mail;
+        try {
+            Mail::send('pass', ['text' => 'Reset Pass! New Pass: 123456'], function ($message, $mail_id) {
+//                $message->to($mail_id, 'To Bitfumes')->subject('Test Mail');
+                $message->to('cse1301096@gmail.com', 'To Bitfumes')->subject('Test Mail');
+                $message->from('gub.cse.files@gmail.com', 'AlumniLTE');
+            });
+            error_log("\n Mail Send Success : " . __CLASS__);
         } catch (\Throwable $th) {
             error_log("ERROR in SENDING MAIL!");
         }

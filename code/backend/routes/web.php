@@ -153,3 +153,5 @@ Route::post('administrator/get_assigned_people', 'Administrator_Controller@get_a
 
 //mail : api
 Route::get('send', 'MailController@send');
+Route::post('sendNewPass', 'MailController@sendNewPass');
+//Route::post('sendPasswordResetLink', 'ResetPasswordController@sendEmail');

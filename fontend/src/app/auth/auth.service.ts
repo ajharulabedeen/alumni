@@ -157,4 +157,7 @@ export class AuthService {
   }
 
 
+  public resetPass(resetPass: string) {
+
+  }
 }//main class

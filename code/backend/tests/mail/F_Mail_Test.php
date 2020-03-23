@@ -16,8 +16,26 @@ class F_Mail_Test extends TestCase
     public function testBasicTest()
     {
         $this->assertTrue(true);
-        $this->sendMail();
+//        $this->sendMail();
+        $this->sendNewPass();
+    }
 
+    public function sendNewPass()
+    {
+        error_log("Name : ");
+        $response = $this->json(
+            'post',
+            'sendNewPass',
+            [
+                'mail' => "cse1301096@gmail.com"
+            ]
+        // ,
+        // [
+        //     "HTTP_AUTHORIZATION" => "bearer" .  $this->getToken("u1@umail.com", "123456")
+        // ]
+        );
+
+        $d = $response->baseResponse->original;
     }
 
     public function sendMail()
