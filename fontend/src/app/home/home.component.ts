@@ -28,6 +28,9 @@ export class HomeComponent implements OnInit {
       console.log(!!user);
     });
 
+    // this.openCity(event,"loggin");
+    this.openCity(event,"about");
+    // this.openCity(event,"news");
   }
 
 

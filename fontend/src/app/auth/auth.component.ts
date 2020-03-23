@@ -15,6 +15,7 @@ export class AuthComponent implements OnInit {
   isLoading = false;
   error: string = null;
   forgotPass = false;
+  resetPass: string;
   // forgotPass;
 
   constructor(private authService: AuthService, private router: Router) {
@@ -67,5 +68,9 @@ export class AuthComponent implements OnInit {
     form.reset();//have to active
   }//onSubmit
 
+
+  public resetPassword() {
+      console.log("resetPass : " + this.resetPass);
+  }
 
 }//class

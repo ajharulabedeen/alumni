@@ -52,10 +52,10 @@
       <h3>
         <div class="form-group">
           <label for="email">E-Mail</label>
-          <input type="email" id="emailForgot" class="form-control" ngModel name="email" required email/>
+          <input type="email"  [(ngModel)]="resetPass" id="emailForgot" class="form-control" ngModel name="email" required email/>
         </div>
       </h3>
-      <button class="btn btn-primary">Send</button>
+      <button class="btn btn-primary" (click)="resetPassword()">Reset Password</button>
     </div>
   </div>
 
